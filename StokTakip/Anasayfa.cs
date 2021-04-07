@@ -102,10 +102,15 @@ namespace StokTakip
             }
         }
 
+        TalepYeni ty;
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TalepYeni ty = new TalepYeni();
-            ty.ShowDialog();
+            if (ty == null || ty.IsDisposed)
+            {
+                ty = new TalepYeni();
+                ty.MdiParent = this;
+                ty.Show();
+            }
         }
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
