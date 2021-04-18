@@ -75,13 +75,13 @@
             this.combo_no.Name = "combo_no";
             this.combo_no.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_no.Size = new System.Drawing.Size(73, 20);
+            this.combo_no.Size = new System.Drawing.Size(81, 20);
             this.combo_no.TabIndex = 1;
             this.combo_no.SelectedIndexChanged += new System.EventHandler(this.combo_no_SelectedIndexChanged);
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(207, 22);
+            this.labelControl2.Location = new System.Drawing.Point(233, 21);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(62, 13);
             this.labelControl2.TabIndex = 0;
@@ -89,24 +89,24 @@
             // 
             // combo_detay
             // 
-            this.combo_detay.Location = new System.Drawing.Point(276, 19);
+            this.combo_detay.Location = new System.Drawing.Point(301, 18);
             this.combo_detay.Name = "combo_detay";
             this.combo_detay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_detay.Size = new System.Drawing.Size(246, 20);
+            this.combo_detay.Size = new System.Drawing.Size(192, 20);
             this.combo_detay.TabIndex = 2;
             this.combo_detay.SelectedIndexChanged += new System.EventHandler(this.combo_detay_SelectedIndexChanged);
             // 
             // separatorControl1
             // 
-            this.separatorControl1.Location = new System.Drawing.Point(30, 54);
+            this.separatorControl1.Location = new System.Drawing.Point(30, 49);
             this.separatorControl1.Name = "separatorControl1";
             this.separatorControl1.Size = new System.Drawing.Size(492, 23);
             this.separatorControl1.TabIndex = 2;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(30, 115);
+            this.labelControl3.Location = new System.Drawing.Point(30, 120);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(131, 13);
             this.labelControl3.TabIndex = 0;
@@ -115,14 +115,14 @@
             // combo_miktar
             // 
             this.combo_miktar.EditValue = "Evet";
-            this.combo_miktar.Location = new System.Drawing.Point(237, 111);
+            this.combo_miktar.Location = new System.Drawing.Point(237, 116);
             this.combo_miktar.Name = "combo_miktar";
             this.combo_miktar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.combo_miktar.Properties.Items.AddRange(new object[] {
             "Evet",
             "Hayır"});
-            this.combo_miktar.Size = new System.Drawing.Size(103, 20);
+            this.combo_miktar.Size = new System.Drawing.Size(86, 20);
             this.combo_miktar.TabIndex = 3;
             this.combo_miktar.SelectedIndexChanged += new System.EventHandler(this.combo_miktar_SelectedIndexChanged);
             // 
@@ -130,7 +130,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(220, 83);
+            this.labelControl4.Location = new System.Drawing.Point(220, 88);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(76, 13);
             this.labelControl4.TabIndex = 0;
@@ -138,24 +138,24 @@
             // 
             // txt_miktar
             // 
-            this.txt_miktar.Location = new System.Drawing.Point(354, 111);
+            this.txt_miktar.Location = new System.Drawing.Point(353, 116);
             this.txt_miktar.Name = "txt_miktar";
-            this.txt_miktar.Size = new System.Drawing.Size(95, 20);
+            this.txt_miktar.Size = new System.Drawing.Size(69, 20);
             this.txt_miktar.TabIndex = 4;
             this.txt_miktar.Visible = false;
             // 
             // txt_birim
             // 
             this.txt_birim.Enabled = false;
-            this.txt_birim.Location = new System.Drawing.Point(455, 111);
+            this.txt_birim.Location = new System.Drawing.Point(428, 116);
             this.txt_birim.Name = "txt_birim";
-            this.txt_birim.Size = new System.Drawing.Size(63, 20);
+            this.txt_birim.Size = new System.Drawing.Size(56, 20);
             this.txt_birim.TabIndex = 4;
             this.txt_birim.Visible = false;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(30, 146);
+            this.labelControl5.Location = new System.Drawing.Point(30, 151);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(189, 13);
             this.labelControl5.TabIndex = 0;
@@ -163,7 +163,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(30, 206);
+            this.labelControl6.Location = new System.Drawing.Point(30, 211);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(122, 13);
             this.labelControl6.TabIndex = 0;
@@ -171,7 +171,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(30, 177);
+            this.labelControl7.Location = new System.Drawing.Point(30, 182);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(143, 13);
             this.labelControl7.TabIndex = 0;
@@ -179,7 +179,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(30, 237);
+            this.labelControl8.Location = new System.Drawing.Point(30, 242);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(102, 13);
             this.labelControl8.TabIndex = 0;
@@ -192,18 +192,18 @@
             this.btn_kabul.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_kabul.ImageOptions.Image")));
             this.btn_kabul.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_kabul.ImageOptions.ImageToTextIndent = 15;
-            this.btn_kabul.Location = new System.Drawing.Point(237, 281);
+            this.btn_kabul.Location = new System.Drawing.Point(237, 286);
             this.btn_kabul.Name = "btn_kabul";
-            this.btn_kabul.Size = new System.Drawing.Size(285, 35);
+            this.btn_kabul.Size = new System.Drawing.Size(247, 35);
             this.btn_kabul.TabIndex = 10;
             this.btn_kabul.Text = "Talebi Kabul Et";
             this.btn_kabul.Click += new System.EventHandler(this.btn_kabul_Click);
             // 
             // btn_sertifika
             // 
-            this.btn_sertifika.Location = new System.Drawing.Point(353, 203);
+            this.btn_sertifika.Location = new System.Drawing.Point(353, 208);
             this.btn_sertifika.Name = "btn_sertifika";
-            this.btn_sertifika.Size = new System.Drawing.Size(168, 20);
+            this.btn_sertifika.Size = new System.Drawing.Size(131, 20);
             this.btn_sertifika.TabIndex = 8;
             this.btn_sertifika.Text = "Sertifika Seç";
             this.btn_sertifika.Visible = false;
@@ -212,49 +212,49 @@
             // combo_marka
             // 
             this.combo_marka.EditValue = "Evet";
-            this.combo_marka.Location = new System.Drawing.Point(237, 142);
+            this.combo_marka.Location = new System.Drawing.Point(237, 147);
             this.combo_marka.Name = "combo_marka";
             this.combo_marka.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.combo_marka.Properties.Items.AddRange(new object[] {
             "Evet",
             "Hayır"});
-            this.combo_marka.Size = new System.Drawing.Size(103, 20);
+            this.combo_marka.Size = new System.Drawing.Size(86, 20);
             this.combo_marka.TabIndex = 5;
             this.combo_marka.SelectedIndexChanged += new System.EventHandler(this.combo_marka_SelectedIndexChanged);
             // 
             // combo_tarih
             // 
             this.combo_tarih.EditValue = "Evet";
-            this.combo_tarih.Location = new System.Drawing.Point(237, 173);
+            this.combo_tarih.Location = new System.Drawing.Point(237, 178);
             this.combo_tarih.Name = "combo_tarih";
             this.combo_tarih.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.combo_tarih.Properties.Items.AddRange(new object[] {
             "Evet",
             "Hayır"});
-            this.combo_tarih.Size = new System.Drawing.Size(103, 20);
+            this.combo_tarih.Size = new System.Drawing.Size(86, 20);
             this.combo_tarih.TabIndex = 6;
             this.combo_tarih.SelectedIndexChanged += new System.EventHandler(this.combo_tarih_SelectedIndexChanged);
             // 
             // combo_sertifika
             // 
             this.combo_sertifika.EditValue = "Hayır";
-            this.combo_sertifika.Location = new System.Drawing.Point(237, 203);
+            this.combo_sertifika.Location = new System.Drawing.Point(237, 208);
             this.combo_sertifika.Name = "combo_sertifika";
             this.combo_sertifika.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.combo_sertifika.Properties.Items.AddRange(new object[] {
             "Evet",
             "Hayır"});
-            this.combo_sertifika.Size = new System.Drawing.Size(103, 20);
+            this.combo_sertifika.Size = new System.Drawing.Size(86, 20);
             this.combo_sertifika.TabIndex = 7;
             this.combo_sertifika.SelectedIndexChanged += new System.EventHandler(this.combo_sertifika_SelectedIndexChanged);
             // 
             // combo_genel
             // 
             this.combo_genel.EditValue = "Kabul";
-            this.combo_genel.Location = new System.Drawing.Point(237, 235);
+            this.combo_genel.Location = new System.Drawing.Point(237, 240);
             this.combo_genel.Name = "combo_genel";
             this.combo_genel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -262,14 +262,14 @@
             "Kabul",
             "Şartlı Kabul",
             "Red"});
-            this.combo_genel.Size = new System.Drawing.Size(103, 20);
+            this.combo_genel.Size = new System.Drawing.Size(86, 20);
             this.combo_genel.TabIndex = 9;
             // 
             // TalepKabul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 340);
+            this.ClientSize = new System.Drawing.Size(525, 346);
             this.Controls.Add(this.btn_sertifika);
             this.Controls.Add(this.btn_kabul);
             this.Controls.Add(this.txt_birim);
@@ -294,6 +294,7 @@
             this.Name = "TalepKabul";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Talep Değerlendirme";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TalepKabul_FormClosing);
             this.Load += new System.EventHandler(this.TalepKabul_Load);
             ((System.ComponentModel.ISupportInitialize)(this.combo_no.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_detay.Properties)).EndInit();

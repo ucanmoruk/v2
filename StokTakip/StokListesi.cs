@@ -130,5 +130,22 @@ namespace StokTakip
             if (e.Column.FieldName == "Kritik Limit" || e.Column.FieldName == "Stok Durumu" || e.Column.FieldName == "Birim")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            string limit = gridView1.GetRowCellValue(e.RowHandle, "Kritik Limit").ToString();
+            string stok = gridView1.GetRowCellValue(e.RowHandle, "Stok Durumu").ToString();
+
+            if (limit == null || limit == "")
+            {
+
+            }
+            else
+            {
+                if (e.RowHandle > -1 && e.Column.FieldName == "Stok Durumu" && Convert.ToDecimal(limit) > Convert.ToDecimal(stok))
+                    e.Appearance.BackColor = Color.Red;
+            }
+
+        }
     }
 }

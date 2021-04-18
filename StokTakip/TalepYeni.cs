@@ -96,8 +96,7 @@ namespace StokTakip
                     ozellik = gridView2.GetRowCellValue(y, "Ozellik").ToString();
 
                     SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                        "insert into StokTalepDetay (TalepNo, StokKod, Birim, Ozellik, Durum) " +
-                        "values (@o1,@o2,@o4,@o5,@o6);" +
+                        "insert into StokTalepDetay (TalepNo, StokKod, Birim, Ozellik, Durum) values (@o1,@o2,@o4,@o5,@o6);" +
                         "COMMIT TRANSACTION", bgl.baglanti());
                     add2.Parameters.AddWithValue("@o1", teklifno);
                     add2.Parameters.AddWithValue("@o2", kod);
@@ -166,7 +165,7 @@ namespace StokTakip
                     ozellik = gridView1.GetRowCellValue(i, "Ozellik").ToString();
 
                     SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                        "insert into StokTalepDetay (TalepNo, StokKod, Miktar, Birim, Marka, Ozellik) values (@o1,@o2,@o3,@o4,@o5,@o6);" +
+                        "insert into StokTalepDetay (TalepNo, StokKod, Miktar, Birim, Marka, Ozellik,Durum) values (@o1,@o2,@o3,@o4,@o5,@o6,@o8);" +
                         " insert into StokTalepDegerlendirme (TalepNo, TalepStokKod, KabulDurum) values (@o1, @o2, @o7) ;" +
                         "COMMIT TRANSACTION", bgl.baglanti());
                     add2.Parameters.AddWithValue("@o1", teklifno);
@@ -176,6 +175,7 @@ namespace StokTakip
                     add2.Parameters.AddWithValue("@o5", gridView1.GetRowCellValue(i, "Marka"));
                     add2.Parameters.AddWithValue("@o6", ozellik);
                     add2.Parameters.AddWithValue("@o7", "Beklemede");
+                    add2.Parameters.AddWithValue("@o8", "Bekleniyor");
                     add2.ExecuteNonQuery();
                     bgl.baglanti().Close();
 

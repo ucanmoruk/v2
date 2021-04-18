@@ -51,7 +51,17 @@ namespace StokTakip
         {
             try
             {
-                SqlCommand add = new SqlCommand("insert into StokListesi (Tur,Kod,Ad,AdEn,Cas,Ambalaj,Ozellik,Saklama,Limit,Birim,Durum) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11)", bgl.baglanti());
+                decimal limit;
+                if (txtlimit.Text == "")
+                {
+                    limit = 0;
+                }
+                else
+                {
+                    limit = Convert.ToDecimal(txtlimit.Text);
+                }
+
+                SqlCommand add = new SqlCommand("insert into StokListesi (Tur,Kod,Ad,AdEn,Cas,Ambalaj,Ozellik,Saklama,Limit,Birim,Miktar,Durum) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a12,@a11)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", combo_tur.Text);
                 add.Parameters.AddWithValue("@a2", txtkod.Text);
                 add.Parameters.AddWithValue("@a3", txtad.Text);
@@ -60,8 +70,9 @@ namespace StokTakip
                 add.Parameters.AddWithValue("@a6", txtambalaj.Text);
                 add.Parameters.AddWithValue("@a7", txtozellik.Text);
                 add.Parameters.AddWithValue("@a8", txtsaklama.Text);
-                add.Parameters.AddWithValue("@a9", txtlimit.Text);
+                add.Parameters.AddWithValue("@a9", limit);
                 add.Parameters.AddWithValue("@a10", combobirim.Text);
+                add.Parameters.AddWithValue("@a12", 0);
                 add.Parameters.AddWithValue("@a11", "Aktif");
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();

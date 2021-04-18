@@ -245,6 +245,15 @@ namespace StokTakip
             MessageBox.Show("Stoğunuz güncellenmiştir!", "Başarılı!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             temizle();
 
+            if (talepkod == "" | talepkod == null)
+            {
+
+            }
+            else
+            {
+                this.Close();
+            }
+
 
         }
 

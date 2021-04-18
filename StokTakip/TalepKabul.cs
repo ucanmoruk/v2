@@ -34,9 +34,12 @@ namespace StokTakip
 
         void temizle()
         {
+            combo_detay.Text = "";
+            combo_detay.Properties.Items.Clear();
             talepdetay();
             txt_miktar.Text = "";
             txt_birim.Text = "";
+            TalepNo = "";
         }
 
         string stokkod, stokad, stokmiktar, stokbirim;
@@ -47,19 +50,28 @@ namespace StokTakip
             while (dr.Read())
             {
                 stokkod = dr["StokKod"].ToString();
+              //  combo_detay.Properties.Items.Add(dr["StokKod"]);
                 stokmiktar = dr["Miktar"].ToString();
+             //   txt_tmiktar.Text = stokmiktar;
                 stokbirim = dr["Birim"].ToString();
+              //  txt_tbirim.Text = stokbirim;
                 txt_birim.Text = stokbirim;
+                SqlCommand komut = new SqlCommand("select * from StokListesi where Kod = N'" + stokkod + "' ", bgl.baglanti());
+                SqlDataReader dra = komut.ExecuteReader();
+                while (dra.Read())
+                {
+                    stokad = dra["Ad"].ToString();
+                    //  txt_ad.Text = stokad;
+                    combo_detay.Properties.Items.Add(stokkod + " - " + stokad + " - " + stokmiktar + " - " + stokbirim);
+                }
+                bgl.baglanti().Close();
             }
             bgl.baglanti().Close();
 
-            SqlCommand komut = new SqlCommand("select * from StokListesi where Kod = N'" + stokkod + "' ", bgl.baglanti());
-            SqlDataReader dra = komut.ExecuteReader();
-            while (dra.Read())
-            { stokad = dra["Ad"].ToString(); }
-            bgl.baglanti().Close();
+         
 
-            combo_detay.Properties.Items.Add(stokkod + " - " + stokad + " - " + stokmiktar + " - " + stokbirim);
+            
+    
         }
 
         string smiktar;
@@ -75,9 +87,26 @@ namespace StokTakip
         string detaykod;
         private void combo_detay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] result = combo_detay.Text.Split('-');
-            detaykod = result[0].Trim(' ');
-            smiktar = result[2].Trim(' ');
+            try
+            {
+                if (combo_detay.Text =="" || combo_detay.Text == null)
+                {
+
+                }
+                else
+                {
+                    string[] result = combo_detay.Text.Split('-');
+                    detaykod = result[0].Trim(' ');
+                    smiktar = result[2].Trim(' ');
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata A144:"+ ex);
+            }
+
         }
 
         private void btn_sertifika_Click(object sender, EventArgs e)
@@ -132,14 +161,14 @@ namespace StokTakip
         }
 
         private void TalepKabul_Load(object sender, EventArgs e)
-        {
+        {           
             talepbul();
             btn_sertifika.Visible = false;
             txt_miktar.Visible = false;
             txt_birim.Visible = false;
             if (TalepNo == "")
             {
-               
+                combo_no.Text = "";
             }
             else
             {
@@ -179,6 +208,11 @@ namespace StokTakip
             }
         }
 
+        private void TalepKabul_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            TalepNo = "";
+        }
+
         private void combo_tarih_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (combo_tarih.Text == "Evet")
@@ -204,6 +238,8 @@ namespace StokTakip
                 btn_sertifika.Visible = false;
             }
         }
+
+        TalepListesi m = (TalepListesi)System.Windows.Forms.Application.OpenForms["TalepListesi"];
 
         int talepsay;
         void talepkontrol()
@@ -247,20 +283,19 @@ namespace StokTakip
                     add1.Parameters.AddWithValue("@a10", "Tamamlandı");
                     add1.ExecuteNonQuery();
                     bgl.baglanti().Close();
+                  
                 }
                 else
                 {
 
                 }
-                 
+
+
 
 
                 DialogResult Secim = new DialogResult();
 
                 Secim = MessageBox.Show("Talebiniz başarıyla kabul edildi. Stok miktarını güncellemek ister misiniz?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-                
-                
 
                 if (Secim == DialogResult.Yes)
                 {
@@ -275,6 +310,16 @@ namespace StokTakip
                 }
 
                 temizle();
+
+                if (Application.OpenForms["TalepListesi"] == null)
+                {
+
+                }
+                else
+                {
+                    m.listele();
+                }
+
 
             }
             catch (Exception ex)
