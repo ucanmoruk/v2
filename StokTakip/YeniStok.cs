@@ -34,6 +34,19 @@ namespace StokTakip
             combo_tur.Text = "";
         }
 
+        int o2;
+        private void kodkontrol()
+        {
+            SqlCommand komut2 = new SqlCommand("Select Count(ID) from StokListesi where Kod = N'" + txtkod.Text + "' ", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                o2 = Convert.ToInt32(dr2[0]);
+            }
+            bgl.baglanti().Close();
+
+        }
+
         private void ekleme()
         {
             try
@@ -65,11 +78,31 @@ namespace StokTakip
 
         }
 
+        StokListesi m = (StokListesi)System.Windows.Forms.Application.OpenForms["StokListesi"];
+
         private void btnadd_Click(object sender, EventArgs e)
         {
-            ekleme();
-            MessageBox.Show("Stok girişiniz başarı ile tamamlanmıştır.","İşlem Başarılı",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-            temizle();
+            kodkontrol();
+            if (o2 == 1)
+            {
+                MessageBox.Show("Bu kod daha önce kullanılmış. Lütfen farklı bir kod seçiniz.", "Kod Hatası", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                ekleme();
+                MessageBox.Show("Stok girişiniz başarı ile tamamlanmıştır.", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                temizle();
+                if (Application.OpenForms["StokListesi"] == null)
+                {
+
+                }
+                else
+                {
+                    m.listele();
+                }
+            }
+ 
         }
     }
 }

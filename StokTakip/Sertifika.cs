@@ -33,6 +33,27 @@ namespace StokTakip
             bgl.baglanti().Close();
 
         }
+        private void birimbul()
+        {
+            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'"+Anasayfa.firmaID+"'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                combo_birim.Properties.Items.Add(drI["Birim"].ToString());
+            }
+            bgl.baglanti().Close();
+        }
+
+        private void kbirim()
+        {
+            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where ID = N'" + Anasayfa.birimID + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                combo_birim.Text = drI["Birim"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
 
         private void parolaolustur()
         {
@@ -79,13 +100,17 @@ namespace StokTakip
                         }
 
 
-                        File.Copy(name, Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", path), true);
-                 
-                        SqlCommand add = new SqlCommand("insert into StokSertifika (StokID, Sertifika, SKT, Path) values (@a1,@a2,@a3,@a4)", bgl.baglanti());
+                     //   File.Copy(name, Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", path), true);
+                        File.Copy(name, Path.Combine(@Anasayfa.path, path), true);
+
+
+                        SqlCommand add = new SqlCommand("insert into StokSertifika (StokID, Sertifika, SKT, Path, BirimID, Durum) values (@a1,@a2,@a3,@a4, @a5, @a6)", bgl.baglanti());
                         add.Parameters.AddWithValue("@a1", stokid);
                         add.Parameters.AddWithValue("@a2", yenisim);
                         add.Parameters.AddWithValue("@a3", dateskt.EditValue);
                         add.Parameters.AddWithValue("@a4", path);
+                        add.Parameters.AddWithValue("@a5", birimID);
+                        add.Parameters.AddWithValue("@a6", "Aktif");
                         add.ExecuteNonQuery();
                         bgl.baglanti().Close();
 
@@ -110,9 +135,23 @@ namespace StokTakip
 
         }
 
+        public static string skod;
         private void Sertifika_Load(object sender, EventArgs e)
         {
-            listele();
+            if (skod == "")
+            {
+                listele();
+                birimbul();
+                kbirim();
+            }
+            else
+            {
+                combokod.Text = skod;
+                listele();
+                birimbul();
+                kbirim();
+            }
+           
         }
 
         public static string name;
@@ -160,6 +199,18 @@ namespace StokTakip
             while (drI.Read())
             {
                 stokid = Convert.ToInt32(drI["ID"].ToString());
+            }
+            bgl.baglanti().Close();
+        }
+
+        int birimID;
+        private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'"+Anasayfa.firmaID+"'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                birimID = Convert.ToInt32(drI["ID"].ToString());
             }
             bgl.baglanti().Close();
         }

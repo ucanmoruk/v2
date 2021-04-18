@@ -23,27 +23,34 @@ namespace StokTakip
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select Sira as 'No', Ad as 'Ad Soyad', Gorev as 'Görevi', Telefon, Email as 'E-Mail Adresi' from Kullanici where Sira is not null order by Sira", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select k.Ad, k.Soyad, b.Birim, k.Gorev, k.Email, k.Telefon from StokKullanici k inner join StokFirmaBirim b on k.BirimID = b.ID where k.Durum = N'Aktif' order by k.Ad", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
-
-            //lab. birimi de ekle
         }
 
 
         private void PersonelListesi_Load(object sender, EventArgs e)
         {
-            //listele();
-            //this.gridView1.Columns[0].Width = 20;
-            //this.gridView1.Columns[1].Width = 150;
-            //this.gridView1.Columns[2].Width = 150;
-            //this.gridView1.Columns[3].Width = 90;
-            //this.gridView1.Columns[4].Width = 250;
+            listele();
         }
 
+        void kbul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from StokKullanici where Ad = N'" + ad + "' and Soyad = N'" + soyad + "' and FirmaID = '" + Anasayfa.firmaID + "'", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                kkod = Convert.ToInt32(dr21["ID"].ToString());
+            }
+            bgl.baglanti().Close();
+        }
+
+        public static int kkod;
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Personel.update = kkod;
+
+            kbul();
+            Personel.update = kkod.ToString();
             Personel p = new Personel();
             p.ShowDialog();
 
@@ -55,11 +62,11 @@ namespace StokTakip
             {
                 DialogResult Secim = new DialogResult();
 
-                Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                Secim = MessageBox.Show(ad + " " + soyad + " Kişisini silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
                 if (Secim == DialogResult.Yes)
                 {
-                    SqlCommand komutSil = new SqlCommand("update Kullanici set Durum=@a1 where Sira = N'" + kkod + "'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokKullanici set Durum=@a1 where Ad = N'" + ad + "' and Soyad = N'"+soyad+"'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -71,7 +78,6 @@ namespace StokTakip
             {
                 MessageBox.Show("Hata2 : " + ex.Message);
             }
-            listele();
         }
 
         private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
@@ -82,16 +88,19 @@ namespace StokTakip
                 popupMenu1.ShowPopup(p2);
             }
         }
-        string kkod;
+        string ad, soyad;
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            kkod = dr["Sira"].ToString();
+            ad = dr["Ad"].ToString();
+            soyad = dr["Soyad"].ToString();
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            Personel.update = kkod;
+            kbul();
+            Personel.update = kkod.ToString();
             Personel p = new Personel();
             p.ShowDialog();
 

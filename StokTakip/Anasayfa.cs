@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace StokTakip
         {
             InitializeComponent();
         }
+        sqlbaglanti bgl = new sqlbaglanti();
 
         StokListesi sl;
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -57,9 +59,40 @@ namespace StokTakip
             }
         }
 
+        public static string ad, soyad, path;
+        public static int firmaID, birimID;
+        void kullanicibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from StokKullanici where ID = N'" + kullanici + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                birimID= Convert.ToInt32(dr21["BirimID"]);
+                firmaID = Convert.ToInt32(dr21["FirmaID"]);
+                ad = dr21["Ad"].ToString();
+                soyad = dr21["Soyad"].ToString();
+                lbl_kullanici.Text = ad + " " + soyad; 
+            }
+            bgl.baglanti().Close();         
+
+        }
+
+        void firmabul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from StokFirma where ID = N'" + firmaID + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                path = dr21["Path"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
+        public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
         {
-
+            kullanicibul();
+            firmabul();
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -103,6 +136,13 @@ namespace StokTakip
         }
 
         TalepYeni ty;
+
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SertifikaIptal s = new SertifikaIptal();
+            s.ShowDialog();
+        }
+
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (ty == null || ty.IsDisposed)
@@ -117,6 +157,11 @@ namespace StokTakip
         {
             TalepKabul tk = new TalepKabul();
             tk.ShowDialog();
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

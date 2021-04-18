@@ -22,18 +22,67 @@ namespace StokTakip
 
         void listele()
         {
-            //DataTable dt2 = new DataTable();
-            //SqlDataAdapter da2 = new SqlDataAdapter("", bgl.baglanti());
-            //da2.Fill(dt2);
-            //gridControl1.DataSource = dt2;
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select Tur, Kod, Ad, AdEn as 'İngilizce', Cas, Ozellik, Birim from StokListesi where Durum = N'Aktif' order by Tur", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl2.DataSource = dt2;
         }
 
+        void listele2()
+        {
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select Tur, Kod, Ad, AdEn as 'İngilizce', Cas, Ozellik, Birim from StokListesi where Durum = N'Aktif' " +
+                " and not Kod in (select StokKod from StokTalepDetay where TalepNo = '"+teklifno+"' ) order by Tur", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl2.DataSource = dt2;
+        }
+
+        void listele3()
+        {
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select d.StokKod as 'Kod', sl.Ad, d.Miktar, d.Birim, d.Marka, d.Ozellik from StokTalepDetay d " +
+                " inner join StokListesi sl on d.StokKod = sl.Kod where d.TalepNo = N'"+teklifno+"'", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl1.DataSource = dt2;
+        }
+
+        string yz;
+        int teklifmax;
+        void maxteklifno()
+        {
+            SqlCommand komut2 = new SqlCommand("select MAX(TalepNo) from StokTalepDetay ", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                yz = dr2[0].ToString();
+                
+                if (yz == "")
+                {
+                    teklifno = 1;
+                }
+                else
+                {
+                    teklifmax = Convert.ToInt32(yz);
+                    teklifno = teklifmax + 1;
+                }
+            }
+            bgl.baglanti().Close();
+
+        
+
+        }
+
+        int teklifno;
         private void TalepYeni_Load(object sender, EventArgs e)
         {
             listele();
+            maxteklifno();
+          
         }
 
-        string id, kod;
+
+
+        string id, kod, birim, ozellik;
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             if (gridView2.SelectedRowsCount > 0)
@@ -43,26 +92,24 @@ namespace StokTakip
                     id = gridView2.GetSelectedRows()[i].ToString();
                     int y = Convert.ToInt32(id);
                     kod = gridView2.GetRowCellValue(y, "Kod").ToString();
-                    //SqlCommand komut2 = new SqlCommand("Select ID from Numune_Grup where Tur = N'" + kod + "' ", bgl.baglanti());
-                    //SqlDataReader dr2 = komut2.ExecuteReader();
-                    //while (dr2.Read())
-                    //{
-                    //    o2 = Convert.ToInt32(dr2["ID"]);
-                    //}
-                    //bgl.baglanti().Close();
+                    birim= gridView2.GetRowCellValue(y, "Birim").ToString();
+                    ozellik = gridView2.GetRowCellValue(y, "Ozellik").ToString();
 
                     SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                        "insert into TeklifDetay (TeklifNo, PaketID, BirimFiyat, FiyatBirim) " +
-                        "values (@o1,@o2,@o3,@o4);" +
+                        "insert into StokTalepDetay (TalepNo, StokKod, Birim, Ozellik, Durum) " +
+                        "values (@o1,@o2,@o4,@o5,@o6);" +
                         "COMMIT TRANSACTION", bgl.baglanti());
-                    add2.Parameters.AddWithValue("@o1", 1);
-                    add2.Parameters.AddWithValue("@o2", 1);
-                    add2.Parameters.AddWithValue("@o3", 0);
-                    add2.Parameters.AddWithValue("@o4", 1);
+                    add2.Parameters.AddWithValue("@o1", teklifno);
+                    add2.Parameters.AddWithValue("@o2", kod);
+                    add2.Parameters.AddWithValue("@o4", birim);
+                    add2.Parameters.AddWithValue("@o5", ozellik);
+                    add2.Parameters.AddWithValue("@o6", "Bekleniyor");
                     add2.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
                 }
+                listele2();
+                listele3();
             }
             else
             {
@@ -72,86 +119,145 @@ namespace StokTakip
             
         }
 
+        private void TalepYeni_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (kapama == "1")
+            {
+
+            }
+            else
+            {
+                DialogResult sonuc = MessageBox.Show("Talebinizi kaydetmeden çıkmak istediğinizden emin misiniz ?", "Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (sonuc == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    eskisil();
+                    //this.Close();
+                }
+            }
+
+            
+        }
+
+        void eskisil()
+        {
+            SqlCommand add2 = new SqlCommand("delete from StokTalepDetay where TalepNo = '"+teklifno+"'", bgl.baglanti());
+            add2.ExecuteNonQuery();
+            bgl.baglanti().Close();
+        }
+
+        TalepListesi m = (TalepListesi)System.Windows.Forms.Application.OpenForms["TalepListesi"];
+
+        string kapama;
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    for (int ik = 0; ik < gridView1.RowCount; ik++)
-            //    {
-            //        paketinadi = gridView1.GetRowCellValue(ik, "Paket Adı").ToString();
-            //        SqlCommand komut21 = new SqlCommand("Select ID from Numune_Grup where Tur = N'" + paketinadi + "' and Grup = 'Özel'", bgl.baglanti());
-            //        SqlDataReader dr21 = komut21.ExecuteReader();
-            //        while (dr21.Read())
-            //        {
-            //            oppo2 = Convert.ToInt32(dr21["ID"]);
-            //        }
-            //        bgl.baglanti().Close();
+            try
+            {
+                eskisil();
 
-            //        SqlCommand komutz = new SqlCommand("update TeklifDetay set BirimFiyat = @o1 , FiyatBirim = @o2, Aciklama = @o4 where PaketID = @o3 and TeklifNo = '" + txt_no.Text + "'", bgl.baglanti());
-            //        komutz.Parameters.AddWithValue("@o1", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Birim Fiyat").ToString()));
-            //        komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "Kur Türü").ToString());
-            //        komutz.Parameters.AddWithValue("@o3", oppo2);
-            //        komutz.Parameters.AddWithValue("@o4", gridView1.GetRowCellValue(ik, "Açıklama").ToString());
-            //        komutz.ExecuteNonQuery();
-            //        bgl.baglanti().Close();
-            //    }
-            //    SqlCommand komutaz = new SqlCommand(" update TeklifListe set Durum = 'Aktif', ProjeID = N'" + projeID + "', Aciklama = N'" + txt_aciklama.Text + "' where TeklifNo = '" + txt_no.Text + "' ", bgl.baglanti());
-            //    komutaz.ExecuteNonQuery();
-            //    bgl.baglanti().Close();
-            
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Hata 55: " + ex, "Lütfen!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                for (int i = 0; i < gridView1.RowCount; i++)
+                {
+                    kod = gridView1.GetRowCellValue(i, "Kod").ToString();
+                    birim = gridView1.GetRowCellValue(i, "Birim").ToString();
+                    ozellik = gridView1.GetRowCellValue(i, "Ozellik").ToString();
 
-            //}
+                    SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                        "insert into StokTalepDetay (TalepNo, StokKod, Miktar, Birim, Marka, Ozellik) values (@o1,@o2,@o3,@o4,@o5,@o6);" +
+                        " insert into StokTalepDegerlendirme (TalepNo, TalepStokKod, KabulDurum) values (@o1, @o2, @o7) ;" +
+                        "COMMIT TRANSACTION", bgl.baglanti());
+                    add2.Parameters.AddWithValue("@o1", teklifno);
+                    add2.Parameters.AddWithValue("@o2", kod);
+                    add2.Parameters.AddWithValue("@o3", gridView1.GetRowCellValue(i, "Miktar"));
+                    add2.Parameters.AddWithValue("@o4", birim);
+                    add2.Parameters.AddWithValue("@o5", gridView1.GetRowCellValue(i, "Marka"));
+                    add2.Parameters.AddWithValue("@o6", ozellik);
+                    add2.Parameters.AddWithValue("@o7", "Beklemede");
+                    add2.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
+                }
+                DateTime tarih = DateTime.Now;
+
+                SqlCommand add = new SqlCommand("BEGIN TRANSACTION " +
+                        "insert into StokTalepListe (TalepNo, TalepEdenID, Durum, Olusturma, Aktif) values (@o1,@o2,@o4,@o5, @o6); " +
+                        "COMMIT TRANSACTION", bgl.baglanti());
+                add.Parameters.AddWithValue("@o1", teklifno);
+                add.Parameters.AddWithValue("@o2", Anasayfa.kullanici);
+                add.Parameters.AddWithValue("@o4", "Talep Oluşturuldu");
+                add.Parameters.AddWithValue("@o5", tarih);
+                add.Parameters.AddWithValue("@o6", "Aktif");
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                MessageBox.Show("Talebinizi başarıyla oluşturuldu.", "Çıkış", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                if (Application.OpenForms["TalepListesi"] == null)
+                {
+
+                }
+                else
+                {
+                    m.listele();
+                }
+                kapama = "1";
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata TY1: " + ex);
+            }
+
         }
 
         private void btn_Kaldir_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (gridView1.SelectedRowsCount > 0)
-            //    {
-            //        DialogResult Secim = new DialogResult();
+            try
+            {
+                if (gridView1.SelectedRowsCount > 0)
+                {
+                    DialogResult Secim = new DialogResult();
 
-            //        Secim = MessageBox.Show("Seçili maddeleri talep listenizden kaldırmak istediğinizden emin misiniz ?", "Emin misin!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            //        if (Secim == DialogResult.Yes)
-            //        {
-                       
-            //                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
-            //                {
-            //                    id = gridView1.GetSelectedRows()[i].ToString();
-            //                    int y = Convert.ToInt32(id);
-            //                    kod = gridView1.GetRowCellValue(y, "Kod").ToString();
-            //                    SqlCommand komut2 = new SqlCommand("select ID from Numune_Grup where Tur = '" + kod + "'", bgl.baglanti());
-            //                    SqlDataReader dr2 = komut2.ExecuteReader();
-            //                    while (dr2.Read())
-            //                    {
-            //                        oo2 = Convert.ToInt32(dr2["ID"]);
-            //                    }
-            //                    bgl.baglanti().Close();
-            //                    SqlCommand add = new SqlCommand("delete from TeklifDetay where TeklifNo = @p1 and PaketID = @p2 ", bgl.baglanti());
-            //                    add.Parameters.AddWithValue("@p1", txt_no.Text);
-            //                    add.Parameters.AddWithValue("@p2", oo2);
-            //                    add.ExecuteNonQuery();
-            //                    bgl.baglanti().Close();
-            //                }
-                            
-                        
-                        
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Neyi mesela ?");
-            //    }
-            //    listele();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Tüh ya! Bak ne oldu: " + ex.Message);
-            //}
+                    Secim = MessageBox.Show("Seçili maddeleri talep listenizden kaldırmak istediğinizden emin misiniz ?", "Emin misin!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                    if (Secim == DialogResult.Yes)
+                    {
+                        for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                        {
+                            id = gridView1.GetSelectedRows()[i].ToString();
+                            int y = Convert.ToInt32(id);
+                            kod = gridView1.GetRowCellValue(y, "Kod").ToString();
+                            SqlCommand add2 = new SqlCommand("delete from StokTalepDetay where StokKod = '" + kod + "' and TalepNo = '" + teklifno + "'", bgl.baglanti());
+                            add2.Parameters.AddWithValue("@o1", teklifno);
+                            add2.Parameters.AddWithValue("@o2", kod);
+                            add2.Parameters.AddWithValue("@o4", birim);
+                            add2.Parameters.AddWithValue("@o5", ozellik);
+                            add2.ExecuteNonQuery();
+                            bgl.baglanti().Close();
+
+                        }
+
+                        listele2();
+                        listele3();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen seçim yapınız'" , "Lütfen!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+           
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata 55: " + ex, "Lütfen!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+          
         }
     }
 }

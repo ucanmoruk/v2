@@ -24,12 +24,12 @@ namespace StokTakip
 
         private void Giris_Load(object sender, EventArgs e)
         {
-
+           // Control.CheckForIllegalCrossThreadCalls = false;
         }
 
         private void Giris_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+          //  this.Close();
         }
 
         private void btn_giris_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace StokTakip
         Anasayfa f2;
         private void giris()
         {
-            SqlCommand detay = new SqlCommand("Select * from Kullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());
+            SqlCommand detay = new SqlCommand("Select * from StokKullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();
 
             if (drd.Read())
@@ -48,7 +48,7 @@ namespace StokTakip
                 this.Hide();
 
                 kullaniciadi = txt_ad.Text;
-                SqlCommand komutID = new SqlCommand("Select * from Kullanici where Kadi = N'" + kullaniciadi + "'", bgl.baglanti());
+                SqlCommand komutID = new SqlCommand("Select * from StokKullanici where Kadi = N'" + kullaniciadi + "'", bgl.baglanti());
                 SqlDataReader drI = komutID.ExecuteReader();
                 while (drI.Read())
                 {
@@ -58,6 +58,7 @@ namespace StokTakip
                     gorev = drI["Gorev"].ToString();
                 }
                 bgl.baglanti().Close();
+                Anasayfa.kullanici = kullaniciID.ToString();
                 f2 = new Anasayfa();
                 f2.FormClosing += F2_FormClosing;
                 f2.ShowDialog();

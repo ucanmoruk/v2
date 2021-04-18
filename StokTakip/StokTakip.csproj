@@ -103,6 +103,12 @@
     <Compile Include="SertifikaGoruntule.Designer.cs">
       <DependentUpon>SertifikaGoruntule.cs</DependentUpon>
     </Compile>
+    <Compile Include="SertifikaIptal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SertifikaIptal.Designer.cs">
+      <DependentUpon>SertifikaIptal.cs</DependentUpon>
+    </Compile>
     <Compile Include="SonKullanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     </Compile>
     <Compile Include="StokListesi.Designer.cs">
       <DependentUpon>StokListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TalepDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TalepDetay.Designer.cs">
+      <DependentUpon>TalepDetay.cs</DependentUpon>
     </Compile>
     <Compile Include="TalepKabul.cs">
       <SubType>Form</SubType>
@@ -189,6 +201,9 @@
     <EmbeddedResource Include="SertifikaGoruntule.resx">
       <DependentUpon>SertifikaGoruntule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SertifikaIptal.resx">
+      <DependentUpon>SertifikaIptal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SonKullanim.resx">
       <DependentUpon>SonKullanim.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StokListesi.resx">
       <DependentUpon>StokListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TalepDetay.resx">
+      <DependentUpon>TalepDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TalepKabul.resx">
       <DependentUpon>TalepKabul.cs</DependentUpon>

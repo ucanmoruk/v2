@@ -20,11 +20,17 @@ namespace StokTakip
 
         public static string yol, path;
 
+        private void SertifikaGoruntule_Load_1(object sender, EventArgs e)
+        {
+            path = Path.Combine(Anasayfa.path, yol);
+            axAcroPDF1.LoadFile(path);
+        }
+
         private void SertifikaGoruntule_Load(object sender, EventArgs e)
         {
-
-            path = Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", yol);
-            axAcroPDF1.LoadFile(path);
+          //  path = Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", yol);
+            //path = Path.Combine(Anasayfa.path, yol);
+            //axAcroPDF1.LoadFile(path);
         //    this.pdfViewer1.LoadDocument(path);
          //   MessageBox.Show(yol);
 

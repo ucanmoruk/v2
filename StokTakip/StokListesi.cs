@@ -24,7 +24,7 @@ namespace StokTakip
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select sl.Tur as 'Tür', sl.Kod, sl.Ad, sl.AdEn as 'İngilizce', sl.Cas as 'Cas No', Ozellik, Ambalaj, Saklama as 'Saklama Koşulları',Limit as 'Kritik Limit', sl.Miktar as 'Stok Durumu', Birim from StokListesi sl where Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select sl.Tur as 'Tür', sl.Kod, sl.Ad, sl.AdEn as 'İngilizce', sl.Cas as 'Cas No', Ozellik, Ambalaj, Saklama as 'Saklama Koşulları',Limit as 'Kritik Limit', sl.Miktar as 'Stok Durumu', Birim from StokListesi sl where Durum = N'Aktif' order by Tur", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -108,6 +108,21 @@ namespace StokTakip
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             skod = dr["Kod"].ToString();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                StokDetay.urunkod = skod;
+                StokDetay sd = new StokDetay();
+                sd.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata SL2: " + ex);
+            }
         }
     }
 }
