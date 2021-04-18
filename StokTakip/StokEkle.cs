@@ -264,38 +264,42 @@ namespace StokTakip
 
         private void btnsertifika_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
+            Sertifika.skod = combokod.Text;
+            Sertifika s = new Sertifika();
+            s.ShowDialog();
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //OpenFileDialog open = new OpenFileDialog();
 
-            //To where your opendialog box get starting location. My initial directory location is desktop.
-            open.InitialDirectory = path;
-            //Your opendialog box title name.
-            open.Title = "Yüklemek istediğiniz dosyayı seçiniz.";
-            //which type file format you want to upload in database. just add them.
-            open.Filter = "Select Valid Document(*.pdf; *.doc; *.xlsx; *.html)|*.pdf; *.docx; *.xlsx; *.html";
-            //FilterIndex property represents the index of the filter currently selected in the file dialog box.
-            open.FilterIndex = 1;
-            try
-            {
-                if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    if (open.CheckFileExists)
-                    {
-                        name = System.IO.Path.GetFullPath(open.FileName);
-                        btnsertifika.Enabled = false;
-                        kontrol = "1";
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen dosya seçiniz.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            ////To where your opendialog box get starting location. My initial directory location is desktop.
+            //open.InitialDirectory = path;
+            ////Your opendialog box title name.
+            //open.Title = "Yüklemek istediğiniz dosyayı seçiniz.";
+            ////which type file format you want to upload in database. just add them.
+            //open.Filter = "Select Valid Document(*.pdf; *.doc; *.xlsx; *.html)|*.pdf; *.docx; *.xlsx; *.html";
+            ////FilterIndex property represents the index of the filter currently selected in the file dialog box.
+            //open.FilterIndex = 1;
+            //try
+            //{
+            //    if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        if (open.CheckFileExists)
+            //        {
+            //            name = System.IO.Path.GetFullPath(open.FileName);
+            //            btnsertifika.Enabled = false;
+            //            kontrol = "1";
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Lütfen dosya seçiniz.");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
          
             
         }

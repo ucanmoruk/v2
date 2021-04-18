@@ -124,5 +124,11 @@ namespace StokTakip
                 MessageBox.Show("Hata SL2: " + ex);
             }
         }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "Kritik Limit" || e.Column.FieldName == "Stok Durumu" || e.Column.FieldName == "Birim")
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+        }
     }
 }
