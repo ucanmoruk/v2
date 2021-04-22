@@ -93,6 +93,7 @@ namespace StokTakip
         {
             kullanicibul();
             firmabul();
+            //db = "1";
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -142,6 +143,18 @@ namespace StokTakip
             SertifikaIptal s = new SertifikaIptal();
             s.ShowDialog();
         }
+
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Hide();
+            Giris g = new Giris();
+            g.ShowDialog();
+        }
+
+        private void Anasayfa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+        
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

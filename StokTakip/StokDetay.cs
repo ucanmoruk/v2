@@ -129,7 +129,7 @@ namespace StokTakip
                 add.Parameters.AddWithValue("@a6", txtambalaj.Text);
                 add.Parameters.AddWithValue("@a7", txtozellik.Text);
                 add.Parameters.AddWithValue("@a8", txtsaklama.Text);
-                add.Parameters.AddWithValue("@a9", txtlimit.Text);
+                add.Parameters.AddWithValue("@a9", Convert.ToDecimal(txtlimit.Text));
                 add.Parameters.AddWithValue("@a10", combobirim.Text);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();

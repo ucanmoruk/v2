@@ -36,9 +36,12 @@
             this.txt_ad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.combo_ag = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_parola.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.combo_ag.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_giris
@@ -50,7 +53,7 @@
             this.btn_giris.ImageOptions.ImageToTextIndent = 10;
             this.btn_giris.Location = new System.Drawing.Point(395, 329);
             this.btn_giris.Name = "btn_giris";
-            this.btn_giris.Size = new System.Drawing.Size(113, 49);
+            this.btn_giris.Size = new System.Drawing.Size(113, 78);
             this.btn_giris.TabIndex = 3;
             this.btn_giris.Text = "Giriş Yap";
             this.btn_giris.Click += new System.EventHandler(this.btn_giris_Click);
@@ -95,19 +98,42 @@
             this.pictureEdit1.Size = new System.Drawing.Size(898, 325);
             this.pictureEdit1.TabIndex = 4;
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(80, 390);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(50, 13);
+            this.labelControl3.TabIndex = 5;
+            this.labelControl3.Text = "Database:";
+            // 
+            // combo_ag
+            // 
+            this.combo_ag.EditValue = "Genel";
+            this.combo_ag.Location = new System.Drawing.Point(140, 387);
+            this.combo_ag.Name = "combo_ag";
+            this.combo_ag.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.combo_ag.Properties.Items.AddRange(new object[] {
+            "Genel",
+            "Yerel"});
+            this.combo_ag.Size = new System.Drawing.Size(238, 20);
+            this.combo_ag.TabIndex = 8;
+            // 
             // Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(600, 425);
+            this.Controls.Add(this.combo_ag);
             this.Controls.Add(this.btn_giris);
             this.Controls.Add(this.txt_parola);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_ad);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureEdit1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoşgeldiniz..";
@@ -116,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_parola.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.combo_ag.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +156,7 @@
         private DevExpress.XtraEditors.TextEdit txt_ad;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.ComboBoxEdit combo_ag;
     }
 }

@@ -37,12 +37,22 @@ namespace StokTakip
             giris();
         }
 
+        public static string db;
         Anasayfa f2;
         private void giris()
         {
-            SqlCommand detay = new SqlCommand("Select * from StokKullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());
-            SqlDataReader drd = detay.ExecuteReader();
+            if (combo_ag.Text == "Yerel")
+            {
+                db = "2";
+            }
+            else
+            {
+                db = "1";
+            }
 
+
+            SqlCommand detay = new SqlCommand("Select * from StokKullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());
+            SqlDataReader drd = detay.ExecuteReader();           
             if (drd.Read())
             {
                 this.Hide();
