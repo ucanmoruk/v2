@@ -130,7 +130,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(220, 88);
+            this.labelControl4.Location = new System.Drawing.Point(220, 84);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(76, 13);
             this.labelControl4.TabIndex = 0;

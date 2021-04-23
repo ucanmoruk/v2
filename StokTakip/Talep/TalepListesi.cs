@@ -60,21 +60,30 @@ namespace StokTakip
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult Secim = new DialogResult();
-
-            Secim = MessageBox.Show(talepno + " numaralı talebi iptal ediyorsunuz?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            if (Secim == DialogResult.Yes)
+            if (olusturan == Anasayfa.tamad)
             {
-                DateTime tarih = DateTime.Now;
+                DialogResult Secim = new DialogResult();
 
-                SqlCommand add2 = new SqlCommand("update StokTalepListe set Aktif=@o1 where TalepNo = '" + talepno + "'", bgl.baglanti());
-                add2.Parameters.AddWithValue("@o1", "Pasif");
-                add2.ExecuteNonQuery();
-                bgl.baglanti().Close();
+                Secim = MessageBox.Show(talepno + " numaralı talebi iptal ediyorsunuz?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-                listele();
+                if (Secim == DialogResult.Yes)
+                {
+                    DateTime tarih = DateTime.Now;
+
+                    SqlCommand add2 = new SqlCommand("update StokTalepListe set Aktif=@o1 where TalepNo = '" + talepno + "'", bgl.baglanti());
+                    add2.Parameters.AddWithValue("@o1", "Pasif");
+                    add2.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
+                    listele();
+                }
             }
+            else
+            {
+                MessageBox.Show(talepno + " numaralı talebi sadece talebi oluşturan kişi iptal edebilir!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+
+           
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -120,9 +129,43 @@ namespace StokTakip
             }
         }
 
+        int yetki, kid;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Talep"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+            {
+                barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            else if (yetki == 3)
+            {                
+                barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+
+        }
+
         private void TalepListesi_Load(object sender, EventArgs e)
         {
             listele();
+            yetkibul();
             this.gridView1.Columns[0].Width = 30;
         }
 
@@ -138,15 +181,58 @@ namespace StokTakip
             if (e.HitInfo.InRow)
             {
                 var p2 = MousePosition;
-                popupMenu1.ShowPopup(p2);
+                popupMenu1.ShowPopup(p2);                           
+
+                if (talepdurum == "Talep Oluşturuldu")
+                {
+                    barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else if (talepdurum == "Talep Reddedildi" || talepdurum == "Tamamlandı")
+                {
+                    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                }
+                else if (talepdurum == "Talep Onaylandı")
+                {
+                    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                    barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+                else if (talepdurum == "İşleme Alındı")
+                {
+                    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+
             }
         }
 
-        string talepno;
+        string talepno,talepdurum, olusturan;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             talepno = dr["TalepNo"].ToString();
+            talepdurum = dr["Durum"].ToString();
+            olusturan = dr["Talep Oluşturan"].ToString();
+
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)

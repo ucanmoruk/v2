@@ -30,11 +30,28 @@ namespace StokTakip
             combo_birim.Text = "";
 
         }
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Firma"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+                btn_ekle.Visible = false;
+            else
+                btn_ekle.Visible = true;
+        }
 
         public static string update;
         private void Personel_Load(object sender, EventArgs e)
         {
             combobul();
+            yetkibul();
             if (update == null || update == "")
             {
                 temizle();

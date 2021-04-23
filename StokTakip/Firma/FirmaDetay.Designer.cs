@@ -49,6 +49,12 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btn_guncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_dok = new DevExpress.XtraEditors.TextEdit();
+            this.btn_dguncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.btn_logo = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_kayit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_path.Properties)).BeginInit();
@@ -57,12 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_dok.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(52, 22);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 0;
@@ -71,7 +79,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(67, 51);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(34, 13);
             this.labelControl2.TabIndex = 0;
@@ -79,17 +87,17 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(23, 80);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl3.Location = new System.Drawing.Point(28, 111);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(84, 13);
+            this.labelControl3.Size = new System.Drawing.Size(70, 13);
             this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Dosya Kayıt Yolu:";
+            this.labelControl3.Text = "Sertifika Kayıt:";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(51, 109);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl4.Location = new System.Drawing.Point(51, 142);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 13);
             this.labelControl4.TabIndex = 0;
@@ -99,7 +107,7 @@
             // 
             this.txt_ad.Enabled = false;
             this.txt_ad.Location = new System.Drawing.Point(103, 20);
-            this.txt_ad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_ad.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ad.Name = "txt_ad";
             this.txt_ad.Size = new System.Drawing.Size(374, 20);
             this.txt_ad.TabIndex = 1;
@@ -108,46 +116,46 @@
             // 
             this.txt_adres.Enabled = false;
             this.txt_adres.Location = new System.Drawing.Point(103, 49);
-            this.txt_adres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_adres.Margin = new System.Windows.Forms.Padding(2);
             this.txt_adres.Name = "txt_adres";
             this.txt_adres.Size = new System.Drawing.Size(374, 20);
             this.txt_adres.TabIndex = 2;
             // 
             // txt_path
             // 
-            this.txt_path.Location = new System.Drawing.Point(103, 77);
-            this.txt_path.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_path.Location = new System.Drawing.Point(103, 108);
+            this.txt_path.Margin = new System.Windows.Forms.Padding(2);
             this.txt_path.Name = "txt_path";
             this.txt_path.Size = new System.Drawing.Size(286, 20);
-            this.txt_path.TabIndex = 3;
+            this.txt_path.TabIndex = 5;
             // 
             // txt_birim
             // 
-            this.txt_birim.Location = new System.Drawing.Point(104, 106);
-            this.txt_birim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_birim.Location = new System.Drawing.Point(104, 139);
+            this.txt_birim.Margin = new System.Windows.Forms.Padding(2);
             this.txt_birim.Name = "txt_birim";
             this.txt_birim.Size = new System.Drawing.Size(285, 20);
-            this.txt_birim.TabIndex = 5;
+            this.txt_birim.TabIndex = 7;
             // 
             // btn_ekle
             // 
-            this.btn_ekle.Location = new System.Drawing.Point(393, 107);
-            this.btn_ekle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_ekle.Location = new System.Drawing.Point(393, 140);
+            this.btn_ekle.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ekle.Name = "btn_ekle";
             this.btn_ekle.Size = new System.Drawing.Size(84, 18);
-            this.btn_ekle.TabIndex = 6;
+            this.btn_ekle.TabIndex = 8;
             this.btn_ekle.Text = "Ekle";
             this.btn_ekle.Click += new System.EventHandler(this.btn_ekle_Click);
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gridControl1.Location = new System.Drawing.Point(0, 148);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 178);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(506, 285);
+            this.gridControl1.Size = new System.Drawing.Size(775, 285);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -194,17 +202,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlTop.Size = new System.Drawing.Size(506, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlTop.Size = new System.Drawing.Size(775, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 433);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 463);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(506, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(775, 0);
             // 
             // barDockControlLeft
             // 
@@ -212,40 +220,101 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 433);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 463);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(506, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(775, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 433);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 463);
             // 
             // btn_guncelle
             // 
-            this.btn_guncelle.Location = new System.Drawing.Point(393, 77);
-            this.btn_guncelle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_guncelle.Location = new System.Drawing.Point(393, 108);
+            this.btn_guncelle.Margin = new System.Windows.Forms.Padding(2);
             this.btn_guncelle.Name = "btn_guncelle";
             this.btn_guncelle.Size = new System.Drawing.Size(84, 18);
-            this.btn_guncelle.TabIndex = 4;
+            this.btn_guncelle.TabIndex = 6;
             this.btn_guncelle.Text = "Güncelle";
             this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(23, 83);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(2);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(75, 13);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "Doküman Kayıt:";
+            // 
+            // txt_dok
+            // 
+            this.txt_dok.Location = new System.Drawing.Point(103, 80);
+            this.txt_dok.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_dok.Name = "txt_dok";
+            this.txt_dok.Size = new System.Drawing.Size(286, 20);
+            this.txt_dok.TabIndex = 3;
+            // 
+            // btn_dguncelle
+            // 
+            this.btn_dguncelle.Location = new System.Drawing.Point(393, 80);
+            this.btn_dguncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_dguncelle.Name = "btn_dguncelle";
+            this.btn_dguncelle.Size = new System.Drawing.Size(84, 18);
+            this.btn_dguncelle.TabIndex = 4;
+            this.btn_dguncelle.Text = "Güncelle";
+            this.btn_dguncelle.Click += new System.EventHandler(this.btn_dguncelle_Click);
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(507, 22);
+            this.pictureEdit1.MenuManager = this.barManager1;
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(231, 106);
+            this.pictureEdit1.TabIndex = 11;
+            // 
+            // btn_logo
+            // 
+            this.btn_logo.Location = new System.Drawing.Point(507, 137);
+            this.btn_logo.Name = "btn_logo";
+            this.btn_logo.Size = new System.Drawing.Size(111, 23);
+            this.btn_logo.TabIndex = 9;
+            this.btn_logo.Text = "Logo Seç";
+            this.btn_logo.Click += new System.EventHandler(this.btn_logo_Click);
+            // 
+            // btn_kayit
+            // 
+            this.btn_kayit.Location = new System.Drawing.Point(624, 137);
+            this.btn_kayit.Name = "btn_kayit";
+            this.btn_kayit.Size = new System.Drawing.Size(114, 23);
+            this.btn_kayit.TabIndex = 10;
+            this.btn_kayit.Text = "Kaydet";
+            this.btn_kayit.Click += new System.EventHandler(this.btn_kayit_Click);
             // 
             // FirmaDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 433);
+            this.ClientSize = new System.Drawing.Size(775, 463);
+            this.Controls.Add(this.btn_kayit);
+            this.Controls.Add(this.btn_logo);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.btn_dguncelle);
             this.Controls.Add(this.btn_guncelle);
             this.Controls.Add(this.btn_ekle);
             this.Controls.Add(this.txt_birim);
+            this.Controls.Add(this.txt_dok);
             this.Controls.Add(this.txt_path);
             this.Controls.Add(this.txt_adres);
             this.Controls.Add(this.txt_ad);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
@@ -254,7 +323,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FirmaDetay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firma Detayları";
@@ -267,6 +336,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_dok.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +364,11 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.SimpleButton btn_guncelle;
+        private DevExpress.XtraEditors.SimpleButton btn_dguncelle;
+        private DevExpress.XtraEditors.TextEdit txt_dok;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.SimpleButton btn_kayit;
+        private DevExpress.XtraEditors.SimpleButton btn_logo;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

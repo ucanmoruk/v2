@@ -59,7 +59,7 @@ namespace StokTakip
             }
         }
 
-        public static string ad, soyad, path;
+        public static string ad, soyad, path, gorev, tamad;
         public static int firmaID, birimID;
         void kullanicibul()
         {
@@ -71,7 +71,9 @@ namespace StokTakip
                 firmaID = Convert.ToInt32(dr21["FirmaID"]);
                 ad = dr21["Ad"].ToString();
                 soyad = dr21["Soyad"].ToString();
+                gorev = dr21["Gorev"].ToString();
                 lbl_kullanici.Text = ad + " " + soyad; 
+                tamad = ad + " " + soyad;
             }
             bgl.baglanti().Close();         
 
@@ -83,17 +85,74 @@ namespace StokTakip
             SqlDataReader dr21 = komut21.ExecuteReader();
             while (dr21.Read())
             {
-                path = dr21["Path"].ToString();
+                path = dr21["SPath"].ToString();
             }
             bgl.baglanti().Close();
         }
+
+        int dokuman, analiz, cihaz, egitim, stok, talep, firma;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                dokuman = Convert.ToInt32(dr21["Dokuman"]);
+                analiz = Convert.ToInt32(dr21["Analiz"]);
+                cihaz = Convert.ToInt32(dr21["Cihaz"]);
+                stok = Convert.ToInt32(dr21["Stok"]);
+                talep = Convert.ToInt32(dr21["Talep"]);
+                firma = Convert.ToInt32(dr21["Firma"]);
+                egitim = Convert.ToInt32(dr21["Egitim"]);
+            }
+            bgl.baglanti().Close();
+
+            if (dokuman == 0 || dokuman.ToString() == null)
+                ribbonPageGroup18.Visible = false;
+            else
+                ribbonPageGroup18.Visible = true;
+
+            if (analiz == 0 || analiz.ToString() == null)
+                ribbonPageGroup20.Visible = false;
+            else
+                ribbonPageGroup20.Visible = true;
+
+            if (cihaz == 0 || cihaz.ToString() == null)
+                ribbonPageGroup22.Visible = false;
+            else
+                ribbonPageGroup22.Visible = true;
+
+            if (stok == 0 || stok.ToString() == null)
+                ribbonPageGroup2.Visible = false;
+            else
+                ribbonPageGroup2.Visible = true;
+
+            if (talep == 0 || talep.ToString() == null)
+                ribbonPageGroup5.Visible = false;
+            else
+                ribbonPageGroup5.Visible = true;
+
+            if (egitim == 0 || egitim.ToString() == null)
+                ribbonPageGroup23.Visible = false;
+            else
+                ribbonPageGroup23.Visible = true;
+
+            if (firma == 0 || firma.ToString() == null)
+                ribbonPageGroup7.Visible = false;
+            else
+                ribbonPageGroup7.Visible = true;
+
+
+        }
+    
 
         public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
         {
             kullanicibul();
             firmabul();
-            //db = "1";
+            yetkibul();
+
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -154,7 +213,17 @@ namespace StokTakip
         private void Anasayfa_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
-        
+
+        private void barButtonItem38_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Firma.YetkiListesi yl = new Firma.YetkiListesi();
+            yl.ShowDialog();
+        }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

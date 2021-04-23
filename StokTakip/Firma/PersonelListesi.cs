@@ -28,10 +28,27 @@ namespace StokTakip
             gridControl1.DataSource = dt2;
         }
 
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Firma"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            else
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+        }
 
         private void PersonelListesi_Load(object sender, EventArgs e)
         {
             listele();
+            yetkibul();
         }
 
         void kbul()

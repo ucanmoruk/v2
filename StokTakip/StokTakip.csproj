@@ -99,11 +99,17 @@
     <Compile Include="Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FirmaDetay.cs">
+    <Compile Include="Firma\FirmaDetay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FirmaDetay.Designer.cs">
+    <Compile Include="Firma\FirmaDetay.Designer.cs">
       <DependentUpon>FirmaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\YetkiListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\YetkiListesi.Designer.cs">
+      <DependentUpon>YetkiListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Giris.cs">
       <SubType>Form</SubType>
@@ -111,112 +117,115 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personel.cs">
+    <Compile Include="Firma\Personel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personel.Designer.cs">
+    <Compile Include="Firma\Personel.Designer.cs">
       <DependentUpon>Personel.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonelListesi.cs">
+    <Compile Include="Firma\PersonelListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonelListesi.Designer.cs">
+    <Compile Include="Firma\PersonelListesi.Designer.cs">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sertifika.cs">
+    <Compile Include="Stok\Sertifika.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sertifika.Designer.cs">
+    <Compile Include="Stok\Sertifika.Designer.cs">
       <DependentUpon>Sertifika.cs</DependentUpon>
     </Compile>
-    <Compile Include="SertifikaGoruntule.cs">
+    <Compile Include="Stok\SertifikaGoruntule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SertifikaGoruntule.Designer.cs">
+    <Compile Include="Stok\SertifikaGoruntule.Designer.cs">
       <DependentUpon>SertifikaGoruntule.cs</DependentUpon>
     </Compile>
-    <Compile Include="SertifikaIptal.cs">
+    <Compile Include="Stok\SertifikaIptal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SertifikaIptal.Designer.cs">
+    <Compile Include="Stok\SertifikaIptal.Designer.cs">
       <DependentUpon>SertifikaIptal.cs</DependentUpon>
     </Compile>
-    <Compile Include="SonKullanim.cs">
+    <Compile Include="Stok\SonKullanim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SonKullanim.Designer.cs">
+    <Compile Include="Stok\SonKullanim.Designer.cs">
       <DependentUpon>SonKullanim.cs</DependentUpon>
     </Compile>
     <Compile Include="sqlbaglanti.cs" />
-    <Compile Include="StokDetay.cs">
+    <Compile Include="Stok\StokDetay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StokDetay.Designer.cs">
+    <Compile Include="Stok\StokDetay.Designer.cs">
       <DependentUpon>StokDetay.cs</DependentUpon>
     </Compile>
-    <Compile Include="StokDus.cs">
+    <Compile Include="Stok\StokDus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StokDus.Designer.cs">
+    <Compile Include="Stok\StokDus.Designer.cs">
       <DependentUpon>StokDus.cs</DependentUpon>
     </Compile>
-    <Compile Include="StokEkle.cs">
+    <Compile Include="Stok\StokEkle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StokEkle.Designer.cs">
+    <Compile Include="Stok\StokEkle.Designer.cs">
       <DependentUpon>StokEkle.cs</DependentUpon>
     </Compile>
-    <Compile Include="StokListesi.cs">
+    <Compile Include="Stok\StokListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StokListesi.Designer.cs">
+    <Compile Include="Stok\StokListesi.Designer.cs">
       <DependentUpon>StokListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="TalepDetay.cs">
+    <Compile Include="Talep\TalepDetay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TalepDetay.Designer.cs">
+    <Compile Include="Talep\TalepDetay.Designer.cs">
       <DependentUpon>TalepDetay.cs</DependentUpon>
     </Compile>
-    <Compile Include="TalepKabul.cs">
+    <Compile Include="Talep\TalepKabul.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TalepKabul.Designer.cs">
+    <Compile Include="Talep\TalepKabul.Designer.cs">
       <DependentUpon>TalepKabul.cs</DependentUpon>
     </Compile>
-    <Compile Include="TalepListesi.cs">
+    <Compile Include="Talep\TalepListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TalepListesi.Designer.cs">
+    <Compile Include="Talep\TalepListesi.Designer.cs">
       <DependentUpon>TalepListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="TalepYeni.cs">
+    <Compile Include="Talep\TalepYeni.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TalepYeni.Designer.cs">
+    <Compile Include="Talep\TalepYeni.Designer.cs">
       <DependentUpon>TalepYeni.cs</DependentUpon>
     </Compile>
-    <Compile Include="YeniStok.cs">
+    <Compile Include="Stok\YeniStok.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="YeniStok.Designer.cs">
+    <Compile Include="Stok\YeniStok.Designer.cs">
       <DependentUpon>YeniStok.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FirmaDetay.resx">
+    <EmbeddedResource Include="Firma\FirmaDetay.resx">
       <DependentUpon>FirmaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\YetkiListesi.resx">
+      <DependentUpon>YetkiListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personel.resx">
+    <EmbeddedResource Include="Firma\Personel.resx">
       <DependentUpon>Personel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonelListesi.resx">
+    <EmbeddedResource Include="Firma\PersonelListesi.resx">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -229,43 +238,43 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sertifika.resx">
+    <EmbeddedResource Include="Stok\Sertifika.resx">
       <DependentUpon>Sertifika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SertifikaGoruntule.resx">
+    <EmbeddedResource Include="Stok\SertifikaGoruntule.resx">
       <DependentUpon>SertifikaGoruntule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SertifikaIptal.resx">
+    <EmbeddedResource Include="Stok\SertifikaIptal.resx">
       <DependentUpon>SertifikaIptal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SonKullanim.resx">
+    <EmbeddedResource Include="Stok\SonKullanim.resx">
       <DependentUpon>SonKullanim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StokDetay.resx">
+    <EmbeddedResource Include="Stok\StokDetay.resx">
       <DependentUpon>StokDetay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StokDus.resx">
+    <EmbeddedResource Include="Stok\StokDus.resx">
       <DependentUpon>StokDus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StokEkle.resx">
+    <EmbeddedResource Include="Stok\StokEkle.resx">
       <DependentUpon>StokEkle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StokListesi.resx">
+    <EmbeddedResource Include="Stok\StokListesi.resx">
       <DependentUpon>StokListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TalepDetay.resx">
+    <EmbeddedResource Include="Talep\TalepDetay.resx">
       <DependentUpon>TalepDetay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TalepKabul.resx">
+    <EmbeddedResource Include="Talep\TalepKabul.resx">
       <DependentUpon>TalepKabul.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TalepListesi.resx">
+    <EmbeddedResource Include="Talep\TalepListesi.resx">
       <DependentUpon>TalepListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TalepYeni.resx">
+    <EmbeddedResource Include="Talep\TalepYeni.resx">
       <DependentUpon>TalepYeni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="YeniStok.resx">
+    <EmbeddedResource Include="Stok\YeniStok.resx">
       <DependentUpon>YeniStok.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
@@ -281,6 +290,10 @@
     <None Include="StokTakip_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Analiz\" />
+    <Folder Include="Cihaz\" />
+    <Folder Include="Dokuman\" />
+    <Folder Include="Egitim\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

@@ -176,10 +176,28 @@ namespace StokTakip
             bgl.baglanti().Close();
         }
 
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Stok"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+                btnadd.Visible = false;
+            else
+                btnadd.Visible = true;
+        }
+
         private void StokDetay_Load(object sender, EventArgs e)
         {
             detaybul();
             listele();
+            yetkibul();
 
             GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", "Toplam={0}");
             gridView1.Columns["Miktar"].Summary.Add(item2);

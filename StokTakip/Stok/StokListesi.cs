@@ -34,6 +34,7 @@ namespace StokTakip
         private void StokListesi_Load(object sender, EventArgs e)
         {
             listele();
+            yetkibul();
         }
 
         public static string kod;
@@ -68,6 +69,23 @@ namespace StokTakip
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             listele();
+        }
+
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Stok"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            else
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
