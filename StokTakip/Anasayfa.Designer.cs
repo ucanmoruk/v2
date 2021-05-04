@@ -170,8 +170,8 @@
             this.ribbonPage4,
             this.ribbonPage7,
             this.ribbonPage5,
-            this.ribbonPage1,
             this.ribbonPage6,
+            this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3});
             this.ribbonControl1.Size = new System.Drawing.Size(758, 143);
