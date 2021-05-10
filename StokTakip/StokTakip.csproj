@@ -99,6 +99,30 @@
     <Compile Include="Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dokuman\DokumanEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanEkle.Designer.cs">
+      <DependentUpon>DokumanEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGecmis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGecmis.Designer.cs">
+      <DependentUpon>DokumanGecmis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGoruntule.Designer.cs">
+      <DependentUpon>DokumanGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanMaster.Designer.cs">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Firma\FirmaDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +237,18 @@
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanEkle.resx">
+      <DependentUpon>DokumanEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanGecmis.resx">
+      <DependentUpon>DokumanGecmis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanGoruntule.resx">
+      <DependentUpon>DokumanGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanMaster.resx">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Firma\FirmaDetay.resx">
       <DependentUpon>FirmaDetay.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,7 +328,6 @@
   <ItemGroup>
     <Folder Include="Analiz\" />
     <Folder Include="Cihaz\" />
-    <Folder Include="Dokuman\" />
     <Folder Include="Egitim\" />
     <Folder Include="Images\" />
   </ItemGroup>

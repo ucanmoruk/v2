@@ -59,7 +59,7 @@ namespace StokTakip
             }
         }
 
-        public static string ad, soyad, path, gorev, tamad;
+        public static string ad, soyad, path, kpath, gorev, tamad;
         public static int firmaID, birimID;
         void kullanicibul()
         {
@@ -86,6 +86,7 @@ namespace StokTakip
             while (dr21.Read())
             {
                 path = dr21["SPath"].ToString();
+                kpath = dr21["KPath"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -176,6 +177,23 @@ namespace StokTakip
         {
             Personel p = new Personel();
             p.ShowDialog();
+        }
+
+        Dokuman.DokumanMaster dm;
+        private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (dm == null || dm.IsDisposed)
+            {
+                dm = new Dokuman.DokumanMaster();
+                dm.MdiParent = this;
+                dm.Show();
+            }
+        }
+
+        private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Dokuman.DokumanEkle dm = new Dokuman.DokumanEkle();
+            dm.ShowDialog();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
