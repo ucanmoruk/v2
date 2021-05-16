@@ -146,6 +146,18 @@ namespace StokTakip
 
         }
     
+        void tanitim()
+        {
+            ribbonPage4.Visible = false;
+            ribbonPage5.Visible = false;
+            ribbonPage6.Visible = false;
+            ribbonPage7.Visible = false;
+            ribbonPageGroup6.Visible = false;
+            ribbonPageGroup10.Visible = false;
+            ribbonPageGroup17.Visible = false;
+
+
+        }
 
         public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
@@ -153,6 +165,11 @@ namespace StokTakip
             kullanicibul();
             firmabul();
             yetkibul();
+            if (Giris.db == "2")
+            {
+                tanitim();
+            }
+            
 
         }
 

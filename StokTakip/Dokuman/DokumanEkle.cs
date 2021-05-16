@@ -40,6 +40,7 @@ namespace StokTakip.Dokuman
 
 
         int revsayisi, revsayi2;
+        string revk;
         void revkontrol()
         {
             revsayisi = Convert.ToInt32(txt_rev.Text);
@@ -48,7 +49,11 @@ namespace StokTakip.Dokuman
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
-                revsayi2 = Convert.ToInt32(drI[0].ToString());    
+                revk = drI[0].ToString();
+                if (revk == null || revk == "")
+                    revsayi2 = 0;
+                else
+                    revsayi2 = Convert.ToInt32(revk);    
             }
             bgl.baglanti().Close();
 
@@ -261,13 +266,13 @@ namespace StokTakip.Dokuman
 
 
 
-            }
+        }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Hata D1:" + ex);
             }
-        }
+}
 
         public static string gelis, kod;
         private void DokumanEkle_FormClosing(object sender, FormClosingEventArgs e)

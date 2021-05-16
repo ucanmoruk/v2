@@ -19,7 +19,9 @@ namespace StokTakip
             }
             else
             {
-                SqlConnection baglan = new SqlConnection(@"Data Source=Oguzhan,1433; Initial Catalog = Stok; persist Security Info = True; User ID = sa; Password = 12344");
+                //  SqlConnection baglan = new SqlConnection(@"Data Source=Oguzhan,1433; Initial Catalog = Stok; persist Security Info = True; User ID = sa; Password = 12344");
+                SqlConnection baglan = new SqlConnection(@"Data Source=Oguzhan,1433; Initial Catalog = mass; persist Security Info = True; User ID = sa; Password = 12344");
+
                 baglan.Open();
                 return baglan;
             }
