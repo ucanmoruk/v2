@@ -29,6 +29,14 @@ namespace StokTakip
             gridControl1.DataSource = dt2;
         }
 
+        private void listele2()
+        {
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and Durum = N'Aktif'", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl1.DataSource = dt2;
+        }
+
         int urunid;
         string marka;
         public static string lot;
@@ -196,8 +204,16 @@ namespace StokTakip
         private void StokDetay_Load(object sender, EventArgs e)
         {
             detaybul();
-            listele();
             yetkibul();
+
+            if (yetki == 0 || yetki.ToString() == null)
+            {
+                listele();
+            }
+            else
+            {
+                listele2();
+            }
 
             GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", "Toplam={0}");
             gridView1.Columns["Miktar"].Summary.Add(item2);

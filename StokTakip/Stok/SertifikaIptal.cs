@@ -31,10 +31,39 @@ namespace StokTakip
             bgl.baglanti().Close();
         }
 
+        void listele2()
+        {
+            SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif')", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                combokod.Properties.Items.Add(drI["Kod"].ToString());
+            }
+            bgl.baglanti().Close();
+        }
+
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Stok"]);
+            }
+            bgl.baglanti().Close();
+
+
+        }
 
         private void SertifikaIptal_Load(object sender, EventArgs e)
         {
-            listele();
+            yetkibul();
+
+            if (yetki == 0 || yetki.ToString() == null)
+                listele();
+            else
+                listele2();
         }
 
         string marka;
@@ -43,20 +72,37 @@ namespace StokTakip
 
             combo_marka.Properties.Items.Clear();
 
-            SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '" + Anasayfa.birimID + "' and Durum = N'Aktif' ", bgl.baglanti());
-            SqlDataReader dr = komutD.ExecuteReader();
-            while (dr.Read())
+            if (yetki == 0 || yetki.ToString() == null)
             {
-                marka = dr["Sertifika"].ToString();
-                combo_marka.Properties.Items.Add(marka);
+                SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '" + Anasayfa.birimID + "' and Durum = N'Aktif' ", bgl.baglanti());
+                SqlDataReader dr = komutD.ExecuteReader();
+                while (dr.Read())
+                {
+                    marka = dr["Sertifika"].ToString();
+                    combo_marka.Properties.Items.Add(marka);
+                }
+                bgl.baglanti().Close();
             }
-            bgl.baglanti().Close();
+            else
+            {
+                SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and Durum = N'Aktif' ", bgl.baglanti());
+                SqlDataReader dr = komutD.ExecuteReader();
+                while (dr.Read())
+                {
+                    marka = dr["Sertifika"].ToString();
+                    combo_marka.Properties.Items.Add(marka);
+                }
+                bgl.baglanti().Close();
+
+            }
+
+               
         }
 
         string path;
         private void combo_marka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand komutD = new SqlCommand("select * from StokSertifika where Sertifika =N'" + combo_marka.Text + "' and StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '"+Anasayfa.birimID+"'", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokSertifika where Sertifika =N'" + combo_marka.Text + "' and StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {
@@ -75,14 +121,21 @@ namespace StokTakip
 
         private void btn_iptal_Click(object sender, EventArgs e)
         {
-            SqlCommand add2 = new SqlCommand("update StokSertifika set Durum= @a1 where Sertifika = N'" + combo_marka.Text + "' and Path = '"+path+"' and BirimID = '"+Anasayfa.birimID+"'", bgl.baglanti());
-            add2.Parameters.AddWithValue("@a1", "Pasif");
-            add2.ExecuteNonQuery();
-            bgl.baglanti().Close();
 
-            MessageBox.Show("Sertifika başarıyla iptal edildi!", "Başarılı!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            combokod.Text = "";
-            combo_marka.Text = "";
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Bu sertifikayı silmek istediğinizden emin misiniz?", "Oooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (cikis == DialogResult.Yes)
+            {
+                SqlCommand add2 = new SqlCommand("update StokSertifika set Durum= @a1 where Sertifika = N'" + combo_marka.Text + "' and Path = '" + path + "' and BirimID = '" + Anasayfa.birimID + "'", bgl.baglanti());
+                add2.Parameters.AddWithValue("@a1", "Pasif");
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                MessageBox.Show("Sertifika başarıyla iptal edildi!", "Başarılı!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                combokod.Text = "";
+                combo_marka.Text = "";
+            }
+          
 
         }
     }

@@ -130,7 +130,7 @@ namespace StokTakip.Dokuman
             bgl.baglanti().Close();
 
             DokumanGoruntule dg = new DokumanGoruntule();
-            dg.ShowDialog();
+            dg.Show();
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

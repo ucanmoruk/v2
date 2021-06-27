@@ -159,6 +159,7 @@ namespace StokTakip
 
         }
 
+       // Karsilama kl;
         public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
         {
@@ -169,7 +170,13 @@ namespace StokTakip
             {
                 tanitim();
             }
-            
+
+            //if (kl == null || kl.IsDisposed)
+            //{
+            //    kl = new Karsilama();
+            //    kl.MdiParent = this;
+            //    kl.Show();
+            //}
 
         }
 
@@ -211,6 +218,58 @@ namespace StokTakip
         {
             Dokuman.DokumanEkle dm = new Dokuman.DokumanEkle();
             dm.ShowDialog();
+        }
+
+        Analiz.AnalizListesi anal;
+        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (anal == null || anal.IsDisposed)
+            {
+                anal = new Analiz.AnalizListesi();
+                anal.MdiParent = this;
+                anal.Show();
+            }
+        }
+
+        YeniRecete yr;
+        public void YeniRecete()
+        {
+            if (yr == null || yr.IsDisposed)
+            {
+                yr = new YeniRecete();
+                yr.MdiParent = this;
+                yr.Show();
+            }
+        }
+
+
+        
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Stok.ReceteSec rec = new Stok.ReceteSec();
+            rec.ShowDialog();
+        }
+
+        private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Analiz.AnalizYeni any = new Analiz.AnalizYeni();
+            any.Show();
+        }
+
+        Stok.ReceteListesi rel;
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (rel == null || rel.IsDisposed)
+            {
+                rel = new Stok.ReceteListesi();
+                rel.MdiParent = this;
+                rel.Show();
+            }
+        }
+
+        private void barButtonItem48_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
