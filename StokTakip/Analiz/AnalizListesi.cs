@@ -59,6 +59,10 @@ namespace StokTakip.Analiz
         {
             listele();
             yetkibul();
+
+
+            this.gridView1.Columns[0].Width = 40;
+            this.gridView1.Columns[1].Width = 150;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

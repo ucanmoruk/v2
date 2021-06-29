@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -126,6 +126,18 @@
     <Compile Include="Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dokuman\DKDEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DKDEkle.Designer.cs">
+      <DependentUpon>DKDEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DKDListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DKDListe.Designer.cs">
+      <DependentUpon>DKDListe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dokuman\DokumanEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\Aciklama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Aciklama.Designer.cs">
+      <DependentUpon>Aciklama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanMaster.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanMaster.Designer.cs">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmPrint.designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\ReceteDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +330,12 @@
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DKDEkle.resx">
+      <DependentUpon>DKDEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DKDListe.resx">
+      <DependentUpon>DKDListe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DokumanEkle.resx">
       <DependentUpon>DokumanEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +376,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Raporlar\Aciklama.resx">
+      <DependentUpon>Aciklama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanMaster.resx">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stok\ReceteDetay.resx">
       <DependentUpon>ReceteDetay.cs</DependentUpon>
     </EmbeddedResource>
@@ -407,7 +452,6 @@
     <Folder Include="Cihaz\" />
     <Folder Include="Egitim\" />
     <Folder Include="Images\" />
-    <Folder Include="Raporlar\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AcroPDFLib">

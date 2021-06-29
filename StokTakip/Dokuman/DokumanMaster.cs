@@ -186,6 +186,14 @@ namespace StokTakip.Dokuman
         }
 
         string dad;
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path = "output.xlsx";
+            master.gridControl1.ExportToXlsx(path);
+            Process.Start(path);
+        }
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);

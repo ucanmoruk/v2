@@ -120,14 +120,24 @@ namespace StokTakip.Analiz
             }
             else
             {
-                kontrol();
-                ekleme();
+                if (txt_kod.Text == "")
+                {
+                    MessageBox.Show("Lütfen analiz kodu bölümünü doldurunuz!", "Oooppss!");
+                }
+                else
+                {
+                    kontrol();
+                    ekleme();
 
-                txt_ad.Text = "";
-                txt_kod.Text = "";
-                txt_matriks.Text = "";
-                txt_metot.Text = "";
-                combo_akre.Text = "";
+                    txt_ad.Text = "";
+                    txt_kod.Text = "";
+                    txt_matriks.Text = "";
+                    txt_metot.Text = "";
+                    combo_akre.Text = "";
+
+                }
+
+
 
             }
 

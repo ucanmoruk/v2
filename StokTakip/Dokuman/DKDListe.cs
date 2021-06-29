@@ -1,0 +1,216 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace StokTakip.Dokuman
+{
+    public partial class DKDListe : Form
+    {
+        public DKDListe()
+        {
+            InitializeComponent();
+        }
+
+        sqlbaglanti bgl = new sqlbaglanti();
+
+        public void listele()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by ID) as 'No', Birim, Kaynak, Kod, Ad, Tarih, Tur, Link from StokDKDListe where Durum = N'Aktif' order by Birim", bgl.baglanti());
+            da.Fill(dt);
+            gridControl1.DataSource = dt;
+
+            this.gridView1.Columns[0].Width = 20;
+            this.gridView1.Columns[1].Width = 50;
+            this.gridView1.Columns[2].Width = 50;
+            this.gridView1.Columns[3].Width = 50;
+            this.gridView1.Columns[5].Width = 50;
+            this.gridView1.Columns[6].Width = 50;
+        }
+
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Dokuman"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+            {
+                barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            else
+            {
+            }
+
+        }
+
+        string path, ad;
+        void kontrol()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from StokDKDListe where Kod = N'" + dkdkod + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                path = dr21["Path"].ToString();
+                ad = dr21["Kod"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
+        int guncel;
+        void gunkontrol()
+        {
+            SqlCommand komut21 = new SqlCommand("Select Count(ID) from StokDKDKontrol where Kod = N'" + dkdkod + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                guncel = Convert.ToInt32(dr21[0].ToString());
+            }
+            bgl.baglanti().Close();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {            
+            if (path == "" || path == null)
+            {
+                MessageBox.Show(dkdkod + " dokümanı henüz sisteme yüklenmemiştir!", "Oooppss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            }
+            else
+            {
+                kontrol();
+                DokumanGoruntule.yol = path;
+                DokumanGoruntule.ad = ad;
+                DokumanGoruntule dg = new DokumanGoruntule();
+                dg.Show();
+            }
+        }
+
+        string ykod, id;
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if ( gridView1.SelectedRowsCount == 0)
+            {
+                MessageBox.Show("Lütfen kontrolünü sağladığınız dokümanı seçiniz!", "Oopppss!", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                DateTime tarih = DateTime.Now;
+
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
+                    id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    ykod = gridView1.GetRowCellValue(y, "Kod").ToString();
+
+                    gunkontrol();
+
+                    if (guncel == 0)
+                    {
+                        SqlCommand komutSil = new SqlCommand("insert StokDKDKontrol (Kod, PersonelID, Kontrol) values (@a1, @a2, @a3) ", bgl.baglanti());
+                        komutSil.Parameters.AddWithValue("@a1", ykod);
+                        komutSil.Parameters.AddWithValue("@a2", Anasayfa.kullanici);
+                        komutSil.Parameters.AddWithValue("@a3", tarih);
+                        komutSil.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                        MessageBox.Show("Kontrol işlemi başarıyla gerçekleşmiştir.");
+                        listele();
+                    }
+                    else
+                    {
+
+                        SqlCommand komutSil = new SqlCommand("update StokDKDKontrol set PersonelID=@a1, Kontrol=@a2 where Kod = N'" + dkdkod + "'", bgl.baglanti());
+                        komutSil.Parameters.AddWithValue("@a1", Anasayfa.kullanici);
+                        komutSil.Parameters.AddWithValue("@a2", tarih);
+                        komutSil.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                        MessageBox.Show("Kontrol işlemi başarıyla gerçekleşmiştir.");
+                        listele();
+                    }
+                }
+            }
+
+   
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DKDEkle.dkdkod = dkdkod;
+            DKDEkle de = new DKDEkle();
+            de.Show();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            listele();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                DialogResult Secim = new DialogResult();
+
+                Secim = MessageBox.Show(dkdkod + " dokümanını silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (Secim == DialogResult.Yes)
+                {
+                    // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokDKDListe set Durum=@a1 where Kod = N'" + dkdkod + "'", bgl.baglanti());
+                    komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                    komutSil.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                    MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                    listele();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata 181 : " + ex.Message);
+            }
+        }
+
+        private void DKDListe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                listele();
+            }
+        }
+
+        private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.HitInfo.InRow)
+            {
+                var p2 = MousePosition;
+                popupMenu1.ShowPopup(p2);
+            }
+        }
+
+        private void DKDListe_Load(object sender, EventArgs e)
+        {
+            listele();
+            yetkibul();
+        }
+
+        string dkdkod;
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            dkdkod = dr["Kod"].ToString();
+        }
+    }
+}

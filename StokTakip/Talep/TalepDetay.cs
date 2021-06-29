@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,9 @@ namespace StokTakip
 
         private void btn_yazdir_Click(object sender, EventArgs e)
         {
+            string path = "output.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
 
         }
     }

@@ -138,7 +138,8 @@
             "QC",
             "CRM",
             "Hizmet",
-            "Kırtasiye"});
+            "Kırtasiye",
+            "Cihaz Sarf"});
             this.combo_tur.Size = new System.Drawing.Size(118, 20);
             this.combo_tur.TabIndex = 1;
             // 

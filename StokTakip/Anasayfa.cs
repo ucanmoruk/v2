@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Printing;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.ObjectBinding;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraGrid.Menu;
+using System.Diagnostics;
+using DevExpress.XtraBars;
 
 namespace StokTakip
 {
@@ -109,7 +120,10 @@ namespace StokTakip
             bgl.baglanti().Close();
 
             if (dokuman == 0 || dokuman.ToString() == null)
+            {
                 ribbonPageGroup18.Visible = false;
+                barButtonItem48.Visibility = BarItemVisibility.Never;
+            }
             else
                 ribbonPageGroup18.Visible = true;
 
@@ -269,7 +283,53 @@ namespace StokTakip
 
         private void barButtonItem48_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Raporlar.Aciklama aci = new Raporlar.Aciklama();
+            aci.Show();
+        }
 
+        private void barButtonItem47_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            Raporlar.DokumanMaster.aciklama = "";
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.PrintInvoice();
+                frm.ShowDialog();
+            }
+        }
+
+        private Dokuman.DokumanMaster master; 
+        public Anasayfa(Dokuman.DokumanMaster master)
+        {
+            InitializeComponent();
+            this.master = master;
+        }
+
+        private void barButtonItem50_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //https://stackoverflow.com/questions/27503064/how-to-add-row-in-datagridview-from-another-form
+
+            string path = "output.xlsx";
+            master.gridControl1.ExportToXlsx(path);
+            Process.Start(path);
+
+        }
+
+        private void barButtonItem46_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Dokuman.DKDEkle de = new Dokuman.DKDEkle();
+            de.Show();
+        }
+
+        Dokuman.DKDListe del;
+        private void barButtonItem45_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (del == null || del.IsDisposed)
+            {
+                del = new Dokuman.DKDListe();
+                del.MdiParent = this;
+                del.Show();
+            }
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

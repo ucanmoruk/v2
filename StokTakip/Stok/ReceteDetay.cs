@@ -59,6 +59,8 @@ namespace StokTakip.Stok
             yetkibul();
             listele();
 
+            Text = skod + " - " + sad;
+
             this.gridView1.Columns[0].Width = 30;
             this.gridView1.Columns[3].Width = 30;
         }
