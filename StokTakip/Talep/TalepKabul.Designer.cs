@@ -49,6 +49,8 @@
             this.combo_tarih = new DevExpress.XtraEditors.ComboBoxEdit();
             this.combo_sertifika = new DevExpress.XtraEditors.ComboBoxEdit();
             this.combo_genel = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lbl_9 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_9 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_no.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_detay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -59,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.combo_tarih.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_sertifika.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_genel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_9.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -265,11 +268,29 @@
             this.combo_genel.Size = new System.Drawing.Size(86, 20);
             this.combo_genel.TabIndex = 9;
             // 
+            // lbl_9
+            // 
+            this.lbl_9.Location = new System.Drawing.Point(30, 274);
+            this.lbl_9.Name = "lbl_9";
+            this.lbl_9.Size = new System.Drawing.Size(114, 13);
+            this.lbl_9.TabIndex = 0;
+            this.lbl_9.Text = "Değerlendirmeyi Yapan:";
+            this.lbl_9.Visible = false;
+            // 
+            // txt_9
+            // 
+            this.txt_9.Location = new System.Drawing.Point(237, 274);
+            this.txt_9.Name = "txt_9";
+            this.txt_9.Size = new System.Drawing.Size(256, 20);
+            this.txt_9.TabIndex = 11;
+            this.txt_9.Visible = false;
+            // 
             // TalepKabul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 346);
+            this.Controls.Add(this.txt_9);
             this.Controls.Add(this.btn_sertifika);
             this.Controls.Add(this.btn_kabul);
             this.Controls.Add(this.txt_birim);
@@ -284,6 +305,7 @@
             this.Controls.Add(this.combo_miktar);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.lbl_9);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
@@ -306,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.combo_tarih.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_sertifika.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_genel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_9.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +356,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit combo_tarih;
         private DevExpress.XtraEditors.ComboBoxEdit combo_sertifika;
         private DevExpress.XtraEditors.ComboBoxEdit combo_genel;
+        private DevExpress.XtraEditors.LabelControl lbl_9;
+        private DevExpress.XtraEditors.TextEdit txt_9;
     }
 }

@@ -346,7 +346,7 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1});
-            this.barManager1.MaxItemId = 1;
+            this.barManager1.MaxItemId = 2;
             // 
             // barDockControlTop
             // 
@@ -417,6 +417,7 @@
             this.Name = "StokDetay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stok Detayları";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StokDetay_FormClosing);
             this.Load += new System.EventHandler(this.StokDetay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtlimit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsaklama.Properties)).EndInit();

@@ -18,6 +18,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid.Menu;
 using System.Diagnostics;
 using DevExpress.XtraBars;
+using StokTakip.Dokuman;
 
 namespace StokTakip
 {
@@ -142,10 +143,31 @@ namespace StokTakip
             else
                 ribbonPageGroup2.Visible = true;
 
+
             if (talep == 0 || talep.ToString() == null)
+            {
                 ribbonPageGroup5.Visible = false;
-            else
+                ribbonPageGroup8.Visible = false;
+            }
+            else if (talep == 1)
+            {
+                ribbonPageGroup8.Visible = false;
                 ribbonPageGroup5.Visible = true;
+            }
+            else if (talep == 2)
+            {
+                ribbonPageGroup5.Visible = true;
+                ribbonPageGroup8.Visible = true;
+                ribbonPageGroup17.Visible = true;
+            }
+            else if (talep == 3 )
+            {
+                ribbonPageGroup10.Visible = true;
+                ribbonPageGroup5.Visible = true;
+                ribbonPageGroup8.Visible = true;
+                ribbonPageGroup17.Visible = true;
+            }
+                
 
             if (egitim == 0 || egitim.ToString() == null)
                 ribbonPageGroup23.Visible = false;
@@ -245,18 +267,27 @@ namespace StokTakip
             }
         }
 
-        YeniRecete yr;
+        YeniRecete yer;
         public void YeniRecete()
         {
-            if (yr == null || yr.IsDisposed)
+            if (yer == null || yer.IsDisposed)
             {
-                yr = new YeniRecete();
-                yr.MdiParent = this;
-                yr.Show();
+                yer = new YeniRecete();
+                yer.MdiParent = this;
+                yer.Show();
             }
         }
 
-
+        TalepYeni tay;
+        public void talepyeni()
+        {
+            if (tay == null || tay.IsDisposed)
+            {
+                tay = new TalepYeni();
+                tay.MdiParent = this;
+                tay.Show();
+            }
+        }
         
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -307,11 +338,9 @@ namespace StokTakip
 
         private void barButtonItem50_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //https://stackoverflow.com/questions/27503064/how-to-add-row-in-datagridview-from-another-form
-
-            string path = "output.xlsx";
-            master.gridControl1.ExportToXlsx(path);
-            Process.Start(path);
+            var mfrm = (DokumanMaster)Application.OpenForms["DokumanMaster"];
+            if (mfrm != null)
+                mfrm.excelaktar();
 
         }
 
@@ -330,7 +359,51 @@ namespace StokTakip
                 del.MdiParent = this;
                 del.Show();
             }
+            btn_kontrol.Visibility = BarItemVisibility.Always;
+
         }
+
+        public void gizle()
+        {
+            btn_kontrol.Visibility = BarItemVisibility.Never;
+        }
+        
+        DKDListe m = (DKDListe)System.Windows.Forms.Application.OpenForms["DKDListe"];
+        private void btn_kontrol_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var mfrm = (DKDListe)Application.OpenForms["DKDListe"];
+            if (mfrm != null)
+                mfrm.kontrolet();
+
+        }
+
+        private void barButtonItem51_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var mfrm = (DKDListe)Application.OpenForms["DKDListe"];
+            if (mfrm != null)
+                mfrm.excelaktar();
+        }
+
+     
+
+        Talep.TedarikciListesi tl;
+        private void barButtonItem30_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tl == null || tl.IsDisposed)
+            {
+                tl = new Talep.TedarikciListesi();
+                tl.MdiParent = this;
+                tl.Show();
+            }
+        }
+
+        private void barButtonItem53_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Talep.TedarikciEkle te = new Talep.TedarikciEkle();
+            te.Show();
+        }
+
+
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

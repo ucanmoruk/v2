@@ -33,20 +33,22 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_talepdurum = new DevExpress.XtraBars.BarSubItem();
+            this.bar_taleponay = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_talepred = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_talepiptal = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_talepisle = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_taleptamam = new DevExpress.XtraBars.BarButtonItem();
+            this.guncelle = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_detay = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_talepkabul = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_yenile = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_degerlendirme = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -84,79 +86,107 @@
             // popupMenu1
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepdurum),
+            new DevExpress.XtraBars.LinkPersistInfo(this.guncelle),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_detay),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepkabul),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_degerlendirme),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_yenile)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // barSubItem1
+            // bar_talepdurum
             // 
-            this.barSubItem1.Caption = "Talep Durumu";
-            this.barSubItem1.Id = 2;
-            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
-            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
-            this.barSubItem1.Name = "barSubItem1";
+            this.bar_talepdurum.Caption = "Talep Durumu";
+            this.bar_talepdurum.Id = 2;
+            this.bar_talepdurum.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_talepdurum.ImageOptions.Image")));
+            this.bar_talepdurum.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_talepdurum.ImageOptions.LargeImage")));
+            this.bar_talepdurum.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_taleponay),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepred),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepiptal),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepisle),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_taleptamam)});
+            this.bar_talepdurum.Name = "bar_talepdurum";
+            this.bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
-            // barButtonItem1
+            // bar_taleponay
             // 
-            this.barButtonItem1.Caption = "Talebi Onayla";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.bar_taleponay.Caption = "Talebi Onayla";
+            this.bar_taleponay.Id = 3;
+            this.bar_taleponay.Name = "bar_taleponay";
+            this.bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_taleponay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
-            // barButtonItem3
+            // bar_talepred
             // 
-            this.barButtonItem3.Caption = "Talebi Reddet";
-            this.barButtonItem3.Id = 5;
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            this.bar_talepred.Caption = "Talebi Reddet";
+            this.bar_talepred.Id = 5;
+            this.bar_talepred.Name = "bar_talepred";
+            this.bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_talepred.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
-            // barButtonItem4
+            // bar_talepiptal
             // 
-            this.barButtonItem4.Caption = "Talebi İptal Et";
-            this.barButtonItem4.Id = 6;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            this.bar_talepiptal.Caption = "Talebi İptal Et";
+            this.bar_talepiptal.Id = 6;
+            this.bar_talepiptal.Name = "bar_talepiptal";
+            this.bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_talepiptal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
-            // barButtonItem2
+            // bar_talepisle
             // 
-            this.barButtonItem2.Caption = "Talebi İşleme Al";
-            this.barButtonItem2.Id = 4;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.bar_talepisle.Caption = "Talebi İşleme Al";
+            this.bar_talepisle.Id = 4;
+            this.bar_talepisle.Name = "bar_talepisle";
+            this.bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_talepisle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
-            // barButtonItem7
+            // bar_taleptamam
             // 
-            this.barButtonItem7.Caption = "Talebi Tamamla";
-            this.barButtonItem7.Id = 9;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            this.bar_taleptamam.Caption = "Talebi Tamamla";
+            this.bar_taleptamam.Id = 9;
+            this.bar_taleptamam.Name = "bar_taleptamam";
+            this.bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_taleptamam.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
-            // barButtonItem5
+            // guncelle
             // 
-            this.barButtonItem5.Caption = "Talep Detayları";
-            this.barButtonItem5.Id = 7;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            this.guncelle.Caption = "Güncelle";
+            this.guncelle.Id = 11;
+            this.guncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("guncelle.ImageOptions.Image")));
+            this.guncelle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("guncelle.ImageOptions.LargeImage")));
+            this.guncelle.Name = "guncelle";
+            this.guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.guncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.guncelle_ItemClick);
             // 
-            // barButtonItem6
+            // bar_detay
             // 
-            this.barButtonItem6.Caption = "Talep Kabul Etme";
-            this.barButtonItem6.Id = 8;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            this.bar_detay.Caption = "Talep Detayları";
+            this.bar_detay.Id = 7;
+            this.bar_detay.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_detay.ImageOptions.Image")));
+            this.bar_detay.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_detay.ImageOptions.LargeImage")));
+            this.bar_detay.Name = "bar_detay";
+            this.bar_detay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // bar_talepkabul
+            // 
+            this.bar_talepkabul.Caption = "Talep Kabul Etme";
+            this.bar_talepkabul.Id = 8;
+            this.bar_talepkabul.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_talepkabul.ImageOptions.Image")));
+            this.bar_talepkabul.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_talepkabul.ImageOptions.LargeImage")));
+            this.bar_talepkabul.Name = "bar_talepkabul";
+            this.bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_talepkabul.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            // 
+            // bar_yenile
+            // 
+            this.bar_yenile.Caption = "Yenile";
+            this.bar_yenile.Id = 10;
+            this.bar_yenile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_yenile.ImageOptions.Image")));
+            this.bar_yenile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_yenile.ImageOptions.LargeImage")));
+            this.bar_yenile.Name = "bar_yenile";
+            this.bar_yenile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // barManager1
             // 
@@ -166,16 +196,18 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barSubItem1,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8});
-            this.barManager1.MaxItemId = 11;
+            this.bar_talepdurum,
+            this.bar_taleponay,
+            this.bar_talepisle,
+            this.bar_talepred,
+            this.bar_talepiptal,
+            this.bar_detay,
+            this.bar_talepkabul,
+            this.bar_taleptamam,
+            this.bar_yenile,
+            this.guncelle,
+            this.bar_degerlendirme});
+            this.barManager1.MaxItemId = 13;
             // 
             // barDockControlTop
             // 
@@ -213,14 +245,15 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 440);
             // 
-            // barButtonItem8
+            // bar_degerlendirme
             // 
-            this.barButtonItem8.Caption = "Yenile";
-            this.barButtonItem8.Id = 10;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            this.bar_degerlendirme.Caption = "Talep Değerlendirme";
+            this.bar_degerlendirme.Id = 12;
+            this.bar_degerlendirme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.Image")));
+            this.bar_degerlendirme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.LargeImage")));
+            this.bar_degerlendirme.Name = "bar_degerlendirme";
+            this.bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_degerlendirme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bar_degerlendirme_ItemClick);
             // 
             // TalepListesi
             // 
@@ -232,10 +265,12 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TalepListesi";
             this.Text = "Talep Listesi";
             this.Load += new System.EventHandler(this.TalepListesi_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TalepListesi_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
@@ -250,19 +285,21 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarSubItem bar_talepdurum;
+        private DevExpress.XtraBars.BarButtonItem bar_taleponay;
+        private DevExpress.XtraBars.BarButtonItem bar_talepiptal;
+        private DevExpress.XtraBars.BarButtonItem bar_talepred;
+        private DevExpress.XtraBars.BarButtonItem bar_talepisle;
+        private DevExpress.XtraBars.BarButtonItem bar_detay;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem bar_talepkabul;
+        private DevExpress.XtraBars.BarButtonItem bar_taleptamam;
+        private DevExpress.XtraBars.BarButtonItem bar_yenile;
+        private DevExpress.XtraBars.BarButtonItem guncelle;
+        private DevExpress.XtraBars.BarButtonItem bar_degerlendirme;
     }
 }

@@ -116,7 +116,7 @@ namespace StokTakip
         {
             SertifikaGoruntule.yol = path;
             SertifikaGoruntule sg = new SertifikaGoruntule();
-            sg.ShowDialog();
+            sg.Show();
         }
 
         private void btn_iptal_Click(object sender, EventArgs e)

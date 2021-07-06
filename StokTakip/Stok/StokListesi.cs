@@ -47,7 +47,7 @@ namespace StokTakip
                 StokDetay.urunkod = kod;
 
                 StokDetay sd = new StokDetay();
-                sd.ShowDialog();
+                sd.Show();
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace StokTakip
             {
                 DialogResult Secim = new DialogResult();
 
-                Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                Secim = MessageBox.Show(skod + " stoğu silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
                 if (Secim == DialogResult.Yes)
                 {
@@ -134,7 +134,7 @@ namespace StokTakip
             {
                 StokDetay.urunkod = skod;
                 StokDetay sd = new StokDetay();
-                sd.ShowDialog();
+                sd.Show();
             }
             catch (Exception ex)
             {

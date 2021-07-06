@@ -9,29 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StokTakip
+namespace StokTakip.Talep
 {
-    public partial class SonKullanim : Form
+    public partial class MaaliyetEkle : Form
     {
-        public SonKullanim()
+        public MaaliyetEkle()
         {
             InitializeComponent();
         }
+
         sqlbaglanti bgl = new sqlbaglanti();
 
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select distinct l.Tur as 'Tür', l.Kod, l.Ad, l.Cas, l.Ambalaj, h.Marka, h.Lot, h.SKT, b.Birim from StokHareket h " +
-                " left join StokListesi l on h.StokID = l.ID left join StokFirmaBirim b on h.BirimID = b.ID where h.Hareket = N'Giriş' and YEAR(h.SKT) > 2020 order by h.SKT asc", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
         }
 
-        private void SonKullanim_Load(object sender, EventArgs e)
+        public static string talepno;
+        private void MaaliyetEkle_Load(object sender, EventArgs e)
         {
-            listele();
+          listele();
         }
     }
 }

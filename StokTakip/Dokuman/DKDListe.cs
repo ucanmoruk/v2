@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,8 @@ namespace StokTakip.Dokuman
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by ID) as 'No', Birim, Kaynak, Kod, Ad, Tarih, Tur, Link from StokDKDListe where Durum = N'Aktif' order by Birim", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by l.ID) as 'No', l.Birim, l.Kaynak, l.Kod, l.Ad, l.Tarih, l.Tur, l.Link,  d.Kontrol as 'Kontrol Tarihi', k.Ad + ' ' +  k.Soyad as 'Kontrol Eden'  from StokDKDListe l " +
+                " left join StokDKDKontrol d on l.Kod = d.Kod left join StokKullanici k on d.PersonelID = k.ID where l.Durum = N'Aktif' order by l.Birim", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
 
@@ -33,6 +35,8 @@ namespace StokTakip.Dokuman
             this.gridView1.Columns[3].Width = 50;
             this.gridView1.Columns[5].Width = 50;
             this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[8].Width = 50;
+            this.gridView1.Columns[9].Width = 75;
         }
 
         int yetki;
@@ -71,16 +75,7 @@ namespace StokTakip.Dokuman
         }
 
         int guncel;
-        void gunkontrol()
-        {
-            SqlCommand komut21 = new SqlCommand("Select Count(ID) from StokDKDKontrol where Kod = N'" + dkdkod + "' ", bgl.baglanti());
-            SqlDataReader dr21 = komut21.ExecuteReader();
-            while (dr21.Read())
-            {
-                guncel = Convert.ToInt32(dr21[0].ToString());
-            }
-            bgl.baglanti().Close();
-        }
+
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {            
@@ -100,11 +95,11 @@ namespace StokTakip.Dokuman
         }
 
         string ykod, id;
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void kontrolet()
         {
-            if ( gridView1.SelectedRowsCount == 0)
+            if (gridView1.SelectedRowsCount == 0)
             {
-                MessageBox.Show("Lütfen kontrolünü sağladığınız dokümanı seçiniz!", "Oopppss!", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                MessageBox.Show("Lütfen kontrolünü sağladığınız dokümanı seçiniz!", "Oopppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -116,7 +111,13 @@ namespace StokTakip.Dokuman
                     int y = Convert.ToInt32(id);
                     ykod = gridView1.GetRowCellValue(y, "Kod").ToString();
 
-                    gunkontrol();
+                    SqlCommand komut21 = new SqlCommand("Select Count(ID) from StokDKDKontrol where Kod = N'" + ykod+ "' ", bgl.baglanti());
+                    SqlDataReader dr21 = komut21.ExecuteReader();
+                    while (dr21.Read())
+                    {
+                        guncel = Convert.ToInt32(dr21[0].ToString());
+                    }
+                    bgl.baglanti().Close();
 
                     if (guncel == 0)
                     {
@@ -126,29 +127,33 @@ namespace StokTakip.Dokuman
                         komutSil.Parameters.AddWithValue("@a3", tarih);
                         komutSil.ExecuteNonQuery();
                         bgl.baglanti().Close();
-                        MessageBox.Show("Kontrol işlemi başarıyla gerçekleşmiştir.");
-                        listele();
                     }
                     else
                     {
-
-                        SqlCommand komutSil = new SqlCommand("update StokDKDKontrol set PersonelID=@a1, Kontrol=@a2 where Kod = N'" + dkdkod + "'", bgl.baglanti());
+                        SqlCommand komutSil = new SqlCommand("update StokDKDKontrol set PersonelID=@a1, Kontrol=@a2 where Kod = N'" + ykod + "'", bgl.baglanti());
                         komutSil.Parameters.AddWithValue("@a1", Anasayfa.kullanici);
                         komutSil.Parameters.AddWithValue("@a2", tarih);
                         komutSil.ExecuteNonQuery();
                         bgl.baglanti().Close();
-                        MessageBox.Show("Kontrol işlemi başarıyla gerçekleşmiştir.");
-                        listele();
+
                     }
                 }
+                listele();
+                MessageBox.Show("Kontrol işlemi başarıyla gerçekleşmiştir.");
             }
+        }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            kontrolet();
    
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DKDEkle.dkdkod = dkdkod;
+            DKDEkle.dkdad = dkdad;
             DKDEkle de = new DKDEkle();
             de.Show();
         }
@@ -169,7 +174,7 @@ namespace StokTakip.Dokuman
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update StokDKDListe set Durum=@a1 where Kod = N'" + dkdkod + "'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokDKDListe set Durum=@a1 where Kod = N'" + dkdkod + "' and Ad = N'"+dkdad+"'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -198,19 +203,55 @@ namespace StokTakip.Dokuman
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
             }
+
         }
 
         private void DKDListe_Load(object sender, EventArgs e)
         {
             listele();
             yetkibul();
+            //Anasayfa.b
         }
 
-        string dkdkod;
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "No" || e.Column.FieldName == "Kontrol Tarihi")
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+        }
+
+    
+        private void DKDListe_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var mfrm = (Anasayfa)Application.OpenForms["Anasayfa"];
+            if (mfrm != null)
+                mfrm.gizle();
+
+        }
+
+        private void DKDListe_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        public void excelaktar()
+        {
+            string path = "output.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            excelaktar();
+        }
+
+        string dkdkod, dkdad;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             dkdkod = dr["Kod"].ToString();
+            dkdad = dr["Ad"].ToString();
         }
     }
 }

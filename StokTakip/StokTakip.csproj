@@ -23,12 +23,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://massgrup.com/stok/</InstallUrl>
+    <InstallUrl>https://massgrup.com/stok/</InstallUrl>
     <PublisherName>Oğuzhan Eker</PublisherName>
-    <MinimumRequiredVersion>1.0.0.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -198,6 +198,11 @@
     <Compile Include="Karsilama.Designer.cs">
       <DependentUpon>Karsilama.cs</DependentUpon>
     </Compile>
+    <Compile Include="massgrup_massDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raporlar\Aciklama.cs">
@@ -291,6 +296,12 @@
     <Compile Include="Stok\ReceteYeni.designer.cs">
       <DependentUpon>ReceteYeni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Talep\MaaliyetEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\MaaliyetEkle.Designer.cs">
+      <DependentUpon>MaaliyetEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Talep\TalepDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +331,42 @@
     </Compile>
     <Compile Include="Stok\YeniStok.Designer.cs">
       <DependentUpon>YeniStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TedarikciPuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TedarikciPuan.Designer.cs">
+      <DependentUpon>TedarikciPuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciDegerlendirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciDegerlendirme.Designer.cs">
+      <DependentUpon>TedarikciDegerlendirme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TedarikciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TedarikciEkle.Designer.cs">
+      <DependentUpon>TedarikciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TedarikciListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TedarikciListesi.Designer.cs">
+      <DependentUpon>TedarikciListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciSoru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciSoru.Designer.cs">
+      <DependentUpon>TedarikciSoru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciTur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciTur.Designer.cs">
+      <DependentUpon>TedarikciTur.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Analiz\AnalizListesi.resx">
       <DependentUpon>AnalizListesi.cs</DependentUpon>
@@ -421,6 +468,9 @@
     <EmbeddedResource Include="Stok\ReceteYeni.resx">
       <DependentUpon>ReceteYeni.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Talep\MaaliyetEkle.resx">
+      <DependentUpon>MaaliyetEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Talep\TalepDetay.resx">
       <DependentUpon>TalepDetay.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,7 +486,36 @@
     <EmbeddedResource Include="Stok\YeniStok.resx">
       <DependentUpon>YeniStok.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TedarikciPuan.resx">
+      <DependentUpon>TedarikciPuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\TedarikciDegerlendirme.resx">
+      <DependentUpon>TedarikciDegerlendirme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TedarikciEkle.resx">
+      <DependentUpon>TedarikciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TedarikciListesi.resx">
+      <DependentUpon>TedarikciListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\TedarikciSoru.resx">
+      <DependentUpon>TedarikciSoru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\TedarikciTur.resx">
+      <DependentUpon>TedarikciTur.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="massgrup_massDataSet.xsc">
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="massgrup_massDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>massgrup_massDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="massgrup_massDataSet.xss">
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

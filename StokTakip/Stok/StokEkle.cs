@@ -275,7 +275,7 @@ namespace StokTakip
         {
             Sertifika.skod = combokod.Text;
             Sertifika s = new Sertifika();
-            s.ShowDialog();
+            s.Show();
 
             //OpenFileDialog open = new OpenFileDialog();
 
