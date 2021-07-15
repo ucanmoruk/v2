@@ -163,7 +163,7 @@ namespace StokTakip
 
                 combo_marka.Properties.Items.Clear();
 
-                detaybul2();
+              //  detaybul2();
 
                 if (Application.OpenForms["StokListesi"] == null)
                 {

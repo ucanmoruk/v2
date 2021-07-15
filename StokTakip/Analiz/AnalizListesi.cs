@@ -24,7 +24,8 @@ namespace StokTakip.Analiz
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad as 'Analiz Adı', Metot, Matriks, Akreditasyon from StokAnalizListesi where Durumu = 'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select f.Birim ,l.Kod, l.Ad as 'Analiz Adı', l.Metot, l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
+                "inner join StokFirmaBirim f on l.Birim = f.ID where l.Durumu = 'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -61,8 +62,8 @@ namespace StokTakip.Analiz
             yetkibul();
 
 
-            this.gridView1.Columns[0].Width = 40;
-            this.gridView1.Columns[1].Width = 150;
+            this.gridView1.Columns[1].Width = 40;
+            this.gridView1.Columns[2].Width = 150;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

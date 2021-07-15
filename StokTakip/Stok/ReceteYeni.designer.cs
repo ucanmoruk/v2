@@ -148,6 +148,7 @@
             this.gridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 15;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView1.RowHeight = 22;
             // 
             // gridControl2
             // 
@@ -174,6 +175,7 @@
             this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.RowHeight = 22;
             // 
             // tableLayoutPanel3
             // 

@@ -201,9 +201,16 @@ namespace StokTakip.Dokuman
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            kod = dr["Kod"].ToString();
+        {            
+            try
+            {
+                DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                kod = dr["Kod"].ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Aradığınız doküman bulunamamıştır!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
 
         }
 

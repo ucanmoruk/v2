@@ -20,6 +20,17 @@ namespace StokTakip.Analiz
 
         sqlbaglanti bgl = new sqlbaglanti();
 
+        void birimbul()
+        {
+            SqlCommand komut2 = new SqlCommand("Select Birim from StokFirmaBirim where FirmaID = N'" + Anasayfa.firmaID + "' and Durum = N'Aktif' ", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                combo_birim.Properties.Items.Add(dr2[0]);
+            }
+            bgl.baglanti().Close();
+        }
+
         int akod;
         void kontrol()
         {
@@ -50,13 +61,14 @@ namespace StokTakip.Analiz
 
         void ekleme()
         {
-            SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu) values (@a1, @a2, @a3, @a4, @a5, @a6) ", bgl.baglanti());
+            SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu,Birim) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7) ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             add.Parameters.AddWithValue("@a3", txt_metot.Text);
             add.Parameters.AddWithValue("@a4", txt_matriks.Text);
             add.Parameters.AddWithValue("@a5", combo_akre.Text);
             add.Parameters.AddWithValue("@a6", "Aktif");
+            add.Parameters.AddWithValue("@a7", bID);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -64,6 +76,7 @@ namespace StokTakip.Analiz
 
         }
 
+        int birimID, bID;
         void listele()
         {
 
@@ -76,18 +89,30 @@ namespace StokTakip.Analiz
                 txt_matriks.Text = drI["Matriks"].ToString();
                 txt_metot.Text = drI["Metot"].ToString();
                 combo_akre.Text = drI["Akreditasyon"].ToString();
+                birimID = Convert.ToInt32(drI["Birim"].ToString());
             }
             bgl.baglanti().Close();
+
+            SqlCommand komut = new SqlCommand("select * from StokFirmaBirim where ID = N'" + birimID + "'", bgl.baglanti());
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                combo_birim.Text = dr["Birim"].ToString();
+            }
+            bgl.baglanti().Close();
+
+
         }
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5 where Kod = '"+kod+"' ", bgl.baglanti());
+            SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5, Birim=@a6 where Kod = '"+kod+"' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             add.Parameters.AddWithValue("@a3", txt_metot.Text);
             add.Parameters.AddWithValue("@a4", txt_matriks.Text);
             add.Parameters.AddWithValue("@a5", combo_akre.Text);
+            add.Parameters.AddWithValue("@a6", bID);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -99,11 +124,12 @@ namespace StokTakip.Analiz
         {
             if (kod == "" || kod == null)
             {
-
+                birimbul();
             }
             else
             {
                 listele();
+                birimbul();
                 btn_add.Text = "Güncelle";
                 Text = "Analiz Bilgi Güncelle";
             }
@@ -122,18 +148,28 @@ namespace StokTakip.Analiz
             {
                 if (txt_kod.Text == "")
                 {
-                    MessageBox.Show("Lütfen analiz kodu bölümünü doldurunuz!", "Oooppss!");
+                    MessageBox.Show("Lütfen analiz kodu bölümünü doldurunuz!", "Oooppss!"); 
                 }
                 else
                 {
-                    kontrol();
-                    ekleme();
 
-                    txt_ad.Text = "";
-                    txt_kod.Text = "";
-                    txt_matriks.Text = "";
-                    txt_metot.Text = "";
-                    combo_akre.Text = "";
+                    if (combo_birim.Text == "")
+                    {
+                        MessageBox.Show("Lütfen analizin yapıldığı birimi seçiniz!", "Oooppss!");
+                    }
+                    else
+                    {
+                        kontrol();
+                        ekleme();
+
+                        txt_ad.Text = "";
+                        txt_kod.Text = "";
+                        txt_matriks.Text = "";
+                        txt_metot.Text = "";
+                        combo_akre.Text = "";
+                    }
+
+                   
 
                 }
 
@@ -154,9 +190,21 @@ namespace StokTakip.Analiz
 
         }
 
+        private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand komut2 = new SqlCommand("Select ID from StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                bID = Convert.ToInt32(dr2["ID"]);
+            }
+            bgl.baglanti().Close();
+        }
+
         private void AnalizYeni_FormClosing(object sender, FormClosingEventArgs e)
         {
             kod = "";
         }
+
     }
 }

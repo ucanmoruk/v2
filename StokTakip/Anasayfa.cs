@@ -19,6 +19,7 @@ using DevExpress.XtraGrid.Menu;
 using System.Diagnostics;
 using DevExpress.XtraBars;
 using StokTakip.Dokuman;
+using StokTakip.Talep;
 
 namespace StokTakip
 {
@@ -267,6 +268,31 @@ namespace StokTakip
             }
         }
 
+        Talep.MaaliyetEkle me;
+        public void mekle()
+        {
+            if (me == null || me.IsDisposed)
+            {
+                me = new Talep.MaaliyetEkle();
+                me.MdiParent = this;
+                me.Show();
+            }
+        }
+
+        public void eklemebuton()
+        {
+            if (btn_ekle.Visibility == BarItemVisibility.Never)
+            {
+                btn_ekle.Visibility = BarItemVisibility.Always;
+                barButtonItem21.Enabled = false;
+            }
+            else
+            {
+                btn_ekle.Visibility = BarItemVisibility.Never;
+                barButtonItem21.Enabled = true;
+            }
+        }
+
         YeniRecete yer;
         public void YeniRecete()
         {
@@ -403,7 +429,37 @@ namespace StokTakip
             te.Show();
         }
 
+        private void barButtonItem21_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Talep.MaliyetNo me = new Talep.MaliyetNo();
+            me.Show();
+        }
 
+        private void btn_ekle_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Teslim tarihi ve tedarikçi firma seçmediğiniz kayıtların kaydı yapılmayacaktır. Onaylıyor musunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+
+                var mfrm = (MaaliyetEkle)Application.OpenForms["MaaliyetEkle"];
+                if (mfrm != null)
+                    mfrm.kaydetme();
+
+            }
+
+        }
+
+        MaliyetListesi ml;
+        private void barButtonItem20_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ml == null || ml.IsDisposed)
+            {
+                ml = new MaliyetListesi();
+                ml.MdiParent = this;
+                ml.Show();
+            }
+        }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

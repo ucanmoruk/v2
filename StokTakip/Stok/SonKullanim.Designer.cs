@@ -56,6 +56,7 @@
             this.gridView1.OptionsFind.ShowFindButton = false;
             this.gridView1.OptionsFind.ShowSearchNavButtons = false;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.RowHeight = 22;
             // 
             // SonKullanim
             // 

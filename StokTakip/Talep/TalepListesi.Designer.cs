@@ -42,13 +42,13 @@
             this.guncelle = new DevExpress.XtraBars.BarButtonItem();
             this.bar_detay = new DevExpress.XtraBars.BarButtonItem();
             this.bar_talepkabul = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_degerlendirme = new DevExpress.XtraBars.BarButtonItem();
             this.bar_yenile = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar_degerlendirme = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -77,6 +77,7 @@
             this.gridView1.OptionsFind.ShowFindButton = false;
             this.gridView1.OptionsFind.ShowSearchNavButtons = false;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.RowHeight = 22;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView1_PopupMenuShowing);
@@ -179,6 +180,16 @@
             this.bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bar_talepkabul.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
+            // bar_degerlendirme
+            // 
+            this.bar_degerlendirme.Caption = "Talep Değerlendirme";
+            this.bar_degerlendirme.Id = 12;
+            this.bar_degerlendirme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.Image")));
+            this.bar_degerlendirme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.LargeImage")));
+            this.bar_degerlendirme.Name = "bar_degerlendirme";
+            this.bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.bar_degerlendirme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bar_degerlendirme_ItemClick);
+            // 
             // bar_yenile
             // 
             this.bar_yenile.Caption = "Yenile";
@@ -244,16 +255,6 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 440);
-            // 
-            // bar_degerlendirme
-            // 
-            this.bar_degerlendirme.Caption = "Talep Değerlendirme";
-            this.bar_degerlendirme.Id = 12;
-            this.bar_degerlendirme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.Image")));
-            this.bar_degerlendirme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.LargeImage")));
-            this.bar_degerlendirme.Name = "bar_degerlendirme";
-            this.bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bar_degerlendirme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bar_degerlendirme_ItemClick);
             // 
             // TalepListesi
             // 

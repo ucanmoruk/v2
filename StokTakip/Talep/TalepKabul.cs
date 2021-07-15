@@ -125,28 +125,28 @@ namespace StokTakip
             SqlDataReader dr = komut1.ExecuteReader();
             while (dr.Read())
             {
-                kabulad = dra["Ad"].ToString();
-                kabulsoyad = dra["Soyad"].ToString();
+                kabulad = dr["Ad"].ToString();
+                kabulsoyad = dr["Soyad"].ToString();
                 txt_9.Text = kabulad+ " " + kabulsoyad;
             }
             bgl.baglanti().Close();
 
-            if (kabulgelis == "1")
+            if (kabulgelis == "True")
                 combo_tarih.Text = "Evet";
             else
                 combo_tarih.Text = "Hayır";
 
-            if (kabulmiktar == "1")
+            if (kabulmiktar == "True")
                 combo_miktar.Text = "Evet";
             else
                 combo_miktar.Text = "Hayır";
 
-            if (kabulmarka == "1")
+            if (kabulmarka == "True")
                 combo_marka.Text = "Evet";
             else
                 combo_marka.Text = "Hayır";
 
-            if (kabulsertifika == "1")
+            if (kabulsertifika == "True")
                 combo_sertifika.Text = "Evet";
             else
                 combo_sertifika.Text = "Hayır";

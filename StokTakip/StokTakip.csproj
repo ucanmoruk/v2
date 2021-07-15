@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -97,7 +97,10 @@
     <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -162,6 +165,12 @@
     <Compile Include="Dokuman\DokumanMaster.Designer.cs">
       <DependentUpon>DokumanMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="Duyuru\DuyuruYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruYeni.Designer.cs">
+      <DependentUpon>DuyuruYeni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Firma\FirmaDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,11 +206,6 @@
     </Compile>
     <Compile Include="Karsilama.Designer.cs">
       <DependentUpon>Karsilama.cs</DependentUpon>
-    </Compile>
-    <Compile Include="massgrup_massDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -302,6 +306,18 @@
     <Compile Include="Talep\MaaliyetEkle.Designer.cs">
       <DependentUpon>MaaliyetEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Talep\MaliyetListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\MaliyetListesi.Designer.cs">
+      <DependentUpon>MaliyetListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\MaliyetNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\MaliyetNo.Designer.cs">
+      <DependentUpon>MaliyetNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Talep\TalepDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +411,9 @@
     <EmbeddedResource Include="Dokuman\DokumanMaster.resx">
       <DependentUpon>DokumanMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\DuyuruYeni.resx">
+      <DependentUpon>DuyuruYeni.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Firma\FirmaDetay.resx">
       <DependentUpon>FirmaDetay.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,6 +490,12 @@
     <EmbeddedResource Include="Talep\MaaliyetEkle.resx">
       <DependentUpon>MaaliyetEkle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Talep\MaliyetListesi.resx">
+      <DependentUpon>MaliyetListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\MaliyetNo.resx">
+      <DependentUpon>MaliyetNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Talep\TalepDetay.resx">
       <DependentUpon>TalepDetay.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,17 +530,6 @@
       <DependentUpon>TedarikciTur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="massgrup_massDataSet.xsc">
-      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="massgrup_massDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>massgrup_massDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="massgrup_massDataSet.xss">
-      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -565,6 +579,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Raindropmemory-Legendora-Art-of-Chemistry.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

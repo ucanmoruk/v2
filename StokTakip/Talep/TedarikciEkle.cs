@@ -47,7 +47,7 @@ namespace StokTakip.Talep
         private void TedarikciEkle_Load(object sender, EventArgs e)
         {
 
-            if (firma == "")
+            if (firma == "" || firma == null)
             {
                 
             }

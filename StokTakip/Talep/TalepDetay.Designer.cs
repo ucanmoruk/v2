@@ -56,7 +56,7 @@
             // 
             // btn_yazdir
             // 
-            this.btn_yazdir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_yazdir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_yazdir.ImageOptions.Image")));
             this.btn_yazdir.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_yazdir.ImageOptions.ImageToTextIndent = 10;
             this.btn_yazdir.Location = new System.Drawing.Point(199, 17);
@@ -84,6 +84,7 @@
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowHeight = 22;
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             // 
             // TalepDetay
