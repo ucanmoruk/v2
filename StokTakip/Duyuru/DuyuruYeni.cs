@@ -23,74 +23,112 @@ namespace StokTakip.Duyuru
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from DokumanMaster where Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select ID, Ad + ' ' + Soyad as 'Personel'  from StokKullanici where Durum = N'Aktif' and ID <> '"+Anasayfa.kullanici+"' ", bgl.baglanti());
             da.Fill(dt);
-            combo_personel.Properties.Items.Add(dt);
-            //   gridControl1.DataSource = dt;
+            gridControl1.DataSource = dt;
+            gridView1.Columns["ID"].Visible = false;
         }
 
-
-        string ad, soyad;
-        private void personelbul()
-        {
-            //SqlCommand komutID = new SqlCommand("select Ad, Soyad From StokKullanici where Durum=N'Aktif' ", bgl.baglanti());
-            //SqlDataReader drI = komutID.ExecuteReader();
-            //while (drI.Read())
-            //{
-            //    ad = drI["Ad"].ToString();
-            //    soyad = drI["Soyad"].ToString();
-            ////    combo_personel.Properties.Items.Add(ad+" "+soyad);
-            //}
-            //bgl.baglanti().Close();
-        }
-
+        int kID, pID;
         void ekleme()
         {
-            //SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu) values (@a1, @a2, @a3, @a4, @a5, @a6) ", bgl.baglanti());
-            //add.Parameters.AddWithValue("@a1", txt_kod.Text);
-            //add.Parameters.AddWithValue("@a2", txt_ad.Text);
-            //add.Parameters.AddWithValue("@a3", txt_metot.Text);
-            //add.Parameters.AddWithValue("@a4", txt_matriks.Text);
-            //add.Parameters.AddWithValue("@a5", combo_akre.Text);
-            //add.Parameters.AddWithValue("@a6", "Aktif");
-            //add.ExecuteNonQuery();
-            //bgl.baglanti().Close();
+            try
+            {
+                int Donen = 0;
 
-            //MessageBox.Show("Yeni analiz başarıyla eklenmiştir!", "Ooppsss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                DateTime tarih = DateTime.Now;            
+
+                SqlCommand add = new SqlCommand("insert into StokDuyuru (PersonelID, Tarih, Konu, Duyuru, Durum) values (@a1, @a2, @a3, @a4, @a5) SET @ID = SCOPE_IDENTITY() ", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", Anasayfa.kullanici);
+                add.Parameters.AddWithValue("@a2", tarih);
+                add.Parameters.AddWithValue("@a3", txt_konu.Text);
+                add.Parameters.AddWithValue("@a4", memo_mesaj.Text);
+                add.Parameters.AddWithValue("@a5", "Aktif");
+                add.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
+                add.ExecuteNonQuery();
+                Donen = Convert.ToInt32(add.Parameters["@ID"].Value);
+                bgl.baglanti().Close();
+
+                if (Combo_alici.Text == "Tüm personel")
+                {
+                    SqlCommand komut2 = new SqlCommand("Select ID from StokKullanici where Durum = N'Aktif' and ID <> '" + Anasayfa.kullanici + "'", bgl.baglanti());
+                    SqlDataReader dr2 = komut2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        pID = Convert.ToInt32(dr2["ID"]);
+                        SqlCommand ad = new SqlCommand("insert into StokDuyuruDurum (PersonelID, DuyuruID, Durum)  values (@a1, @a2, @a3)", bgl.baglanti());
+                        ad.Parameters.AddWithValue("@a1", pID);
+                        ad.Parameters.AddWithValue("@a2", Donen);
+                        ad.Parameters.AddWithValue("@a3", "Beklemede");
+                        ad.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+
+                    }
+                    bgl.baglanti().Close();
+
+                }
+                else
+                {
+                    for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                    {
+                        int y = Convert.ToInt32(gridView1.GetSelectedRows()[i].ToString());
+                        kID = Convert.ToInt32(gridView1.GetRowCellValue(y, "ID").ToString());
+                        SqlCommand ad = new SqlCommand("insert into StokDuyuruDurum (PersonelID, DuyuruID, Durum) values (@a1, @a2, @a3)", bgl.baglanti());
+                        ad.Parameters.AddWithValue("@a1", kID);
+                        ad.Parameters.AddWithValue("@a2", Donen);
+                        ad.Parameters.AddWithValue("@a3", "Beklemede");
+                        ad.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                    }
+                }                                                                    
+
+
+                MessageBox.Show("Mesajınız başarıyla yayınlandı!", "Ooppsss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                this.Close();
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show("Hata D11: " + Ex);
+            }            
 
         }
 
         private void Combo_alici_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Combo_alici.Text == "Herkese ulaşsın")
+            if (Combo_alici.Text == "Tüm personel")
             {
-                combo_personel.Enabled = false;
+                popup.Visible = false;
+                Combo_alici.Size = new Size(342, 20);
             }
             else
             {
-                combo_personel.Enabled = true;
+                popup.Visible = true;
+                Combo_alici.Size = new Size(154, 20);
             }
         }
 
-     //   DuyuruListe m = (DuyuruListe)System.Windows.Forms.Application.OpenForms["DuyuruListe"];
+        DuyuruListe m = (DuyuruListe)System.Windows.Forms.Application.OpenForms["DuyuruListe"];
 
         private void btn_yayin_Click(object sender, EventArgs e)
         {
+            ekleme();
 
-
-            //if (Application.OpenForms["DuyuruListe"] == null)
-            //{ }
-            //else
-            //{
-            //    m.listele();
-            //}
+            if (Application.OpenForms["DuyuruListe"] == null)
+            { }
+            else
+            {
+                m.listele();
+            }
         }
 
         private void DuyuruYeni_Load(object sender, EventArgs e)
         {
-            personelbul();
+            listele();
 
-         //   listele();
+              
         }
     }
 }

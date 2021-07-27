@@ -20,6 +20,7 @@ using System.Diagnostics;
 using DevExpress.XtraBars;
 using StokTakip.Dokuman;
 using StokTakip.Talep;
+using StokTakip.Duyuru;
 
 namespace StokTakip
 {
@@ -196,7 +197,7 @@ namespace StokTakip
 
         }
 
-       // Karsilama kl;
+        DuyuruListe kl;
         public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
         {
@@ -208,12 +209,17 @@ namespace StokTakip
                 tanitim();
             }
 
-            //if (kl == null || kl.IsDisposed)
-            //{
-            //    kl = new Karsilama();
-            //    kl.MdiParent = this;
-            //    kl.Show();
-            //}
+            ribbonPageGroup25.AllowTextClipping = false;
+            ribbonPageGroup26.AllowTextClipping = false;
+            ribbonPageGroup9.AllowTextClipping = false;
+
+            if (kl == null || kl.IsDisposed)
+            {
+                kl = new DuyuruListe();
+                kl.MdiParent = this;
+                kl.Show();
+                barButtonItem59.Visibility = BarItemVisibility.Always;
+            }
 
         }
 
@@ -393,7 +399,12 @@ namespace StokTakip
         {
             btn_kontrol.Visibility = BarItemVisibility.Never;
         }
-        
+
+        public void ogizle()
+        {
+            barButtonItem59.Visibility = BarItemVisibility.Never;
+        }
+
         DKDListe m = (DKDListe)System.Windows.Forms.Application.OpenForms["DKDListe"];
         private void btn_kontrol_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -402,6 +413,8 @@ namespace StokTakip
                 mfrm.kontrolet();
 
         }
+
+
 
         private void barButtonItem51_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -458,6 +471,54 @@ namespace StokTakip
                 ml = new MaliyetListesi();
                 ml.MdiParent = this;
                 ml.Show();
+            }
+        }
+
+        private void barButtonItem57_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Duyuru.DuyuruYeni dy = new Duyuru.DuyuruYeni();
+            dy.ShowDialog();
+        }
+
+        Duyuru.DuyuruListe dul;
+        private void barButtonItem56_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (dul == null || dul.IsDisposed)
+            {
+                dul = new Duyuru.DuyuruListe();
+                dul.MdiParent = this;
+                dul.Show();
+            }
+
+            barButtonItem59.Visibility = BarItemVisibility.Always;
+        }
+
+        private void barButtonItem59_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var mfrm = (DuyuruListe)Application.OpenForms["DuyuruListe"];
+            if (mfrm != null)
+                mfrm.okundu();
+        }
+
+        Duyuru.DuyuruEx dex;
+        private void barButtonItem58_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (dex == null || dex.IsDisposed)
+            {
+                dex = new DuyuruEx();
+                dex.MdiParent = this;
+                dex.Show();
+            }
+        }
+
+        Duyurularim dum;
+        private void barButtonItem60_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (dum == null || dum.IsDisposed)
+            {
+                dum = new Duyurularim();
+                dum.MdiParent = this;
+                dum.Show();
             }
         }
 
