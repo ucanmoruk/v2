@@ -24,7 +24,8 @@ namespace StokTakip
         private void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and BirimID = N'"+Anasayfa.birimID+ "' and Durum = N'Aktif'", bgl.baglanti());
+         //   SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and BirimID = N'"+Anasayfa.birimID+ "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
         }
@@ -32,7 +33,7 @@ namespace StokTakip
         private void listele2()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
         }
@@ -45,7 +46,7 @@ namespace StokTakip
             try
             {
                 txtkod.Text = urunkod;
-                SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod= N'" + urunkod + "'", bgl.baglanti());
+                SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID= N'" + urunkod + "'", bgl.baglanti());
                 SqlDataReader drI = komutID.ExecuteReader();
                 while (drI.Read())
                 {
@@ -75,7 +76,7 @@ namespace StokTakip
         {
             try
             {                
-                SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod= N'" + txtkod.Text + "'", bgl.baglanti());
+                SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID= N'" + urunkod + "'", bgl.baglanti());
                 SqlDataReader drI = komutID.ExecuteReader();
                 while (drI.Read())
                 {
@@ -92,7 +93,7 @@ namespace StokTakip
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand komutD = new SqlCommand("select * from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + txtkod.Text + "') and BirimID = N'" + Anasayfa.birimID + "' ", bgl.baglanti());
+                SqlCommand komutD = new SqlCommand("select * from StokHareket where StokID = N'" + urunkod +  "' and BirimID = N'" + Anasayfa.birimID + "' ", bgl.baglanti());
                 SqlDataReader dr = komutD.ExecuteReader();
                 while (dr.Read())
                 {
@@ -113,7 +114,7 @@ namespace StokTakip
 
         void sertbul()
         {
-            SqlCommand komutD = new SqlCommand("select * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' ", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokSertifika where StokID = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {
@@ -127,7 +128,7 @@ namespace StokTakip
 
         void sertbul2()
         {
-            SqlCommand komutD = new SqlCommand("select * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and Durum = N'Aktif' ", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokSertifika where StokID  = N'" + urunkod + "' and Durum = N'Aktif' ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {
@@ -200,7 +201,7 @@ namespace StokTakip
 
         private void combo_marka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand komutD = new SqlCommand("select * from StokSertifika where Sertifika =N'"+combo_marka.Text+"' and StokID in (select ID from StokListesi where Kod = N'" + urunkod + "')", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokSertifika where Sertifika =N'"+combo_marka.Text+"' and StokID = N'" + urunkod + "'", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {     
@@ -331,7 +332,7 @@ namespace StokTakip
                 string mlot = gridView1.GetRowCellValue(y, "Lot").ToString();
                 string mmiktar = gridView1.GetRowCellValue(y, "Miktar").ToString();
                 string mtarih = Convert.ToDateTime(gridView1.GetRowCellValue(y, "İşlem Tarihi")).ToString("yyyy-MM-dd");
-                SqlCommand komut2 = new SqlCommand("select ID from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' " +
+                SqlCommand komut2 = new SqlCommand("select ID from StokHareket where StokID = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' " +
                     " and Marka = '" + mmarka + "' and Lot ='" + mlot + "' and Tarih = '" + mtarih + "' and Miktar = '" + mmiktar + "'", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
@@ -340,7 +341,7 @@ namespace StokTakip
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and Durum = N'Aktif'", bgl.baglanti());
+                SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
                 SqlDataReader drI = komutID.ExecuteReader();
                 while (drI.Read())
                 {
@@ -351,7 +352,7 @@ namespace StokTakip
 
                 float f1 = float.Parse(mmiktar);
                 f2 = stok - f1;
-                SqlCommand add2 = new SqlCommand("update StokListesi set Miktar = @a1 where Kod = N'" + txtkod.Text + "'", bgl.baglanti());
+                SqlCommand add2 = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
                 add2.Parameters.AddWithValue("@a1", f2);
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -371,7 +372,7 @@ namespace StokTakip
         float stok, f2;
         private void anastok()
         {
-            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and Durum = N'Aktif'", bgl.baglanti());
+            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
@@ -385,7 +386,7 @@ namespace StokTakip
             {
                 //float f1 = float.Parse(dmiktar);
                 f2 = stok - f1;
-                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where Kod = N'" + txtkod.Text + "'", bgl.baglanti());
+                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", f2);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -393,7 +394,7 @@ namespace StokTakip
             else
             {
                 f2 = stok - f1;
-                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where Kod = N'" + txtkod.Text + "'", bgl.baglanti());
+                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", f2);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();

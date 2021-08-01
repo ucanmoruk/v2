@@ -63,7 +63,7 @@ namespace StokTakip.Talep
 
         void ekleme()
         {
-            SqlCommand add = new SqlCommand("insert into StokTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Faks,Durum) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8)", bgl.baglanti());
+            SqlCommand add = new SqlCommand("insert into StokTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Faks,Durum, Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9)", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_ad.Text);
             add.Parameters.AddWithValue("@a2", txt_adres.Text);
             add.Parameters.AddWithValue("@a3", txt_tur.Text);
@@ -72,6 +72,7 @@ namespace StokTakip.Talep
             add.Parameters.AddWithValue("@a6", txt_email.Text);
             add.Parameters.AddWithValue("@a7", txt_fax.Text);
             add.Parameters.AddWithValue("@a8", "Aktif");
+            add.Parameters.AddWithValue("@a9", "Aktif");
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 

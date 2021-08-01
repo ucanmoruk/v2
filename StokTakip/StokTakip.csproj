@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://massgrup.com/stok/</PublishUrl>
+    <PublishUrl>ftp://massgrup.com/httpdocs/stok/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -128,6 +128,18 @@
     </Compile>
     <Compile Include="Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazEkle.Designer.cs">
+      <DependentUpon>CihazEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazListesi.Designer.cs">
+      <DependentUpon>CihazListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Dokuman\DKDEkle.cs">
       <SubType>Form</SubType>
@@ -417,6 +429,12 @@
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazEkle.resx">
+      <DependentUpon>CihazEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazListesi.resx">
+      <DependentUpon>CihazListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DKDEkle.resx">
       <DependentUpon>DKDEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,7 +596,6 @@
     <None Include="StokTakip_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cihaz\" />
     <Folder Include="Egitim\" />
     <Folder Include="Images\" />
   </ItemGroup>

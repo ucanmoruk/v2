@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace StokTakip.Talep
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(" select Row_number() over(order by t.Tur) as 'No', t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Faks, p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Durum from StokTedarikci t " +
+            SqlDataAdapter da = new SqlDataAdapter(" select Row_number() over(order by t.Tur) as 'No', t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Faks, t.Durumu as 'Çalışma Durumu', p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Durum from StokTedarikci t " +
                 " left join StokTedarikciPuan p on t.ID = p.FirmaID   left join StokKullanici k on p.PersonelID = k.ID where t.Durum = 'Aktif' order by t.Tur asc ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
@@ -36,8 +37,9 @@ namespace StokTakip.Talep
             this.gridView1.Columns[6].Width = 50;
             this.gridView1.Columns[7].Width = 50;
             this.gridView1.Columns[8].Width = 50;
-            this.gridView1.Columns[10].Width = 30;
-            this.gridView1.Columns[11].Width = 40;
+            this.gridView1.Columns[9].Width = 50;
+            this.gridView1.Columns[11].Width = 30;
+            this.gridView1.Columns[12].Width = 40;
         }
 
         int yetki;
@@ -63,8 +65,9 @@ namespace StokTakip.Talep
             {
                 barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;                
                 barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;       
             }
               
         }
@@ -124,6 +127,15 @@ namespace StokTakip.Talep
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
             }
+            if (durum == "Pasif")
+            {
+                barButtonItem6.Caption = "Firmayı Aktifleştir";
+            }
+            else
+            {
+
+                barButtonItem6.Caption = "Firmayı Pasife Al";
+            }
         }
 
         private void TedarikciListesi_KeyDown(object sender, KeyEventArgs e)
@@ -134,13 +146,14 @@ namespace StokTakip.Talep
             }
         }
 
-        string firmad, kategori;
+        string firmad, durum;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
                 firmad = dr["Firma Adı"].ToString();
+                durum = dr["Çalışma Durumu"].ToString();
             }
             catch (Exception Ex)
             {
@@ -160,8 +173,19 @@ namespace StokTakip.Talep
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "No" || e.Column.FieldName == "Değerlendirme Tarihi" || e.Column.FieldName == "Puan" || e.Column.FieldName == "Durum")
+            if (e.Column.FieldName == "No" || e.Column.FieldName == "Çalışma Durumu" || e.Column.FieldName == "Değerlendirme Tarihi" || e.Column.FieldName == "Puan" || e.Column.FieldName == "Durum")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {               
+                string ODurum = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Çalışma Durumu"]);
+                if (ODurum == "Pasif")
+                {
+                    e.Appearance.BackColor = Color.Red;
+                }
+            }
+
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -170,6 +194,30 @@ namespace StokTakip.Talep
 
             TedarikciPuan tp = new TedarikciPuan();
             tp.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (durum == "Pasif")
+            {
+                SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durumu=@a1 where Ad = N'" + firmad + "' ", bgl.baglanti());
+                komutSil.Parameters.AddWithValue("@a1", "Aktif");
+                komutSil.ExecuteNonQuery();
+                bgl.baglanti().Close();
+                MessageBox.Show("Firma başarılı şekilde aktifleştirilmiştir. " + "\n" + "Yeni firma için tedarikçi değerlendirmesi yapmayı unutmayınız!");
+            }
+            else
+            {
+
+                SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durumu=@a1 where Ad = N'" + firmad + "' ", bgl.baglanti());
+                komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                komutSil.ExecuteNonQuery();
+                bgl.baglanti().Close();
+                MessageBox.Show("Firma başarılı şekilde pasifize edilmiştir.");
+                
+            }
+            listele();
+
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

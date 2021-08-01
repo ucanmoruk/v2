@@ -38,17 +38,23 @@ namespace StokTakip
         }
 
         public static string db;
+
+        private void txt_parola_KeyDown(object sender, KeyEventArgs e)
+        {
+            //giris();
+        }
+
         Anasayfa f2;
         private void giris()
         {
-            if (combo_ag.Text == "Yerel")
-            {
-                db = "2";
-            }
-            else
-            {
-                db = "1";
-            }
+            //if (combo_ag.Text == "Yerel")
+            //{
+            //    db = "2";
+            //}
+            //else
+            //{
+            //    db = "1";
+            //}
 
 
             SqlCommand detay = new SqlCommand("Select * from StokKullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());

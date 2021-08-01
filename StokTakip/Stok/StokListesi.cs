@@ -24,9 +24,13 @@ namespace StokTakip
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select sl.Tur as 'Tür', sl.Kod, sl.Ad, sl.AdEn as 'İngilizce', sl.Cas as 'Cas No', Ozellik, Ambalaj, Saklama as 'Saklama Koşulları',Limit as 'Kritik Limit', sl.Miktar as 'Stok Durumu', Birim from StokListesi sl where Durum = N'Aktif' order by Tur", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select sl.ID, sl.Tur as 'Tür', sl.Kod, sl.Ad, sl.AdEn as 'İngilizce', sl.Cas as 'Cas No', Ozellik, Ambalaj, Saklama as 'Saklama Koşulları',Limit as 'Kritik Limit', sl.Miktar as 'Stok Durumu', Birim from StokListesi sl where Durum = N'Aktif' order by Tur", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+
+            gridView1.Columns["ID"].Visible = false;
+
+            //this.gridView1.Columns[0].Width = 50;
 
         }
 
@@ -37,14 +41,15 @@ namespace StokTakip
             yetkibul();
         }
 
-        public static string kod;
+        public static string kod, did;
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
             try
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
                 kod = dr["Kod"].ToString();
-                StokDetay.urunkod = kod;
+                did = dr["ID"].ToString();
+                StokDetay.urunkod = did;
 
                 StokDetay sd = new StokDetay();
                 sd.Show();
@@ -99,7 +104,7 @@ namespace StokTakip
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update StokListesi set Durum=@a1 where Kod = N'"+skod+"'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokListesi set Durum=@a1 where ID = N'"+id+"'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -121,14 +126,15 @@ namespace StokTakip
             }
         }
 
-        string skod;
+        string skod, id;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
                 skod = dr["Kod"].ToString();
-            }
+                id = dr["ID"].ToString();
+             }
             catch (Exception)
             {
                 MessageBox.Show("Aradığınız stok kaydı bulunamadı!", "Oopss!");
@@ -140,7 +146,7 @@ namespace StokTakip
         {
             try
             {
-                StokDetay.urunkod = skod;
+                StokDetay.urunkod = id;
                 StokDetay sd = new StokDetay();
                 sd.Show();
             }

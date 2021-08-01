@@ -78,7 +78,8 @@ namespace StokTakip.Dokuman
 
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {            
+        {
+            kontrol();
             if (path == "" || path == null)
             {
                 MessageBox.Show(dkdkod + " dokümanı henüz sisteme yüklenmemiştir!", "Oooppss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

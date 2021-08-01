@@ -19,8 +19,8 @@ namespace StokTakip
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            //  Application.Run(new Duyuru.DuyuruYeni());
 
+            //  Application.Run(new Cihaz.CihazEkle());
             Application.Run(new Giris());
             // Application.Run(new WebBrowser());
         }

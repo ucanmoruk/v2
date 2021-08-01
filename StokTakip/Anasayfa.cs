@@ -522,6 +522,17 @@ namespace StokTakip
             }
         }
 
+        Cihaz.CihazListesi cl;
+        private void barButtonItem28_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (cl == null || cl.IsDisposed)
+            {
+                cl = new Cihaz.CihazListesi();
+                cl.MdiParent = this;
+                cl.Show();
+            }
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();
@@ -560,7 +571,8 @@ namespace StokTakip
 
         private void barButtonItem38_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Cihaz.CihazEkle ce = new Cihaz.CihazEkle();
+            ce.Show();
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

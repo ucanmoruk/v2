@@ -110,20 +110,21 @@ namespace StokTakip.Dokuman
             if (btn_ekle.Text == "Güncelle")
             {
                 guncelle();
+                if (Application.OpenForms["DKDListe"] == null)
+                { }
+                else
+                { m.listele(); }
             }
             else
             {
                 ekle();
+                if (Application.OpenForms["DKDListe"] == null)
+                { }
+                else
+                { m.listele(); }
             }
 
-
-
-            if (Application.OpenForms["DKDListe"] == null)
-            { }
-            else
-            {
-                m.listele();
-            }
+           
         }
 
         void temizle()
@@ -162,7 +163,7 @@ namespace StokTakip.Dokuman
         string path;
         void dokekle()
         {
-            if (btn_sec.Visible == false)
+            if (btn_sec.Enabled == false)
             {
                 string isim = Path.GetFileName(name);
                 if (isim == null)
