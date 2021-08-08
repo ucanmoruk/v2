@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -109,6 +109,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.38\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analiz\AnalizListesi.cs">
@@ -135,11 +138,35 @@
     <Compile Include="Cihaz\CihazEkle.Designer.cs">
       <DependentUpon>CihazEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cihaz\CihazHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazHareket.Designer.cs">
+      <DependentUpon>CihazHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cihaz\CihazListesi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cihaz\CihazListesi.Designer.cs">
       <DependentUpon>CihazListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazMaliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazMaliyet.Designer.cs">
+      <DependentUpon>CihazMaliyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CMaliyetListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CMaliyetListe.Designer.cs">
+      <DependentUpon>CMaliyetListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonListesi.Designer.cs">
+      <DependentUpon>KalibrasyonListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Dokuman\DKDEkle.cs">
       <SubType>Form</SubType>
@@ -237,10 +264,10 @@
     <Compile Include="Firma\PersonelListesi.Designer.cs">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Karsilama.cs">
+    <Compile Include="ÇöpKutusu\Karsilama.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Karsilama.Designer.cs">
+    <Compile Include="ÇöpKutusu\Karsilama.Designer.cs">
       <DependentUpon>Karsilama.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -432,8 +459,20 @@
     <EmbeddedResource Include="Cihaz\CihazEkle.resx">
       <DependentUpon>CihazEkle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazHareket.resx">
+      <DependentUpon>CihazHareket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cihaz\CihazListesi.resx">
       <DependentUpon>CihazListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazMaliyet.resx">
+      <DependentUpon>CihazMaliyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CMaliyetListe.resx">
+      <DependentUpon>CMaliyetListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\KalibrasyonListesi.resx">
+      <DependentUpon>KalibrasyonListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DKDEkle.resx">
       <DependentUpon>DKDEkle.cs</DependentUpon>
@@ -483,18 +522,19 @@
     <EmbeddedResource Include="Firma\PersonelListesi.resx">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Karsilama.resx">
+    <EmbeddedResource Include="ÇöpKutusu\Karsilama.resx">
       <DependentUpon>Karsilama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Raporlar\Aciklama.resx">
       <DependentUpon>Aciklama.cs</DependentUpon>
@@ -584,6 +624,7 @@
       <DependentUpon>TedarikciTur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -632,6 +673,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Raindropmemory-Legendora-Art-of-Chemistry.ico" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\31216_information_icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

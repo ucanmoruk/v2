@@ -33,21 +33,27 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btn_sicil = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btn_chzbilgi = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_chzkal = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_chzanaliz = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_kullanim = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_yenile = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_sil = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btn_sil = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_yenile = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_sicil = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_kullanim = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.btn_chzbilgi = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_chzkal = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_chzanaliz = new DevExpress.XtraBars.BarButtonItem();
             this.btn_kalibrasyon = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -86,8 +92,8 @@
             // popupMenu1
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_sicil),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_kalibrasyon),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_sicil, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_kullanim),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_yenile),
@@ -95,101 +101,55 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_sil,
-            this.barButtonItem2,
-            this.btn_yenile,
-            this.btn_sicil,
-            this.btn_kullanim,
-            this.barSubItem1,
-            this.btn_chzbilgi,
-            this.btn_chzkal,
-            this.btn_chzanaliz,
-            this.btn_kalibrasyon});
-            this.barManager1.MaxItemId = 10;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(800, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 450);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(800, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 450);
-            // 
-            // btn_sil
-            // 
-            this.btn_sil.Caption = "Sil";
-            this.btn_sil.Id = 0;
-            this.btn_sil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btn_sil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btn_sil.Name = "btn_sil";
-            this.btn_sil.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btn_sil.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_sil_ItemClick);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Güncelle";
-            this.barButtonItem2.Id = 1;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // btn_yenile
-            // 
-            this.btn_yenile.Caption = "Yenile     (F5)";
-            this.btn_yenile.Id = 2;
-            this.btn_yenile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_yenile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btn_yenile.Name = "btn_yenile";
-            this.btn_yenile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_yenile_ItemClick);
-            // 
             // btn_sicil
             // 
             this.btn_sicil.Caption = "Cihaz Sicil Kartı";
             this.btn_sicil.Id = 3;
-            this.btn_sicil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btn_sicil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btn_sicil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_sicil.ImageOptions.Image")));
+            this.btn_sicil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_sicil.ImageOptions.LargeImage")));
             this.btn_sicil.Name = "btn_sicil";
             this.btn_sicil.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_sicil_ItemClick);
             // 
-            // btn_kullanim
+            // barSubItem2
             // 
-            this.btn_kullanim.Caption = "Kullanım Dışı";
-            this.btn_kullanim.Id = 4;
-            this.btn_kullanim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btn_kullanim.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.btn_kullanim.Name = "btn_kullanim";
-            this.btn_kullanim.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btn_kullanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_kullanim_ItemClick);
+            this.barSubItem2.Caption = "Cihaz İşlem Bildir";
+            this.barSubItem2.Id = 11;
+            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
+            this.barSubItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.LargeImage")));
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Kalibrasyon";
+            this.barButtonItem3.Id = 13;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Ara Kontrol";
+            this.barButtonItem4.Id = 14;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Bakım";
+            this.barButtonItem5.Id = 15;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Onarım";
+            this.barButtonItem6.Id = 16;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barSubItem1
             // 
@@ -225,14 +185,112 @@
             this.btn_chzanaliz.Name = "btn_chzanaliz";
             this.btn_chzanaliz.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_chzanaliz_ItemClick);
             // 
+            // btn_kullanim
+            // 
+            this.btn_kullanim.Caption = "Kullanım Dışı";
+            this.btn_kullanim.Id = 4;
+            this.btn_kullanim.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_kullanim.ImageOptions.Image")));
+            this.btn_kullanim.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_kullanim.ImageOptions.LargeImage")));
+            this.btn_kullanim.Name = "btn_kullanim";
+            this.btn_kullanim.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_kullanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_kullanim_ItemClick);
+            // 
+            // btn_yenile
+            // 
+            this.btn_yenile.Caption = "Yenile     (F5)";
+            this.btn_yenile.Id = 2;
+            this.btn_yenile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_yenile.ImageOptions.Image")));
+            this.btn_yenile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_yenile.ImageOptions.LargeImage")));
+            this.btn_yenile.Name = "btn_yenile";
+            this.btn_yenile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_yenile_ItemClick);
+            // 
+            // btn_sil
+            // 
+            this.btn_sil.Caption = "Sil";
+            this.btn_sil.Id = 0;
+            this.btn_sil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_sil.ImageOptions.Image")));
+            this.btn_sil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_sil.ImageOptions.LargeImage")));
+            this.btn_sil.Name = "btn_sil";
+            this.btn_sil.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_sil.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_sil_ItemClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btn_sil,
+            this.barButtonItem2,
+            this.btn_yenile,
+            this.btn_sicil,
+            this.btn_kullanim,
+            this.barSubItem1,
+            this.btn_chzbilgi,
+            this.btn_chzkal,
+            this.btn_chzanaliz,
+            this.btn_kalibrasyon,
+            this.barButtonItem1,
+            this.barSubItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6});
+            this.barManager1.MaxItemId = 17;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(800, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 450);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(800, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 450);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Güncelle";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // btn_kalibrasyon
             // 
             this.btn_kalibrasyon.Caption = "Kalibrasyon / Bakım / Onarım Ekle";
             this.btn_kalibrasyon.Id = 9;
-            this.btn_kalibrasyon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.btn_kalibrasyon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.btn_kalibrasyon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_kalibrasyon.ImageOptions.Image")));
+            this.btn_kalibrasyon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_kalibrasyon.ImageOptions.LargeImage")));
             this.btn_kalibrasyon.Name = "btn_kalibrasyon";
-            this.btn_kalibrasyon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_kalibrasyon_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Cihaz İşlem Bildir";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // CihazListesi
             // 
@@ -278,5 +336,11 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

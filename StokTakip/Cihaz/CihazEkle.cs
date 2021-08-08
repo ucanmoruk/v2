@@ -89,12 +89,21 @@ namespace StokTakip.Cihaz
         {
             if (tabPane1.SelectedPage == tabNavigationPage1)
             {
-                Size = new Size(525, 417);
-                this.CenterToScreen();
+                if (cihazkod == "sicil")
+                {
+                    Size = new Size(869,420);
+                    this.CenterToScreen();
+                }
+                else
+                {
+                    Size = new Size(525, 417);
+                    this.CenterToScreen();
+                }
+
             }
             else
             {
-                Size = new Size(977, 417);
+                Size = new Size(869,420);
                 this.CenterToScreen();
             }
         }
@@ -194,40 +203,166 @@ namespace StokTakip.Cihaz
             SqlDataAdapter da7 = new SqlDataAdapter(" select Kod, Ad from StokAnalizListesi where ID in (Select AnalizID from CihazAnaliz where CihazID = '" + lbl_ycID.Text + "' )", bgl.baglanti());
             da7.Fill(dt7);
             gridControl4.DataSource = dt7;
-            this.gridView1.Columns[0].Width = 30;
+            this.gridView7.Columns[0].Width = 35;
+        }
+
+        public void listele4()
+        {
+            DataTable dt7 = new DataTable();
+            SqlDataAdapter da7 = new SqlDataAdapter("select i.ID, i.Tur as 'İşlem Türü', i.Tarih1 as 'Tarih', i.Aciklama as 'Açıklama', case i.Finout " +
+                " when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Uygulayan Firma & Personel' " +
+                "from CihazIslem i left join StokTedarikci t on i.FirmaID = t.ID left join StokKullanici k on i.PersonelID = k.ID " +
+                " where i.CihazID = '"+cID+ "' and i.Durum='Aktif' order by i.Tarih1 desc ", bgl.baglanti());
+            da7.Fill(dt7);
+            gridControl5.DataSource = dt7;
+            gridView8.Columns["ID"].Visible = false;
         }
 
         void detaybul()
         {
             if (cihazkod == "1")
             {
-                // ichaz bilgileiri
-                 
-                //SqlCommand komutID = new SqlCommand("Select * From Cihaz where Ad= N'" + txt_ad.Text + "'", bgl.baglanti());
-                //SqlDataReader drI = komutID.ExecuteReader();
-                //while (drI.Read())
-                //{
-                //    ID = Convert.ToInt32(drI["ID"].ToString());
-                //    ek = drI["Ek"].ToString();
-                //}
-                //bgl.baglanti().Close();
+                SqlCommand komutID = new SqlCommand("Select * From CihazListesi where ID= N'" + cID + "'", bgl.baglanti());
+                SqlDataReader drI = komutID.ExecuteReader();
+                while (drI.Read())
+                {
+                    txt_kod.Text = drI["Kod"].ToString(); 
+                    txt_ad.Text = drI["Ad"].ToString(); 
+                    txt_marka.Text = drI["Marka"].ToString(); 
+                    txt_seri.Text = drI["Seri"].ToString(); 
+                    txt_tarih.Text = drI["Tarih"].ToString(); 
+                    txt_ozellik.Text = drI["Ozellik"].ToString();
+                    combo_durum.Text = drI["Durumu"].ToString();
+                    int c2ID;
+                    c2ID = Convert.ToInt32(drI["BirimID"].ToString());
+                    gridLookUpEdit1.EditValue = c2ID;
+                    gridLookUpEdit3.EditValue = drI["FirmaID"].ToString();
+                    gridLookUpEdit4.EditValue = drI["TalimatID"].ToString();
+
+                }
+                bgl.baglanti().Close();
 
             }
             else if (cihazkod == "2")
             {
-                // kal. bilgileri
-            }
-            else
-            {
-                // yetkili bilgileri
+                SqlCommand komutID = new SqlCommand("Select * From CihazKalibrasyon where CihazID= N'" + cID + "'", bgl.baglanti());
+                SqlDataReader drI = komutID.ExecuteReader();
+                while (drI.Read())
+                {
+                    kal_tip.Text = drI["KalTip"].ToString();
+                    ara_siklik.Text = drI["AraSiklik"].ToString();
+                    kal_siklik.Text = drI["KalSiklik"].ToString();
+                    kal_calisma.Text = drI["Calisma"].ToString();
+                    kal_kabul.Text = drI["KabulKriteri"].ToString();
+                    kal_aralik.Text = drI["Kalibrasyon"].ToString();
+                    gridLookUpEdit2.EditValue = drI["Kaynak"].ToString();
+
+                }
+                bgl.baglanti().Close();
+
+                SqlCommand komutI = new SqlCommand("Select * From CihazBakim where CihazID= N'" + cID + "'", bgl.baglanti());
+                SqlDataReader dr = komutI.ExecuteReader();
+                while (dr.Read())
+                {
+                    pf_siklik.Text = dr["PfSiklik"].ToString();
+                    pf_detay.Text = dr["PfDetay"].ToString();
+                    bkm_detay.Text = dr["BakimSiklik"].ToString();
+                    bkm_siklik.Text = dr["BakimDetay"].ToString();
+                }
+                bgl.baglanti().Close();
+
+
             }
         }
 
+        void detay2()
+        {
+            SqlCommand komutID = new SqlCommand("Select * From CihazListesi where ID= N'" + cID + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                txt_kod.Text = drI["Kod"].ToString();
+                txt_ad.Text = drI["Ad"].ToString();
+                txt_marka.Text = drI["Marka"].ToString();
+                txt_seri.Text = drI["Seri"].ToString();
+                txt_tarih.Text = drI["Tarih"].ToString();
+                txt_ozellik.Text = drI["Ozellik"].ToString();
+                combo_durum.Text = drI["Durumu"].ToString();
+                int c2ID;
+                c2ID = Convert.ToInt32(drI["BirimID"].ToString());
+                gridLookUpEdit1.EditValue = c2ID;
+                gridLookUpEdit3.EditValue = drI["FirmaID"].ToString();
+                gridLookUpEdit4.EditValue = drI["TalimatID"].ToString();
+
+            }
+            bgl.baglanti().Close();
+
+            SqlCommand komutI = new SqlCommand("Select * From CihazKalibrasyon where CihazID= N'" + cID + "'", bgl.baglanti());
+            SqlDataReader dr = komutI.ExecuteReader();
+            while (dr.Read())
+            {
+                kal_tip.Text = dr["KalTip"].ToString();
+                ara_siklik.Text = dr["AraSiklik"].ToString();
+                kal_siklik.Text = dr["KalSiklik"].ToString();
+                kal_calisma.Text = dr["Calisma"].ToString();
+                kal_kabul.Text = dr["KabulKriteri"].ToString();
+                kal_aralik.Text = dr["Kalibrasyon"].ToString();
+                gridLookUpEdit2.EditValue = dr["Kaynak"].ToString();
+
+            }
+            bgl.baglanti().Close();
+
+            SqlCommand komutIx = new SqlCommand("Select * From CihazBakim where CihazID= N'" + cID + "'", bgl.baglanti());
+            SqlDataReader drx = komutIx.ExecuteReader();
+            while (drx.Read())
+            {
+                pf_siklik.Text = drx["PfSiklik"].ToString();
+                pf_detay.Text = drx["PfDetay"].ToString();
+                bkm_detay.Text = drx["BakimSiklik"].ToString();
+                bkm_siklik.Text = drx["BakimDetay"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
+
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Cihaz"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+            {
+                btn_ekle.Visible = false;
+                btn_kalkayit.Visible = false;
+                btn_aktary.Visible = false;
+                simpleButton1.Visible = false;
+                btn_yeni.Visible = false;
+                popupContainerEdit1.Visible = false;
+                popupContainerEdit2.Visible = false;
+                gridControl3.Location = new Point(55, 43);
+                gridControl3.Size = new Size(324, 230);
+                gridControl4.Location = new Point(439, 43);
+                gridControl4.Size = new Size(376, 230);
+                barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }                
+            else
+            {
+
+            }
+               
+        }
 
         public static string cihazkod, cID;
         private void CihazEkle_Load(object sender, EventArgs e)
         {
-       
+            yetkibul();
 
             if (cihazkod == "" || cihazkod == null)
             {
@@ -241,7 +376,7 @@ namespace StokTakip.Cihaz
                 lbl_ycID.Text = cID;
                 btn_ekle.Text = "Güncelle";
                 listele();
-                Size = new Size(525, 417);
+                Size = new Size(525, 420);
                 this.CenterToScreen();
                 tabPane1.SelectedPage = tabNavigationPage1;
                 tabNavigationPage2.PageVisible = false;
@@ -253,31 +388,53 @@ namespace StokTakip.Cihaz
                 lbl_ycID.Text = cID;
                 btn_kalkayit.Text = "Güncelle";
                 listele();
-                Size = new Size(977, 417);
+                Size = new Size(869, 420);
                 this.CenterToScreen();
                 tabPane1.SelectedPage = tabNavigationPage2;
                 tabNavigationPage1.PageVisible = false;
                 tabNavigationPage4.PageVisible = false;
                 detaybul();
             }
+            else if (cihazkod == "sicil")
+            {
+                lbl_ycID.Text = cID;
+                Size = new Size(869, 420);
+                this.CenterToScreen();
+                btn_print.Visible = true;
+                btn_print.Location = new Point(290, 276);
+                btn_print.Size = new Size(156, 52);
+                btn_ekle.Location = new Point(147, 276);
+                btn_ekle.Size = new Size(137, 52);
+                gridControl5.Visible = true;
+                separatorControl3.Visible = true;
+                listele4();
+                listele();
+                listele2();
+                listele3();
+                detay2();
+                btn_ekle.Text = "Güncelle";
+                btn_kalkayit.Text = "Güncelle";
+                btn_yeni.Visible = false;
+            }
             else
             {
                 lbl_ycID.Text = cID;
+                listele();
                 listele2();
                 listele3();
-                Size = new Size(977, 417);
+                Size = new Size(869, 420);
                 this.CenterToScreen();
                 tabPane1.SelectedPage = tabNavigationPage4;
                 tabNavigationPage1.PageVisible = false;
                 tabNavigationPage2.PageVisible = false;
                 btn_yeni.Visible = false;
-                detaybul();
             }
         }
 
         private void CihazEkle_FormClosed(object sender, FormClosedEventArgs e)
         {
             cihazkod = "";
+            cID = "";
         }
 
       
@@ -329,7 +486,7 @@ namespace StokTakip.Cihaz
                 bgl.baglanti().Close();
 
                 DialogResult cikis = new DialogResult();
-                cikis = MessageBox.Show("Cihaz ekleme işlemi başarılı!" + "\n" + "\n" + "Cihaz ile ilgili kalibrasyon, bakım gibi diğer özellikleri eklemek istiyor musunuz ?" + "\n" + "\n" + "Unutmayın bu özellikleri sonra da güncelleyebilirsiniz!", "Ooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+                cikis = MessageBox.Show("Cihaz ekleme işlemi başarılı!" + "\n" + "\n" + "Cihaz ile ilgili kalibrasyon, bakım gibi diğer özellikleri eklemek istiyor musunuz ?" + "\n" + "\n" + "Dilerseniz bu özellikleri sonra da güncelleyebilirsiniz!", "Ooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
                 if (cikis == DialogResult.Yes)
                 { tabPane1.SelectedPage = tabNavigationPage2; }
                 else
@@ -337,6 +494,53 @@ namespace StokTakip.Cihaz
 
             }
            
+        }
+
+        void guncelle()
+        {
+            if (txt_kod.Text == null || txt_kod.Text == "")
+            {
+                MessageBox.Show("Lütfen cihaz kodunu giriniz!", "Oopss");
+            }
+            else
+            {
+                SqlCommand add = new SqlCommand(" update CihazListesi set Kod=@a1, Ad=@a2, Marka=@a3, Seri=@a4, FirmaID=@a5, BirimID=@a6, TalimatID=@a7, Tarih=@a8, Ozellik=@a9,Durumu=@a10 where ID = '"+cID+"' ", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", txt_kod.Text);
+                add.Parameters.AddWithValue("@a2", txt_ad.Text);
+                add.Parameters.AddWithValue("@a3", txt_marka.Text);
+                add.Parameters.AddWithValue("@a4", txt_seri.Text);
+                if (String.IsNullOrEmpty(tedarikciID))
+                {
+                    add.Parameters.AddWithValue("@a5", DBNull.Value);
+                }
+                else
+                {
+                    add.Parameters.AddWithValue("@a5", tedarikciID);
+                }
+                if (String.IsNullOrEmpty(birimID))
+                {
+                    add.Parameters.AddWithValue("@a6", DBNull.Value);
+                }
+                else
+                {
+                    add.Parameters.AddWithValue("@a6", birimID);
+                }
+                if (String.IsNullOrEmpty(talimatID))
+                {
+                    add.Parameters.AddWithValue("@a7", DBNull.Value);
+                }
+                else
+                {
+                    add.Parameters.AddWithValue("@a7", talimatID);
+                }
+                add.Parameters.AddWithValue("@a8", txt_tarih.Text);
+                add.Parameters.AddWithValue("@a9", txt_ozellik.Text);
+                add.Parameters.AddWithValue("@a10", combo_durum.Text);
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                MessageBox.Show("Güncelleme işlemi başarılı!", "Oopss");
+            }
         }
 
         void eklekal()
@@ -367,6 +571,36 @@ namespace StokTakip.Cihaz
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
+
+        void guncellekal()
+        {
+            SqlCommand add = new SqlCommand("update CihazKalibrasyon set KalTip=@a2, KalSiklik=@a3, AraSiklik=@a4, Calisma=@a5,Kalibrasyon=@a6,Kaynak=@a7,KabulKriteri=@a8 where CihazID = '"+cID+"' ; " +
+               " update CihazBakim set PfSiklik=@o2, PfDetay=@o3, BakimSiklik=@o4,BakimDetay=@o5 where CihazID = '" + cID + "'", bgl.baglanti());
+            add.Parameters.AddWithValue("@a2", kal_tip.Text);
+            add.Parameters.AddWithValue("@a3", kal_siklik.Text);
+            add.Parameters.AddWithValue("@a4", ara_siklik.Text);
+            add.Parameters.AddWithValue("@a5", kal_aralik.Text);
+            add.Parameters.AddWithValue("@a6", kal_aralik.Text);
+            if (String.IsNullOrEmpty(kaynakID))
+            {
+                add.Parameters.AddWithValue("@a7", DBNull.Value);
+            }
+            else
+            {
+                add.Parameters.AddWithValue("@a7", kaynakID);
+            }
+
+            add.Parameters.AddWithValue("@a8", kal_kabul.Text);
+            add.Parameters.AddWithValue("@o2", pf_siklik.Text);
+            add.Parameters.AddWithValue("@o3", pf_detay.Text);
+            add.Parameters.AddWithValue("@o4", bkm_siklik.Text);
+            add.Parameters.AddWithValue("@o5", bkm_detay.Text);
+            add.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            MessageBox.Show("Güncelleme işlemi başarılı!", "Oopss");
+        }
+
 
         void temizle()
         {
@@ -428,6 +662,102 @@ namespace StokTakip.Cihaz
 
         }
 
+        private void gridView8_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.HitInfo.InRow)
+            {
+                var p2 = MousePosition;
+                popupMenu1.ShowPopup(p2);
+            }
+        }
+
+        string iid,tur;
+
+        private void CihazEkle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                listele4();
+            }
+        }
+
+        string yol, ad;
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from CihazIslem where ID = N'" + iid + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yol = dr21["Path"].ToString();
+                ad = dr21["Tur"].ToString() + " Belgesi";
+            }
+            bgl.baglanti().Close();
+
+            if (yol == "" || yol == null)
+            {
+                MessageBox.Show("Bu işlem için henüz belge yüklenmemiştir!", "Ooopss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                Dokuman.DokumanGoruntule.yol = yol;
+                Dokuman.DokumanGoruntule.ad = ad;
+                Dokuman.DokumanGoruntule dg = new Dokuman.DokumanGoruntule();
+                dg.Show();
+            }
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CihazHareket.gelis = "Güncelle";
+            CihazHareket.tur = tur;
+            CihazHareket.cID = iid;
+            CihazHareket ce = new CihazHareket();
+            ce.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                DialogResult Secim = new DialogResult();
+
+                Secim = MessageBox.Show(tur + " işlemini silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (Secim == DialogResult.Yes)
+                {
+                    // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update CihazIslem set Durum=@a1 where ID = N'" + iid + "'", bgl.baglanti());
+                    komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                    komutSil.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                    MessageBox.Show("Silme işlemi başarılı!", "Oooppss!");
+                    listele4();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata2 : " + ex.Message);
+            }
+        }
+
+        private void gridView8_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+
+            DataRow dr = gridView8.GetDataRow(gridView8.FocusedRowHandle);
+            if (dr == null)
+            {
+
+            }
+            else
+            {
+                tur = dr["İşlem Türü"].ToString();
+                iid = dr["ID"].ToString();
+            }
+                
+
+        }
+
         private void btn_yeni_Click(object sender, EventArgs e)
         {
             tabPane1.SelectedPage = tabNavigationPage1;
@@ -471,7 +801,15 @@ namespace StokTakip.Cihaz
         {
             try
             {
-                ekleme();
+                if (btn_ekle.Text == "Güncelle")
+                {
+                    guncelle();
+                }
+                else
+                {
+                    ekleme();
+                }
+                
 
                 if (Application.OpenForms["CihazListesi"] == null)
                 {
@@ -492,15 +830,24 @@ namespace StokTakip.Cihaz
 
         private void btn_kalkayit_Click(object sender, EventArgs e)
         {
-            if (lbl_ycID.Text == "" || lbl_ycID.Text == null)
+            if (btn_kalkayit.Text == "Güncelle")
             {
-                MessageBox.Show("Lütfen öncelikle 'Cihaz Bilgileri' sayfasından cihazın temel bilgilerini doldurarak kaydediniz!", "Ooopsss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                guncellekal();
             }
             else
             {
-                eklekal();
-                tabPane1.SelectedPage = tabNavigationPage4;
+
+                if (lbl_ycID.Text == "" || lbl_ycID.Text == null)
+                {
+                    MessageBox.Show("Lütfen öncelikle 'Cihaz Bilgileri' sayfasından cihazın temel bilgilerini doldurarak kaydediniz!", "Ooopsss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    eklekal();
+                    tabPane1.SelectedPage = tabNavigationPage4;
+                }
             }
+
            
 
         }

@@ -85,28 +85,31 @@ namespace StokTakip.Cihaz
             {
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
+
+
+                if (durumx == "Kullanım Dışı")
+                {
+                    btn_kullanim.Caption = "Kullanıma Al";
+                }
+                else
+                {
+
+                    btn_kullanim.Caption = "Kullanım Dışı";
+                }
             }
 
-            if (durum == "Kullanım Dışı")
-            {
-                btn_kullanim.Caption = "Kullanıma Al";
-            }
-            else
-            {
-
-                btn_kullanim.Caption = "Kullanım Dışı";
-            }
         }
 
-        string cID, durum, cad;
+        string cID, cad,durumx;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                durumx = dr["Durumu"].ToString();
                 cID = dr["ID"].ToString();
                 cad = dr["Ad"].ToString();
-                durum = dr["Durumu"].ToString();
+               
             }
             catch (Exception)
             {
@@ -174,7 +177,6 @@ namespace StokTakip.Cihaz
         }
 
 
-
         private void CihazListesi_Load(object sender, EventArgs e)
         {
             listele();
@@ -183,7 +185,10 @@ namespace StokTakip.Cihaz
 
         private void btn_sicil_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //cihaz sicil kartı
+            CihazEkle.cihazkod = "sicil";
+            CihazEkle.cID = cID;
+            CihazEkle ce = new CihazEkle();
+            ce.Show();
         }
 
         private void btn_chzbilgi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -202,6 +207,8 @@ namespace StokTakip.Cihaz
             ce.Show();
         }
 
+
+
         private void btn_chzanaliz_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CihazEkle.cihazkod = "3";
@@ -210,12 +217,38 @@ namespace StokTakip.Cihaz
             ce.Show();
         }
 
-        private void btn_kalibrasyon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //kalibrasyon ekle
+            CihazHareket.tur = "Bakım";
+            CihazHareket.cID = cID;
+            CihazHareket ch = new CihazHareket();
+            ch.Show();
         }
 
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CihazHareket.tur = "Onarım";
+            CihazHareket.cID = cID;
+            CihazHareket ch = new CihazHareket();
+            ch.Show();
+        }
 
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CihazHareket.tur = "Kalibrasyon";
+            CihazHareket.cID = cID;
+            CihazHareket ch = new CihazHareket();
+            ch.Show();
+        }
 
- }
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CihazHareket.tur = "Ara Kontrol";
+            CihazHareket.cID = cID;
+            CihazHareket ch = new CihazHareket();
+            ch.Show();
+        }
+    }
 }

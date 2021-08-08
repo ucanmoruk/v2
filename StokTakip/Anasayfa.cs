@@ -165,6 +165,7 @@ namespace StokTakip
             else if (talep == 3 )
             {
                 ribbonPageGroup10.Visible = true;
+                ribbonPageGroup27.Visible = true;
                 ribbonPageGroup5.Visible = true;
                 ribbonPageGroup8.Visible = true;
                 ribbonPageGroup17.Visible = true;
@@ -204,10 +205,10 @@ namespace StokTakip
             kullanicibul();
             firmabul();
             yetkibul();
-            if (Giris.db == "2")
-            {
-                tanitim();
-            }
+            //if (Giris.db == "2")
+            //{
+            //    tanitim();
+            //}
 
             ribbonPageGroup25.AllowTextClipping = false;
             ribbonPageGroup26.AllowTextClipping = false;
@@ -218,7 +219,7 @@ namespace StokTakip
                 kl = new DuyuruListe();
                 kl.MdiParent = this;
                 kl.Show();
-                barButtonItem59.Visibility = BarItemVisibility.Always;
+              //  barButtonItem59.Visibility = BarItemVisibility.Always;
             }
 
         }
@@ -391,7 +392,7 @@ namespace StokTakip
                 del.MdiParent = this;
                 del.Show();
             }
-            btn_kontrol.Visibility = BarItemVisibility.Always;
+          //  btn_kontrol.Visibility = BarItemVisibility.Always;
 
         }
 
@@ -490,7 +491,7 @@ namespace StokTakip
                 dul.Show();
             }
 
-            barButtonItem59.Visibility = BarItemVisibility.Always;
+           // barButtonItem59.Visibility = BarItemVisibility.Always;
         }
 
         private void barButtonItem59_ItemClick(object sender, ItemClickEventArgs e)
@@ -531,6 +532,34 @@ namespace StokTakip
                 cl.MdiParent = this;
                 cl.Show();
             }
+        }
+
+        Cihaz.KalibrasyonListesi kli;
+        private void barButtonItem29_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (kli == null || kli.IsDisposed)
+            {
+                kli = new Cihaz.KalibrasyonListesi();
+                kli.MdiParent = this;
+                kli.Show();
+            }
+        }
+
+        Cihaz.CMaliyetListe cml;
+        private void barButtonItem61_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (cml == null || cml.IsDisposed)
+            {
+                cml = new Cihaz.CMaliyetListe();
+                cml.MdiParent = this;
+                cml.Show();
+            }
+        }
+
+        private void barButtonItem62_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Cihaz.CihazMaliyet cm = new Cihaz.CihazMaliyet();
+            cm.Show();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

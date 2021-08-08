@@ -151,6 +151,12 @@ namespace StokTakip.Duyuru
         }
 
         int kID;
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            okundu();
+        }
+
         public void okundu()
         {
             if (gridView1.SelectedRowsCount == 0)

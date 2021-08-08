@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace StokTakip.Duyuru
 {
@@ -63,6 +64,12 @@ namespace StokTakip.Duyuru
                         ad.ExecuteNonQuery();
                         bgl.baglanti().Close();
 
+                        PopupNotifier popp = new PopupNotifier();
+                        popp.Image = Properties.Resources.information;
+                        popp.TitleText = "Bir yeni duyuru!";
+                        popp.ContentText = txt_konu.Text + " konusunda yayınlanan duyurunun detaylarını duyurular sayfasından okuyunuz!";
+                        popp.Popup();
+
                     }
                     bgl.baglanti().Close();
 
@@ -79,8 +86,18 @@ namespace StokTakip.Duyuru
                         ad.Parameters.AddWithValue("@a3", "Beklemede");
                         ad.ExecuteNonQuery();
                         bgl.baglanti().Close();
+
+                        if (Anasayfa.kullanici == kID.ToString())
+                        {
+                            PopupNotifier popu = new PopupNotifier();
+                            popu.Image = Properties.Resources.information;
+                            popu.TitleText = "Bir yeni duyuru!";
+                            popu.ContentText = txt_konu.Text + " konusunda yayınlanan duyurunun detaylarını duyurular sayfasından okuyunuz!";
+                            popu.Popup();
+                        }
+
                     }
-                }                                                                    
+                }
 
 
                 MessageBox.Show("Mesajınız başarıyla yayınlandı!", "Ooppsss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -114,7 +131,14 @@ namespace StokTakip.Duyuru
 
         private void btn_yayin_Click(object sender, EventArgs e)
         {
-            ekleme();
+          //  ekleme();
+
+
+            PopupNotifier popup = new PopupNotifier();
+            popup.Image = Properties.Resources.information;
+            popup.TitleText = "Bir yeni duyuru!";
+            popup.ContentText = txt_konu.Text + " konusunda yayınlanan duyurunun detaylarını duyurular sayfasından okuyunuz!";
+            popup.Popup();
 
             if (Application.OpenForms["DuyuruListe"] == null)
             { }
