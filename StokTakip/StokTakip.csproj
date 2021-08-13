@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -126,6 +126,30 @@
     <Compile Include="Analiz\AnalizYeni.Designer.cs">
       <DependentUpon>AnalizYeni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Analiz\ValidasyonEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonEkle.Designer.cs">
+      <DependentUpon>ValidasyonEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonListesi.Designer.cs">
+      <DependentUpon>ValidasyonListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlan.Designer.cs">
+      <DependentUpon>ValidasyonPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlanListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlanListesi.Designer.cs">
+      <DependentUpon>ValidasyonPlanListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anasayfa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +191,12 @@
     </Compile>
     <Compile Include="Cihaz\KalibrasyonListesi.Designer.cs">
       <DependentUpon>KalibrasyonListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonSartname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonSartname.Designer.cs">
+      <DependentUpon>KalibrasyonSartname.cs</DependentUpon>
     </Compile>
     <Compile Include="Dokuman\DKDEkle.cs">
       <SubType>Form</SubType>
@@ -263,6 +293,11 @@
     </Compile>
     <Compile Include="Firma\PersonelListesi.Designer.cs">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="massgrup_massDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ÇöpKutusu\Karsilama.cs">
       <SubType>Form</SubType>
@@ -453,6 +488,18 @@
     <EmbeddedResource Include="Analiz\AnalizYeni.resx">
       <DependentUpon>AnalizYeni.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonEkle.resx">
+      <DependentUpon>ValidasyonEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonListesi.resx">
+      <DependentUpon>ValidasyonListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonPlan.resx">
+      <DependentUpon>ValidasyonPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonPlanListesi.resx">
+      <DependentUpon>ValidasyonPlanListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cihaz\KalibrasyonListesi.resx">
       <DependentUpon>KalibrasyonListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\KalibrasyonSartname.resx">
+      <DependentUpon>KalibrasyonSartname.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DKDEkle.resx">
       <DependentUpon>DKDEkle.cs</DependentUpon>
@@ -624,6 +674,17 @@
       <DependentUpon>TedarikciTur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="massgrup_massDataSet.xsc">
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="massgrup_massDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>massgrup_massDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="massgrup_massDataSet.xss">
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

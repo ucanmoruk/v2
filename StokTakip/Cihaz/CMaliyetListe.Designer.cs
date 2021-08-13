@@ -153,6 +153,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Name = "CMaliyetListe";
             this.Text = "Cihaz Maliyet Listesi";
             this.Load += new System.EventHandler(this.CMaliyetListe_Load);

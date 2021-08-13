@@ -24,11 +24,12 @@ namespace StokTakip.Analiz
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select f.Birim ,l.Kod, l.Ad as 'Analiz Adı', l.Metot, l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
-                "inner join StokFirmaBirim f on l.Birim = f.ID where l.Durumu = 'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
+                "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
+            gridView1.Columns["ID"].Visible = false;
         }
 
         int yetki;
@@ -51,6 +52,7 @@ namespace StokTakip.Analiz
             {
                 barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             }
 
         }
@@ -62,8 +64,9 @@ namespace StokTakip.Analiz
             yetkibul();
 
 
-            this.gridView1.Columns[1].Width = 40;
-            this.gridView1.Columns[2].Width = 150;
+            this.gridView1.Columns[2].Width = 40;
+            this.gridView1.Columns[3].Width = 150;
+            this.gridView1.Columns[4].Width = 180;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -81,8 +84,10 @@ namespace StokTakip.Analiz
 
                 if (Secim == DialogResult.Yes)
                 {
-                   SqlCommand komutSil = new SqlCommand("update StokAnalizListesi set Durumu=@a1 where Kod = N'" + skod + "'", bgl.baglanti());
+                    string ykod = "P-"+skod ;
+                   SqlCommand komutSil = new SqlCommand("update StokAnalizListesi set Durumu=@a1 where ID= N'" + aID + "'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                    komutSil.Parameters.AddWithValue("@a1", ykod);
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
                     MessageBox.Show("Silme işlemi gerçekleşmiştir.");
@@ -113,8 +118,17 @@ namespace StokTakip.Analiz
             }
             bgl.baglanti().Close();
 
-            DokumanGoruntule dg = new DokumanGoruntule();
-            dg.Show();
+            if (DokumanGoruntule.yol == "" || DokumanGoruntule.yol == null)
+            {
+                MessageBox.Show("Bu analiz talimatı henüz sisteme yüklenmemiştir!", "Oooppss!", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                DokumanGoruntule dg = new DokumanGoruntule();
+                dg.Show();
+            }
+
+
         }
 
         private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
@@ -127,12 +141,13 @@ namespace StokTakip.Analiz
 
         }
 
-        string skod, sad;
+        string skod, sad, aID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             skod = dr["Kod"].ToString();
             sad = dr["Analiz Adı"].ToString();
+            aID = dr["ID"].ToString();
         }
 
         private void AnalizListesi_KeyDown(object sender, KeyEventArgs e)
@@ -169,6 +184,14 @@ namespace StokTakip.Analiz
               
         }
 
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //validas
+            ValidasyonEkle.gelis = "güncelle";
+            ValidasyonEkle.aID = aID;
+            ValidasyonEkle ve = new ValidasyonEkle();
+            ve.Show();
+        }
 
         int redurum;
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

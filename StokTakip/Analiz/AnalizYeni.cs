@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,16 +21,35 @@ namespace StokTakip.Analiz
 
         sqlbaglanti bgl = new sqlbaglanti();
 
-        void birimbul()
+        void glistele()
         {
-            SqlCommand komut2 = new SqlCommand("Select Birim from StokFirmaBirim where FirmaID = N'" + Anasayfa.firmaID + "' and Durum = N'Aktif' ", bgl.baglanti());
-            SqlDataReader dr2 = komut2.ExecuteReader();
-            while (dr2.Read())
-            {
-                combo_birim.Properties.Items.Add(dr2[0]);
-            }
-            bgl.baglanti().Close();
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Birim from StokFirmaBirim where Durum= 'Aktif'", bgl.baglanti());
+            da2.Fill(dt2);
+
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Birim";
+            gridLookUpEdit1.Properties.ValueMember = "ID";
+
+            DataTable dt4 = new DataTable();
+            SqlDataAdapter da4 = new SqlDataAdapter("Select ID, Kod, Ad from StokDKDListe where Durum= 'Aktif'", bgl.baglanti());
+            da4.Fill(dt4);
+
+            gridLookUpEdit2.Properties.DataSource = dt4;
+            gridLookUpEdit2.Properties.DisplayMember = "Kod";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
         }
+
+        //void birimbul()
+        //{
+        //    SqlCommand komut2 = new SqlCommand("Select Birim from StokFirmaBirim where FirmaID = N'" + Anasayfa.firmaID + "' and Durum = N'Aktif' ", bgl.baglanti());
+        //    SqlDataReader dr2 = komut2.ExecuteReader();
+        //    while (dr2.Read())
+        //    {
+        //        combo_birim.Properties.Items.Add(dr2[0]);
+        //    }
+        //    bgl.baglanti().Close();
+        //}
 
         int akod;
         void kontrol()
@@ -64,11 +84,25 @@ namespace StokTakip.Analiz
             SqlCommand add = new SqlCommand(" insert into StokAnalizListesi (Kod, Ad, Metot, Matriks, Akreditasyon,Durumu,Birim) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7) ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
-            add.Parameters.AddWithValue("@a3", txt_metot.Text);
+            if (String.IsNullOrEmpty(kaynak))
+            {
+                add.Parameters.AddWithValue("@a3", DBNull.Value);
+            }
+            else
+            {
+                add.Parameters.AddWithValue("@a3", kaynak);
+            }
             add.Parameters.AddWithValue("@a4", txt_matriks.Text);
             add.Parameters.AddWithValue("@a5", combo_akre.Text);
             add.Parameters.AddWithValue("@a6", "Aktif");
-            add.Parameters.AddWithValue("@a7", bID);
+            if (String.IsNullOrEmpty(birim))
+            {
+                add.Parameters.AddWithValue("@a7", DBNull.Value);
+            }
+            else
+            {
+                add.Parameters.AddWithValue("@a7", birim);
+            }
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -76,7 +110,6 @@ namespace StokTakip.Analiz
 
         }
 
-        int birimID, bID;
         void listele()
         {
 
@@ -86,22 +119,14 @@ namespace StokTakip.Analiz
             {
                 txt_ad.Text = drI["Ad"].ToString();
                 txt_kod.Text = drI["Kod"].ToString();
-                txt_matriks.Text = drI["Matriks"].ToString();
-                txt_metot.Text = drI["Metot"].ToString();
+                txt_matriks.Text = drI["Matriks"].ToString();               
                 combo_akre.Text = drI["Akreditasyon"].ToString();
-                birimID = Convert.ToInt32(drI["Birim"].ToString());
+                string gbirim = drI["Birim"].ToString();
+                string gmetot = drI["Metot"].ToString();
+                gridLookUpEdit1.EditValue = gbirim ;
+                gridLookUpEdit2.EditValue = gmetot;
             }
             bgl.baglanti().Close();
-
-            SqlCommand komut = new SqlCommand("select * from StokFirmaBirim where ID = N'" + birimID + "'", bgl.baglanti());
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                combo_birim.Text = dr["Birim"].ToString();
-            }
-            bgl.baglanti().Close();
-
-
         }
 
         void guncelle()
@@ -109,10 +134,24 @@ namespace StokTakip.Analiz
             SqlCommand add = new SqlCommand(" update StokAnalizListesi set Kod=@a1, Ad=@a2, Metot=@a3, Matriks=@a4, Akreditasyon=@a5, Birim=@a6 where Kod = '"+kod+"' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
-            add.Parameters.AddWithValue("@a3", txt_metot.Text);
+            if (String.IsNullOrEmpty(kaynak))
+            {
+                add.Parameters.AddWithValue("@a3", DBNull.Value);
+            }
+            else
+            {
+                add.Parameters.AddWithValue("@a3", kaynak);
+            }
             add.Parameters.AddWithValue("@a4", txt_matriks.Text);
             add.Parameters.AddWithValue("@a5", combo_akre.Text);
-            add.Parameters.AddWithValue("@a6", bID);
+            if (String.IsNullOrEmpty(birim))
+            {
+                add.Parameters.AddWithValue("@a6", DBNull.Value);
+            }
+            else
+            {
+                add.Parameters.AddWithValue("@a6", birim);
+            }
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -123,13 +162,13 @@ namespace StokTakip.Analiz
         private void AnalizYeni_Load(object sender, EventArgs e)
         {
             if (kod == "" || kod == null)
-            {
-                birimbul();
+            {                
+                glistele();
             }
             else
             {
-                listele();
-                birimbul();
+                glistele();
+                listele();               
                 btn_add.Text = "Güncelle";
                 Text = "Analiz Bilgi Güncelle";
             }
@@ -153,7 +192,7 @@ namespace StokTakip.Analiz
                 else
                 {
 
-                    if (combo_birim.Text == "")
+                    if (gridLookUpEdit1.EditValue.ToString() == "")
                     {
                         MessageBox.Show("Lütfen analizin yapıldığı birimi seçiniz!", "Oooppss!");
                     }
@@ -165,7 +204,8 @@ namespace StokTakip.Analiz
                         txt_ad.Text = "";
                         txt_kod.Text = "";
                         txt_matriks.Text = "";
-                        txt_metot.Text = "";
+                        gridLookUpEdit1.EditValue = null;
+                        gridLookUpEdit2.EditValue = null;
                         combo_akre.Text = "";
                     }
 
@@ -189,17 +229,58 @@ namespace StokTakip.Analiz
 
 
         }
+        
 
-        private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
-            SqlCommand komut2 = new SqlCommand("Select ID from StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
-            SqlDataReader dr2 = komut2.ExecuteReader();
-            while (dr2.Read())
-            {
-                bID = Convert.ToInt32(dr2["ID"]);
-            }
-            bgl.baglanti().Close();
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
         }
+
+        private void gridLookUpEdit2_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
+        private void gridLookUpEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridLookUpEdit edit = sender as GridLookUpEdit;
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)
+            {
+                gridLookUpEdit1.EditValue = null;
+
+            }
+        }
+
+        private void gridLookUpEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridLookUpEdit edit = sender as GridLookUpEdit;
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)
+            {
+                gridLookUpEdit2.EditValue = null;
+
+            }
+        }
+
+        string birim, kaynak;
+
+        private void gridLookUpEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEdit2.EditValue == null)
+                kaynak = null;
+            else
+                kaynak = gridLookUpEdit2.EditValue.ToString();
+        }
+
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEdit1.EditValue == null)
+                birim = null;
+            else
+                birim = gridLookUpEdit1.EditValue.ToString();
+        }
+
 
         private void AnalizYeni_FormClosing(object sender, FormClosingEventArgs e)
         {

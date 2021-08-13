@@ -45,7 +45,6 @@ namespace StokTakip
         {
             try
             {
-                txtkod.Text = urunkod;
                 SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID= N'" + urunkod + "'", bgl.baglanti());
                 SqlDataReader drI = komutID.ExecuteReader();
                 while (drI.Read())
@@ -60,6 +59,7 @@ namespace StokTakip
                     txtlimit.Text = drI["Limit"].ToString();
                     txtsaklama.Text = drI["Saklama"].ToString();
                     txtozellik.Text = drI["Ozellik"].ToString();
+                    txtkod.Text = drI["Kod"].ToString();
 
                 }
                 bgl.baglanti().Close();

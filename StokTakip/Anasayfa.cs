@@ -562,6 +562,46 @@ namespace StokTakip
             cm.Show();
         }
 
+        Cihaz.KalibrasyonSartname ks;
+        private void barButtonItem63_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ks == null || ks.IsDisposed)
+            {
+                ks = new Cihaz.KalibrasyonSartname();
+                ks.MdiParent = this;
+                ks.Show();
+            }
+        }
+
+
+        Analiz.ValidasyonListesi val;
+        private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (val == null || val.IsDisposed)
+            {
+                val = new Analiz.ValidasyonListesi();
+                val.MdiParent = this;
+                val.Show();
+            }
+        }
+
+        private void barButtonItem65_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Analiz.ValidasyonPlan ve = new Analiz.ValidasyonPlan();
+            ve.Show();
+        }
+
+        Analiz.ValidasyonPlanListesi vpl;
+        private void barButtonItem66_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (vpl == null || vpl.IsDisposed)
+            {
+                vpl = new Analiz.ValidasyonPlanListesi();
+                vpl.MdiParent = this;
+                vpl.Show();
+            }
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();

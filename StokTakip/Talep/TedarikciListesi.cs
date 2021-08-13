@@ -25,21 +25,24 @@ namespace StokTakip.Talep
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(" select Row_number() over(order by t.Tur) as 'No', t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Faks, t.Durumu as 'Çalışma Durumu', p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Durum from StokTedarikci t " +
+            //select Row_number() over(order by t.Tur) as 'No',
+            SqlDataAdapter da = new SqlDataAdapter(" select t.ID, t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Faks, t.Durumu as 'Çalışma Durumu', p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Durum from StokTedarikci t " +
                 " left join StokTedarikciPuan p on t.ID = p.FirmaID   left join StokKullanici k on p.PersonelID = k.ID where t.Durum = 'Aktif' order by t.Tur asc ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
-
-            this.gridView1.Columns[0].Width = 20;
-            this.gridView1.Columns[1].Width = 50;            
+            gridView1.Columns["ID"].Visible = false;
+            this.gridView1.Columns[1].Width = 50;
+            this.gridView1.Columns[2].Width = 85;
+            this.gridView1.Columns[3].Width = 50;
             this.gridView1.Columns[4].Width = 50;
             this.gridView1.Columns[5].Width = 50;
-            this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[6].Width = 70;
             this.gridView1.Columns[7].Width = 50;
-            this.gridView1.Columns[8].Width = 50;
+            this.gridView1.Columns[8].Width = 40;
             this.gridView1.Columns[9].Width = 50;
+            this.gridView1.Columns[10].Width = 50;
             this.gridView1.Columns[11].Width = 30;
-            this.gridView1.Columns[12].Width = 40;
+            this.gridView1.Columns[12].Width = 30;
         }
 
         int yetki;
@@ -106,7 +109,7 @@ namespace StokTakip.Talep
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durum=@a1 where Ad = N'" + firmad+ "' ", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durum=@a1 where ID = N'" + fID + "' ", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -146,7 +149,7 @@ namespace StokTakip.Talep
             }
         }
 
-        string firmad, durum;
+        string firmad, durum, fID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
@@ -154,6 +157,7 @@ namespace StokTakip.Talep
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
                 firmad = dr["Firma Adı"].ToString();
                 durum = dr["Çalışma Durumu"].ToString();
+                fID = dr["ID"].ToString();
             }
             catch (Exception Ex)
             {
@@ -200,7 +204,7 @@ namespace StokTakip.Talep
         {
             if (durum == "Pasif")
             {
-                SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durumu=@a1 where Ad = N'" + firmad + "' ", bgl.baglanti());
+                SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durumu=@a1 where ID = N'" + fID+ "' ", bgl.baglanti());
                 komutSil.Parameters.AddWithValue("@a1", "Aktif");
                 komutSil.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -209,7 +213,7 @@ namespace StokTakip.Talep
             else
             {
 
-                SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durumu=@a1 where Ad = N'" + firmad + "' ", bgl.baglanti());
+                SqlCommand komutSil = new SqlCommand("update StokTedarikci set Durumu=@a1 where ID = N'" + fID + "' ", bgl.baglanti());
                 komutSil.Parameters.AddWithValue("@a1", "Pasif");
                 komutSil.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -224,7 +228,7 @@ namespace StokTakip.Talep
         {
             string durum = gridView1.GetRowCellValue(e.RowHandle, "Durum").ToString();
             if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && durum == "Uygun Değil")
-                e.Appearance.BackColor = Color.Red;
+                e.Appearance.BackColor = Color.OrangeRed;
 
         }
     }

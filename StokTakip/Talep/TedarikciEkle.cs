@@ -60,35 +60,53 @@ namespace StokTakip.Talep
 
         TedarikciListesi m = (TedarikciListesi)System.Windows.Forms.Application.OpenForms["TedarikciListesi"];
 
-
+        string kontrol;
         void ekleme()
         {
-            SqlCommand add = new SqlCommand("insert into StokTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Faks,Durum, Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9)", bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", txt_ad.Text);
-            add.Parameters.AddWithValue("@a2", txt_adres.Text);
-            add.Parameters.AddWithValue("@a3", txt_tur.Text);
-            add.Parameters.AddWithValue("@a4", txt_yetkili.Text);
-            add.Parameters.AddWithValue("@a5", txt_tel.Text);
-            add.Parameters.AddWithValue("@a6", txt_email.Text);
-            add.Parameters.AddWithValue("@a7", txt_fax.Text);
-            add.Parameters.AddWithValue("@a8", "Aktif");
-            add.Parameters.AddWithValue("@a9", "Aktif");
-            add.ExecuteNonQuery();
+            SqlCommand komut2 = new SqlCommand("Select count(ID) from StokTedarikci where Ad = '" + txt_ad.Text + "' ", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                kontrol = dr2[0].ToString();
+            }
             bgl.baglanti().Close();
 
-            MessageBox.Show("Tedarikçi firma ekleme işlemi başarılı.", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-            if (Application.OpenForms["TedarikciListesi"] == null)
+            if (kontrol == "0" || kontrol == null)
             {
+                SqlCommand add = new SqlCommand("insert into StokTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Faks,Durum, Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9)", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", txt_ad.Text);
+                add.Parameters.AddWithValue("@a2", txt_adres.Text);
+                add.Parameters.AddWithValue("@a3", txt_tur.Text);
+                add.Parameters.AddWithValue("@a4", txt_yetkili.Text);
+                add.Parameters.AddWithValue("@a5", txt_tel.Text);
+                add.Parameters.AddWithValue("@a6", txt_email.Text);
+                add.Parameters.AddWithValue("@a7", txt_fax.Text);
+                add.Parameters.AddWithValue("@a8", "Aktif");
+                add.Parameters.AddWithValue("@a9", "Aktif");
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
 
+                MessageBox.Show("Tedarikçi firma ekleme işlemi başarılı.", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                if (Application.OpenForms["TedarikciListesi"] == null)
+                {
+
+                }
+                else
+                {
+                    m.listele();
+                }
+                temizle();
             }
             else
             {
-                m.listele();
-            }
-            temizle();
+                MessageBox.Show("Bu firma daha önce kaydedilmiş olabilir. Bir kontrol edebilir misiniz ? ", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-      
+            }
+
+
+
+
         }
 
         void guncelle()

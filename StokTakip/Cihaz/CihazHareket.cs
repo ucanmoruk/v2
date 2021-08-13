@@ -430,7 +430,7 @@ namespace StokTakip.Cihaz
                     m.listele4();
                 }
 
-                if (Application.OpenForms["Kalibrasyon Listesi"] == null)
+                if (Application.OpenForms["KalibrasyonListesi"] == null)
                 { }
                 else
                 {

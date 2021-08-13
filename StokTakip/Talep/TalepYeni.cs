@@ -114,7 +114,7 @@ namespace StokTakip
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hata TY 22: ");
+                MessageBox.Show("Hata TY 22: " + ex);
             }
             
         }

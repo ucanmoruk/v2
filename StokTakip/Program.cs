@@ -20,8 +20,8 @@ namespace StokTakip
 
             BonusSkins.Register();
 
-            //  Application.Run(new Cihaz.CihazEkle());
-            Application.Run(new Giris());
+            // Application.Run(new Analiz.ValidasyonEkle());
+               Application.Run(new Giris());
             // Application.Run(new WebBrowser());
         }
     }

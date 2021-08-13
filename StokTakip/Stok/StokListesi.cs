@@ -103,9 +103,11 @@ namespace StokTakip
 
                 if (Secim == DialogResult.Yes)
                 {
+                    string ykod = "P-" + skod;
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update StokListesi set Durum=@a1 where ID = N'"+id+"'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokListesi set Durum=@a1, Kod = @a2 where ID = N'"+id+"'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                    komutSil.Parameters.AddWithValue("@a2", ykod);
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
                     MessageBox.Show("Silme işlemi gerçekleşmiştir.");

@@ -150,7 +150,7 @@ namespace StokTakip
             }
         }
 
-        int yetki, kid;
+        int yetki;
         void yetkibul()
         {
             SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());

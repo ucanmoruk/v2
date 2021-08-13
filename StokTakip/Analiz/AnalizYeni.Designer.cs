@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizYeni));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_kod = new DevExpress.XtraEditors.TextEdit();
             this.txt_ad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_metot = new DevExpress.XtraEditors.TextEdit();
             this.txt_matriks = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.combo_akre = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -41,18 +45,23 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.combo_birim = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_metot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_matriks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_akre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(235, 58);
+            this.labelControl1.Location = new System.Drawing.Point(237, 58);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(22, 13);
             this.labelControl1.TabIndex = 0;
@@ -74,18 +83,11 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(60, 119);
+            this.labelControl2.Location = new System.Drawing.Point(63, 119);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(32, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Metot:";
-            // 
-            // txt_metot
-            // 
-            this.txt_metot.Location = new System.Drawing.Point(104, 116);
-            this.txt_metot.Name = "txt_metot";
-            this.txt_metot.Size = new System.Drawing.Size(318, 20);
-            this.txt_metot.TabIndex = 5;
             // 
             // txt_matriks
             // 
@@ -116,7 +118,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(75, 89);
+            this.labelControl4.Location = new System.Drawing.Point(77, 89);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(17, 13);
             this.labelControl4.TabIndex = 0;
@@ -146,33 +148,68 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(66, 26);
+            this.labelControl6.Location = new System.Drawing.Point(69, 25);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(26, 13);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "Birim:";
             // 
-            // combo_birim
+            // gridLookUpEdit2
             // 
-            this.combo_birim.Location = new System.Drawing.Point(104, 22);
-            this.combo_birim.Name = "combo_birim";
-            this.combo_birim.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.combo_birim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_birim.Size = new System.Drawing.Size(318, 20);
-            this.combo_birim.TabIndex = 1;
-            this.combo_birim.SelectedIndexChanged += new System.EventHandler(this.combo_birim_SelectedIndexChanged);
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(104, 116);
+            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
+            this.gridLookUpEdit2.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
+            this.gridLookUpEdit2.Properties.NullText = "Metot kaynağı seçiniz..";
+            this.gridLookUpEdit2.Properties.PopupView = this.gridView1;
+            this.gridLookUpEdit2.Size = new System.Drawing.Size(318, 20);
+            this.gridLookUpEdit2.TabIndex = 5;
+            this.gridLookUpEdit2.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit2_QueryPopUp);
+            this.gridLookUpEdit2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.gridLookUpEdit2_ButtonClick);
+            this.gridLookUpEdit2.EditValueChanged += new System.EventHandler(this.gridLookUpEdit2_EditValueChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridLookUpEdit1
+            // 
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(104, 22);
+            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
+            this.gridLookUpEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Clear selection", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.gridLookUpEdit1.Properties.NullText = "Birim seçiniz..";
+            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(318, 20);
+            this.gridLookUpEdit1.TabIndex = 1;
+            this.gridLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
+            this.gridLookUpEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.gridLookUpEdit1_ButtonClick);
+            this.gridLookUpEdit1.EditValueChanged += new System.EventHandler(this.gridLookUpEdit1_EditValueChanged);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // AnalizYeni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 257);
-            this.Controls.Add(this.combo_birim);
+            this.Controls.Add(this.gridLookUpEdit1);
+            this.Controls.Add(this.gridLookUpEdit2);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.combo_akre);
             this.Controls.Add(this.txt_matriks);
-            this.Controls.Add(this.txt_metot);
             this.Controls.Add(this.txt_ad);
             this.Controls.Add(this.txt_kod);
             this.Controls.Add(this.labelControl6);
@@ -188,10 +225,12 @@
             this.Load += new System.EventHandler(this.AnalizYeni_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_kod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_metot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_matriks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_akre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +242,6 @@
         private DevExpress.XtraEditors.TextEdit txt_kod;
         private DevExpress.XtraEditors.TextEdit txt_ad;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txt_metot;
         private DevExpress.XtraEditors.TextEdit txt_matriks;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit combo_akre;
@@ -211,6 +249,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton btn_add;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.ComboBoxEdit combo_birim;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
     }
 }

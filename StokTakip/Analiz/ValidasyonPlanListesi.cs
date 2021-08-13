@@ -1,0 +1,231 @@
+﻿using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace StokTakip.Analiz
+{
+    public partial class ValidasyonPlanListesi : Form
+    {
+        public ValidasyonPlanListesi()
+        {
+            InitializeComponent();
+        }
+
+        sqlbaglanti bgl = new sqlbaglanti();
+
+        public void listele()
+        {
+            DataTable dt2 = new DataTable();
+            //SqlDataAdapter da2 = new SqlDataAdapter(" select v.ID, s.Kod + ' ' + s.Ad as 'Analiz', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', v.Tarih1 as 'Başlangıç',  " +
+            //    " v.Tarih2 as 'Bitiş',  v.Urun as 'Matriks', v.Aciklama as 'Açıklama' , k.Ad + ' ' + k.Soyad as 'Yetkili Personel' , v.AnalizID as 'AnalizID' , v.Durumu from  ValidasyonVeri v " +
+            //    " inner join StokAnalizListesi s on v.AnalizID = s.ID inner join StokDKDListe d on s.Metot = d.ID " +
+            //    " left join ValidasyonYetkili y on v.AnalizID = y.AnalizID left join StokKullanici k on y.PersonelID = k.ID where v.Durum = 'Plan'  and y.Durum = 'Plan'", bgl.baglanti());
+
+            SqlDataAdapter da2 = new SqlDataAdapter("select v.ID, s.Kod + ' ' + s.Ad as 'Analiz', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', v.Tarih1 as 'Başlangıç',  " +
+                "v.Tarih2 as 'Bitiş',  v.Urun as 'Matriks', v.Aciklama as 'Açıklama' ,  v.AnalizID as 'AnalizID' , v.Durumu from  ValidasyonVeri v  " +
+                "inner join StokAnalizListesi s on v.AnalizID = s.ID inner join StokDKDListe d on s.Metot = d.ID where v.Durum = 'Plan' or v.Durum = 'Ortak' ", bgl.baglanti());
+            da2.Fill(dt2);
+            gridControl1.DataSource = dt2;
+
+            gridView1.Columns["ID"].Visible = false;
+            gridView1.Columns["AnalizID"].Visible = false;
+            this.gridView1.Columns[1].Width = 100;
+            this.gridView1.Columns[2].Width = 170;
+            this.gridView1.Columns[3].Width = 40;
+            this.gridView1.Columns[4].Width = 40;
+            this.gridView1.Columns[5].Width = 80;
+            this.gridView1.Columns[6].Width = 150;
+            this.gridView1.Columns[7].Width = 70;
+          //  this.gridView1.Columns[8].Width = 70;
+
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Açıklama"].ColumnEdit = memo;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult Secim = new DialogResult();
+
+            Secim = MessageBox.Show("Seçili validasyon planını gerçekleştirdiniz mi ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (Secim == DialogResult.Yes)
+            {
+
+                //SqlCommand add2 = new SqlCommand("update ValidasyonVeri set Durumu=@o1 where ID = '" + vID + "'", bgl.baglanti());
+                //add2.Parameters.AddWithValue("@o1", "Gerçekleşti");
+                //add2.ExecuteNonQuery();
+                //bgl.baglanti().Close();                
+
+                ValidasyonEkle.gelis = "plan";
+                ValidasyonEkle.aID = AnalizID;
+                ValidasyonEkle.vID = vID;
+                ValidasyonEkle ve = new ValidasyonEkle();
+                ve.Show();
+
+                //listele();
+            }
+
+
+           
+           
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                DialogResult Secim = new DialogResult();
+
+                Secim = MessageBox.Show("Seçili validasyon planını silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                if (Secim == DialogResult.Yes)
+                {
+
+                    SqlCommand ad = new SqlCommand("update ValidasyonVeri set Durum = 'Pasif' where ID = '" + vID + "'", bgl.baglanti());
+                    ad.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
+                    listele();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata vx3 : " + ex.Message);
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            listele();
+        }
+
+        private void ValidasyonPlanListesi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F5)
+            {
+                listele();
+            }
+
+        }
+
+        string vID, AnalizID, durum;
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            vID = dr["ID"].ToString();
+            AnalizID = dr["AnalizID"].ToString();
+            durum = dr["Durumu"].ToString();
+        }
+
+        private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        {
+            if (e.HitInfo.InRow)
+            {
+                var p2 = MousePosition;
+                popupMenu1.ShowPopup(p2);
+
+
+                if (durum == "Planlandı")
+                {
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else if (durum == "Gerçekleşti")
+                {
+                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else
+                {
+                    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+            }
+
+        }
+
+        private void ValidasyonPlanListesi_Load(object sender, EventArgs e)
+        {
+            listele();
+            yetkibul();
+        }
+
+       
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "Başlangıç" || e.Column.FieldName == "Durumu" || e.Column.FieldName == "Bitiş")
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string ODurum = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Durumu"]);
+                if (ODurum == "İptal Edildi")
+                {
+                    e.Appearance.BackColor = Color.MediumVioletRed;
+                }
+                else if (ODurum == "Gerçekleşti")
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                }
+            }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SqlCommand add2 = new SqlCommand("update ValidasyonVeri set Durumu=@o1 where ID = '" + vID + "'", bgl.baglanti());
+            add2.Parameters.AddWithValue("@o1", "İptal Edildi");
+            add2.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            listele();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SqlCommand add2 = new SqlCommand("update ValidasyonVeri set Durumu=@o1 where ID = '" + vID + "'", bgl.baglanti());
+            add2.Parameters.AddWithValue("@o1", "Planlandı");
+            add2.ExecuteNonQuery();
+            bgl.baglanti().Close();
+
+            listele();
+        }
+
+        int yetki;
+        void yetkibul()
+        {
+            SqlCommand komut21 = new SqlCommand("Select * from KaliteYetki where Gorev = N'" + Anasayfa.gorev + "' ", bgl.baglanti());
+            SqlDataReader dr21 = komut21.ExecuteReader();
+            while (dr21.Read())
+            {
+                yetki = Convert.ToInt32(dr21["Analiz"]);
+            }
+            bgl.baglanti().Close();
+
+            if (yetki == 0 || yetki.ToString() == null)
+            {
+
+            }
+            else
+            {
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+
+        }
+
+    }
+}
