@@ -25,17 +25,19 @@ namespace StokTakip
         {
             DataTable dt2 = new DataTable();
          //   SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and BirimID = N'"+Anasayfa.birimID+ "' and Durum = N'Aktif'", bgl.baglanti());
-            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+            gridView1.Columns["ID"].Visible = false;
         }
 
         private void listele2()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+            gridView1.Columns["ID"].Visible = false;
         }
 
         int urunid;
@@ -262,7 +264,7 @@ namespace StokTakip
         //            Secim = MessageBox.Show("Seçili maddeleri talep listenizden kaldırmak istediğinizden emin misiniz ?", "Emin misin!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
         //            if (Secim == DialogResult.Yes)
         //            {
-                       
+
 
         //                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
         //                {
@@ -321,6 +323,58 @@ namespace StokTakip
         //    }
         //}
 
+        // en son çalışan
+
+        string ensoncalisan;
+        //private void checksil()
+        //{
+        //    for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+        //    {
+
+        //        id = gridView1.GetSelectedRows()[i].ToString();
+        //        int y = Convert.ToInt32(id);
+        //        int haID = Convert.ToInt32(gridView1.GetRowCellValue(y, "ID").ToString());
+        //        string mmarka = gridView1.GetRowCellValue(y, "Marka").ToString();
+        //        string mlot = gridView1.GetRowCellValue(y, "Lot").ToString();
+        //        string mmiktar = gridView1.GetRowCellValue(y, "Miktar").ToString();
+        //        string mtarih = Convert.ToDateTime(gridView1.GetRowCellValue(y, "İşlem Tarihi")).ToString("yyyy-MM-dd");
+        //        //SqlCommand komut2 = new SqlCommand("select ID from StokHareket where StokID = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' " +
+        //        //    " and Marka = '" + mmarka + "' and Lot ='" + mlot + "' and Tarih = '" + mtarih + "' and Miktar = '" + mmiktar + "'", bgl.baglanti());
+        //        //SqlDataReader dr2 = komut2.ExecuteReader();
+        //        //while (dr2.Read())
+        //        //{
+        //        //    stokharID = Convert.ToInt32(dr2["ID"]);
+        //        //}
+        //        //bgl.baglanti().Close();
+
+        //        SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
+        //        SqlDataReader drI = komutID.ExecuteReader();
+        //        while (drI.Read())
+        //        {
+        //            stokk = drI[0].ToString();
+        //        }
+        //        bgl.baglanti().Close();
+        //        stok = float.Parse(stokk);
+
+        //        float f1 = float.Parse(mmiktar);
+        //        f2 = stok - f1;
+        //        SqlCommand add2 = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
+        //        add2.Parameters.AddWithValue("@a1", f2);
+        //        add2.ExecuteNonQuery();
+        //        bgl.baglanti().Close();
+
+
+        //    }
+
+        //    SqlCommand add = new SqlCommand("update StokHareket set Durum=@o1 where ID= N'" + stokharID + "' ", bgl.baglanti());
+        //    add.Parameters.AddWithValue("@o1", "Pasif");
+        //    add.ExecuteNonQuery();
+        //    bgl.baglanti().Close();
+
+
+        //}
+
+        string toplammiktar;
         private void checksil()
         {
             for (int i = 0; i < gridView1.SelectedRowsCount; i++)
@@ -328,41 +382,29 @@ namespace StokTakip
 
                 id = gridView1.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                string mmarka = gridView1.GetRowCellValue(y, "Marka").ToString();
-                string mlot = gridView1.GetRowCellValue(y, "Lot").ToString();
-                string mmiktar = gridView1.GetRowCellValue(y, "Miktar").ToString();
-                string mtarih = Convert.ToDateTime(gridView1.GetRowCellValue(y, "İşlem Tarihi")).ToString("yyyy-MM-dd");
-                SqlCommand komut2 = new SqlCommand("select ID from StokHareket where StokID = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' " +
-                    " and Marka = '" + mmarka + "' and Lot ='" + mlot + "' and Tarih = '" + mtarih + "' and Miktar = '" + mmiktar + "'", bgl.baglanti());
-                SqlDataReader dr2 = komut2.ExecuteReader();
-                while (dr2.Read())
-                {
-                    stokharID = Convert.ToInt32(dr2["ID"]);
-                }
+                int haID = Convert.ToInt32(gridView1.GetRowCellValue(y, "ID").ToString());
+                SqlCommand add = new SqlCommand("update StokHareket set Durum=@o1 where ID= N'" + haID + "' ", bgl.baglanti());
+                add.Parameters.AddWithValue("@o1", "Pasif");
+                add.ExecuteNonQuery();
                 bgl.baglanti().Close();
-
-                SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
-                SqlDataReader drI = komutID.ExecuteReader();
-                while (drI.Read())
-                {
-                    stokk = drI[0].ToString();
-                }
-                bgl.baglanti().Close();
-                stok = float.Parse(stokk);
-
-                float f1 = float.Parse(mmiktar);
-                f2 = stok - f1;
-                SqlCommand add2 = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
-                add2.Parameters.AddWithValue("@a1", f2);
-                add2.ExecuteNonQuery();
-                bgl.baglanti().Close();
-
-
+                toplammiktar += Convert.ToInt32(gridView1.GetRowCellValue(y, "Miktar").ToString());
             }
 
-            SqlCommand add = new SqlCommand("update StokHareket set Durum=@o1 where ID= N'" + stokharID + "' ", bgl.baglanti());
-            add.Parameters.AddWithValue("@o1", "Pasif");
-            add.ExecuteNonQuery();
+
+            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                stokk = drI[0].ToString();
+            }
+            bgl.baglanti().Close();
+            stok = float.Parse(stokk);
+
+            float f1 = float.Parse(toplammiktar);
+            f2 = stok - f1;
+            SqlCommand add2 = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
+            add2.Parameters.AddWithValue("@a1", f2);
+            add2.ExecuteNonQuery();
             bgl.baglanti().Close();
 
 
@@ -466,10 +508,11 @@ namespace StokTakip
         }
 
 
-        string dmiktar, dmarka, dlot;
+        string dmiktar, dmarka, dlot, hID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            hID = dr["ID"].ToString();
             dmiktar = dr["Miktar"].ToString();
             dmarka = dr["Marka"].ToString();
             dlot = dr["Lot"].ToString();

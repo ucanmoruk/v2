@@ -30,7 +30,17 @@ namespace StokTakip
 
             gridView1.Columns["ID"].Visible = false;
 
-            //this.gridView1.Columns[0].Width = 50;
+            this.gridView1.Columns[1].Width = 50;
+            this.gridView1.Columns[2].Width = 40;
+            this.gridView1.Columns[3].Width = 100;
+            this.gridView1.Columns[4].Width = 100;
+            this.gridView1.Columns[5].Width = 50;
+            this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[7].Width = 50;
+            this.gridView1.Columns[8].Width = 50;
+            this.gridView1.Columns[9].Width = 50;
+            this.gridView1.Columns[10].Width = 50;
+            this.gridView1.Columns[11].Width = 50;
 
         }
 

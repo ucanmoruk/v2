@@ -26,33 +26,48 @@ namespace StokTakip
         void listele()
         {
             DataTable dt12 = new DataTable();
-            SqlDataAdapter da12 = new SqlDataAdapter("select Tur, Kod, Ad from StokListesi where Durum = 'Aktif' order by Kod ", bgl.baglanti());
+            SqlDataAdapter da12 = new SqlDataAdapter("select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif' order by Kod ", bgl.baglanti());
             da12.Fill(dt12);
             gridControl1.DataSource = dt12;
+            gridView1.Columns["ID"].Visible = false;
         }
 
+        string akod, aad;
+        void detaybul()
+        {
+            SqlCommand komutID = new SqlCommand("Select * From StokAnalizListesi where ID = N'" + aID + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                akod = drI["Kod"].ToString();
+                aad = drI["Ad"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
    
         void ekleme()
         {
             DataTable dt12 = new DataTable();
-            SqlDataAdapter da12 = new SqlDataAdapter("select Tur, Kod, Ad from StokListesi where Kod in (Select StokKod from StokRecete where AnalizKod = '"+lbl_ID.Text+"' ) ", bgl.baglanti());
+            SqlDataAdapter da12 = new SqlDataAdapter("select l.ID, l.Tur, l.Kod, l.Ad from StokListesi l " +
+                "left join StokRecete r on l.ID = r.StokID  " +
+                " where r.AnalizID = '"+aID+"'", bgl.baglanti());
             da12.Fill(dt12);
             gridControl2.DataSource = dt12;
-            this.gridView2.Columns[0].Width = 30;
+            gridView2.Columns["ID"].Visible = false;
             this.gridView2.Columns[1].Width = 30;
+            this.gridView2.Columns[2].Width = 30;
         }
 
 
-        public static string Ad, gelis, UrunID;
+        public static string  gelis, aID;
         private void YeniFormul_Load(object sender, EventArgs e)
         {
-            lbl_recete.Text = Ad;
-            lbl_ID.Text = UrunID;
-
             listele();
+            detaybul();
+            Text = akod + " " + aad + " Reçete Oluşturma";
 
-            this.gridView1.Columns[0].Width = 30;
             this.gridView1.Columns[1].Width = 30;
+            this.gridView1.Columns[2].Width = 30;
             
 
             if (gelis == "update")
@@ -77,17 +92,17 @@ namespace StokTakip
         {
             try
             {
-                string id, kod;
+                string id, sID;
 
                 for (int i = 0; i < gridView1.SelectedRowsCount; i++)
                 {
                     id = gridView1.GetSelectedRows()[i].ToString();
                     int y = Convert.ToInt32(id);
-                    kod = gridView1.GetRowCellValue(y, "Kod").ToString();
+                    sID = gridView1.GetRowCellValue(y, "ID").ToString();
 
-                    SqlCommand add = new SqlCommand("insert into StokRecete (StokKod, AnalizKod) values (@a1,@a2) ", bgl.baglanti());
-                    add.Parameters.AddWithValue("@a1", kod);
-                    add.Parameters.AddWithValue("@a2", lbl_ID.Text);
+                    SqlCommand add = new SqlCommand("insert into StokRecete (StokID, AnalizID) values (@a1,@a2) ", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", sID);
+                    add.Parameters.AddWithValue("@a2", aID);
                     add.ExecuteNonQuery();
                     bgl.baglanti().Close();       
 
@@ -115,10 +130,9 @@ namespace StokTakip
             {
                 id = gridView2.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
-                kod = gridView2.GetRowCellValue(y, "Kod").ToString();
-                SqlCommand add = new SqlCommand("delete from StokRecete where StokKod = @a1 and AnalizKod= @a2 ", bgl.baglanti());
+                kod = gridView2.GetRowCellValue(y, "ID").ToString();
+                SqlCommand add = new SqlCommand("delete from StokRecete where ID = @a1 ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", kod);
-                add.Parameters.AddWithValue("@a2", lbl_ID.Text);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
             }
@@ -155,11 +169,15 @@ namespace StokTakip
                     //this.Close();
                 }
             }
+
+            gelis = null;
+            aID = null;
+
         }
 
         void eskisil()
         {
-            SqlCommand komutz = new SqlCommand("delete from StokRecete where AnalizKod =N'" + lbl_ID.Text + "' ", bgl.baglanti());
+            SqlCommand komutz = new SqlCommand("delete from StokRecete where AnalizID =N'" + aID + "' ", bgl.baglanti());
             komutz.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
@@ -169,11 +187,11 @@ namespace StokTakip
       
             for (int ik = 0; ik < gridView2.RowCount; ik++)
             {
-                string kod = gridView2.GetRowCellValue(ik, "Kod").ToString();
+                string kod = gridView2.GetRowCellValue(ik, "ID").ToString();
 
-                SqlCommand add = new SqlCommand("insert into StokRecete (StokKod, AnalizKod) values (@a1,@a2) ", bgl.baglanti());
+                SqlCommand add = new SqlCommand("insert into StokRecete (StokID, AnalizID) values (@a1,@a2) ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", kod);
-                add.Parameters.AddWithValue("@a2", lbl_ID.Text);
+                add.Parameters.AddWithValue("@a2", aID);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
  

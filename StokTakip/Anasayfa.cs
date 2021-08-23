@@ -141,9 +141,16 @@ namespace StokTakip
                 ribbonPageGroup22.Visible = true;
 
             if (stok == 0 || stok.ToString() == null)
+                 {
                 ribbonPageGroup2.Visible = false;
+                ribbonPageGroup6.Visible = false;
+                }                
             else
+            {
                 ribbonPageGroup2.Visible = true;
+                ribbonPageGroup6.Visible = true;
+            }
+               
 
 
             if (talep == 0 || talep.ToString() == null)

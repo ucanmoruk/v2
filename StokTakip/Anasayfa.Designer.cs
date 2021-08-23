@@ -233,7 +233,7 @@
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3});
-            this.ribbonControl1.Size = new System.Drawing.Size(758, 145);
+            this.ribbonControl1.Size = new System.Drawing.Size(758, 143);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barButtonItem1
@@ -334,7 +334,7 @@
             // 
             // barButtonItem12
             // 
-            this.barButtonItem12.Caption = "Kullanıcı Listesi";
+            this.barButtonItem12.Caption = "Personel Listesi";
             this.barButtonItem12.Id = 12;
             this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
             this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));

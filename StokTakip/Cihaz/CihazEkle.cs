@@ -601,6 +601,17 @@ namespace StokTakip.Cihaz
             MessageBox.Show("Güncelleme işlemi başarılı!", "Oopss");
         }
 
+        string kalkont;
+        void kontrolkal()
+        {
+            SqlCommand komutI = new SqlCommand("select Count(ID) from CihazKalibrasyon where CihazID= N'" + cID + "'", bgl.baglanti());
+            SqlDataReader dr = komutI.ExecuteReader();
+            while (dr.Read())
+            {
+                kalkont = dr[0].ToString();
+            }
+            bgl.baglanti().Close();
+        }
 
         void temizle()
         {
@@ -762,6 +773,14 @@ namespace StokTakip.Cihaz
         {
             tabPane1.SelectedPage = tabNavigationPage1;
             temizle();
+            if (Application.OpenForms["CihazListesi"] == null)
+            {
+
+            }
+            else
+            {
+                m.listele();
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -832,7 +851,16 @@ namespace StokTakip.Cihaz
         {
             if (btn_kalkayit.Text == "Güncelle")
             {
-                guncellekal();
+                kontrolkal();
+                if (kalkont == "0" )
+                {
+                    eklekal();
+                }
+                else
+                {
+                    guncellekal();
+                }
+                
             }
             else
             {

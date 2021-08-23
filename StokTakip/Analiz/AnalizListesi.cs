@@ -25,7 +25,7 @@ namespace StokTakip.Analiz
         {
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
-                "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod", bgl.baglanti());
+                "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' ", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -172,9 +172,7 @@ namespace StokTakip.Analiz
 
                 if (Secim == DialogResult.Yes)
                 {
-                    YeniRecete.UrunID = skod;
-                    YeniRecete.Ad = sad;
-
+                    YeniRecete.aID = aID;
                     var mfrm = (Anasayfa)Application.OpenForms["Anasayfa"];
                     if (mfrm != null)
                         mfrm.YeniRecete();
@@ -191,6 +189,15 @@ namespace StokTakip.Analiz
             ValidasyonEkle.aID = aID;
             ValidasyonEkle ve = new ValidasyonEkle();
             ve.Show();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AnalizDetay.aID = aID;
+            AnalizDetay.sad = sad;
+            AnalizDetay.skod = skod;
+            AnalizDetay ad = new AnalizDetay();
+            ad.Show();
         }
 
         int redurum;
@@ -211,8 +218,7 @@ namespace StokTakip.Analiz
             else
             {
 
-                Stok.ReceteDetay.skod = skod;
-                Stok.ReceteDetay.sad = sad;
+                Stok.ReceteDetay.aID = aID;
                 Stok.ReceteDetay rd = new Stok.ReceteDetay();
                 rd.Show();
             }

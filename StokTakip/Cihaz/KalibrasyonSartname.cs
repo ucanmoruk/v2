@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,14 +31,17 @@ namespace StokTakip.Cihaz
             gridControl1.DataSource = dt;
 
             gridView1.Columns["CihazID"].Visible = false;
-            this.gridView1.Columns[0].Width = 40;
-            this.gridView1.Columns[1].Width = 90;
-            this.gridView1.Columns[2].Width = 50;
-            this.gridView1.Columns[3].Width = 50;
-            this.gridView1.Columns[4].Width = 70;
-            this.gridView1.Columns[5].Width = 90;
-            this.gridView1.Columns[6].Width = 90;
-            this.gridView1.Columns[7].Width = 50;
+            this.gridView1.Columns[1].Width = 40;
+            this.gridView1.Columns[2].Width = 90;
+            this.gridView1.Columns[3].Width = 40;
+            this.gridView1.Columns[4].Width = 40;
+            this.gridView1.Columns[5].Width = 50;
+            this.gridView1.Columns[6].Width = 110;
+            this.gridView1.Columns[7].Width = 110;
+            this.gridView1.Columns[8].Width = 110;
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Kalibrasyon Aralığı"].ColumnEdit = memo;
+            gridView1.Columns["Kabul Kriteri"].ColumnEdit = memo;
 
         }
 

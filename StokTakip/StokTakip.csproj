@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -114,6 +114,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analiz\AnalizDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\AnalizDetay.Designer.cs">
+      <DependentUpon>AnalizDetay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Analiz\AnalizListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,6 +488,9 @@
     <Compile Include="ÇöpKutusu\TedarikciTur.Designer.cs">
       <DependentUpon>TedarikciTur.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Analiz\AnalizDetay.resx">
+      <DependentUpon>AnalizDetay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Analiz\AnalizListesi.resx">
       <DependentUpon>AnalizListesi.cs</DependentUpon>
     </EmbeddedResource>

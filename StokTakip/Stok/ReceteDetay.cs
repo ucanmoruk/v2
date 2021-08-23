@@ -53,7 +53,7 @@ namespace StokTakip.Stok
 
         }
 
-        public static string skod, sad;
+        public static string aID;
         private void ReceteDetay_Load(object sender, EventArgs e)
         {
             yetkibul();
@@ -68,15 +68,13 @@ namespace StokTakip.Stok
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             YeniRecete.gelis = "update";
-            YeniRecete.UrunID = skod;
-            YeniRecete.Ad = sad;
-
-
-            this.Close();
+            YeniRecete.aID = aID;
 
             var mfrm = (Anasayfa)Application.OpenForms["Anasayfa"];
             if (mfrm != null)
             mfrm.YeniRecete();
+
+            this.Close();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

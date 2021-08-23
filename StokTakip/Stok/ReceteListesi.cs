@@ -91,6 +91,7 @@ namespace StokTakip.Stok
         {
             Stok.ReceteDetay.skod = skod;
             Stok.ReceteDetay.sad = sad;
+            Stok.ReceteDetay.aID = aID;
             Stok.ReceteDetay rd = new Stok.ReceteDetay();
             rd.Show();
         }

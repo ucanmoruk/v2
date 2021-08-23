@@ -24,7 +24,7 @@ namespace StokTakip.Dokuman
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by l.ID) as 'No', l.Birim, l.Kaynak, l.Kod, l.Ad, l.Tarih, l.Tur, l.Link,  d.Kontrol as 'Kontrol Tarihi', k.Ad + ' ' +  k.Soyad as 'Kontrol Eden'  from StokDKDListe l " +
+            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by l.ID) as 'No', l.Birim, l.Kaynak, l.Kod, l.Ad, l.Tarih, l.Tur, l.Link,  d.Kontrol as 'Kontrol Tarihi', k.Ad + ' ' +  k.Soyad as 'Kontrol Eden', l.ID  from StokDKDListe l " +
                 " left join StokDKDKontrol d on l.Kod = d.Kod left join StokKullanici k on d.PersonelID = k.ID where l.Durum = N'Aktif' order by l.Birim", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
@@ -37,6 +37,8 @@ namespace StokTakip.Dokuman
             this.gridView1.Columns[6].Width = 50;
             this.gridView1.Columns[8].Width = 50;
             this.gridView1.Columns[9].Width = 75;
+
+            gridView1.Columns["ID"].Visible = false;
         }
 
         int yetki;
@@ -175,7 +177,8 @@ namespace StokTakip.Dokuman
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update StokDKDListe set Durum=@a1 where Kod = N'" + dkdkod + "' and Ad = N'"+dkdad+"'", bgl.baglanti());
+                   // SqlCommand komutSil = new SqlCommand("update StokDKDListe set Durum=@a1 where Kod = N'" + dkdkod + "' and Ad = N'"+dkdad+"'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update StokDKDListe set Durum=@a1 where ID = N'" + dID + "' ", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -247,12 +250,13 @@ namespace StokTakip.Dokuman
             excelaktar();
         }
 
-        string dkdkod, dkdad;
+        string dkdkod, dkdad, dID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             dkdkod = dr["Kod"].ToString();
             dkdad = dr["Ad"].ToString();
+            dID = dr["ID"].ToString();
         }
     }
 }
