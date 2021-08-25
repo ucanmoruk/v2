@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,14 +25,20 @@ namespace StokTakip
         {
             //SqlCommand komutID = new SqlCommand("Select * From StokListesi where Durum= N'Aktif'", bgl.baglanti());
 
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif' and BirimID = '"+Anasayfa.birimID+"')", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combokod.Properties.Items.Add(drI["Kod"].ToString());
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif' and BirimID = '"+Anasayfa.birimID+"')", bgl.baglanti());
+            //SqlDataReader drI = komutID.ExecuteReader();
+            //while (drI.Read())
+            //{
+            //    combokod.Properties.Items.Add(drI["Kod"].ToString());
+            //}
+            //bgl.baglanti().Close();
 
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif' and BirimID = '" + Anasayfa.birimID + "')", bgl.baglanti());
+            da2.Fill(dt2);
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Kod";
+            gridLookUpEdit1.Properties.ValueMember = "ID";
         }
 
         private void temizle()
@@ -70,26 +77,26 @@ namespace StokTakip
 
         private void combokod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            temizle();
-            combo_marka.Properties.Items.Clear();
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'" + combokod.Text + "'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                stokid = Convert.ToInt32(drI["ID"].ToString());
-                txtbirim.Text = drI["Birim"].ToString();
-            }
-            bgl.baglanti().Close();
+            //temizle();
+            //combo_marka.Properties.Items.Clear();
+            //SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'" + combokod.Text + "'", bgl.baglanti());
+            //SqlDataReader drI = komutID.ExecuteReader();
+            //while (drI.Read())
+            //{
+            //    stokid = Convert.ToInt32(drI["ID"].ToString());
+            //    txtbirim.Text = drI["Birim"].ToString();
+            //}
+            //bgl.baglanti().Close();
 
-            SqlCommand komutD = new SqlCommand("select distinct Marka, Lot from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '"+Anasayfa.birimID+"' order by Marka", bgl.baglanti());
-            SqlDataReader dr = komutD.ExecuteReader();
-            while (dr.Read())
-            {
-                marka = dr["Marka"].ToString();
-                lot = dr["Lot"].ToString();
-                combo_marka.Properties.Items.Add(marka + " / " + lot);
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komutD = new SqlCommand("select distinct Marka, Lot from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '"+Anasayfa.birimID+"' order by Marka", bgl.baglanti());
+            //SqlDataReader dr = komutD.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    marka = dr["Marka"].ToString();
+            //    lot = dr["Lot"].ToString();
+            //    combo_marka.Properties.Items.Add(marka + " / " + lot);
+            //}
+            //bgl.baglanti().Close();
 
         }
 
@@ -114,11 +121,41 @@ namespace StokTakip
 
         }
 
+        private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            temizle();
+            combo_marka.Properties.Items.Clear();
+            SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID = N'" + gridLookUpEdit1.EditValue + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {               
+                txtbirim.Text = drI["Birim"].ToString();
+            }
+            bgl.baglanti().Close();
+
+            SqlCommand komutD = new SqlCommand("select distinct Marka, Lot from StokHareket where StokID = '"+gridLookUpEdit1.EditValue+"' and BirimID = '" + Anasayfa.birimID + "' order by Marka", bgl.baglanti());
+            SqlDataReader dr = komutD.ExecuteReader();
+            while (dr.Read())
+            {
+                marka = dr["Marka"].ToString();
+                lot = dr["Lot"].ToString();
+                combo_marka.Properties.Items.Add(marka + " / " + lot);
+            }
+            bgl.baglanti().Close();
+        }
+
         string stokk;
         float stok;
         private void anastok()
         {
-            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where  Kod = N'" + combokod.Text + "') ", bgl.baglanti());
+           // SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where  Kod = N'" + combokod.Text + "') ", bgl.baglanti());
+            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = '"+gridLookUpEdit1.EditValue+"' ", bgl.baglanti());
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
@@ -127,7 +164,7 @@ namespace StokTakip
             bgl.baglanti().Close();
             stok = float.Parse(stokk);
 
-            SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where Kod = N'" + combokod.Text + "'", bgl.baglanti());
+            SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + gridLookUpEdit1.EditValue+ "'", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", stok);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();

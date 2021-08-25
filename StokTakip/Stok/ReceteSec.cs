@@ -32,7 +32,7 @@ namespace StokTakip.Stok
             //bgl.baglanti().Close();
 
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokAnalizListesi where Durumu = N'Aktif' except select AnalizKod from StokRecete ", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokAnalizListesi where Durumu = 'Aktif' and ID <> (select distinct AnalizID from StokRecete) order by Kod ", bgl.baglanti());
             da2.Fill(dt2);
 
             gridLookUpEdit1.Properties.DataSource = dt2;

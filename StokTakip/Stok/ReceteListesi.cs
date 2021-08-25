@@ -24,9 +24,11 @@ namespace StokTakip.Stok
         void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select distinct r.AnalizKod as 'Kod', a.Ad, a.Metot from StokRecete r inner join StokAnalizListesi a on r.AnalizKod = a.Kod ", bgl.baglanti());
+            //SqlDataAdapter da2 = new SqlDataAdapter("select distinct a.ID, r.AnalizKod as 'Kod', a.Ad, a.Metot from StokRecete r inner join StokAnalizListesi a on r.AnalizKod = a.Kod ", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select distinct a.ID, a.Kod, a.Ad, d.Kod + ' '+ d.Ad as 'Metot' from StokRecete r inner join StokAnalizListesi a on r.AnalizID = a.ID inner join StokDKDListe d on a.Metot = d.ID", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+            gridView1.Columns["ID"].Visible = false;
         }
 
         int yetki;
@@ -74,12 +76,13 @@ namespace StokTakip.Stok
             }
         }
 
-        string skod, sad;
+        string skod, sad, aID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            skod = dr["Kod"].ToString();
-            sad = dr["Ad"].ToString();
+            //skod = dr["Kod"].ToString();
+            //sad = dr["Ad"].ToString();
+            aID = dr["ID"].ToString();
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -89,8 +92,6 @@ namespace StokTakip.Stok
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Stok.ReceteDetay.skod = skod;
-            Stok.ReceteDetay.sad = sad;
             Stok.ReceteDetay.aID = aID;
             Stok.ReceteDetay rd = new Stok.ReceteDetay();
             rd.Show();

@@ -26,7 +26,10 @@ namespace StokTakip
         void listele()
         {
             DataTable dt12 = new DataTable();
-            SqlDataAdapter da12 = new SqlDataAdapter("select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif' order by Kod ", bgl.baglanti());
+           // SqlDataAdapter da12 = new SqlDataAdapter("select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif' order by Kod ", bgl.baglanti());
+            SqlDataAdapter da12 = new SqlDataAdapter("select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif' " +
+                "except select l.ID, l.Tur, l.Kod, l.Ad from StokRecete r inner join StokListesi l on r.StokID = l.ID " +
+                "order by Kod ", bgl.baglanti());
             da12.Fill(dt12);
             gridControl1.DataSource = dt12;
             gridView1.Columns["ID"].Visible = false;
@@ -54,8 +57,8 @@ namespace StokTakip
             da12.Fill(dt12);
             gridControl2.DataSource = dt12;
             gridView2.Columns["ID"].Visible = false;
-            this.gridView2.Columns[1].Width = 30;
-            this.gridView2.Columns[2].Width = 30;
+            this.gridView2.Columns[1].Width = 40;
+            this.gridView2.Columns[2].Width = 40;
         }
 
 
@@ -66,8 +69,8 @@ namespace StokTakip
             detaybul();
             Text = akod + " " + aad + " Reçete Oluşturma";
 
-            this.gridView1.Columns[1].Width = 30;
-            this.gridView1.Columns[2].Width = 30;
+            this.gridView1.Columns[1].Width = 40;
+            this.gridView1.Columns[2].Width = 40;
             
 
             if (gelis == "update")
@@ -109,6 +112,7 @@ namespace StokTakip
                 }
 
                 ekleme();
+                listele();
 
             }
             catch (Exception ex)
@@ -131,13 +135,13 @@ namespace StokTakip
                 id = gridView2.GetSelectedRows()[i].ToString();
                 int y = Convert.ToInt32(id);
                 kod = gridView2.GetRowCellValue(y, "ID").ToString();
-                SqlCommand add = new SqlCommand("delete from StokRecete where ID = @a1 ", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", kod);
+                SqlCommand add = new SqlCommand("delete from StokRecete where StokID = '"+kod+"' and AnalizID = '"+aID+"'", bgl.baglanti());
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
             }
 
             ekleme();
+            listele();
           
         }
 

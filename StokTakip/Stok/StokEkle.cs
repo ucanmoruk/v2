@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,26 +25,47 @@ namespace StokTakip
 
         private void listele()
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where Durum= N'Aktif'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combokod.Properties.Items.Add(drI["Kod"].ToString());
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komutID = new SqlCommand("Select * From StokListesi where Durum= N'Aktif'", bgl.baglanti());
+            //SqlDataReader drI = komutID.ExecuteReader();
+            //while (drI.Read())
+            //{
+            //    combokod.Properties.Items.Add(drI["Kod"].ToString());
+            //}
+            //bgl.baglanti().Close();
+
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokListesi where Durum= N'Aktif'", bgl.baglanti());
+            da2.Fill(dt2);
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Kod";
+            gridLookUpEdit1.Properties.ValueMember = "ID";
+            if (talepkod == "" || talepkod == null)
+            { }
+            else
+            { gridLookUpEdit1.EditValue = talepkod; }
+                
+
+            DataTable dt21 = new DataTable();
+            SqlDataAdapter da21 = new SqlDataAdapter("Select ID, Birim From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
+            da21.Fill(dt21);
+
+            gridLookUpEdit2.Properties.DataSource = dt21;
+            gridLookUpEdit2.Properties.DisplayMember = "Birim";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
+            gridLookUpEdit2.EditValue = Anasayfa.birimID;
 
         }
 
-        private void birimbul()
-        {
-            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combo_birim.Properties.Items.Add(drI["Birim"].ToString());
-            }
-            bgl.baglanti().Close();
-        }
+        //private void birimbul()
+        //{
+        //    SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        combo_birim.Properties.Items.Add(drI["Birim"].ToString());
+        //    }
+        //    bgl.baglanti().Close();
+        //}
 
         private void kbirim()
         {
@@ -51,7 +73,8 @@ namespace StokTakip
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
-                combo_birim.Text = drI["Birim"].ToString();
+                //combo_birim.Text = drI["Birim"].ToString();
+                gridLookUpEdit2.EditValue = drI["ID"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -63,8 +86,22 @@ namespace StokTakip
             txtlot.Text = "";
             txtbirim.Text = "";
             dateskt.Text = "";
+            gridLookUpEdit1.EditValue = null;
         }
 
+        void detaybul()
+        {
+            SqlCommand komutID = new SqlCommand("Select ID From StokListesi where Kod = N'" + talepkod + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                //combo_birim.Text = drI["Birim"].ToString();
+                gridLookUpEdit1.EditValue = drI["ID"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
+    
         private void parolaolustur()
         {
             char[] cr = "0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray();
@@ -88,14 +125,14 @@ namespace StokTakip
                 }
                 else
                 {
-                    if (combokod.Text == "" || txtmarka.Text == "")
+                    if (gridLookUpEdit1.EditValue == null || txtmarka.Text == "")
                     {
                         MessageBox.Show("Lütfen marka, lot veya skt tarihi belirtiniz!");
                     }
                     else
                     {
                         parolaolustur();
-                        string path = combokod.Text + "-" + txtmarka.Text + "-" + parola + ".pdf";
+                        string path = gridLookUpEdit1.Text + "-" + txtmarka.Text + "-" + parola + ".pdf";
                         if (dateskt.Text == "")
                         {
                             DateTime tarih = DateTime.Now;
@@ -115,11 +152,11 @@ namespace StokTakip
                       //  File.Copy(name, Path.Combine(@"\\WDMyCloud\KYS_Uygulama\Belgelerim\Sertifikalar", path), true);
                         File.Copy(name, Path.Combine(@Anasayfa.path, path), true);
                         SqlCommand add = new SqlCommand("insert into StokSertifika (StokID, Sertifika, SKT, Path, BirimID, Durum) values (@a1,@a2,@a3,@a4, @a5, @a6)", bgl.baglanti());
-                        add.Parameters.AddWithValue("@a1", stokid);
+                        add.Parameters.AddWithValue("@a1", gridLookUpEdit1.EditValue);
                         add.Parameters.AddWithValue("@a2", yenisim);
                         add.Parameters.AddWithValue("@a3", dateskt.EditValue);
                         add.Parameters.AddWithValue("@a4", path);
-                        add.Parameters.AddWithValue("@a5", birimID);
+                        add.Parameters.AddWithValue("@a5", gridLookUpEdit1.EditValue);
                         add.Parameters.AddWithValue("@a6", "Aktif");
                         add.ExecuteNonQuery();
                         bgl.baglanti().Close();
@@ -141,7 +178,7 @@ namespace StokTakip
             float f1 = float.Parse(txtmiktar.Text); 
 
             SqlCommand add = new SqlCommand("insert into StokHareket (StokID, Marka,Lot,Miktar,Birim,SKT,Tarih,Hareket, BirimID, Durum) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10)", bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", stokid);
+            add.Parameters.AddWithValue("@a1", gridLookUpEdit1.EditValue);
             add.Parameters.AddWithValue("@a2", txtmarka.Text);
             add.Parameters.AddWithValue("@a3", txtlot.Text);
             add.Parameters.AddWithValue("@a4", f1);
@@ -149,7 +186,7 @@ namespace StokTakip
             add.Parameters.AddWithValue("@a6", dateskt.EditValue );
             add.Parameters.AddWithValue("@a7", dategiris.EditValue );
             add.Parameters.AddWithValue("@a8", "Giriş");
-            add.Parameters.AddWithValue("@a9", birimID);
+            add.Parameters.AddWithValue("@a9", gridLookUpEdit2.EditValue);
             add.Parameters.AddWithValue("@a10", "Aktif");
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
@@ -164,11 +201,11 @@ namespace StokTakip
         public static string talepkod, talepmiktar;
         private void StokEkle_Load(object sender, EventArgs e)
         {
-            if (talepkod == "")
+            if (talepkod == "" || talepkod == null)
             {
                 kontrol = "0";
-                birimbul();
-                kbirim();
+               // birimbul();
+              //  kbirim();
                 listele();
                 DateTime tarih = DateTime.Now;
                 dategiris.EditValue = tarih;
@@ -177,13 +214,14 @@ namespace StokTakip
             else
             {
                 kontrol = "0";               
-                birimbul();
-                kbirim();
+             //   birimbul();
+             //   kbirim();
                 listele();
+                detaybul();
                 DateTime tarih = DateTime.Now;
                 dategiris.EditValue = tarih;
 
-                combokod.Text = talepkod;
+              //  combokod.Text = talepkod;
                 txtmiktar.Text = talepmiktar;
 
             }
@@ -192,25 +230,25 @@ namespace StokTakip
         }
 
         int stokid;
-        private void combokod_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            temizle();
+        //private void combokod_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    temizle();
 
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'"+combokod.Text+"'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                stokid = Convert.ToInt32(drI["ID"].ToString());
-                txtbirim.Text = drI["Birim"].ToString();
-            }
-            bgl.baglanti().Close();
-        }
+        //    SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'"+combokod.Text+"'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        stokid = Convert.ToInt32(drI["ID"].ToString());
+        //        txtbirim.Text = drI["Birim"].ToString();
+        //    }
+        //    bgl.baglanti().Close();
+        //}
 
         float stok;
         string stokk;
         private void anastok()
         {
-            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where  Kod = N'" + combokod.Text + "') ", bgl.baglanti());
+            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = '"+gridLookUpEdit1.EditValue+"' ", bgl.baglanti());
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
@@ -219,7 +257,7 @@ namespace StokTakip
             bgl.baglanti().Close();
             stok = float.Parse(stokk);
 
-            SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where Kod = N'" + combokod.Text + "'", bgl.baglanti());
+            SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + gridLookUpEdit1.EditValue + "'", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", stok);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
@@ -259,21 +297,33 @@ namespace StokTakip
 
         string kontrol, name;
 
-        int birimID;
-        private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        private void StokEkle_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                birimID = Convert.ToInt32(drI["ID"].ToString());
-            }
-            bgl.baglanti().Close();
+            talepkod = null;
+            talepmiktar = null;
         }
+
+        private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
+        int birimID;
+        //private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        birimID = Convert.ToInt32(drI["ID"].ToString());
+        //    }
+        //    bgl.baglanti().Close();
+        //}
 
         private void btnsertifika_Click(object sender, EventArgs e)
         {
-            Sertifika.skod = combokod.Text;
+            Sertifika.skod = gridLookUpEdit1.Text;
             Sertifika s = new Sertifika();
             s.Show();
 
@@ -309,8 +359,8 @@ namespace StokTakip
             //{
             //    MessageBox.Show(ex.Message);
             //}
-         
-            
+
+
         }
     }
 }

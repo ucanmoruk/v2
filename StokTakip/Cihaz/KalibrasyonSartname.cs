@@ -43,6 +43,9 @@ namespace StokTakip.Cihaz
             gridView1.Columns["Kalibrasyon Aralığı"].ColumnEdit = memo;
             gridView1.Columns["Kabul Kriteri"].ColumnEdit = memo;
 
+            gridView1.Columns["Kalibrasyon Aralığı"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView1.Columns["Kabul Kriteri"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+
         }
 
         int yetki;

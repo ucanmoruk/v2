@@ -24,9 +24,19 @@ namespace StokTakip.Stok
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'"+skod+"' order by r.StokKod", bgl.baglanti());
+         //   SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'"+skod+"' order by r.StokKod", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+
+            SqlCommand komut2 = new SqlCommand("Select * from StokAnalizListesi where ID = N'" + aID + "' ", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                skod = dr2["Kod"].ToString();
+                sad = dr2["Ad"].ToString();
+            }
+            bgl.baglanti().Close();
 
         }
 
@@ -53,7 +63,7 @@ namespace StokTakip.Stok
 
         }
 
-        public static string aID;
+        public static string aID, skod,sad;
         private void ReceteDetay_Load(object sender, EventArgs e)
         {
             yetkibul();
