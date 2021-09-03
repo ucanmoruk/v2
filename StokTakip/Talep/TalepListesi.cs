@@ -219,9 +219,11 @@ namespace StokTakip
 
                 if (talepdurum == "Talep Oluşturuldu")
                 {
+                    kullanicibul();
+
                     if (yetki == 1)
                     {
-                        kullanicibul();
+                        
                     }
                     else if (yetki == 2)
                     {

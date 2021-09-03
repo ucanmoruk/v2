@@ -25,7 +25,9 @@ namespace StokTakip.Stok
         {
             DataTable dt2 = new DataTable();
          //   SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'"+skod+"' order by r.StokKod", bgl.baglanti());
-            SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
+         //   SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select l.Kod, l.Ad, l.Miktar as 'Stok Miktarı', r.Miktar as 'Kullanılan Miktar', l.Birim, l.Limit as 'Kritik Limit' " +
+                " from StokListesi l left join StokRecete r on l.ID = r.StokID where r.AnalizID = '" + aID + "'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -72,7 +74,10 @@ namespace StokTakip.Stok
             Text = skod + " - " + sad;
 
             this.gridView1.Columns[0].Width = 30;
-            this.gridView1.Columns[3].Width = 30;
+            this.gridView1.Columns[4].Width = 30;
+            this.gridView1.Columns[2].Width = 45;
+            this.gridView1.Columns[3].Width = 45;
+            this.gridView1.Columns[5].Width = 45;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

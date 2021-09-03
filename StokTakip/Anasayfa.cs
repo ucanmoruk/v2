@@ -609,10 +609,16 @@ namespace StokTakip
             }
         }
 
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Stok.ReceteDus rd = new Stok.ReceteDus();
+            rd.Show();
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();
-            fd.ShowDialog();
+            fd.Show();
         }
 
         TalepListesi tal;

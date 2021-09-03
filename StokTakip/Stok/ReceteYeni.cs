@@ -51,7 +51,7 @@ namespace StokTakip
         void ekleme()
         {
             DataTable dt12 = new DataTable();
-            SqlDataAdapter da12 = new SqlDataAdapter("select l.ID, l.Tur, l.Kod, l.Ad from StokListesi l " +
+            SqlDataAdapter da12 = new SqlDataAdapter("select l.ID, l.Tur, l.Kod, l.Ad, r.Miktar as 'Kullanılan Miktar', l.Birim from StokListesi l " +
                 "left join StokRecete r on l.ID = r.StokID  " +
                 " where r.AnalizID = '"+aID+"'", bgl.baglanti());
             da12.Fill(dt12);
@@ -193,9 +193,10 @@ namespace StokTakip
             {
                 string kod = gridView2.GetRowCellValue(ik, "ID").ToString();
 
-                SqlCommand add = new SqlCommand("insert into StokRecete (StokID, AnalizID) values (@a1,@a2) ", bgl.baglanti());
+                SqlCommand add = new SqlCommand("insert into StokRecete (StokID, AnalizID, Miktar) values (@a1,@a2, @a3) ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", kod);
                 add.Parameters.AddWithValue("@a2", aID);
+                add.Parameters.AddWithValue("@a3", gridView2.GetRowCellValue(ik, "Kullanılan Miktar"));
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
  

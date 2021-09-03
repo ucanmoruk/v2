@@ -24,17 +24,27 @@ namespace StokTakip
         void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select d.StokKod as 'Stok Kodu', l.Ad, d.Miktar,d.Birim, d.Marka, d.Ozellik, d.Durum from StokTalepDetay d " +
+            SqlDataAdapter da2 = new SqlDataAdapter("select d.StokKod as 'Stok Kodu', l.Ad, l.Cas as 'Cas No', d.Miktar,d.Birim, d.Marka, d.Ozellik, d.Durum from StokTalepDetay d " +
                 "left join StokListesi l on d.StokKod = l.Kod where TalepNo = '"+TalepNo+"' ", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+
+            this.gridView1.Columns[0].Width = 35;
+            this.gridView1.Columns[1].Width = 75;
+            this.gridView1.Columns[2].Width = 40;
+            this.gridView1.Columns[3].Width = 35;
+            this.gridView1.Columns[4].Width = 35;
+            this.gridView1.Columns[5].Width = 40;
+            this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[7].Width = 50;
         }
 
         public static string TalepNo;
         private void TalepDetay_Load(object sender, EventArgs e)
         {
             listele();
-            txt_no.Text = TalepNo;
+            //txt_no.Text = TalepNo;
+            Text = TalepNo + " Numaralı Talep Detayları";
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)

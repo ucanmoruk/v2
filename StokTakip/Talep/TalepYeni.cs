@@ -44,6 +44,13 @@ namespace StokTakip
                 " inner join StokListesi sl on d.StokKod = sl.Kod where d.TalepNo = N'"+teklifno+"'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+
+            this.gridView1.Columns[0].Width = 35;
+            this.gridView1.Columns[1].Width = 75;
+            this.gridView1.Columns[2].Width = 35;
+            this.gridView1.Columns[3].Width = 35;
+            this.gridView1.Columns[4].Width = 40;
+            this.gridView1.Columns[5].Width = 50;
         }
 
         void listele4()
@@ -53,6 +60,13 @@ namespace StokTakip
                 " inner join StokListesi sl on d.StokKod = sl.Kod where d.TalepNo = N'" + talepno + "'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
+
+            this.gridView1.Columns[0].Width = 35;
+            this.gridView1.Columns[1].Width = 75;
+            this.gridView1.Columns[2].Width = 35;
+            this.gridView1.Columns[3].Width = 35;
+            this.gridView1.Columns[4].Width = 40;
+            this.gridView1.Columns[5].Width = 50;
         }
 
         string yz;

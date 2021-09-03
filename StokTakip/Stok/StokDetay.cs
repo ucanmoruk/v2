@@ -25,7 +25,7 @@ namespace StokTakip
         {
             DataTable dt2 = new DataTable();
          //   SqlDataAdapter da2 = new SqlDataAdapter("select Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID in (select ID from StokListesi where Kod = N'" + urunkod + "') and BirimID = N'"+Anasayfa.birimID+ "' and Durum = N'Aktif'", bgl.baglanti());
-            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and BirimID = N'" + Anasayfa.birimID + "' and Durum = N'Aktif' order by Tarih desc", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
             gridView1.Columns["ID"].Visible = false;
@@ -34,7 +34,7 @@ namespace StokTakip
         private void listele2()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Marka, Lot, SKT as 'Son Kullanım', Tarih as 'İşlem Tarihi', Miktar from StokHareket where StokID  = N'" + urunkod + "' and Durum = N'Aktif' order by Tarih desc", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
             gridView1.Columns["ID"].Visible = false;
@@ -387,7 +387,7 @@ namespace StokTakip
                 add.Parameters.AddWithValue("@o1", "Pasif");
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                toplammiktar += Convert.ToInt32(gridView1.GetRowCellValue(y, "Miktar").ToString());
+               // toplammiktar += Convert.ToInt32(gridView1.GetRowCellValue(y, "Miktar").ToString());
             }
 
 
@@ -400,10 +400,11 @@ namespace StokTakip
             bgl.baglanti().Close();
             stok = float.Parse(stokk);
 
-            float f1 = float.Parse(toplammiktar);
-            f2 = stok - f1;
+            //float f1 = float.Parse(toplammiktar);
+            //f2 = stok - f1;
             SqlCommand add2 = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
-            add2.Parameters.AddWithValue("@a1", f2);
+           // add2.Parameters.AddWithValue("@a1", f2);
+            add2.Parameters.AddWithValue("@a1", stok);
             add2.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -412,37 +413,39 @@ namespace StokTakip
 
         string stokk;
         float stok, f2;
-        private void anastok()
-        {
-            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                stokk = drI[0].ToString();
-            }
-            bgl.baglanti().Close();
-            stok = float.Parse(stokk);
+        //private void anastok()
+        //{
+        //    SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = N'" + urunkod + "' and Durum = N'Aktif'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        stokk = drI[0].ToString();
+        //    }
+        //    bgl.baglanti().Close();
+        //    stok = float.Parse(stokk);
 
-            float f1 = float.Parse(dmiktar);
-            if (f1 > 0)
-            {
-                //float f1 = float.Parse(dmiktar);
-                f2 = stok - f1;
-                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", f2);
-                add.ExecuteNonQuery();
-                bgl.baglanti().Close();
-            }
-            else
-            {
-                f2 = stok - f1;
-                SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", f2);
-                add.ExecuteNonQuery();
-                bgl.baglanti().Close();
-            }
+        //    float f1 = float.Parse(dmiktar);
+        //    if (f1 > 0)
+        //    {
+        //        //float f1 = float.Parse(dmiktar);
+        //        f2 = stok - f1;
+        //        SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
+        //        add.Parameters.AddWithValue("@a1", f2);
+        //        add.ExecuteNonQuery();
+        //        bgl.baglanti().Close();
+        //    }
+        //    else
+        //    {
+        //        f2 = stok - f1;
+        //        SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + urunkod + "'", bgl.baglanti());
+        //        add.Parameters.AddWithValue("@a1", f2);
+        //        add.ExecuteNonQuery();
+        //        bgl.baglanti().Close();
+        //    }
 
-        }
+        //}
+
+
      //   StokListesi m = (StokListesi)System.Windows.Forms.Application.OpenForms["StokListesi"];
         int stokhareketID;
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -466,7 +469,14 @@ namespace StokTakip
                         
                         MessageBox.Show("Güncelleme işlemi başarılı!", "Oppss!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                        listele();
+                        if (yetki == 0 || yetki.ToString() == null)
+                        {
+                            listele();
+                        }
+                        else
+                        {
+                            listele2();
+                        }
 
                         if (Application.OpenForms["StokListesi"] == null)
                         {

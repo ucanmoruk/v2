@@ -155,7 +155,7 @@ namespace StokTakip
         private void anastok()
         {
            // SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where  Kod = N'" + combokod.Text + "') ", bgl.baglanti());
-            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = '"+gridLookUpEdit1.EditValue+"' ", bgl.baglanti());
+            SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID = '"+gridLookUpEdit1.EditValue+"' and Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {

@@ -24,7 +24,10 @@ namespace StokTakip.Analiz
         {
             DataTable dt2 = new DataTable();
           //  SqlDataAdapter da2 = new SqlDataAdapter("select r.StokKod as 'Kod', l.Ad, l.Miktar, l.Birim, l.Limit as 'Kritik Limit' from StokRecete r inner join StokListesi l on r.StokKod = l.Kod where r.AnalizKod = N'" + skod + "' order by r.StokKod", bgl.baglanti());
-            SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
+         //   SqlDataAdapter da2 = new SqlDataAdapter("select Kod, Ad, Miktar, Birim, Limit as 'Kritik Limit' from StokListesi where ID in (select StokID from StokRecete where AnalizID = '" + aID + "')", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select l.Kod, l.Ad, l.Miktar as 'Stok Miktarı', r.Miktar as 'Kullanılan Miktar', l.Birim, l.Limit as 'Kritik Limit' " +
+             " from StokListesi l left join StokRecete r on l.ID = r.StokID where r.AnalizID = '" + aID + "'", bgl.baglanti());
+
             da2.Fill(dt2);
             gridControl2.DataSource = dt2;
 
@@ -32,6 +35,7 @@ namespace StokTakip.Analiz
             this.gridView2.Columns[3].Width = 30;
             this.gridView2.Columns[2].Width = 40;
             this.gridView2.Columns[4].Width = 40;
+            this.gridView2.Columns[5].Width = 40;
 
             DataTable dt7 = new DataTable();
             SqlDataAdapter da7 = new SqlDataAdapter(" select Kod, Ad from CihazListesi where ID in (select CihazID from CihazAnaliz where AnalizID = '"+aID+"')", bgl.baglanti());

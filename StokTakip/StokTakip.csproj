@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -305,6 +305,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Stok\ReceteDus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\ReceteDus.Designer.cs">
+      <DependentUpon>ReceteDus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ÇöpKutusu\Karsilama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -580,6 +586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Firma\PersonelListesi.resx">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\ReceteDus.resx">
+      <DependentUpon>ReceteDus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ÇöpKutusu\Karsilama.resx">
       <DependentUpon>Karsilama.cs</DependentUpon>

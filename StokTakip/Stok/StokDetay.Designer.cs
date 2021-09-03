@@ -263,7 +263,7 @@
             this.gridControl1.Location = new System.Drawing.Point(406, 34);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(490, 396);
+            this.gridControl1.Size = new System.Drawing.Size(506, 396);
             this.gridControl1.TabIndex = 32;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -355,7 +355,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(924, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(930, 0);
             // 
             // barDockControlBottom
             // 
@@ -363,7 +363,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 469);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(924, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(930, 0);
             // 
             // barDockControlLeft
             // 
@@ -377,7 +377,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(924, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(930, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 469);
             // 
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 469);
+            this.ClientSize = new System.Drawing.Size(930, 469);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.btngoster);
             this.Controls.Add(this.gridControl1);
