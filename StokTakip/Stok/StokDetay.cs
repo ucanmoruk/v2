@@ -517,6 +517,17 @@ namespace StokTakip
             urunkod = "";
         }
 
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Raporlar.KimyasalEtiket.sGelis = "Özel";
+            Raporlar.KimyasalEtiket.sID = hID;
+
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.KimyasalEtiket();
+                frm.ShowDialog();
+            }
+        }
 
         string dmiktar, dmarka, dlot, hID;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

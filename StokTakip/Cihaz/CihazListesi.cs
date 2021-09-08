@@ -235,6 +235,16 @@ namespace StokTakip.Cihaz
             ch.Show();
         }
 
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.CihazEtiket();
+                frm.ShowDialog();
+            }
+        }
+
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CihazHareket.tur = "Kalibrasyon";

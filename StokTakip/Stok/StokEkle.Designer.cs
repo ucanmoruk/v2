@@ -217,6 +217,7 @@
             this.gridLookUpEdit1.Size = new System.Drawing.Size(152, 20);
             this.gridLookUpEdit1.TabIndex = 1;
             this.gridLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
+            this.gridLookUpEdit1.EditValueChanged += new System.EventHandler(this.gridLookUpEdit1_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 

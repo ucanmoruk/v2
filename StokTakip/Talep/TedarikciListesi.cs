@@ -84,6 +84,13 @@ namespace StokTakip.Talep
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //değerlendirme formu yazdır
+
+            Raporlar.Tedarikci.firmaID = fID;
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.Tedarikci();
+                frm.ShowDialog();
+            }
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

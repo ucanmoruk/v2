@@ -102,8 +102,11 @@ namespace StokTakip
 
         private void cikarma()
         {
-            float f1 = float.Parse(txtmiktar.Text);
-            float f2 = f1 * -1;
+            //float f1 = float.Parse(txtmiktar.Text);
+            //float f2 = f1 * -1;
+
+            double f1 = Convert.ToDouble(txtmiktar.Text);
+            double f2 = f1 * -1;
 
             SqlCommand add = new SqlCommand("insert into StokHareket (StokID, Marka,Lot,Miktar,Birim,Tarih,Hareket, BirimID, Durum) values (@a1,@a2,@a3,@a4,@a5,@a7,@a8,@a9,@a10)", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", stokid);
@@ -150,8 +153,8 @@ namespace StokTakip
             bgl.baglanti().Close();
         }
 
-        string stokk;
-        float stok;
+       // string stokk;
+        double stok;
         private void anastok()
         {
            // SqlCommand komutID = new SqlCommand("select SUM(Miktar) from StokHareket where StokID in (select ID from StokListesi where  Kod = N'" + combokod.Text + "') ", bgl.baglanti());
@@ -159,10 +162,12 @@ namespace StokTakip
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
-                stokk = drI[0].ToString();
+                stok = Convert.ToDouble(drI[0].ToString());
             }
             bgl.baglanti().Close();
-            stok = float.Parse(stokk);
+            //stok = float.Parse(stokk);
+          //  stok = Convert.ToDouble(stokk);
+
 
             SqlCommand add = new SqlCommand("update StokListesi set Miktar = @a1 where ID = N'" + gridLookUpEdit1.EditValue+ "'", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", stok);

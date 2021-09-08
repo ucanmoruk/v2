@@ -169,6 +169,46 @@ namespace StokTakip
             }
         }
 
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Raporlar.KimyasalEtiket.sTur = "Katı";
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {               
+                frm.KimyasalEtiket();
+                frm.ShowDialog();
+            }
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Raporlar.KimyasalEtiket.sTur = "Sıvı";
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.KimyasalEtiket();
+                frm.ShowDialog();
+            }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Raporlar.KimyasalEtiket.sTur = "Standart";
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.KimyasalEtiket();
+                frm.ShowDialog();
+            }
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Raporlar.KimyasalEtiket.sTur = "CRM";
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.KimyasalEtiket();
+                frm.ShowDialog();
+            }
+        }
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             if (e.Column.FieldName == "Kritik Limit" || e.Column.FieldName == "Stok Durumu" || e.Column.FieldName == "Birim")

@@ -54,6 +54,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_kalibrasyon = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -96,6 +97,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_kullanim),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_yenile),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_sil)});
             this.popupMenu1.Manager = this.barManager1;
@@ -237,8 +239,9 @@
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
-            this.barButtonItem6});
-            this.barManager1.MaxItemId = 17;
+            this.barButtonItem6,
+            this.barButtonItem7});
+            this.barManager1.MaxItemId = 18;
             // 
             // barDockControlTop
             // 
@@ -292,6 +295,15 @@
             this.barButtonItem1.Id = 10;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Cihaz Etiket Yazdır";
+            this.barButtonItem7.Id = 17;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
             // CihazListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,5 +354,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }

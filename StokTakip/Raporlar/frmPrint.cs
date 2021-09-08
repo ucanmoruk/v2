@@ -34,9 +34,75 @@ namespace StokTakip.Raporlar
             }
                    
         }
-      
 
+        public void KimyasalEtiket()
+        {
 
+            Raporlar.KimyasalEtiket etiket = new Raporlar.KimyasalEtiket();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
 
+        }
+
+        public void CihazEtiket()
+        {
+
+            Raporlar.CihazEtiket etiket = new Raporlar.CihazEtiket();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
+        public void CihazListesi()
+        {
+
+            Raporlar.DokumanCihaz etiket = new Raporlar.DokumanCihaz();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
+        public void Tedarikci()
+        {
+
+            Raporlar.Tedarikci etiket = new Raporlar.Tedarikci();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
+        public void AnalizListesi()
+        {
+
+            Raporlar.DokumanAnaliz etiket = new Raporlar.DokumanAnaliz();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
     }
 }

@@ -63,6 +63,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtlimit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsaklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtozellik.Properties)).BeginInit();
@@ -325,6 +326,7 @@
             // popupMenu1
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
@@ -346,8 +348,9 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1});
-            this.barManager1.MaxItemId = 2;
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 3;
             // 
             // barDockControlTop
             // 
@@ -380,6 +383,15 @@
             this.barDockControlRight.Location = new System.Drawing.Point(930, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 469);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Etiket Yazdır";
+            this.barButtonItem2.Id = 2;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // StokDetay
             // 
@@ -476,5 +488,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

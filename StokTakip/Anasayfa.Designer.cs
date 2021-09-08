@@ -465,6 +465,7 @@
             this.barButtonItem27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.Image")));
             this.barButtonItem27.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.LargeImage")));
             this.barButtonItem27.Name = "barButtonItem27";
+            this.barButtonItem27.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem27_ItemClick);
             // 
             // barButtonItem28
             // 
@@ -521,11 +522,12 @@
             // 
             // barButtonItem34
             // 
-            this.barButtonItem34.Caption = "Yazdır";
+            this.barButtonItem34.Caption = "Analiz Listesi Yazdır";
             this.barButtonItem34.Id = 33;
             this.barButtonItem34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem34.ImageOptions.Image")));
             this.barButtonItem34.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem34.ImageOptions.LargeImage")));
             this.barButtonItem34.Name = "barButtonItem34";
+            this.barButtonItem34.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem34_ItemClick);
             // 
             // barButtonItem35
             // 

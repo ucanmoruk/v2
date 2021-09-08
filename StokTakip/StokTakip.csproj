@@ -305,6 +305,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\CihazEtiket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\CihazEtiket.Designer.cs">
+      <DependentUpon>CihazEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanAnaliz.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanAnaliz.Designer.cs">
+      <DependentUpon>DokumanAnaliz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanCihaz.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanCihaz.Designer.cs">
+      <DependentUpon>DokumanCihaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\KimyasalEtiket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\KimyasalEtiket.Designer.cs">
+      <DependentUpon>KimyasalEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Tedarikci.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Tedarikci.Designer.cs">
+      <DependentUpon>Tedarikci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\ReceteDus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -586,6 +616,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Firma\PersonelListesi.resx">
       <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\CihazEtiket.resx">
+      <DependentUpon>CihazEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanAnaliz.resx">
+      <DependentUpon>DokumanAnaliz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanCihaz.resx">
+      <DependentUpon>DokumanCihaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\KimyasalEtiket.resx">
+      <DependentUpon>KimyasalEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Tedarikci.resx">
+      <DependentUpon>Tedarikci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\ReceteDus.resx">
       <DependentUpon>ReceteDus.cs</DependentUpon>

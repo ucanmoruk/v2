@@ -615,6 +615,24 @@ namespace StokTakip
             rd.Show();
         }
 
+        private void barButtonItem27_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.CihazListesi();
+                frm.ShowDialog();
+            }
+        }
+
+        private void barButtonItem34_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.AnalizListesi();
+                frm.ShowDialog();
+            }
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();

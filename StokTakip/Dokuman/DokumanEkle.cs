@@ -43,7 +43,7 @@ namespace StokTakip.Dokuman
         string revk;
         void revkontrol()
         {
-            revsayisi = Convert.ToInt32(txt_rev.Text);
+         //   revsayisi = Convert.ToInt32(txt_rev.Text);
 
             SqlCommand komutID = new SqlCommand("Select Max(RevNo) From DokumanRev where Kod = '" + txt_kod.Text + "'", bgl.baglanti());
             SqlDataReader drI = komutID.ExecuteReader();
@@ -63,28 +63,22 @@ namespace StokTakip.Dokuman
                 revdurum = date_rev.Text.ToString();
 
 
-            if (txt_rev.Text == "" || txt_rev.Text == null)
-                revno = "0";
-            else
-                revno = txt_rev.Text;
+            //if (txt_rev.Text == "" || txt_rev.Text == null)
+            //    revno = "0";
+            //else
+            //    revno = txt_rev.Text;
 
+            if (txt_rev.Text == "" || txt_rev.Text == null)
+                revsayisi = 0;
+            else
+                revsayisi = Convert.ToInt32(txt_rev.Text);
+
+            
             if (revsayisi > revsayi2)
             {
                 SqlCommand add = new SqlCommand("insert into DokumanRev(Kod,RevNo,RevTarihi,Aciklama,Durum,Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", txt_kod.Text);
-                add.Parameters.AddWithValue("@a2", revno);
-                add.Parameters.AddWithValue("@a3", revdurum);
-                add.Parameters.AddWithValue("@a4", txt_aciklama.Text);
-                add.Parameters.AddWithValue("@a5", "Aktif");
-                add.Parameters.AddWithValue("@a6", combo_durum.Text);
-                add.ExecuteNonQuery();
-                bgl.baglanti().Close();
-            }
-            else if (revsayisi == revsayi2)
-            {
-                SqlCommand add = new SqlCommand("insert into DokumanRev(Kod,RevNo,RevTarihi,Aciklama,Durum,Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6)", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", txt_kod.Text);
-                add.Parameters.AddWithValue("@a2", revno);
+                add.Parameters.AddWithValue("@a2", revsayisi);
                 add.Parameters.AddWithValue("@a3", revdurum);
                 add.Parameters.AddWithValue("@a4", txt_aciklama.Text);
                 add.Parameters.AddWithValue("@a5", "Aktif");
@@ -93,29 +87,48 @@ namespace StokTakip.Dokuman
                 bgl.baglanti().Close();
 
                 SqlCommand add2 = new SqlCommand("update DokumanMaster set RevNo = @a1, RevTarihi=@a2, Durumu=@a3 where Kod = '" + txt_kod.Text + "'", bgl.baglanti());
-                add2.Parameters.AddWithValue("@a1", revno);
+                add2.Parameters.AddWithValue("@a1", revsayisi);
                 add2.Parameters.AddWithValue("@a2", revdurum);
                 add2.Parameters.AddWithValue("@a3", combo_durum.Text);
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+            else if (revsayisi == revsayi2)
+            {
+                SqlCommand add = new SqlCommand("insert into DokumanRev(Kod,RevNo,RevTarihi,Aciklama,Durum,Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6)", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", txt_kod.Text);
+                add.Parameters.AddWithValue("@a2", revsayisi);
+                add.Parameters.AddWithValue("@a3", revdurum);
+                add.Parameters.AddWithValue("@a4", txt_aciklama.Text);
+                add.Parameters.AddWithValue("@a5", "Aktif");
+                add.Parameters.AddWithValue("@a6", combo_durum.Text);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
+
+                //SqlCommand add2 = new SqlCommand("update DokumanMaster set RevNo = @a1, RevTarihi=@a2, Durumu=@a3 where Kod = '" + txt_kod.Text + "'", bgl.baglanti());
+                //add2.Parameters.AddWithValue("@a1", revno);
+                //add2.Parameters.AddWithValue("@a2", revdurum);
+                //add2.Parameters.AddWithValue("@a3", combo_durum.Text);
+                //add.ExecuteNonQuery();
+                //bgl.baglanti().Close();
             }
             else
             {
                     SqlCommand add = new SqlCommand("insert into DokumanRev(Kod,RevNo,RevTarihi,Aciklama,Durum) values (@a1,@a2,@a3,@a4,@a5)", bgl.baglanti());
                     add.Parameters.AddWithValue("@a1", txt_kod.Text);
-                    add.Parameters.AddWithValue("@a2", revno);
+                    add.Parameters.AddWithValue("@a2", revsayisi);
                     add.Parameters.AddWithValue("@a3", revdurum);
                     add.Parameters.AddWithValue("@a4", txt_aciklama.Text);
                     add.Parameters.AddWithValue("@a5", "Aktif");
                     add.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
-                    SqlCommand add2 = new SqlCommand("update DokumanMaster set RevNo = @a1, RevTarihi=@a2, Durumu=@a3 where Kod = '"+txt_kod.Text+"'", bgl.baglanti());
-                    add2.Parameters.AddWithValue("@a1", revno);
-                    add2.Parameters.AddWithValue("@a2", revdurum);
-                    add2.Parameters.AddWithValue("@a3", combo_durum.Text);
-                    add.ExecuteNonQuery();
-                    bgl.baglanti().Close();            
+                    //SqlCommand add2 = new SqlCommand("update DokumanMaster set RevNo = @a1, RevTarihi=@a2, Durumu=@a3 where Kod = '"+txt_kod.Text+"'", bgl.baglanti());
+                    //add2.Parameters.AddWithValue("@a1", revno);
+                    //add2.Parameters.AddWithValue("@a2", revdurum);
+                    //add2.Parameters.AddWithValue("@a3", combo_durum.Text);
+                    //add.ExecuteNonQuery();
+                    //bgl.baglanti().Close();            
             }
 
         }
