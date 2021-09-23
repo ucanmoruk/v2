@@ -45,7 +45,7 @@ namespace StokTakip
         string stokkod, stokad, stokmiktar, stokbirim, sozellik;
         void talepdetay()
         {
-            SqlCommand komutD = new SqlCommand("select * from StokTalepDetay where TalepNo = N'" + combo_no.Text + "' and Durum <> N'Tamamlandı' ", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokTalepDetay where TalepNo = N'" + combo_no.Text + "' and Durumu = 'Aktif' and Durum <> N'Tamamlandı' ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {
@@ -77,7 +77,7 @@ namespace StokTakip
 
         void talepdetay2()
         {
-            SqlCommand komutD = new SqlCommand("select * from StokTalepDetay where TalepNo = N'" + combo_no.Text + "' and Durum = N'Tamamlandı' ", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokTalepDetay where TalepNo = N'" + combo_no.Text + "' and Durumu = 'Aktif' and Durum = N'Tamamlandı' ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {
@@ -106,7 +106,7 @@ namespace StokTakip
         string kabuledenID, kabulmiktar, kabulmarka, kabulgelis, kabulsertifika, kabulad, kabulsoyad;
         void gelendeger()
         {
-            SqlCommand komut = new SqlCommand("select * from StokTalepDegerlendirme where TalepNo = '" + combo_no.Text + "' and TalepStokKod = N'" + detaykod + "' ", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("select * from StokTalepDegerlendirme where TalepNo = '" + combo_no.Text + "' and TalepStokKod = N'" + detaykod + "' and Durumu = 'Aktif'", bgl.baglanti());
             SqlDataReader dra = komut.ExecuteReader();
             while (dra.Read())
             {
@@ -354,7 +354,7 @@ namespace StokTakip
         int talepsay;
         void talepkontrol()
         {
-            SqlCommand komutD = new SqlCommand("select COUNT(ID) from StokTalepDetay where TalepNo = '" + combo_no.Text + "' and Durum <> N'Tamamlandı' ", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select COUNT(ID) from StokTalepDetay where TalepNo = '" + combo_no.Text + "' and Durumu = 'Aktif' and Durum <> N'Tamamlandı' ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {

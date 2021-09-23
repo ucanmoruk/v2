@@ -25,7 +25,7 @@ namespace StokTakip
         {
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter("select d.StokKod as 'Stok Kodu', l.Ad, l.Cas as 'Cas No', d.Miktar,d.Birim, d.Marka, d.Ozellik, d.Durum from StokTalepDetay d " +
-                "left join StokListesi l on d.StokKod = l.Kod where TalepNo = '"+TalepNo+"' ", bgl.baglanti());
+                "left join StokListesi l on d.StokKod = l.Kod where TalepNo = '"+TalepNo+"' d.Durumu = 'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
