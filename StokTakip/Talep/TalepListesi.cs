@@ -43,11 +43,24 @@ namespace StokTakip
 
             if (Anasayfa.kullanici == olusturanid.ToString())
             {
-                guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+               
+                if (talepdurum == "Talep Oluşturuldu")
+                {
+                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                    
+                else
+                {
+                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+                    
             }
             else
             {
                 guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
         }
 
@@ -215,12 +228,12 @@ namespace StokTakip
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
 
-               
+                kullanicibul();
 
                 if (talepdurum == "Talep Oluşturuldu")
                 {
-                    kullanicibul();
-
+                   
+                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     if (yetki == 1)
                     {
                         
@@ -240,6 +253,7 @@ namespace StokTakip
                 }
                 else if (talepdurum == "Talep Reddedildi")
                 {
+                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     //bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
@@ -250,6 +264,7 @@ namespace StokTakip
                 }
                 else if (talepdurum == "Talep Onaylandı")
                 {
+                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     if (yetki == 3)
                     {
                         bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -266,6 +281,7 @@ namespace StokTakip
                 }
                 else if (talepdurum == "İşleme Alındı")
                 {
+                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     if (yetki == 1 || yetki == 2)
                     {
                         bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;

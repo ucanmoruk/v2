@@ -140,6 +140,7 @@
             this.lbl_kullanici = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem67 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -220,9 +221,10 @@
             this.barButtonItem63,
             this.barButtonItem64,
             this.barButtonItem65,
-            this.barButtonItem66});
+            this.barButtonItem66,
+            this.barButtonItem67});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 70;
+            this.ribbonControl1.MaxItemId = 71;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage8,
@@ -1089,6 +1091,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem17);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem67);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Firma";
             // 
@@ -1143,6 +1146,15 @@
             this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
             this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
             this.barButtonItem26.Name = "barButtonItem26";
+            // 
+            // barButtonItem67
+            // 
+            this.barButtonItem67.Caption = "Personel Listesi Yazdır";
+            this.barButtonItem67.Id = 70;
+            this.barButtonItem67.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem67.ImageOptions.Image")));
+            this.barButtonItem67.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem67.ImageOptions.LargeImage")));
+            this.barButtonItem67.Name = "barButtonItem67";
+            this.barButtonItem67.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem67_ItemClick);
             // 
             // Anasayfa
             // 
@@ -1281,6 +1293,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem64;
         private DevExpress.XtraBars.BarButtonItem barButtonItem65;
         private DevExpress.XtraBars.BarButtonItem barButtonItem66;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem67;
     }
 }
 

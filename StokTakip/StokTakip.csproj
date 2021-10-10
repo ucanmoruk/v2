@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -310,6 +310,12 @@
     </Compile>
     <Compile Include="Raporlar\CihazEtiket.Designer.cs">
       <DependentUpon>CihazEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanPersonel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanPersonel.Designer.cs">
+      <DependentUpon>DokumanPersonel.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\DokumanAnaliz.cs">
       <SubType>Component</SubType>
@@ -619,6 +625,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\CihazEtiket.resx">
       <DependentUpon>CihazEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanPersonel.resx">
+      <DependentUpon>DokumanPersonel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\DokumanAnaliz.resx">
       <DependentUpon>DokumanAnaliz.cs</DependentUpon>

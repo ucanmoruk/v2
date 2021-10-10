@@ -91,6 +91,20 @@ namespace StokTakip.Raporlar
 
         }
 
+        public void PersonelListesi()
+        {
+
+            Raporlar.DokumanPersonel etiket = new Raporlar.DokumanPersonel();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
         public void AnalizListesi()
         {
 

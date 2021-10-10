@@ -112,7 +112,7 @@ namespace StokTakip
             {
                 kabuledenID = dra["KabulEdenID"].ToString();
                 combo_genel.Text = dra["KabulDurum"].ToString();
-
+                datekabul.EditValue = Convert.ToDateTime(dra["GelisTarihi"].ToString());
                 kabulgelis = dra["Tarih"].ToString();
                 kabulmiktar = dra["Miktar"].ToString(); 
                 kabulmarka = dra["Marka"].ToString();
@@ -280,6 +280,8 @@ namespace StokTakip
                 combo_no.Text = gelentalep;                
                 lbl_9.Visible = true;
                 txt_9.Visible = true;
+                labelControl9.Visible = true;
+                datekabul.Visible = true;
                 talepdetay2();
             }
 

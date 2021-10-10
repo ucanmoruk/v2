@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,9 +24,16 @@ namespace StokTakip.Dokuman
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select RevNo, RevTarihi, Aciklama from DokumanRev where Kod = '"+kod+"' and Durum = 'Aktif' order by RevNo asc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select RevNo, RevTarihi, Aciklama as 'Açıklama' from DokumanRev where Kod = '"+kod+"' and Durum = 'Aktif' order by RevNo asc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
+
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Açıklama"].ColumnEdit = memo;
+
+            gridView1.Columns["Açıklama"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+  
+
         }
 
         int yetki;
@@ -94,6 +102,13 @@ namespace StokTakip.Dokuman
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             revino = dr["RevNo"].ToString();
+        }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "RevNo" )
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
         }
     }
 }

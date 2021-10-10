@@ -89,6 +89,7 @@
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepdurum),
             new DevExpress.XtraBars.LinkPersistInfo(this.guncelle),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepiptal),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_detay),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepkabul),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_degerlendirme),
@@ -105,7 +106,6 @@
             this.bar_talepdurum.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_taleponay),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepred),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepiptal),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepisle),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_taleptamam)});
             this.bar_talepdurum.Name = "bar_talepdurum";
@@ -131,6 +131,8 @@
             // 
             this.bar_talepiptal.Caption = "Talebi İptal Et";
             this.bar_talepiptal.Id = 6;
+            this.bar_talepiptal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_talepiptal.ImageOptions.Image")));
+            this.bar_talepiptal.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_talepiptal.ImageOptions.LargeImage")));
             this.bar_talepiptal.Name = "bar_talepiptal";
             this.bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bar_talepiptal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);

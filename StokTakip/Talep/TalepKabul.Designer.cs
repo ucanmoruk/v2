@@ -51,6 +51,8 @@
             this.combo_genel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lbl_9 = new DevExpress.XtraEditors.LabelControl();
             this.txt_9 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.datekabul = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_no.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_detay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -62,6 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.combo_sertifika.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_genel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datekabul.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datekabul.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -182,7 +186,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(30, 242);
+            this.labelControl8.Location = new System.Drawing.Point(30, 244);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(102, 13);
             this.labelControl8.TabIndex = 0;
@@ -270,7 +274,7 @@
             // 
             // lbl_9
             // 
-            this.lbl_9.Location = new System.Drawing.Point(30, 274);
+            this.lbl_9.Location = new System.Drawing.Point(30, 304);
             this.lbl_9.Name = "lbl_9";
             this.lbl_9.Size = new System.Drawing.Size(114, 13);
             this.lbl_9.TabIndex = 0;
@@ -279,17 +283,40 @@
             // 
             // txt_9
             // 
-            this.txt_9.Location = new System.Drawing.Point(237, 274);
+            this.txt_9.Location = new System.Drawing.Point(237, 303);
             this.txt_9.Name = "txt_9";
             this.txt_9.Size = new System.Drawing.Size(256, 20);
             this.txt_9.TabIndex = 11;
             this.txt_9.Visible = false;
             // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(30, 274);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(59, 13);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "Kabul Tarihi:";
+            this.labelControl9.Visible = false;
+            // 
+            // datekabul
+            // 
+            this.datekabul.EditValue = null;
+            this.datekabul.Location = new System.Drawing.Point(237, 271);
+            this.datekabul.Name = "datekabul";
+            this.datekabul.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.datekabul.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.datekabul.Size = new System.Drawing.Size(86, 20);
+            this.datekabul.TabIndex = 12;
+            this.datekabul.Visible = false;
+            // 
             // TalepKabul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 346);
+            this.ClientSize = new System.Drawing.Size(525, 355);
+            this.Controls.Add(this.datekabul);
             this.Controls.Add(this.txt_9);
             this.Controls.Add(this.btn_sertifika);
             this.Controls.Add(this.btn_kabul);
@@ -305,6 +332,7 @@
             this.Controls.Add(this.combo_miktar);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.lbl_9);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl6);
@@ -329,6 +357,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.combo_sertifika.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_genel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datekabul.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datekabul.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +388,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit combo_genel;
         private DevExpress.XtraEditors.LabelControl lbl_9;
         private DevExpress.XtraEditors.TextEdit txt_9;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.DateEdit datekabul;
     }
 }
