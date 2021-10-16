@@ -689,6 +689,7 @@
             // 
             this.gridView8.GridControl = this.gridControl5;
             this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsView.RowAutoHeight = true;
             this.gridView8.OptionsView.ShowGroupPanel = false;
             this.gridView8.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView8_PopupMenuShowing);
             this.gridView8.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView8_FocusedRowChanged);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -115,6 +116,14 @@ namespace StokTakip.Cihaz
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             cID= dr["CihazID"].ToString();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path = "KalibrasyonSartname.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
+
         }
     }
 }

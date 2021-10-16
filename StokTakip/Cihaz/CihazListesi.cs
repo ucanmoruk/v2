@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -243,6 +244,14 @@ namespace StokTakip.Cihaz
                 frm.CihazEtiket();
                 frm.ShowDialog();
             }
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path = "CihazListesi.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
+
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

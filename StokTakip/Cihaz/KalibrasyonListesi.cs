@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,13 +27,14 @@ namespace StokTakip.Cihaz
         {
             DataTable dt7 = new DataTable();
             SqlDataAdapter da7 = new SqlDataAdapter("select i.ID, c.Kod, c.Ad as 'Cihaz Adı', i.Tur as 'İşlem Türü', a.KalTip as 'Kalibrasyon Tipi', i.Tarih1 as 'Kalibrasyon Tarihi', i.Tarih2 as 'Planlanan Tarih', " +
-                " case i.Finout when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Uygulayan Firma & Personel' from CihazListesi c " +
+                " case i.Finout when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Son Uygulamayı Yapan', c.ID as 'cID' from CihazListesi c " +
                 " left join CihazIslem i on c.ID = i.CihazID left join StokTedarikci t on i.FirmaID = t.ID " +
                 "left join StokKullanici k on i.PersonelID = k.ID left join CihazKalibrasyon a on c.ID = a.CihazID " +
-                "where i.Tur = 'Kalibrasyon' or i.Tur = 'Ara Kontrol'", bgl.baglanti());
+                "where i.Tur = 'Kalibrasyon' or i.Tur = 'Ara Kontrol' order by c.Kod", bgl.baglanti());
             da7.Fill(dt7);
             gridControl1.DataSource = dt7;
             gridView1.Columns["ID"].Visible = false;
+            gridView1.Columns["cID"].Visible = false;
 
             this.gridView1.Columns[1].Width = 30;
             this.gridView1.Columns[7].Width = 150;
@@ -84,11 +86,11 @@ namespace StokTakip.Cihaz
 
         }
 
-        string Tur, cID, kod, yol, ad;
+        string Tur, cID, kod, yol, ad, iID;
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SqlCommand komut21 = new SqlCommand("Select * from CihazIslem where ID = N'" + cID + "' ", bgl.baglanti());
+            SqlCommand komut21 = new SqlCommand("Select * from CihazIslem where ID = N'" + iID + "' ", bgl.baglanti());
             SqlDataReader dr21 = komut21.ExecuteReader();
             while (dr21.Read())
             {
@@ -114,21 +116,34 @@ namespace StokTakip.Cihaz
         {
             CihazHareket.gelis = "Güncelle";
             CihazHareket.tur = Tur;
-            CihazHareket.cID = cID;
+            CihazHareket.cID = iID;
             CihazHareket ce = new CihazHareket();
             ce.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path = "KalibrasyonListesi.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
+
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
         //    string total = gridView1.GetRowCellValue(e.RowHandle, "Planlanan Tarih").ToString();
-            GridFormatRule gridFormatRule = new GridFormatRule();
+            //GridFormatRule gridFormatRule = new GridFormatRule();
 
-            FormatConditionRuleDataBar formatConditionRuleDataBar = new FormatConditionRuleDataBar();
-            gridFormatRule.Column = gridView1.Columns["Planlanan Tarih"];
-            formatConditionRuleDataBar.PredefinedName = "Raspberry Data Bar";
-            gridFormatRule.Rule = formatConditionRuleDataBar;
-            gridView1.FormatRules.Add(gridFormatRule);
+            //FormatConditionRuleDataBar formatConditionRuleDataBar = new FormatConditionRuleDataBar();
+            //gridFormatRule.Column = gridView1.Columns["Planlanan Tarih"];
+            ////formatConditionRuleDataBar.PredefinedName = "Raspberry Data Bar";
+            //formatConditionRuleDataBar.PredefinedName = "Orange Gradient";
+            //gridFormatRule.Rule = formatConditionRuleDataBar;
+            //gridView1.FormatRules.Add(gridFormatRule);
+
+
+
+
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -147,7 +162,7 @@ namespace StokTakip.Cihaz
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update CihazIslem set Durum=@a1 where ID = N'" + cID + "'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update CihazIslem set Durum=@a1 where ID = N'" + iID + "'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -164,6 +179,7 @@ namespace StokTakip.Cihaz
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CihazEkle.cihazkod = "2";
+            CihazEkle.cID = cID;
             CihazEkle ce = new CihazEkle();
             ce.Show();
         }
@@ -172,8 +188,9 @@ namespace StokTakip.Cihaz
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             Tur = dr["İşlem Türü"].ToString();
-            cID = dr["ID"].ToString();
+            cID = dr["cID"].ToString();
             kod = dr["Kod"].ToString();
+            iID = dr["ID"].ToString();
         }
     }
 }

@@ -28,8 +28,8 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>24</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -239,6 +239,12 @@
     </Compile>
     <Compile Include="Dokuman\DokumanMaster.Designer.cs">
       <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanYeni.Designer.cs">
+      <DependentUpon>DokumanYeni.cs</DependentUpon>
     </Compile>
     <Compile Include="Duyuru\Duyuru.cs">
       <SubType>Form</SubType>
@@ -592,6 +598,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DokumanMaster.resx">
       <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanYeni.resx">
+      <DependentUpon>DokumanYeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Duyuru\Duyuru.resx">
       <DependentUpon>Duyuru.cs</DependentUpon>

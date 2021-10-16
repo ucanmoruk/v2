@@ -25,9 +25,10 @@ namespace StokTakip.Dokuman
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by ID) as 'No', Tur as 'Tür', Kod, Ad as 'Doküman Adı', YayinTarihi as 'Yayın Tarihi', RevNo as 'Revizyon', RevTarihi as 'Rev. Tarihi', Durumu from DokumanMaster where Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select Row_number() over(order by ID) as 'No', Tur as 'Tür', Kod, Ad as 'Doküman Adı', YayinTarihi as 'Yayın Tarihi', RevNo as 'Revizyon', RevTarihi as 'Rev. Tarihi', Durumu, ID from DokumanMaster where Durum = N'Aktif'", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
+            gridView1.Columns["ID"].Visible = false;
         }
 
         int yetki;
@@ -46,12 +47,13 @@ namespace StokTakip.Dokuman
                     barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 }                
             else
                 {
-                    barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    //barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    //barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    //barButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 }
               
         }
@@ -82,7 +84,7 @@ namespace StokTakip.Dokuman
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update DokumanMaster set Durum=@a1 where Kod = N'" + kod + "'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update DokumanMaster set Durum=@a1 where ıD = N'" + dID + "'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -117,11 +119,11 @@ namespace StokTakip.Dokuman
 
         }
 
-        public static string kod, ad, durumu;
+        public static string kod, ad, durumu, dID;
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SqlCommand komut21 = new SqlCommand("Select * from DokumanMaster where Kod = N'" + kod+ "' ", bgl.baglanti());
+            SqlCommand komut21 = new SqlCommand("Select * from DokumanMaster where ID = N'" + dID + "' ", bgl.baglanti());
             SqlDataReader dr21 = komut21.ExecuteReader();
             while (dr21.Read())
             {
@@ -137,6 +139,7 @@ namespace StokTakip.Dokuman
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DokumanGecmis.kod = kod;
+            DokumanGecmis.dID = dID;
             DokumanGecmis dg = new DokumanGecmis();
             dg.ShowDialog();
         }
@@ -190,9 +193,14 @@ namespace StokTakip.Dokuman
 
         public void excelaktar()
         {
-            string path = "output.xlsx";
+            string path = "DokumanMaster.xlsx";
             gridControl1.ExportToXlsx(path);
             Process.Start(path);
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // güncelle
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -206,6 +214,7 @@ namespace StokTakip.Dokuman
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
                 kod = dr["Kod"].ToString();
+                dID = dr["ID"].ToString();
             }
             catch (Exception)
             {
@@ -218,6 +227,7 @@ namespace StokTakip.Dokuman
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             kod = dr["Kod"].ToString();
+            dID = dr["ID"].ToString();
 
         }
     }

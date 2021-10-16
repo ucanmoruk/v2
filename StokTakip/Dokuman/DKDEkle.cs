@@ -24,7 +24,7 @@ namespace StokTakip.Dokuman
         string dkkont;
         void detaybul()
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokDKDListe where Kod = '" + dkdkod+ "' and Ad = '"+dkdad+"'", bgl.baglanti());
+            SqlCommand komutID = new SqlCommand("Select * From StokDKDListe where ID = '"+dkdID+"' ", bgl.baglanti());
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
@@ -52,12 +52,12 @@ namespace StokTakip.Dokuman
             bgl.baglanti().Close();
         }
 
-        public static string dkdkod, dkdad;
+        public static string dkdkod, dkdad, dkdID;
         private void DKDEkle_Load(object sender, EventArgs e)
         {
             birimbul();
             
-            if (dkdkod == "" || dkdkod == null)
+            if (dkdID == "" || dkdID == null)
             {
 
             }
@@ -189,7 +189,7 @@ namespace StokTakip.Dokuman
             {
                 dokekle();
 
-                SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Path=@a6, Link=@a7, Birim=@a8 where Kod = '"+dkdkod+"' and Ad = '"+dkdad+"'", bgl.baglanti());
+                SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Path=@a6, Link=@a7, Birim=@a8 where ID = '"+dkdID+"'", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", combo_tur.Text);
                 add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
                 add.Parameters.AddWithValue("@a3", txt_kod.Text);
@@ -206,7 +206,7 @@ namespace StokTakip.Dokuman
             }
             else
             {
-                if (btn_sec.Visible == false)
+                if (btn_sec.Enabled == false)
                 {
                     DialogResult Secim = new DialogResult();
                     Secim = MessageBox.Show("Bu doküman daha önce yüklenmiş. Güncellemek mi istiyorsunuz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -214,7 +214,7 @@ namespace StokTakip.Dokuman
                     {
                         dokekle();
 
-                        SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Path=@a6, Link=@a7, Birim=@a8 where Kod = '" + dkdkod + "'", bgl.baglanti());
+                        SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Path=@a6, Link=@a7, Birim=@a8 where ID = '" + dkdID + "'", bgl.baglanti());
                         add.Parameters.AddWithValue("@a1", combo_tur.Text);
                         add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
                         add.Parameters.AddWithValue("@a3", txt_kod.Text);
@@ -235,7 +235,7 @@ namespace StokTakip.Dokuman
                 else
                 {
 
-                    SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Link=@a7, Birim=@a8 where Kod = '" + dkdkod + "'", bgl.baglanti());
+                    SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Link=@a7, Birim=@a8 where ID = '" + dkdID + "'", bgl.baglanti());
                     add.Parameters.AddWithValue("@a1", combo_tur.Text);
                     add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
                     add.Parameters.AddWithValue("@a3", txt_kod.Text);
@@ -255,6 +255,7 @@ namespace StokTakip.Dokuman
         private void DKDEkle_FormClosing(object sender, FormClosingEventArgs e)
         {
             dkdkod = "";
+            dkdID = null;
         }
     }
 }

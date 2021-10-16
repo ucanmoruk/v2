@@ -347,63 +347,118 @@ namespace StokTakip.Cihaz
                 else
                 {
 
-                    SqlCommand add = new SqlCommand(" update CihazIslem set FirmaID =@a1, PersonelID=@a2, Tarih1=@a3, Tarih2=@a4, Aciklama=@a5, Path=@a6, Finout=@a7 where ID = '"+cID+"' ", bgl.baglanti());
+                    if (path == "" || path == null)
+                    {
+                        SqlCommand add = new SqlCommand(" update CihazIslem set FirmaID =@a1, PersonelID=@a2, Tarih1=@a3, Tarih2=@a4, Aciklama=@a5,  Finout=@a7 where ID = '" + cID + "' ", bgl.baglanti());
 
-                    if (String.IsNullOrEmpty(fID))
-                    {
-                        add.Parameters.AddWithValue("@a1", DBNull.Value);
-                        add.Parameters.AddWithValue("@a2", DBNull.Value);
-                    }
-                    else
-                    {
-                        if (comboBoxEdit1.Text == "Firma İçi")
+                        if (String.IsNullOrEmpty(fID))
                         {
                             add.Parameters.AddWithValue("@a1", DBNull.Value);
-                            add.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue.ToString());
+                            add.Parameters.AddWithValue("@a2", DBNull.Value);
                         }
                         else
                         {
-                            add.Parameters.AddWithValue("@a1", gridLookUpEdit1.EditValue.ToString());
+                            if (comboBoxEdit1.Text == "Firma İçi")
+                            {
+                                add.Parameters.AddWithValue("@a1", DBNull.Value);
+                                add.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue.ToString());
+                            }
+                            else
+                            {
+                                add.Parameters.AddWithValue("@a1", gridLookUpEdit1.EditValue.ToString());
+                                add.Parameters.AddWithValue("@a2", DBNull.Value);
+                            }
+                        }
+                        add.Parameters.AddWithValue("@a3", tarih_1.EditValue);
+                        if (String.IsNullOrEmpty(tarih2.Text))
+                        {
+                            add.Parameters.AddWithValue("@a4", DBNull.Value);
+                        }
+                        else
+                        {
+                            add.Parameters.AddWithValue("@a4", tarih2.EditValue);
+                        }
+                        add.Parameters.AddWithValue("@a5", txt_durum.Text);
+                       
+                        if (comboBoxEdit1.Text == "Firma İçi")
+                        {
+                            add.Parameters.AddWithValue("@a7", "i");
+                        }
+                        else if (comboBoxEdit1.Text == "Firma Dışı")
+                        {
+                            add.Parameters.AddWithValue("@a7", "o");
+                        }
+                        else
+                        {
+                            add.Parameters.AddWithValue("@a7", DBNull.Value);
+                        }
+                        add.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+
+                        MessageBox.Show("Başarıyla güncellendi!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        SqlCommand add = new SqlCommand(" update CihazIslem set FirmaID =@a1, PersonelID=@a2, Tarih1=@a3, Tarih2=@a4, Aciklama=@a5, Path=@a6, Finout=@a7 where ID = '" + cID + "' ", bgl.baglanti());
+
+                        if (String.IsNullOrEmpty(fID))
+                        {
+                            add.Parameters.AddWithValue("@a1", DBNull.Value);
                             add.Parameters.AddWithValue("@a2", DBNull.Value);
                         }
-                    }
-                    add.Parameters.AddWithValue("@a3", tarih_1.EditValue);
-                    if (String.IsNullOrEmpty(tarih2.Text))
-                    {
-                        add.Parameters.AddWithValue("@a4", DBNull.Value);
-                    }
-                    else
-                    {
-                        add.Parameters.AddWithValue("@a4", tarih2.EditValue);
-                    }
-                    add.Parameters.AddWithValue("@a5", txt_durum.Text);
-                    if (String.IsNullOrEmpty(path))
-                    {
-                        add.Parameters.AddWithValue("@a6", DBNull.Value);
-                    }
-                    else
-                    {
-                        add.Parameters.AddWithValue("@a6", path);
-                    }
+                        else
+                        {
+                            if (comboBoxEdit1.Text == "Firma İçi")
+                            {
+                                add.Parameters.AddWithValue("@a1", DBNull.Value);
+                                add.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue.ToString());
+                            }
+                            else
+                            {
+                                add.Parameters.AddWithValue("@a1", gridLookUpEdit1.EditValue.ToString());
+                                add.Parameters.AddWithValue("@a2", DBNull.Value);
+                            }
+                        }
+                        add.Parameters.AddWithValue("@a3", tarih_1.EditValue);
+                        if (String.IsNullOrEmpty(tarih2.Text))
+                        {
+                            add.Parameters.AddWithValue("@a4", DBNull.Value);
+                        }
+                        else
+                        {
+                            add.Parameters.AddWithValue("@a4", tarih2.EditValue);
+                        }
+                        add.Parameters.AddWithValue("@a5", txt_durum.Text);
+                        if (String.IsNullOrEmpty(path))
+                        {
+                            add.Parameters.AddWithValue("@a6", DBNull.Value);
+                        }
+                        else
+                        {
+                            add.Parameters.AddWithValue("@a6", path);
+                        }
 
-                    if (comboBoxEdit1.Text == "Firma İçi")
-                    {
-                        add.Parameters.AddWithValue("@a7", "i");
-                    }
-                    else if (comboBoxEdit1.Text == "Firma Dışı")
-                    {
-                        add.Parameters.AddWithValue("@a7", "o");
-                    }
-                    else
-                    {
-                        add.Parameters.AddWithValue("@a7", DBNull.Value);
-                    }
-                    add.ExecuteNonQuery();
-                    bgl.baglanti().Close();
+                        if (comboBoxEdit1.Text == "Firma İçi")
+                        {
+                            add.Parameters.AddWithValue("@a7", "i");
+                        }
+                        else if (comboBoxEdit1.Text == "Firma Dışı")
+                        {
+                            add.Parameters.AddWithValue("@a7", "o");
+                        }
+                        else
+                        {
+                            add.Parameters.AddWithValue("@a7", DBNull.Value);
+                        }
+                        add.ExecuteNonQuery();
+                        bgl.baglanti().Close();
 
-                    MessageBox.Show("Başarıyla güncellendi!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Başarıyla güncellendi!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                    this.Close();
+                        this.Close();
+                    }
 
 
                 }

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -210,12 +211,19 @@ namespace StokTakip.Cihaz
         {
             DataTable dt7 = new DataTable();
             SqlDataAdapter da7 = new SqlDataAdapter("select i.ID, i.Tur as 'İşlem Türü', i.Tarih1 as 'Tarih', i.Aciklama as 'Açıklama', case i.Finout " +
-                " when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Uygulayan Firma & Personel' " +
+                " when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Uygulayan' " +
                 "from CihazIslem i left join StokTedarikci t on i.FirmaID = t.ID left join StokKullanici k on i.PersonelID = k.ID " +
                 " where i.CihazID = '"+cID+ "' and i.Durum='Aktif' order by i.Tarih1 desc ", bgl.baglanti());
             da7.Fill(dt7);
             gridControl5.DataSource = dt7;
             gridView8.Columns["ID"].Visible = false;
+
+
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView8.Columns["Açıklama"].ColumnEdit = memo;
+            gridView8.Columns["Uygulayan"].ColumnEdit = memo;
+            gridView8.Columns["Açıklama"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView8.Columns["Uygulayan"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
         }
 
         void detaybul()
@@ -266,8 +274,8 @@ namespace StokTakip.Cihaz
                 {
                     pf_siklik.Text = dr["PfSiklik"].ToString();
                     pf_detay.Text = dr["PfDetay"].ToString();
-                    bkm_detay.Text = dr["BakimSiklik"].ToString();
-                    bkm_siklik.Text = dr["BakimDetay"].ToString();
+                    bkm_siklik.Text = dr["BakimSiklik"].ToString();
+                    bkm_detay.Text = dr["BakimDetay"].ToString();
                 }
                 bgl.baglanti().Close();
 
@@ -318,8 +326,8 @@ namespace StokTakip.Cihaz
             {
                 pf_siklik.Text = drx["PfSiklik"].ToString();
                 pf_detay.Text = drx["PfDetay"].ToString();
-                bkm_detay.Text = drx["BakimSiklik"].ToString();
-                bkm_siklik.Text = drx["BakimDetay"].ToString();
+                bkm_siklik.Text = drx["BakimSiklik"].ToString();
+                bkm_detay.Text = drx["BakimDetay"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -570,6 +578,8 @@ namespace StokTakip.Cihaz
             add.Parameters.AddWithValue("@o5", bkm_detay.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
+
+            MessageBox.Show("Kalibrasyon bilgileri başarıyla eklenmiştir!", "Oopss");
         }
 
         void guncellekal()
@@ -852,6 +862,7 @@ namespace StokTakip.Cihaz
             if (btn_kalkayit.Text == "Güncelle")
             {
                 kontrolkal();
+
                 if (kalkont == "0" )
                 {
                     eklekal();

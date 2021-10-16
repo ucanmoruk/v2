@@ -39,6 +39,7 @@ namespace StokTakip.Duyuru
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView1.Columns["Duyuru"].ColumnEdit = memo;
 
+            gridView1.Columns["Duyuru"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
 
         }
 

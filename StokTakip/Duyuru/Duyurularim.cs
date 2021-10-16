@@ -43,6 +43,11 @@ namespace StokTakip.Duyuru
             //gridView1.Columns["Mesaj"].ColumnEdit = memo;
 
 
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Mesaj"].ColumnEdit = memo;
+            gridView1.Columns["Mesaj"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+
+
         }
 
         private void Duyurularim_KeyDown(object sender, KeyEventArgs e)

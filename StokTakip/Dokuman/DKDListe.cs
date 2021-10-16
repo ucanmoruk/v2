@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,15 +31,25 @@ namespace StokTakip.Dokuman
             gridControl1.DataSource = dt;
 
             this.gridView1.Columns[0].Width = 20;
-            this.gridView1.Columns[1].Width = 50;
-            this.gridView1.Columns[2].Width = 50;
+            this.gridView1.Columns[1].Width = 35;
+            this.gridView1.Columns[2].Width = 35;
             this.gridView1.Columns[3].Width = 50;
-            this.gridView1.Columns[5].Width = 50;
-            this.gridView1.Columns[6].Width = 50;
-            this.gridView1.Columns[8].Width = 50;
-            this.gridView1.Columns[9].Width = 75;
+            this.gridView1.Columns[4].Width = 200;            
+            this.gridView1.Columns[5].Width = 35;
+            this.gridView1.Columns[6].Width = 35;
+            this.gridView1.Columns[8].Width = 35;
+            this.gridView1.Columns[9].Width = 50;
 
             gridView1.Columns["ID"].Visible = false;
+
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Ad"].ColumnEdit = memo;
+            gridView1.Columns["Birim"].ColumnEdit = memo;
+            gridView1.Columns["Ad"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView1.Columns["Birim"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+
+
+
         }
 
         int yetki;
@@ -155,8 +166,9 @@ namespace StokTakip.Dokuman
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DKDEkle.dkdkod = dkdkod;
-            DKDEkle.dkdad = dkdad;
+            //DKDEkle.dkdkod = dkdkod;
+            //DKDEkle.dkdad = dkdad;
+            DKDEkle.dkdID = dID;
             DKDEkle de = new DKDEkle();
             de.Show();
         }
@@ -240,7 +252,7 @@ namespace StokTakip.Dokuman
 
         public void excelaktar()
         {
-            string path = "output.xlsx";
+            string path = "DKDListe.xlsx";
             gridControl1.ExportToXlsx(path);
             Process.Start(path);
         }
