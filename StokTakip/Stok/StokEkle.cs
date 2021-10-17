@@ -348,7 +348,7 @@ namespace StokTakip
 
         private void btnsertifika_Click(object sender, EventArgs e)
         {
-            Sertifika.skod = gridLookUpEdit1.Text;
+            Sertifika.skod = gridLookUpEdit1.EditValue.ToString();
             Sertifika s = new Sertifika();
             s.Show();
 

@@ -267,8 +267,8 @@ namespace StokTakip
 
         private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Dokuman.DokumanEkle dm = new Dokuman.DokumanEkle();
-            dm.ShowDialog();
+            Dokuman.DokumanYeni dy = new DokumanYeni();
+            dy.Show();
         }
 
         Analiz.AnalizListesi anal;

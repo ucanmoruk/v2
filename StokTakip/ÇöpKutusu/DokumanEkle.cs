@@ -261,7 +261,7 @@ namespace StokTakip.Dokuman
                     {
                         dokekle();
                     }
-                    MessageBox.Show("Başarıyla güncellendi!" , "Başarılı" , MessageBoxButtons.OK);
+                    MessageBox.Show("Başarıyla güncellendi!", "Başarılı", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -279,13 +279,14 @@ namespace StokTakip.Dokuman
 
 
 
-        }
+            }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Hata D1:" + ex);
             }
-}
+        }
+
 
         public static string gelis, kod;
         private void DokumanEkle_FormClosing(object sender, FormClosingEventArgs e)

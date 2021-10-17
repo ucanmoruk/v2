@@ -24,7 +24,11 @@ namespace StokTakip.Dokuman
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select RevNo, RevTarihi, Madde, Aciklama as 'Açıklama', ID from DokumanRev where DokumanID = '"+dID+"' and Durum = 'Aktif' order by RevNo asc", bgl.baglanti());
+           // SqlDataAdapter da = new SqlDataAdapter("select RevNo, RevTarihi, Madde, Aciklama as 'Açıklama', ID from DokumanRev where DokumanID = '"+dID+"' and Durum = 'Aktif' order by RevNo asc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select r.RevNo as 'No', r.RevTarihi as 'Rev. Tarihi', r.Madde, r.Aciklama as 'Açıklama', 
+            r.ID, k.Ad +' '+k.Soyad as 'Rev. Yapan' from DokumanRev r
+            left join StokKullanici k on r.PersonelID = k.ID
+            where r.DokumanID = '" + dID + "' and r.Durum = 'Aktif' order by r.RevNo asc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView1.Columns["ID"].Visible = false;
@@ -32,8 +36,10 @@ namespace StokTakip.Dokuman
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView1.Columns["Açıklama"].ColumnEdit = memo;
             gridView1.Columns["Madde"].ColumnEdit = memo;
+            gridView1.Columns["Rev. Yapan"].ColumnEdit = memo;
             gridView1.Columns["Açıklama"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             gridView1.Columns["Madde"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView1.Columns["Rev. Yapan"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
   
 
         }
@@ -52,10 +58,12 @@ namespace StokTakip.Dokuman
             if (yetki == 0 || yetki.ToString() == null)
             {
                 barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             else
             {
                 barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             }
 
         }
@@ -69,6 +77,8 @@ namespace StokTakip.Dokuman
             this.gridView1.Columns[0].Width = 20;
             this.gridView1.Columns[1].Width = 50;
             this.gridView1.Columns[2].Width = 50;
+            this.gridView1.Columns[3].Width = 150;
+            this.gridView1.Columns[4].Width = 50;
         }
 
         private void DokumanGecmis_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,11 +121,20 @@ namespace StokTakip.Dokuman
             }
             else
             {
-                revino = dr["RevNo"].ToString();
+                revino = dr["No"].ToString();
                 rID = dr["ID"].ToString();
 
             }
 
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            RevizyonYeni.gelis = "güncelle";
+            RevizyonYeni.dID = dID;
+            RevizyonYeni.rID = rID;
+            RevizyonYeni ry = new RevizyonYeni();
+            ry.Show();
         }
 
         private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
@@ -129,7 +148,7 @@ namespace StokTakip.Dokuman
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "RevNo" )
+            if (e.Column.FieldName == "No" )
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
 
         }

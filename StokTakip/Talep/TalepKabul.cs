@@ -204,7 +204,7 @@ namespace StokTakip
 
         private void btn_sertifika_Click(object sender, EventArgs e)
         {
-            Sertifika.skod = detaykod;
+           // Sertifika.skod = detaykod;
             Sertifika s = new Sertifika();
             s.ShowDialog();
         }

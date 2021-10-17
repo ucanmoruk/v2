@@ -50,6 +50,7 @@
             this.Name = "SertifikaGoruntule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDF Görüntüleyici";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SertifikaGoruntule_FormClosing);
             this.Load += new System.EventHandler(this.SertifikaGoruntule_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.ResumeLayout(false);

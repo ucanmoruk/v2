@@ -105,10 +105,11 @@ namespace StokTakip.Cihaz
             }
             else
             {
-                Dokuman.DokumanGoruntule.yol = yol;
-                Dokuman.DokumanGoruntule.ad = ad;
-                Dokuman.DokumanGoruntule dg = new Dokuman.DokumanGoruntule();
-                dg.Show();
+                SertifikaGoruntule.ad = ad;
+                SertifikaGoruntule.yol = yol;
+                SertifikaGoruntule sg = new SertifikaGoruntule();
+                sg.Show();
+
             }
         }
 

@@ -235,15 +235,15 @@ namespace StokTakip
             detaybul();
             yetkibul();
 
-            if (yetki == 0 || yetki.ToString() == null)
-            {
-                listele();
-                sertbul();
-            }
-            else
+            if (yetki == 2 )
             {
                 listele2();
                 sertbul2();
+            }
+            else
+            {
+                listele();
+                sertbul();
             }
 
             GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Miktar", "Toplam={0}");

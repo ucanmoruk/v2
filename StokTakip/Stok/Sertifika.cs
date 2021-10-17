@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,27 +23,48 @@ namespace StokTakip
 
         sqlbaglanti bgl = new sqlbaglanti();
 
-        private void listele()
-        {
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where Durum=N'Aktif'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combokod.Properties.Items.Add(drI["Kod"].ToString());
-            }
-            bgl.baglanti().Close();
 
-        }
-        private void birimbul()
+        void glistele()
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'"+Anasayfa.firmaID+"'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combo_birim.Properties.Items.Add(drI["Birim"].ToString());
-            }
-            bgl.baglanti().Close();
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Birim from StokFirmaBirim where Durum= 'Aktif'", bgl.baglanti());
+            da2.Fill(dt2);
+
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Birim";
+            gridLookUpEdit1.Properties.ValueMember = "ID";
+
+            DataTable dt4 = new DataTable();
+            SqlDataAdapter da4 = new SqlDataAdapter("Select ID, Kod, Ad from StokListesi where Durum= 'Aktif'", bgl.baglanti());
+            da4.Fill(dt4);
+
+            gridLookUpEdit2.Properties.DataSource = dt4;
+            gridLookUpEdit2.Properties.DisplayMember = "Kod";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
         }
+
+
+        //private void listele()
+        //{
+        //    SqlCommand komutID = new SqlCommand("Select * From StokListesi where Durum=N'Aktif'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        combokod.Properties.Items.Add(drI["Kod"].ToString());
+        //    }
+        //    bgl.baglanti().Close();
+
+        //}
+        //private void birimbul()
+        //{
+        //    SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'"+Anasayfa.firmaID+"'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        combo_birim.Properties.Items.Add(drI["Birim"].ToString());
+        //    }
+        //    bgl.baglanti().Close();
+        //}
 
         private void kbirim()
         {
@@ -50,9 +72,11 @@ namespace StokTakip
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
-                combo_birim.Text = drI["Birim"].ToString();
+              //  combo_birim.Text = drI["Birim"].ToString();
+                gridLookUpEdit1.EditValue = drI["ID"].ToString();
             }
             bgl.baglanti().Close();
+
         }
 
         private void parolaolustur()
@@ -78,14 +102,14 @@ namespace StokTakip
                 }
                 else
                 {
-                    if (combokod.Text == "" || txtmarka.Text == "")
+                    if (gridLookUpEdit2.Text == "" || txtmarka.Text == "")
                     {
                         MessageBox.Show("Lütfen marka, lot veya skt tarihi belirtiniz!");
                     }
                     else
                     {
                         parolaolustur();
-                        string path = combokod.Text + "-" + txtmarka.Text + "-" + parola + ".pdf";
+                        string path = gridLookUpEdit2.Text + "-" + txtmarka.Text + "-" + parola + ".pdf";
                         if (dateskt.Text == "")
                         {
                         DateTime tarih = DateTime.Now;
@@ -120,7 +144,7 @@ namespace StokTakip
                         txtmarka.Text = "";
                         txtlot.Text = "";
                         dateskt.Text = "";
-                        combokod.Text = "";
+                        gridLookUpEdit2.Text = "";
                         btnsertifika.Enabled = true;
                     }
                     
@@ -138,18 +162,23 @@ namespace StokTakip
         public static string skod;
         private void Sertifika_Load(object sender, EventArgs e)
         {
-            if (skod == "")
+            if (skod == "" || skod == null)
             {
-                listele();
-                birimbul();
+                //listele();
+                //birimbul();
+                glistele();
                 kbirim();
             }
             else
             {
-                combokod.Text = skod;
-                listele();
-                birimbul();
+                //combokod.Text = skod;
+                //    gridLookUpEdit2.EditValue = skod;
+                
+                //listele();
+                //birimbul();
+                glistele();
                 kbirim();
+                gridLookUpEdit2.EditValue = skod;
             }
            
         }
@@ -191,28 +220,76 @@ namespace StokTakip
             }
         }
 
-        int stokid;
-        private void combokod_SelectedIndexChanged(object sender, EventArgs e)
+       
+        //private void combokod_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'" + combokod.Text + "'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        stokid = Convert.ToInt32(drI["ID"].ToString());
+        //    }
+        //    bgl.baglanti().Close();
+        //}
+
+        string birimID, stokid;
+        //private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'"+Anasayfa.firmaID+"'", bgl.baglanti());
+        //    SqlDataReader drI = komutID.ExecuteReader();
+        //    while (drI.Read())
+        //    {
+        //        birimID = Convert.ToInt32(drI["ID"].ToString());
+        //    }
+        //    bgl.baglanti().Close();
+        //}
+
+        private void gridLookUpEdit2_QueryPopUp(object sender, CancelEventArgs e)
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'" + combokod.Text + "'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                stokid = Convert.ToInt32(drI["ID"].ToString());
-            }
-            bgl.baglanti().Close();
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
         }
 
-        int birimID;
-        private void combo_birim_SelectedIndexChanged(object sender, EventArgs e)
+        private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Birim = N'" + combo_birim.Text + "' and FirmaID = N'"+Anasayfa.firmaID+"'", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
+        private void gridLookUpEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridLookUpEdit edit = sender as GridLookUpEdit;
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)
             {
-                birimID = Convert.ToInt32(drI["ID"].ToString());
+                gridLookUpEdit2.EditValue = null;
+
             }
-            bgl.baglanti().Close();
+        }
+
+        private void gridLookUpEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            GridLookUpEdit edit = sender as GridLookUpEdit;
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)
+            {
+                gridLookUpEdit1.EditValue = null;
+
+            }
+        }
+
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEdit1.EditValue == null)
+                birimID = null;
+            else
+                birimID = gridLookUpEdit1.EditValue.ToString();
+        }
+
+        private void gridLookUpEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridLookUpEdit2.EditValue == null)
+                stokid = null;
+            else
+                stokid = gridLookUpEdit2.EditValue.ToString();
         }
 
         private void btnadd_Click(object sender, EventArgs e)

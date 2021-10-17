@@ -123,7 +123,7 @@ namespace StokTakip.Analiz
                 combo_akre.Text = drI["Akreditasyon"].ToString();
                 string gbirim = drI["Birim"].ToString();
                 string gmetot = drI["Metot"].ToString();
-                gridLookUpEdit1.EditValue = gbirim ;
+                gridLookUpEdit1.EditValue = gbirim;
                 gridLookUpEdit2.EditValue = gmetot;
             }
             bgl.baglanti().Close();

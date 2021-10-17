@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -216,10 +216,10 @@
     <Compile Include="Dokuman\DKDListe.Designer.cs">
       <DependentUpon>DKDListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dokuman\DokumanEkle.cs">
+    <Compile Include="ÇöpKutusu\DokumanEkle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dokuman\DokumanEkle.Designer.cs">
+    <Compile Include="ÇöpKutusu\DokumanEkle.Designer.cs">
       <DependentUpon>DokumanEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="Dokuman\DokumanGecmis.cs">
@@ -245,6 +245,12 @@
     </Compile>
     <Compile Include="Dokuman\DokumanYeni.Designer.cs">
       <DependentUpon>DokumanYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\RevizyonYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\RevizyonYeni.Designer.cs">
+      <DependentUpon>RevizyonYeni.cs</DependentUpon>
     </Compile>
     <Compile Include="Duyuru\Duyuru.cs">
       <SubType>Form</SubType>
@@ -587,7 +593,7 @@
     <EmbeddedResource Include="Dokuman\DKDListe.resx">
       <DependentUpon>DKDListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dokuman\DokumanEkle.resx">
+    <EmbeddedResource Include="ÇöpKutusu\DokumanEkle.resx">
       <DependentUpon>DokumanEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DokumanGecmis.resx">
@@ -601,6 +607,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DokumanYeni.resx">
       <DependentUpon>DokumanYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\RevizyonYeni.resx">
+      <DependentUpon>RevizyonYeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Duyuru\Duyuru.resx">
       <DependentUpon>Duyuru.cs</DependentUpon>

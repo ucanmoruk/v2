@@ -18,12 +18,25 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        public static string yol, path;
+        public static string yol, path, ad;
 
         private void SertifikaGoruntule_Load_1(object sender, EventArgs e)
         {
             path = Path.Combine(Anasayfa.path, yol);
             axAcroPDF1.LoadFile(path);
+
+            if (Text == "" || Text == null)
+            { }
+            else
+            {
+                Text = ad;
+            }
+        }
+
+        private void SertifikaGoruntule_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            yol = null;
+            Text =  null;
         }
 
         private void SertifikaGoruntule_Load(object sender, EventArgs e)

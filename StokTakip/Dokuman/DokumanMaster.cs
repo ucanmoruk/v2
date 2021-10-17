@@ -44,7 +44,6 @@ namespace StokTakip.Dokuman
 
             if (yetki == 0 || yetki.ToString() == null)
                 {
-                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     barButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                     barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
@@ -67,10 +66,10 @@ namespace StokTakip.Dokuman
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Dokuman.DokumanEkle.kod = kod;
-            Dokuman.DokumanEkle.gelis = "rev";
-            DokumanEkle dm = new DokumanEkle();
-            dm.ShowDialog();
+            RevizyonYeni.gelis = "yeni";
+            RevizyonYeni.dID = dID;
+            RevizyonYeni ry = new RevizyonYeni();
+            ry.Show();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -165,14 +164,6 @@ namespace StokTakip.Dokuman
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 
-        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Dokuman.DokumanEkle.kod = kod;
-            Dokuman.DokumanEkle.gelis = "yükle";
-            DokumanEkle dm = new DokumanEkle();
-            dm.ShowDialog();
-        }
-
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
             GridView View = sender as GridView;
@@ -200,7 +191,10 @@ namespace StokTakip.Dokuman
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // güncelle
+            DokumanYeni.gelis = "Güncelle";
+            DokumanYeni.dID = dID;
+            DokumanYeni dy = new DokumanYeni();
+            dy.Show();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
