@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB633121-BE71-448F-BD05-24767462386A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mKYS</RootNamespace>
+    <AssemblyName>mKYS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://massgrup.com/httpdocs/mKYS/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://massgrup.com/mKYS/</InstallUrl>
+    <PublisherName>Oğuzhan Eker</PublisherName>
+    <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>66BBE2580FE5C7136685B4D77FFF68B56090796A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>StokTakip_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Raindropmemory-Legendora-Art-of-Chemistry.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.1.Drawing, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1" />
+    <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.38\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analiz\AnalizDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\AnalizDetay.Designer.cs">
+      <DependentUpon>AnalizDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\AnalizListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\AnalizListesi.Designer.cs">
+      <DependentUpon>AnalizListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\AnalizYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\AnalizYeni.Designer.cs">
+      <DependentUpon>AnalizYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonEkle.Designer.cs">
+      <DependentUpon>ValidasyonEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonListesi.Designer.cs">
+      <DependentUpon>ValidasyonListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlan.Designer.cs">
+      <DependentUpon>ValidasyonPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlanListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\ValidasyonPlanListesi.Designer.cs">
+      <DependentUpon>ValidasyonPlanListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\BakimDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\BakimDetay.Designer.cs">
+      <DependentUpon>BakimDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazEkle.Designer.cs">
+      <DependentUpon>CihazEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazHareket.Designer.cs">
+      <DependentUpon>CihazHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazListesi.Designer.cs">
+      <DependentUpon>CihazListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CihazMaliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CihazMaliyet.Designer.cs">
+      <DependentUpon>CihazMaliyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\CMaliyetListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\CMaliyetListe.Designer.cs">
+      <DependentUpon>CMaliyetListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonListesi.Designer.cs">
+      <DependentUpon>KalibrasyonListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonSartname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cihaz\KalibrasyonSartname.Designer.cs">
+      <DependentUpon>KalibrasyonSartname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DKDEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DKDEkle.Designer.cs">
+      <DependentUpon>DKDEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DKDListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DKDListe.Designer.cs">
+      <DependentUpon>DKDListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\DokumanEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\DokumanEkle.Designer.cs">
+      <DependentUpon>DokumanEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGecmis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGecmis.Designer.cs">
+      <DependentUpon>DokumanGecmis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanGoruntule.Designer.cs">
+      <DependentUpon>DokumanGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanMaster.Designer.cs">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\DokumanYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\DokumanYeni.Designer.cs">
+      <DependentUpon>DokumanYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokuman\RevizyonYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dokuman\RevizyonYeni.Designer.cs">
+      <DependentUpon>RevizyonYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyuru\Duyuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\Duyuru.Designer.cs">
+      <DependentUpon>Duyuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruEx.Designer.cs">
+      <DependentUpon>DuyuruEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyuru\Duyurularim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\Duyurularim.Designer.cs">
+      <DependentUpon>Duyurularim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruListe.Designer.cs">
+      <DependentUpon>DuyuruListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\DuyuruYeni.Designer.cs">
+      <DependentUpon>DuyuruYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\FirmaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\FirmaDetay.Designer.cs">
+      <DependentUpon>FirmaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\YetkiListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\YetkiListesi.Designer.cs">
+      <DependentUpon>YetkiListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giris.Designer.cs">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\Personel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\Personel.Designer.cs">
+      <DependentUpon>Personel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Firma\PersonelListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firma\PersonelListesi.Designer.cs">
+      <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="massgrup_massDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\CihazEtiket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\CihazEtiket.Designer.cs">
+      <DependentUpon>CihazEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanPersonel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanPersonel.Designer.cs">
+      <DependentUpon>DokumanPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanAnaliz.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanAnaliz.Designer.cs">
+      <DependentUpon>DokumanAnaliz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanCihaz.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanCihaz.Designer.cs">
+      <DependentUpon>DokumanCihaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\KimyasalEtiket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\KimyasalEtiket.Designer.cs">
+      <DependentUpon>KimyasalEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Tedarikci.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Tedarikci.Designer.cs">
+      <DependentUpon>Tedarikci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\ReceteDus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\ReceteDus.Designer.cs">
+      <DependentUpon>ReceteDus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\Karsilama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\Karsilama.Designer.cs">
+      <DependentUpon>Karsilama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\Aciklama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Aciklama.Designer.cs">
+      <DependentUpon>Aciklama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\DokumanMaster.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\DokumanMaster.Designer.cs">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmPrint.designer.cs">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\ReceteDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\ReceteDetay.Designer.cs">
+      <DependentUpon>ReceteDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\ReceteListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\ReceteListesi.Designer.cs">
+      <DependentUpon>ReceteListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\ReceteSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\ReceteSec.Designer.cs">
+      <DependentUpon>ReceteSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\Sertifika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\Sertifika.Designer.cs">
+      <DependentUpon>Sertifika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\SertifikaGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\SertifikaGoruntule.Designer.cs">
+      <DependentUpon>SertifikaGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\SertifikaIptal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\SertifikaIptal.Designer.cs">
+      <DependentUpon>SertifikaIptal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\SonKullanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\SonKullanim.Designer.cs">
+      <DependentUpon>SonKullanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlbaglanti.cs" />
+    <Compile Include="Stok\StokDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\StokDetay.Designer.cs">
+      <DependentUpon>StokDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\StokDus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\StokDus.Designer.cs">
+      <DependentUpon>StokDus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\StokEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\StokEkle.Designer.cs">
+      <DependentUpon>StokEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\StokListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\StokListesi.Designer.cs">
+      <DependentUpon>StokListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\ReceteYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\ReceteYeni.designer.cs">
+      <DependentUpon>ReceteYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\MaaliyetEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\MaaliyetEkle.Designer.cs">
+      <DependentUpon>MaaliyetEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\MaliyetListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\MaliyetListesi.Designer.cs">
+      <DependentUpon>MaliyetListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\MaliyetNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\MaliyetNo.Designer.cs">
+      <DependentUpon>MaliyetNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TalepDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TalepDetay.Designer.cs">
+      <DependentUpon>TalepDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TalepKabul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TalepKabul.Designer.cs">
+      <DependentUpon>TalepKabul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TalepListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TalepListesi.Designer.cs">
+      <DependentUpon>TalepListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TalepYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TalepYeni.Designer.cs">
+      <DependentUpon>TalepYeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\YeniStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\YeniStok.Designer.cs">
+      <DependentUpon>YeniStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TedarikciPuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TedarikciPuan.Designer.cs">
+      <DependentUpon>TedarikciPuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciDegerlendirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciDegerlendirme.Designer.cs">
+      <DependentUpon>TedarikciDegerlendirme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TedarikciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TedarikciEkle.Designer.cs">
+      <DependentUpon>TedarikciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TedarikciListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TedarikciListesi.Designer.cs">
+      <DependentUpon>TedarikciListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciSoru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciSoru.Designer.cs">
+      <DependentUpon>TedarikciSoru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciTur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\TedarikciTur.Designer.cs">
+      <DependentUpon>TedarikciTur.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Analiz\AnalizDetay.resx">
+      <DependentUpon>AnalizDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\AnalizListesi.resx">
+      <DependentUpon>AnalizListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\AnalizYeni.resx">
+      <DependentUpon>AnalizYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonEkle.resx">
+      <DependentUpon>ValidasyonEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonListesi.resx">
+      <DependentUpon>ValidasyonListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonPlan.resx">
+      <DependentUpon>ValidasyonPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\ValidasyonPlanListesi.resx">
+      <DependentUpon>ValidasyonPlanListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\BakimDetay.resx">
+      <DependentUpon>BakimDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazEkle.resx">
+      <DependentUpon>CihazEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazHareket.resx">
+      <DependentUpon>CihazHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazListesi.resx">
+      <DependentUpon>CihazListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CihazMaliyet.resx">
+      <DependentUpon>CihazMaliyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\CMaliyetListe.resx">
+      <DependentUpon>CMaliyetListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\KalibrasyonListesi.resx">
+      <DependentUpon>KalibrasyonListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cihaz\KalibrasyonSartname.resx">
+      <DependentUpon>KalibrasyonSartname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DKDEkle.resx">
+      <DependentUpon>DKDEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DKDListe.resx">
+      <DependentUpon>DKDListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\DokumanEkle.resx">
+      <DependentUpon>DokumanEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanGecmis.resx">
+      <DependentUpon>DokumanGecmis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanGoruntule.resx">
+      <DependentUpon>DokumanGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanMaster.resx">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\DokumanYeni.resx">
+      <DependentUpon>DokumanYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dokuman\RevizyonYeni.resx">
+      <DependentUpon>RevizyonYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\Duyuru.resx">
+      <DependentUpon>Duyuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\DuyuruEx.resx">
+      <DependentUpon>DuyuruEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\Duyurularim.resx">
+      <DependentUpon>Duyurularim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\DuyuruListe.resx">
+      <DependentUpon>DuyuruListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\DuyuruYeni.resx">
+      <DependentUpon>DuyuruYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\FirmaDetay.resx">
+      <DependentUpon>FirmaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\YetkiListesi.resx">
+      <DependentUpon>YetkiListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giris.resx">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\Personel.resx">
+      <DependentUpon>Personel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Firma\PersonelListesi.resx">
+      <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\CihazEtiket.resx">
+      <DependentUpon>CihazEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanPersonel.resx">
+      <DependentUpon>DokumanPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanAnaliz.resx">
+      <DependentUpon>DokumanAnaliz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanCihaz.resx">
+      <DependentUpon>DokumanCihaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\KimyasalEtiket.resx">
+      <DependentUpon>KimyasalEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Tedarikci.resx">
+      <DependentUpon>Tedarikci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\ReceteDus.resx">
+      <DependentUpon>ReceteDus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\Karsilama.resx">
+      <DependentUpon>Karsilama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Raporlar\Aciklama.resx">
+      <DependentUpon>Aciklama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\DokumanMaster.resx">
+      <DependentUpon>DokumanMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmPrint.resx">
+      <DependentUpon>frmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\ReceteDetay.resx">
+      <DependentUpon>ReceteDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\ReceteListesi.resx">
+      <DependentUpon>ReceteListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\ReceteSec.resx">
+      <DependentUpon>ReceteSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\Sertifika.resx">
+      <DependentUpon>Sertifika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\SertifikaGoruntule.resx">
+      <DependentUpon>SertifikaGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\SertifikaIptal.resx">
+      <DependentUpon>SertifikaIptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\SonKullanim.resx">
+      <DependentUpon>SonKullanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\StokDetay.resx">
+      <DependentUpon>StokDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\StokDus.resx">
+      <DependentUpon>StokDus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\StokEkle.resx">
+      <DependentUpon>StokEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\StokListesi.resx">
+      <DependentUpon>StokListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\ReceteYeni.resx">
+      <DependentUpon>ReceteYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\MaaliyetEkle.resx">
+      <DependentUpon>MaaliyetEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\MaliyetListesi.resx">
+      <DependentUpon>MaliyetListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\MaliyetNo.resx">
+      <DependentUpon>MaliyetNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TalepDetay.resx">
+      <DependentUpon>TalepDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TalepKabul.resx">
+      <DependentUpon>TalepKabul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TalepListesi.resx">
+      <DependentUpon>TalepListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TalepYeni.resx">
+      <DependentUpon>TalepYeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\YeniStok.resx">
+      <DependentUpon>YeniStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TedarikciPuan.resx">
+      <DependentUpon>TedarikciPuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\TedarikciDegerlendirme.resx">
+      <DependentUpon>TedarikciDegerlendirme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TedarikciEkle.resx">
+      <DependentUpon>TedarikciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TedarikciListesi.resx">
+      <DependentUpon>TedarikciListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\TedarikciSoru.resx">
+      <DependentUpon>TedarikciSoru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\TedarikciTur.resx">
+      <DependentUpon>TedarikciTur.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="massgrup_massDataSet.xsc">
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="massgrup_massDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>massgrup_massDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="massgrup_massDataSet.xss">
+      <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="StokTakip_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Egitim\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Raindropmemory-Legendora-Art-of-Chemistry.ico" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\31216_information_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
