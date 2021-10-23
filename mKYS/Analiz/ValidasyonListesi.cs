@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,15 +25,46 @@ namespace mKYS.Analiz
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select v.AnalizID as 'ID', s.Kod, s.Ad, d.Kod + ' '+ d.Ad as 'Metot Kaynağı', v.Urun as 'Matriksler', v.Lod as 'LOD',v.Loq as 'LOQ', v.Birim as 'Birim', v.GK as 'Geri Kazanım', v.Bel as 'Belirsizlik', v.Tarih1 as 'Başlangıç', v.Tarih2 as 'Bitiş'  from ValidasyonVeri v " +
-                "inner join StokAnalizListesi s on v.AnalizID = s.ID inner join StokDKDListe d on s.Metot = d.ID where v.Durum = 'Aktif' or v.Durum = 'Ortak'", bgl.baglanti());
+            //SqlDataAdapter da = new SqlDataAdapter("select v.AnalizID as 'ID', s.Kod, s.Ad, d.Kod + ' '+ d.Ad as 'Metot Kaynağı', v.Urun as 'Matriksler', v.Lod as 'LOD',v.Loq as 'LOQ', v.Birim as 'Birim', v.GK as 'Geri Kazanım', v.Bel as 'Belirsizlik', v.Tarih1 as 'Başlangıç', v.Tarih2 as 'Bitiş'  from ValidasyonVeri v " +
+            //    "inner join StokAnalizListesi s on v.AnalizID = s.ID inner join StokDKDListe d on s.Metot = d.ID where v.Durum = 'Aktif' or v.Durum = 'Ortak'", bgl.baglanti());
+
+            SqlDataAdapter da = new SqlDataAdapter(@"select  v.AnalizID as 'ID', s.Kod, s.Ad, d.Kod + ' '+ d.Ad as 'Metot Kaynağı', v.Urun as 'Matriksler', v.Lod as 'LOD',v.Loq as 'LOQ', v.Birim as 'Birim',
+v.GK as 'Geri Kazanım', v.Bel as 'Belirsizlik', v.Tarih1 as 'Başlangıç', v.Tarih2 as 'Bitiş',
+ STUFF((SELECT DISTINCT ' , ' + listek.Ad + ' ' + listek.Soyad AS [text()]
+                FROM ValidasyonVeri listev
+                left join StokAnalizListesi listel on listev.AnalizID = listel.ID
+		        left join ValidasyonYetkili listey on listev.AnalizID = listey.AnalizID
+		        left join StokKullanici listek on listey.PersonelID = listek.ID
+		        where listel.Kod = s.Kod and listey.Durum = 'Aktif'
+                FOR XML PATH('')
+                ), 2, 2, '' )
+            AS 'Personel'
+from ValidasyonVeri v 
+inner join StokAnalizListesi s on v.AnalizID = s.ID 
+inner join StokDKDListe d on s.Metot = d.ID 
+where v.Durum = 'Aktif' or v.Durum = 'Ortak' order by s.Kod", bgl.baglanti());
+
             da.Fill(dt);
             gridControl1.DataSource = dt;
 
             gridView1.Columns["ID"].Visible = false;
-            this.gridView1.Columns[2].Width = 110;
+            this.gridView1.Columns[1].Width = 45;
+            this.gridView1.Columns[2].Width = 150;
             this.gridView1.Columns[3].Width = 180;
             this.gridView1.Columns[4].Width = 110;
+            this.gridView1.Columns[5].Width = 40;
+            this.gridView1.Columns[6].Width = 40;
+            this.gridView1.Columns[7].Width = 45;
+            this.gridView1.Columns[8].Width = 40;
+            this.gridView1.Columns[9].Width = 40;
+            this.gridView1.Columns[10].Width = 40;
+            this.gridView1.Columns[11].Width = 40;
+            this.gridView1.Columns[12].Width = 110;
+
+
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Personel"].ColumnEdit = memo;
+            gridView1.Columns["Personel"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
         }
 
         int yetki;

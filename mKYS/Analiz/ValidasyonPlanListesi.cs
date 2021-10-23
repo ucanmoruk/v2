@@ -34,37 +34,63 @@ namespace mKYS.Analiz
             //    "v.Tarih2 as 'Bitiş',  v.Urun as 'Matriks', v.Aciklama as 'Açıklama' ,  v.AnalizID as 'AnalizID' , v.Durumu from  ValidasyonVeri v  " +
             //    "inner join StokAnalizListesi s on v.AnalizID = s.ID inner join StokDKDListe d on s.Metot = d.ID where v.Durum = 'Plan' or v.Durum = 'Ortak' ", bgl.baglanti());
             //da2.Fill(dt2);
-            SqlDataAdapter da2 = new SqlDataAdapter(@"
-            SELECT DISTINCT(l.Kod), l.Ad, v.Urun, v.Tarih1,
-            STUFF((SELECT ',' + listek.Ad + ' ' + listek.Soyad AS [text()]
+
+            // elemanın yaptığı
+            //    SqlDataAdapter da2 = new SqlDataAdapter(@"
+            //    SELECT DISTINCT(l.Kod), l.Ad, v.Urun, v.Tarih1 as 'Başlangıç', v.Tarih2 as 'Bitiş', v.Aciklama, v.Durumu, l.ID,
+            //    STUFF((SELECT ',' + listek.Ad + ' ' + listek.Soyad AS [text()]
+            //        FROM ValidasyonVeri listev
+            //        left join StokAnalizListesi listel on listev.AnalizID = listel.ID
+            //  left join ValidasyonYetkili listey on listev.AnalizID = listey.AnalizID
+            //  left join StokKullanici listek on listey.PersonelID = listek.ID
+            //  where listel.Kod = l.Kod
+            //        FOR XML PATH('')
+            //        ), 1, 1, '' )
+            //    AS list
+            //FROM  ValidasyonVeri v
+            //left join StokAnalizListesi l on v.AnalizID = l.ID
+            //left join ValidasyonYetkili y on v.AnalizID = y.AnalizID
+            //left join StokKullanici k on y.PersonelID = k.ID", bgl.baglanti());
+
+
+            SqlDataAdapter da2 = new SqlDataAdapter(@"SELECT DISTINCT(l.Kod), l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı' ,v.Urun as 'Matriks',  
+			v.Tarih1 as 'Başlangıç', v.Tarih2 as 'Bitiş', v.Aciklama as 'Açıklama', v.Durumu, v.ID, v.AnalizID, 
+            STUFF((SELECT DISTINCT ' , ' + listek.Ad + ' ' + listek.Soyad AS [text()]
                 FROM ValidasyonVeri listev
                 left join StokAnalizListesi listel on listev.AnalizID = listel.ID
 		        left join ValidasyonYetkili listey on listev.AnalizID = listey.AnalizID
 		        left join StokKullanici listek on listey.PersonelID = listek.ID
-		        where listel.Kod = l.Kod
+		        where listel.Kod = l.Kod and listey.Durum = 'Plan'
                 FOR XML PATH('')
-                ), 1, 1, '' )
-            AS list
+                ), 2, 2, '' )
+            AS 'Personel'
         FROM  ValidasyonVeri v
         left join StokAnalizListesi l on v.AnalizID = l.ID
         left join ValidasyonYetkili y on v.AnalizID = y.AnalizID
-        left join StokKullanici k on y.PersonelID = k.ID", bgl.baglanti());
+        left join StokKullanici k on y.PersonelID = k.ID
+		left join StokDKDListe d on l.Metot = d.ID
+		where v.Durum = 'Plan' or v.Durum = 'Ortak' order by l.Kod", bgl.baglanti());
+
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
-          //  gridView1.Columns["ID"].Visible = false;
-          //  gridView1.Columns["AnalizID"].Visible = false;
-          //  this.gridView1.Columns[1].Width = 100;
-          //  this.gridView1.Columns[2].Width = 170;
-          //  this.gridView1.Columns[3].Width = 40;
-          //  this.gridView1.Columns[4].Width = 40;
-          //  this.gridView1.Columns[5].Width = 80;
-          //  this.gridView1.Columns[6].Width = 150;
-          //  this.gridView1.Columns[7].Width = 70;
-          ////  this.gridView1.Columns[8].Width = 70;
+            gridView1.Columns["ID"].Visible = false;
+            gridView1.Columns["AnalizID"].Visible = false;
+            this.gridView1.Columns[0].Width = 35;
+            this.gridView1.Columns[1].Width = 95;
+            this.gridView1.Columns[2].Width = 100;
+            this.gridView1.Columns[3].Width = 75;
+            this.gridView1.Columns[4].Width = 35;
+            this.gridView1.Columns[5].Width = 35;
+            this.gridView1.Columns[6].Width = 95;
+            this.gridView1.Columns[7].Width = 40;
+            this.gridView1.Columns[10].Width = 150;
 
-            //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-            //gridView1.Columns["Açıklama"].ColumnEdit = memo;
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Açıklama"].ColumnEdit = memo;
+            gridView1.Columns["Personel"].ColumnEdit = memo;
+            gridView1.Columns["Açıklama"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView1.Columns["Personel"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -137,10 +163,10 @@ namespace mKYS.Analiz
         string vID, AnalizID, durum;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            //DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            //vID = dr["ID"].ToString();
-            //AnalizID = dr["AnalizID"].ToString();
-            //durum = dr["Durumu"].ToString();
+            DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            vID = dr["ID"].ToString();
+            AnalizID = dr["AnalizID"].ToString();
+            durum = dr["Durumu"].ToString();
         }
 
         private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
@@ -182,22 +208,22 @@ namespace mKYS.Analiz
        
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            //if (e.Column.FieldName == "Başlangıç" || e.Column.FieldName == "Durumu" || e.Column.FieldName == "Bitiş")
-            //    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            if (e.Column.FieldName == "Başlangıç" || e.Column.FieldName == "Durumu" || e.Column.FieldName == "Bitiş")
+                e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
 
-            //GridView View = sender as GridView;
-            //if (e.RowHandle >= 0)
-            //{
-            //    string ODurum = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Durumu"]);
-            //    if (ODurum == "İptal Edildi")
-            //    {
-            //        e.Appearance.BackColor = Color.MediumVioletRed;
-            //    }
-            //    else if (ODurum == "Gerçekleşti")
-            //    {
-            //        e.Appearance.BackColor = Color.LightGreen;
-            //    }
-            //}
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string ODurum = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Durumu"]);
+                if (ODurum == "İptal Edildi")
+                {
+                    e.Appearance.BackColor = Color.MediumVioletRed;
+                }
+                else if (ODurum == "Gerçekleşti")
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                }
+            }
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,6 +246,11 @@ namespace mKYS.Analiz
             listele();
         }
 
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //güncelle
+        }
+
         int yetki;
         void yetkibul()
         {
@@ -233,12 +264,15 @@ namespace mKYS.Analiz
 
             if (yetki == 0 || yetki.ToString() == null)
             {
-
+                barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             else
             {
                 barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             }
 
         }

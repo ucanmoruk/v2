@@ -131,7 +131,7 @@ namespace mKYS.Duyuru
 
         private void btn_yayin_Click(object sender, EventArgs e)
         {
-          //  ekleme();
+            ekleme();
 
 
             PopupNotifier popup = new PopupNotifier();

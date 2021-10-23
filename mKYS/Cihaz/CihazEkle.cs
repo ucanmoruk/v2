@@ -555,40 +555,57 @@ namespace mKYS.Cihaz
 
         void eklekal()
         {
-            SqlCommand add = new SqlCommand("insert into CihazKalibrasyon (CihazID, KalTip, KalSiklik, AraSiklik, Calisma,Kalibrasyon,Kaynak,KabulKriteri, Durum) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7,@a8, @a9)" , bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", lbl_ycID.Text);
-            add.Parameters.AddWithValue("@a2", kal_tip.Text);
-            add.Parameters.AddWithValue("@a3", kal_siklik.Text);
-            add.Parameters.AddWithValue("@a4", ara_siklik.Text);
-            add.Parameters.AddWithValue("@a5", kal_calisma.Text);
-            add.Parameters.AddWithValue("@a6", kal_aralik.Text);
-            if (String.IsNullOrEmpty(kaynakID))
+            if (kal_tip.Text != null || kal_siklik != null || ara_siklik != null || kal_calisma != null || kal_aralik != null || kal_kabul != null )
             {
-                add.Parameters.AddWithValue("@a7", DBNull.Value);
+                SqlCommand add = new SqlCommand("insert into CihazKalibrasyon (CihazID, KalTip, KalSiklik, AraSiklik, Calisma,Kalibrasyon,Kaynak,KabulKriteri, Durum) values (@a1, @a2, @a3, @a4, @a5, @a6,@a7,@a8, @a9)", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", lbl_ycID.Text);
+                add.Parameters.AddWithValue("@a2", kal_tip.Text);
+                add.Parameters.AddWithValue("@a3", kal_siklik.Text);
+                add.Parameters.AddWithValue("@a4", ara_siklik.Text);
+                add.Parameters.AddWithValue("@a5", kal_calisma.Text);
+                add.Parameters.AddWithValue("@a6", kal_aralik.Text);
+                if (String.IsNullOrEmpty(kaynakID))
+                {
+                    add.Parameters.AddWithValue("@a7", DBNull.Value);
+                }
+                else
+                {
+                    add.Parameters.AddWithValue("@a7", kaynakID);
+                }
+
+                add.Parameters.AddWithValue("@a8", kal_kabul.Text);
+                add.Parameters.AddWithValue("@a9", "Aktif");
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
             }
             else
             {
-                add.Parameters.AddWithValue("@a7", kaynakID);
+
             }
-                
-            add.Parameters.AddWithValue("@a8", kal_kabul.Text);
-            add.Parameters.AddWithValue("@a9", "Aktif");
-            add.ExecuteNonQuery();
-            bgl.baglanti().Close();
+
 
         }
 
         void eklebakim()
         {
-            SqlCommand add = new SqlCommand("insert into CihazBakim (CihazID, PfSiklik, PfDetay, BakimSiklik,BakimDetay, Durum) values (@o1, @o2, @o3, @o4, @o5, @o6) ", bgl.baglanti());
-            add.Parameters.AddWithValue("@o1", lbl_ycID.Text);
-            add.Parameters.AddWithValue("@o2", pf_siklik.Text);
-            add.Parameters.AddWithValue("@o3", pf_detay.Text);
-            add.Parameters.AddWithValue("@o4", bkm_siklik.Text);
-            add.Parameters.AddWithValue("@o5", bkm_detay.Text);
-            add.Parameters.AddWithValue("@o6", "Aktif");
-            add.ExecuteNonQuery();
-            bgl.baglanti().Close();
+            if (pf_siklik.Text != null || pf_detay.Text != null || bkm_detay != null || bkm_siklik != null )
+            {
+                SqlCommand add = new SqlCommand("insert into CihazBakim (CihazID, PfSiklik, PfDetay, BakimSiklik,BakimDetay, Durum) values (@o1, @o2, @o3, @o4, @o5, @o6) ", bgl.baglanti());
+                add.Parameters.AddWithValue("@o1", lbl_ycID.Text);
+                add.Parameters.AddWithValue("@o2", pf_siklik.Text);
+                add.Parameters.AddWithValue("@o3", pf_detay.Text);
+                add.Parameters.AddWithValue("@o4", bkm_siklik.Text);
+                add.Parameters.AddWithValue("@o5", bkm_detay.Text);
+                add.Parameters.AddWithValue("@o6", "Aktif");
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+            else
+            {
+
+            }
+
+
 
         }
 

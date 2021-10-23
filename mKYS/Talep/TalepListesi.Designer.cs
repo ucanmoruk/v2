@@ -36,13 +36,10 @@
             this.bar_talepdurum = new DevExpress.XtraBars.BarSubItem();
             this.bar_taleponay = new DevExpress.XtraBars.BarButtonItem();
             this.bar_talepred = new DevExpress.XtraBars.BarButtonItem();
-            this.bar_talepiptal = new DevExpress.XtraBars.BarButtonItem();
             this.bar_talepisle = new DevExpress.XtraBars.BarButtonItem();
-            this.bar_taleptamam = new DevExpress.XtraBars.BarButtonItem();
             this.guncelle = new DevExpress.XtraBars.BarButtonItem();
+            this.bar_talepiptal = new DevExpress.XtraBars.BarButtonItem();
             this.bar_detay = new DevExpress.XtraBars.BarButtonItem();
-            this.bar_talepkabul = new DevExpress.XtraBars.BarButtonItem();
-            this.bar_degerlendirme = new DevExpress.XtraBars.BarButtonItem();
             this.bar_yenile = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -88,11 +85,9 @@
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepdurum),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_detay),
             new DevExpress.XtraBars.LinkPersistInfo(this.guncelle),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepiptal),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_detay),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepkabul),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_degerlendirme),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_yenile)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
@@ -106,17 +101,14 @@
             this.bar_talepdurum.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_taleponay),
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepred),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepisle),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bar_taleptamam)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bar_talepisle)});
             this.bar_talepdurum.Name = "bar_talepdurum";
-            this.bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // bar_taleponay
             // 
             this.bar_taleponay.Caption = "Talebi Onayla";
             this.bar_taleponay.Id = 3;
             this.bar_taleponay.Name = "bar_taleponay";
-            this.bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bar_taleponay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // bar_talepred
@@ -124,8 +116,23 @@
             this.bar_talepred.Caption = "Talebi Reddet";
             this.bar_talepred.Id = 5;
             this.bar_talepred.Name = "bar_talepred";
-            this.bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bar_talepred.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // bar_talepisle
+            // 
+            this.bar_talepisle.Caption = "Talebi İşleme Al";
+            this.bar_talepisle.Id = 4;
+            this.bar_talepisle.Name = "bar_talepisle";
+            this.bar_talepisle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // guncelle
+            // 
+            this.guncelle.Caption = "Talep Güncelle";
+            this.guncelle.Id = 11;
+            this.guncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("guncelle.ImageOptions.Image")));
+            this.guncelle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("guncelle.ImageOptions.LargeImage")));
+            this.guncelle.Name = "guncelle";
+            this.guncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.guncelle_ItemClick);
             // 
             // bar_talepiptal
             // 
@@ -134,34 +141,7 @@
             this.bar_talepiptal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_talepiptal.ImageOptions.Image")));
             this.bar_talepiptal.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_talepiptal.ImageOptions.LargeImage")));
             this.bar_talepiptal.Name = "bar_talepiptal";
-            this.bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.bar_talepiptal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // bar_talepisle
-            // 
-            this.bar_talepisle.Caption = "Talebi İşleme Al";
-            this.bar_talepisle.Id = 4;
-            this.bar_talepisle.Name = "bar_talepisle";
-            this.bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bar_talepisle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
-            // 
-            // bar_taleptamam
-            // 
-            this.bar_taleptamam.Caption = "Talebi Tamamla";
-            this.bar_taleptamam.Id = 9;
-            this.bar_taleptamam.Name = "bar_taleptamam";
-            this.bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bar_taleptamam.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
-            // 
-            // guncelle
-            // 
-            this.guncelle.Caption = "Güncelle";
-            this.guncelle.Id = 11;
-            this.guncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("guncelle.ImageOptions.Image")));
-            this.guncelle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("guncelle.ImageOptions.LargeImage")));
-            this.guncelle.Name = "guncelle";
-            this.guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.guncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.guncelle_ItemClick);
             // 
             // bar_detay
             // 
@@ -172,29 +152,9 @@
             this.bar_detay.Name = "bar_detay";
             this.bar_detay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
-            // bar_talepkabul
-            // 
-            this.bar_talepkabul.Caption = "Talep Kabul Etme";
-            this.bar_talepkabul.Id = 8;
-            this.bar_talepkabul.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_talepkabul.ImageOptions.Image")));
-            this.bar_talepkabul.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_talepkabul.ImageOptions.LargeImage")));
-            this.bar_talepkabul.Name = "bar_talepkabul";
-            this.bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bar_talepkabul.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
-            // 
-            // bar_degerlendirme
-            // 
-            this.bar_degerlendirme.Caption = "Talep Değerlendirme";
-            this.bar_degerlendirme.Id = 12;
-            this.bar_degerlendirme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.Image")));
-            this.bar_degerlendirme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_degerlendirme.ImageOptions.LargeImage")));
-            this.bar_degerlendirme.Name = "bar_degerlendirme";
-            this.bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.bar_degerlendirme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bar_degerlendirme_ItemClick);
-            // 
             // bar_yenile
             // 
-            this.bar_yenile.Caption = "Yenile";
+            this.bar_yenile.Caption = "Yenile   (F5)";
             this.bar_yenile.Id = 10;
             this.bar_yenile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bar_yenile.ImageOptions.Image")));
             this.bar_yenile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bar_yenile.ImageOptions.LargeImage")));
@@ -215,11 +175,8 @@
             this.bar_talepred,
             this.bar_talepiptal,
             this.bar_detay,
-            this.bar_talepkabul,
-            this.bar_taleptamam,
             this.bar_yenile,
-            this.guncelle,
-            this.bar_degerlendirme});
+            this.guncelle});
             this.barManager1.MaxItemId = 13;
             // 
             // barDockControlTop
@@ -299,10 +256,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem bar_talepkabul;
-        private DevExpress.XtraBars.BarButtonItem bar_taleptamam;
         private DevExpress.XtraBars.BarButtonItem bar_yenile;
         private DevExpress.XtraBars.BarButtonItem guncelle;
-        private DevExpress.XtraBars.BarButtonItem bar_degerlendirme;
     }
 }

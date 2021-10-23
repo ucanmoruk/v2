@@ -41,34 +41,34 @@ namespace mKYS
             }
             bgl.baglanti().Close();
 
-            if (Anasayfa.kullanici == olusturanid.ToString())
-            {
+            //if (Anasayfa.kullanici == olusturanid.ToString())
+            //{
                
-                if (talepdurum == "Talep Oluşturuldu")
-                {
-                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
+            //    if (talepdurum == "Talep Oluşturuldu")
+            //    {
+            //        bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //        guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //    }
                     
-                else
-                {
-                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                }
+            //    else
+            //    {
+            //        bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //        guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    }
                     
-            }
-            else
-            {
-                guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }
+            //}
+            //else
+            //{
+            //    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //}
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TalepDetay.TalepNo = talepno;
             TalepDetay td = new TalepDetay();
-            td.ShowDialog();
+            td.Show();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -228,74 +228,6 @@ namespace mKYS
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
 
-                kullanicibul();
-
-                if (talepdurum == "Talep Oluşturuldu")
-                {
-                   
-                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    if (yetki == 1)
-                    {
-                        
-                    }
-                    else if (yetki == 2)
-                    {
-                        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
-                    }
-                    //bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    
-                }
-                else if (talepdurum == "Talep Reddedildi")
-                {
-                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-
-                }
-                else if (talepdurum == "Tamamlandı")
-                {
-                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                else if (talepdurum == "Talep Onaylandı")
-                {
-                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    if (yetki == 3)
-                    {
-                        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    }
-                    
-
-                    
-                    //bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                }
-                else if (talepdurum == "İşleme Alındı")
-                {
-                    bar_degerlendirme.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    if (yetki == 1 || yetki == 2)
-                    {
-                        bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
-                    }
-  
-                    //bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    //bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                }
-
             }
         }
 
@@ -306,6 +238,77 @@ namespace mKYS
             talepno = dr["TalepNo"].ToString();
             talepdurum = dr["Durum"].ToString();
             olusturan = dr["Talep Oluşturan"].ToString();
+
+
+            kullanicibul();
+
+            if (talepdurum == "Talep Oluşturuldu")
+            {
+                if (olusturan == Anasayfa.tamad)
+                {
+                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else
+                {
+                    guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+
+
+                if (yetki == 0)
+                {
+                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                }
+                else if (yetki == 1)
+                {
+                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                }
+                else if (yetki == 2)
+                {
+                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                }
+                //bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //bar_taleptamam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //bar_talepkabul.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            }
+            else if (talepdurum == "Talep Reddedildi" || talepdurum == "İşleme Alındı" || talepdurum == "Tamamlandı")
+            {
+                guncelle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bar_talepiptal.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            }
+            else if (talepdurum == "Talep Onaylandı")
+            {
+                if (yetki == 3)
+                {
+                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+                }
+                else if (yetki == 2)
+                {
+                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    bar_talepisle.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    bar_taleponay.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    bar_talepred.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else
+                {
+                    bar_talepdurum.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+            }
+
 
         }
 
@@ -351,41 +354,34 @@ namespace mKYS
             }
         }
 
-        private void bar_degerlendirme_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            TalepKabul.gelentalep = talepno;
-
-            TalepKabul tk = new TalepKabul();
-            tk.Show();
-        }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TalepKabul.TalepNo = talepno;
-            TalepKabul tk = new TalepKabul();
-            tk.ShowDialog();
+            //TalepKabul.TalepNo = talepno;
+            //TalepKabul tk = new TalepKabul();
+            //tk.Show();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            DialogResult Secim = new DialogResult();
+            //DialogResult Secim = new DialogResult();
 
-            Secim = MessageBox.Show(talepno + " numaralı talebi tamamladınız mı?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            //Secim = MessageBox.Show(talepno + " numaralı talebi tamamladınız mı?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            if (Secim == DialogResult.Yes)
-            {
-                DateTime tarih = DateTime.Now;
+            //if (Secim == DialogResult.Yes)
+            //{
+            //    DateTime tarih = DateTime.Now;
 
-                SqlCommand add2 = new SqlCommand("update StokTalepListe set IsleyenID=@o1, Isleme=@o2, Durum=@o3 where TalepNo = '" + talepno + "'", bgl.baglanti());
-                add2.Parameters.AddWithValue("@o1", Anasayfa.kullanici);
-                add2.Parameters.AddWithValue("@o2", tarih);
-                add2.Parameters.AddWithValue("@o3", "Tamamlandı");
-                add2.ExecuteNonQuery();
-                bgl.baglanti().Close();
+            //    SqlCommand add2 = new SqlCommand("update StokTalepListe set IsleyenID=@o1, Isleme=@o2, Durum=@o3 where TalepNo = '" + talepno + "'", bgl.baglanti());
+            //    add2.Parameters.AddWithValue("@o1", Anasayfa.kullanici);
+            //    add2.Parameters.AddWithValue("@o2", tarih);
+            //    add2.Parameters.AddWithValue("@o3", "Tamamlandı");
+            //    add2.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
 
-                listele();
-            }
+            //    listele();
+            //}
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

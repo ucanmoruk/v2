@@ -1,6 +1,6 @@
 ﻿namespace mKYS.Duyuru
 {
-    partial class Duyurularim
+    partial class Okuduklarim
     {
         /// <summary>
         /// Required designer variable.
@@ -50,21 +50,16 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.RowHeight = 22;
-            this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // Duyurularim
+            // Okuduklarim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gridControl1);
-            this.KeyPreview = true;
-            this.Name = "Duyurularim";
-            this.Text = "Duyurularım";
-            this.Load += new System.EventHandler(this.Duyurularim_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Duyurularim_KeyDown);
+            this.Name = "Okuduklarim";
+            this.Text = "Okuduklarim";
+            this.Load += new System.EventHandler(this.Okuduklarim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

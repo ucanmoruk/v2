@@ -12,22 +12,20 @@ using System.Windows.Forms;
 
 namespace mKYS.Duyuru
 {
-    public partial class DuyuruEx : Form
+    public partial class Okuduklarim : Form
     {
-        public DuyuruEx()
+        public Okuduklarim()
         {
             InitializeComponent();
         }
 
         sqlbaglanti bgl = new sqlbaglanti();
 
-        public void listele()
+        void listele()
         {
-            DataTable dt2 = new DataTable();
-            //SqlDataAdapter da2 = new SqlDataAdapter("select d.DuyuruID as 'ID', d.PersonelID, k.Ad + ' ' + k.Soyad as 'Mesaj Gönderen', d.Tarih as 'Okunma Tarihi', m.Konu, m.Duyuru from StokDuyuruDurum d " +
-            //    "inner join StokDuyuru m on d.DuyuruID = m.ID inner join StokKullanici k on m.PersonelID = k.ID " +
-            //    " where d.Durum = 'Okundu' and d.PersonelID = '" + Anasayfa.kullanici + "' order by d.Tarih desc", bgl.baglanti());
+            Anasayfa.kullanici = "2";
 
+            DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter(@"select d.DuyuruID as 'ID', d.PersonelID, k.Ad + ' ' + k.Soyad as 'Mesaj Gönderen', d.Tarih as 'Okunma Tarihi', m.Konu, m.Duyuru from StokDuyuruDurum d 
             inner join StokDuyuru m on d.DuyuruID = m.ID 
             inner join StokKullanici k on m.PersonelID = k.ID 
@@ -47,20 +45,12 @@ namespace mKYS.Duyuru
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView1.Columns["Duyuru"].ColumnEdit = memo;
             gridView1.Columns["Duyuru"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-
         }
 
-        private void DuyuruEx_Load(object sender, EventArgs e)
+
+        private void Okuduklarim_Load(object sender, EventArgs e)
         {
             listele();
-        }
-
-        private void DuyuruEx_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.F5)
-            {
-                listele();
-            }
         }
     }
 }

@@ -292,6 +292,7 @@
             this.Name = "ValidasyonPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Validasyon Planı";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ValidasyonPlan_FormClosing);
             this.Load += new System.EventHandler(this.ValidasyonPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_urun.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();

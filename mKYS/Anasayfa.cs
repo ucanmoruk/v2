@@ -46,19 +46,19 @@ namespace mKYS
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             YeniStok ys = new YeniStok();
-            ys.ShowDialog();
+            ys.Show();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             StokEkle se = new StokEkle();
-            se.ShowDialog();
+            se.Show();
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             StokDus sd = new StokDus();
-            sd.ShowDialog();
+            sd.Show();
         }
 
         SonKullanim sk;
@@ -234,7 +234,7 @@ namespace mKYS
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Sertifika f = new Sertifika();
-            f.ShowDialog();
+            f.Show();
         }
 
         PersonelListesi pl;
@@ -452,22 +452,23 @@ namespace mKYS
 
         private void barButtonItem21_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Talep.MaliyetNo me = new Talep.MaliyetNo();
+            Talep.TalepMaliyet.gelis = "Genel";
+            TalepMaliyet me = new TalepMaliyet();
             me.Show();
         }
 
         private void btn_ekle_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogResult cikis = new DialogResult();
-            cikis = MessageBox.Show("Teslim tarihi ve tedarikçi firma seçmediğiniz kayıtların kaydı yapılmayacaktır. Onaylıyor musunuz ?", "Uyarı", MessageBoxButtons.YesNo);
-            if (cikis == DialogResult.Yes)
-            {
+            //DialogResult cikis = new DialogResult();
+            //cikis = MessageBox.Show("Teslim tarihi ve tedarikçi firma seçmediğiniz kayıtların kaydı yapılmayacaktır. Onaylıyor musunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            //if (cikis == DialogResult.Yes)
+            //{
 
-                var mfrm = (MaaliyetEkle)Application.OpenForms["MaaliyetEkle"];
-                if (mfrm != null)
-                    mfrm.kaydetme();
+            //    var mfrm = (MaaliyetEkle)Application.OpenForms["MaaliyetEkle"];
+            //    if (mfrm != null)
+            //        mfrm.kaydetme();
 
-            }
+            //}
 
         }
 
@@ -714,7 +715,7 @@ namespace mKYS
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TalepKabul tk = new TalepKabul();
-            tk.ShowDialog();
+            tk.Show();
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)

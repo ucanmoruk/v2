@@ -159,6 +159,19 @@ namespace mKYS
 
         }
 
+        void detaybul()
+        {
+            SqlCommand komutID = new SqlCommand("Select ID From StokListesi where Kod = N'" + skod + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                //combo_birim.Text = drI["Birim"].ToString();
+                gridLookUpEdit2.EditValue = drI["ID"].ToString();
+            }
+            bgl.baglanti().Close();
+
+        }
+
         public static string skod;
         private void Sertifika_Load(object sender, EventArgs e)
         {
@@ -178,7 +191,8 @@ namespace mKYS
                 //birimbul();
                 glistele();
                 kbirim();
-                gridLookUpEdit2.EditValue = skod;
+                detaybul();
+                //gridLookUpEdit2.EditValue = skod;
             }
            
         }

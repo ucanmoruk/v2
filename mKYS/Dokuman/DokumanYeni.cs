@@ -282,24 +282,38 @@ namespace mKYS.Dokuman
                 {
                     path = txt_kod.Text + "-" + revno + ".pdf";
                     File.Copy(name, Path.Combine(@Anasayfa.kpath, path), true);
+
+                    SqlCommand add = new SqlCommand("insert into DokumanMaster(Tur,Kod,Ad,YayinTarihi,RevNo,Durumu,Durum,RevTarihi,Path) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9,@a10)", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", txt_tur.Text);
+                    add.Parameters.AddWithValue("@a2", txt_kod.Text);
+                    add.Parameters.AddWithValue("@a3", txt_ad.Text);
+                    add.Parameters.AddWithValue("@a4", date_yayin.EditValue);
+                    add.Parameters.AddWithValue("@a5", revno);
+                    add.Parameters.AddWithValue("@a6", combo_durum.Text);
+                    add.Parameters.AddWithValue("@a8", "Aktif");
+                    add.Parameters.AddWithValue("@a9", revdurum);
+                    add.Parameters.AddWithValue("@a10", path);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
                 }
                 else
                 {
                     path = null;
+
+                    SqlCommand add = new SqlCommand("insert into DokumanMaster(Tur,Kod,Ad,YayinTarihi,RevNo,Durumu,Durum,RevTarihi) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9)", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", txt_tur.Text);
+                    add.Parameters.AddWithValue("@a2", txt_kod.Text);
+                    add.Parameters.AddWithValue("@a3", txt_ad.Text);
+                    add.Parameters.AddWithValue("@a4", date_yayin.EditValue);
+                    add.Parameters.AddWithValue("@a5", revno);
+                    add.Parameters.AddWithValue("@a6", combo_durum.Text);
+                    add.Parameters.AddWithValue("@a8", "Aktif");
+                    add.Parameters.AddWithValue("@a9", revdurum);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
                 }
 
-                SqlCommand add = new SqlCommand("insert into DokumanMaster(Tur,Kod,Ad,YayinTarihi,RevNo,Durumu,Durum,RevTarihi,Path) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9,@a10)", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", txt_tur.Text);
-                add.Parameters.AddWithValue("@a2", txt_kod.Text);
-                add.Parameters.AddWithValue("@a3", txt_ad.Text);
-                add.Parameters.AddWithValue("@a4", date_yayin.EditValue);
-                add.Parameters.AddWithValue("@a5", revno);
-                add.Parameters.AddWithValue("@a6", combo_durum.Text);
-                add.Parameters.AddWithValue("@a8", "Aktif");
-                add.Parameters.AddWithValue("@a9", revdurum);
-                add.Parameters.AddWithValue("@a10", path);
-                add.ExecuteNonQuery();
-                bgl.baglanti().Close();
+
 
 
                 if (Application.OpenForms["DokumanMaster"] == null)

@@ -101,6 +101,7 @@
             this.barButtonItem65 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem66 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem67 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem68 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -141,7 +142,6 @@
             this.lbl_kullanici = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem68 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -851,6 +851,15 @@
             this.barButtonItem67.Name = "barButtonItem67";
             this.barButtonItem67.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem67_ItemClick);
             // 
+            // barButtonItem68
+            // 
+            this.barButtonItem68.Caption = "Performans ve Bakım Şartları";
+            this.barButtonItem68.Id = 71;
+            this.barButtonItem68.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem68.ImageOptions.Image")));
+            this.barButtonItem68.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem68.ImageOptions.LargeImage")));
+            this.barButtonItem68.Name = "barButtonItem68";
+            this.barButtonItem68.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem68_ItemClick);
+            // 
             // ribbonPage8
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1072,7 +1081,6 @@
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem20);
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem21);
-            this.ribbonPageGroup10.ItemLinks.Add(this.btn_ekle);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Maliyet";
             this.ribbonPageGroup10.Visible = false;
@@ -1158,15 +1166,6 @@
             this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
             this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
             this.barButtonItem26.Name = "barButtonItem26";
-            // 
-            // barButtonItem68
-            // 
-            this.barButtonItem68.Caption = "Performans ve Bakım Şartları";
-            this.barButtonItem68.Id = 71;
-            this.barButtonItem68.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem68.ImageOptions.Image")));
-            this.barButtonItem68.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem68.ImageOptions.LargeImage")));
-            this.barButtonItem68.Name = "barButtonItem68";
-            this.barButtonItem68.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem68_ItemClick);
             // 
             // Anasayfa
             // 

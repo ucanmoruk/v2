@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -221,6 +221,18 @@
     </Compile>
     <Compile Include="Dokuman\DKDListe.Designer.cs">
       <DependentUpon>DKDListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyuru\Okuduklarim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyuru\Okuduklarim.Designer.cs">
+      <DependentUpon>Okuduklarim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talep\TalepMaliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talep\TalepMaliyet.Designer.cs">
+      <DependentUpon>TalepMaliyet.cs</DependentUpon>
     </Compile>
     <Compile Include="ÇöpKutusu\DokumanEkle.cs">
       <SubType>Form</SubType>
@@ -476,10 +488,10 @@
     <Compile Include="Talep\MaliyetListesi.Designer.cs">
       <DependentUpon>MaliyetListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Talep\MaliyetNo.cs">
+    <Compile Include="ÇöpKutusu\MaliyetNo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Talep\MaliyetNo.Designer.cs">
+    <Compile Include="ÇöpKutusu\MaliyetNo.Designer.cs">
       <DependentUpon>MaliyetNo.cs</DependentUpon>
     </Compile>
     <Compile Include="Talep\TalepDetay.cs">
@@ -601,6 +613,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dokuman\DKDListe.resx">
       <DependentUpon>DKDListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyuru\Okuduklarim.resx">
+      <DependentUpon>Okuduklarim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talep\TalepMaliyet.resx">
+      <DependentUpon>TalepMaliyet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ÇöpKutusu\DokumanEkle.resx">
       <DependentUpon>DokumanEkle.cs</DependentUpon>
@@ -736,7 +754,7 @@
     <EmbeddedResource Include="Talep\MaliyetListesi.resx">
       <DependentUpon>MaliyetListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Talep\MaliyetNo.resx">
+    <EmbeddedResource Include="ÇöpKutusu\MaliyetNo.resx">
       <DependentUpon>MaliyetNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Talep\TalepDetay.resx">

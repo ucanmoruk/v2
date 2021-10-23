@@ -45,6 +45,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -84,6 +85,7 @@
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.popupMenu1.Manager = this.barManager1;
@@ -162,8 +164,9 @@
             this.barButtonItem4,
             this.barSubItem1,
             this.barButtonItem5,
-            this.barButtonItem6});
-            this.barManager1.MaxItemId = 13;
+            this.barButtonItem6,
+            this.barButtonItem7});
+            this.barManager1.MaxItemId = 14;
             // 
             // barDockControlTop
             // 
@@ -203,6 +206,15 @@
             this.barButtonItem4.Id = 9;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Güncelle";
+            this.barButtonItem7.Id = 13;
+            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // ValidasyonPlanListesi
             // 
@@ -245,5 +257,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }

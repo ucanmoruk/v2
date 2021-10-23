@@ -47,7 +47,7 @@ namespace mKYS
             txtmiktar.Text = "";
             txtbirim.Text = "";
         }
-        
+                
         private void StokDus_Load(object sender, EventArgs e)
         {
             listele();
@@ -56,7 +56,7 @@ namespace mKYS
             dategiris.EditValue = tarih;
         }
 
-        int stokid;
+        string stokid;
         string marka, lot, skt, marka2, lot2, skt2;
 
         private void combo_marka_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,6 +151,11 @@ namespace mKYS
                 combo_marka.Properties.Items.Add(marka + " / " + lot);
             }
             bgl.baglanti().Close();
+
+            if (gridLookUpEdit1.EditValue == null)
+                stokid = null;
+            else
+                stokid = gridLookUpEdit1.EditValue.ToString();
         }
 
        // string stokk;

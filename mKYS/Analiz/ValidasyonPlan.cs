@@ -147,10 +147,12 @@ namespace mKYS.Analiz
         }
 
         private void ValidasyonPlan_Load(object sender, EventArgs e)
-        {
-            listele();
+        {           
+                listele();           
 
         }
+
+
 
         private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
         {
@@ -234,6 +236,10 @@ namespace mKYS.Analiz
      
 
             listele2();
+        }
+
+        private void ValidasyonPlan_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

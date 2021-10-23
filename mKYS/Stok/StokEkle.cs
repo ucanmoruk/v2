@@ -25,13 +25,6 @@ namespace mKYS
 
         private void listele()
         {
-            //SqlCommand komutID = new SqlCommand("Select * From StokListesi where Durum= N'Aktif'", bgl.baglanti());
-            //SqlDataReader drI = komutID.ExecuteReader();
-            //while (drI.Read())
-            //{
-            //    combokod.Properties.Items.Add(drI["Kod"].ToString());
-            //}
-            //bgl.baglanti().Close();
 
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokListesi where Durum= N'Aktif'", bgl.baglanti());
@@ -39,10 +32,6 @@ namespace mKYS
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "Kod";
             gridLookUpEdit1.Properties.ValueMember = "ID";
-            if (talepkod == "" || talepkod == null)
-            { }
-            else
-            { gridLookUpEdit1.EditValue = talepkod; }
                 
 
             DataTable dt21 = new DataTable();
@@ -56,16 +45,16 @@ namespace mKYS
 
         }
 
-        //private void birimbul()
-        //{
-        //    SqlCommand komutID = new SqlCommand("Select * From StokFirmaBirim where Durum=N'Aktif' and FirmaID = N'" + Anasayfa.firmaID + "'", bgl.baglanti());
-        //    SqlDataReader drI = komutID.ExecuteReader();
-        //    while (drI.Read())
-        //    {
-        //        combo_birim.Properties.Items.Add(drI["Birim"].ToString());
-        //    }
-        //    bgl.baglanti().Close();
-        //}
+        void sIDBul()
+        {
+            SqlCommand komutID = new SqlCommand("Select * From StokListesi where Kod = N'" + talepkod + "'", bgl.baglanti());
+            SqlDataReader drI = komutID.ExecuteReader();
+            while (drI.Read())
+            {
+                gridLookUpEdit1.EditValue = drI["ID"].ToString();
+            }
+            bgl.baglanti().Close();
+        }
 
         private void kbirim()
         {
@@ -226,7 +215,8 @@ namespace mKYS
             }
             else
             {
-                kontrol = "0";               
+                kontrol = "0";
+                sIDBul();
              //   birimbul();
              //   kbirim();
                 listele();
