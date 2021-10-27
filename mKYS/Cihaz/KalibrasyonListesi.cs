@@ -26,22 +26,34 @@ namespace mKYS.Cihaz
         public void listele()
         {
             DataTable dt7 = new DataTable();
-            SqlDataAdapter da7 = new SqlDataAdapter(@"select i.ID, c.Kod, c.Ad as 'Cihaz Adı', i.Tur as 'İşlem Türü', a.KalTip as 'Kalibrasyon Tipi', 
-            i.Tarih1 as 'Kalibrasyon Tarihi', i.Tarih2 as 'Planlanan Tarih', 
-            case i.Finout when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Son Uygulamayı Yapan',
-            c.ID as 'cID' from CihazListesi c 
-            left join CihazIslem i on c.ID = i.CihazID 
-            left join StokTedarikci t on i.FirmaID = t.ID 
-            left join StokKullanici k on i.PersonelID = k.ID 
-            left join CihazKalibrasyon a on c.ID = a.CihazID 
-            where c.Durumu = 'Kullanımda' and i.Durum ='Aktif' and i.Tur = 'Kalibrasyon' or i.Tur = 'Ara Kontrol'  order by c.Kod", bgl.baglanti());
+            //SqlDataAdapter da7 = new SqlDataAdapter(@"select i.ID, c.Kod, c.Ad as 'Cihaz Adı', i.Tur as 'İşlem Türü', a.KalTip as 'Kalibrasyon Tipi', 
+            //i.Tarih1 as 'Kalibrasyon Tarihi', i.Tarih2 as 'Planlanan Tarih', 
+            //case i.Finout when 'i' then k.Ad + ' ' +k.Soyad  when 'o' then t.Ad end as 'Son Uygulamayı Yapan',
+            //c.ID as 'cID' from CihazListesi c 
+            //left join CihazIslem i on c.ID = i.CihazID 
+            //left join StokTedarikci t on i.FirmaID = t.ID 
+            //left join StokKullanici k on i.PersonelID = k.ID 
+            //left join CihazKalibrasyon a on c.ID = a.CihazID 
+            //where c.Durumu = 'Kullanımda' and i.Durum ='Aktif' and i.Tur = 'Kalibrasyon' or i.Tur = 'Ara Kontrol'  order by c.Kod", bgl.baglanti());
+
+            SqlDataAdapter da7 = new SqlDataAdapter(@"select distinct i.ID, i.CihazID as 'cID', l.Kod, l.Ad as 'Cihaz Adı',  i.Tur  as 'İşlem Türü', k.KalTip as 'Kalibrasyon Tipi', 
+            i.Tarih1 as 'Kalibrasyon Tarihi', i.Tarih2 as 'Planlanan Tarihi' 
+            , case i.Finout when 'i' then a.Ad + ' ' +a.Soyad  when 'o' then t.Ad end as 'Son Uygulamayı Yapan' 
+            from CihazIslem i 
+            inner join (select CihazID, Tur, MAX(Tarih1) as MaxDate from CihazIslem group by CihazID, Tur) i2 on i.CihazID = i2.CihazID and i.Tarih1 = i2.MaxDate
+            inner join CihazKalibrasyon k on i.CihazID = k.CihazID
+            inner join CihazListesi l on i.CihazID = l.ID
+            left join StokTedarikci t on i.FirmaID = t.ID
+            left join StokKullanici a on i.PersonelID = a.ID
+            where l.Durumu = 'Kullanımda' and i.Durum ='Aktif' and i.Tur = 'Kalibrasyon' or i.Tur = 'Ara Kontrol'
+            order by i.CihazID", bgl.baglanti());
             da7.Fill(dt7);
             gridControl1.DataSource = dt7;
             gridView1.Columns["ID"].Visible = false;
             gridView1.Columns["cID"].Visible = false;
 
-            this.gridView1.Columns[1].Width = 30;
-            this.gridView1.Columns[7].Width = 150;
+            this.gridView1.Columns[2].Width = 30;
+            this.gridView1.Columns[8].Width = 150;
         }
 
 
@@ -197,7 +209,8 @@ namespace mKYS.Cihaz
             cID = dr["cID"].ToString();
             kod = dr["Kod"].ToString();
             iID = dr["ID"].ToString();
-            kodad = kod + ' ' + dr["Cihaz Adı"].ToString();
+            kodad = kod + ' ' + dr["Cihaz Adı"].ToString();      
+
         }
     }
 }

@@ -46,7 +46,9 @@ namespace mKYS.Duyuru
 
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView1.Columns["Duyuru"].ColumnEdit = memo;
+            gridView1.Columns["Konu"].ColumnEdit = memo;
             gridView1.Columns["Duyuru"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            gridView1.Columns["Konu"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
 
         }
 

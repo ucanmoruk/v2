@@ -185,7 +185,7 @@ namespace mKYS.Analiz
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //validas
-            ValidasyonEkle.gelis = "güncelle";
+            ValidasyonEkle.gelis = "analiz";
             ValidasyonEkle.aID = aID;
             ValidasyonEkle ve = new ValidasyonEkle();
             ve.Show();

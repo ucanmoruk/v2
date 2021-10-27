@@ -23,7 +23,8 @@ namespace mKYS.Talep
 
         void listele()
         {
-            SqlCommand komut2 = new SqlCommand("Select * from StokTedarikci where Ad = '" + firma + "' ", bgl.baglanti());
+            SqlCommand komut2 = new SqlCommand("Select * from StokTedarikci where ID = '" + fID + "' ", bgl.baglanti());
+           // SqlCommand komut2 = new SqlCommand("Select * from StokTedarikci where Ad = '" + firma + "' ", bgl.baglanti());
             SqlDataReader dr2 = komut2.ExecuteReader();
             while (dr2.Read())
             {
@@ -31,7 +32,6 @@ namespace mKYS.Talep
                 txt_ad.Text = dr2["Ad"].ToString();
                 txt_adres.Text = dr2["Adres"].ToString();
                 txt_tel.Text = dr2["Telefon"].ToString();
-                txt_fax.Text = dr2["Faks"].ToString();
                 txt_email.Text = dr2["Email"].ToString();
                 txt_yetkili.Text = dr2["Yetkili"].ToString();
                 txt_tur.Text = dr2["Tur"].ToString();              
@@ -43,7 +43,7 @@ namespace mKYS.Talep
         }
 
 
-        public static string firma;
+        public static string firma, fID;
         private void TedarikciEkle_Load(object sender, EventArgs e)
         {
 
@@ -73,14 +73,13 @@ namespace mKYS.Talep
 
             if (kontrol == "0" || kontrol == null)
             {
-                SqlCommand add = new SqlCommand("insert into StokTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Faks,Durum, Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9)", bgl.baglanti());
+                SqlCommand add = new SqlCommand("insert into StokTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Durum, Durumu) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", txt_ad.Text);
                 add.Parameters.AddWithValue("@a2", txt_adres.Text);
                 add.Parameters.AddWithValue("@a3", txt_tur.Text);
                 add.Parameters.AddWithValue("@a4", txt_yetkili.Text);
                 add.Parameters.AddWithValue("@a5", txt_tel.Text);
                 add.Parameters.AddWithValue("@a6", txt_email.Text);
-                add.Parameters.AddWithValue("@a7", txt_fax.Text);
                 add.Parameters.AddWithValue("@a8", "Aktif");
                 add.Parameters.AddWithValue("@a9", "Aktif");
                 add.ExecuteNonQuery();
@@ -111,14 +110,13 @@ namespace mKYS.Talep
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand("update StokTedarikci set Ad=@a1 ,Adres=@a2,Tur=@a3,Yetkili=@a4,Telefon=@a5,Email=@a6,Faks=@a7 where Ad=N'"+firma+"'", bgl.baglanti());
+            SqlCommand add = new SqlCommand("update StokTedarikci set Ad=@a1 ,Adres=@a2,Tur=@a3,Yetkili=@a4,Telefon=@a5,Email=@a6 where ID=N'"+fID+"'", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_ad.Text);
             add.Parameters.AddWithValue("@a2", txt_adres.Text);
             add.Parameters.AddWithValue("@a3", txt_tur.Text);
             add.Parameters.AddWithValue("@a4", txt_yetkili.Text);
             add.Parameters.AddWithValue("@a5", txt_tel.Text);
             add.Parameters.AddWithValue("@a6", txt_email.Text);
-            add.Parameters.AddWithValue("@a7", txt_fax.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -141,7 +139,6 @@ namespace mKYS.Talep
             txt_ad.Text = "";
             txt_adres.Text = "";
             txt_tel.Text = "";
-            txt_fax.Text = "";
             txt_email.Text = "";
             txt_yetkili.Text = "";
         }
@@ -149,7 +146,9 @@ namespace mKYS.Talep
 
         private void TedarikciEkle_FormClosing(object sender, FormClosingEventArgs e)
         {
-            firma = "";
+            firma = null;
+            fID = null;
+ 
         }
 
         

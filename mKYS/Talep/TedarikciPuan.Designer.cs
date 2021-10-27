@@ -36,9 +36,12 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.combo_deger = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btn_ok = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_aciklama = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_firma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_puan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_deger.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_aciklama.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -95,35 +98,54 @@
             // 
             this.btn_ok.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_ok.Appearance.Options.UseFont = true;
-            this.btn_ok.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_ok.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ok.ImageOptions.Image")));
             this.btn_ok.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_ok.ImageOptions.ImageToTextIndent = 15;
-            this.btn_ok.Location = new System.Drawing.Point(93, 100);
+            this.btn_ok.Location = new System.Drawing.Point(93, 128);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(367, 43);
-            this.btn_ok.TabIndex = 4;
+            this.btn_ok.TabIndex = 5;
             this.btn_ok.Text = "Değerlendir";
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            // 
+            // txt_aciklama
+            // 
+            this.txt_aciklama.Location = new System.Drawing.Point(93, 95);
+            this.txt_aciklama.Name = "txt_aciklama";
+            this.txt_aciklama.Size = new System.Drawing.Size(367, 20);
+            this.txt_aciklama.TabIndex = 4;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(38, 98);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(45, 13);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Açıklama:";
             // 
             // TedarikciPuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 176);
+            this.ClientSize = new System.Drawing.Size(499, 196);
+            this.Controls.Add(this.txt_aciklama);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.combo_deger);
             this.Controls.Add(this.txt_puan);
             this.Controls.Add(this.txt_firma);
             this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "TedarikciPuan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tedarikçi Puan Ekleme";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TedarikciPuan_FormClosed);
             this.Load += new System.EventHandler(this.TedarikciPuan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_firma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_puan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_deger.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_aciklama.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +160,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit combo_deger;
         private DevExpress.XtraEditors.SimpleButton btn_ok;
+        private DevExpress.XtraEditors.TextEdit txt_aciklama;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

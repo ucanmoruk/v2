@@ -249,6 +249,14 @@ namespace mKYS.Cihaz
             }
         }
 
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CihazHareket.tur = "Diğer";
+            CihazHareket.cID = cID;
+            CihazHareket ch = new CihazHareket();
+            ch.Show();
+        }
+
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string path = "CihazListesi.xlsx";

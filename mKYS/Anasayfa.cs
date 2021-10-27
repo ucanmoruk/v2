@@ -595,16 +595,16 @@ namespace mKYS
 
         private void barButtonItem65_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Analiz.ValidasyonPlan ve = new Analiz.ValidasyonPlan();
+            Analiz.YeniPlan ve = new Analiz.YeniPlan();
             ve.Show();
         }
 
-        Analiz.ValidasyonPlanListesi vpl;
+        Analiz.YeniPlanListesi vpl;
         private void barButtonItem66_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (vpl == null || vpl.IsDisposed)
             {
-                vpl = new Analiz.ValidasyonPlanListesi();
+                vpl = new Analiz.YeniPlanListesi();
                 vpl.MdiParent = this;
                 vpl.Show();
             }

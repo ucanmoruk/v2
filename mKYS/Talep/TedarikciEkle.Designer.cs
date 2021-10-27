@@ -36,20 +36,17 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txt_tel = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_fax = new DevExpress.XtraEditors.TextEdit();
+            this.txt_email = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txt_yetkili = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_email = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.btn_ok = new DevExpress.XtraEditors.SimpleButton();
             this.txt_tur = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_fax.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_yetkili.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_email.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_yetkili.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tur.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,18 +97,18 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(259, 82);
+            this.labelControl4.Location = new System.Drawing.Point(250, 82);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(22, 13);
+            this.labelControl4.Size = new System.Drawing.Size(32, 13);
             this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Fax:";
+            this.labelControl4.Text = "E-Mail:";
             // 
-            // txt_fax
+            // txt_email
             // 
-            this.txt_fax.Location = new System.Drawing.Point(288, 79);
-            this.txt_fax.Name = "txt_fax";
-            this.txt_fax.Size = new System.Drawing.Size(141, 20);
-            this.txt_fax.TabIndex = 4;
+            this.txt_email.Location = new System.Drawing.Point(288, 79);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(141, 20);
+            this.txt_email.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -128,24 +125,9 @@
             this.txt_yetkili.Size = new System.Drawing.Size(339, 20);
             this.txt_yetkili.TabIndex = 5;
             // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(52, 139);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(32, 13);
-            this.labelControl6.TabIndex = 0;
-            this.labelControl6.Text = "E-Mail:";
-            // 
-            // txt_email
-            // 
-            this.txt_email.Location = new System.Drawing.Point(90, 136);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(339, 20);
-            this.txt_email.TabIndex = 6;
-            // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(64, 170);
+            this.labelControl7.Location = new System.Drawing.Point(64, 140);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(20, 13);
             this.labelControl7.TabIndex = 0;
@@ -158,7 +140,7 @@
             this.btn_ok.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ok.ImageOptions.Image")));
             this.btn_ok.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_ok.ImageOptions.ImageToTextIndent = 10;
-            this.btn_ok.Location = new System.Drawing.Point(90, 204);
+            this.btn_ok.Location = new System.Drawing.Point(90, 174);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(339, 39);
             this.btn_ok.TabIndex = 8;
@@ -167,7 +149,7 @@
             // 
             // txt_tur
             // 
-            this.txt_tur.Location = new System.Drawing.Point(90, 167);
+            this.txt_tur.Location = new System.Drawing.Point(90, 137);
             this.txt_tur.Name = "txt_tur";
             this.txt_tur.Size = new System.Drawing.Size(339, 20);
             this.txt_tur.TabIndex = 7;
@@ -176,16 +158,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 267);
+            this.ClientSize = new System.Drawing.Size(473, 238);
             this.Controls.Add(this.btn_ok);
-            this.Controls.Add(this.txt_fax);
+            this.Controls.Add(this.txt_email);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txt_tel);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txt_tur);
-            this.Controls.Add(this.txt_email);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.txt_yetkili);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txt_adres);
@@ -201,9 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adres.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_fax.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_yetkili.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_email.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_yetkili.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tur.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,10 +198,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txt_tel;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txt_fax;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txt_yetkili;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txt_email;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton btn_ok;

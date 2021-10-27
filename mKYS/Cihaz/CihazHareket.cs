@@ -528,16 +528,16 @@ namespace mKYS.Cihaz
                 else
                 {
                     listele3();
-                    Text = "Cihaz Bakım / Onarım Bilgisi";
+                    Text = "Cihaz Bakım / Onarım ve Diğer İşlemler";
                     lbl_degerlendirme.Text = "Açıklama:";
-                    lbl_kal.Text = "Bakım / Onarım Tarihi:";
-                    lbl_kal.Location = new Point(41, 87);
+                    lbl_kal.Text = "İşlem Tarihi:";
+                    lbl_kal.Location = new Point(88, 87);
                     lbl_skal.Visible = false;
                     tarih2.Visible = false;
                     lbl_uygula.Location = new Point(90, 118);
                     comboBoxEdit1.Location = new Point(155, 115);
                     gridLookUpEdit1.Location = new Point(231, 115);
-                    lbl_degerlendirme.Location = new Point(104, 148);
+                    lbl_degerlendirme.Location = new Point(104, 150);
                     txt_durum.Location = new Point(155, 148);
                     lbl_yukle.Location = new Point(87, 186);
                     btnsertifika.Location = new Point(155, 183);
@@ -568,16 +568,16 @@ namespace mKYS.Cihaz
                 }
                 else
                 {
-                    Text = "Cihaz Bakım / Onarım Bilgisi";
+                    Text = "Cihaz Bakım / Onarım ve Diğer İşlemler";
                     lbl_degerlendirme.Text = "Açıklama:";
-                    lbl_kal.Text = "Bakım / Onarım Tarihi:";
-                    lbl_kal.Location = new Point(41, 87);
+                    lbl_kal.Text = "İşlem Tarihi:";
+                    lbl_kal.Location = new Point(88, 87);
                     lbl_skal.Visible = false;
                     tarih2.Visible = false;
                     lbl_uygula.Location = new Point(90, 118);
                     comboBoxEdit1.Location = new Point(155, 115);
                     gridLookUpEdit1.Location = new Point(231, 115);
-                    lbl_degerlendirme.Location = new Point(104, 148);
+                    lbl_degerlendirme.Location = new Point(104, 150);
                     txt_durum.Location = new Point(155, 148);
                     lbl_yukle.Location = new Point(87, 186);
                     btnsertifika.Location = new Point(155, 183);

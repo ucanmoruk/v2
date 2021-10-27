@@ -59,6 +59,9 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.date_bit = new DevExpress.XtraEditors.DateEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ek = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_kal = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupContainerEdit1.Properties)).BeginInit();
@@ -80,6 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ek.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kal.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl3
@@ -87,7 +92,7 @@
             this.gridControl3.Location = new System.Drawing.Point(229, 214);
             this.gridControl3.MainView = this.gridView6;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(289, 106);
+            this.gridControl3.Size = new System.Drawing.Size(289, 134);
             this.gridControl3.TabIndex = 42;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -107,7 +112,7 @@
             this.btn_aktary.Location = new System.Drawing.Point(422, 181);
             this.btn_aktary.Name = "btn_aktary";
             this.btn_aktary.Size = new System.Drawing.Size(96, 23);
-            this.btn_aktary.TabIndex = 13;
+            this.btn_aktary.TabIndex = 15;
             this.btn_aktary.Text = "Aktar";
             this.btn_aktary.Click += new System.EventHandler(this.btn_aktary_Click);
             // 
@@ -120,7 +125,7 @@
             this.popupContainerEdit1.Properties.NullText = "Yetkili personeller..";
             this.popupContainerEdit1.Properties.PopupControl = this.popupContainerControl1;
             this.popupContainerEdit1.Size = new System.Drawing.Size(187, 20);
-            this.popupContainerEdit1.TabIndex = 12;
+            this.popupContainerEdit1.TabIndex = 14;
             this.popupContainerEdit1.EditValueChanged += new System.EventHandler(this.popupContainerEdit1_EditValueChanged);
             // 
             // popupContainerControl1
@@ -163,16 +168,16 @@
             this.kod.Enabled = false;
             this.kod.Location = new System.Drawing.Point(95, 22);
             this.kod.Name = "kod";
-            this.kod.Size = new System.Drawing.Size(79, 20);
+            this.kod.Size = new System.Drawing.Size(76, 20);
             this.kod.TabIndex = 1;
             // 
             // ad
             // 
             this.ad.Enabled = false;
-            this.ad.Location = new System.Drawing.Point(180, 22);
+            this.ad.Location = new System.Drawing.Point(220, 22);
             this.ad.Name = "ad";
-            this.ad.Size = new System.Drawing.Size(338, 20);
-            this.ad.TabIndex = 2;
+            this.ad.Size = new System.Drawing.Size(298, 20);
+            this.ad.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -187,11 +192,11 @@
             this.urun.Location = new System.Drawing.Point(95, 84);
             this.urun.Name = "urun";
             this.urun.Size = new System.Drawing.Size(423, 20);
-            this.urun.TabIndex = 4;
+            this.urun.TabIndex = 5;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(63, 246);
+            this.labelControl3.Location = new System.Drawing.Point(63, 273);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(25, 13);
             this.labelControl3.TabIndex = 43;
@@ -202,18 +207,18 @@
             this.birim.Location = new System.Drawing.Point(95, 183);
             this.birim.Name = "birim";
             this.birim.Size = new System.Drawing.Size(110, 20);
-            this.birim.TabIndex = 7;
+            this.birim.TabIndex = 8;
             // 
             // lod
             // 
-            this.lod.Location = new System.Drawing.Point(95, 213);
+            this.lod.Location = new System.Drawing.Point(95, 240);
             this.lod.Name = "lod";
             this.lod.Size = new System.Drawing.Size(110, 20);
-            this.lod.TabIndex = 8;
+            this.lod.TabIndex = 10;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(44, 303);
+            this.labelControl4.Location = new System.Drawing.Point(44, 331);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(45, 13);
             this.labelControl4.TabIndex = 43;
@@ -221,7 +226,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(23, 276);
+            this.labelControl5.Location = new System.Drawing.Point(23, 302);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(65, 13);
             this.labelControl5.TabIndex = 43;
@@ -229,7 +234,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(64, 216);
+            this.labelControl6.Location = new System.Drawing.Point(64, 243);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(24, 13);
             this.labelControl6.TabIndex = 43;
@@ -245,24 +250,24 @@
             // 
             // loq
             // 
-            this.loq.Location = new System.Drawing.Point(95, 242);
+            this.loq.Location = new System.Drawing.Point(95, 269);
             this.loq.Name = "loq";
             this.loq.Size = new System.Drawing.Size(110, 20);
-            this.loq.TabIndex = 9;
+            this.loq.TabIndex = 11;
             // 
             // gerikazanim
             // 
-            this.gerikazanim.Location = new System.Drawing.Point(95, 273);
+            this.gerikazanim.Location = new System.Drawing.Point(95, 299);
             this.gerikazanim.Name = "gerikazanim";
             this.gerikazanim.Size = new System.Drawing.Size(110, 20);
-            this.gerikazanim.TabIndex = 10;
+            this.gerikazanim.TabIndex = 12;
             // 
             // bel
             // 
-            this.bel.Location = new System.Drawing.Point(95, 300);
+            this.bel.Location = new System.Drawing.Point(95, 328);
             this.bel.Name = "bel";
             this.bel.Size = new System.Drawing.Size(110, 20);
-            this.bel.TabIndex = 11;
+            this.bel.TabIndex = 13;
             // 
             // separatorControl1
             // 
@@ -277,7 +282,7 @@
             this.metot.Location = new System.Drawing.Point(95, 53);
             this.metot.Name = "metot";
             this.metot.Size = new System.Drawing.Size(423, 20);
-            this.metot.TabIndex = 3;
+            this.metot.TabIndex = 4;
             // 
             // btn_save
             // 
@@ -286,10 +291,10 @@
             this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
             this.btn_save.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_save.ImageOptions.ImageToTextIndent = 15;
-            this.btn_save.Location = new System.Drawing.Point(95, 345);
+            this.btn_save.Location = new System.Drawing.Point(95, 365);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(423, 47);
-            this.btn_save.TabIndex = 14;
+            this.btn_save.TabIndex = 16;
             this.btn_save.Text = "Kaydet";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
@@ -311,7 +316,7 @@
             this.date_basla.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_basla.Size = new System.Drawing.Size(166, 20);
-            this.date_basla.TabIndex = 5;
+            this.date_basla.TabIndex = 6;
             // 
             // labelControl9
             // 
@@ -331,7 +336,7 @@
             this.date_bit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_bit.Size = new System.Drawing.Size(173, 20);
-            this.date_bit.TabIndex = 6;
+            this.date_bit.TabIndex = 7;
             // 
             // labelControl10
             // 
@@ -341,11 +346,38 @@
             this.labelControl10.TabIndex = 43;
             this.labelControl10.Text = "Metot:";
             // 
+            // txt_ek
+            // 
+            this.txt_ek.EditValue = "Ek.1";
+            this.txt_ek.Location = new System.Drawing.Point(177, 22);
+            this.txt_ek.Name = "txt_ek";
+            this.txt_ek.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_ek.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txt_ek.Properties.NullText = "Ek-1";
+            this.txt_ek.Size = new System.Drawing.Size(37, 20);
+            this.txt_ek.TabIndex = 2;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(30, 214);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(59, 13);
+            this.labelControl11.TabIndex = 43;
+            this.labelControl11.Text = "Kalibrasyon:";
+            // 
+            // txt_kal
+            // 
+            this.txt_kal.Location = new System.Drawing.Point(95, 211);
+            this.txt_kal.Name = "txt_kal";
+            this.txt_kal.Size = new System.Drawing.Size(110, 20);
+            this.txt_kal.TabIndex = 9;
+            // 
             // ValidasyonEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 422);
+            this.ClientSize = new System.Drawing.Size(546, 433);
+            this.Controls.Add(this.txt_ek);
             this.Controls.Add(this.date_bit);
             this.Controls.Add(this.date_basla);
             this.Controls.Add(this.popupContainerControl1);
@@ -357,11 +389,13 @@
             this.Controls.Add(this.bel);
             this.Controls.Add(this.gerikazanim);
             this.Controls.Add(this.loq);
+            this.Controls.Add(this.txt_kal);
             this.Controls.Add(this.lod);
             this.Controls.Add(this.birim);
             this.Controls.Add(this.kod);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl3);
@@ -399,6 +433,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ek.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kal.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +472,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.DateEdit date_bit;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit txt_ek;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit txt_kal;
     }
 }

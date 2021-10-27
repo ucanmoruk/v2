@@ -27,9 +27,10 @@ namespace mKYS
         {
             DataTable dt12 = new DataTable();
            // SqlDataAdapter da12 = new SqlDataAdapter("select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif' order by Kod ", bgl.baglanti());
-            SqlDataAdapter da12 = new SqlDataAdapter("select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif' " +
-                "except select l.ID, l.Tur, l.Kod, l.Ad from StokRecete r inner join StokListesi l on r.StokID = l.ID " +
-                "order by Kod ", bgl.baglanti());
+            SqlDataAdapter da12 = new SqlDataAdapter(@"select ID, Tur, Kod, Ad from StokListesi where Durum = 'Aktif'  
+            except select l.ID, l.Tur, l.Kod, l.Ad from StokRecete r 
+            inner join StokListesi l on r.StokID = l.ID 
+            where AnalizID = '"+aID+"' order by Kod ", bgl.baglanti());
             da12.Fill(dt12);
             gridControl1.DataSource = dt12;
             gridView1.Columns["ID"].Visible = false;

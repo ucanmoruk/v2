@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid.Views.Grid;
+﻿using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,23 +27,27 @@ namespace mKYS.Talep
         {
             DataTable dt = new DataTable();
             //select Row_number() over(order by t.Tur) as 'No',
-            SqlDataAdapter da = new SqlDataAdapter(" select t.ID, t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Faks, t.Durumu as 'Çalışma Durumu', p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Durum from StokTedarikci t " +
+            SqlDataAdapter da = new SqlDataAdapter(" select t.ID, t.Tur as 'Kategori', t.Ad as 'Firma Adı', t.Adres, t.Yetkili, t.Telefon, t.Email, t.Durumu as 'Çalışma Durumu', p.Tarih as 'Değerlendirme Tarihi', k.Ad + ' ' + k.Soyad as 'Değerlendiren', p.Puan, p.Aciklama as 'Açıklama' , p.Durum from StokTedarikci t " +
                 " left join StokTedarikciPuan p on t.ID = p.FirmaID   left join StokKullanici k on p.PersonelID = k.ID where t.Durum = 'Aktif' order by t.Tur asc ", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView1.Columns["ID"].Visible = false;
-            this.gridView1.Columns[1].Width = 50;
-            this.gridView1.Columns[2].Width = 85;
-            this.gridView1.Columns[3].Width = 50;
-            this.gridView1.Columns[4].Width = 50;
+            this.gridView1.Columns[1].Width = 45;
+            this.gridView1.Columns[2].Width = 105;
+            this.gridView1.Columns[3].Width = 70;
+            this.gridView1.Columns[4].Width = 40;
             this.gridView1.Columns[5].Width = 50;
             this.gridView1.Columns[6].Width = 70;
-            this.gridView1.Columns[7].Width = 50;
-            this.gridView1.Columns[8].Width = 40;
+            this.gridView1.Columns[7].Width = 40;
+            this.gridView1.Columns[8].Width = 50;
             this.gridView1.Columns[9].Width = 50;
-            this.gridView1.Columns[10].Width = 50;
-            this.gridView1.Columns[11].Width = 30;
+            this.gridView1.Columns[10].Width = 30;
+            this.gridView1.Columns[11].Width = 75;
             this.gridView1.Columns[12].Width = 30;
+
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView1.Columns["Açıklama"].ColumnEdit = memo;
+            gridView1.Columns["Açıklama"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
         }
 
         int yetki;
@@ -137,15 +142,7 @@ namespace mKYS.Talep
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
             }
-            if (durum == "Pasif")
-            {
-                barButtonItem6.Caption = "Firmayı Aktifleştir";
-            }
-            else
-            {
 
-                barButtonItem6.Caption = "Firmayı Pasife Al";
-            }
         }
 
         private void TedarikciListesi_KeyDown(object sender, KeyEventArgs e)
@@ -165,6 +162,17 @@ namespace mKYS.Talep
                 firmad = dr["Firma Adı"].ToString();
                 durum = dr["Çalışma Durumu"].ToString();
                 fID = dr["ID"].ToString();
+
+                if (durum == "Pasif")
+                {
+                    barButtonItem6.Caption = "Firmayı Aktifleştir";
+                }
+                else
+                {
+
+                    barButtonItem6.Caption = "Firmayı Pasife Al";
+                }
+
             }
             catch (Exception Ex)
             {
@@ -177,7 +185,7 @@ namespace mKYS.Talep
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TedarikciEkle.firma = firmad;
-
+            TedarikciEkle.fID = fID;
             TedarikciEkle te = new TedarikciEkle();
             te.Show();
         }
@@ -193,7 +201,7 @@ namespace mKYS.Talep
                 string ODurum = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Çalışma Durumu"]);
                 if (ODurum == "Pasif")
                 {
-                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.BackColor = Color.IndianRed;
                 }
             }
 
@@ -202,7 +210,7 @@ namespace mKYS.Talep
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TedarikciPuan.firma = firmad;
-
+            TedarikciPuan.fID = fID;
             TedarikciPuan tp = new TedarikciPuan();
             tp.Show();
         }
@@ -215,7 +223,7 @@ namespace mKYS.Talep
                 komutSil.Parameters.AddWithValue("@a1", "Aktif");
                 komutSil.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                MessageBox.Show("Firma başarılı şekilde aktifleştirilmiştir. " + "\n" + "Yeni firma için tedarikçi değerlendirmesi yapmayı unutmayınız!");
+                MessageBox.Show("Firma başarılı şekilde aktifleştirilmiştir. " + "\n" + "Yeni firma için tedarikçi değerlendirmesi yapmayı unutmayınız!", "Oopppss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -224,7 +232,7 @@ namespace mKYS.Talep
                 komutSil.Parameters.AddWithValue("@a1", "Pasif");
                 komutSil.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                MessageBox.Show("Firma başarılı şekilde pasifize edilmiştir.");
+                MessageBox.Show("Firma başarılı şekilde pasifize edilmiştir." , "Oopppss!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 
             }
             listele();

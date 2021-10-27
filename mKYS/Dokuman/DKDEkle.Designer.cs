@@ -31,10 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DKDEkle));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txt_dokuman = new DevExpress.XtraEditors.TextEdit();
             this.txt_kaynak = new DevExpress.XtraEditors.TextEdit();
-            this.combo_tur = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btn_ekle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -45,20 +43,21 @@
             this.txt_tarih = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_link = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.combo_birim = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_aciklama = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_dokuman.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kaynak.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_tur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tarih.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_link.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_aciklama.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(35, 114);
+            this.labelControl1.Location = new System.Drawing.Point(35, 86);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(66, 13);
             this.labelControl1.TabIndex = 0;
@@ -66,45 +65,25 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(249, 22);
+            this.labelControl2.Location = new System.Drawing.Point(28, 25);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(39, 13);
+            this.labelControl2.Size = new System.Drawing.Size(71, 13);
             this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Kaynak:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(79, 22);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(20, 13);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Tür:";
+            this.labelControl2.Text = "Kaynak / Birim:";
             // 
             // txt_dokuman
             // 
-            this.txt_dokuman.Location = new System.Drawing.Point(107, 111);
+            this.txt_dokuman.Location = new System.Drawing.Point(107, 83);
             this.txt_dokuman.Name = "txt_dokuman";
             this.txt_dokuman.Size = new System.Drawing.Size(296, 20);
             this.txt_dokuman.TabIndex = 5;
             // 
             // txt_kaynak
             // 
-            this.txt_kaynak.Location = new System.Drawing.Point(294, 19);
+            this.txt_kaynak.Location = new System.Drawing.Point(107, 22);
             this.txt_kaynak.Name = "txt_kaynak";
             this.txt_kaynak.Size = new System.Drawing.Size(109, 20);
             this.txt_kaynak.TabIndex = 2;
-            // 
-            // combo_tur
-            // 
-            this.combo_tur.Location = new System.Drawing.Point(107, 19);
-            this.combo_tur.Name = "combo_tur";
-            this.combo_tur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_tur.Properties.Items.AddRange(new object[] {
-            "Elektronik",
-            "Kağıt"});
-            this.combo_tur.Size = new System.Drawing.Size(122, 20);
-            this.combo_tur.TabIndex = 1;
             // 
             // labelControl4
             // 
@@ -124,13 +103,13 @@
             this.btn_ekle.Location = new System.Drawing.Point(107, 250);
             this.btn_ekle.Name = "btn_ekle";
             this.btn_ekle.Size = new System.Drawing.Size(296, 45);
-            this.btn_ekle.TabIndex = 9;
+            this.btn_ekle.TabIndex = 10;
             this.btn_ekle.Text = "Ekle";
             this.btn_ekle.Click += new System.EventHandler(this.btn_ekle_Click);
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(77, 84);
+            this.labelControl5.Location = new System.Drawing.Point(77, 56);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(22, 13);
             this.labelControl5.TabIndex = 0;
@@ -138,7 +117,7 @@
             // 
             // txt_kod
             // 
-            this.txt_kod.Location = new System.Drawing.Point(107, 81);
+            this.txt_kod.Location = new System.Drawing.Point(107, 53);
             this.txt_kod.Name = "txt_kod";
             this.txt_kod.Size = new System.Drawing.Size(296, 20);
             this.txt_kod.TabIndex = 4;
@@ -165,7 +144,7 @@
             this.btn_sec.Location = new System.Drawing.Point(107, 210);
             this.btn_sec.Name = "btn_sec";
             this.btn_sec.Size = new System.Drawing.Size(85, 23);
-            this.btn_sec.TabIndex = 8;
+            this.btn_sec.TabIndex = 9;
             this.btn_sec.Text = "Doküman Seç";
             this.btn_sec.Click += new System.EventHandler(this.btn_sec_Click);
             // 
@@ -174,11 +153,11 @@
             this.txt_tarih.Location = new System.Drawing.Point(107, 177);
             this.txt_tarih.Name = "txt_tarih";
             this.txt_tarih.Size = new System.Drawing.Size(191, 20);
-            this.txt_tarih.TabIndex = 7;
+            this.txt_tarih.TabIndex = 8;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(75, 146);
+            this.labelControl7.Location = new System.Drawing.Point(75, 118);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(22, 13);
             this.labelControl7.TabIndex = 0;
@@ -186,46 +165,52 @@
             // 
             // txt_link
             // 
-            this.txt_link.Location = new System.Drawing.Point(107, 143);
+            this.txt_link.Location = new System.Drawing.Point(107, 115);
             this.txt_link.Name = "txt_link";
             this.txt_link.Size = new System.Drawing.Size(296, 20);
             this.txt_link.TabIndex = 6;
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(73, 54);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(26, 13);
-            this.labelControl8.TabIndex = 0;
-            this.labelControl8.Text = "Birim:";
-            // 
             // combo_birim
             // 
-            this.combo_birim.Location = new System.Drawing.Point(107, 51);
+            this.combo_birim.Location = new System.Drawing.Point(223, 22);
             this.combo_birim.Name = "combo_birim";
             this.combo_birim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_birim.Size = new System.Drawing.Size(296, 20);
+            this.combo_birim.Size = new System.Drawing.Size(180, 20);
             this.combo_birim.TabIndex = 3;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(54, 149);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(45, 13);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "Açıklama:";
+            // 
+            // txt_aciklama
+            // 
+            this.txt_aciklama.Location = new System.Drawing.Point(107, 146);
+            this.txt_aciklama.Name = "txt_aciklama";
+            this.txt_aciklama.Size = new System.Drawing.Size(296, 20);
+            this.txt_aciklama.TabIndex = 7;
             // 
             // DKDEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 322);
+            this.Controls.Add(this.txt_aciklama);
             this.Controls.Add(this.combo_birim);
             this.Controls.Add(this.lbl_bas);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.btn_sec);
             this.Controls.Add(this.btn_ekle);
-            this.Controls.Add(this.combo_tur);
             this.Controls.Add(this.txt_kod);
             this.Controls.Add(this.txt_tarih);
             this.Controls.Add(this.txt_kaynak);
             this.Controls.Add(this.txt_link);
             this.Controls.Add(this.txt_dokuman);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl7);
@@ -238,11 +223,11 @@
             this.Load += new System.EventHandler(this.DKDEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_dokuman.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kaynak.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_tur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tarih.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_link.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_aciklama.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,10 +237,8 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txt_dokuman;
         private DevExpress.XtraEditors.TextEdit txt_kaynak;
-        private DevExpress.XtraEditors.ComboBoxEdit combo_tur;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton btn_ekle;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -266,7 +249,8 @@
         private DevExpress.XtraEditors.TextEdit txt_tarih;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txt_link;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.ComboBoxEdit combo_birim;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit txt_aciklama;
     }
 }

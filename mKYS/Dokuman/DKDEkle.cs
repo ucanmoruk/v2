@@ -28,7 +28,7 @@ namespace mKYS.Dokuman
             SqlDataReader drI = komutID.ExecuteReader();
             while (drI.Read())
             {
-                combo_tur.Text = drI["Tur"].ToString();
+                txt_aciklama.Text = drI["Tur"].ToString();
                 txt_dokuman.Text = drI["Ad"].ToString();
                 txt_kod.Text = drI["Kod"].ToString();
                 txt_kaynak.Text = drI["Kaynak"].ToString(); 
@@ -129,7 +129,7 @@ namespace mKYS.Dokuman
 
         void temizle()
         {
-            combo_tur.Text = "";
+            txt_aciklama.Text = "";
             txt_dokuman.Text = "";
             txt_kod.Text = "";
             txt_kaynak.Text = "";
@@ -143,7 +143,7 @@ namespace mKYS.Dokuman
             dokekle();
 
             SqlCommand add = new SqlCommand("insert into StokDKDListe(Tur, Kaynak, Kod, Ad, Tarih, Path, Link, Durum,Birim) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9)", bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", combo_tur.Text);
+            add.Parameters.AddWithValue("@a1", txt_aciklama.Text);
             add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
             add.Parameters.AddWithValue("@a3", txt_kod.Text);
             add.Parameters.AddWithValue("@a4", txt_dokuman.Text);
@@ -190,7 +190,7 @@ namespace mKYS.Dokuman
                 dokekle();
 
                 SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Path=@a6, Link=@a7, Birim=@a8 where ID = '"+dkdID+"'", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                add.Parameters.AddWithValue("@a1", txt_aciklama.Text);
                 add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
                 add.Parameters.AddWithValue("@a3", txt_kod.Text);
                 add.Parameters.AddWithValue("@a4", txt_dokuman.Text);
@@ -215,7 +215,7 @@ namespace mKYS.Dokuman
                         dokekle();
 
                         SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Path=@a6, Link=@a7, Birim=@a8 where ID = '" + dkdID + "'", bgl.baglanti());
-                        add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                        add.Parameters.AddWithValue("@a1", txt_aciklama.Text);
                         add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
                         add.Parameters.AddWithValue("@a3", txt_kod.Text);
                         add.Parameters.AddWithValue("@a4", txt_dokuman.Text);
@@ -236,7 +236,7 @@ namespace mKYS.Dokuman
                 {
 
                     SqlCommand add = new SqlCommand("update StokDKDListe set Tur=@a1, Kaynak=@a2, Kod=@a3, Ad=@a4, Tarih=@a5, Link=@a7, Birim=@a8 where ID = '" + dkdID + "'", bgl.baglanti());
-                    add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                    add.Parameters.AddWithValue("@a1", txt_aciklama.Text);
                     add.Parameters.AddWithValue("@a2", txt_kaynak.Text);
                     add.Parameters.AddWithValue("@a3", txt_kod.Text);
                     add.Parameters.AddWithValue("@a4", txt_dokuman.Text);

@@ -40,9 +40,9 @@ namespace mKYS.Duyuru
             this.gridView1.Columns[5].Width = 50;
             this.gridView1.Columns[6].Width = 50;
 
-            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-            gridView1.Columns["Mesaj"].ColumnEdit = memo;
-            gridView1.Columns["Mesaj"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            //gridView1.Columns["Mesaj"].ColumnEdit = memo;
+            //gridView1.Columns["Mesaj"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
 
 
         }

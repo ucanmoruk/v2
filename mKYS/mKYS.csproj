@@ -28,7 +28,7 @@
     <MinimumRequiredVersion>1.0.0.5</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -144,16 +144,28 @@
     <Compile Include="Analiz\ValidasyonListesi.Designer.cs">
       <DependentUpon>ValidasyonListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Analiz\ValidasyonPlan.cs">
+    <Compile Include="Analiz\YeniPlanListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Analiz\ValidasyonPlan.Designer.cs">
+    <Compile Include="Analiz\YeniPlanListesi.Designer.cs">
+      <DependentUpon>YeniPlanListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analiz\YeniPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analiz\YeniPlan.Designer.cs">
+      <DependentUpon>YeniPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ÇöpKutusu\ValidasyonPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ÇöpKutusu\ValidasyonPlan.Designer.cs">
       <DependentUpon>ValidasyonPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Analiz\ValidasyonPlanListesi.cs">
+    <Compile Include="ÇöpKutusu\ValidasyonPlanListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Analiz\ValidasyonPlanListesi.Designer.cs">
+    <Compile Include="ÇöpKutusu\ValidasyonPlanListesi.Designer.cs">
       <DependentUpon>ValidasyonPlanListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Anasayfa.cs">
@@ -222,10 +234,10 @@
     <Compile Include="Dokuman\DKDListe.Designer.cs">
       <DependentUpon>DKDListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Duyuru\Okuduklarim.cs">
+    <Compile Include="ÇöpKutusu\Okuduklarim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Duyuru\Okuduklarim.Designer.cs">
+    <Compile Include="ÇöpKutusu\Okuduklarim.Designer.cs">
       <DependentUpon>Okuduklarim.cs</DependentUpon>
     </Compile>
     <Compile Include="Talep\TalepMaliyet.cs">
@@ -383,7 +395,7 @@
     <Compile Include="ÇöpKutusu\Karsilama.Designer.cs">
       <DependentUpon>Karsilama.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="ÇöpKutusu\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raporlar\Aciklama.cs">
       <SubType>Form</SubType>
@@ -575,10 +587,16 @@
     <EmbeddedResource Include="Analiz\ValidasyonListesi.resx">
       <DependentUpon>ValidasyonListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Analiz\ValidasyonPlan.resx">
+    <EmbeddedResource Include="Analiz\YeniPlanListesi.resx">
+      <DependentUpon>YeniPlanListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analiz\YeniPlan.resx">
+      <DependentUpon>YeniPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ÇöpKutusu\ValidasyonPlan.resx">
       <DependentUpon>ValidasyonPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Analiz\ValidasyonPlanListesi.resx">
+    <EmbeddedResource Include="ÇöpKutusu\ValidasyonPlanListesi.resx">
       <DependentUpon>ValidasyonPlanListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anasayfa.resx">
@@ -614,7 +632,7 @@
     <EmbeddedResource Include="Dokuman\DKDListe.resx">
       <DependentUpon>DKDListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Duyuru\Okuduklarim.resx">
+    <EmbeddedResource Include="ÇöpKutusu\Okuduklarim.resx">
       <DependentUpon>Okuduklarim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Talep\TalepMaliyet.resx">

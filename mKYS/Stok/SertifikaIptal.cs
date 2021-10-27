@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,24 +23,38 @@ namespace mKYS
 
         void listele()
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif' and BirimID = '" + Anasayfa.birimID + "')", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combokod.Properties.Items.Add(drI["Kod"].ToString());
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif' and BirimID = '" + Anasayfa.birimID + "')", bgl.baglanti());
+            //SqlDataReader drI = komutID.ExecuteReader();
+            //while (drI.Read())
+            //{
+            //    combokod.Properties.Items.Add(drI["Kod"].ToString());
+            //}
+            //bgl.baglanti().Close();
+
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif' and BirimID = '" + Anasayfa.birimID + "')", bgl.baglanti());
+            da2.Fill(dt2);
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Kod";
+            gridLookUpEdit1.Properties.ValueMember = "ID";
         }
 
         void listele2()
         {
-            SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif')", bgl.baglanti());
-            SqlDataReader drI = komutID.ExecuteReader();
-            while (drI.Read())
-            {
-                combokod.Properties.Items.Add(drI["Kod"].ToString());
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komutID = new SqlCommand("Select * From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif')", bgl.baglanti());
+            //SqlDataReader drI = komutID.ExecuteReader();
+            //while (drI.Read())
+            //{
+            //    combokod.Properties.Items.Add(drI["Kod"].ToString());
+            //}
+            //bgl.baglanti().Close();
+
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Kod, Ad From StokListesi where ID in (select StokID from StokHareket where Durum= N'Aktif')", bgl.baglanti());
+            da2.Fill(dt2);
+            gridLookUpEdit1.Properties.DataSource = dt2;
+            gridLookUpEdit1.Properties.DisplayMember = "Kod";
+            gridLookUpEdit1.Properties.ValueMember = "ID";
         }
 
         int yetki;
@@ -70,31 +85,31 @@ namespace mKYS
         private void combokod_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            combo_marka.Properties.Items.Clear();
+            //combo_marka.Properties.Items.Clear();
 
-            if (yetki == 0 || yetki.ToString() == null)
-            {
-                SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '" + Anasayfa.birimID + "' and Durum = N'Aktif' ", bgl.baglanti());
-                SqlDataReader dr = komutD.ExecuteReader();
-                while (dr.Read())
-                {
-                    marka = dr["Sertifika"].ToString();
-                    combo_marka.Properties.Items.Add(marka);
-                }
-                bgl.baglanti().Close();
-            }
-            else
-            {
-                SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and Durum = N'Aktif' ", bgl.baglanti());
-                SqlDataReader dr = komutD.ExecuteReader();
-                while (dr.Read())
-                {
-                    marka = dr["Sertifika"].ToString();
-                    combo_marka.Properties.Items.Add(marka);
-                }
-                bgl.baglanti().Close();
+            //if (yetki == 0 || yetki.ToString() == null)
+            //{
+            //    SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and BirimID = '" + Anasayfa.birimID + "' and Durum = N'Aktif' ", bgl.baglanti());
+            //    SqlDataReader dr = komutD.ExecuteReader();
+            //    while (dr.Read())
+            //    {
+            //        marka = dr["Sertifika"].ToString();
+            //        combo_marka.Properties.Items.Add(marka);
+            //    }
+            //    bgl.baglanti().Close();
+            //}
+            //else
+            //{
+            //    SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') and Durum = N'Aktif' ", bgl.baglanti());
+            //    SqlDataReader dr = komutD.ExecuteReader();
+            //    while (dr.Read())
+            //    {
+            //        marka = dr["Sertifika"].ToString();
+            //        combo_marka.Properties.Items.Add(marka);
+            //    }
+            //    bgl.baglanti().Close();
 
-            }
+            //}
 
                
         }
@@ -102,7 +117,7 @@ namespace mKYS
         string path;
         private void combo_marka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand komutD = new SqlCommand("select * from StokSertifika where Sertifika =N'" + combo_marka.Text + "' and StokID in (select ID from StokListesi where Kod = N'" + combokod.Text + "') ", bgl.baglanti());
+            SqlCommand komutD = new SqlCommand("select * from StokSertifika where Sertifika =N'" + combo_marka.Text + "' and StokID = '"+gridLookUpEdit1.EditValue+"' ", bgl.baglanti());
             SqlDataReader dr = komutD.ExecuteReader();
             while (dr.Read())
             {
@@ -126,17 +141,38 @@ namespace mKYS
             cikis = MessageBox.Show("Bu sertifikayı silmek istediğinizden emin misiniz?", "Oooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (cikis == DialogResult.Yes)
             {
-                SqlCommand add2 = new SqlCommand("update StokSertifika set Durum= @a1 where Sertifika = N'" + combo_marka.Text + "' and Path = '" + path + "' and BirimID = '" + Anasayfa.birimID + "'", bgl.baglanti());
+                SqlCommand add2 = new SqlCommand("update StokSertifika set Durum= @a1 where Sertifika = N'" + combo_marka.Text + "' and Path = '" + path + "'", bgl.baglanti());
                 add2.Parameters.AddWithValue("@a1", "Pasif");
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
                 MessageBox.Show("Sertifika başarıyla iptal edildi!", "Başarılı!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                combokod.Text = "";
-                combo_marka.Text = "";
+                gridLookUpEdit1.EditValue = null;
+                combo_marka.Text = null;
             }
           
 
+        }
+
+        private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
+        
+        private void gridLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            combo_marka.Properties.Items.Clear();
+
+            SqlCommand komutD = new SqlCommand("select  * from StokSertifika where StokID = '"+gridLookUpEdit1.EditValue+"' and Durum = N'Aktif' ", bgl.baglanti());
+            SqlDataReader dr = komutD.ExecuteReader();
+            while (dr.Read())
+            {
+                marka = dr["Sertifika"].ToString();
+                combo_marka.Properties.Items.Add(marka);
+            }
+            bgl.baglanti().Close();
         }
     }
 }
