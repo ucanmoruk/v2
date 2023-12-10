@@ -20,9 +20,9 @@ namespace mKYS
 
             BonusSkins.Register();
 
-            // Application.Run(new Analiz.ValidasyonEkle());
-             Application.Run(new Giris());
-           // Application.Run(new mKYS.Duyuru.Okuduklarim());
+            //   Application.Run(new Analiz.ValidasyonEkle());
+            Application.Run(new Giris());
+            // Application.Run(new mKYS.Duyuru.Okuduklarim());
         }
     }
 }

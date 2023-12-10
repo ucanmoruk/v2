@@ -4,13 +4,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("mKYS")]
-[assembly: AssemblyDescription("Kalite Yönetim Sistemi Süreç Takip Programı")]
+[assembly: AssemblyTitle("mROOT")]
+[assembly: AssemblyDescription("Root Kozmetik A.Ş. Stok Takip Programı")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mass Arge Bilişim ve Danışmanlık Hizmetleri A.Ş.")]
-[assembly: AssemblyProduct("mKYS")]
+[assembly: AssemblyCompany("Root Kozmetik A.Ş.")]
+[assembly: AssemblyProduct("mROOT")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
-[assembly: AssemblyTrademark("mKYS")]
+[assembly: AssemblyTrademark("mROOT")]
 [assembly: AssemblyCulture("")]
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

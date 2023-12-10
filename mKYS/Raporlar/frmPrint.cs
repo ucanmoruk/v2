@@ -118,5 +118,32 @@ namespace mKYS.Raporlar
             }
 
         }
+
+        public void Dermatolojik()
+        {
+
+            Raporlar.Dermatological rapor = new Raporlar.Dermatological();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
+        }
+        public void TeklifMS()
+        {
+
+            Raporlar.TeklifMS etiket = new Raporlar.TeklifMS();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
     }
 }

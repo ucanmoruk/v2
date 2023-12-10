@@ -21,6 +21,7 @@ using DevExpress.XtraBars;
 using mKYS.Dokuman;
 using mKYS.Talep;
 using mKYS.Duyuru;
+using DevExpress.LookAndFeel;
 
 namespace mKYS
 {
@@ -77,7 +78,7 @@ namespace mKYS
         public static int firmaID, birimID;
         void kullanicibul()
         {
-            SqlCommand komut21 = new SqlCommand("Select * from StokKullanici where ID = N'" + kullanici + "' ", bgl.baglanti());
+            SqlCommand komut21 = new SqlCommand("Select * from RootKullanici where ID = N'" + kullanici + "' ", bgl.baglanti());
             SqlDataReader dr21 = komut21.ExecuteReader();
             while (dr21.Read())
             {
@@ -192,42 +193,46 @@ namespace mKYS
 
         }
     
-        void tanitim()
-        {
-            ribbonPage4.Visible = false;
-            ribbonPage5.Visible = false;
-            ribbonPage6.Visible = false;
-            ribbonPage7.Visible = false;
-            ribbonPageGroup6.Visible = false;
-            ribbonPageGroup10.Visible = false;
-            ribbonPageGroup17.Visible = false;
-
-
-        }
-
         DuyuruListe kl;
         public static string kullanici;
         private void Anasayfa_Load(object sender, EventArgs e)
         {
             kullanicibul();
-            firmabul();
-            yetkibul();
-            //if (Giris.db == "2")
-            //{
-            //    tanitim();
-            //}
+            //  firmabul();
+            //   yetkibul();
+
+            //    DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("The Bezier");
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.Dragonfly);
+
+            if (kullanici == "2" || kullanici == "1002")
+            {
+                muhasebe.Visible = true;
+                barButtonItem75.Visibility = BarItemVisibility.Always;
+                barButtonItem76.Visibility = BarItemVisibility.Always;
+            }
+            else if (kullanici == "2003" || kullanici == "2004" || kullanici == "2005")
+            {
+                ribbonPage7.Visible = false;
+                ribbonPage1.Visible = false;
+                ribbonPage2.Visible = false;
+                ribbonPage3.Visible = false;
+                ribbonPage5.Visible = false;
+                ribbonPage10.Visible = false;
+
+                Text = "SPEKTROTEK Yönetim Sistemi";
+            }
 
             ribbonPageGroup25.AllowTextClipping = false;
             ribbonPageGroup26.AllowTextClipping = false;
             ribbonPageGroup9.AllowTextClipping = false;
 
-            if (kl == null || kl.IsDisposed)
-            {
-                kl = new DuyuruListe();
-                kl.MdiParent = this;
-                kl.Show();
-              //  barButtonItem59.Visibility = BarItemVisibility.Always;
-            }
+            //if (kl == null || kl.IsDisposed)
+            //{
+            //    kl = new DuyuruListe();
+            //    kl.MdiParent = this;
+            //    kl.Show();
+            //  //  barButtonItem59.Visibility = BarItemVisibility.Always;
+            //}
 
         }
 
@@ -271,17 +276,6 @@ namespace mKYS
             dy.Show();
         }
 
-        Analiz.AnalizListesi anal;
-        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (anal == null || anal.IsDisposed)
-            {
-                anal = new Analiz.AnalizListesi();
-                anal.MdiParent = this;
-                anal.Show();
-            }
-        }
-
         Talep.MaaliyetEkle me;
         public void mekle()
         {
@@ -318,6 +312,17 @@ namespace mKYS
             }
         }
 
+        Analiz.UrunFormul urf;
+        public void UrunFormul()
+        {
+            if (urf == null || urf.IsDisposed)
+            {
+                urf = new Analiz.UrunFormul();
+                urf.MdiParent = this;
+                urf.Show();
+            }
+        }
+
         TalepYeni tay;
         public void talepyeni()
         {
@@ -341,15 +346,15 @@ namespace mKYS
             any.Show();
         }
 
-        Stok.ReceteListesi rel;
+      //  Stok.ReceteListesi rel;
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (rel == null || rel.IsDisposed)
-            {
-                rel = new Stok.ReceteListesi();
-                rel.MdiParent = this;
-                rel.Show();
-            }
+            //if (rel == null || rel.IsDisposed)
+            //{
+            //    rel = new Stok.ReceteListesi();
+            //    rel.MdiParent = this;
+            //    rel.Show();
+            //}
         }
 
         private void barButtonItem48_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -582,38 +587,37 @@ namespace mKYS
         }
 
 
-        Analiz.ValidasyonListesi val;
+       // Analiz.ValidasyonListesi val;
         private void barButtonItem36_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (val == null || val.IsDisposed)
-            {
-                val = new Analiz.ValidasyonListesi();
-                val.MdiParent = this;
-                val.Show();
-            }
+            //if (val == null || val.IsDisposed)
+            //{
+            //    val = new Analiz.ValidasyonListesi();
+            //    val.MdiParent = this;
+            //    val.Show();
+            //}
         }
 
         private void barButtonItem65_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Analiz.YeniPlan ve = new Analiz.YeniPlan();
-            ve.Show();
+            //Analiz.YeniPlan ve = new Analiz.YeniPlan();
+            //ve.Show();
         }
 
-        Analiz.YeniPlanListesi vpl;
+       // Analiz.YeniPlanListesi vpl;
         private void barButtonItem66_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (vpl == null || vpl.IsDisposed)
-            {
-                vpl = new Analiz.YeniPlanListesi();
-                vpl.MdiParent = this;
-                vpl.Show();
-            }
+            //if (vpl == null || vpl.IsDisposed)
+            //{
+            //    vpl = new Analiz.YeniPlanListesi();
+            //    vpl.MdiParent = this;
+            //    vpl.Show();
+            //}
         }
 
         private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Stok.ReceteDus rd = new Stok.ReceteDus();
-            rd.Show();
+           
         }
 
         private void barButtonItem27_ItemClick(object sender, ItemClickEventArgs e)
@@ -651,6 +655,185 @@ namespace mKYS
                 de = new Cihaz.BakimDetay();
                 de.MdiParent = this;
                 de.Show();
+            }
+        }
+
+        Analiz.AnalizListesi anal;
+        private void barButtonItem69_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            
+            if (anal == null || anal.IsDisposed)
+            {
+                anal = new Analiz.AnalizListesi();
+                anal.MdiParent = this;
+                anal.Show();
+            }
+            
+        }
+
+        private void barButtonItem70_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Stok.ReceteDus.gelis = "Üretim Bildirimi";
+            Stok.ReceteDus rd = new Stok.ReceteDus();
+            rd.Show();
+        }
+
+        private void barButtonItem71_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Stok.ReceteDus.gelis = "Satış Bildirimi";
+            Stok.ReceteDus rd = new Stok.ReceteDus();
+            rd.Show();
+        }
+
+        private void barButtonItem72_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._7.Muhasebe.IslemEkle ie = new mROOT._7.Muhasebe.IslemEkle();
+            ie.Show();
+        }
+
+        mROOT._7.Muhasebe.IslemListesi il;
+        private void barButtonItem73_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (il == null || il.IsDisposed)
+            {
+                il = new mROOT._7.Muhasebe.IslemListesi();
+                il.MdiParent = this;
+                il.Show();
+            }
+        }
+        mROOT._2.Product.NumList nl;
+        private void barButtonItem75_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (nl == null || nl.IsDisposed)
+            {
+                nl = new mROOT._2.Product.NumList();
+                nl.MdiParent = this;
+                nl.Show();
+            }
+        }
+
+
+        private void barButtonItem76_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._2.Product.NumYeni ny = new mROOT._2.Product.NumYeni();
+            ny.Show();
+        }
+
+        private void barButtonItem79_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._8.Spektrotek.STalep yt = new mROOT._8.Spektrotek.STalep();
+            yt.Show();
+        }
+
+        private void barButtonItem83_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._8.Spektrotek.SStok ys = new mROOT._8.Spektrotek.SStok();
+            ys.Show();
+        }
+
+        private void barButtonItem85_ItemClick(object sender, ItemClickEventArgs e)
+        {            
+            TedarikciEkle.kimin = "Spektrotek";
+            TedarikciEkle te = new TedarikciEkle();
+            te.Show();
+        }
+
+        mROOT._8.Spektrotek.SFirmaListesi sfl;
+        private void barButtonItem84_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (sfl == null || sfl.IsDisposed)
+            {
+                sfl = new mROOT._8.Spektrotek.SFirmaListesi();
+                sfl.MdiParent = this;
+                sfl.Show();
+            }
+        }
+
+        mROOT._8.Spektrotek.SStokListesi stl;
+        private void barButtonItem82_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (stl == null || stl.IsDisposed)
+            {
+                stl = new mROOT._8.Spektrotek.SStokListesi();
+                stl.MdiParent = this;
+                stl.Show();
+            }
+        }
+        mROOT._8.Spektrotek.STalepListe stal;
+        private void barButtonItem78_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (stal == null || stal.IsDisposed)
+            {
+                stal = new mROOT._8.Spektrotek.STalepListe();
+                stal.MdiParent = this;
+                stal.Show();
+            }
+        }
+
+        private void barButtonItem91_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            YeniHammadde yh = new YeniHammadde();
+            yh.Show();
+        }
+
+        HammaddeListesi hel;
+        private void barButtonItem90_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (hel == null || hel.IsDisposed)
+            {
+                hel = new HammaddeListesi();
+                hel.MdiParent = this;
+                hel.Show();
+            }
+        }
+
+        private void barButtonItem93_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._2.Product.WorkNew wn = new mROOT._2.Product.WorkNew();
+            wn.Show();
+        }
+
+        mROOT._2.Product.WorkList wne;
+        private void barButtonItem92_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (wne == null || wne.IsDisposed)
+            {
+                wne = new mROOT._2.Product.WorkList();
+                wne.MdiParent = this;
+                wne.Show();
+            }
+        }
+
+        mROOT._8.Spektrotek.Liste lil;
+        private void barButtonItem80_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (lil == null || lil.IsDisposed)
+            {
+                lil = new mROOT._8.Spektrotek.Liste();
+                lil.MdiParent = this;
+                lil.Show();
+            }
+        }
+
+        mROOT._8.Spektrotek.Detay det;
+        private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (det == null || lil.IsDisposed)
+            {
+                det = new mROOT._8.Spektrotek.Detay();
+                det.MdiParent = this;
+                det.Show();
+            }
+        }
+        mROOT._8.Spektrotek.SNotlar sno;
+        private void barButtonItem94_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (sno == null || sno.IsDisposed)
+            {
+                sno = new mROOT._8.Spektrotek.SNotlar();
+                sno.MdiParent = this;
+                sno.Show();
             }
         }
 
