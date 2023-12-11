@@ -115,6 +115,7 @@
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.groupHeaderBand1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -126,7 +127,6 @@
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
@@ -194,6 +194,17 @@
             this.xrTableCell34 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrTable7 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell37 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow16 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell38 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell39 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow17 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell40 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell41 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -212,25 +223,14 @@
             this.toplamtut = new DevExpress.XtraReports.UI.CalculatedField();
             this.totalkdv = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField15 = new DevExpress.XtraReports.UI.CalculatedField();
-            this.xrTable7 = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell37 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow16 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell38 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell39 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow17 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell40 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell41 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // sqlDataSource1
@@ -542,6 +542,19 @@
             this.groupHeaderBand1.HeightF = 72.0251F;
             this.groupHeaderBand1.Name = "groupHeaderBand1";
             // 
+            // xrLabel28
+            // 
+            this.xrLabel28.Font = new System.Drawing.Font("Futura Bk BT", 10F);
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(9.999975F, 0F);
+            this.xrLabel28.Multiline = true;
+            this.xrLabel28.Name = "xrLabel28";
+            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(477.9167F, 23F);
+            this.xrLabel28.StylePriority.UseFont = false;
+            this.xrLabel28.StylePriority.UseTextAlignment = false;
+            this.xrLabel28.Text = "Talebinize istinaden hazırlanmış fiyat teklifimizdir.";
+            this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // xrTable1
             // 
             this.xrTable1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -569,7 +582,7 @@
             // 
             // xrTableCell23
             // 
-            this.xrTableCell23.BackColor = System.Drawing.Color.Maroon;
+            this.xrTableCell23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrTableCell23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell23.ForeColor = System.Drawing.Color.White;
             this.xrTableCell23.Multiline = true;
@@ -583,8 +596,8 @@
             // 
             // xrTableCell1
             // 
-            this.xrTableCell1.BackColor = System.Drawing.Color.Maroon;
-            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell1.ForeColor = System.Drawing.Color.White;
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
@@ -598,8 +611,8 @@
             // 
             // xrTableCell2
             // 
-            this.xrTableCell2.BackColor = System.Drawing.Color.Maroon;
-            this.xrTableCell2.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrTableCell2.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell2.ForeColor = System.Drawing.Color.White;
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
@@ -611,8 +624,8 @@
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.BackColor = System.Drawing.Color.Maroon;
-            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.ForeColor = System.Drawing.Color.White;
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
@@ -624,8 +637,8 @@
             // 
             // xrTableCell6
             // 
-            this.xrTableCell6.BackColor = System.Drawing.Color.Maroon;
-            this.xrTableCell6.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrTableCell6.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell6.ForeColor = System.Drawing.Color.White;
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
@@ -637,8 +650,8 @@
             // 
             // xrTableCell10
             // 
-            this.xrTableCell10.BackColor = System.Drawing.Color.Maroon;
-            this.xrTableCell10.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrTableCell10.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell10.ForeColor = System.Drawing.Color.White;
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
@@ -656,12 +669,12 @@
             this.xrLabel27,
             this.xrLabel26,
             this.xrTable2});
-            this.PageHeader.HeightF = 129.6482F;
+            this.PageHeader.HeightF = 140.5402F;
             this.PageHeader.Name = "PageHeader";
             // 
             // xrLabel9
             // 
-            this.xrLabel9.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel9.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(11.99957F, 12.00003F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -674,30 +687,17 @@
             // 
             // xrLine2
             // 
-            this.xrLine2.ForeColor = System.Drawing.Color.Maroon;
+            this.xrLine2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 0F);
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.SizeF = new System.Drawing.SizeF(807.9997F, 7.291667F);
             this.xrLine2.StylePriority.UseForeColor = false;
             // 
-            // xrLabel28
-            // 
-            this.xrLabel28.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(9.999975F, 0F);
-            this.xrLabel28.Multiline = true;
-            this.xrLabel28.Name = "xrLabel28";
-            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel28.SizeF = new System.Drawing.SizeF(477.9167F, 23F);
-            this.xrLabel28.StylePriority.UseFont = false;
-            this.xrLabel28.StylePriority.UseTextAlignment = false;
-            this.xrLabel28.Text = "Talebinize istinaden hazırlanmış fiyat teklifimizdir.";
-            this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // xrLabel27
             // 
             this.xrLabel27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Adres]")});
-            this.xrLabel27.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel27.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(11.99957F, 57.99999F);
             this.xrLabel27.Multiline = true;
             this.xrLabel27.Name = "xrLabel27";
@@ -712,7 +712,7 @@
             // 
             this.xrLabel26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ad]")});
-            this.xrLabel26.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel26.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(11.99957F, 35.00001F);
             this.xrLabel26.Multiline = true;
             this.xrLabel26.Name = "xrLabel26";
@@ -745,9 +745,9 @@
             // 
             // xrTableCell7
             // 
-            this.xrTableCell7.BorderColor = System.Drawing.Color.DarkRed;
+            this.xrTableCell7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrTableCell7.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell7.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell7.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorderColor = false;
@@ -764,7 +764,7 @@
             this.xrTableCell9.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
-            this.xrTableCell9.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell9.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
@@ -788,9 +788,9 @@
             // 
             // xrTableCell20
             // 
-            this.xrTableCell20.BorderColor = System.Drawing.Color.DarkRed;
+            this.xrTableCell20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrTableCell20.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell20.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell20.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseBorderColor = false;
@@ -807,7 +807,7 @@
             this.xrTableCell21.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Gecerlilik]")});
-            this.xrTableCell21.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell21.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
@@ -831,9 +831,9 @@
             // 
             // xrTableCell28
             // 
-            this.xrTableCell28.BorderColor = System.Drawing.Color.DarkRed;
+            this.xrTableCell28.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrTableCell28.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell28.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell28.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorderColor = false;
@@ -850,7 +850,7 @@
             this.xrTableCell29.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'SPE-\'+GetYear(Today())+\'-\'+GetMonth(Today())+\'-\'+[TeklifNo]")});
-            this.xrTableCell29.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell29.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell29.Multiline = true;
             this.xrTableCell29.Name = "xrTableCell29";
             this.xrTableCell29.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
@@ -873,9 +873,9 @@
             // 
             // xrTableCell4
             // 
-            this.xrTableCell4.BorderColor = System.Drawing.Color.DarkRed;
+            this.xrTableCell4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrTableCell4.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell4.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell4.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorderColor = false;
@@ -892,7 +892,7 @@
             this.xrTableCell5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField9]")});
-            this.xrTableCell5.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell5.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(7, 7, 0, 0, 100F);
@@ -924,7 +924,7 @@
             // xrTableCell8
             // 
             this.xrTableCell8.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell8.Font = new System.Drawing.Font("Futura Md BT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell8.Font = new System.Drawing.Font("Futura Md BT", 18.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
@@ -1019,7 +1019,7 @@
             // 
             // xrLine1
             // 
-            this.xrLine1.ForeColor = System.Drawing.Color.Maroon;
+            this.xrLine1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 7.8715F);
             this.xrLine1.Name = "xrLine1";
             this.xrLine1.SizeF = new System.Drawing.SizeF(807.9997F, 7.291667F);
@@ -1028,7 +1028,7 @@
             // xrLabel4
             // 
             this.xrLabel4.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel4.ForeColor = System.Drawing.Color.Maroon;
+            this.xrLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(11.99954F, 15.16319F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -1056,7 +1056,7 @@
             // xrLabel11
             // 
             this.xrLabel11.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel11.ForeColor = System.Drawing.Color.Maroon;
+            this.xrLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(490.6894F, 15.16319F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
@@ -1084,7 +1084,7 @@
             // xrLabel13
             // 
             this.xrLabel13.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel13.ForeColor = System.Drawing.Color.Maroon;
+            this.xrLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(498.5487F, 61.16322F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
@@ -1099,7 +1099,7 @@
             // xrLabel14
             // 
             this.xrLabel14.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Bold);
-            this.xrLabel14.ForeColor = System.Drawing.Color.Maroon;
+            this.xrLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(495.7419F, 38.16301F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
@@ -1179,7 +1179,8 @@
             // 
             this.xrTable4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Iskonto]=0,true ,false )")});
-            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(550.0591F, 10.00001F);
+            this.xrTable4.Font = new System.Drawing.Font("Arial", 10F);
+            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(550.0593F, 10.00001F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -1187,6 +1188,7 @@
             this.xrTableRow6,
             this.xrTableRow15});
             this.xrTable4.SizeF = new System.Drawing.SizeF(257.9407F, 75F);
+            this.xrTable4.StylePriority.UseFont = false;
             // 
             // xrTableRow4
             // 
@@ -1198,7 +1200,7 @@
             // 
             // xrTableCell18
             // 
-            this.xrTableCell18.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell18.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseFont = false;
@@ -1211,7 +1213,7 @@
             // 
             this.xrTableCell22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',sumSum([Fiyat]*[Miktar]))+\' \'+[ParaBirimi]")});
-            this.xrTableCell22.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell22.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1234,7 +1236,7 @@
             // 
             // xrTableCell25
             // 
-            this.xrTableCell25.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell25.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.StylePriority.UseFont = false;
@@ -1248,7 +1250,7 @@
             this.xrTableCell26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\', (sumSum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*[KDV]/100 " +
                     ")+\' \'+[ParaBirimi]")});
-            this.xrTableCell26.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell26.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1271,7 +1273,7 @@
             // 
             // xrTableCell27
             // 
-            this.xrTableCell27.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell27.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell27.Multiline = true;
             this.xrTableCell27.Name = "xrTableCell27";
             this.xrTableCell27.StylePriority.UseFont = false;
@@ -1285,7 +1287,7 @@
             this.xrTableCell36.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',(sumSum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*((100+[KDV]" +
                     ")/100) ) +\' \'+[ParaBirimi]")});
-            this.xrTableCell36.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell36.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell36.Multiline = true;
             this.xrTableCell36.Name = "xrTableCell36";
             this.xrTableCell36.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1302,6 +1304,7 @@
             // 
             this.xrTable6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Iskonto]=0,false ,true )")});
+            this.xrTable6.Font = new System.Drawing.Font("Arial", 10F);
             this.xrTable6.LocationFloat = new DevExpress.Utils.PointFloat(550.0592F, 10F);
             this.xrTable6.Name = "xrTable6";
             this.xrTable6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -1311,6 +1314,7 @@
             this.xrTableRow13,
             this.xrTableRow14});
             this.xrTable6.SizeF = new System.Drawing.SizeF(257.9407F, 100F);
+            this.xrTable6.StylePriority.UseFont = false;
             // 
             // xrTableRow11
             // 
@@ -1322,7 +1326,7 @@
             // 
             // xrTableCell13
             // 
-            this.xrTableCell13.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell13.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseFont = false;
@@ -1335,7 +1339,7 @@
             // 
             this.xrTableCell30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',sumSum([Fiyat]*[Miktar]))+\' \'+[ParaBirimi]")});
-            this.xrTableCell30.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell30.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell30.Multiline = true;
             this.xrTableCell30.Name = "xrTableCell30";
             this.xrTableCell30.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1360,7 +1364,7 @@
             // 
             this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Iskonto]")});
-            this.xrTableCell12.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell12.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseFont = false;
@@ -1374,7 +1378,7 @@
             // 
             this.xrTableCell31.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',sumSum([Fiyat]*[Miktar])*[Iskonto]/100\n)+\' \'+[ParaBirimi]")});
-            this.xrTableCell31.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell31.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell31.Multiline = true;
             this.xrTableCell31.Name = "xrTableCell31";
             this.xrTableCell31.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1397,7 +1401,7 @@
             // 
             // xrTableCell32
             // 
-            this.xrTableCell32.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell32.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell32.Multiline = true;
             this.xrTableCell32.Name = "xrTableCell32";
             this.xrTableCell32.StylePriority.UseFont = false;
@@ -1411,7 +1415,7 @@
             this.xrTableCell33.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\', (sumSum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*[KDV]/100 " +
                     ")+\' \'+[ParaBirimi]")});
-            this.xrTableCell33.Font = new System.Drawing.Font("Futura Bk BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell33.Font = new System.Drawing.Font("Futura Bk BT", 10F);
             this.xrTableCell33.Multiline = true;
             this.xrTableCell33.Name = "xrTableCell33";
             this.xrTableCell33.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1434,7 +1438,7 @@
             // 
             // xrTableCell34
             // 
-            this.xrTableCell34.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell34.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell34.Multiline = true;
             this.xrTableCell34.Name = "xrTableCell34";
             this.xrTableCell34.StylePriority.UseFont = false;
@@ -1448,7 +1452,7 @@
             this.xrTableCell35.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0:N}\',(sumSum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*((100+[KDV]" +
                     ")/100) ) +\' \'+[ParaBirimi]")});
-            this.xrTableCell35.Font = new System.Drawing.Font("Futura Md BT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell35.Font = new System.Drawing.Font("Futura Md BT", 10F, System.Drawing.FontStyle.Bold);
             this.xrTableCell35.Multiline = true;
             this.xrTableCell35.Name = "xrTableCell35";
             this.xrTableCell35.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 7, 0, 0, 100F);
@@ -1477,163 +1481,18 @@
             this.GroupFooter1.Name = "GroupFooter1";
             this.GroupFooter1.PrintAtBottom = true;
             // 
-            // xrLabel7
+            // xrLabel10
             // 
-            this.xrLabel7.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(107.0934F, 44.10188F);
-            this.xrLabel7.Multiline = true;
-            this.xrLabel7.Name = "xrLabel7";
-            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(671.8795F, 23F);
-            this.xrLabel7.StylePriority.UseFont = false;
-            this.xrLabel7.StylePriority.UseTextAlignment = false;
-            this.xrLabel7.Text = "Günlük Kur:";
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel6.ForeColor = System.Drawing.Color.Maroon;
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(11.99952F, 44.10188F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(95.09395F, 23F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseForeColor = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Günlük Kur:";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.BorderColor = System.Drawing.Color.Maroon;
-            this.xrLabel3.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel3.ForeColor = System.Drawing.Color.Maroon;
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(9.999975F, 197.7695F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(508.1987F, 23F);
-            this.xrLabel3.StylePriority.UseBorderColor = false;
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseForeColor = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "Banka Hesap Bilgilerimiz";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrRichText1
-            // 
-            this.xrRichText1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(11.99955F, 102.6974F);
-            this.xrRichText1.Name = "xrRichText1";
-            this.xrRichText1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
-            this.xrRichText1.SizeF = new System.Drawing.SizeF(786.0004F, 95.07208F);
-            this.xrRichText1.StylePriority.UseFont = false;
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel2.ForeColor = System.Drawing.Color.DarkRed;
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(11.99955F, 78.35901F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(435.4054F, 23F);
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.StylePriority.UseForeColor = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "Özel Şartlar";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(786.0005F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "Teklifimiz ile ilgili sorularınızı cevaplandırmaya hazır olduğumuzu belirtir, çal" +
-    "ışmalarınızda başarılar dileriz.";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // calculatedField9
-            // 
-            this.calculatedField9.DataMember = "masslab_STeklifListe";
-            this.calculatedField9.Expression = "[masslab].[RootKullanici_Ad]+\' \'+[Soyad]";
-            this.calculatedField9.Name = "calculatedField9";
-            // 
-            // calculatedField10
-            // 
-            this.calculatedField10.DataMember = "masslab_STeklifListe";
-            this.calculatedField10.Expression = "\nFormatString(\'{0:N}\', [Fiyat])+ \' \'+[ParaBirimi]";
-            this.calculatedField10.Name = "calculatedField10";
-            // 
-            // calculatedField11
-            // 
-            this.calculatedField11.DataMember = "masslab_STeklifListe";
-            this.calculatedField11.Expression = "[Kod]+ \' \'+ [Marka]+ \' \'+[masslab].[SStokListe_Ad]";
-            this.calculatedField11.Name = "calculatedField11";
-            // 
-            // calculatedField12
-            // 
-            this.calculatedField12.DataMember = "masslab_STeklifListe";
-            this.calculatedField12.Expression = "[Miktar]+\' \'+[Birim]";
-            this.calculatedField12.Name = "calculatedField12";
-            // 
-            // calculatedField13
-            // 
-            this.calculatedField13.DataMember = "masslab_STeklifListe";
-            this.calculatedField13.Expression = "\nFormatString(\'{0:N}\', (([Fiyat]*[Miktar])))+\' \'+[ParaBirimi]";
-            this.calculatedField13.Name = "calculatedField13";
-            // 
-            // calculatedField14
-            // 
-            this.calculatedField14.DataMember = "masslab_STeklifListe";
-            this.calculatedField14.Expression = "\'İskonto (%\' + [Iskonto]";
-            this.calculatedField14.Name = "calculatedField14";
-            // 
-            // net
-            // 
-            this.net.DataMember = "masslab_STeklifListe";
-            this.net.Expression = "\nFormatString(\'{0:N}\',Sum([Fiyat]*[Miktar]))+\' \'+[ParaBirimi]";
-            this.net.Name = "net";
-            // 
-            // iskontotutar
-            // 
-            this.iskontotutar.DataMember = "masslab_STeklifListe";
-            this.iskontotutar.Expression = "FormatString(\'{0:N}\',Sum([Fiyat]*[Miktar])*[Iskonto]/100\n)+\' \'+[ParaBirimi]";
-            this.iskontotutar.Name = "iskontotutar";
-            // 
-            // kdvyuzde
-            // 
-            this.kdvyuzde.DataMember = "masslab_STeklifListe";
-            this.kdvyuzde.Expression = "[KDV]+\' \'+[ParaBirimi]";
-            this.kdvyuzde.Name = "kdvyuzde";
-            // 
-            // toplamtut
-            // 
-            this.toplamtut.DataMember = "masslab_STeklifListe";
-            this.toplamtut.Expression = "FormatString(\'{0:N}\',(Sum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*((100+[KDV])/1" +
-    "00) ) +\' \'+[ParaBirimi]";
-            this.toplamtut.Name = "toplamtut";
-            // 
-            // totalkdv
-            // 
-            this.totalkdv.DataMember = "masslab_STeklifListe";
-            this.totalkdv.Expression = "\nFormatString(\'{0:N}\', (Sum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*[KDV]/100 )+" +
-    "\' \'+[ParaBirimi]";
-            this.totalkdv.Name = "totalkdv";
-            // 
-            // calculatedField15
-            // 
-            this.calculatedField15.DataMember = "masslab_STeklifListe";
-            this.calculatedField15.Expression = "Sum([Tutar])";
-            this.calculatedField15.Name = "calculatedField15";
+            this.xrLabel10.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(9.999975F, 220.7695F);
+            this.xrLabel10.Multiline = true;
+            this.xrLabel10.Name = "xrLabel10";
+            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(505.5308F, 23F);
+            this.xrLabel10.StylePriority.UseFont = false;
+            this.xrLabel10.StylePriority.UseTextAlignment = false;
+            this.xrLabel10.Text = "Garanti Bankası Ümraniye Sanayi Şubesi";
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrTable7
             // 
@@ -1736,18 +1595,163 @@
             this.xrTableCell41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell41.Weight = 3.9115039062499997D;
             // 
-            // xrLabel10
+            // xrLabel7
             // 
-            this.xrLabel10.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(9.999975F, 220.7695F);
-            this.xrLabel10.Multiline = true;
-            this.xrLabel10.Name = "xrLabel10";
-            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(505.5308F, 23F);
-            this.xrLabel10.StylePriority.UseFont = false;
-            this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "Garanti Bankası Ümraniye Sanayi Şubesi";
-            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel7.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(107.0934F, 44.10188F);
+            this.xrLabel7.Multiline = true;
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(671.8795F, 23F);
+            this.xrLabel7.StylePriority.UseFont = false;
+            this.xrLabel7.StylePriority.UseTextAlignment = false;
+            this.xrLabel7.Text = "Günlük Kur:";
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel6
+            // 
+            this.xrLabel6.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(11.99952F, 44.10188F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(95.09395F, 23F);
+            this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.StylePriority.UseForeColor = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "Günlük Kur:";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.BorderColor = System.Drawing.Color.Maroon;
+            this.xrLabel3.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(9.999975F, 197.7695F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(508.1987F, 23F);
+            this.xrLabel3.StylePriority.UseBorderColor = false;
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseForeColor = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.Text = "Banka Hesap Bilgilerimiz";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrRichText1
+            // 
+            this.xrRichText1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(11.99955F, 102.6974F);
+            this.xrRichText1.Name = "xrRichText1";
+            this.xrRichText1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
+            this.xrRichText1.SizeF = new System.Drawing.SizeF(786.0004F, 95.07208F);
+            this.xrRichText1.StylePriority.UseFont = false;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(42)))), ((int)(((byte)(38)))));
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(11.99955F, 78.35901F);
+            this.xrLabel2.Multiline = true;
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(435.4054F, 23F);
+            this.xrLabel2.StylePriority.UseFont = false;
+            this.xrLabel2.StylePriority.UseForeColor = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "Özel Şartlar";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(786.0005F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "Teklifimiz ile ilgili sorularınızı cevaplandırmaya hazır olduğumuzu belirtir, çal" +
+    "ışmalarınızda başarılar dileriz.";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // calculatedField9
+            // 
+            this.calculatedField9.DataMember = "masslab_STeklifListe";
+            this.calculatedField9.Expression = "[masslab].[RootKullanici_Ad]+\' \'+[Soyad]";
+            this.calculatedField9.Name = "calculatedField9";
+            // 
+            // calculatedField10
+            // 
+            this.calculatedField10.DataMember = "masslab_STeklifListe";
+            this.calculatedField10.Expression = "\nFormatString(\'{0:N}\', [Fiyat])+ \' \'+[ParaBirimi]";
+            this.calculatedField10.Name = "calculatedField10";
+            // 
+            // calculatedField11
+            // 
+            this.calculatedField11.DataMember = "masslab_STeklifListe";
+            this.calculatedField11.Expression = "[Kod]+ \' \'+ [Marka]+ \' \'+[masslab].[SStokListe_Ad]";
+            this.calculatedField11.Name = "calculatedField11";
+            // 
+            // calculatedField12
+            // 
+            this.calculatedField12.DataMember = "masslab_STeklifListe";
+            this.calculatedField12.Expression = "[Miktar]+\' \'+[Birim]";
+            this.calculatedField12.Name = "calculatedField12";
+            // 
+            // calculatedField13
+            // 
+            this.calculatedField13.DataMember = "masslab_STeklifListe";
+            this.calculatedField13.Expression = "\nFormatString(\'{0:N}\', (([Fiyat]*[Miktar])))+\' \'+[ParaBirimi]";
+            this.calculatedField13.Name = "calculatedField13";
+            // 
+            // calculatedField14
+            // 
+            this.calculatedField14.DataMember = "masslab_STeklifListe";
+            this.calculatedField14.Expression = "\'İskonto (%\' + [Iskonto]";
+            this.calculatedField14.Name = "calculatedField14";
+            // 
+            // net
+            // 
+            this.net.DataMember = "masslab_STeklifListe";
+            this.net.Expression = "\nFormatString(\'{0:N}\',Sum([Fiyat]*[Miktar]))+\' \'+[ParaBirimi]";
+            this.net.Name = "net";
+            // 
+            // iskontotutar
+            // 
+            this.iskontotutar.DataMember = "masslab_STeklifListe";
+            this.iskontotutar.Expression = "FormatString(\'{0:N}\',Sum([Fiyat]*[Miktar])*[Iskonto]/100\n)+\' \'+[ParaBirimi]";
+            this.iskontotutar.Name = "iskontotutar";
+            // 
+            // kdvyuzde
+            // 
+            this.kdvyuzde.DataMember = "masslab_STeklifListe";
+            this.kdvyuzde.Expression = "[KDV]+\' \'+[ParaBirimi]";
+            this.kdvyuzde.Name = "kdvyuzde";
+            // 
+            // toplamtut
+            // 
+            this.toplamtut.DataMember = "masslab_STeklifListe";
+            this.toplamtut.Expression = "FormatString(\'{0:N}\',(Sum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*((100+[KDV])/1" +
+    "00) ) +\' \'+[ParaBirimi]";
+            this.toplamtut.Name = "toplamtut";
+            // 
+            // totalkdv
+            // 
+            this.totalkdv.DataMember = "masslab_STeklifListe";
+            this.totalkdv.Expression = "\nFormatString(\'{0:N}\', (Sum([Fiyat]*[Miktar])*((100-[Iskonto])/100))*[KDV]/100 )+" +
+    "\' \'+[ParaBirimi]";
+            this.totalkdv.Name = "totalkdv";
+            // 
+            // calculatedField15
+            // 
+            this.calculatedField15.DataMember = "masslab_STeklifListe";
+            this.calculatedField15.Expression = "Sum([Tutar])";
+            this.calculatedField15.Name = "calculatedField15";
             // 
             // TeklifMS
             // 
@@ -1800,8 +1804,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
