@@ -678,9 +678,9 @@ namespace mROOT._8.Spektrotek
 
 
                     MessageBox.Show("Kaydetme işlemi başarılı. Teklifinizin yazdırılması için bekleyiniz.");
-                    this.Close();
+                    
 
-                    yazdir();
+                    yazdir(); this.Close();
                 }
 
 
