@@ -27,7 +27,9 @@ namespace mROOT._8.Spektrotek
         void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select ID, TeklifNo from STeklifListe where Durum = 'Aktif' order by ID desc", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select t.ID, t.TeklifNo, f.Ad from STeklifListe t
+            left join RootTedarikci f on t.FirmaID = f.ID 
+            where t.Durum = 'Aktif' order by ID desc", bgl.baglanti());
             da2.Fill(dt2);
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "TeklifNo";

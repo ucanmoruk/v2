@@ -836,6 +836,16 @@ namespace mKYS
                 sno.Show();
             }
         }
+        mROOT._8.Spektrotek.STalepDetay tade;
+        private void barButtonItem95_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tade == null || tade.IsDisposed)
+            {
+                tade = new mROOT._8.Spektrotek.STalepDetay();
+                tade.MdiParent = this;
+                tade.Show();
+            }
+        }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
