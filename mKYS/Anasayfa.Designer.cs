@@ -128,6 +128,7 @@
             this.barButtonItem92 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem93 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem94 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -181,7 +182,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
+            this.dprice = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -293,9 +294,10 @@
             this.barButtonItem92,
             this.barButtonItem93,
             this.barButtonItem94,
-            this.barButtonItem95});
+            this.barButtonItem95,
+            this.dprice});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 99;
+            this.ribbonControl1.MaxItemId = 100;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage8,
@@ -1159,6 +1161,15 @@
             this.barButtonItem94.Name = "barButtonItem94";
             this.barButtonItem94.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem94_ItemClick);
             // 
+            // barButtonItem95
+            // 
+            this.barButtonItem95.Caption = "Detay Liste";
+            this.barButtonItem95.Id = 98;
+            this.barButtonItem95.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem95.ImageOptions.Image")));
+            this.barButtonItem95.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem95.ImageOptions.LargeImage")));
+            this.barButtonItem95.Name = "barButtonItem95";
+            this.barButtonItem95.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem95_ItemClick);
+            // 
             // ribbonPage8
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1509,6 +1520,7 @@
             // 
             this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem82);
             this.ribbonPageGroup33.ItemLinks.Add(this.barButtonItem83);
+            this.ribbonPageGroup33.ItemLinks.Add(this.dprice);
             this.ribbonPageGroup33.Name = "ribbonPageGroup33";
             this.ribbonPageGroup33.Text = "ribbonPageGroup33";
             // 
@@ -1558,14 +1570,14 @@
             this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
             this.barButtonItem26.Name = "barButtonItem26";
             // 
-            // barButtonItem95
+            // dprice
             // 
-            this.barButtonItem95.Caption = "Detay Liste";
-            this.barButtonItem95.Id = 98;
-            this.barButtonItem95.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem95.ImageOptions.Image")));
-            this.barButtonItem95.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem95.ImageOptions.LargeImage")));
-            this.barButtonItem95.Name = "barButtonItem95";
-            this.barButtonItem95.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem95_ItemClick);
+            this.dprice.Caption = "Distributor Fiyat Listesi";
+            this.dprice.Id = 99;
+            this.dprice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem96.ImageOptions.Image")));
+            this.dprice.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem96.ImageOptions.LargeImage")));
+            this.dprice.Name = "dprice";
+            this.dprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dprice_ItemClick);
             // 
             // Anasayfa
             // 
@@ -1747,6 +1759,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup37;
         private DevExpress.XtraBars.BarButtonItem barButtonItem94;
         private DevExpress.XtraBars.BarButtonItem barButtonItem95;
+        private DevExpress.XtraBars.BarButtonItem dprice;
     }
 }
 

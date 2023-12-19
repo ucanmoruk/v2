@@ -210,7 +210,7 @@ namespace mKYS
                 barButtonItem75.Visibility = BarItemVisibility.Always;
                 barButtonItem76.Visibility = BarItemVisibility.Always;
             }
-            else if (kullanici == "2003" || kullanici == "2004" || kullanici == "2005")
+            else if (kullanici == "2003" || kullanici == "2005")
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
@@ -218,7 +218,18 @@ namespace mKYS
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
-
+                dprice.Visibility = BarItemVisibility.Always;
+                Text = "SPEKTROTEK Yönetim Sistemi";
+            }
+            else if (kullanici == "2004")
+            {
+                ribbonPage7.Visible = false;
+                ribbonPage1.Visible = false;
+                ribbonPage2.Visible = false;
+                ribbonPage3.Visible = false;
+                ribbonPage5.Visible = false;
+                ribbonPage10.Visible = false;
+                dprice.Visibility = BarItemVisibility.Never;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }
 
@@ -844,6 +855,16 @@ namespace mKYS
                 tade = new mROOT._8.Spektrotek.STalepDetay();
                 tade.MdiParent = this;
                 tade.Show();
+            }
+        }
+        mROOT._8.Spektrotek.SDistributor sdis;
+        private void dprice_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (sdis == null || sdis.IsDisposed)
+            {
+                sdis = new mROOT._8.Spektrotek.SDistributor();
+                sdis.MdiParent = this;
+                sdis.Show();
             }
         }
 

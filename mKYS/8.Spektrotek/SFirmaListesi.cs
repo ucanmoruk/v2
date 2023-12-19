@@ -33,7 +33,7 @@ namespace mROOT._8.Spektrotek
             where Durum = 'Aktif' and Kimin = 'Spektrotek' order by Ad", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
-            gridView1.Columns["ID"].Visible = false;
+          //  gridView1.Columns["ID"].Visible = false;
             this.gridView1.Columns[0].Width = 55;
             this.gridView1.Columns[1].Width = 125;
             this.gridView1.Columns[2].Width = 125;

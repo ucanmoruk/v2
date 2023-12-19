@@ -176,6 +176,12 @@
     <Compile Include="8.Spektrotek\SFaturaNo.Designer.cs">
       <DependentUpon>SFaturaNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="8.Spektrotek\SDistributor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8.Spektrotek\SDistributor.Designer.cs">
+      <DependentUpon>SDistributor.cs</DependentUpon>
+    </Compile>
     <Compile Include="8.Spektrotek\STalepDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -795,6 +801,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="8.Spektrotek\SFaturaNo.resx">
       <DependentUpon>SFaturaNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8.Spektrotek\SDistributor.resx">
+      <DependentUpon>SDistributor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="8.Spektrotek\STalepDetay.resx">
       <DependentUpon>STalepDetay.cs</DependentUpon>
