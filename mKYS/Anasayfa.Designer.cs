@@ -129,6 +129,7 @@
             this.barButtonItem93 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem94 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem95 = new DevExpress.XtraBars.BarButtonItem();
+            this.dprice = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -182,7 +183,11 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.dprice = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage11 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup30 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup38 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem96 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem97 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -295,14 +300,17 @@
             this.barButtonItem93,
             this.barButtonItem94,
             this.barButtonItem95,
-            this.dprice});
+            this.dprice,
+            this.barButtonItem96,
+            this.barButtonItem97});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 100;
+            this.ribbonControl1.MaxItemId = 102;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage8,
             this.ribbonPage4,
             this.ribbonPage7,
+            this.ribbonPage11,
             this.ribbonPage10,
             this.ribbonPage6,
             this.ribbonPage1,
@@ -1170,6 +1178,15 @@
             this.barButtonItem95.Name = "barButtonItem95";
             this.barButtonItem95.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem95_ItemClick);
             // 
+            // dprice
+            // 
+            this.dprice.Caption = "Distributor Fiyat Listesi";
+            this.dprice.Id = 99;
+            this.dprice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dprice.ImageOptions.Image")));
+            this.dprice.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("dprice.ImageOptions.LargeImage")));
+            this.dprice.Name = "dprice";
+            this.dprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dprice_ItemClick);
+            // 
             // ribbonPage8
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1269,8 +1286,6 @@
             // 
             // ribbonPageGroup21
             // 
-            this.ribbonPageGroup21.ItemLinks.Add(this.barButtonItem90);
-            this.ribbonPageGroup21.ItemLinks.Add(this.barButtonItem91);
             this.ribbonPageGroup21.Name = "ribbonPageGroup21";
             this.ribbonPageGroup21.Text = "ribbonPageGroup21";
             // 
@@ -1570,14 +1585,43 @@
             this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
             this.barButtonItem26.Name = "barButtonItem26";
             // 
-            // dprice
+            // ribbonPage11
             // 
-            this.dprice.Caption = "Distributor Fiyat Listesi";
-            this.dprice.Id = 99;
-            this.dprice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem96.ImageOptions.Image")));
-            this.dprice.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem96.ImageOptions.LargeImage")));
-            this.dprice.Name = "dprice";
-            this.dprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dprice_ItemClick);
+            this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup38,
+            this.ribbonPageGroup30});
+            this.ribbonPage11.Name = "ribbonPage11";
+            this.ribbonPage11.Text = "ÜGDR";
+            // 
+            // ribbonPageGroup30
+            // 
+            this.ribbonPageGroup30.ItemLinks.Add(this.barButtonItem90);
+            this.ribbonPageGroup30.ItemLinks.Add(this.barButtonItem91);
+            this.ribbonPageGroup30.Name = "ribbonPageGroup30";
+            this.ribbonPageGroup30.Text = "ribbonPageGroup30";
+            // 
+            // ribbonPageGroup38
+            // 
+            this.ribbonPageGroup38.ItemLinks.Add(this.barButtonItem96);
+            this.ribbonPageGroup38.ItemLinks.Add(this.barButtonItem97);
+            this.ribbonPageGroup38.Name = "ribbonPageGroup38";
+            this.ribbonPageGroup38.Text = "ribbonPageGroup38";
+            // 
+            // barButtonItem96
+            // 
+            this.barButtonItem96.Caption = "Ürün Listesi";
+            this.barButtonItem96.Id = 100;
+            this.barButtonItem96.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem96.ImageOptions.Image")));
+            this.barButtonItem96.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem96.ImageOptions.LargeImage")));
+            this.barButtonItem96.Name = "barButtonItem96";
+            // 
+            // barButtonItem97
+            // 
+            this.barButtonItem97.Caption = "Yeni Ürün";
+            this.barButtonItem97.Id = 101;
+            this.barButtonItem97.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem97.ImageOptions.Image")));
+            this.barButtonItem97.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem97.ImageOptions.LargeImage")));
+            this.barButtonItem97.Name = "barButtonItem97";
             // 
             // Anasayfa
             // 
@@ -1760,6 +1804,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem94;
         private DevExpress.XtraBars.BarButtonItem barButtonItem95;
         private DevExpress.XtraBars.BarButtonItem dprice;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup38;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup30;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem96;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem97;
     }
 }
 

@@ -1417,6 +1417,7 @@
             this.xrRichText6,
             this.xrLabel16,
             this.xrLabel17});
+            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 610.7893F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -2340,6 +2341,7 @@
             this.xrRichText7,
             this.xrLabel19,
             this.xrLabel20});
+            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 741.7785F;
             this.GroupHeader4.Name = "GroupHeader4";
             // 

@@ -218,6 +218,7 @@ namespace mKYS
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
+                ribbonPage11.Visible = false;
                 dprice.Visibility = BarItemVisibility.Always;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }
@@ -229,6 +230,7 @@ namespace mKYS
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
+                ribbonPage11.Visible = false;
                 dprice.Visibility = BarItemVisibility.Never;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }

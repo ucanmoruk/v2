@@ -24,7 +24,7 @@ namespace mROOT._8.Spektrotek
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select t.Ad, s.Marka, s.Kategori, S.CatNo, s.Name, s.Description,
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select t.Ad as 'Firma', s.Marka, s.Kategori, S.CatNo, s.Name, s.Description,
             CONCAT(S.Price,' ',s.ParaBirimi) as 'Price', S.Discount, CONCAT(s.DPrice ,' ',s.ParaBirimi) as 'Distributor Price'   
             from SDistributor s 
             left join RootTedarikci t on s.FirmaID = t.ID
@@ -227,10 +227,15 @@ namespace mROOT._8.Spektrotek
             //stok düş
         }
 
-        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        private void gridView1_RowCellStyle_1(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             if (e.Column.FieldName == "CatNo" || e.Column.FieldName == "Discount" || e.Column.FieldName == "Distributor Price" || e.Column.FieldName == "Price")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+        }
+
+        private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+         
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
