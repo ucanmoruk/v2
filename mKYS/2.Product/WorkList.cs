@@ -109,11 +109,9 @@ namespace mROOT._2.Product
 
             //}
             //yazdırma
-            mROOT.Raporlar.UGD1.tID = "1";
-            mROOT.Raporlar.UGD1 report1 = new mROOT.Raporlar.XtraReport11();
-            report1.bilgi();
-            report1.CreateDocument();
-            report1.ShowPreviewDialog();
+
+           
+            
 
         }
 

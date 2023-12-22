@@ -39,7 +39,7 @@ namespace mKYS
         private void detaybul()
         {
             SqlCommand komut2 = new SqlCommand(@"Select Mix, GenelAd, InciAd, CasNo, EcNo, Fonksiyon, 
-            Yonetmelik, Noael, Fizikokimya, Toksikoloji, Kaynak from rHammadde 
+            Yonetmelik, Noael2, Fizikokimya, Toksikoloji, Kaynak from rHammadde 
             where ID = N'" + hID + "' ", bgl.baglanti());
             SqlDataReader dr2 = komut2.ExecuteReader();
             while (dr2.Read())
@@ -51,7 +51,7 @@ namespace mKYS
                 txten.Text = dr2["EcNo"].ToString();
                 memofonk.Text = dr2["Fonksiyon"].ToString();
                 txtyonetmeli.Text = dr2["Yonetmelik"].ToString();
-                txtnoel.Text = dr2["Noael"].ToString();
+                txtnoel.Text = dr2["Noael2"].ToString();
                 memo_fiziko.Text = dr2["Fizikokimya"].ToString();
                 memo_toksi.Text = dr2["Toksikoloji"].ToString();
                 txtkaynak.Text = dr2["Kaynak"].ToString();
@@ -66,7 +66,7 @@ namespace mKYS
             try
             {
                 SqlCommand add = new SqlCommand(@"insert into rHammadde 
-                (Mix, GenelAd, InciAd, CasNo, EcNo, Fonksiyon, Yonetmelik, Noael, Fizikokimya, Toksikoloji, Kaynak, Durum) 
+                (Mix, GenelAd, InciAd, CasNo, EcNo, Fonksiyon, Yonetmelik, Noael2, Fizikokimya, Toksikoloji, Kaynak, Durum) 
                 values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", combo_tur.Text);
                 add.Parameters.AddWithValue("@a2", txtad.Text);
@@ -94,7 +94,7 @@ namespace mKYS
         {
             SqlCommand add = new SqlCommand(@"update rHammadde 
             set Mix=@a1, GenelAd=@a2, InciAd=@a3, CasNo=@a4, EcNo=@a5, Fonksiyon=@a6, 
-            Yonetmelik=@a7, Noael=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 
+            Yonetmelik=@a7, Noael2=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 
             where ID = '"+hID+"' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", combo_tur.Text);
             add.Parameters.AddWithValue("@a2", txtad.Text);

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using DevExpress.XtraReports.UI;
 
 namespace mKYS
 {
@@ -25,7 +25,7 @@ namespace mKYS
         {
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter(@"select Mix, GenelAd, InciAd, CasNo, 
-            EcNo, Fonksiyon, Yonetmelik, Noael, Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
+            EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
             where Durum = N'Aktif' order by InciAd", bgl.baglanti());
 
             da2.Fill(dt2);
@@ -191,13 +191,38 @@ namespace mKYS
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("İş buraya kadar geldiyse artık etiket tanımlamak farz olmuştur!");
+            // MessageBox.Show("İş buraya kadar geldiyse artık etiket tanımlamak farz olmuştur!");
             //Raporlar.KimyasalEtiket.sTur = "CRM";
             //using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
             //{
             //    frm.KimyasalEtiket();
             //    frm.ShowDialog();
             //}
+            mKYS.Raporlar.UGD1.tID = "1";
+            mROOT.Raporlar.UGD2.tID = "1";
+            mROOT.Raporlar.UGD3.tID = "1";
+            mKYS.Raporlar.UGD4.tID = "1";
+           // name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+            // frmPrint.name = nkrno + " - " + name;
+
+            mKYS.Raporlar.UGD1 report1 = new mKYS.Raporlar.UGD1();
+            report1.bilgi();
+          //  report1.Name = nkrno + " - " + name;
+            report1.CreateDocument();
+            mROOT.Raporlar.UGD2 report2 = new mROOT.Raporlar.UGD2();
+            report2.bilgi();
+            report2.CreateDocument();
+            mROOT.Raporlar.UGD3 report3 = new mROOT.Raporlar.UGD3();
+            report3.bilgi();
+            report3.CreateDocument();
+            mKYS.Raporlar.UGD4 report4 = new mKYS.Raporlar.UGD4();
+            report4.bilgi();
+            report4.CreateDocument();
+            report1.Pages.AddRange(report2.Pages);
+            report1.Pages.AddRange(report3.Pages);
+            report1.Pages.AddRange(report4.Pages);
+            report1.PrintingSystem.ContinuousPageNumbering = true;
+            report1.ShowPreviewDialog();
         }
 
         private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -221,7 +246,7 @@ namespace mKYS
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "Noael" )
+            if (e.Column.FieldName == "Noael2" )
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 

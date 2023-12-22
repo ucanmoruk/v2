@@ -3153,6 +3153,7 @@
             this.pID.AllowNull = true;
             this.pID.Description = "pID";
             this.pID.Name = "pID";
+            this.pID.Visible = false;
             // 
             // UGD1
             // 
