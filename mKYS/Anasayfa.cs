@@ -832,7 +832,7 @@ namespace mKYS
         mROOT._8.Spektrotek.Detay det;
         private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (det == null || lil.IsDisposed)
+            if (det == null || det.IsDisposed)
             {
                 det = new mROOT._8.Spektrotek.Detay();
                 det.MdiParent = this;

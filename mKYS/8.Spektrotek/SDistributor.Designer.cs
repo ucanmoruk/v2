@@ -219,7 +219,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.KeyPreview = true;
             this.Name = "SDistributor";
-            this.Text = "Stok Listesi";
+            this.Text = "Distribütör Fiyat Listesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.StokListesi_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StokListesi_KeyDown);

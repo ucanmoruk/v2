@@ -6,12 +6,18 @@ using DevExpress.XtraReports.UI;
 
 namespace mROOT.Raporlar
 {
-    public partial class XtraReport11 : DevExpress.XtraReports.UI.XtraReport
+    public partial class UGD3 : DevExpress.XtraReports.UI.XtraReport
     {
-        public XtraReport11()
+        public UGD3()
         {
             InitializeComponent();
         }
+        public static string tID;
 
+
+        public void bilgi()
+        {
+            pID.Value = tID;
+        }
     }
 }

@@ -236,6 +236,12 @@
     <Compile Include="8.Spektrotek\SStokListesi.Designer.cs">
       <DependentUpon>SStokListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="9.UGDR\uListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="9.UGDR\uListe.designer.cs">
+      <DependentUpon>uListe.cs</DependentUpon>
+    </Compile>
     <Compile Include="9.UGDR\uYeni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,11 +260,29 @@
     <Compile Include="Raporlar\TeklifMS.designer.cs">
       <DependentUpon>TeklifMS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\XtraReport11.cs">
+    <Compile Include="Raporlar\UGD4.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\XtraReport11.Designer.cs">
-      <DependentUpon>XtraReport11.cs</DependentUpon>
+    <Compile Include="Raporlar\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
     </Compile>
     <Compile Include="ÇöpKutusu\NKRList.cs">
       <SubType>Form</SubType>
@@ -844,6 +868,9 @@
     <EmbeddedResource Include="8.Spektrotek\SStokListesi.resx">
       <DependentUpon>SStokListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="9.UGDR\uListe.resx">
+      <DependentUpon>uListe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\uYeni.resx">
       <DependentUpon>uYeni.cs</DependentUpon>
     </EmbeddedResource>
@@ -854,8 +881,17 @@
     <EmbeddedResource Include="Raporlar\TeklifMS.resx">
       <DependentUpon>TeklifMS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\XtraReport11.resx">
-      <DependentUpon>XtraReport11.cs</DependentUpon>
+    <EmbeddedResource Include="Raporlar\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ÇöpKutusu\NKRYeni.resx">
       <DependentUpon>NKRYeni.cs</DependentUpon>

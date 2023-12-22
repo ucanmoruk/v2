@@ -546,7 +546,7 @@ namespace mROOT._8.Spektrotek
         {
            // string onem = gridView1.GetRowCellValue(e.RowHandle, "Onem").ToString();
             string durum = gridView1.GetRowCellValue(e.RowHandle, "Durum").ToString();
-            string odeme = gridView1.GetRowCellValue(e.RowHandle, "Odeme").ToString();
+         //   string odeme = gridView1.GetRowCellValue(e.RowHandle, "Odeme").ToString();
             //if (e.RowHandle > -1 && e.Column.FieldName == "Onem" && onem == "Yüksek")
             //    e.Appearance.BackColor = Color.OrangeRed;
             //else if (e.RowHandle > -1 && e.Column.FieldName == "Onem" && onem == "Orta")

@@ -94,21 +94,26 @@ namespace mROOT._2.Product
         string id, nkrno, name;
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
-            {
-                id = gridView3.GetSelectedRows()[i].ToString();
-                int y = Convert.ToInt32(id);
-                nkrno = gridView3.GetRowCellValue(y, "RaporNo").ToString();
-                mKYS.Raporlar.Dermatological.raporno = nkrno;
-                name = gridView3.GetRowCellValue(y, "Numune").ToString();            
-                mKYS.Raporlar.Dermatological report1 = new mKYS.Raporlar.Dermatological();
-                report1.bilgi();
-                report1.Name = nkrno + " - " + name;
-                report1.CreateDocument();             
-                report1.ShowPreviewDialog();
+            //for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            //{
+            //    id = gridView3.GetSelectedRows()[i].ToString();
+            //    int y = Convert.ToInt32(id);
+            //    nkrno = gridView3.GetRowCellValue(y, "RaporNo").ToString();
+            //    mKYS.Raporlar.Dermatological.raporno = nkrno;
+            //    name = gridView3.GetRowCellValue(y, "Numune").ToString();            
+            //    mKYS.Raporlar.Dermatological report1 = new mKYS.Raporlar.Dermatological();
+            //    report1.bilgi();
+            //    report1.Name = nkrno + " - " + name;
+            //    report1.CreateDocument();             
+            //    report1.ShowPreviewDialog();
 
-            }
-
+            //}
+            //yazdırma
+            mROOT.Raporlar.UGD1.tID = "1";
+            mROOT.Raporlar.UGD1 report1 = new mROOT.Raporlar.XtraReport11();
+            report1.bilgi();
+            report1.CreateDocument();
+            report1.ShowPreviewDialog();
 
         }
 
