@@ -832,12 +832,9 @@ namespace mKYS
         mROOT._8.Spektrotek.Detay det;
         private void barButtonItem81_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (det == null || det.IsDisposed)
-            {
-                det = new mROOT._8.Spektrotek.Detay();
-                det.MdiParent = this;
-                det.Show();
-            }
+            det = new mROOT._8.Spektrotek.Detay();
+            det.MdiParent = this;
+            det.Show();
         }
         mROOT._8.Spektrotek.SNotlar sno;
         private void barButtonItem94_ItemClick(object sender, ItemClickEventArgs e)
@@ -868,6 +865,32 @@ namespace mKYS
                 sdis.MdiParent = this;
                 sdis.Show();
             }
+        }
+        mROOT._9.UGDR.uRegulation yonet;
+        private void barButtonItem98_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (yonet == null || yonet.IsDisposed)
+            {
+                yonet = new mROOT._9.UGDR.uRegulation();
+                yonet.MdiParent = this;
+                yonet.Show();
+            }
+        }
+        mROOT._9.UGDR.uListe ulis;
+        private void barButtonItem96_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ulis == null || ulis.IsDisposed)
+            {
+                ulis = new mROOT._9.UGDR.uListe();
+                ulis.MdiParent = this;
+                ulis.Show();
+            }
+        }
+
+        private void barButtonItem97_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._9.UGDR.uYeni yeni= new mROOT._9.UGDR.uYeni();
+            yeni.Show();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

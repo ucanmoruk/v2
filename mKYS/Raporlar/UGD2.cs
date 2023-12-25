@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 
-namespace mROOT.Raporlar
+namespace mKYS.Raporlar
 {
     public partial class UGD2 : DevExpress.XtraReports.UI.XtraReport
     {

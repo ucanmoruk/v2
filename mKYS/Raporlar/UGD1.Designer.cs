@@ -499,7 +499,9 @@
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(45.79688F, 22.99999F);
             this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "Sayfa:";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrPageInfo1
             // 
@@ -507,6 +509,7 @@
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(712.2711F, 9.999989F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
+            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.Number;
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(30.72888F, 23F);
             this.xrPageInfo1.StylePriority.UseFont = false;
             this.xrPageInfo1.StylePriority.UsePadding = false;
@@ -659,6 +662,7 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
+            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 950.0334F;
             this.GroupHeader1.Level = 3;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -1800,7 +1804,6 @@
             this.xrLabel32,
             this.xrLabel30,
             this.xrLabel31});
-            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 1313.917F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";

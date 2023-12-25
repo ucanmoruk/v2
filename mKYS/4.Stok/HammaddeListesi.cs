@@ -198,31 +198,31 @@ namespace mKYS
             //    frm.KimyasalEtiket();
             //    frm.ShowDialog();
             //}
-            mKYS.Raporlar.UGD1.tID = "1";
-            mROOT.Raporlar.UGD2.tID = "1";
-            mROOT.Raporlar.UGD3.tID = "1";
-            mKYS.Raporlar.UGD4.tID = "1";
+            //mKYS.Raporlar.UGD1.tID = "1";
+            //mKYS.Raporlar.UGD2.tID = "1";
+            //mKYS.Raporlar.UGD3.tID = "1";
+            //mKYS.Raporlar.UGD4.tID = "1";
            // name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
             // frmPrint.name = nkrno + " - " + name;
 
-            mKYS.Raporlar.UGD1 report1 = new mKYS.Raporlar.UGD1();
-            report1.bilgi();
-          //  report1.Name = nkrno + " - " + name;
-            report1.CreateDocument();
-            mROOT.Raporlar.UGD2 report2 = new mROOT.Raporlar.UGD2();
-            report2.bilgi();
-            report2.CreateDocument();
-            mROOT.Raporlar.UGD3 report3 = new mROOT.Raporlar.UGD3();
-            report3.bilgi();
-            report3.CreateDocument();
-            mKYS.Raporlar.UGD4 report4 = new mKYS.Raporlar.UGD4();
-            report4.bilgi();
-            report4.CreateDocument();
-            report1.Pages.AddRange(report2.Pages);
-            report1.Pages.AddRange(report3.Pages);
-            report1.Pages.AddRange(report4.Pages);
-            report1.PrintingSystem.ContinuousPageNumbering = true;
-            report1.ShowPreviewDialog();
+          //  mKYS.Raporlar.UGD1 report1 = new mKYS.Raporlar.UGD1();
+          //  report1.bilgi();
+          ////  report1.Name = nkrno + " - " + name;
+          //  report1.CreateDocument();
+          //  mROOT.Raporlar.UGD2 report2 = new mROOT.Raporlar.UGD2();
+          //  report2.bilgi();
+          //  report2.CreateDocument();
+          //  mROOT.Raporlar.UGD3 report3 = new mROOT.Raporlar.UGD3();
+          //  report3.bilgi();
+          //  report3.CreateDocument();
+          //  mKYS.Raporlar.UGD4 report4 = new mKYS.Raporlar.UGD4();
+          //  report4.bilgi();
+          //  report4.CreateDocument();
+          //  report1.Pages.AddRange(report2.Pages);
+          //  report1.Pages.AddRange(report3.Pages);
+          //  report1.Pages.AddRange(report4.Pages);
+          //  report1.PrintingSystem.ContinuousPageNumbering = true;
+          //  report1.ShowPreviewDialog();
         }
 
         private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

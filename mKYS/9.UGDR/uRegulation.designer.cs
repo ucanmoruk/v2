@@ -1,6 +1,6 @@
 ﻿namespace mROOT._9.UGDR
 {
-    partial class uListe
+    partial class uRegulation
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uListe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uRegulation));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -79,6 +79,7 @@
             this.gridView1.OptionsFind.ShowSearchNavButtons = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
@@ -250,7 +251,7 @@
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // uListe
+            // uRegulation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,9 +261,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "uListe";
+            this.Name = "uRegulation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ürün Listesi";
+            this.Text = "Yönetmelik Ekleri";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Liste_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Liste_KeyDown);
