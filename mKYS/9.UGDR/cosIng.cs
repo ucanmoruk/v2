@@ -178,7 +178,7 @@ namespace mROOT._9.UGDR
         {
             IWebDriver driver = new ChromeDriver();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            for (int i = 31464; i < 40000; i++)
+            for (int i = 37532; i < 40000; i++)
             {
                 try
                 {
@@ -226,10 +226,11 @@ namespace mROOT._9.UGDR
                 }
                 catch (Exception ex)
                 {
-                    SqlCommand komutz = new SqlCommand(@"insert into rCosingHata (Detay, Hata) values 
-                            (@a1, @a2) ", bgl.baglanti());
+                    SqlCommand komutz = new SqlCommand(@"insert into rCosingHata (Detay, Hata, Tarih) values 
+                            (@a1, @a2, @a3) ", bgl.baglanti());
                     komutz.Parameters.AddWithValue("@a1", i);
                     komutz.Parameters.AddWithValue("@a2", ex.Message);
+                    komutz.Parameters.AddWithValue("@a3", DateTime.Now);
                     komutz.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
@@ -250,7 +251,7 @@ namespace mROOT._9.UGDR
         {
             IWebDriver driver = new ChromeDriver();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            for (int i = 31364; i < 31365; i++)
+            for (int i = 31922; i < 31365; i++)
             {
                 
                     link = "https://ec.europa.eu/growth/tools-databases/cosing/details/" + i;
