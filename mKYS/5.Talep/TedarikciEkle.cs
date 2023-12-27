@@ -96,8 +96,10 @@ namespace mKYS.Talep
                 add.Parameters.AddWithValue("@a13", txt_vno.Text);
                 if(kimin == null || kimin == "")
                     add.Parameters.AddWithValue("@a14", "Root");
-                else
+                else if(kimin=="Spektrotek")
                     add.Parameters.AddWithValue("@a14", "Spektrotek");
+                else
+                    add.Parameters.AddWithValue("@a14", "Ozeco");
                 add.Parameters.AddWithValue("@a15", memoEdit1.Text);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -124,7 +126,7 @@ namespace mKYS.Talep
             }
             else
             {
-                MessageBox.Show("Bu firma daha önce kaydedilmiş olabilir. Bir kontrol edebilir misiniz ? ", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Bir yerde hata var. Bir yöneticiye danışabilir misiniz ? ", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
 

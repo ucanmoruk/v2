@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
-
+using mROOT.Raporlar;
 namespace mKYS.Raporlar
 {
     public partial class frmPrint : DevExpress.XtraEditors.XtraForm
@@ -159,6 +159,20 @@ namespace mKYS.Raporlar
             }
     
             documentViewer1.DocumentSource = rapor;
+        }
+
+        public void CosIng()
+        {
+
+            mROOT.Raporlar.CosIng rapor = new mROOT.Raporlar.CosIng();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
         }
 
 

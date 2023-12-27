@@ -24,26 +24,25 @@ namespace mKYS
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select Mix, GenelAd, InciAd, CasNo, 
-            EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
-            where Durum = N'Aktif' order by InciAd", bgl.baglanti());
-
+            //SqlDataAdapter da2 = new SqlDataAdapter(@"select Mix, GenelAd, InciAd, CasNo, 
+            //EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
+            //where Durum = N'Aktif' order by InciAd", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select h.GenelAd, c.INCIName, SUBSTRING(Link,60,69) as 'CosIng ID', c.Cas, h.Noael2, h.Fizikokimya, h.Toksikoloji, h.Kaynak, h.EkBilgi, c.ID from rHammadde h 
+			left join rCosing c on h.InciAd = c.INCIName where h.Durum = 'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
             gridView1.Columns["ID"].Visible = false;
 
-            this.gridView1.Columns[0].Width = 50;
+            this.gridView1.Columns[0].Width = 100;
             this.gridView1.Columns[1].Width = 120;
-            this.gridView1.Columns[2].Width = 120;
-            this.gridView1.Columns[3].Width = 95;
-            this.gridView1.Columns[4].Width = 95;
-            this.gridView1.Columns[5].Width = 95;
-            this.gridView1.Columns[6].Width = 50;
-            this.gridView1.Columns[7].Width = 50;
-            this.gridView1.Columns[8].Width = 75;
-            this.gridView1.Columns[9].Width = 75;
-            this.gridView1.Columns[10].Width = 75;
+            this.gridView1.Columns[2].Width = 60;
+            this.gridView1.Columns[3].Width = 80;
+            this.gridView1.Columns[4].Width = 60;
+            this.gridView1.Columns[5].Width = 100;
+            this.gridView1.Columns[6].Width = 100;
+            this.gridView1.Columns[7].Width = 90;
+            this.gridView1.Columns[8].Width = 90;
 
         }
 
@@ -61,7 +60,7 @@ namespace mKYS
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
                 did = dr["ID"].ToString();
-                YeniHammadde.hID = did;
+                YeniHammadde.ID = did;
                 YeniHammadde sd = new YeniHammadde();
                 sd.Show();
             }
@@ -143,7 +142,7 @@ namespace mKYS
             try
             {
                 DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-                skod = dr["InciAd"].ToString();
+                skod = dr["INCIName"].ToString();
                 id = dr["ID"].ToString();
              }
             catch (Exception)
@@ -157,7 +156,7 @@ namespace mKYS
         {
             try
             {
-                YeniHammadde.hID = id;
+                YeniHammadde.ID = id;
                 YeniHammadde sd = new YeniHammadde();
                 sd.Show();
             }
@@ -229,24 +228,24 @@ namespace mKYS
         {
             //stok hareketleri
 
-            StokHareket.urunkod = id;
-            StokHareket sd = new StokHareket();
-            sd.Show();
+            //StokHareket.urunkod = id;
+            //StokHareket sd = new StokHareket();
+            //sd.Show();
         }
 
         private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // hammadde reçetesi
 
-            Stok.HammaddeUGDMix.hID = id;
-            Stok.HammaddeUGDMix hm = new Stok.HammaddeUGDMix();
-            hm.Show();
+            //Stok.HammaddeUGDMix.hID = id;
+            //Stok.HammaddeUGDMix hm = new Stok.HammaddeUGDMix();
+            //hm.Show();
 
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "Noael2" )
+            if (e.Column.FieldName == "Noael2" || e.Column.FieldName == "CosIng ID")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 

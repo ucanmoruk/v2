@@ -22,7 +22,7 @@ namespace mKYS
 
         private void temizle()
         {
-            hID = null;
+          
             txtad.Text = "";
             txt_inci.Text = "";
             txtcas.Text = "";
@@ -33,32 +33,40 @@ namespace mKYS
             txtkaynak.Text = "";
             memo_fiziko.Text = "";
             memo_toksi.Text = "";
-
+            memoek.Text = "";
         }
-
+        public static string ID;
         private void detaybul()
         {
-            SqlCommand komut2 = new SqlCommand(@"Select Mix, GenelAd, InciAd, CasNo, EcNo, Fonksiyon, 
-            Yonetmelik, Noael2, Fizikokimya, Toksikoloji, Kaynak from rHammadde 
-            where ID = N'" + hID + "' ", bgl.baglanti());
+            SqlCommand komut2 = new SqlCommand(@"Select Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak , EkBilgi from rHammadde 
+            where cID = N'" + ID + "' ", bgl.baglanti());
             SqlDataReader dr2 = komut2.ExecuteReader();
             while (dr2.Read())
             {
                 combo_tur.Text = dr2["Mix"].ToString();
-                txtad.Text = dr2["GenelAd"].ToString();
-                txt_inci.Text = dr2["InciAd"].ToString();
-                txtcas.Text = dr2["CasNo"].ToString();
-                txten.Text = dr2["EcNo"].ToString();
-                memofonk.Text = dr2["Fonksiyon"].ToString();
-                txtyonetmeli.Text = dr2["Yonetmelik"].ToString();
+                txtad.Text = dr2["GenelAd"].ToString();         
                 txtnoel.Text = dr2["Noael2"].ToString();
                 memo_fiziko.Text = dr2["Fizikokimya"].ToString();
                 memo_toksi.Text = dr2["Toksikoloji"].ToString();
+                memoek.Text = dr2["Ek Bilgi"].ToString();
                 txtkaynak.Text = dr2["Kaynak"].ToString();
 
             }
             bgl.baglanti().Close();
+            SqlCommand komut12 = new SqlCommand(@"Select INCIName, Cas, EC, Functions, Regulation 
+            from rCosing 
+            where ID = N'" + ID + "' ", bgl.baglanti());
+            SqlDataReader dr12 = komut12.ExecuteReader();
+            while (dr12.Read())
+            {
+                txt_inci.Text = dr12["INCIName"].ToString();
+                txtcas.Text = dr12["Cas"].ToString();
+                txten.Text = dr12["EC"].ToString();
+                memofonk.Text = dr12["Functions"].ToString();
+                txtyonetmeli.Text = dr12["Regulation"].ToString();
 
+            }
+            bgl.baglanti().Close();
         }
 
         void ekleme()
@@ -66,20 +74,22 @@ namespace mKYS
             try
             {
                 SqlCommand add = new SqlCommand(@"insert into rHammadde 
-                (Mix, GenelAd, InciAd, CasNo, EcNo, Fonksiyon, Yonetmelik, Noael2, Fizikokimya, Toksikoloji, Kaynak, Durum) 
-                values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12)", bgl.baglanti());
+                (Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak, EkBilgi, Durum, cID) 
+                values (@a1,@a2,@a8,@a9,@a10,@a11,@a12,@a13,@a14)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", combo_tur.Text);
                 add.Parameters.AddWithValue("@a2", txtad.Text);
-                add.Parameters.AddWithValue("@a3", txt_inci.Text);
-                add.Parameters.AddWithValue("@a4", txtcas.Text);
-                add.Parameters.AddWithValue("@a5", txten.Text);
-                add.Parameters.AddWithValue("@a6", memofonk.Text);
-                add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
+                //add.Parameters.AddWithValue("@a3", txt_inci.Text);
+                //add.Parameters.AddWithValue("@a4", txtcas.Text);
+                //add.Parameters.AddWithValue("@a5", txten.Text);
+                //add.Parameters.AddWithValue("@a6", memofonk.Text);
+                //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
                 add.Parameters.AddWithValue("@a8", txtnoel.Text);
                 add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
                 add.Parameters.AddWithValue("@a10", memo_toksi.Text);
                 add.Parameters.AddWithValue("@a11", txtkaynak.Text);
-                add.Parameters.AddWithValue("@a12", "Aktif");
+                add.Parameters.AddWithValue("@a12", memoek.Text);
+                add.Parameters.AddWithValue("@a13", "Aktif");
+                add.Parameters.AddWithValue("@a14", ID);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
@@ -93,34 +103,36 @@ namespace mKYS
         void guncelle()
         {
             SqlCommand add = new SqlCommand(@"update rHammadde 
-            set Mix=@a1, GenelAd=@a2, InciAd=@a3, CasNo=@a4, EcNo=@a5, Fonksiyon=@a6, 
-            Yonetmelik=@a7, Noael2=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 
-            where ID = '"+hID+"' ", bgl.baglanti());
+            set Mix=@a1, GenelAd=@a2,
+            Noael2=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 , EkBilgi = @a12
+            where cID = '"+ID+"' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", combo_tur.Text);
             add.Parameters.AddWithValue("@a2", txtad.Text);
-            add.Parameters.AddWithValue("@a3", txt_inci.Text);
-            add.Parameters.AddWithValue("@a4", txtcas.Text);
-            add.Parameters.AddWithValue("@a5", txten.Text);
-            add.Parameters.AddWithValue("@a6", memofonk.Text);
-            add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
+            //add.Parameters.AddWithValue("@a3", txt_inci.Text);
+            //add.Parameters.AddWithValue("@a4", txtcas.Text);
+            //add.Parameters.AddWithValue("@a5", txten.Text);
+            //add.Parameters.AddWithValue("@a6", memofonk.Text);
+            //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
             add.Parameters.AddWithValue("@a8", txtnoel.Text);
             add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
             add.Parameters.AddWithValue("@a10", memo_toksi.Text);
             add.Parameters.AddWithValue("@a11", txtkaynak.Text);
+            add.Parameters.AddWithValue("@a12", memoek.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
 
-        public static string hID;
+        public static string gelis;
         private void YeniStok_Load(object sender, EventArgs e)
         {
-            if (hID == "" ||hID == null)
+            detaybul();
+            if (gelis == "cosing")
             {
 
             }
             else
             {
-                detaybul();
+                
                 btnadd.Text = "Güncelle";
             }
         }
@@ -139,19 +151,19 @@ namespace mKYS
             else
             {
                 ekleme();
+                MessageBox.Show("Kaydetme işlemi başarılı!", "İşlem Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //DialogResult cikis = new DialogResult();
+                //cikis = MessageBox.Show("Kaydetme başarılı. Yeni kayıt ?", "Ooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+                //if (cikis == DialogResult.Yes)
+                //{
+                //    temizle();
+                //    xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                //}
+                //else
+                //{ this.Close(); }
+                this.Close();
 
-                DialogResult cikis = new DialogResult();
-                cikis = MessageBox.Show("Kaydetme başarılı. Yeni kayıt ?", "Ooppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-                if (cikis == DialogResult.Yes)
-                {
-                    temizle();
-                    xtraTabControl1.SelectedTabPage = xtraTabPage1;
-                }
-                else
-                { this.Close(); }
 
-
-                
             }
 
           
@@ -168,12 +180,17 @@ namespace mKYS
 
         private void YeniHammadde_FormClosed(object sender, FormClosedEventArgs e)
         {
-            hID = null;
+            gelis = null; ID = null; 
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
             xtraTabControl1.SelectedTabPage = xtraTabPage2;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            xtraTabControl1.SelectedTabPage = xtraTabPage3;
         }
     }
 }

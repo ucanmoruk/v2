@@ -234,6 +234,17 @@ namespace mKYS
                 dprice.Visibility = BarItemVisibility.Never;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }
+            else if (kullanici == "2006")
+            {
+                ribbonPage7.Visible = false;
+                ribbonPage1.Visible = false;
+                ribbonPage2.Visible = false;
+                ribbonPage3.Visible = false;
+                ribbonPage5.Visible = false;
+                ribbonPage10.Visible = false;
+                ribbonPage9.Visible = false;
+                ribbonPage11.Visible = true;
+            }
 
             ribbonPageGroup25.AllowTextClipping = false;
             ribbonPageGroup26.AllowTextClipping = false;
@@ -891,6 +902,50 @@ namespace mKYS
         {
             mROOT._9.UGDR.uYeni yeni= new mROOT._9.UGDR.uYeni();
             yeni.Show();
+        }
+
+        private void barButtonItem100_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            TedarikciEkle.kimin = "Ozeco";
+            TedarikciEkle te = new TedarikciEkle();
+            te.Show();
+        }
+
+        private void barButtonItem99_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._8.Spektrotek.SFirmaListesi.oz = "Ozeco";
+            if (sfl == null || sfl.IsDisposed)
+            {
+                
+                sfl = new mROOT._8.Spektrotek.SFirmaListesi();
+                sfl.MdiParent = this;
+                sfl.Show();
+            }
+        }
+
+        private void barButtonItem87_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+        mROOT._9.UGDR.uFormul ufo;
+        private void barButtonItem102_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ufo == null || ufo.IsDisposed)
+            {
+                ufo = new mROOT._9.UGDR.uFormul();
+                ufo.MdiParent = this;
+                ufo.Show();
+            }
+        }
+        mROOT._9.UGDR.uCosing ucos;
+        private void barButtonItem101_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ucos == null || ucos.IsDisposed)
+            {
+                ucos = new mROOT._9.UGDR.uCosing();
+                ucos.MdiParent = this;
+                ucos.Show();
+            }
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -1,0 +1,131 @@
+﻿using DevExpress.DataAccess.Excel;
+using DevExpress.XtraEditors.Repository;
+using mKYS;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace mROOT._9.UGDR
+{
+    public partial class uFormul : Form
+    {
+        public uFormul()
+        {
+            InitializeComponent();
+        }
+        sqlbaglanti bgl = new sqlbaglanti();
+        private void btn_ac_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
+            if (file.ShowDialog() == DialogResult.OK)
+            {             
+                ExcelDataSource excel = new ExcelDataSource();
+                excel.FileName = file.FileName;
+                ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B150");
+                excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
+                excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B150" };
+                excel.SourceOptions.SkipEmptyRows = true;
+                excel.SourceOptions.UseFirstRowAsHeader = true;
+                excel.Fill();
+                gridControl1.DataSource = excel;
+            }
+
+        }
+        public static string uID;
+        private void uFormul_Load(object sender, EventArgs e)
+        {
+            if (uID == null || uID == "")
+            {
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void btn_kontrol_Click(object sender, EventArgs e)
+        {
+            for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+            {             
+                SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar) values (@o1,@o2,@o3) ", bgl.baglanti());
+                komutz.Parameters.AddWithValue("@o1", "0");
+                komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "C (%)").ToString()));
+                komutz.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation from rUGDFormül f 
+            left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
+            da.Fill(dt);
+            gridControl2.DataSource = dt;
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView2.Columns["Functions"].ColumnEdit = memo;
+            gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+            this.gridView2.Columns[0].Width = 110;
+            this.gridView2.Columns[1].Width = 50;
+            this.gridView2.Columns[2].Width = 80;
+            this.gridView2.Columns[3].Width = 90;
+            this.gridView2.Columns[4].Width = 90;
+            this.gridView2.Columns[5].Width = 50;
+
+
+        }
+
+        private void uFormul_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //DialogResult Secim = new DialogResult();
+
+            //Secim = MessageBox.Show("Formülü kaydetmeden çıkmak istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            //if (Secim == DialogResult.Yes)
+            //{
+            //    SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '0' ", bgl.baglanti());
+            //    komutz.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
+            //}
+            //else
+            //{
+            //    e.Cancel = true;
+            //}
+            
+
+           
+
+             uID = null;
+        }
+
+        private void uFormul_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            switch (e.CloseReason)
+            {
+                case CloseReason.UserClosing:
+                    if (MessageBox.Show("Kaydetmeden çıkmak istediğinizden emin misiniz?",
+                                        "Exit?",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question) == DialogResult.No)
+                    {                      
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '0' ", bgl.baglanti());
+                        komutz.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                    }
+                    break;
+            }
+        }
+    }
+}

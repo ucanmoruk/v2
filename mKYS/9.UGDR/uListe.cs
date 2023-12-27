@@ -181,6 +181,16 @@ namespace mROOT._9.UGDR
             //}
         }
 
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            mROOT.Raporlar.CosIng.hID = lID;
+            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            {
+                frm.CosIng();
+                frm.ShowDialog();
+            }
+        }
+
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //kısmi

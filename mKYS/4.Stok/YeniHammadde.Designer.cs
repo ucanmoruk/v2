@@ -36,7 +36,6 @@
             this.txtcas = new DevExpress.XtraEditors.TextEdit();
             this.txten = new DevExpress.XtraEditors.TextEdit();
             this.txtyonetmeli = new DevExpress.XtraEditors.TextEdit();
-            this.btnadd = new DevExpress.XtraEditors.SimpleButton();
             this.txt_inci = new DevExpress.XtraEditors.TextEdit();
             this.memofonk = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -53,6 +52,11 @@
             this.Next = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.memoek = new DevExpress.XtraEditors.MemoEdit();
+            this.btnadd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txten.Properties)).BeginInit();
@@ -68,6 +72,8 @@
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.combo_tur.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoek.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -121,20 +127,6 @@
             this.txtyonetmeli.Name = "txtyonetmeli";
             this.txtyonetmeli.Size = new System.Drawing.Size(188, 20);
             this.txtyonetmeli.TabIndex = 7;
-            // 
-            // btnadd
-            // 
-            this.btnadd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnadd.Appearance.Options.UseFont = true;
-            this.btnadd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnadd.ImageOptions.Image")));
-            this.btnadd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnadd.ImageOptions.ImageToTextIndent = 10;
-            this.btnadd.Location = new System.Drawing.Point(366, 307);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(213, 43);
-            this.btnadd.TabIndex = 13;
-            this.btnadd.Text = "Kaydet";
-            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // txt_inci
             // 
@@ -221,7 +213,8 @@
             this.xtraTabControl1.TabIndex = 12;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
@@ -278,14 +271,62 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.simpleButton1);
             this.xtraTabPage2.Controls.Add(this.memo_toksi);
             this.xtraTabPage2.Controls.Add(this.labelControl2);
-            this.xtraTabPage2.Controls.Add(this.btnadd);
             this.xtraTabPage2.Controls.Add(this.memo_fiziko);
             this.xtraTabPage2.Controls.Add(this.labelControl5);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(604, 364);
             this.xtraTabPage2.Text = "Detay Bilgiler";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(525, 298);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(54, 55);
+            this.simpleButton1.TabIndex = 13;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.labelControl9);
+            this.xtraTabPage3.Controls.Add(this.memoek);
+            this.xtraTabPage3.Controls.Add(this.btnadd);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(604, 364);
+            this.xtraTabPage3.Text = "Ek Bilgiler";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(34, 25);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(48, 13);
+            this.labelControl9.TabIndex = 16;
+            this.labelControl9.Text = "Ek Bilgiler:";
+            // 
+            // memoek
+            // 
+            this.memoek.Location = new System.Drawing.Point(34, 44);
+            this.memoek.Name = "memoek";
+            this.memoek.Size = new System.Drawing.Size(538, 194);
+            this.memoek.TabIndex = 15;
+            // 
+            // btnadd
+            // 
+            this.btnadd.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnadd.Appearance.Options.UseFont = true;
+            this.btnadd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnadd.ImageOptions.Image")));
+            this.btnadd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnadd.ImageOptions.ImageToTextIndent = 10;
+            this.btnadd.Location = new System.Drawing.Point(359, 262);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(213, 43);
+            this.btnadd.TabIndex = 14;
+            this.btnadd.Text = "Kaydet";
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // YeniHammadde
             // 
@@ -315,6 +356,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.combo_tur.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
+            this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoek.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,7 +371,6 @@
         private DevExpress.XtraEditors.TextEdit txtcas;
         private DevExpress.XtraEditors.TextEdit txten;
         private DevExpress.XtraEditors.TextEdit txtyonetmeli;
-        private DevExpress.XtraEditors.SimpleButton btnadd;
         private DevExpress.XtraEditors.TextEdit txt_inci;
         private DevExpress.XtraEditors.MemoEdit memofonk;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -344,5 +387,10 @@
         private DevExpress.XtraEditors.SimpleButton Next;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.MemoEdit memoek;
+        private DevExpress.XtraEditors.SimpleButton btnadd;
     }
 }
