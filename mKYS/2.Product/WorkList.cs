@@ -35,7 +35,7 @@ namespace mROOT._2.Product
 
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
-            w.Hizmet, w.Notlar, o.FaturaNo, o.Odeme, w.IsDurum, w.ID from rWorkList w
+            w.Hizmet, w.Notlar, w.FatNo, w.Odeme, w.IsDurum, w.ID from rWorkList w
             left join RootFatura o on w.FaturaID = o.ID
             left join RootTedarikci f on w.FirmaID = f.ID
             where w.Durum = N'Aktif' order by w.RaporNo desc", bgl.baglanti());
@@ -222,10 +222,16 @@ namespace mROOT._2.Product
         private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //fatura
-            NumuneFatura.gelis = "ÜGD";
-            NumuneFatura.no = no;
-            NumuneFatura nf = new NumuneFatura();
-            nf.Show();
+            //NumuneFatura.gelis = "ÜGD";
+            //NumuneFatura.no = no;
+            //NumuneFatura nf = new NumuneFatura();
+            //nf.Show();
+
+            //faturano
+            WorkFatura.wID = no;
+            WorkFatura wf = new WorkFatura();
+            wf.Show();
+
         }
 
         private void gridView3_RowStyle(object sender, RowStyleEventArgs e)
@@ -318,6 +324,36 @@ namespace mROOT._2.Product
                 }
             }
             listele();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //beklemede
+            SqlCommand komut = new SqlCommand("update rWorkList set Odeme = @r1 where EvrakNo=@r2", bgl.baglanti());
+            komut.Parameters.AddWithValue("@r1", "Ödeme Bekliyor");
+            komut.Parameters.AddWithValue("@r2", no);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //kısmi
+            SqlCommand komut = new SqlCommand("update rWorkList set Odeme = @r1 where EvrakNo=@r2", bgl.baglanti());
+            komut.Parameters.AddWithValue("@r1", "Kısmi");
+            komut.Parameters.AddWithValue("@r2", no);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //ödendi
+            SqlCommand komut = new SqlCommand("update rWorkList set Odeme = @r1 where EvrakNo=@r2", bgl.baglanti());
+            komut.Parameters.AddWithValue("@r1", "Ödendi");
+            komut.Parameters.AddWithValue("@r2", no);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
         }
 
         string no;

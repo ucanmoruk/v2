@@ -20,8 +20,8 @@ namespace mKYS
 
             BonusSkins.Register();
 
-            //    Application.Run(new mROOT._9.UGDR.cosIng());
-            Application.Run(new Giris());
+           //    Application.Run(new mROOT._9.UGDR.cosIng());
+             Application.Run(new Giris());
             // Application.Run(new mKYS.Duyuru.Okuduklarim());
         }
     }

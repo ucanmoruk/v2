@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>ftp://massgrup.com/httpdocs/mRoot/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -29,13 +31,11 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>5.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -133,6 +133,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2.Product\WorkFatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.Product\WorkFatura.Designer.cs">
+      <DependentUpon>WorkFatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="2.Product\WorkList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -855,6 +861,9 @@
     <Compile Include="ÇöpKutusu\TedarikciTur.Designer.cs">
       <DependentUpon>TedarikciTur.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="2.Product\WorkFatura.resx">
+      <DependentUpon>WorkFatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2.Product\WorkList.resx">
       <DependentUpon>WorkList.cs</DependentUpon>
     </EmbeddedResource>
@@ -933,7 +942,6 @@
     <EmbeddedResource Include="9.UGDR\uYeni.resx">
       <DependentUpon>uYeni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
     </EmbeddedResource>

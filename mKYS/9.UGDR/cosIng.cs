@@ -179,7 +179,7 @@ namespace mROOT._9.UGDR
             IWebDriver driver = new ChromeDriver();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
             for (int i = 92600; i < 100000; i++) //92599
-            {   //42696dan sonra süre 5 sn ndirildi
+            {   //100000e kadar taradı
                 try
                 {
                     link = "https://ec.europa.eu/growth/tools-databases/cosing/details/" + i;
