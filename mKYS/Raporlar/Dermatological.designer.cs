@@ -286,7 +286,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "massgrup_root_Connection";
+            this.sqlDataSource1.ConnectionName = "root_yeni";
             this.sqlDataSource1.Name = "sqlDataSource1";
             table1.MetaSerializable = "<Meta X=\"0\" Y=\"30\" Width=\"125\" Height=\"400\" />";
             table1.Name = "masslab.NKRDermatoloji";

@@ -684,7 +684,7 @@
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "Cosmetic - Cosing";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrLabel2.TextFormatString = "{0:d/MM/yyyy HH:mm}";
+            this.xrLabel2.TextFormatString = "{0:d.MM.yyyy HH:mm}";
             // 
             // xrLabel1
             // 

@@ -178,7 +178,7 @@ namespace mROOT._9.UGDR
         {
             IWebDriver driver = new ChromeDriver();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-            for (int i = 67000; i < 100000; i++)
+            for (int i = 92600; i < 100000; i++) //92599
             {   //42696dan sonra süre 5 sn ndirildi
                 try
                 {
