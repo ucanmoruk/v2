@@ -156,15 +156,15 @@ namespace mROOT._9.UGDR
         private void cosIng_Load(object sender, EventArgs e)
         {
             //cosng(); 
-            SqlCommand komut = new SqlCommand("select * from rCosing where ID = 4", bgl.baglanti());
-            SqlDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                memoEdit1.Text = dr["Functions"].ToString();
-                memoEdit2.Text = dr["SCCSLink"].ToString();
+            //SqlCommand komut = new SqlCommand("select * from rCosing where ID = 4", bgl.baglanti());
+            //SqlDataReader dr = komut.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    memoEdit1.Text = dr["Functions"].ToString();
+            //    memoEdit2.Text = dr["SCCSLink"].ToString();
               
-            }
-            bgl.baglanti().Close();
+            //}
+            //bgl.baglanti().Close();
 
         }
         string ana,link;
@@ -178,7 +178,7 @@ namespace mROOT._9.UGDR
         {
             IWebDriver driver = new ChromeDriver();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-            for (int i = 92600; i < 100000; i++) //92599
+            for (int i = Convert.ToInt32(textEdit1.Text); i < Convert.ToInt32(textEdit2.Text); i++) //92599
             {   //100000e kadar taradı
                 try
                 {

@@ -948,6 +948,12 @@ namespace mKYS
             }
         }
 
+        private void barButtonItem103_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._9.UGDR.cosIng cs = new mROOT._9.UGDR.cosIng();
+            cs.Show();
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();

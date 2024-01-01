@@ -50,7 +50,7 @@ namespace mKYS
         {
             
         }
-
+        public static string birimID;
         Anasayfa f2;
         private void giris()
         {
@@ -70,6 +70,7 @@ namespace mKYS
                     ad = drI["Ad"].ToString();
                     soyad = drI["Soyad"].ToString();
                     gorev = drI["Gorev"].ToString();
+                    birimID = drI["BirimID"].ToString();
                 }
                 bgl.baglanti().Close();
                 Anasayfa.kullanici = kullaniciID.ToString();

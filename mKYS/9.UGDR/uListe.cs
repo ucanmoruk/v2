@@ -29,7 +29,7 @@ namespace mROOT._9.UGDR
             SqlDataAdapter da = new SqlDataAdapter(@"select l.Tarih, l.RaporNo as 'Rapor No' , l.Versiyon, t.Ad as 'Firma' , 
             l.Barkod, l.Urun, l.Miktar, l.RaporDurum as 'Durum', l.ID  from rUGDListe l 
             left join RootTedarikci t on l.FirmaID = t.ID
-            where l.Durum = 'Aktif'", bgl.baglanti());
+            where l.Durum = 'Aktif' and l.BirimID = '"+Giris.birimID+"'", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView1.Columns["ID"].Visible = false;

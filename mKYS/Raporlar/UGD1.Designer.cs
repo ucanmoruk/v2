@@ -294,6 +294,7 @@
             this.xrLabel48 = new DevExpress.XtraReports.UI.XRLabel();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.pID = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -662,7 +663,6 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 950.0334F;
             this.GroupHeader1.Level = 3;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -2651,6 +2651,7 @@
             // GroupHeader4
             // 
             this.GroupHeader4.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox1,
             this.xrTable13,
             this.xrTable12,
             this.xrLabel68,
@@ -2668,8 +2669,7 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
-            this.GroupHeader4.Expanded = false;
-            this.GroupHeader4.HeightF = 794.6902F;
+            this.GroupHeader4.HeightF = 819.7731F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             // 
@@ -3095,7 +3095,7 @@
             // xrLabel57
             // 
             this.xrLabel57.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel57.ForeColor = System.Drawing.Color.Gold;
+            this.xrLabel57.ForeColor = System.Drawing.Color.DarkOrange;
             this.xrLabel57.LocationFloat = new DevExpress.Utils.PointFloat(44.79126F, 114.0185F);
             this.xrLabel57.Multiline = true;
             this.xrLabel57.Name = "xrLabel57";
@@ -3157,6 +3157,14 @@
             this.pID.Description = "pID";
             this.pID.Name = "pID";
             this.pID.Visible = false;
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources._8, true);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(272.1075F, 742.9268F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(163.5417F, 66.84644F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // UGD1
             // 
@@ -3470,5 +3478,6 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.Parameters.Parameter pID;
         private DevExpress.XtraReports.UI.XRPageBreak xrPageBreak2;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
     }
 }

@@ -32,7 +32,7 @@ namespace mROOT._2.Product
             SqlCommand komut = new SqlCommand("update rWorkList set FatNo=@r3, Odeme = @r1 where EvrakNo=@r2", bgl.baglanti());
             komut.Parameters.AddWithValue("@r1", "Ödeme Bekliyor");
             komut.Parameters.AddWithValue("@r2", wID);
-            komut.Parameters.AddWithValue("@r2", txt_no.Text);
+            komut.Parameters.AddWithValue("@r3", txt_no.Text);
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
             this.Close();
