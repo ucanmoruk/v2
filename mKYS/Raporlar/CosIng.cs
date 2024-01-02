@@ -25,23 +25,6 @@ namespace mROOT.Raporlar
         {
             pID.Value = hID;
 
-            //SqlCommand komutID = new SqlCommand("select * from rCosing where INCIName in (select INCIName from rUGDFormül where UrunID = N'" + hID + "')", bgl.baglanti());
-            //SqlDataReader drI = komutID.ExecuteReader();
-            //while (drI.Read())
-            //{
-            //    link = drI["Link"].ToString();
-            //    IWebDriver driver = new ChromeDriver();
-            //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
-                
-            //    driver.Navigate().GoToUrl(link);
-            //    IWebElement tur = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[2]/td[2]")));
-
-            //    pDesc.Value = tur.Text;  
-            //     driver.Quit();     
-            // }
-             
-            //bgl.baglanti().Close();
-
         }
 
 
