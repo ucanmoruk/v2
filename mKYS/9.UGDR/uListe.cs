@@ -191,6 +191,17 @@ namespace mROOT._9.UGDR
             }
         }
 
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //formül ekle
+            uFormul.rNo = rno;
+            uFormul.uID = lID;
+            uFormul nf = new uFormul();
+            nf.Show();
+
+
+        }
+
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //kısmi
@@ -228,12 +239,12 @@ namespace mROOT._9.UGDR
                 listele();
             }
         }
-
+        string rno;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             lID = dr["ID"].ToString();
-          //  fNo = dr["TeklifNo"].ToString();
+            rno = dr["Rapor No"].ToString();
             //firID = dr["FirmaID"].ToString();
             //tutar = dr["Toplam Tutar"].ToString();
         }

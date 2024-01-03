@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uYeni));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.tUygulama = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tAdegeri = new DevExpress.XtraEditors.TextEdit();
@@ -96,10 +97,10 @@
             this.memoEdit3 = new DevExpress.XtraEditors.MemoEdit();
             this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
             this.excelDataSource1 = new DevExpress.DataAccess.Excel.ExcelDataSource();
-            this.tUygulama = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tUygulama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAdegeri.Properties)).BeginInit();
@@ -134,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tUygulama.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -178,6 +178,13 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(457, 373);
             this.xtraTabPage1.Text = "Genel Bilgiler";
             this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
+            // 
+            // tUygulama
+            // 
+            this.tUygulama.Location = new System.Drawing.Point(143, 186);
+            this.tUygulama.Name = "tUygulama";
+            this.tUygulama.Size = new System.Drawing.Size(278, 20);
+            this.tUygulama.TabIndex = 10;
             // 
             // gridLookUpEdit2
             // 
@@ -594,7 +601,7 @@
             // memoEdit1
             // 
             this.memoEdit1.EditValue = "Ürünün üretici tarafından öngörülen raf ömrü 24 aydır. Ürünün açıldıktan sonraki " +
-    "dayanıklılık süresi etikette 6 ay olarak belirtilmiştir.";
+    "dayanıklılık süresi etikette 12 ay olarak belirtilmiştir.";
             this.memoEdit1.Location = new System.Drawing.Point(26, 161);
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Size = new System.Drawing.Size(394, 51);
@@ -762,13 +769,6 @@
             // 
             this.excelDataSource1.Name = "excelDataSource1";
             // 
-            // tUygulama
-            // 
-            this.tUygulama.Location = new System.Drawing.Point(143, 186);
-            this.tUygulama.Name = "tUygulama";
-            this.tUygulama.Size = new System.Drawing.Size(278, 20);
-            this.tUygulama.TabIndex = 10;
-            // 
             // uYeni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -785,6 +785,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tUygulama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAdegeri.Properties)).EndInit();
@@ -822,7 +823,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tUygulama.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

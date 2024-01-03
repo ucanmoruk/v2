@@ -120,7 +120,23 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "masslab.rUGDListe"."RaporNo", "masslab.rUGDListe"."Tarih","masslab.rUGDListe"."ID",
+       "masslab.rUGDListe"."Versiyon", "masslab.rCosing"."INCIName",
+       "masslab.rHammadde"."Fizikokimya",
+       "masslab.rHammadde"."Toksikoloji", "masslab.rHammadde"."Kaynak"
+  from ((("masslab"."rUGDListe" "masslab.rUGDListe"
+  left
+  join "masslab"."rUGDFormül" "masslab.rUGDFormül"
+       on ("masslab.rUGDFormül"."UrunID" = "masslab.rUGDListe"."ID"))
+  left
+  join "masslab"."rCosing" "masslab.rCosing"
+       on ("masslab.rCosing"."ID" = "masslab.rUGDFormül"."HammaddeID"))
+  left
+  join "masslab"."rHammadde" "masslab.rHammadde"
+       on ("masslab.rHammadde"."cID" = "masslab.rCosing"."ID"))</value>
+  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJbmNpQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRml6aWtva2lteWEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVG9rc2lrb2xvamkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS2F5bmFrIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklOQ0lOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpemlrb2tpbXlhIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRva3Npa29sb2ppIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IktheW5hayIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

@@ -39,7 +39,7 @@ namespace mROOT._9.UGDR
             }
 
         }
-        public static string uID;
+        public static string uID, rNo;
         private void uFormul_Load(object sender, EventArgs e)
         {
             if (uID == null || uID == "")
@@ -48,7 +48,7 @@ namespace mROOT._9.UGDR
             }
             else
             {
-
+                traporno.Text = rNo;
             }
 
         }
@@ -66,10 +66,12 @@ namespace mROOT._9.UGDR
             }
 
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation from rUGDFormül f 
+            SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
             left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
             da.Fill(dt);
             gridControl2.DataSource = dt;
+            gridView2.Columns["cosID"].Visible = false;
+            gridView2.Columns["ID"].Visible = false;
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView2.Columns["Functions"].ColumnEdit = memo;
             gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
@@ -99,11 +101,34 @@ namespace mROOT._9.UGDR
             //{
             //    e.Cancel = true;
             //}
-            
 
-           
 
+
+            rNo = null;
              uID = null;
+        }
+        string kayit;
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
+                {
+                    SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2 where ID = '"+ gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                    komutz.Parameters.AddWithValue("@o1", uID);
+                    komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
+                    komutz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+                MessageBox.Show("Kaydetme işlemi başarılı!", "Ooppss!");
+                kayit = "evet";
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Üzülmeyin, yazılımcı tanıdık. Çözeriz! " + ex);
+            }
         }
 
         private void uFormul_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,20 +136,28 @@ namespace mROOT._9.UGDR
             switch (e.CloseReason)
             {
                 case CloseReason.UserClosing:
-                    if (MessageBox.Show("Kaydetmeden çıkmak istediğinizden emin misiniz?",
-                                        "Exit?",
-                                        MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Question) == DialogResult.No)
-                    {                      
-                        e.Cancel = true;
+                    if (kayit == "evet")
+                    {
+
                     }
                     else
                     {
-                        SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '0' ", bgl.baglanti());
-                        komutz.ExecuteNonQuery();
-                        bgl.baglanti().Close();
+                         if (MessageBox.Show("Kaydetmeden çıkmak istediğinizden emin misiniz?",
+                                            "Exit?",
+                                            MessageBoxButtons.YesNo,
+                                            MessageBoxIcon.Question) == DialogResult.No)
+                        {                      
+                            e.Cancel = true;
+                        }
+                        else
+                        {
+                            SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '0' ", bgl.baglanti());
+                            komutz.ExecuteNonQuery();
+                            bgl.baglanti().Close();
+                        }
+                       
                     }
-                    break;
+                 break;
             }
         }
     }

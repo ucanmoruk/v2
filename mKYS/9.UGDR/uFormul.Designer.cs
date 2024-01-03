@@ -40,7 +40,7 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.traporno = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.traporno.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -155,7 +155,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.simpleButton1);
             this.splitContainer3.Panel2.Controls.Add(this.labelControl1);
-            this.splitContainer3.Panel2.Controls.Add(this.textEdit1);
+            this.splitContainer3.Panel2.Controls.Add(this.traporno);
             this.splitContainer3.Size = new System.Drawing.Size(576, 514);
             this.splitContainer3.SplitterDistance = 456;
             this.splitContainer3.TabIndex = 0;
@@ -189,6 +189,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(133, 38);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Kaydet";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl1
             // 
@@ -198,12 +199,12 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Rapor No:";
             // 
-            // textEdit1
+            // traporno
             // 
-            this.textEdit1.Location = new System.Drawing.Point(217, 19);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 0;
+            this.traporno.Location = new System.Drawing.Point(217, 19);
+            this.traporno.Name = "traporno";
+            this.traporno.Size = new System.Drawing.Size(100, 20);
+            this.traporno.TabIndex = 0;
             // 
             // uFormul
             // 
@@ -234,7 +235,7 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.traporno.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,6 +253,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit traporno;
     }
 }

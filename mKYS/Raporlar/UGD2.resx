@@ -121,21 +121,23 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "masslab.rUGDListe"."ID", "masslab.rUGDListe"."RaporNo",
+    <value>select "masslab.rUGDListe"."RaporNo", "masslab.rUGDListe"."ID",
        "masslab.rUGDListe"."Tarih", "masslab.rUGDListe"."Versiyon",
-       "masslab.rUGDListe"."Urun", "masslab.rUGDFormül"."Miktar",
-       "masslab.rHammadde"."InciAd", "masslab.rHammadde"."CasNo",
-       "masslab.rHammadde"."EcNo", "masslab.rHammadde"."Fonksiyon",
-       "masslab.rHammadde"."Yonetmelik", "masslab.rHammadde"."Noael2"
-  from (("masslab"."rUGDListe" "masslab.rUGDListe"
-  inner join "masslab"."rUGDFormül" "masslab.rUGDFormül"
+       "masslab.rUGDListe"."Urun", "masslab.rUGDListe"."A",
+       "masslab.rUGDFormül"."Miktar", "masslab.rHammadde"."Noael2",
+       "masslab.rCosing"."INCIName", "masslab.rCosing"."Cas",
+       "masslab.rCosing"."EC", "masslab.rCosing"."Functions",
+       "masslab.rCosing"."Regulation"
+  from ((("masslab"."rUGDListe" "masslab.rUGDListe"
+  left join "masslab"."rUGDFormül" "masslab.rUGDFormül"
        on ("masslab.rUGDFormül"."UrunID" = "masslab.rUGDListe"."ID"))
-  inner join "masslab"."rHammadde" "masslab.rHammadde"
-       on ("masslab.rHammadde"."ID" = "masslab.rUGDFormül"."HammaddeID"))
-</value>
+  left join "masslab"."rCosing" "masslab.rCosing"
+       on ("masslab.rCosing"."ID" = "masslab.rUGDFormül"."HammaddeID"))
+  left join "masslab"."rHammadde" "masslab.rHammadde"
+       on ("masslab.rHammadde"."cID" = "masslab.rCosing"."ID"))</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlVydW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJJbmNpQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2FzTm8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRWNObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGb25rc2l5b24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWW9uZXRtZWxpayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJOb2FlbDIiIFR5cGU9IkRlY2ltYWwiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlVydW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJOb2FlbDIiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IklOQ0lOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNhcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFQyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGdW5jdGlvbnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmVndWxhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
   <data name="xrLabel3.Text" xml:space="preserve">
     <value>*C: Konsantrasyon. Üst değer üzerinden değerlendirmeye alınmıştır. 
