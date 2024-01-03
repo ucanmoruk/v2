@@ -48,7 +48,7 @@ namespace mKYS
                 txtnoel.Text = dr2["Noael2"].ToString();
                 memo_fiziko.Text = dr2["Fizikokimya"].ToString();
                 memo_toksi.Text = dr2["Toksikoloji"].ToString();
-                memoek.Text = dr2["Ek Bilgi"].ToString();
+                memoek.Text = dr2["EkBilgi"].ToString();
                 txtkaynak.Text = dr2["Kaynak"].ToString();
 
             }

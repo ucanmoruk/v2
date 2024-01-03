@@ -98,11 +98,11 @@
             this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.pID = new DevExpress.XtraReports.Parameters.Parameter();
             this.pDesc = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -191,7 +191,7 @@
             // 
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tur]")});
-            this.xrLabel3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 63.11882F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -204,7 +204,7 @@
             // 
             // xrTable1
             // 
-            this.xrTable1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001133078F, 114.4023F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -237,7 +237,7 @@
             this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell1.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
@@ -253,7 +253,7 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[INCIName]")});
-            this.xrTableCell2.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBorders = false;
@@ -275,7 +275,7 @@
             // 
             this.xrTableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell9.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBorders = false;
@@ -289,8 +289,8 @@
             // 
             this.xrTableCell10.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pID")});
-            this.xrTableCell10.Font = new System.Drawing.Font("Poppins", 8F);
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pDesc")});
+            this.xrTableCell10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBorders = false;
@@ -312,7 +312,7 @@
             // 
             this.xrTableCell21.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell21.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseBorders = false;
@@ -325,7 +325,7 @@
             // xrTableCell22
             // 
             this.xrTableCell22.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell22.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBorders = false;
@@ -346,7 +346,7 @@
             // 
             this.xrTableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell11.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseBorders = false;
@@ -359,7 +359,7 @@
             // xrTableCell12
             // 
             this.xrTableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell12.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseBorders = false;
@@ -380,7 +380,7 @@
             // 
             this.xrTableCell13.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell13.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseBorders = false;
@@ -395,7 +395,7 @@
             this.xrTableCell14.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Cas]")});
-            this.xrTableCell14.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseBorders = false;
@@ -417,7 +417,7 @@
             // 
             this.xrTableCell19.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell19.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.StylePriority.UseBorders = false;
@@ -432,7 +432,7 @@
             this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[EC]")});
-            this.xrTableCell20.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseBorders = false;
@@ -454,7 +454,7 @@
             // 
             this.xrTableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell7.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorders = false;
@@ -467,7 +467,7 @@
             // xrTableCell8
             // 
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell8.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
@@ -488,7 +488,7 @@
             // 
             this.xrTableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell5.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBorders = false;
@@ -503,7 +503,7 @@
             this.xrTableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Regulation]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
@@ -525,7 +525,7 @@
             // 
             this.xrTableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell3.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
@@ -538,7 +538,7 @@
             // xrTableCell4
             // 
             this.xrTableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell4.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
@@ -559,7 +559,7 @@
             // 
             this.xrTableCell15.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell15.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.StylePriority.UseBorders = false;
@@ -574,7 +574,7 @@
             this.xrTableCell16.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Functions]")});
-            this.xrTableCell16.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.StylePriority.UseBorders = false;
@@ -596,7 +596,7 @@
             // 
             this.xrTableCell17.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell17.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.StylePriority.UseBorders = false;
@@ -611,7 +611,7 @@
             this.xrTableCell18.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SCCS]")});
-            this.xrTableCell18.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseBorders = false;
@@ -633,7 +633,7 @@
             // 
             this.xrTableCell23.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell23.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseBorders = false;
@@ -646,7 +646,7 @@
             // xrTableCell24
             // 
             this.xrTableCell24.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell24.Font = new System.Drawing.Font("Poppins", 8F);
+            this.xrTableCell24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseBorders = false;
@@ -658,8 +658,8 @@
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPageInfo1,
             this.xrLine1,
-            this.xrLabel2,
             this.xrLabel1});
             this.PageHeader.HeightF = 64.07563F;
             this.PageHeader.Name = "PageHeader";
@@ -670,25 +670,9 @@
             this.xrLine1.Name = "xrLine1";
             this.xrLine1.SizeF = new System.Drawing.SizeF(904.9999F, 23F);
             // 
-            // xrLabel2
-            // 
-            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Today()")});
-            this.xrLabel2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(652.395F, 9.999957F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(252.605F, 23F);
-            this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "Cosmetic - Cosing";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrLabel2.TextFormatString = "{0:d.MM.yyyy HH:mm}";
-            // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999989F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -716,6 +700,19 @@
             this.pDesc.Description = "pDesc";
             this.pDesc.MultiValue = true;
             this.pDesc.Name = "pDesc";
+            // 
+            // xrPageInfo1
+            // 
+            this.xrPageInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(704.1669F, 10.00001F);
+            this.xrPageInfo1.Name = "xrPageInfo1";
+            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(200.8331F, 23F);
+            this.xrPageInfo1.StylePriority.UseFont = false;
+            this.xrPageInfo1.StylePriority.UseTextAlignment = false;
+            this.xrPageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrPageInfo1.TextFormatString = "{0:d.MM.yyyy HH:mm}";
             // 
             // CosIng
             // 
@@ -752,7 +749,6 @@
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRLine xrLine1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
@@ -795,5 +791,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell23;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell24;
         private DevExpress.XtraReports.Parameters.Parameter pDesc;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
     }
 }

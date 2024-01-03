@@ -28,11 +28,11 @@ namespace mKYS
             //EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
             //where Durum = N'Aktif' order by InciAd", bgl.baglanti());
             SqlDataAdapter da2 = new SqlDataAdapter(@"select h.GenelAd, c.INCIName, SUBSTRING(Link,60,69) as 'CosIng ID', c.Cas, h.Noael2, h.Fizikokimya, h.Toksikoloji, h.Kaynak, h.EkBilgi, c.ID from rHammadde h 
-			left join rCosing c on h.InciAd = c.INCIName where h.Durum = 'Aktif'", bgl.baglanti());
+			left join rCosing c on h.CID = c.ID  where h.Durum = 'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
-            gridView1.Columns["ID"].Visible = false;
+          //  gridView1.Columns["ID"].Visible = false;
 
             this.gridView1.Columns[0].Width = 100;
             this.gridView1.Columns[1].Width = 120;
@@ -66,7 +66,6 @@ namespace mKYS
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Hata 1: " + ex);
             }
         }
@@ -114,7 +113,7 @@ namespace mKYS
                 if (Secim == DialogResult.Yes)
                 {
                     // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update rHammadde set Durum=@a1 where ID = N'"+id+"'", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update rHammadde set Durum=@a1 where cID = N'"+id+"'", bgl.baglanti());
                     komutSil.Parameters.AddWithValue("@a1", "Pasif");
                     komutSil.ExecuteNonQuery();
                     bgl.baglanti().Close();

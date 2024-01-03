@@ -210,7 +210,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.KeyPreview = true;
             this.Name = "HammaddeListesi";
-            this.Text = "Stok Listesi";
+            this.Text = "Hammadde Listesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.StokListesi_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StokListesi_KeyDown);

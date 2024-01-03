@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uYeni));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tAdegeri = new DevExpress.XtraEditors.TextEdit();
             this.thedef = new DevExpress.XtraEditors.TextEdit();
-            this.cuygulama = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tmiktar = new DevExpress.XtraEditors.TextEdit();
             this.ctip = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tbarkod = new DevExpress.XtraEditors.TextEdit();
@@ -95,14 +96,14 @@
             this.memoEdit3 = new DevExpress.XtraEditors.MemoEdit();
             this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
             this.excelDataSource1 = new DevExpress.DataAccess.Excel.ExcelDataSource();
-            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tUygulama = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAdegeri.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thedef.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuygulama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmiktar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctip.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarkod.Properties)).BeginInit();
@@ -133,8 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tUygulama.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -153,10 +153,10 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.tUygulama);
             this.xtraTabPage1.Controls.Add(this.gridLookUpEdit2);
             this.xtraTabPage1.Controls.Add(this.tAdegeri);
             this.xtraTabPage1.Controls.Add(this.thedef);
-            this.xtraTabPage1.Controls.Add(this.cuygulama);
             this.xtraTabPage1.Controls.Add(this.tmiktar);
             this.xtraTabPage1.Controls.Add(this.ctip);
             this.xtraTabPage1.Controls.Add(this.tbarkod);
@@ -177,29 +177,43 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(457, 373);
             this.xtraTabPage1.Text = "Genel Bilgiler";
+            this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
+            // 
+            // gridLookUpEdit2
+            // 
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(249, 153);
+            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
+            this.gridLookUpEdit2.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit2.Properties.NullText = "";
+            this.gridLookUpEdit2.Properties.PopupView = this.gridLookUpEdit2View;
+            this.gridLookUpEdit2.Size = new System.Drawing.Size(172, 20);
+            this.gridLookUpEdit2.TabIndex = 9;
+            this.gridLookUpEdit2.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
+            this.gridLookUpEdit2.EditValueChanged += new System.EventHandler(this.gridLookUpEdit2_EditValueChanged);
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
             // tAdegeri
             // 
             this.tAdegeri.Location = new System.Drawing.Point(143, 254);
             this.tAdegeri.Name = "tAdegeri";
             this.tAdegeri.Size = new System.Drawing.Size(278, 20);
-            this.tAdegeri.TabIndex = 11;
+            this.tAdegeri.TabIndex = 12;
             // 
             // thedef
             // 
+            this.thedef.EditValue = "Yetişkinler";
             this.thedef.Location = new System.Drawing.Point(143, 218);
             this.thedef.Name = "thedef";
             this.thedef.Size = new System.Drawing.Size(278, 20);
             this.thedef.TabIndex = 11;
-            // 
-            // cuygulama
-            // 
-            this.cuygulama.Location = new System.Drawing.Point(143, 186);
-            this.cuygulama.Name = "cuygulama";
-            this.cuygulama.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cuygulama.Size = new System.Drawing.Size(278, 20);
-            this.cuygulama.TabIndex = 10;
             // 
             // tmiktar
             // 
@@ -344,7 +358,7 @@
             this.Next.Location = new System.Drawing.Point(367, 297);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(54, 55);
-            this.Next.TabIndex = 12;
+            this.Next.TabIndex = 13;
             this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // labelControl1
@@ -748,26 +762,12 @@
             // 
             this.excelDataSource1.Name = "excelDataSource1";
             // 
-            // gridLookUpEdit2
+            // tUygulama
             // 
-            this.gridLookUpEdit2.Location = new System.Drawing.Point(249, 153);
-            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
-            this.gridLookUpEdit2.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit2.Properties.NullText = "";
-            this.gridLookUpEdit2.Properties.PopupView = this.gridLookUpEdit2View;
-            this.gridLookUpEdit2.Size = new System.Drawing.Size(172, 20);
-            this.gridLookUpEdit2.TabIndex = 9;
-            this.gridLookUpEdit2.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
-            this.gridLookUpEdit2.EditValueChanged += new System.EventHandler(this.gridLookUpEdit2_EditValueChanged);
-            // 
-            // gridLookUpEdit2View
-            // 
-            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
-            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            this.tUygulama.Location = new System.Drawing.Point(143, 186);
+            this.tUygulama.Name = "tUygulama";
+            this.tUygulama.Size = new System.Drawing.Size(278, 20);
+            this.tUygulama.TabIndex = 10;
             // 
             // uYeni
             // 
@@ -785,9 +785,10 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tAdegeri.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thedef.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuygulama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmiktar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctip.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarkod.Properties)).EndInit();
@@ -821,8 +822,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tUygulama.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -834,7 +834,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit thedef;
-        private DevExpress.XtraEditors.ComboBoxEdit cuygulama;
         private DevExpress.XtraEditors.TextEdit tmiktar;
         private DevExpress.XtraEditors.ComboBoxEdit ctip;
         private DevExpress.XtraEditors.TextEdit tbarkod;
@@ -897,5 +896,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraEditors.TextEdit tUygulama;
     }
 }
