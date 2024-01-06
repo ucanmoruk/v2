@@ -49,6 +49,7 @@ namespace mROOT._9.UGDR
             else
             {
                 traporno.Text = rNo;
+                detaybul();
             }
 
         }
@@ -160,5 +161,26 @@ namespace mROOT._9.UGDR
                  break;
             }
         }
+
+        void detaybul()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
+            left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '"+uID+"' order by f.Miktar desc ", bgl.baglanti());
+            da.Fill(dt);
+            gridControl2.DataSource = dt;
+            gridView2.Columns["cosID"].Visible = false;
+            gridView2.Columns["ID"].Visible = false;
+            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+            gridView2.Columns["Functions"].ColumnEdit = memo;
+            gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+            this.gridView2.Columns[0].Width = 110;
+            this.gridView2.Columns[1].Width = 50;
+            this.gridView2.Columns[2].Width = 80;
+            this.gridView2.Columns[3].Width = 90;
+            this.gridView2.Columns[4].Width = 90;
+            this.gridView2.Columns[5].Width = 50;
+        }
+
     }
 }
