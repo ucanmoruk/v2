@@ -50,7 +50,8 @@ namespace mROOT._2.Product
                 txturun.Text = drI["Urun"].ToString();
                 txthizmet.Text = drI["Hizmet"].ToString();
                 txt_not.Text = drI["Notlar"].ToString();
-
+                tproje.Text = drI["Proje"].ToString();
+                gridLookUpEdit2.EditValue = drI["PlasiyerID"].ToString();
             }
             bgl.baglanti().Close();
 
@@ -117,8 +118,8 @@ namespace mROOT._2.Product
         void kaydet()
         {
             SqlCommand add = new SqlCommand(@"insert into rWorkList (Kategori, EvrakNo, RaporNo, Tarih, 
-            Termin, FirmaID, Urun, Hizmet, Notlar, IsDurum, Durum)
-            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11) ", bgl.baglanti());
+            Termin, FirmaID, Urun, Hizmet, Notlar, IsDurum, Durum, Proje, PlasiyerID)
+            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11,@a12,@a13) ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", combo_kat.Text);
             add.Parameters.AddWithValue("@a2", txtev.Text);
             add.Parameters.AddWithValue("@a3", txtis.Text);
@@ -130,6 +131,8 @@ namespace mROOT._2.Product
             add.Parameters.AddWithValue("@a9", txt_not.Text);
             add.Parameters.AddWithValue("@a10", "Yeni İş");
             add.Parameters.AddWithValue("@a11","Aktif");
+            add.Parameters.AddWithValue("@a12", tproje.Text);
+            add.Parameters.AddWithValue("@a13",gridLookUpEdit2.EditValue);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -146,7 +149,7 @@ namespace mROOT._2.Product
         {
             SqlCommand add = new SqlCommand(@"update rWorkList set 
             Kategori=@a1, EvrakNo=@a2, RaporNo=@a3, Tarih=@a4, Termin=@a5, FirmaID=@a6, 
-            Urun=@a7, Hizmet=@a8, Notlar=@a9            
+            Urun=@a7, Hizmet=@a8, Notlar=@a9 , Proje=@a12, PlasiyerID = @a13           
             where ID = '" + rID + "' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", combo_kat.Text);
             add.Parameters.AddWithValue("@a2", txtev.Text);
@@ -157,6 +160,8 @@ namespace mROOT._2.Product
             add.Parameters.AddWithValue("@a7", txturun.Text);
             add.Parameters.AddWithValue("@a8", txthizmet.Text);
             add.Parameters.AddWithValue("@a9", txt_not.Text);
+            add.Parameters.AddWithValue("@a12", tproje.Text);
+            add.Parameters.AddWithValue("@a13", gridLookUpEdit2.EditValue);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
             MessageBox.Show("Güncelleme işlemi başarılı!", "Oopppss!");

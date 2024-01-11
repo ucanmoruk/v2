@@ -80,15 +80,15 @@
             this.next3 = new DevExpress.XtraEditors.SimpleButton();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.butonstab = new DevExpress.XtraEditors.SimpleButton();
+            this.butonchal = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.butonetiket = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
@@ -578,8 +578,8 @@
             this.xtraTabPage3.Controls.Add(this.next3);
             this.xtraTabPage3.Controls.Add(this.memoEdit1);
             this.xtraTabPage3.Controls.Add(this.labelControl18);
-            this.xtraTabPage3.Controls.Add(this.simpleButton4);
-            this.xtraTabPage3.Controls.Add(this.simpleButton3);
+            this.xtraTabPage3.Controls.Add(this.butonstab);
+            this.xtraTabPage3.Controls.Add(this.butonchal);
             this.xtraTabPage3.Controls.Add(this.simpleButton2);
             this.xtraTabPage3.Controls.Add(this.checkEdit3);
             this.xtraTabPage3.Controls.Add(this.checkEdit2);
@@ -615,27 +615,29 @@
             this.labelControl18.TabIndex = 6;
             this.labelControl18.Text = "Stabilite Notu:";
             // 
-            // simpleButton4
+            // butonstab
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton4.ImageOptions.ImageToTextIndent = 10;
-            this.simpleButton4.Location = new System.Drawing.Point(26, 96);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(97, 27);
-            this.simpleButton4.TabIndex = 27;
-            this.simpleButton4.Text = "Resim Seç";
+            this.butonstab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("butonstab.ImageOptions.Image")));
+            this.butonstab.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.butonstab.ImageOptions.ImageToTextIndent = 10;
+            this.butonstab.Location = new System.Drawing.Point(26, 96);
+            this.butonstab.Name = "butonstab";
+            this.butonstab.Size = new System.Drawing.Size(97, 27);
+            this.butonstab.TabIndex = 27;
+            this.butonstab.Text = "Resim Seç";
+            this.butonstab.Click += new System.EventHandler(this.butonstab_Click);
             // 
-            // simpleButton3
+            // butonchal
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.ImageOptions.ImageToTextIndent = 10;
-            this.simpleButton3.Location = new System.Drawing.Point(26, 58);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(97, 27);
-            this.simpleButton3.TabIndex = 26;
-            this.simpleButton3.Text = "Resim Seç";
+            this.butonchal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("butonchal.ImageOptions.Image")));
+            this.butonchal.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.butonchal.ImageOptions.ImageToTextIndent = 10;
+            this.butonchal.Location = new System.Drawing.Point(26, 58);
+            this.butonchal.Name = "butonchal";
+            this.butonchal.Size = new System.Drawing.Size(97, 27);
+            this.butonchal.TabIndex = 26;
+            this.butonchal.Text = "Resim Seç";
+            this.butonchal.Click += new System.EventHandler(this.butonchal_Click);
             // 
             // simpleButton2
             // 
@@ -647,6 +649,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(97, 27);
             this.simpleButton2.TabIndex = 24;
             this.simpleButton2.Text = "Resim Seç";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // checkEdit3
             // 
@@ -678,7 +681,7 @@
             // xtraTabPage4
             // 
             this.xtraTabPage4.Controls.Add(this.simpleButton5);
-            this.xtraTabPage4.Controls.Add(this.simpleButton6);
+            this.xtraTabPage4.Controls.Add(this.butonetiket);
             this.xtraTabPage4.Controls.Add(this.labelControl22);
             this.xtraTabPage4.Controls.Add(this.labelControl21);
             this.xtraTabPage4.Controls.Add(this.labelControl20);
@@ -704,13 +707,14 @@
             this.simpleButton5.Text = "Kaydet";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
-            // simpleButton6
+            // butonetiket
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(99, 243);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton6.TabIndex = 34;
-            this.simpleButton6.Text = "Görsel Seç";
+            this.butonetiket.Location = new System.Drawing.Point(99, 243);
+            this.butonetiket.Name = "butonetiket";
+            this.butonetiket.Size = new System.Drawing.Size(75, 23);
+            this.butonetiket.TabIndex = 34;
+            this.butonetiket.Text = "Görsel Seç";
+            this.butonetiket.Click += new System.EventHandler(this.butonetiket_Click);
             // 
             // labelControl22
             // 
@@ -875,8 +879,8 @@
         private DevExpress.DataAccess.Excel.ExcelDataSource excelDataSource1;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton butonstab;
+        private DevExpress.XtraEditors.SimpleButton butonchal;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.CheckEdit checkEdit3;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
@@ -884,7 +888,7 @@
         private DevExpress.XtraEditors.SimpleButton next3;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton butonetiket;
         private DevExpress.XtraEditors.LabelControl labelControl22;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.LabelControl labelControl20;

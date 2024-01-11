@@ -45,6 +45,10 @@
             this.txthizmet = new DevExpress.XtraEditors.TextEdit();
             this.btnadd = new DevExpress.XtraEditors.SimpleButton();
             this.txt_not = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.tproje = new DevExpress.XtraEditors.TextEdit();
+            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.txtev.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_kat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtis.Properties)).BeginInit();
@@ -57,6 +61,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txthizmet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_not.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tproje.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -85,7 +92,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(124, 132);
+            this.labelControl4.Location = new System.Drawing.Point(124, 160);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(27, 13);
             this.labelControl4.TabIndex = 0;
@@ -93,7 +100,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(116, 165);
+            this.labelControl5.Location = new System.Drawing.Point(116, 193);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(36, 13);
             this.labelControl5.TabIndex = 0;
@@ -101,7 +108,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(131, 194);
+            this.labelControl7.Location = new System.Drawing.Point(131, 222);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(21, 13);
             this.labelControl7.TabIndex = 0;
@@ -137,10 +144,10 @@
             // 
             // txturun
             // 
-            this.txturun.Location = new System.Drawing.Point(160, 129);
+            this.txturun.Location = new System.Drawing.Point(160, 157);
             this.txturun.Name = "txturun";
             this.txturun.Size = new System.Drawing.Size(312, 20);
-            this.txturun.TabIndex = 7;
+            this.txturun.TabIndex = 9;
             // 
             // datenow
             // 
@@ -187,32 +194,66 @@
             // 
             // txthizmet
             // 
-            this.txthizmet.Location = new System.Drawing.Point(160, 161);
+            this.txthizmet.Location = new System.Drawing.Point(160, 189);
             this.txthizmet.Name = "txthizmet";
             this.txthizmet.Size = new System.Drawing.Size(312, 20);
-            this.txthizmet.TabIndex = 8;
+            this.txthizmet.TabIndex = 10;
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(372, 250);
+            this.btnadd.Location = new System.Drawing.Point(372, 278);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(100, 40);
-            this.btnadd.TabIndex = 10;
+            this.btnadd.TabIndex = 12;
             this.btnadd.Text = "Save";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // txt_not
             // 
-            this.txt_not.Location = new System.Drawing.Point(159, 194);
+            this.txt_not.Location = new System.Drawing.Point(159, 222);
             this.txt_not.Name = "txt_not";
             this.txt_not.Size = new System.Drawing.Size(313, 44);
-            this.txt_not.TabIndex = 9;
+            this.txt_not.TabIndex = 11;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(60, 128);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(91, 13);
+            this.labelControl6.TabIndex = 0;
+            this.labelControl6.Text = "Proje / Takip Eden:";
+            // 
+            // tproje
+            // 
+            this.tproje.Location = new System.Drawing.Point(159, 125);
+            this.tproje.Name = "tproje";
+            this.tproje.Size = new System.Drawing.Size(158, 20);
+            this.tproje.TabIndex = 7;
+            // 
+            // gridLookUpEdit2
+            // 
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(323, 125);
+            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
+            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit2.Properties.NullText = "";
+            this.gridLookUpEdit2.Properties.PopupView = this.gridLookUpEdit2View;
+            this.gridLookUpEdit2.Size = new System.Drawing.Size(149, 20);
+            this.gridLookUpEdit2.TabIndex = 8;
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
             // WorkNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 307);
+            this.ClientSize = new System.Drawing.Size(498, 341);
+            this.Controls.Add(this.gridLookUpEdit2);
             this.Controls.Add(this.txt_not);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.gridLookUpEdit1);
@@ -220,10 +261,12 @@
             this.Controls.Add(this.datenow);
             this.Controls.Add(this.combo_kat);
             this.Controls.Add(this.txthizmet);
+            this.Controls.Add(this.tproje);
             this.Controls.Add(this.txturun);
             this.Controls.Add(this.txtis);
             this.Controls.Add(this.txtev);
             this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -246,6 +289,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txthizmet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_not.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tproje.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +316,9 @@
         private DevExpress.XtraEditors.TextEdit txthizmet;
         private DevExpress.XtraEditors.SimpleButton btnadd;
         private DevExpress.XtraEditors.MemoEdit txt_not;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit tproje;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
     }
 }

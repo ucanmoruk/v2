@@ -1,4 +1,5 @@
 ﻿using DevExpress.DataAccess.Excel;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using mKYS;
 using System;
@@ -29,9 +30,9 @@ namespace mROOT._9.UGDR
             {             
                 ExcelDataSource excel = new ExcelDataSource();
                 excel.FileName = file.FileName;
-                ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B150");
+                ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B250");
                 excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
-                excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B150" };
+                excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B250" };
                 excel.SourceOptions.SkipEmptyRows = true;
                 excel.SourceOptions.UseFirstRowAsHeader = true;
                 excel.Fill();
@@ -39,17 +40,25 @@ namespace mROOT._9.UGDR
             }
 
         }
-        public static string uID, rNo;
+        public static string uID, rNo, gelis;
         private void uFormul_Load(object sender, EventArgs e)
         {
-            if (uID == null || uID == "")
+            if (gelis == "Anasayfa" || uID == null || uID == "")
             {
-
+                gridLookUpEdit1.Visible = true;
+                DataTable dt2 = new DataTable();
+                SqlDataAdapter da2 = new SqlDataAdapter(@"select RaporNo, Urun, ID from rUGDListe where BirimID = '"+Giris.birimID+ "' except select * from rUGDListe where ID in (select UrunID from rUGDFormül) order by RaporNo desc", bgl.baglanti());
+                da2.Fill(dt2);
+                gridLookUpEdit1.Properties.DataSource = dt2;
+                gridLookUpEdit1.Properties.DisplayMember = "RaporNo";
+                gridLookUpEdit1.Properties.ValueMember = "ID";
             }
             else
             {
+                traporno.Visible = true;
                 traporno.Text = rNo;
                 detaybul();
+
             }
 
         }
@@ -113,17 +122,36 @@ namespace mROOT._9.UGDR
         {
             try
             {
-                for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
+                if (gelis == "Anasayfa")
                 {
-                    SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2 where ID = '"+ gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
-                    komutz.Parameters.AddWithValue("@o1", uID);
-                    komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
-                    komutz.ExecuteNonQuery();
-                    bgl.baglanti().Close();
+                    for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
+                    {
+                        SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                        komutz.Parameters.AddWithValue("@o1", gridLookUpEdit1.EditValue);
+                        komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
+                        komutz.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                    }
+                    MessageBox.Show("Kaydetme işlemi başarılı!", "Ooppss!");
+                    kayit = "evet";
+                    this.Close();
                 }
-                MessageBox.Show("Kaydetme işlemi başarılı!", "Ooppss!");
-                kayit = "evet";
-                this.Close();
+                else
+                {
+                    for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
+                    {
+                        SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                        komutz.Parameters.AddWithValue("@o1", uID);
+                        komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
+                        komutz.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                    }
+                    MessageBox.Show("Kaydetme işlemi başarılı!", "Ooppss!");
+                    kayit = "evet";
+                    this.Close();
+                }
+
+               
 
             }
             catch (Exception ex)
@@ -132,32 +160,46 @@ namespace mROOT._9.UGDR
             }
         }
 
+        private void gridLookUpEdit1_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
         private void uFormul_FormClosing(object sender, FormClosingEventArgs e)
         {
             switch (e.CloseReason)
             {
                 case CloseReason.UserClosing:
-                    if (kayit == "evet")
+                    if (gelis=="Anasayfa")
                     {
+                        if (kayit == "evet")
+                        {
 
-                    }
-                    else
-                    {
-                         if (MessageBox.Show("Kaydetmeden çıkmak istediğinizden emin misiniz?",
-                                            "Exit?",
-                                            MessageBoxButtons.YesNo,
-                                            MessageBoxIcon.Question) == DialogResult.No)
-                        {                      
-                            e.Cancel = true;
                         }
                         else
                         {
-                            SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '0' ", bgl.baglanti());
-                            komutz.ExecuteNonQuery();
-                            bgl.baglanti().Close();
+                            if (MessageBox.Show("Kaydetmeden çıkmak istediğinizden emin misiniz?",
+                                               "Exit?",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Question) == DialogResult.No)
+                            {
+                                e.Cancel = true;
+                            }
+                            else
+                            {
+                                SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '0' ", bgl.baglanti());
+                                komutz.ExecuteNonQuery();
+                                bgl.baglanti().Close();
+                            }
+
                         }
-                       
                     }
+                    else
+                    {
+
+                    }
+                    
                  break;
             }
         }

@@ -35,9 +35,10 @@ namespace mROOT._2.Product
 
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
-            w.Hizmet, w.Notlar, w.FatNo, w.Odeme, w.IsDurum, w.ID from rWorkList w
+            w.Hizmet, w.Proje, w.Notlar, w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
             left join RootFatura o on w.FaturaID = o.ID
             left join RootTedarikci f on w.FirmaID = f.ID
+            left join RootKullanici k on w.PlasiyerID = k.ID
             where w.Durum = N'Aktif' order by w.RaporNo desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
@@ -51,10 +52,12 @@ namespace mROOT._2.Product
             this.gridView3.Columns[5].Width = 150;
             this.gridView3.Columns[6].Width = 70;
             this.gridView3.Columns[7].Width = 110;
-            this.gridView3.Columns[8].Width = 90;
-            this.gridView3.Columns[9].Width = 75;
-            this.gridView3.Columns[10].Width = 70;
+            this.gridView3.Columns[8].Width = 70;
+            this.gridView3.Columns[9].Width = 90;
+            this.gridView3.Columns[10].Width = 75;
             this.gridView3.Columns[11].Width = 70;
+            this.gridView3.Columns[12].Width = 70;
+            this.gridView3.Columns[13].Width = 70;
         }
 
         private void NKR_Load(object sender, EventArgs e)

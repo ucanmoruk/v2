@@ -932,7 +932,8 @@ namespace mKYS
         {
             if (ufo == null || ufo.IsDisposed)
             {
-                ufo = new mROOT._9.UGDR.uFormul();
+                mROOT._9.UGDR.uFormul.gelis = "Anasayfa";
+                 ufo = new mROOT._9.UGDR.uFormul();
                 ufo.MdiParent = this;
                 ufo.Show();
             }

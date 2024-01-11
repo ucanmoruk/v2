@@ -307,6 +307,30 @@
     <Compile Include="Raporlar\CosIng.Designer.cs">
       <DependentUpon>CosIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Tr\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\TeklifKDV.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -955,6 +979,18 @@
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Tr\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Tr\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Tr\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Tr\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\TeklifKDV.resx">
       <DependentUpon>TeklifKDV.cs</DependentUpon>
     </EmbeddedResource>
@@ -1266,6 +1302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Raporlar\Ozeco\En\" />
     <Folder Include="ÇöpKutusu\Egitim\" />
   </ItemGroup>
   <ItemGroup>
