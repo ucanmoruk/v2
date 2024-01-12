@@ -84,8 +84,9 @@ namespace mROOT._9.UGDR
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //güncelle
-            uYeni.detay = lID;
-            uYeni d = new uYeni();
+            uCopy.gelis = "guncelleme";
+            uCopy.uID = lID;
+            uCopy d = new uCopy();
             d.Show();
         }
 
@@ -219,6 +220,15 @@ namespace mROOT._9.UGDR
                 bgl.baglanti().Close();
                 listele();
             }
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //güncelle
+            uCopy.gelis = "copy";
+            //uCopy.uID = lID;
+            uCopy d = new uCopy();
+            d.Show();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

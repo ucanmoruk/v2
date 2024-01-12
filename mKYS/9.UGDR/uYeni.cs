@@ -99,20 +99,17 @@ namespace mROOT._9.UGDR
                     stabilite = 0;
 
                 SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
-            insert into rUGDDetay2 (UrunID, Mikro, Challenge, Stabilite, MResim, CResim, SResim, StabiliteNot, Durum, MResim, CResim, SResim)
-            values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12) COMMIT TRANSACTION", bgl.baglanti());
+            insert into rUGDDetay2 (UrunID, Mikro, Challenge, Stabilite, MResim, CResim, SResim, StabiliteNot, Durum)
+            values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9) COMMIT TRANSACTION", bgl.baglanti());
                 add2.Parameters.AddWithValue("@a1", yeniID);
                 add2.Parameters.AddWithValue("@a2", mikro);
                 add2.Parameters.AddWithValue("@a3", challenge);
                 add2.Parameters.AddWithValue("@a4", stabilite);
-                add2.Parameters.AddWithValue("@a5", string.IsNullOrEmpty(mresim) ? (object)DBNull.Value : mresim);
-                add2.Parameters.AddWithValue("@a6", string.IsNullOrEmpty(cresim) ? (object)DBNull.Value : cresim);
-                add2.Parameters.AddWithValue("@a7", string.IsNullOrEmpty(sresim) ? (object)DBNull.Value : sresim);
+                add2.Parameters.AddWithValue("@a5", string.IsNullOrEmpty(rmik) ? (object)DBNull.Value : rmik);
+                add2.Parameters.AddWithValue("@a6", string.IsNullOrEmpty(rchal) ? (object)DBNull.Value : rchal);
+                add2.Parameters.AddWithValue("@a7", string.IsNullOrEmpty(rsta) ? (object)DBNull.Value : rsta);
                 add2.Parameters.AddWithValue("@a8", memoEdit1.Text);
                 add2.Parameters.AddWithValue("@a9", "Pasif");
-                add2.Parameters.AddWithValue("@a10", rmik);
-                add2.Parameters.AddWithValue("@a11", rchal);
-                add2.Parameters.AddWithValue("@a12", rsta);
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 xtraTabControl1.SelectedTabPage = xtraTabPage4;
@@ -304,88 +301,109 @@ namespace mROOT._9.UGDR
 
         private void butonchal_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // open.InitialDirectory = "C:\\";
-            open.InitialDirectory = path;
-            open.Filter = "Pdf Files|*.pdf|Tüm Dosyalar(*.*)|*.*";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                rchallenge = open.FileName;
-                // pictureEdit1.Image = new Bitmap(open.FileName);
-                simpleButton2.Text = "Seçildi";
+                OpenFileDialog open = new OpenFileDialog();
+
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // open.InitialDirectory = "C:\\";
+                open.InitialDirectory = path;
+                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    rchallenge = open.FileName;
+                    // pictureEdit1.Image = new Bitmap(open.FileName);
+                    butonchal.Text = "Seçildi";
+                }
+
+                string isim = Path.GetFileName(rchallenge);
+                rchal = yeniID + "rc";
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rchal;
+                    rcyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rchal;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, rchallenge);
+                }
             }
-
-            string isim = Path.GetFileName(rchallenge);
-            rchal = yeniID + "rc";
-            using (var client = new WebClient())
+            catch (Exception ex)
             {
-                string ftpUsername = "massgrup";
-                string ftpPassword = "Bg1$4xo2";
-                ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rchal;
-                rcyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rchal;
-                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                client.UploadFile(ftpfullpath, rchallenge);
+                MessageBox.Show("Oppss4: " + ex);
             }
         }
 
         private void butonstab_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // open.InitialDirectory = "C:\\";
-            open.InitialDirectory = path;
-            open.Filter = "Pdf Files|*.pdf|Tüm Dosyalar(*.*)|*.*";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                rstabilite = open.FileName;
-                // pictureEdit1.Image = new Bitmap(open.FileName);
-                simpleButton2.Text = "Seçildi";
+                OpenFileDialog open = new OpenFileDialog();
+
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // open.InitialDirectory = "C:\\";
+                open.InitialDirectory = path;
+                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    rstabilite = open.FileName;
+                    // pictureEdit1.Image = new Bitmap(open.FileName);
+                    butonstab.Text = "Seçildi";
+                }
+
+                string isim = Path.GetFileName(rstabilite);
+                rsta = yeniID + "rs";
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rsta;
+                    rsyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rsta;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, rstabilite);
+                }
             }
-
-            string isim = Path.GetFileName(rstabilite);
-            rsta = yeniID + "rs";
-            using (var client = new WebClient())
+            catch (Exception ex)
             {
-                string ftpUsername = "massgrup";
-                string ftpPassword = "Bg1$4xo2";
-                ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rsta;
-                rsyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rsta;
-                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                client.UploadFile(ftpfullpath, rstabilite);
+                MessageBox.Show("Oppss3: " + ex);
             }
         }
 
         private void butonetiket_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // open.InitialDirectory = "C:\\";
-            open.InitialDirectory = path;
-            open.Filter = "Pdf Files|*.pdf|Tüm Dosyalar(*.*)|*.*";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                rkutu = open.FileName;
-                // pictureEdit1.Image = new Bitmap(open.FileName);
-                simpleButton2.Text = "Seçildi";
+                OpenFileDialog open = new OpenFileDialog();
+
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // open.InitialDirectory = "C:\\";
+                open.InitialDirectory = path;
+                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    rkutu = open.FileName;
+                    // pictureEdit1.Image = new Bitmap(open.FileName);
+                    butonetiket.Text = "Seçildi";
+                }
+
+                string isim = Path.GetFileName(rkutu);
+                rkut = yeniID + "rk";
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rkut;
+                    rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rkut;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, rkutu);
+                }
             }
-
-            string isim = Path.GetFileName(rkutu);
-            rkut = yeniID + "rk";
-            using (var client = new WebClient())
+            catch (Exception ex)
             {
-                string ftpUsername = "massgrup";
-                string ftpPassword = "Bg1$4xo2";
-                ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rkut;
-                rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rkut;
-                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                client.UploadFile(ftpfullpath, rkutu);
+                MessageBox.Show("Oppss2: " + ex);
             }
         }
 
@@ -393,30 +411,37 @@ namespace mROOT._9.UGDR
         string rmyol, rcyol, rsyol, rkyol;
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // open.InitialDirectory = "C:\\";
-            open.InitialDirectory = path;
-            open.Filter = "Pdf Files|*.pdf|Tüm Dosyalar(*.*)|*.*";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                rmikro = open.FileName;
-                // pictureEdit1.Image = new Bitmap(open.FileName);
-                simpleButton2.Text = "Seçildi";
+                OpenFileDialog open = new OpenFileDialog();
+
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // open.InitialDirectory = "C:\\";
+                open.InitialDirectory = path;
+                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    rmikro = open.FileName;
+                    // pictureEdit1.Image = new Bitmap(open.FileName);
+                    simpleButton2.Text = "Seçildi";
+                }
+
+                string isim = Path.GetFileName(rmikro);
+                rmik = yeniID + "rm";
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rmik;
+                    rmyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rmik;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, rmikro);
+                }
             }
-
-            string isim = Path.GetFileName(rmikro);
-            rmik = yeniID+"rm";
-            using (var client = new WebClient())
+            catch (Exception ex)
             {
-                string ftpUsername = "massgrup";
-                string ftpPassword = "Bg1$4xo2";
-                ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rmik;
-                rmyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rmik;
-                client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                client.UploadFile(ftpfullpath, rmikro);
+                MessageBox.Show("Oppss1: "+ex);
             }
         }
 
