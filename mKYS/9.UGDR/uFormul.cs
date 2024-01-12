@@ -47,7 +47,7 @@ namespace mROOT._9.UGDR
             {
                 gridLookUpEdit1.Visible = true;
                 DataTable dt2 = new DataTable();
-                SqlDataAdapter da2 = new SqlDataAdapter(@"select RaporNo, Urun, ID from rUGDListe where BirimID = '"+Giris.birimID+ "' except select * from rUGDListe where ID in (select UrunID from rUGDFormül) order by RaporNo desc", bgl.baglanti());
+                SqlDataAdapter da2 = new SqlDataAdapter(@"select RaporNo, Urun, ID from rUGDListe where BirimID = '"+Giris.birimID+ "' except select  RaporNo, Urun, ID from rUGDListe where ID in (select UrunID from rUGDFormül) order by RaporNo desc", bgl.baglanti());
                 da2.Fill(dt2);
                 gridLookUpEdit1.Properties.DataSource = dt2;
                 gridLookUpEdit1.Properties.DisplayMember = "RaporNo";
