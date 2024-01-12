@@ -129,7 +129,7 @@
        "masslab.rUGDFormül"."Miktar", "masslab.rUGDListe"."ID",
        "masslab.rUGDListe"."RaporNo", "masslab.rUGDListe"."Tarih",
        "masslab.rUGDListe"."Versiyon",
-       "masslab.rCosing"."Regulation"
+       "masslab.rCosing"."Regulation", "masslab.rUGDYonetmelik"."Kategori"
   from ((("masslab"."rUGDListe" "masslab.rUGDListe"
   left join "masslab"."rUGDFormül" "masslab.rUGDFormül"
        on ("masslab.rUGDFormül"."UrunID" = "masslab.rUGDListe"."ID"))
@@ -139,6 +139,6 @@
        on ("masslab.rUGDYonetmelik"."Num" = "masslab.rCosing"."Regulation"))</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iTnVtIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklOQ0kiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXJ1blRpcGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWFrcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEaWdlciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFdGlrZXQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlZlcnNpeW9uIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmVndWxhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iTnVtIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklOQ0kiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXJ1blRpcGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWFrcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEaWdlciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFdGlrZXQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlZlcnNpeW9uIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmVndWxhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXRlZ29yaSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>
