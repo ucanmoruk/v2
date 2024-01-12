@@ -1342,6 +1342,11 @@
     <None Include="Resources\8.png" />
     <None Include="Resources\gradient.jpg" />
     <None Include="Resources\Spektrotek Logo.jpg" />
+    <None Include="Resources\ozeco.jpg" />
+    <None Include="Resources\ozecologo.png" />
+    <None Include="Resources\ozecomuhur.png" />
+    <None Include="Resources\ozecomuhur1.png" />
+    <None Include="Resources\ozecologo1.png" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

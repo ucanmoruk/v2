@@ -343,7 +343,8 @@
             // 
             this.xrTableCell21.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Regulation]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Regulation]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([Kategori]=\'Yasaklı\',\'Red\',\'Transparent\' )")});
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseBorders = false;
@@ -419,7 +420,8 @@
             // 
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField4]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField4]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField4]=\'UYGUN DEĞİL\',\'Red\' ,\'Transparent\' )")});
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorders = false;
@@ -659,8 +661,8 @@
             // calculatedField4
             // 
             this.calculatedField4.DataMember = "masslab_rUGDListe";
-            this.calculatedField4.Expression = "Iif([calculatedField3]=\'N/A\',\'N/A\' , Iif([calculatedField3]>100,\'UYGUN\' , \'UYGUN " +
-    "DEĞİL\'))";
+            this.calculatedField4.Expression = "Iif(\n[Kategori]=\'Yasaklı\',\'UYGUN DEĞİL\', Iif([calculatedField3]=\'N/A\',\'N/A\' , Iif" +
+    "([calculatedField3]>100,\'UYGUN\' , \'UYGUN DEĞİL\')\n)\n\n)";
             this.calculatedField4.Name = "calculatedField4";
             // 
             // UGD2
