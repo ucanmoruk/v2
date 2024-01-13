@@ -32,6 +32,13 @@ namespace mROOT._2.Product
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "Ad";
             gridLookUpEdit1.Properties.ValueMember = "ID";
+
+            DataTable dt12 = new DataTable();
+            SqlDataAdapter da12 = new SqlDataAdapter("select ID, Ad from RootKullanici where Durum = 'Aktif'", bgl.baglanti());
+            da12.Fill(dt12);
+            gridLookUpEdit2.Properties.DataSource = dt12;
+            gridLookUpEdit2.Properties.DisplayMember = "Ad";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
         }
 
         void listele()

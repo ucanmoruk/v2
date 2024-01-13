@@ -171,7 +171,7 @@ namespace mROOT._9.UGDR
 
         private void button1_Click(object sender, EventArgs e)
         {
-            insert();
+            insertv2();
         }
         //31364
         string kontrol;
@@ -196,14 +196,14 @@ namespace mROOT._9.UGDR
                     if (kontrol == "0" || kontrol == null || kontrol == "")
                     {
                         driver.Navigate().GoToUrl(link);
-                        IWebElement tur = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/h1")));
-                        IWebElement name = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[1]/td[2]")));
-                        IWebElement cas = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[3]/td[2]")));
-                        IWebElement ec = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[4]/td[2]")));
-                        IWebElement regulation = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[6]/td[2]")));
-                        IWebElement func = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[7]/td[2]/ul")));
-                        IWebElement sccs = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]")));
-                        IWebElement sccsli = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]")));
+                        IWebElement tur = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/main/ng-component/h1")));
+                        IWebElement name = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/main/ng-component/table/tbody/tr[1]/td[2]")));
+                        IWebElement cas = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[3]/td[2]")));
+                        IWebElement ec = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[4]/td[2]")));
+                        IWebElement regulation = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[6]/td[2]")));
+                        IWebElement func = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[7]/td[2]/ul")));
+                        IWebElement sccs = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[8]/td[2]")));
+                        IWebElement sccsli = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[8]/td[2]")));
                         if (sccsli.Text == "" || sccsli.Text == null)
                         {
                             sccslink = null; allLinksCombined = null;
@@ -322,7 +322,234 @@ namespace mROOT._9.UGDR
             MessageBox.Show("İşlem Başarılı!");
         }
 
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            //hedef
+            IWebDriver driver = new ChromeDriver();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+            try
+            {
+                link = "https://ec.europa.eu/growth/tools-databases/cosing/details/" + textEdit3.Text;
+                driver.Navigate().GoToUrl(link);
+                IWebElement tur = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/main/ng-component/h1")));
+                IWebElement name = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/div/div/div/ng-component/table/tbody/tr[1]/td[2]")));
+                IWebElement cas = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[3]/td[2]")));
+                IWebElement ec = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[4]/td[2]")));
+                IWebElement regulation = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[6]/td[2]")));
+                IWebElement func = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[7]/td[2]/ul")));
+                IWebElement sccs = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]")));
+                IWebElement sccsli = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]")));
+                if (sccsli.Text == "" || sccsli.Text == null)
+                {
+                    sccslink = null; allLinksCombined = null;
+                }
+                else
+                {
+                    List<string> allLinks = new List<string>();
+                    IList<IWebElement> linkElements = driver.FindElements(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]/ul/li/a"));
+                    foreach (IWebElement linkElement in linkElements)
+                    {
+                        string href = linkElement.GetAttribute("href");
+                        allLinks.Add(href);
+                        allLinksCombined = String.Join("\n", allLinks);
+                    }
+                }
+                SqlCommand komutz = new SqlCommand(@"insert into rCosing (Link, INCIName, Cas, EC, Functions, Regulation, SCCS, SCCSLink, Tur) values 
+                            (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9) ", bgl.baglanti());
+                komutz.Parameters.AddWithValue("@a1", link);
+                komutz.Parameters.AddWithValue("@a2", name.Text);
+                komutz.Parameters.AddWithValue("@a3", cas.Text);
+                komutz.Parameters.AddWithValue("@a4", ec.Text);
+                komutz.Parameters.AddWithValue("@a5", func.Text);
+                komutz.Parameters.AddWithValue("@a6", regulation.Text);
+                komutz.Parameters.AddWithValue("@a7", sccs.Text);
+                if (allLinksCombined == null)
+                    komutz.Parameters.AddWithValue("@a8", DBNull.Value);
+                else
+                    komutz.Parameters.AddWithValue("@a8", allLinksCombined);
+                komutz.Parameters.AddWithValue("@a9", tur.Text);
+                komutz.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                SqlCommand komutz = new SqlCommand(@"insert into rCosingHata (Detay, Hata, Tarih) values 
+                            (@a1, @a2, @a3) ", bgl.baglanti());
+                komutz.Parameters.AddWithValue("@a1", textEdit3.Text);
+                komutz.Parameters.AddWithValue("@a2", ex.Message);
+                komutz.Parameters.AddWithValue("@a3", DateTime.Now);
+                komutz.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            
+            }
+            driver.Quit();
+            MessageBox.Show("İşlem Başarılı!");
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            //yeni
+            IWebDriver driver = new ChromeDriver();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+            for (int i = Convert.ToInt32(textEdit1.Text); i < Convert.ToInt32(textEdit2.Text); i++) //92599
+            {   //100000e kadar taradı
+                try
+                {
+                    link = "https://ec.europa.eu/growth/tools-databases/cosing/details/" + i;
+                    driver.Navigate().GoToUrl(link);
+                    IWebElement tur = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/h1")));
+                    IWebElement name = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[1]/td[2]")));
+                    IWebElement cas = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[3]/td[2]")));
+                    IWebElement ec = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[4]/td[2]")));
+                    IWebElement regulation = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[6]/td[2]")));
+                    IWebElement func = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[7]/td[2]/ul")));
+                    IWebElement sccs = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]")));
+                    IWebElement sccsli = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]")));
+                    if (sccsli.Text == "" || sccsli.Text == null)
+                    {
+                        sccslink = null; allLinksCombined = null;
+                    }
+                    else
+                    {
+                        List<string> allLinks = new List<string>();
+                        IList<IWebElement> linkElements = driver.FindElements(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]/ul/li/a"));
+                        foreach (IWebElement linkElement in linkElements)
+                        {
+                            string href = linkElement.GetAttribute("href");
+                            allLinks.Add(href);
+                            allLinksCombined = String.Join("\n", allLinks);
+                        }
+                    }
+                    SqlCommand komutz = new SqlCommand(@"insert into rCosing (Link, INCIName, Cas, EC, Functions, Regulation, SCCS, SCCSLink, Tur) values 
+                            (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9) ", bgl.baglanti());
+                    komutz.Parameters.AddWithValue("@a1", link);
+                    komutz.Parameters.AddWithValue("@a2", name.Text);
+                    komutz.Parameters.AddWithValue("@a3", cas.Text);
+                    komutz.Parameters.AddWithValue("@a4", ec.Text);
+                    komutz.Parameters.AddWithValue("@a5", func.Text);
+                    komutz.Parameters.AddWithValue("@a6", regulation.Text);
+                    komutz.Parameters.AddWithValue("@a7", sccs.Text);
+                    if (allLinksCombined == null)
+                        komutz.Parameters.AddWithValue("@a8", DBNull.Value);
+                    else
+                        komutz.Parameters.AddWithValue("@a8", allLinksCombined);
+                    komutz.Parameters.AddWithValue("@a9", tur.Text);
+                    komutz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
+
+                }
+                catch (Exception ex)
+                {
+                    SqlCommand komutz = new SqlCommand(@"insert into rCosingHata (Detay, Hata, Tarih) values 
+                            (@a1, @a2, @a3) ", bgl.baglanti());
+                    komutz.Parameters.AddWithValue("@a1", i);
+                    komutz.Parameters.AddWithValue("@a2", ex.Message);
+                    komutz.Parameters.AddWithValue("@a3", DateTime.Now);
+                    komutz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
+                    continue;
+                }
+
+
+
+
+            }
+            driver.Quit();
+            MessageBox.Show("İşlem Başarılı!");
+        }
+
         string ok;
-  
+        void insertv2()
+        {
+            IWebDriver driver = new ChromeDriver();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+            for (int i = Convert.ToInt32(textEdit1.Text); i < Convert.ToInt32(textEdit2.Text); i++) //92599
+            {   //100000e kadar taradı
+                //try
+                //{
+                    link = "https://ec.europa.eu/growth/tools-databases/cosing/details/" + i;
+
+                    SqlCommand komutID = new SqlCommand("Select Count(ID) From rCosing where Link= N'" + link + "'", bgl.baglanti());
+                    SqlDataReader drI = komutID.ExecuteReader();
+                    while (drI.Read())
+                    {
+                        kontrol = drI[0].ToString();
+                    }
+                    bgl.baglanti().Close();
+
+                    if (kontrol == "0" || kontrol == null || kontrol == "")
+                    {
+                        driver.Navigate().GoToUrl(link);                                        
+                        IWebElement tur = wait.Until(ExpectedConditions.ElementExists(By.CssSelector(".ecl-u-mb-l.ecl-page-header-harmonised__title")));
+                        IWebElement name = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("body > app-root:nth-child(2) > ecl-app:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(1) > ng-component:nth-child(2) > table:nth-child(6) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)")));
+                        IWebElement cas = wait.Until(ExpectedConditions.ElementExists(By.CssSelector("body > app-root:nth-child(2) > ecl-app:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > main:nth-child(1) > ng-component:nth-child(2) > table:nth-child(6) > tbody:nth-child(2) > tr:nth-child(5) > td:nth-child(2)")));
+                        IWebElement ec = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[4]/td[2]")));
+                        IWebElement regulation = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[6]/td[2]")));
+                        IWebElement func = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[7]/td[2]/ul")));
+                        IWebElement sccs = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[8]/td[2]")));
+                        IWebElement sccsli = wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/app-root/ecl-app/div/div/div/div/ng-component/table/tbody/tr[8]/td[2]")));
+                        if (sccsli.Text == "" || sccsli.Text == null)
+                        {
+                            sccslink = null; allLinksCombined = null;
+                        }
+                        else
+                        {
+                            List<string> allLinks = new List<string>();
+                            IList<IWebElement> linkElements = driver.FindElements(By.XPath("//*[@id='ecl-main-content']/div/ng-component/table/tbody/tr[8]/td[2]/ul/li/a"));
+                            foreach (IWebElement linkElement in linkElements)
+                            {
+                                string href = linkElement.GetAttribute("href");
+                                allLinks.Add(href);
+                                allLinksCombined = String.Join("\n", allLinks);
+                            }
+                        }
+                        //SqlCommand komutz = new SqlCommand(@"insert into rCosing (Link, INCIName, Cas, EC, Functions, Regulation, SCCS, SCCSLink, Tur) values 
+                        //    (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9) ", bgl.baglanti());
+                        //komutz.Parameters.AddWithValue("@a1", link);
+                        //komutz.Parameters.AddWithValue("@a2", name.Text);
+                        //komutz.Parameters.AddWithValue("@a3", cas.Text);
+                        //komutz.Parameters.AddWithValue("@a4", ec.Text);
+                        //komutz.Parameters.AddWithValue("@a5", func.Text);
+                        //komutz.Parameters.AddWithValue("@a6", regulation.Text);
+                        //komutz.Parameters.AddWithValue("@a7", sccs.Text);
+                        //if (allLinksCombined == null)
+                        //    komutz.Parameters.AddWithValue("@a8", DBNull.Value);
+                        //else
+                        //    komutz.Parameters.AddWithValue("@a8", allLinksCombined);
+                        //komutz.Parameters.AddWithValue("@a9", tur.Text);
+                        //komutz.ExecuteNonQuery();
+                        //bgl.baglanti().Close();
+                    }
+                    else
+                    {
+
+                    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    //SqlCommand komutz = new SqlCommand(@"insert into rCosingHata (Detay, Hata, Tarih) values 
+                //    //        (@a1, @a2, @a3) ", bgl.baglanti());
+                //    //komutz.Parameters.AddWithValue("@a1", i);
+                //    //komutz.Parameters.AddWithValue("@a2", ex.Message);
+                //    //komutz.Parameters.AddWithValue("@a3", DateTime.Now);
+                //    //komutz.ExecuteNonQuery();
+                //    //bgl.baglanti().Close();
+
+                //    continue;
+                //}
+
+
+
+
+            }
+            driver.Quit();
+            MessageBox.Show("İşlem Başarılı!");
+
+
+        }
     }
 }
