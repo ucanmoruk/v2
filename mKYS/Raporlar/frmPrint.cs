@@ -161,6 +161,48 @@ namespace mKYS.Raporlar
             documentViewer1.DocumentSource = rapor;
         }
 
+        public void OzecoTr()
+        {
+            Ozeco.Tr.UGD1 rapor = new Ozeco.Tr.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+           // rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                //   rapor.Name = name;
+                rapor.CreateDocument();
+
+                Ozeco.Tr.UGD2 rapor2 = new Ozeco.Tr.UGD2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                Ozeco.Tr.UGD3 rapor3 = new Ozeco.Tr.UGD3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
+                {
+                    p3.Visible = false;
+                    rapor3.bilgi();
+                    rapor3.CreateDocument();
+                }
+                Ozeco.Tr.UGD4 rapor4 = new Ozeco.Tr.UGD4();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p4 in rapor4.Parameters)
+                {
+                    p4.Visible = false;
+                    rapor4.bilgi();
+                    rapor4.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.Pages.AddRange(rapor3.Pages);
+                rapor.Pages.AddRange(rapor4.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
         public void CosIng()
         {
 

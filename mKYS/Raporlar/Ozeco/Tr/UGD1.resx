@@ -147,14 +147,14 @@
     <value>Stabilite çalışmaları bitmiş ürün üzerinden gerçekleştirilmiştir. Ürünün görünüş, renk, koku, pH ve ağırlık değerleri, farklı sıcaklık koşullarında belli aralıklarla kontrol edilmektedir. Stabilite test sonuçları ürün güvenlik dosyasında bulunmaktadır.</value>
   </data>
   <data name="xrLabel26.ExpressionBindings" xml:space="preserve">
-    <value>Iif([masslab_rUGDListemasslab_rUGDDetay].[Mikro]='1','Ürün özelliği gereği mikrobiyoloji testine uygun olmadığı için mikrobiyolojik olarak değerlendirilememiştir.','Son ürün için yapılan mikrobiyolojik analiz sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar mikrobiyolojik kalite kontrol limitlerine uygundur. Mikrobiyolojik kontaminasyon riski taşımamaktadır.'  )</value>
+    <value>Iif([masslab_rUGDListemasslab_rUGDDetay].[Mikro]='False','Ürün özelliği gereği mikrobiyoloji testine uygun olmadığı için mikrobiyolojik olarak değerlendirilememiştir.','Son ürün için yapılan mikrobiyolojik analiz sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar mikrobiyolojik kalite kontrol limitlerine uygundur. Mikrobiyolojik kontaminasyon riski taşımamaktadır.'  )</value>
   </data>
   <data name="xrLabel24.Text" xml:space="preserve">
     <value>Kozmetik ürünlerde kesinlikle bulunmaması gereken mikroorganizmalar Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans ve Escherichia coli’dir.
 Farklı cilt bölgeleri, farklı hassasiyete sahip olabileceğinden kozmetik ürünler için iki ayrı kategori tanımlanmıştır.</value>
   </data>
   <data name="xrLabel29.ExpressionBindings" xml:space="preserve">
-    <value>Iif([masslab_rUGDListemasslab_rUGDDetay].[Challenge]='1', 'Ürün yapısı itibariyle koruyucu etkinlik testine uygun olmadığından bu test uygulanmamıştır.', 'Ürünün koruyucu etkinlik test sonuçlarının uygun olduğu görülmüştür.')</value>
+    <value>Iif([masslab_rUGDListemasslab_rUGDDetay].[Challenge]='False', 'Ürün yapısı itibariyle koruyucu etkinlik testine uygun olmadığından bu test uygulanmamıştır.', 'Ürünün koruyucu etkinlik test sonuçlarının uygun olduğu görülmüştür.')</value>
   </data>
   <data name="xrLabel28.Text" xml:space="preserve">
     <value>Test, uygun mikroorganizmaların belirli inokulum seviyelerinde hazırlanması ve belirli zaman aralıklarında mikroorganizma içeren numuneden ekim yapılarak numunedeki mikroorganizmaların sayılmasını kapsar. Test koşulları içinde 7., 14 ve 28 günlerdeki mikroorganizmaların uygun bir şekilde belirgin bir düşüş veya artışın gözlenip gözlenmediğine bakılarak ürünün koruyucu özelliğinin yeterliliğine karar verilir.</value>

@@ -69,16 +69,48 @@ namespace mROOT._9.UGDR
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Teklif Yazdır
-           // mKYS.Raporlar.TeklifMS.tID = lID;
-            mKYS.Raporlar.UGD1.tID = lID;
-            mKYS.Raporlar.UGD2.tID = lID;
-            mKYS.Raporlar.UGD3.tID = lID;
-            mKYS.Raporlar.UGD4.tID = lID;
-            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            // mKYS.Raporlar.TeklifMS.tID = lID;
+
+            if (Giris.birimID == "1005")
             {
-                frm.UGDR();
-                frm.ShowDialog();
+                mKYS.Raporlar.Ozeco.Tr.UGD1.tID = lID;
+                mKYS.Raporlar.Ozeco.Tr.UGD2.tID = lID;
+                mKYS.Raporlar.Ozeco.Tr.UGD3.tID = lID;
+                mKYS.Raporlar.Ozeco.Tr.UGD4.tID = lID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.OzecoTr();
+                    frm.ShowDialog();
+                }
             }
+            else
+            {
+
+                mKYS.Raporlar.Ozeco.Tr.UGD1.tID = lID;
+                mKYS.Raporlar.Ozeco.Tr.UGD2.tID = lID;
+                mKYS.Raporlar.Ozeco.Tr.UGD3.tID = lID;
+                mKYS.Raporlar.Ozeco.Tr.UGD4.tID = lID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.OzecoTr();
+                    frm.ShowDialog();
+                }
+
+
+                //mKYS.Raporlar.UGD1.tID = lID;
+                //mKYS.Raporlar.UGD2.tID = lID;
+                //mKYS.Raporlar.UGD3.tID = lID;
+                //mKYS.Raporlar.UGD4.tID = lID;
+                //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                //{
+                //    frm.UGDR();
+                //    frm.ShowDialog();
+                //}
+            }
+
+
+            
+          
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -224,11 +256,24 @@ namespace mROOT._9.UGDR
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (MessageBox.Show("Ürün bilgilerini formülle birlikte mi kopyalamak istiyorsunuz ?",
+                                               "Ürün Kopyalama?",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                uCopy.formuldahil = "evet";
+            }
+            else
+            {
+
+            }
             //güncelle
             uCopy.gelis = "copy";
-            //uCopy.uID = lID;
+            uCopy.uID = lID;
             uCopy d = new uCopy();
             d.Show();
+
+
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

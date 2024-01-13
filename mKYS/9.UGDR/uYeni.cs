@@ -316,9 +316,9 @@ namespace mROOT._9.UGDR
                     // pictureEdit1.Image = new Bitmap(open.FileName);
                     butonchal.Text = "Seçildi";
                 }
-
+                parolaolustur();
                 string isim = Path.GetFileName(rchallenge);
-                rchal = yeniID + "rc";
+                rchal = yeniID + "rc-" + parola + ".jpg";
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
@@ -352,9 +352,9 @@ namespace mROOT._9.UGDR
                     // pictureEdit1.Image = new Bitmap(open.FileName);
                     butonstab.Text = "Seçildi";
                 }
-
+                parolaolustur();
                 string isim = Path.GetFileName(rstabilite);
-                rsta = yeniID + "rs";
+                rsta = yeniID + "rs-"+parola + ".jpg";
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
@@ -388,9 +388,9 @@ namespace mROOT._9.UGDR
                     // pictureEdit1.Image = new Bitmap(open.FileName);
                     butonetiket.Text = "Seçildi";
                 }
-
+                parolaolustur();
                 string isim = Path.GetFileName(rkutu);
-                rkut = yeniID + "rk";
+                rkut = yeniID + "rk-"+parola + ".jpg";
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
@@ -409,10 +409,26 @@ namespace mROOT._9.UGDR
 
         string rmik, rchal, rsta, rkut, ftpfullpath;
         string rmyol, rcyol, rsyol, rkyol;
+
+        string parola;
+        protected void parolaolustur()
+        {
+            char[] cr = "0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            string result = string.Empty;
+            Random r = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                parola += cr[r.Next(0, cr.Length - 1)].ToString();
+            }
+        }
+
+
+
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
             try
             {
+
                 OpenFileDialog open = new OpenFileDialog();
 
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -426,9 +442,9 @@ namespace mROOT._9.UGDR
                     // pictureEdit1.Image = new Bitmap(open.FileName);
                     simpleButton2.Text = "Seçildi";
                 }
-
+                parolaolustur();
                 string isim = Path.GetFileName(rmikro);
-                rmik = yeniID + "rm";
+                rmik = yeniID + "rm-"+parola + ".jpg";
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";

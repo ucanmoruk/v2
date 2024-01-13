@@ -30,7 +30,7 @@ namespace mROOT._9.UGDR
         sqlbaglanti bgl = new sqlbaglanti();
         uListe n = (uListe)System.Windows.Forms.Application.OpenForms["uListe"];
 
-        public static string uID, gelis;
+        public static string uID, gelis, formuldahil;
         private void uYeni_Load(object sender, EventArgs e)
         {
             if (gelis=="copy")
@@ -47,41 +47,66 @@ namespace mROOT._9.UGDR
         }
 
          void hosgeldin()
+         {
+            SqlCommand komut = new SqlCommand("select MAX(RaporNo) from rUGDListe where BirimID = '" + Giris.birimID + "' and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                int rno = Convert.ToInt32(dr[0].ToString()) + 1;
+                traporno.Text = Convert.ToString(rno);
+            }
+            bgl.baglanti().Close();
+
+            SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+            "insert into rUGDListe (RaporNo, BirimID, Durum, RaporDurum) " +
+            "values (@o2,@o3,@o4, @o5) SET @ID = SCOPE_IDENTITY() ;" +
+            "COMMIT TRANSACTION", bgl.baglanti());
+            add2.Parameters.AddWithValue("@o2", traporno.Text);
+            add2.Parameters.AddWithValue("@o3", Giris.birimID);
+            add2.Parameters.AddWithValue("@o4", "Pasif");
+            add2.Parameters.AddWithValue("@o5", "Yeni");
+            add2.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
+            add2.ExecuteNonQuery();
+            yeniID = add2.Parameters["@ID"].Value.ToString();
+            bgl.baglanti().Close();
+
+            if (formuldahil == "evet")
+            {
+                SqlCommand komut2 = new SqlCommand("select * from rUGDformül where UrunID = '"+uID+"'", bgl.baglanti());
+                SqlDataReader dr2 = komut2.ExecuteReader();
+                while (dr2.Read())
                 {
-                    SqlCommand komut = new SqlCommand("select MAX(RaporNo) from rUGDListe where BirimID = '" + Giris.birimID + "' and Durum = N'Aktif'", bgl.baglanti());
-                    SqlDataReader dr = komut.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        int rno = Convert.ToInt32(dr[0].ToString()) + 1;
-                        traporno.Text = Convert.ToString(rno);
-                    }
+                    string HammaddeID = dr2["HammaddeID"].ToString();
+                    string INCIName = dr2["INCIName"].ToString();
+                    decimal miktar = Convert.ToDecimal(dr2["Miktar"].ToString());
+
+                    SqlCommand add12 = new SqlCommand(@"BEGIN TRANSACTION insert into rUGDformül (UrunID, HammaddeID, INCIName, Miktar)
+                    values (@o2,@o3,@o4, @o5) ; COMMIT TRANSACTION" , bgl.baglanti());
+                    add12.Parameters.AddWithValue("@o2", yeniID);
+                    add12.Parameters.AddWithValue("@o3", HammaddeID);
+                    add12.Parameters.AddWithValue("@o4", INCIName);
+                    add12.Parameters.AddWithValue("@o5", miktar);
+                    add12.ExecuteNonQuery();
                     bgl.baglanti().Close();
-
-                    SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                    "insert into rUGDListe (RaporNo, BirimID, Durum, RaporDurum) " +
-                    "values (@o2,@o3,@o4, @o5) SET @ID = SCOPE_IDENTITY() ;" +
-                    "COMMIT TRANSACTION", bgl.baglanti());
-                    add2.Parameters.AddWithValue("@o2", traporno.Text);
-                    add2.Parameters.AddWithValue("@o3", Giris.birimID);
-                    add2.Parameters.AddWithValue("@o4", "Pasif");
-                    add2.Parameters.AddWithValue("@o5", "Yeni");
-                    add2.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    add2.ExecuteNonQuery();
-                    yeniID = add2.Parameters["@ID"].Value.ToString();
-                    bgl.baglanti().Close();
-
-
                 }
+                bgl.baglanti().Close();
+            }
 
+
+        }
+        string mchal, msta;
         void detaybul()
         {
             SqlCommand komut = new SqlCommand("select * from rUGDListe where ID = '" + uID + "' ", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
-
-               traporno.Text = dr["RaporNo"].ToString();
-               dateEdit1.EditValue= Convert.ToDateTime(dr["Tarih"].ToString());
+                if (gelis!="copy")
+                    traporno.Text = dr["RaporNo"].ToString();
+                if (gelis != "copy")
+                    dateEdit1.EditValue = Convert.ToDateTime(dr["Tarih"].ToString());
+                else
+                    dateEdit1.EditValue = DateTime.Now;
                gridLookUpEdit1.EditValue = dr["FirmaID"].ToString();
                tverno.Text = dr["Versiyon"].ToString();
                turun.Text = dr["Urun"].ToString();
@@ -117,35 +142,35 @@ namespace mROOT._9.UGDR
             while (dr3.Read())
             {
                 string mikro = dr3["Mikro"].ToString();
-                string mresim  = dr3["MResim"].ToString();
+                rmik  = dr3["MResim"].ToString();
                 string challenge = dr3["Challenge"].ToString();
-                string mchal= dr3["CResim"].ToString();
+                rchal= dr3["CResim"].ToString();
                 string stabilite = dr3["Stabilite"].ToString();
-                string msta = dr3["SResim"].ToString();
+                rsta = dr3["SResim"].ToString();
                 memoEdit1.Text = dr3["StabiliteNot"].ToString();
                 memoEdit2.Text = dr3["Kullanim"].ToString();
                 memoEdit3.Text = dr3["Ozellikler"].ToString();
                 memoEdit4.Text = dr3["Uyarilar"].ToString();
-                string mkutu = dr3["Kutu"].ToString();
+                rkut = dr3["Kutu"].ToString();
 
-                if (mresim != null)
+                if (rmik != null)
                     simpleButton2.Text = "Seçili";
-                if (mchal != null)
+                if (rchal != null)
                     butonchal.Text = "Seçili";
-                if (msta != null)
+                if (rsta != null)
                     butonstab.Text = "Seçili";
-                if (mkutu != null)
+                if (rkut != null)
                     butonetiket.Text = "Seçili";
 
-                if (mikro == "1")
+                if (mikro == "True")
                     checkEdit1.Checked = true;
                 else
                     checkEdit1.Checked = false;
-                if (challenge == "1")
+                if (challenge == "True")
                     checkEdit2.Checked = true;
                 else
                     checkEdit2.Checked = false;
-                if (stabilite == "1")
+                if (stabilite == "True")
                     checkEdit3.Checked = true;
                 else
                     checkEdit3.Checked = false;
@@ -192,7 +217,7 @@ namespace mROOT._9.UGDR
         {
             try
             {
-                if (gelis == "Copy")
+                if (gelis == "copy")
                 {
                     SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
                  update rUGDListe set Versiyon=@a1, Tarih=@a2, FirmaID=@a3, Urun=@a4, Barkod=@a5, Miktar=@a6, 
@@ -274,7 +299,7 @@ namespace mROOT._9.UGDR
                 {
 
                     SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
-                    set rUGDDetay Gorunum =@a2, Renk=@a3, Koku=@a4, pH=@a5, Kaynama=@a6, Erime=@a7, 
+                    update rUGDDetay set Gorunum =@a2, Renk=@a3, Koku=@a4, pH=@a5, Kaynama=@a6, Erime=@a7, 
                     Yogunluk=@a8, Viskozite=@a9, Suda=@a10, Diger=@a11 where UrunID = '"+uID+"' COMMIT TRANSACTION", bgl.baglanti());
                    // add2.Parameters.AddWithValue("@a1", yeniID);
                     add2.Parameters.AddWithValue("@a2", tgorunum.Text);
@@ -337,7 +362,7 @@ namespace mROOT._9.UGDR
                 else
                 {
                     SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
-                    update rUGDDetay2 set Mikro=@a2, Challenge=@a3, Stabilite=@4, MResim=@a5, CResim=@a6, SResim=@a7, StabiliteNot=@a8 where UrunID='"+uID+"' COMMIT TRANSACTION", bgl.baglanti());
+                    update rUGDDetay2 set Mikro=@a2, Challenge=@a3, Stabilite=@a4, MResim=@a5, CResim=@a6, SResim=@a7, StabiliteNot=@a8 where UrunID='"+uID+"' COMMIT TRANSACTION", bgl.baglanti());
                     add2.Parameters.AddWithValue("@a2", mikro);
                     add2.Parameters.AddWithValue("@a3", challenge);
                     add2.Parameters.AddWithValue("@a4", stabilite);
@@ -361,11 +386,11 @@ namespace mROOT._9.UGDR
         {
             if (gelis == "copy")
             {
-                guncelle();
+                kaydet();
             }
             else
-            {
-                kaydet();
+            {                
+                guncelle();
             }
         }
 
@@ -489,31 +514,65 @@ namespace mROOT._9.UGDR
         {
             try
             {
-                OpenFileDialog open = new OpenFileDialog();
-
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-                // open.InitialDirectory = "C:\\";
-                open.InitialDirectory = path;
-                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
-                if (open.ShowDialog() == DialogResult.OK)
+                parolaolustur();
+                if (gelis == "copy")
                 {
-                    rchallenge = open.FileName;
-                    // pictureEdit1.Image = new Bitmap(open.FileName);
-                    butonchal.Text = "Seçildi";
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rchallenge = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        butonchal.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rchallenge);
+                    rchal = yeniID + "rc-"+parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rchal;
+                        rcyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rchal;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rchallenge);
+                    }
+                }
+                else
+                {
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rchallenge = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        butonchal.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rchallenge);
+                    rchal = uID + "rc-"+parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rchal;
+                        rcyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rchal;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rchallenge);
+                    }
                 }
 
-                string isim = Path.GetFileName(rchallenge);
-                rchal = yeniID + "rc";
-                using (var client = new WebClient())
-                {
-                    string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rchal;
-                    rcyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rchal;
-                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                    client.UploadFile(ftpfullpath, rchallenge);
-                }
+               
             }
             catch (Exception ex)
             {
@@ -525,31 +584,65 @@ namespace mROOT._9.UGDR
         {
             try
             {
-                OpenFileDialog open = new OpenFileDialog();
-
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-                // open.InitialDirectory = "C:\\";
-                open.InitialDirectory = path;
-                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
-                if (open.ShowDialog() == DialogResult.OK)
+                parolaolustur();
+                if (gelis == "copy")
                 {
-                    rstabilite = open.FileName;
-                    // pictureEdit1.Image = new Bitmap(open.FileName);
-                    butonstab.Text = "Seçildi";
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rstabilite = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        butonstab.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rstabilite);
+                    rsta = yeniID + "rs-"+parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rsta;
+                        rsyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rsta;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rstabilite);
+                    }
+                }
+                else
+                {
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rstabilite = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        butonstab.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rstabilite);
+                    rsta = uID + "rs-"+parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rsta;
+                        rsyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rsta;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rstabilite);
+                    }
                 }
 
-                string isim = Path.GetFileName(rstabilite);
-                rsta = yeniID + "rs";
-                using (var client = new WebClient())
-                {
-                    string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rsta;
-                    rsyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rsta;
-                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                    client.UploadFile(ftpfullpath, rstabilite);
-                }
+               
             }
             catch (Exception ex)
             {
@@ -561,31 +654,65 @@ namespace mROOT._9.UGDR
         {
             try
             {
-                OpenFileDialog open = new OpenFileDialog();
-
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-                // open.InitialDirectory = "C:\\";
-                open.InitialDirectory = path;
-                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
-                if (open.ShowDialog() == DialogResult.OK)
+                parolaolustur();
+                if (gelis == "copy")
                 {
-                    rkutu = open.FileName;
-                    // pictureEdit1.Image = new Bitmap(open.FileName);
-                    butonetiket.Text = "Seçildi";
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rkutu = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        butonetiket.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rkutu);
+                    rkut = yeniID + "rk-"+parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rkut;
+                        rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rkut;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rkutu);
+                    }
+                }
+                else
+                {
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rkutu = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        butonetiket.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rkutu);
+                    rkut = uID + "rk-"+parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rkut;
+                        rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rkut;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rkutu);
+                    }
                 }
 
-                string isim = Path.GetFileName(rkutu);
-                rkut = yeniID + "rk";
-                using (var client = new WebClient())
-                {
-                    string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rkut;
-                    rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rkut;
-                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                    client.UploadFile(ftpfullpath, rkutu);
-                }
+               
             }
             catch (Exception ex)
             {
@@ -595,35 +722,84 @@ namespace mROOT._9.UGDR
 
         string rmik, rchal, rsta, rkut, ftpfullpath;
         string rmyol, rcyol, rsyol, rkyol;
+
+        string parola;
+        protected void parolaolustur()
+        {
+            char[] cr = "0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            string result = string.Empty;
+            Random r = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                parola += cr[r.Next(0, cr.Length - 1)].ToString();
+            }
+        }
+
+
         private void simpleButton2_Click_1(object sender, EventArgs e)
         {
             try
             {
-                OpenFileDialog open = new OpenFileDialog();
-
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-                // open.InitialDirectory = "C:\\";
-                open.InitialDirectory = path;
-                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
-                if (open.ShowDialog() == DialogResult.OK)
+                parolaolustur();
+                if (gelis == "copy")
                 {
-                    rmikro = open.FileName;
-                    // pictureEdit1.Image = new Bitmap(open.FileName);
-                    simpleButton2.Text = "Seçildi";
+                    
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rmikro = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        simpleButton2.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rmikro);
+                    rmik = yeniID + "rm-" +parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rmik;
+                        rmyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rmik;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rmikro);
+                    }
+                }
+                else
+                {
+                    OpenFileDialog open = new OpenFileDialog();
+
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                    // open.InitialDirectory = "C:\\";
+                    open.InitialDirectory = path;
+                    open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                    if (open.ShowDialog() == DialogResult.OK)
+                    {
+                        rmikro = open.FileName;
+                        // pictureEdit1.Image = new Bitmap(open.FileName);
+                        simpleButton2.Text = "Seçildi";
+                    }
+
+                    string isim = Path.GetFileName(rmikro);
+                    rmik = uID + "rm-" + parola + ".jpg";
+                    using (var client = new WebClient())
+                    {
+                        string ftpUsername = "massgrup";
+                        string ftpPassword = "!88n2ee5Q";
+                        ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rmik;
+                        rmyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rmik;
+                        client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                        client.UploadFile(ftpfullpath, rmikro);
+                    }
                 }
 
-                string isim = Path.GetFileName(rmikro);
-                rmik = yeniID + "rm";
-                using (var client = new WebClient())
-                {
-                    string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rmik;
-                    rmyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rmik;
-                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
-                    client.UploadFile(ftpfullpath, rmikro);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -641,6 +817,7 @@ namespace mROOT._9.UGDR
         {
             gelis = null;
             uID = null;
+            formuldahil = null;
 
         }
         string yeniID;
