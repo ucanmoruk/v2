@@ -900,7 +900,7 @@ namespace mKYS
 
         private void barButtonItem97_ItemClick(object sender, ItemClickEventArgs e)
         {
-            mROOT._9.UGDR.uYeni yeni= new mROOT._9.UGDR.uYeni();
+            mROOT._9.UGDR.OzuYeni yeni= new mROOT._9.UGDR.OzuYeni();
             yeni.Show();
         }
 

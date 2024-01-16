@@ -146,8 +146,11 @@
   <data name="xrLabel23.Text" xml:space="preserve">
     <value>Stabilite çalışmaları bitmiş ürün üzerinden gerçekleştirilmiştir. Ürünün görünüş, renk, koku, pH ve ağırlık değerleri, farklı sıcaklık koşullarında belli aralıklarla kontrol edilmektedir. Stabilite test sonuçları ürün güvenlik dosyasında bulunmaktadır.</value>
   </data>
-  <data name="xrLabel26.ExpressionBindings" xml:space="preserve">
+  <data name="xrLabel69.ExpressionBindings" xml:space="preserve">
     <value>Iif([masslab_rUGDListemasslab_rUGDDetay].[Mikro]='False','Ürün özelliği gereği mikrobiyoloji testine uygun olmadığı için mikrobiyolojik olarak değerlendirilememiştir.','Son ürün için yapılan mikrobiyolojik analiz sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar mikrobiyolojik kalite kontrol limitlerine uygundur. Mikrobiyolojik kontaminasyon riski taşımamaktadır.'  )</value>
+  </data>
+  <data name="xrLabel26.Text" xml:space="preserve">
+    <value>İyi İmalat Uygulamalarına ve Mikrobiyolojik Kalite Yönetimine uyarak cihaz ve malzemelerin temiz, ürünlerin patolojik mikroorganizmasız olmasını sağlamalı, özel temizleme, sanitasyon ve kontrol prosedürlerini tanımlayarak takip edilmektedir.</value>
   </data>
   <data name="xrLabel24.Text" xml:space="preserve">
     <value>Kozmetik ürünlerde kesinlikle bulunmaması gereken mikroorganizmalar Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans ve Escherichia coli’dir.
@@ -158,6 +161,9 @@ Farklı cilt bölgeleri, farklı hassasiyete sahip olabileceğinden kozmetik ür
   </data>
   <data name="xrLabel28.Text" xml:space="preserve">
     <value>Test, uygun mikroorganizmaların belirli inokulum seviyelerinde hazırlanması ve belirli zaman aralıklarında mikroorganizma içeren numuneden ekim yapılarak numunedeki mikroorganizmaların sayılmasını kapsar. Test koşulları içinde 7., 14 ve 28 günlerdeki mikroorganizmaların uygun bir şekilde belirgin bir düşüş veya artışın gözlenip gözlenmediğine bakılarak ürünün koruyucu özelliğinin yeterliliğine karar verilir.</value>
+  </data>
+  <data name="xrTableCell12.Text" xml:space="preserve">
+    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
   </data>
   <data name="xrLabel54.Text" xml:space="preserve">
     <value>Kozmetik ürün ile ilgili rapor içerisinde yer alan bilgiler için Ürün Güvenlik Dosyasında da yer alan Hammadde Güvenlik Bilgi Formları, ürün formülasyonu, ürün etiket bilgisi ve ilgili test raporlarından faydalanılmıştır.</value>

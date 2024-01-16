@@ -1,4 +1,4 @@
-﻿namespace mKYS.Raporlar.Ozeco.Tr
+﻿namespace mKYS.Raporlar.Ozeco.En
 {
     partial class UGD4
     {
@@ -227,7 +227,7 @@
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
-            this.xrTableCell1.Text = "Form / Versiyon No:";
+            this.xrTableCell1.Text = "Form / Version Nr:";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell1.Weight = 1.3151261011201729D;
             // 
@@ -253,7 +253,7 @@
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.StylePriority.UsePadding = false;
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
-            this.xrTableCell3.Text = "Yayın Tarihi / Sayfa:";
+            this.xrTableCell3.Text = "Release Date / Page:";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell3.Weight = 1.5442922753042072D;
             // 
@@ -283,8 +283,8 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(418.5468F, 23F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "(EC) No 1223/2009 Kozmetik Regülasyonu ve 23 Mayıs 2005 tarihli, 25823 sayılı Koz" +
-    "metik Yönetmeliği uyarınca hazırlanmıştır.";
+            this.xrLabel2.Text = "It has been prepared in accordance with the Cosmetics Regulation (EC) No 1223/200" +
+    "9 and the Cosmetics Regulation No. 25823, 23 May 2005.";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -297,7 +297,7 @@
             this.xrLabel1.SizeF = new System.Drawing.SizeF(753F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
+            this.xrLabel1.Text = "COSMETIC PRODUCT SAFETY ASSESSMENT";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // BottomMargin
@@ -375,7 +375,7 @@
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseForeColor = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "EK-3 BİLEŞENLERİN FİZİKOKİMYASAL VE TOKSİKOLOJİK ÖZELLİKLERİ";
+            this.xrLabel5.Text = "ANNEX-3 PHYSICOCHEMICAL AND TOXICOLOGICAL PROPERTIES OF THE COMPONENTS";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Detail
@@ -432,8 +432,8 @@
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBackColor = false;
             this.xrTableCell5.StylePriority.UseFont = false;
-            this.xrTableCell5.Text = "Fizikokimyasal Özellikler:";
-            this.xrTableCell5.Weight = 1.460415496826172D;
+            this.xrTableCell5.Text = "Physicochemical Properties:";
+            this.xrTableCell5.Weight = 1.5749989318847657D;
             // 
             // xrTableCell6
             // 
@@ -446,7 +446,7 @@
             this.xrTableCell6.StylePriority.UseBorderColor = false;
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.Text = "xrTableCell6";
-            this.xrTableCell6.Weight = 6.0695832824707034D;
+            this.xrTableCell6.Weight = 5.9549998474121093D;
             // 
             // xrTableRow3
             // 
@@ -464,8 +464,8 @@
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBackColor = false;
             this.xrTableCell7.StylePriority.UseFont = false;
-            this.xrTableCell7.Text = "Toksikolojik Özellikler:";
-            this.xrTableCell7.Weight = 1.4604154968261718D;
+            this.xrTableCell7.Text = "Toxicological Properties:";
+            this.xrTableCell7.Weight = 1.5749989318847655D;
             // 
             // xrTableCell8
             // 
@@ -478,7 +478,7 @@
             this.xrTableCell8.StylePriority.UseBorderColor = false;
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.Text = "xrTableCell8";
-            this.xrTableCell8.Weight = 6.0695832824707026D;
+            this.xrTableCell8.Weight = 5.9549998474121084D;
             // 
             // xrTableRow4
             // 
@@ -496,8 +496,8 @@
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBackColor = false;
             this.xrTableCell9.StylePriority.UseFont = false;
-            this.xrTableCell9.Text = "Kaynak:";
-            this.xrTableCell9.Weight = 1.460415496826172D;
+            this.xrTableCell9.Text = "Reference:";
+            this.xrTableCell9.Weight = 1.5749989318847657D;
             // 
             // xrTableCell10
             // 
@@ -510,7 +510,7 @@
             this.xrTableCell10.StylePriority.UseBorderColor = false;
             this.xrTableCell10.StylePriority.UseBorders = false;
             this.xrTableCell10.Text = "xrTableCell10";
-            this.xrTableCell10.Weight = 6.0695832824707034D;
+            this.xrTableCell10.Weight = 5.9549998474121093D;
             // 
             // groupHeaderBand1
             // 
@@ -541,7 +541,7 @@
             this.xrLabel67.StylePriority.UseBackColor = false;
             this.xrLabel67.StylePriority.UseFont = false;
             this.xrLabel67.StylePriority.UseForeColor = false;
-            this.xrLabel67.Text = "KAYNAKLAR";
+            this.xrLabel67.Text = "REFERENCES";
             // 
             // xrTable14
             // 

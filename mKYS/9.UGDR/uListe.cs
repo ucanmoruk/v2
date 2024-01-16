@@ -276,6 +276,47 @@ namespace mROOT._9.UGDR
 
         }
 
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            if (Giris.birimID == "1005")
+            {
+                mKYS.Raporlar.Ozeco.En.UGD1.tID = lID;
+                mKYS.Raporlar.Ozeco.En.UGD2.tID = lID;
+                mKYS.Raporlar.Ozeco.En.UGD3.tID = lID;
+                mKYS.Raporlar.Ozeco.En.UGD4.tID = lID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.OzecoEn();
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+
+                mKYS.Raporlar.Ozeco.En.UGD1.tID = lID;
+                mKYS.Raporlar.Ozeco.En.UGD2.tID = lID;
+                mKYS.Raporlar.Ozeco.En.UGD3.tID = lID;
+                mKYS.Raporlar.Ozeco.En.UGD4.tID = lID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.OzecoEn();
+                    frm.ShowDialog();
+                }
+
+
+                //mKYS.Raporlar.UGD1.tID = lID;
+                //mKYS.Raporlar.UGD2.tID = lID;
+                //mKYS.Raporlar.UGD3.tID = lID;
+                //mKYS.Raporlar.UGD4.tID = lID;
+                //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                //{
+                //    frm.UGDR();
+                //    frm.ShowDialog();
+                //}
+            }
+        }
+
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //ödendi

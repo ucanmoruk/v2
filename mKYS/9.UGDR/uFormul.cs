@@ -170,7 +170,7 @@ namespace mROOT._9.UGDR
                         {
                             for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
                             {
-                                SqlCommand komutz = new SqlCommand("update rUGDFormül Miktar=@o3 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                                SqlCommand komutz = new SqlCommand("update rUGDFormül set Miktar=@o3 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
                                 komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Miktar").ToString()));
                                 komutz.ExecuteNonQuery();
                                 bgl.baglanti().Close();

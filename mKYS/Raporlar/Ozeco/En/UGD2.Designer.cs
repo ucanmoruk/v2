@@ -1,4 +1,4 @@
-﻿namespace mKYS.Raporlar.Ozeco.Tr
+﻿namespace mKYS.Raporlar.Ozeco.En
 {
     partial class UGD2
     {
@@ -160,7 +160,7 @@
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
-            this.xrTableCell1.Text = "Form / Versiyon No:";
+            this.xrTableCell1.Text = "Form / Version Nr:";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell1.Weight = 1.3151261011201729D;
             // 
@@ -188,7 +188,7 @@
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.StylePriority.UsePadding = false;
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
-            this.xrTableCell3.Text = "Yayın Tarihi / Sayfa:";
+            this.xrTableCell3.Text = "Release Date / Page:";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell3.Weight = 3.655335280568182D;
             // 
@@ -218,8 +218,8 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(418.5468F, 23F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "(EC) No 1223/2009 Kozmetik Regülasyonu ve 23 Mayıs 2005 tarihli, 25823 sayılı Koz" +
-    "metik Yönetmeliği uyarınca hazırlanmıştır.";
+            this.xrLabel2.Text = "It has been prepared in accordance with the Cosmetics Regulation (EC) No 1223/200" +
+    "9 and the Cosmetics Regulation No. 25823, 23 May 2005.";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -232,7 +232,7 @@
             this.xrLabel1.SizeF = new System.Drawing.SizeF(1024F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
+            this.xrLabel1.Text = "COSMETIC PRODUCT SAFETY ASSESSMENT";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // BottomMargin
@@ -472,7 +472,7 @@
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField4]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField4]=\'UYGUN DEĞİL\',\'Red\' ,\'Transparent\' )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField4]=\'FAIL\',\'Red\' ,\'Transparent\' )")});
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorderColor = false;
@@ -501,7 +501,7 @@
             this.xrLabel11.StylePriority.UseFont = false;
             this.xrLabel11.StylePriority.UseForeColor = false;
             this.xrLabel11.StylePriority.UseTextAlignment = false;
-            this.xrLabel11.Text = "EK-1 KOZMETİK ÜRÜNÜN FORMÜLASYON ve DEĞERLENDİRMESİ";
+            this.xrLabel11.Text = "ANNEX-1 COSMETIC PRODUCT FORMULATION and EVALUATION";
             this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // GroupHeader1
@@ -557,7 +557,7 @@
             this.xrTableCell5.StylePriority.UseBackColor = false;
             this.xrTableCell5.StylePriority.UseBorders = false;
             this.xrTableCell5.StylePriority.UseForeColor = false;
-            this.xrTableCell5.Text = "BİLEŞEN";
+            this.xrTableCell5.Text = "COMPONENT";
             this.xrTableCell5.Weight = 2.2242434395684652D;
             // 
             // xrTableCell6
@@ -599,7 +599,7 @@
             this.xrTableCell8.StylePriority.UseBackColor = false;
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.StylePriority.UseForeColor = false;
-            this.xrTableCell8.Text = "FONKSİYON";
+            this.xrTableCell8.Text = "FUNCTION";
             this.xrTableCell8.Weight = 1.5392431911412619D;
             // 
             // xrTableCell9
@@ -613,7 +613,7 @@
             this.xrTableCell9.StylePriority.UseBackColor = false;
             this.xrTableCell9.StylePriority.UseBorders = false;
             this.xrTableCell9.StylePriority.UseForeColor = false;
-            this.xrTableCell9.Text = "YÖNETMELİK";
+            this.xrTableCell9.Text = "REGULATION";
             this.xrTableCell9.Weight = 0.95377880082312627D;
             // 
             // xrTableCell10
@@ -711,7 +711,7 @@
             this.xrTableCell16.StylePriority.UseBackColor = false;
             this.xrTableCell16.StylePriority.UseBorders = false;
             this.xrTableCell16.StylePriority.UseForeColor = false;
-            this.xrTableCell16.Text = "DEĞERLENDİRME";
+            this.xrTableCell16.Text = "EVALUATION";
             this.xrTableCell16.Weight = 1.2296538478443244D;
             // 
             // pID
@@ -761,8 +761,8 @@
             // calculatedField4
             // 
             this.calculatedField4.DataMember = "masslab_rUGDListe";
-            this.calculatedField4.Expression = "Iif(\n[Kategori]=\'Yasaklı\',\'UYGUN DEĞİL\', Iif([calculatedField3]=\'N/A\',\'UYGUN\' , I" +
-    "if([calculatedField3]>100,\'UYGUN\' , \'UYGUN DEĞİL\')\n)\n\n)";
+            this.calculatedField4.Expression = "Iif(\n[Kategori]=\'Yasaklı\',\'FAIL\', Iif([calculatedField3]=\'N/A\',\'SUITABLE\' , Iif([" +
+    "calculatedField3]>100,\'SUITABLE\' , \'FAIL\')\n)\n\n)";
             this.calculatedField4.Name = "calculatedField4";
             // 
             // UGD2

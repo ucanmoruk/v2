@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>5.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -301,6 +301,12 @@
     <Compile Include="9.UGDR\uCopy.Designer.cs">
       <DependentUpon>uCopy.cs</DependentUpon>
     </Compile>
+    <Compile Include="9.UGDR\OzuYeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="9.UGDR\OzuYeni.Designer.cs">
+      <DependentUpon>OzuYeni.cs</DependentUpon>
+    </Compile>
     <Compile Include="9.UGDR\uYeni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,30 @@
     </Compile>
     <Compile Include="Raporlar\CosIng.Designer.cs">
       <DependentUpon>CosIng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Ozeco\Tr\UGD1.cs">
       <SubType>Component</SubType>
@@ -987,14 +1017,30 @@
     <EmbeddedResource Include="9.UGDR\uCopy.resx">
       <DependentUpon>uCopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="9.UGDR\OzuYeni.resx">
+      <DependentUpon>OzuYeni.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\uYeni.resx">
       <DependentUpon>uYeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\ürünfotoları.resx">
       <DependentUpon>ürünfotoları.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Ozeco\Tr\UGD1.resx">
       <DependentUpon>UGD1.cs</DependentUpon>
@@ -1319,7 +1365,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Raporlar\Ozeco\En\" />
     <Folder Include="ÇöpKutusu\Egitim\" />
   </ItemGroup>
   <ItemGroup>
