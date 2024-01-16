@@ -317,6 +317,13 @@ namespace mROOT._9.UGDR
             }
         }
 
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            uDAP.uID = lID;
+            uDAP ua = new uDAP();
+            ua.Show();
+        }
+
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //ödendi

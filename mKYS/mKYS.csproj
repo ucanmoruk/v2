@@ -265,6 +265,12 @@
     <Compile Include="9.UGDR\cosIng.Designer.cs">
       <DependentUpon>cosIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="9.UGDR\uDAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="9.UGDR\uDAP.Designer.cs">
+      <DependentUpon>uDAP.cs</DependentUpon>
+    </Compile>
     <Compile Include="9.UGDR\uSubs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -998,6 +1004,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\cosIng.resx">
       <DependentUpon>cosIng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="9.UGDR\uDAP.resx">
+      <DependentUpon>uDAP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\uSubs.resx">
       <DependentUpon>uSubs.cs</DependentUpon>
