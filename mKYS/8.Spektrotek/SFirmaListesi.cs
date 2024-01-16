@@ -27,30 +27,66 @@ namespace mROOT._8.Spektrotek
 
         public void listele()
         {
-            DataTable dt = new DataTable();
-            //select Row_number() over(order by t.Tur) as 'No',
-            SqlDataAdapter da = new SqlDataAdapter(@"select Tur2 as 'Kategori', Ad as 'Firma Adı', Adres, Tur, Yetkili, Telefon, Email, Web, VergiDairesi, VergiNo , Notlar, ID from RootTedarikci
-            where Durum = 'Aktif' and Kimin = 'Spektrotek' order by Ad", bgl.baglanti());
-            da.Fill(dt);
-            gridControl1.DataSource = dt;
-          //  gridView1.Columns["ID"].Visible = false;
-            this.gridView1.Columns[0].Width = 55;
-            this.gridView1.Columns[1].Width = 125;
-            this.gridView1.Columns[2].Width = 125;
-            this.gridView1.Columns[3].Width = 55;
-            this.gridView1.Columns[4].Width = 60;
-            this.gridView1.Columns[5].Width = 50;
-            this.gridView1.Columns[6].Width = 50;
-            this.gridView1.Columns[7].Width = 50;
-            this.gridView1.Columns[8].Width = 50;
-            this.gridView1.Columns[9].Width = 50;
-            this.gridView1.Columns[10].Width = 75;
 
-            RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-            gridView1.Columns["Notlar"].ColumnEdit = memo;
-            //gridView1.Columns["Durum"].ColumnEdit = memo;
-            gridView1.Columns["VergiNo"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-          //  gridView1.Columns["Durum"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            if (oz == "Ozeco")
+            {
+                //ozlistele();
+                DataTable dt = new DataTable();
+                //select Row_number() over(order by t.Tur) as 'No',
+                SqlDataAdapter da = new SqlDataAdapter(@"select Tur2 as 'Kategori', Ad as 'Firma Adı', Adres, Tur, Yetkili, Telefon, Email, Web, VergiDairesi, VergiNo , Notlar, ID from RootTedarikci
+            where Durum = 'Aktif' and Kimin = 'Ozeco' order by Ad", bgl.baglanti());
+                da.Fill(dt);
+                gridControl1.DataSource = dt;
+                //  gridView1.Columns["ID"].Visible = false;
+                this.gridView1.Columns[0].Width = 55;
+                this.gridView1.Columns[1].Width = 125;
+                this.gridView1.Columns[2].Width = 125;
+                this.gridView1.Columns[3].Width = 55;
+                this.gridView1.Columns[4].Width = 60;
+                this.gridView1.Columns[5].Width = 50;
+                this.gridView1.Columns[6].Width = 50;
+                this.gridView1.Columns[7].Width = 50;
+                this.gridView1.Columns[8].Width = 50;
+                this.gridView1.Columns[9].Width = 50;
+                this.gridView1.Columns[10].Width = 75;
+
+                RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                gridView1.Columns["Notlar"].ColumnEdit = memo;
+                //gridView1.Columns["Durum"].ColumnEdit = memo;
+                gridView1.Columns["VergiNo"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+                //  gridView1.Columns["Durum"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            }
+            else
+            {
+             //   listele();
+                DataTable dt = new DataTable();
+                //select Row_number() over(order by t.Tur) as 'No',
+                SqlDataAdapter da = new SqlDataAdapter(@"select Tur2 as 'Kategori', Ad as 'Firma Adı', Adres, Tur, Yetkili, Telefon, Email, Web, VergiDairesi, VergiNo , Notlar, ID from RootTedarikci
+            where Durum = 'Aktif' and Kimin = 'Spektrotek' order by Ad", bgl.baglanti());
+                da.Fill(dt);
+                gridControl1.DataSource = dt;
+                //  gridView1.Columns["ID"].Visible = false;
+                this.gridView1.Columns[0].Width = 55;
+                this.gridView1.Columns[1].Width = 125;
+                this.gridView1.Columns[2].Width = 125;
+                this.gridView1.Columns[3].Width = 55;
+                this.gridView1.Columns[4].Width = 60;
+                this.gridView1.Columns[5].Width = 50;
+                this.gridView1.Columns[6].Width = 50;
+                this.gridView1.Columns[7].Width = 50;
+                this.gridView1.Columns[8].Width = 50;
+                this.gridView1.Columns[9].Width = 50;
+                this.gridView1.Columns[10].Width = 75;
+
+                RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                gridView1.Columns["Notlar"].ColumnEdit = memo;
+                //gridView1.Columns["Durum"].ColumnEdit = memo;
+                gridView1.Columns["VergiNo"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+                //  gridView1.Columns["Durum"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            }
+
+
+
         }
         public void ozlistele()
         {
@@ -111,14 +147,9 @@ namespace mROOT._8.Spektrotek
         public static string oz;
         private void TedarikciListesi_Load(object sender, EventArgs e)
         {
-            if (oz=="Ozeco")
-            {
-                ozlistele();
-            }
-            else
-            {
-                listele();
-            }
+
+            listele();
+
            // yetkibul();
         }
 

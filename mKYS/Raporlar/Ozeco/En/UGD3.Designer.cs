@@ -98,7 +98,7 @@
             this.xrTable1,
             this.xrLabel2,
             this.xrLabel1});
-            this.TopMargin.HeightF = 122F;
+            this.TopMargin.HeightF = 128.25F;
             this.TopMargin.Name = "TopMargin";
             // 
             // xrPageInfo1
@@ -638,7 +638,7 @@
             this.FilterString = "[ID] = ?pID";
             this.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(41, 35, 122, 68);
+            this.Margins = new System.Drawing.Printing.Margins(41, 35, 128, 68);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
