@@ -265,6 +265,12 @@
     <Compile Include="9.UGDR\cosIng.Designer.cs">
       <DependentUpon>cosIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="9.UGDR\OzuCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="9.UGDR\OzuCopy.Designer.cs">
+      <DependentUpon>OzuCopy.cs</DependentUpon>
+    </Compile>
     <Compile Include="9.UGDR\uDAP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1005,6 +1011,9 @@
     <EmbeddedResource Include="9.UGDR\cosIng.resx">
       <DependentUpon>cosIng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="9.UGDR\OzuCopy.resx">
+      <DependentUpon>OzuCopy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\uDAP.resx">
       <DependentUpon>uDAP.cs</DependentUpon>
     </EmbeddedResource>
@@ -1035,7 +1044,6 @@
     <EmbeddedResource Include="9.UGDR\ürünfotoları.resx">
       <DependentUpon>ürünfotoları.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
     </EmbeddedResource>

@@ -83,7 +83,10 @@ namespace mKYS
                 //add.Parameters.AddWithValue("@a5", txten.Text);
                 //add.Parameters.AddWithValue("@a6", memofonk.Text);
                 //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
-                add.Parameters.AddWithValue("@a8", txtnoel.Text);
+                if (txtnoel.Text == "" || txtnoel.Text == null)
+                    add.Parameters.AddWithValue("@a8", DBNull.Value);
+                else
+                    add.Parameters.AddWithValue("@a8", txtnoel.Text);
                 add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
                 add.Parameters.AddWithValue("@a10", memo_toksi.Text);
                 add.Parameters.AddWithValue("@a11", txtkaynak.Text);
@@ -113,7 +116,10 @@ namespace mKYS
             //add.Parameters.AddWithValue("@a5", txten.Text);
             //add.Parameters.AddWithValue("@a6", memofonk.Text);
             //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
-            add.Parameters.AddWithValue("@a8", txtnoel.Text);
+            if(txtnoel.Text ==""|| txtnoel.Text == null)
+                 add.Parameters.AddWithValue("@a8", DBNull.Value);
+            else
+                add.Parameters.AddWithValue("@a8", txtnoel.Text);
             add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
             add.Parameters.AddWithValue("@a10", memo_toksi.Text);
             add.Parameters.AddWithValue("@a11", txtkaynak.Text);
@@ -161,7 +167,7 @@ namespace mKYS
                 //}
                 //else
                 //{ this.Close(); }
-                this.Close();
+       
 
 
             }
@@ -175,7 +181,7 @@ namespace mKYS
             {
                 m.listele();
             }
-
+            this.Close();
         }
 
         private void YeniHammadde_FormClosed(object sender, FormClosedEventArgs e)

@@ -67,15 +67,34 @@ namespace mROOT._9.UGDR
         string yenivar;
         private void btn_kontrol_Click(object sender, EventArgs e)
         {
-            for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
-            {             
-                SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar) values (@o1,@o2,@o3) ", bgl.baglanti());
-                komutz.Parameters.AddWithValue("@o1", "0");
-                komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "C (%)").ToString()));
-                komutz.ExecuteNonQuery();
-                bgl.baglanti().Close();
+            if (uID == null || uID == "")
+            {
+                for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                {
+                    SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
+                    komutz.Parameters.AddWithValue("@o1", uID);
+                    komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "C (%)").ToString()));
+                    komutz.Parameters.AddWithValue("@o4", 100);
+                    komutz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
             }
+            else
+            {
+                for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                {
+                    SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
+                    komutz.Parameters.AddWithValue("@o1", "0");
+                    komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "C (%)").ToString()));
+                    komutz.Parameters.AddWithValue("@o4", 100);
+                    komutz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+            }
+
+           
             yenivar = "evet";
         
             DataTable dt = new DataTable();
@@ -90,7 +109,7 @@ namespace mROOT._9.UGDR
             gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
             this.gridView2.Columns[0].Width = 110;
             this.gridView2.Columns[1].Width = 50;
-            this.gridView2.Columns[2].Width = 80;
+            this.gridView2.Columns[2].Width = 90;
             this.gridView2.Columns[3].Width = 90;
             this.gridView2.Columns[4].Width = 90;
             this.gridView2.Columns[5].Width = 50;
@@ -158,8 +177,7 @@ namespace mROOT._9.UGDR
                             // yeni kayıt şeklinde
                             for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
                             {
-                                SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2 , Miktar=@o3 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
-                                komutz.Parameters.AddWithValue("@o1", uID);
+                                SqlCommand komutz = new SqlCommand("update rUGDFormül set  HammaddeID=@o2 , Miktar=@o3 where ID = '" +uID+ "' ", bgl.baglanti());      
                                 komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
                                 komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Miktar").ToString()) );
                                 komutz.ExecuteNonQuery();

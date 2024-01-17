@@ -400,7 +400,8 @@
             this.xrTableCell22.StylePriority.UseBorderColor = false;
             this.xrTableCell22.StylePriority.UseBorders = false;
             this.xrTableCell22.Text = "C (%)";
-            this.xrTableCell22.Weight = 0.52238610757513593D;
+            this.xrTableCell22.TextFormatString = "{0:0.000}";
+            this.xrTableCell22.Weight = 0.654627661908192D;
             // 
             // xrTableCell23
             // 
@@ -413,12 +414,14 @@
             this.xrTableCell23.StylePriority.UseBorderColor = false;
             this.xrTableCell23.StylePriority.UseBorders = false;
             this.xrTableCell23.Text = "5,74";
-            this.xrTableCell23.Weight = 0.78430132879473136D;
+            this.xrTableCell23.Weight = 0.65205977446167529D;
             // 
             // xrTableCell24
             // 
             this.xrTableCell24.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell24.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DaP]")});
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseBorderColor = false;
@@ -437,6 +440,7 @@
             this.xrTableCell25.StylePriority.UseBorderColor = false;
             this.xrTableCell25.StylePriority.UseBorders = false;
             this.xrTableCell25.Text = "SED";
+            this.xrTableCell25.TextFormatString = "{0:0.00}";
             this.xrTableCell25.Weight = 0.8459306275111288D;
             // 
             // xrTableCell26
@@ -628,7 +632,7 @@
             this.xrTableCell10.StylePriority.UseBorders = false;
             this.xrTableCell10.StylePriority.UseForeColor = false;
             this.xrTableCell10.Text = "C (%)";
-            this.xrTableCell10.Weight = 0.52238610757513593D;
+            this.xrTableCell10.Weight = 0.65462843676861637D;
             // 
             // xrTableCell11
             // 
@@ -642,7 +646,7 @@
             this.xrTableCell11.StylePriority.UseBorders = false;
             this.xrTableCell11.StylePriority.UseForeColor = false;
             this.xrTableCell11.Text = "A";
-            this.xrTableCell11.Weight = 0.78430132879473136D;
+            this.xrTableCell11.Weight = 0.65205899960125091D;
             // 
             // xrTableCell12
             // 
@@ -749,13 +753,13 @@
             // calculatedField2
             // 
             this.calculatedField2.DataMember = "masslab_rUGDListe";
-            this.calculatedField2.Expression = "[Miktar]*[A]/100";
+            this.calculatedField2.Expression = "[Miktar]*[A]*[DaP]/100*1/100";
             this.calculatedField2.Name = "calculatedField2";
             // 
             // calculatedField3
             // 
             this.calculatedField3.DataMember = "masslab_rUGDListe";
-            this.calculatedField3.Expression = "Iif(IsNullOrEmpty([Noael2]),\'N/A\',([Noael2]/([Miktar]*[A]/100)))";
+            this.calculatedField3.Expression = "Iif(IsNullOrEmpty([Noael2]),\'N/A\',([Noael2]/([Miktar]*[A]*[DaP]/100*1/100)))";
             this.calculatedField3.Name = "calculatedField3";
             // 
             // calculatedField4

@@ -116,9 +116,9 @@ namespace mROOT._9.UGDR
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //güncelle
-            uCopy.gelis = "guncelleme";
-            uCopy.uID = lID;
-            uCopy d = new uCopy();
+            OzuCopy.gelis = "guncelleme";
+            OzuCopy.uID = lID;
+            OzuCopy d = new OzuCopy();
             d.Show();
         }
 
@@ -261,16 +261,16 @@ namespace mROOT._9.UGDR
                                                MessageBoxButtons.YesNo,
                                                MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                uCopy.formuldahil = "evet";
+                OzuCopy.formuldahil = "evet";
             }
             else
             {
 
             }
             //güncelle
-            uCopy.gelis = "copy";
-            uCopy.uID = lID;
-            uCopy d = new uCopy();
+            OzuCopy.gelis = "copy";
+            OzuCopy.uID = lID;
+            OzuCopy d = new OzuCopy();
             d.Show();
 
 
