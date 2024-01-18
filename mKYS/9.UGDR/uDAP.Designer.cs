@@ -34,17 +34,13 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btn_kontrol = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_ac = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btn_ac = new DevExpress.XtraEditors.SimpleButton();
             this.btnexcel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.traporno = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,9 +57,6 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.traporno.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -79,8 +72,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(966, 540);
-            this.splitContainer1.SplitterDistance = 300;
+            this.splitContainer1.Size = new System.Drawing.Size(1162, 540);
+            this.splitContainer1.SplitterDistance = 400;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -97,8 +90,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.btn_kontrol);
-            this.splitContainer2.Panel2.Controls.Add(this.btn_ac);
-            this.splitContainer2.Size = new System.Drawing.Size(300, 540);
+            this.splitContainer2.Size = new System.Drawing.Size(400, 540);
             this.splitContainer2.SplitterDistance = 459;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -108,7 +100,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(300, 459);
+            this.gridControl1.Size = new System.Drawing.Size(400, 459);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -117,6 +109,15 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.FindNullPrompt = "Arama yapabilirsiniz..";
+            this.gridView1.OptionsFind.ShowClearButton = false;
+            this.gridView1.OptionsFind.ShowCloseButton = false;
+            this.gridView1.OptionsFind.ShowFindButton = false;
+            this.gridView1.OptionsFind.ShowSearchNavButtons = false;
+            this.gridView1.OptionsSelection.CheckBoxSelectorColumnWidth = 15;
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // btn_kontrol
@@ -125,28 +126,12 @@
             this.btn_kontrol.Appearance.Options.UseFont = true;
             this.btn_kontrol.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_kontrol.ImageOptions.Image")));
             this.btn_kontrol.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btn_kontrol.Location = new System.Drawing.Point(163, 15);
+            this.btn_kontrol.Location = new System.Drawing.Point(12, 15);
             this.btn_kontrol.Name = "btn_kontrol";
             this.btn_kontrol.Size = new System.Drawing.Size(112, 50);
             this.btn_kontrol.TabIndex = 0;
-            this.btn_kontrol.Text = "Kontrol Et ";
-            this.btn_kontrol.Visible = false;
+            this.btn_kontrol.Text = "Ekle";
             this.btn_kontrol.Click += new System.EventHandler(this.btn_kontrol_Click);
-            // 
-            // btn_ac
-            // 
-            this.btn_ac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_ac.Appearance.Options.UseFont = true;
-            this.btn_ac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ac.ImageOptions.Image")));
-            this.btn_ac.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn_ac.ImageOptions.ImageToTextIndent = 10;
-            this.btn_ac.Location = new System.Drawing.Point(12, 15);
-            this.btn_ac.Name = "btn_ac";
-            this.btn_ac.Size = new System.Drawing.Size(133, 50);
-            this.btn_ac.TabIndex = 0;
-            this.btn_ac.Text = "Formül Seç";
-            this.btn_ac.Visible = false;
-            this.btn_ac.Click += new System.EventHandler(this.btn_ac_Click);
             // 
             // splitContainer3
             // 
@@ -161,13 +146,11 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.gridLookUpEdit1);
+            this.splitContainer3.Panel2.Controls.Add(this.btn_ac);
             this.splitContainer3.Panel2.Controls.Add(this.btnexcel);
             this.splitContainer3.Panel2.Controls.Add(this.simpleButton2);
             this.splitContainer3.Panel2.Controls.Add(this.simpleButton1);
-            this.splitContainer3.Panel2.Controls.Add(this.labelControl1);
-            this.splitContainer3.Panel2.Controls.Add(this.traporno);
-            this.splitContainer3.Size = new System.Drawing.Size(662, 540);
+            this.splitContainer3.Size = new System.Drawing.Size(758, 540);
             this.splitContainer3.SplitterDistance = 459;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -177,7 +160,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(662, 459);
+            this.gridControl2.Size = new System.Drawing.Size(758, 459);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -186,29 +169,28 @@
             // 
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.CheckBoxSelectorColumnWidth = 15;
+            this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView2.OptionsView.RowAutoHeight = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView2_CustomDrawCell);
+            this.gridView2.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView2_RowCellStyle);
+            this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             // 
-            // gridLookUpEdit1
+            // btn_ac
             // 
-            this.gridLookUpEdit1.EditValue = "";
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(22, 39);
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.NullText = "";
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(100, 20);
-            this.gridLookUpEdit1.TabIndex = 2;
-            this.gridLookUpEdit1.Visible = false;
-            this.gridLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.btn_ac.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_ac.Appearance.Options.UseFont = true;
+            this.btn_ac.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ac.ImageOptions.Image")));
+            this.btn_ac.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btn_ac.ImageOptions.ImageToTextIndent = 10;
+            this.btn_ac.Location = new System.Drawing.Point(23, 14);
+            this.btn_ac.Name = "btn_ac";
+            this.btn_ac.Size = new System.Drawing.Size(96, 50);
+            this.btn_ac.TabIndex = 0;
+            this.btn_ac.Text = "Çıkar";
+            this.btn_ac.Click += new System.EventHandler(this.btn_ac_Click);
             // 
             // btnexcel
             // 
@@ -219,7 +201,7 @@
             this.btnexcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnexcel.ImageOptions.Image")));
             this.btnexcel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnexcel.ImageOptions.ImageToTextIndent = 10;
-            this.btnexcel.Location = new System.Drawing.Point(256, 15);
+            this.btnexcel.Location = new System.Drawing.Point(239, 15);
             this.btnexcel.Name = "btnexcel";
             this.btnexcel.Size = new System.Drawing.Size(107, 50);
             this.btnexcel.TabIndex = 0;
@@ -233,7 +215,7 @@
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton2.ImageOptions.ImageToTextIndent = 10;
-            this.simpleButton2.Location = new System.Drawing.Point(139, 15);
+            this.simpleButton2.Location = new System.Drawing.Point(125, 15);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(108, 50);
             this.simpleButton2.TabIndex = 0;
@@ -247,36 +229,18 @@
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton1.ImageOptions.ImageToTextIndent = 10;
-            this.simpleButton1.Location = new System.Drawing.Point(380, 15);
+            this.simpleButton1.Location = new System.Drawing.Point(352, 14);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(107, 50);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Kaydet";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(25, 18);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(64, 16);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Rapor No:";
-            // 
-            // traporno
-            // 
-            this.traporno.Location = new System.Drawing.Point(22, 38);
-            this.traporno.Name = "traporno";
-            this.traporno.Size = new System.Drawing.Size(100, 20);
-            this.traporno.TabIndex = 0;
-            this.traporno.Visible = false;
-            // 
             // uDAP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 540);
+            this.ClientSize = new System.Drawing.Size(1162, 540);
             this.Controls.Add(this.splitContainer1);
             this.Name = "uDAP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -296,14 +260,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.traporno.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,10 +280,6 @@
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit traporno;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btnexcel;
     }
