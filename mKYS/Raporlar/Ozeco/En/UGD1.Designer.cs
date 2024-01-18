@@ -3519,7 +3519,6 @@
             // 
             this.GroupHeader8.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox2});
-            this.GroupHeader8.Expanded = false;
             this.GroupHeader8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([masslab_rUGDListemasslab_rUGDDetay].[Challenge]=\'False\', false, Iif(IsNullOr" +
                     "Empty(?pChallenge),false ,true ))")});

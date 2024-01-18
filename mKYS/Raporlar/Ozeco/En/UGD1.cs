@@ -33,10 +33,26 @@ namespace mKYS.Raporlar.Ozeco.En
             }
             bgl.baglanti().Close();
 
-            pMikro.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + m;
-            pChallenge.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + c;
-            pStabilite.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + s;
-            pKutu.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + k;
+            if (m == null || m == "")
+                pMikro.Value = null;
+            else
+                pMikro.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + m;
+
+            if (c == null || c == "")
+                pChallenge.Value = null;
+            else
+                pChallenge.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + c;
+
+            if (s == null || s == "")
+                pStabilite.Value = null;
+            else
+                pStabilite.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + s;
+
+            if (k == null || k == "")
+                pKutu.Value = null;
+            else
+                pKutu.Value = @"http://" + "www.massgrup.com/mRoot/Foto" + "/" + k;
+
 
         }
 

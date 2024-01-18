@@ -71,16 +71,16 @@ namespace mKYS.Talep
         string kontrol;
         void ekleme()
         {
-            SqlCommand komut2 = new SqlCommand("Select count(ID) from RootTedarikci where Ad = '" + txt_ad.Text + "' ", bgl.baglanti());
-            SqlDataReader dr2 = komut2.ExecuteReader();
-            while (dr2.Read())
-            {
-                kontrol = dr2[0].ToString();
-            }
-            bgl.baglanti().Close();
+            //SqlCommand komut2 = new SqlCommand("Select count(ID) from RootTedarikci where Ad = '" + txt_ad.Text + "' ", bgl.baglanti());
+            //SqlDataReader dr2 = komut2.ExecuteReader();
+            //while (dr2.Read())
+            //{
+            //    kontrol = dr2[0].ToString();
+            //}
+            //bgl.baglanti().Close();
 
-            if (kontrol == "0" || kontrol == null)
-            {
+            //if (kontrol == "0" || kontrol == null)
+            //{
                 SqlCommand add = new SqlCommand("insert into RootTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Durum, Durumu, Web, Tur2,VergiDairesi,VergiNo,Kimin,Notlar) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9,@a10,@a11,@a12,@a13,@a14,@a15)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_ad.Text));
                 add.Parameters.AddWithValue("@a2", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_adres.Text));
@@ -123,12 +123,12 @@ namespace mKYS.Talep
                     f.listele();
                 }
                 temizle();
-            }
-            else
-            {
-                MessageBox.Show("Bir yerde hata var. Bir yöneticiye danışabilir misiniz ? ", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bir yerde hata var. Bir yöneticiye danışabilir misiniz ? ", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-            }
+            //}
 
 
 
