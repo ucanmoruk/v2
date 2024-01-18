@@ -113,8 +113,8 @@ namespace mROOT._9.UGDR
                     decimal dap = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
                     decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
                     decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-
-                    SED = Math.Round(miktar * A * dap / 100 * 1 / 100, 2);
+                
+                    SED = Math.Round(miktar * A * dap / 100 * 1 / 100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
                 }
                 else
@@ -123,11 +123,18 @@ namespace mROOT._9.UGDR
                     decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
                     decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
 
-                    SED = Math.Round(miktar * A * dap / 100 * 1/100, 2);
+                    SED = Math.Round(miktar * A * dap / 100 * 1/100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
+                    if (SED == 0)
+                    {
 
-                    MOS = Math.Round(NOAEL / SED, 2);
-                    view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    }
+                    else
+                    {
+                        MOS = Math.Round(NOAEL / SED, 4);
+                        view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    }
+                    
                 }
 
             }
@@ -142,7 +149,7 @@ namespace mROOT._9.UGDR
                     decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
                     decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
 
-                    SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 2);
+                    SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
                 }
                 else
@@ -151,11 +158,20 @@ namespace mROOT._9.UGDR
                     decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
                     decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
 
-                    SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 2);
+                    SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
 
-                    MOS = Math.Round(NOAEL / SED, 2);
-                    view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    //MOS = Math.Round(NOAEL / SED, 4);
+                    //view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    if (SED == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        MOS = Math.Round(NOAEL / SED, 4);
+                        view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    }
                 }
 
 
@@ -297,8 +313,9 @@ namespace mROOT._9.UGDR
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter(@"select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID as 'cosID' from rHammadde r
             left join rCosing c on r.cID = c.ID 
-            except select c.INCIName, c.Cas, c.Regulation, c.ID from rUGDFormül f 
-            left join rCosing c on f.HammaddeID = c.ID
+            except select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID from rUGDFormül f 
+            left join rCosing c on f.HammaddeID = c.ID 
+            left join rHammadde r on c.ID = r. cID
             where f.UrunID = '" + uID + "' order by c.INCIName asc ", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;

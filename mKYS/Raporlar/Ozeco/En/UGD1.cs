@@ -18,6 +18,15 @@ namespace mKYS.Raporlar.Ozeco.En
         sqlbaglanti bgl = new sqlbaglanti();
 
         string m, c, s, k;
+
+        private void xrLabel67_PrintOnPage(object sender, PrintOnPageEventArgs e)
+        {
+            if (e.PageIndex == 0)
+                e.Cancel = false;
+            else
+                e.Cancel = true;
+        }
+
         public void bilgi()
         {
             pID.Value = tID;
