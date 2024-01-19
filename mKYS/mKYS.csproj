@@ -1428,6 +1428,8 @@
     <None Include="Resources\ozecomuhur1.png" />
     <None Include="Resources\ozecologo1.png" />
     <None Include="Resources\BegumPazarli.png" />
+    <None Include="Resources\Cosmoliz.png" />
+    <None Include="Resources\imza-dsk-1.png" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

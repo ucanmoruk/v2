@@ -86,26 +86,26 @@ namespace mROOT._9.UGDR
             else
             {
 
-                mKYS.Raporlar.Ozeco.Tr.UGD1.tID = lID;
-                mKYS.Raporlar.Ozeco.Tr.UGD2.tID = lID;
-                mKYS.Raporlar.Ozeco.Tr.UGD3.tID = lID;
-                mKYS.Raporlar.Ozeco.Tr.UGD4.tID = lID;
-                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
-                {
-                    frm.OzecoTr();
-                    frm.ShowDialog();
-                }
-
-
-                //mKYS.Raporlar.UGD1.tID = lID;
-                //mKYS.Raporlar.UGD2.tID = lID;
-                //mKYS.Raporlar.UGD3.tID = lID;
-                //mKYS.Raporlar.UGD4.tID = lID;
+                //mKYS.Raporlar.Ozeco.Tr.UGD1.tID = lID;
+                //mKYS.Raporlar.Ozeco.Tr.UGD2.tID = lID;
+                //mKYS.Raporlar.Ozeco.Tr.UGD3.tID = lID;
+                //mKYS.Raporlar.Ozeco.Tr.UGD4.tID = lID;
                 //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 //{
-                //    frm.UGDR();
+                //    frm.OzecoTr();
                 //    frm.ShowDialog();
                 //}
+
+
+                mKYS.Raporlar.UGD1.tID = lID;
+                mKYS.Raporlar.UGD2.tID = lID;
+                mKYS.Raporlar.UGD3.tID = lID;
+                mKYS.Raporlar.UGD4.tID = lID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.UGDR();
+                    frm.ShowDialog();
+                }
             }
 
 

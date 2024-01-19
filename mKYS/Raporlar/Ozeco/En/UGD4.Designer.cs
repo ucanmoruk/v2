@@ -341,7 +341,7 @@
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel5});
-            this.PageHeader.HeightF = 42.125F;
+            this.PageHeader.HeightF = 42.58334F;
             this.PageHeader.Name = "PageHeader";
             this.PageHeader.PrintOn = DevExpress.XtraReports.UI.PrintOnPages.NotWithReportFooter;
             // 
@@ -614,7 +614,7 @@
             // 
             this.xrTableCell119.Multiline = true;
             this.xrTableCell119.Name = "xrTableCell119";
-            this.xrTableCell119.Text = "5324 sayılı Kozmetik Kanunu";
+            this.xrTableCell119.Text = "Cosmetics Law No. 5324";
             this.xrTableCell119.Weight = 6.6747645568847656D;
             // 
             // xrTableRow60
@@ -636,7 +636,7 @@
             // 
             this.xrTableCell121.Multiline = true;
             this.xrTableCell121.Name = "xrTableCell121";
-            this.xrTableCell121.Text = "Kozmetik Ürünlerde Güvenlik Değerlendirmesine İlişkin Kılavuz";
+            this.xrTableCell121.Text = "Guidelines for Safety Assessment in Cosmetic Products";
             this.xrTableCell121.Weight = 6.6747645568847656D;
             // 
             // xrTableRow61
@@ -658,8 +658,8 @@
             // 
             this.xrTableCell123.Multiline = true;
             this.xrTableCell123.Name = "xrTableCell123";
-            this.xrTableCell123.Text = "15/07/2015 tarihli ve 29417 sayılı Resmî Gazete’de yayımlanan Kozmetik Yönetmeliğ" +
-    "inde Değişiklik Yapılmasına Dair Yönetmelik ve Ekleri";
+            this.xrTableCell123.Text = "Regulation on Amendments to the Cosmetics Regulation published in the Official Ga" +
+    "zette No. 29417 dated 15/07/2015 and attachments";
             this.xrTableCell123.Weight = 6.6747645568847656D;
             // 
             // xrTableRow62
@@ -681,8 +681,8 @@
             // 
             this.xrTableCell125.Multiline = true;
             this.xrTableCell125.Name = "xrTableCell125";
-            this.xrTableCell125.Text = "Kozmetik Ürünlerin Stabilitesine Ve Açıldıktan Sonra Kullanım Süresine İlişkin Kı" +
-    "lavuz";
+            this.xrTableCell125.Text = "Guidelines on the Stability of Cosmetic Products and Duration of Use After Openin" +
+    "g";
             this.xrTableCell125.Weight = 6.6747645568847656D;
             // 
             // xrTableRow63
@@ -704,7 +704,7 @@
             // 
             this.xrTableCell127.Multiline = true;
             this.xrTableCell127.Name = "xrTableCell127";
-            this.xrTableCell127.Text = "Kozmetik Ürünlerin Mikrobiyolojik Kontrolüne İlişkin Kılavuz";
+            this.xrTableCell127.Text = "Guide on Microbiological Control of Cosmetic Products";
             this.xrTableCell127.Weight = 6.6747645568847656D;
             // 
             // xrTableRow64
@@ -726,8 +726,7 @@
             // 
             this.xrTableCell129.Multiline = true;
             this.xrTableCell129.Name = "xrTableCell129";
-            this.xrTableCell129.Text = "Kozmetik Ürünlerde Güvenlilik Değerlendirmesi Ve Güvenlilik Değerlendiricisi Hakk" +
-    "ında Kılavuz";
+            this.xrTableCell129.Text = "Guideline on Safety Assessment and Safety Assessor in Cosmetic Products";
             this.xrTableCell129.Weight = 6.6747645568847656D;
             // 
             // xrTableRow65
@@ -749,8 +748,8 @@
             // 
             this.xrTableCell131.Multiline = true;
             this.xrTableCell131.Name = "xrTableCell131";
-            this.xrTableCell131.Text = "Üretici Tarafından Ciddi İstenmeyen Etkinin (Cie) Kuruma Bildirilmesine İlişkin K" +
-    "ılavuz";
+            this.xrTableCell131.Text = "Guideline on Notification of Serious Undesirable Effects (Cie) by the Manufacture" +
+    "r to the Authority";
             this.xrTableCell131.Weight = 6.6747645568847656D;
             // 
             // xrTableRow66
@@ -772,7 +771,7 @@
             // 
             this.xrTableCell133.Multiline = true;
             this.xrTableCell133.Name = "xrTableCell133";
-            this.xrTableCell133.Text = "Kozmetik Ürünlerin Etiketlenmesinde Dikkat Edilmesi Gerekenler Hakkında Kılavuz";
+            this.xrTableCell133.Text = "Guide on Things to Consider in Labeling Cosmetic Products";
             this.xrTableCell133.Weight = 6.6747645568847656D;
             // 
             // GroupHeader1

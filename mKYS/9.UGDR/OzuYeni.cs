@@ -43,6 +43,14 @@ namespace mROOT._9.UGDR
         {
             hosgeldin();
             listele();
+
+
+            if (Giris.birimID != "1005")
+            {
+                mmikrotr.Text = "Son ürün için yapılan mikrobiyolojik analiz sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar mikrobiyolojik kalite kontrol limitlerine uygundur. Mikrobiyolojik kontaminasyon riski taşımamaktadır.";
+                mchaltr.Text = "Son ürün için yapılan koruyucu etkinlik test sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar uygun olarak değerlendirilmiştir.";
+                mstatr.Text = "Ürünün üretici tarafından öngörülen raf ömrü 24 aydır. Ürünün açıldıktan sonraki dayanıklılık süresi etikette 12 ay olarak belirtilmiştir.";
+            }
         }
 
         void listele()
@@ -100,6 +108,8 @@ namespace mROOT._9.UGDR
             add2.ExecuteNonQuery();
             yeniID = add2.Parameters["@ID"].Value.ToString();
             bgl.baglanti().Close();
+
+            
 
 
         }

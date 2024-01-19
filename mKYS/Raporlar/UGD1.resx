@@ -135,13 +135,10 @@
        on ("masslab.RootTedarikci"."ID" = "masslab.rUGDListe"."FirmaID"))</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJGaXJtYUlEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVcnVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhcmtvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNaWt0YXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGlwMSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaXAyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlV5Z3VsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkhlZGVmIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkcmVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVtYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbGVmb24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0ibWFzc2xhYl9yVUdERGV0YXkiPjxGaWVsZCBOYW1lPSJHb3J1bnVtIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlbmsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS29rdSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJwSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXluYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVyaW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllvZ3VubHVrIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlN1ZGEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmlza296aXRlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1pa3JvIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJNUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2hhbGxlbmdlIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJDUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3RhYmlsaXRlIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJTUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXJ1bklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU3RhYmlsaXRlTm90IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im1hc3NsYWIuclVHRERldGF5Ml9VcnVuSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLdWxsYW5pbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVeWFyaWxhciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPemVsbGlrbGVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikt1dHUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGlnZXIiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0ibWFzc2xhYl9yVUdEVGlwIj48RmllbGQgTmFtZT0iS2F0ZWdvcmkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXJ1blRpcGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWXV6ZXlBbGFuaSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlV5Z3VsYW1hQm9sZ2VzaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTaWtsaWsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR3VubHVrTWlrdGFyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFEZWdlcmkiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48L1ZpZXc+PFJlbGF0aW9uIE1hc3Rlcj0ibWFzc2xhYl9yVUdETGlzdGUiIERldGFpbD0ibWFzc2xhYl9yVUdERGV0YXkiPjxLZXlDb2x1bW4gTWFzdGVyPSJJRCIgRGV0YWlsPSJVcnVuSUQiIC8+PC9SZWxhdGlvbj48UmVsYXRpb24gTWFzdGVyPSJtYXNzbGFiX3JVR0RMaXN0ZSIgRGV0YWlsPSJtYXNzbGFiX3JVR0RUaXAiPjxLZXlDb2x1bW4gTWFzdGVyPSJUaXAyIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJGaXJtYUlEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVcnVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhcmtvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNaWt0YXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGlwMSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaXAyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlV5Z3VsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkhlZGVmIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkcmVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVtYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbGVmb24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0ibWFzc2xhYl9yVUdERGV0YXkiPjxGaWVsZCBOYW1lPSJHb3J1bnVtIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlbmsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS29rdSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJwSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXluYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVyaW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllvZ3VubHVrIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlN1ZGEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmlza296aXRlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1pa3JvIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJNUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2hhbGxlbmdlIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJDUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3RhYmlsaXRlIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJTUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXJ1bklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU3RhYmlsaXRlTm90IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im1hc3NsYWIuclVHRERldGF5Ml9VcnVuSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLdWxsYW5pbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVeWFyaWxhciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPemVsbGlrbGVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikt1dHUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGlnZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrcm9Ob3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2hhbGxlbmdlTm90IiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRFRpcCI+PEZpZWxkIE5hbWU9IkthdGVnb3JpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlVydW5UaXBpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ill1emV5QWxhbmkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVeWd1bGFtYUJvbGdlc2kiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU2lrbGlrIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikd1bmx1a01pa3RhciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBRGVnZXJpIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjxSZWxhdGlvbiBNYXN0ZXI9Im1hc3NsYWJfclVHRExpc3RlIiBEZXRhaWw9Im1hc3NsYWJfclVHRERldGF5Ij48S2V5Q29sdW1uIE1hc3Rlcj0iSUQiIERldGFpbD0iVXJ1bklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0ibWFzc2xhYl9yVUdETGlzdGUiIERldGFpbD0ibWFzc2xhYl9yVUdEVGlwIj48S2V5Q29sdW1uIE1hc3Rlcj0iVGlwMiIgRGV0YWlsPSJJRCIgLz48L1JlbGF0aW9uPjwvRGF0YVNldD4=</value>
   </data>
   <data name="xrLabel23.Text" xml:space="preserve">
     <value>Stabilite çalışmaları bitmiş ürün üzerinden gerçekleştirilmiştir. Ürünün görünüş, renk, koku, pH ve ağırlık değerleri, farklı sıcaklık koşullarında belli aralıklarla kontrol edilmektedir. Stabilite test sonuçları ürün güvenlik dosyasında bulunmaktadır.</value>
-  </data>
-  <data name="xrLabel28.Text" xml:space="preserve">
-    <value>Test, uygun mikroorganizmaların belirli inokulum seviyelerinde hazırlanması ve belirli zaman aralıklarında mikroorganizma içeren numuneden ekim yapılarak numunedeki mikroorganizmaların sayılmasını kapsar. Test koşulları içinde 7., 14 ve 28 günlerdeki mikroorganizmaların uygun bir şekilde belirgin bir düşüş veya artışın gözlenip gözlenmediğine bakılarak ürünün koruyucu özelliğinin yeterliliğine karar verilir.</value>
   </data>
   <data name="xrLabel26.Text" xml:space="preserve">
     <value>Son ürün için yapılan mikrobiyolojik analiz sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar mikrobiyolojik kalite kontrol limitlerine uygundur. Mikrobiyolojik kontaminasyon riski taşımamaktadır.</value>
@@ -149,6 +146,15 @@
   <data name="xrLabel24.Text" xml:space="preserve">
     <value>Kozmetik ürünlerde kesinlikle bulunmaması gereken mikroorganizmalar Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans ve Escherichia coli’dir.
 Farklı cilt bölgeleri, farklı hassasiyete sahip olabileceğinden kozmetik ürünler için iki ayrı kategori tanımlanmıştır.</value>
+  </data>
+  <data name="xrLabel28.Text" xml:space="preserve">
+    <value>Test, uygun mikroorganizmaların belirli inokulum seviyelerinde hazırlanması ve belirli zaman aralıklarında mikroorganizma içeren numuneden ekim yapılarak numunedeki mikroorganizmaların sayılmasını kapsar. Test koşulları içinde 7., 14 ve 28 günlerdeki mikroorganizmaların uygun bir şekilde belirgin bir düşüş veya artışın gözlenip gözlenmediğine bakılarak ürünün koruyucu özelliğinin yeterliliğine karar verilir.</value>
+  </data>
+  <data name="xrTableCell66.Text" xml:space="preserve">
+    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
+  </data>
+  <data name="xrLabel43.Text" xml:space="preserve">
+    <value>Bütün belirgin emilim yolları dikkate alınarak ve deneyler sonucu gözlemlenen toksikolojik veriler ışığında belirlenen NO(A)EL değerine dayanarak, sistemik etkiler ve güvenlilik sınırı (MoS) hesaplanır. Bu değerlendirme yapılamıyor ise nedeni uygun bir şekilde gerekçelendirilmelidir.</value>
   </data>
   <data name="xrLabel54.Text" xml:space="preserve">
     <value>Kozmetik ürün ile ilgili rapor içerisinde yer alan bilgiler için Ürün Güvenlik Dosyasında da yer alan Hammadde Güvenlik Bilgi Formları, ürün formülasyonu, ürün etiket bilgisi ve ilgili test raporlarından faydalanılmıştır.</value>
@@ -161,32 +167,7 @@ Kozmetik ürün/ürünler ile ilgili istenmeyen etkiler ve ciddi istenmeyen etki
 İstenmeyen etki ve ciddi istenmeyen etki bildirilmemiştir.</value>
   </data>
   <data name="xrLabel47.Text" xml:space="preserve">
-    <value>Formülde yer alan hammadde ve karışımlar ticari isimlerine göre gruplandırılarak toksikolojik değerlendirmeleri yapılmıştır. Hammadde ve karışımları ait fiziksel özellikler ve toksikolojik profiller Ek-2'de belirtilmiştir.</value>
-  </data>
-  <data name="xrLabel43.Text" xml:space="preserve">
-    <value>Bütün belirgin emilim yolları dikkate alınarak ve deneyler sonucu gözlemlenen toksikolojik veriler ışığında belirlenen NO(A)EL değerine dayanarak, sistemik etkiler ve güvenlilik sınırı (MoS) hesaplanır. Bu değerlendirme yapılamıyor ise nedeni uygun bir şekilde gerekçelendirilmelidir.</value>
-  </data>
-  <data name="xrTableCell66.Text" xml:space="preserve">
-    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
-  </data>
-  <data name="xrLabel35.Text" xml:space="preserve">
-    <value>A değeri için (toplam günlük maruziyet) (yetişkin vücut ağırlığı: 60 kg) (‘The SCCS's Notes Of Guidance For The Testing Of Cosmetic Ingredients And Their Safety Evaluation 12th Revision SCCS/1602/18)’ baz alınmıştır.)</value>
-  </data>
-  <data name="xrLabel33.Text" xml:space="preserve">
-    <value>Ambalajdan formülasyona madde geçişi olabileceğinden, ambalaj malzemesinin ilgili özellikleri dikkate alınmalıdır. Ambalaj materyali ve nominal miktar hakkında bilgi "Ürün Hakkında Bilgiler" tablosunda paylaşılmıştır.</value>
-  </data>
-  <data name="xrLabel30.Text" xml:space="preserve">
-    <value>Safsızlıklar, hammaddelerde istenmeyen maddelerdir.  
-
-Kalıntı, bitmiş üründeki küçük miktarda istenmeyen maddedir. 
-
-Kalıntılar, hammaddeler/maddelerdeki safsızlıklar; üretim işlemi; normal saklama koşulları altında ve veya ambalaj materyali ile temas yoluyla üründe açığa çıkabilecek potansiyel kimyasal değişiklik etkileşim ve veya madde geçişi vb. kaynaklardan meydana gelebilir. 
-
-Kozmetik ürünün üretildiği firmaya ait GMP deklarasyonu, kozmetik ürünün İyi İmalat Uygulamalarına uygun olarak üretildiğini belgelemektedir. 
-
-Kozmetik ürün formülasyonunda yer alan her bir hammaddeye ait fiziksel ve kimyasal özellikleri hakkında bilgiler mevcut olup saflık kriterleri mevzuata uygundur. 
-
-Kozmetik ürün, genetik olarak modifiye edilmiş organizmalar (GMO), nanomateryaller, hayvansal orjinli bileşenler, 1272/2008 sayılı CLP tüzüğüne göre 1A, 1B ve 2 kategorilerinde sınıflandırılan CMR maddeleri içermemektedir.</value>
+    <value>Formülde yer alan hammadde ve karışımlar ticari isimlerine göre gruplandırılarak toksikolojik değerlendirmeleri yapılmıştır. Hammadde ve karışımları ait fiziksel özellikler ve toksikolojik profiller Ek-3'de belirtilmiştir.</value>
   </data>
   <data name="xrLabel66.Text" xml:space="preserve">
     <value>NO(A)EL değeri olmayan bileşenlerde minimum güvenlik sınırı hesaplanamamıştır. NO(A)EL değeri olmayan bileşenler diğer toksikolojik veriler dahilinde kozmetik ürünlerde kullanımı güvenlidir.
@@ -225,5 +206,27 @@ Değerlendirilen kozmetik ürün düzenli kullanım için uygun olup, harici kul
 Hammaddeden başlayarak bitmiş kozmetik ürünün eksiksiz olarak kalitatif ve kantitatif bileşimi açıklanmış, her bir hammaddenin ismi kimliği (kalitatif) ve miktarını belirten ağırlık yüzdelerinin yer aldığı tüm ürün bileşimi değerlendirilmiştir.
 Bitmiş ürüne ait fizikokimyasal spesifikasyonları değerlendirilmiştir.
 Hızlandırılmış ve uzun süreli stabilite testleri kozmetik ürünün bileşimi, formülasyonu, ambalaj şekli, kullanım şekli gibi ürüne özel kriterler göz önüne alınarak belirlenen farklı sıcaklıklarda, depolama ve dağıtım için önerilen son ambalaj ve kap/kapak sistemindeki ambalajlı kozmetik ürün üzerinden fiziksel, kimyasal ve ambalaj uyumu testleri gerçekleştirilmiştir.</value>
+  </data>
+  <data name="xrTableCell12.Text" xml:space="preserve">
+    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
+  </data>
+  <data name="xrLabel30.Text" xml:space="preserve">
+    <value>Safsızlıklar, hammaddelerde istenmeyen maddelerdir.  
+
+Kalıntı, bitmiş üründeki küçük miktarda istenmeyen maddedir. 
+
+Kalıntılar, hammaddeler/maddelerdeki safsızlıklar; üretim işlemi; normal saklama koşulları altında ve veya ambalaj materyali ile temas yoluyla üründe açığa çıkabilecek potansiyel kimyasal değişiklik etkileşim ve veya madde geçişi vb. kaynaklardan meydana gelebilir. 
+
+Kozmetik ürünün üretildiği firmaya ait GMP deklarasyonu, kozmetik ürünün İyi İmalat Uygulamalarına uygun olarak üretildiğini belgelemektedir. 
+
+Kozmetik ürün formülasyonunda yer alan her bir hammaddeye ait fiziksel ve kimyasal özellikleri hakkında bilgiler mevcut olup saflık kriterleri mevzuata uygundur. 
+
+Kozmetik ürün, genetik olarak modifiye edilmiş organizmalar (GMO), nanomateryaller, hayvansal orjinli bileşenler, 1272/2008 sayılı CLP tüzüğüne göre 1A, 1B ve 2 kategorilerinde sınıflandırılan CMR maddeleri içermemektedir.</value>
+  </data>
+  <data name="xrLabel33.Text" xml:space="preserve">
+    <value>Ambalajdan formülasyona madde geçişi olabileceğinden, ambalaj malzemesinin ilgili özellikleri dikkate alınmalıdır. Ambalaj materyali ve nominal miktar hakkında bilgi "Ürün Hakkında Bilgiler" tablosunda paylaşılmıştır.</value>
+  </data>
+  <data name="xrLabel35.Text" xml:space="preserve">
+    <value>A değeri için (toplam günlük maruziyet) (yetişkin vücut ağırlığı: 60 kg) (‘The SCCS's Notes Of Guidance For The Testing Of Cosmetic Ingredients And Their Safety Evaluation 12th Revision SCCS/1602/18)’ baz alınmıştır.)</value>
   </data>
 </root>
