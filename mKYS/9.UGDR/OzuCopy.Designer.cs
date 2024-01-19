@@ -118,6 +118,8 @@
             this.memoEdit4 = new DevExpress.XtraEditors.MemoEdit();
             this.memoEdit3 = new DevExpress.XtraEditors.MemoEdit();
             this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
+            this.btn_uyari = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -920,6 +922,8 @@
             // 
             // xtraTabPage4
             // 
+            this.xtraTabPage4.Controls.Add(this.btn_uyari);
+            this.xtraTabPage4.Controls.Add(this.labelControl18);
             this.xtraTabPage4.Controls.Add(this.labelControl17);
             this.xtraTabPage4.Controls.Add(this.labelControl11);
             this.xtraTabPage4.Controls.Add(this.memoEdit7);
@@ -1054,6 +1058,23 @@
             this.memoEdit2.Name = "memoEdit2";
             this.memoEdit2.Size = new System.Drawing.Size(196, 68);
             this.memoEdit2.TabIndex = 48;
+            // 
+            // btn_uyari
+            // 
+            this.btn_uyari.Location = new System.Drawing.Point(152, 349);
+            this.btn_uyari.Name = "btn_uyari";
+            this.btn_uyari.Size = new System.Drawing.Size(75, 23);
+            this.btn_uyari.TabIndex = 59;
+            this.btn_uyari.Text = "Görsel Seç";
+            this.btn_uyari.Click += new System.EventHandler(this.btn_uyari_Click);
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(73, 354);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(73, 13);
+            this.labelControl18.TabIndex = 58;
+            this.labelControl18.Text = "Etiket Uyarıları:";
             // 
             // OzuCopy
             // 
@@ -1225,5 +1246,7 @@
         private DevExpress.XtraEditors.MemoEdit mstaen;
         private DevExpress.XtraEditors.MemoEdit mchalen;
         private DevExpress.XtraEditors.MemoEdit mmikroen;
+        private DevExpress.XtraEditors.SimpleButton btn_uyari;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
     }
 }

@@ -58,12 +58,14 @@ namespace mROOT._9.UGDR
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             string adam = gridView1.GetRowCellValue(e.RowHandle, "Durum").ToString();
-            if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "Raporlandı")
+            if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "Gönderildi")
                 e.Appearance.BackColor = Color.LightGreen;
-            else if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "Beklemede")
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "Hazırlanıyor")
                 e.Appearance.BackColor = Color.LightSalmon;
             else if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "Yeni")
                 e.Appearance.BackColor = Color.WhiteSmoke;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "İptal")
+                e.Appearance.BackColor = Color.OrangeRed;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -185,16 +187,16 @@ namespace mROOT._9.UGDR
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // ödeme bekliyor
+            // iptal
             DialogResult Secim = new DialogResult();
 
-            Secim = MessageBox.Show(fNo + " numaralı teklif red mi edildi ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            Secim = MessageBox.Show(fNo + " numaralı rapor iptal mi edildi ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (Secim == DialogResult.Yes)
             {
-                SqlCommand komutSil = new SqlCommand("update STeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
+                SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
                 komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Reddedildi");
+                komutSil.Parameters.AddWithValue("@a1", "İptal");
                 komutSil.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 listele();
@@ -237,21 +239,26 @@ namespace mROOT._9.UGDR
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //kısmi
+            //gönderildi
+            SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
+            komutSil.Parameters.AddWithValue("@p1", lID);
+            komutSil.Parameters.AddWithValue("@a1", "Gönderildi");
+            komutSil.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            listele();
+            //DialogResult Secim = new DialogResult();
 
-            DialogResult Secim = new DialogResult();
+            //Secim = MessageBox.Show(fNo + " numaralı faturada kısmi ödeme mevcut ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            Secim = MessageBox.Show(fNo + " numaralı faturada kısmi ödeme mevcut ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (Secim == DialogResult.Yes)
-            {
-                SqlCommand komutSil = new SqlCommand("update MSListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-                komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Kısmı Ödeme");
-                komutSil.ExecuteNonQuery();
-                bgl.baglanti().Close();
-                listele();
-            }
+            //if (Secim == DialogResult.Yes)
+            //{
+            //    SqlCommand komutSil = new SqlCommand("update MSListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
+            //    komutSil.Parameters.AddWithValue("@p1", lID);
+            //    komutSil.Parameters.AddWithValue("@a1", "Kısmı Ödeme");
+            //    komutSil.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
+            //    listele();
+            //}
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -324,23 +331,39 @@ namespace mROOT._9.UGDR
             ua.Show();
         }
 
+        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //etiket yazdır
+            mROOT.Raporlar.UTSEtiket.tID = lID;
+            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            {
+                frm.UTSEtiket();
+                frm.ShowDialog();
+            }
+        }
+
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //ödendi
+            //hazırlanıypr
+            SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
+            komutSil.Parameters.AddWithValue("@p1", lID);
+            komutSil.Parameters.AddWithValue("@a1", "Hazırlanıyor");
+            komutSil.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            listele();
+            //DialogResult Secim = new DialogResult();
 
-            DialogResult Secim = new DialogResult();
+            //Secim = MessageBox.Show(fNo + " numaralı teklif onaylandı mı ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            Secim = MessageBox.Show(fNo + " numaralı teklif onaylandı mı ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (Secim == DialogResult.Yes)
-            {
-                SqlCommand komutSil = new SqlCommand("update STeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-                komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Onaylandı");
-                komutSil.ExecuteNonQuery();
-                bgl.baglanti().Close();
-                listele();
-            }
+            //if (Secim == DialogResult.Yes)
+            //{
+            //    SqlCommand komutSil = new SqlCommand("update STeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
+            //    komutSil.Parameters.AddWithValue("@p1", lID);
+            //    komutSil.Parameters.AddWithValue("@a1", "Onaylandı");
+            //    komutSil.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
+            //    listele();
+            //}
         }
         string rno;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

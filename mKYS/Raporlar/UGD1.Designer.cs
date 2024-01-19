@@ -817,7 +817,6 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrLabel5});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 782.3651F;
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
@@ -2272,7 +2271,6 @@
             this.xrLabel50,
             this.xrLabel47,
             this.xrLabel46});
-            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 891.4587F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";

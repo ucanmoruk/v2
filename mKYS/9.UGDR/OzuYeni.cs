@@ -238,7 +238,7 @@ namespace mROOT._9.UGDR
 
             SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
             update rUGDDetay2 set Kullanim=@a1, Ozellikler=@a2, Uyarilar=@a3, Kutu=@a4, Durum=@a5, 
-            UyarilarEn=@o6, KullanimEn=@o7, OzelliklerEn=@o8 where UrunID = '" + yeniID + "' ;" +
+            UyarilarEn=@o6, KullanimEn=@o7, OzelliklerEn=@o8, Kutu2=@o10 where UrunID = '" + yeniID + "' ;" +
             "update rUGDListe set Durum=@a6 where ID = '"+yeniID+"' ;" +
             "update rUGDDetay set Durum=@a7 where UrunID = '" + yeniID + "' COMMIT TRANSACTION", bgl.baglanti());
             add2.Parameters.AddWithValue("@a1", memoEdit2.Text);
@@ -251,6 +251,7 @@ namespace mROOT._9.UGDR
             add2.Parameters.AddWithValue("@o6", memoEdit7.Text);
             add2.Parameters.AddWithValue("@o7", memoEdit9.Text);
             add2.Parameters.AddWithValue("@o8", memoEdit8.Text);
+            add2.Parameters.AddWithValue("@o10", string.IsNullOrEmpty(ruyar) ? (object)DBNull.Value : ruyar);
             add2.ExecuteNonQuery();
             bgl.baglanti().Close();
             kayit = "evet";
@@ -466,6 +467,43 @@ namespace mROOT._9.UGDR
             {
                 mstatr.Text = "Ürünün üretici tarafından öngörülen raf ömrü 24 aydır. Ürünün açıldıktan sonraki dayanıklılık süresi etikette 12 ay olarak belirtilmiştir." + "\r\n" + "Stabilite test raporu dosya ekinde yer almaktadır.";
                 mstaen.Text = "The shelf life of the product stipulated by the manufacturer is 24 months. The shelf life of the product after opening is stated as 12 months on the label." + "\r\n" + "Stability test report is in the file attachment.";
+            }
+        }
+        string ruyari, ruyar;
+        private void btn_uyari_Click(object sender, EventArgs e)
+        {
+            //etiket uyarıları 
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // open.InitialDirectory = "C:\\";
+                open.InitialDirectory = path;
+                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    ruyari = open.FileName;
+                    // pictureEdit1.Image = new Bitmap(open.FileName);
+                    btn_uyari.Text = "Seçildi";
+                }
+                parolaolustur();
+                string isim = Path.GetFileName(ruyari);
+                ruyar = yeniID + "rk-" + parola + ".jpg";
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + ruyar;
+                    rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + ruyar;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, ruyari);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Oppss2: " + ex);
             }
         }
 

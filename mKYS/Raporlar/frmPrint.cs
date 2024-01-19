@@ -259,7 +259,19 @@ namespace mKYS.Raporlar
             }
 
         }
+        public void UTSEtiket()
+        {
 
+            mROOT.Raporlar.UTSEtiket rapor = new mROOT.Raporlar.UTSEtiket();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
+        }
 
         public void Dermatolojik()
         {
