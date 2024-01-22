@@ -955,6 +955,39 @@ namespace mKYS
             cs.Show();
         }
 
+        private void barButtonItem104_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //ozeco numune takip
+            if (wne == null || wne.IsDisposed)
+            {
+                mROOT._2.Product.WorkList.gelis = "Ozeco";
+                wne = new mROOT._2.Product.WorkList();
+                wne.MdiParent = this;
+                wne.Show();
+            }
+        }
+
+        mROOT._9.UGDR.FormulIcerik ful;
+        private void barButtonItem105_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ful == null || ful.IsDisposed)
+            {
+                if (Anasayfa.birimID == 1005)
+                {
+                    mROOT._9.UGDR.FormulIcerik.gelis = "1005";
+                }
+                else
+                {
+
+                }
+
+
+                ful = new mROOT._9.UGDR.FormulIcerik();
+                ful.MdiParent = this;
+                ful.Show();
+            }
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();

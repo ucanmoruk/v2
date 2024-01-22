@@ -277,6 +277,12 @@
     <Compile Include="9.UGDR\uDAP.Designer.cs">
       <DependentUpon>uDAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="9.UGDR\FormulIcerik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="9.UGDR\FormulIcerik.designer.cs">
+      <DependentUpon>FormulIcerik.cs</DependentUpon>
+    </Compile>
     <Compile Include="9.UGDR\uSubs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1023,6 +1029,9 @@
     <EmbeddedResource Include="9.UGDR\uDAP.resx">
       <DependentUpon>uDAP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="9.UGDR\FormulIcerik.resx">
+      <DependentUpon>FormulIcerik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\uSubs.resx">
       <DependentUpon>uSubs.cs</DependentUpon>
     </EmbeddedResource>
@@ -1438,6 +1447,10 @@
     <None Include="Resources\BegumPazarli.png" />
     <None Include="Resources\Cosmoliz.png" />
     <None Include="Resources\imza-dsk-1.png" />
+    <None Include="Resources\OzecoLogox2.png" />
+    <None Include="Resources\stand arka plan yüksek çözünürlük_pages-to-jpg-0001.jpg" />
+    <None Include="Resources\ozecologox3.jpg" />
+    <None Include="Resources\ozecologox4.jpg" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

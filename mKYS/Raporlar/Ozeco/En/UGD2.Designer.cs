@@ -44,6 +44,7 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.xrPictureBox5 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
@@ -84,7 +85,6 @@
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField3 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField4 = new DevExpress.XtraReports.UI.CalculatedField();
-            this.xrPictureBox5 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -241,6 +241,14 @@
             this.xrPictureBox6});
             this.BottomMargin.HeightF = 67.71778F;
             this.BottomMargin.Name = "BottomMargin";
+            // 
+            // xrPictureBox5
+            // 
+            this.xrPictureBox5.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox5.ImageSource"));
+            this.xrPictureBox5.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
+            this.xrPictureBox5.Name = "xrPictureBox5";
+            this.xrPictureBox5.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
+            this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // xrPictureBox6
             // 
@@ -424,7 +432,7 @@
             this.xrTableCell26.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell26.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Noael2]),\'-\' ,[Noael2] )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Noael]),\'-\' ,[Noael])")});
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBorderColor = false;
@@ -735,7 +743,7 @@
             // calculatedField3
             // 
             this.calculatedField3.DataMember = "masslab_rUGDListe";
-            this.calculatedField3.Expression = "Iif(IsNullOrEmpty([Noael2]),\'N/A\',([Noael2]/([Miktar]*[A]*[DaP]/100*1/100)))";
+            this.calculatedField3.Expression = "Iif(IsNullOrEmpty([Noael]),\'N/A\',([Noael]/([Miktar]*[A]*[DaP]/100*1/100)))";
             this.calculatedField3.Name = "calculatedField3";
             // 
             // calculatedField4
@@ -744,14 +752,6 @@
             this.calculatedField4.Expression = "Iif(\n[Kategori]=\'Yasaklı\',\'FAIL\', Iif([calculatedField3]=\'N/A\',\'SUITABLE\' , Iif([" +
     "calculatedField3]>100,\'SUITABLE\' , \'FAIL\')\n)\n\n)";
             this.calculatedField4.Name = "calculatedField4";
-            // 
-            // xrPictureBox5
-            // 
-            this.xrPictureBox5.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox5.ImageSource"));
-            this.xrPictureBox5.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
-            this.xrPictureBox5.Name = "xrPictureBox5";
-            this.xrPictureBox5.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
-            this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // UGD2
             // 

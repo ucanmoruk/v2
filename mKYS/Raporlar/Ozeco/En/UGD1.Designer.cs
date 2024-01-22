@@ -300,6 +300,7 @@
             this.pChallenge = new DevExpress.XtraReports.Parameters.Parameter();
             this.pKutu = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader8 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrPictureBox8 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox5 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPictureBox7 = new DevExpress.XtraReports.UI.XRPictureBox();
@@ -404,6 +405,7 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox8,
             this.xrPageInfo1,
             this.xrLine1,
             this.xrTable1,
@@ -523,11 +525,11 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 20.41667F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(155.6251F, 20.41667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(753F, 23F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(418.5468F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "COSMETIC PRODUCT SAFETY ASSESSMENT";
@@ -566,7 +568,6 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrLabel5});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 782.3651F;
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
@@ -3495,6 +3496,16 @@
             this.GroupHeader8.Level = 2;
             this.GroupHeader8.Name = "GroupHeader8";
             // 
+            // xrPictureBox8
+            // 
+            this.xrPictureBox8.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
+            this.xrPictureBox8.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.ozecologox4, true);
+            this.xrPictureBox8.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 4.640865F);
+            this.xrPictureBox8.Name = "xrPictureBox8";
+            this.xrPictureBox8.SizeF = new System.Drawing.SizeF(107.4092F, 81.36755F);
+            this.xrPictureBox8.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.xrPictureBox8.PrintOnPage += new DevExpress.XtraReports.UI.PrintOnPageEventHandler(this.xrPictureBox8_PrintOnPage);
+            // 
             // xrPictureBox6
             // 
             this.xrPictureBox6.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox6.ImageSource"));
@@ -3513,7 +3524,7 @@
             // 
             // xrPictureBox7
             // 
-            this.xrPictureBox7.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.ozecologo1, true);
+            this.xrPictureBox7.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.stand_arka_plan_yüksek_çözünürlük_pages_to_jpg_0001, true);
             this.xrPictureBox7.LocationFloat = new DevExpress.Utils.PointFloat(9.999989F, 10F);
             this.xrPictureBox7.Name = "xrPictureBox7";
             this.xrPictureBox7.SizeF = new System.Drawing.SizeF(736F, 274.2838F);
@@ -3851,5 +3862,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
         private DevExpress.XtraReports.UI.XRLabel xrLabel66;
         private DevExpress.XtraReports.UI.XRLabel xrLabel69;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox8;
     }
 }

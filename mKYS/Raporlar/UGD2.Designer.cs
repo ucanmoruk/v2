@@ -428,7 +428,7 @@
             // 
             this.xrTableCell26.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Noael2]),\'-\' ,[Noael2] )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Noael]),\'-\' ,[Noael] )")});
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBorders = false;
@@ -740,7 +740,7 @@
             // calculatedField3
             // 
             this.calculatedField3.DataMember = "masslab_rUGDListe";
-            this.calculatedField3.Expression = "Iif(IsNullOrEmpty([Noael2]),\'N/A\',([Noael2]/([Miktar]*[A]*[DaP]/100*1/100)))";
+            this.calculatedField3.Expression = "Iif(IsNullOrEmpty([Noael]),\'N/A\',([Noael]/([Miktar]*[A]*[DaP]/100*1/100)))";
             this.calculatedField3.Name = "calculatedField3";
             // 
             // calculatedField4

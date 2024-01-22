@@ -19,6 +19,14 @@ namespace mKYS.Raporlar.Ozeco.En
 
         string m, c, s, k;
 
+        private void xrPictureBox8_PrintOnPage(object sender, PrintOnPageEventArgs e)
+        {
+            if (e.PageIndex == 0)
+                e.Cancel = false;
+            else
+                e.Cancel = true;
+        }
+
         private void xrLabel67_PrintOnPage(object sender, PrintOnPageEventArgs e)
         {
             if (e.PageIndex == 0)

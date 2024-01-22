@@ -173,6 +173,36 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap OzecoLogox2 {
+            get {
+                object obj = ResourceManager.GetObject("OzecoLogox2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap ozecologox3 {
+            get {
+                object obj = ResourceManager.GetObject("ozecologox3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap ozecologox4 {
+            get {
+                object obj = ResourceManager.GetObject("ozecologox4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap ozecomuhur {
             get {
                 object obj = ResourceManager.GetObject("ozecomuhur", resourceCulture);
@@ -206,6 +236,16 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap Spektrotek_Logo {
             get {
                 object obj = ResourceManager.GetObject("Spektrotek Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap stand_arka_plan_yüksek_çözünürlük_pages_to_jpg_0001 {
+            get {
+                object obj = ResourceManager.GetObject("stand arka plan yüksek çözünürlük_pages-to-jpg-0001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
