@@ -46,7 +46,7 @@ namespace mROOT._9.UGDR
             detaybul();
         }
 
-        string o1, id, INCI;
+        string o1, id, INCI, Noael;
         private void btn_kontrol_Click(object sender, EventArgs e)
         {
 
@@ -56,14 +56,19 @@ namespace mROOT._9.UGDR
                 int y = Convert.ToInt32(o1);
                 id = gridView1.GetRowCellValue(y, "cosID").ToString();
                 INCI = gridView1.GetRowCellValue(y, "INCIName").ToString();
+                Noael = gridView1.GetRowCellValue(y, "NOAEL").ToString();
                 SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                    "insert into rUGDFormül (UrunID, HammaddeID, INCIName, DaP) " +
-                    "values (@o1,@o2,@o3, @o4);" +
+                    "insert into rUGDFormül (UrunID, HammaddeID, INCIName, DaP, Noael) " +
+                    "values (@o1,@o2,@o3, @o4, @o5);" +
                     "COMMIT TRANSACTION", bgl.baglanti());
                 add2.Parameters.AddWithValue("@o1", uID);
                 add2.Parameters.AddWithValue("@o2", id);
                 add2.Parameters.AddWithValue("@o3", INCI);
                 add2.Parameters.AddWithValue("@o4", 100);
+                if(Noael == null || Noael == "")
+                    add2.Parameters.AddWithValue("@o5", DBNull.Value);
+                else
+                    add2.Parameters.AddWithValue("@o5", Convert.ToInt32(Noael));
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
             }
@@ -80,9 +85,13 @@ namespace mROOT._9.UGDR
                 for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
                 {
 
-                    SqlCommand komutz = new SqlCommand("update rUGDFormül set Miktar=@o1, DaP = @o2 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                    SqlCommand komutz = new SqlCommand("update rUGDFormül set Miktar=@o1, DaP = @o2, Noael=@o3 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
                     komutz.Parameters.AddWithValue("@o1", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Miktar").ToString()));
                     komutz.Parameters.AddWithValue("@o2", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Dap").ToString()));
+                    if(gridView2.GetRowCellValue(ik, "NOAEL").ToString()==null || gridView2.GetRowCellValue(ik, "NOAEL").ToString()=="")
+                        komutz.Parameters.AddWithValue("@o3", DBNull.Value);
+                    else
+                        komutz.Parameters.AddWithValue("@o3", Convert.ToInt32(gridView2.GetRowCellValue(ik, "NOAEL").ToString()));
                     komutz.ExecuteNonQuery();
                     bgl.baglanti().Close();
                 }
@@ -106,13 +115,12 @@ namespace mROOT._9.UGDR
             {
 
                 decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Miktar"]).ToString());
-
                 string noael = Convert.ToString(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
                 if (noael == "" || noael == null)
                 {
                     decimal dap = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
+                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["A"]).ToString());
+                 //   decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
                 
                     SED = Math.Round(miktar * A * dap / 100 * 1 / 100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
@@ -120,8 +128,8 @@ namespace mROOT._9.UGDR
                 else
                 {
                     decimal dap = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
+                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["A"]).ToString());
+                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
 
                     SED = Math.Round(miktar * A * dap / 100 * 1/100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
@@ -145,18 +153,18 @@ namespace mROOT._9.UGDR
                 string noael = Convert.ToString(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
                 if (noael == "" || noael == null)
                 {
-                    decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
+                    decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Miktar"]).ToString());
+                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["A"]).ToString());
+                 //   decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
 
                     SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
                 }
                 else
                 {
-                    decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
-                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
+                    decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Miktar"]).ToString());
+                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["A"]).ToString());
+                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
 
                     SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 4);
                     view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
@@ -175,6 +183,42 @@ namespace mROOT._9.UGDR
                 }
 
 
+            }
+            else if (e.Column.FieldName =="NOAEL")
+            {
+                decimal Dap = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Dap"]).ToString());
+
+                string noael = Convert.ToString(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
+                if (noael == "" || noael == null)
+                {
+                    decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Miktar"]).ToString());
+                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["A"]).ToString());
+                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
+
+                    SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 4);
+                    view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
+                }
+                else
+                {
+                    decimal miktar = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["Miktar"]).ToString());
+                    decimal A = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["A"]).ToString());
+                    decimal NOAEL = Convert.ToDecimal(view.GetRowCellValue(e.RowHandle, view.Columns["NOAEL"]).ToString());
+
+                    SED = Math.Round(miktar * A * Dap / 100 * 1 / 100, 4);
+                    view.SetRowCellValue(e.RowHandle, view.Columns["SED"], SED);
+
+                    //MOS = Math.Round(NOAEL / SED, 4);
+                    //view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    if (SED == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        MOS = Math.Round(NOAEL / SED, 4);
+                        view.SetRowCellValue(e.RowHandle, view.Columns["MOS"], MOS);
+                    }
+                }
             }
 
           
@@ -281,8 +325,8 @@ namespace mROOT._9.UGDR
         void detaybul()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, c.Cas,c.Regulation, f.Miktar, f.Dap, l.A, h.Noael2 as 'NOAEL', CAST(ROUND((f.Miktar*l.A*f.Dap/100*1/100),2) AS numeric(36,2)) as 'SED',
-            CAST(ROUND((h.Noael2 / (f.Miktar*l.A*f.Dap/100*1/100)),2) AS numeric(36,2)) as 'MOS',
+            SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, c.Cas,c.Regulation, f.Miktar, f.Dap, l.A, f.Noael as 'NOAEL', CAST(ROUND((f.Miktar*l.A*f.Dap/100*1/100),2) AS numeric(36,2)) as 'SED',
+            CAST(ROUND((f.Noael / (f.Miktar*l.A*f.Dap/100*1/100)),2) AS numeric(36,2)) as 'MOS',
             c.ID as 'cosID', f.ID from rUGDFormül f 
             left join rCosing c on f.INCIName = c.INCIName 
 			left join rHammadde h on c.ID = h.cID 
@@ -305,8 +349,8 @@ namespace mROOT._9.UGDR
             this.gridView2.Columns[8].AppearanceCell.BackColor = Color.LemonChiffon;
             this.gridView2.Columns[7].OptionsColumn.AllowEdit = false;
             this.gridView2.Columns[7].AppearanceCell.BackColor = Color.LemonChiffon;
-            this.gridView2.Columns[6].OptionsColumn.AllowEdit = false;
-            this.gridView2.Columns[6].AppearanceCell.BackColor = Color.LemonChiffon;
+            //this.gridView2.Columns[6].OptionsColumn.AllowEdit = false;
+            //this.gridView2.Columns[6].AppearanceCell.BackColor = Color.LemonChiffon;
             this.gridView2.Columns[5].OptionsColumn.AllowEdit = false;
             this.gridView2.Columns[5].AppearanceCell.BackColor = Color.LemonChiffon;
 

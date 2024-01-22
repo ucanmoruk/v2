@@ -74,7 +74,7 @@ namespace mROOT._9.UGDR
                     SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
                     komutz.Parameters.AddWithValue("@o1", "0");
                     komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "C (%)").ToString()));
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
                     komutz.Parameters.AddWithValue("@o4", 100);
                     komutz.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -106,7 +106,7 @@ namespace mROOT._9.UGDR
                     SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
                     komutz.Parameters.AddWithValue("@o1", uID);
                     komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "C (%)").ToString()));
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
                     komutz.Parameters.AddWithValue("@o4", 100);
                     komutz.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -176,10 +176,14 @@ namespace mROOT._9.UGDR
                     {
                         for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
                         {
-                            SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2, Miktar=@o3 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                            SqlCommand komutz = new SqlCommand("update rUGDFormül set UrunID=@o1, HammaddeID=@o2, Miktar=@o3, Noael=@o4 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
                             komutz.Parameters.AddWithValue("@o1", gridLookUpEdit1.EditValue);
                             komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
                             komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Miktar").ToString()) );
+                            if(gridView2.GetRowCellValue(ik, "Noael").ToString() == null || gridView2.GetRowCellValue(ik, "Noael").ToString() == "")
+                                komutz.Parameters.AddWithValue("@o4", DBNull.Value );
+                            else
+                                komutz.Parameters.AddWithValue("@o4", Convert.ToInt32(gridView2.GetRowCellValue(ik, "Noael").ToString()));
                             komutz.ExecuteNonQuery();
                             bgl.baglanti().Close();
                         }
@@ -202,9 +206,13 @@ namespace mROOT._9.UGDR
                             // yeni kayıt şeklinde
                             for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
                             {
-                                SqlCommand komutz = new SqlCommand("update rUGDFormül set  HammaddeID=@o2 , Miktar=@o3 where ID = '" +gridView2.GetRowCellValue(ik, "ID").ToString()+ "' ", bgl.baglanti());      
+                                SqlCommand komutz = new SqlCommand("update rUGDFormül set  HammaddeID=@o2 , Miktar=@o3, Noael=@o4 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString()+ "' ", bgl.baglanti());      
                                 komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
                                 komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Miktar").ToString()) );
+                                if (gridView2.GetRowCellValue(ik, "Noael").ToString() == null || gridView2.GetRowCellValue(ik, "Noael").ToString() == "")
+                                    komutz.Parameters.AddWithValue("@o4", DBNull.Value);
+                                else
+                                    komutz.Parameters.AddWithValue("@o4", Convert.ToInt32(gridView2.GetRowCellValue(ik, "Noael").ToString()));
                                 komutz.ExecuteNonQuery();
                                 bgl.baglanti().Close();
                             }
@@ -213,9 +221,13 @@ namespace mROOT._9.UGDR
                         {
                             for (int ik = 0; ik <= gridView2.RowCount - 1; ik++)
                             {
-                                SqlCommand komutz = new SqlCommand("update rUGDFormül set HammaddeID=@o2 , Miktar=@o3 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
+                                SqlCommand komutz = new SqlCommand("update rUGDFormül set HammaddeID=@o2 , Miktar=@o3, Noael=@o4 where ID = '" + gridView2.GetRowCellValue(ik, "ID").ToString() + "' ", bgl.baglanti());
                                 komutz.Parameters.AddWithValue("@o2", gridView2.GetRowCellValue(ik, "cosID").ToString());
                                 komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView2.GetRowCellValue(ik, "Miktar").ToString()));
+                                if (gridView2.GetRowCellValue(ik, "Noael").ToString() == null || gridView2.GetRowCellValue(ik, "Noael").ToString() == "")
+                                    komutz.Parameters.AddWithValue("@o4", DBNull.Value);
+                                else
+                                    komutz.Parameters.AddWithValue("@o4", Convert.ToInt32(gridView2.GetRowCellValue(ik, "Noael").ToString()));
                                 komutz.ExecuteNonQuery();
                                 bgl.baglanti().Close();
                             }
@@ -351,8 +363,10 @@ namespace mROOT._9.UGDR
             if (gelis == "Anasayfa" || uID == null || uID == "")
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
-                left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
+                SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael2 as 'Noael', c.ID as 'cosID', f.ID from rUGDFormül f 
+                left join rCosing c on f.INCIName = c.INCIName 
+                left join rHammadde r on c.ID = r.cID 
+                where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
                 da.Fill(dt);
                 gridControl2.DataSource = dt;
                 gridView2.Columns["cosID"].Visible = false;
@@ -366,12 +380,13 @@ namespace mROOT._9.UGDR
                 this.gridView2.Columns[3].Width = 90;
                 this.gridView2.Columns[4].Width = 90;
                 this.gridView2.Columns[5].Width = 50;
+                this.gridView2.Columns[6].Width = 50;
             }
             else
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
-                left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '" + uID + "' order by f.Miktar desc ", bgl.baglanti());
+                SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael2 as 'Noael', c.ID as 'cosID', f.ID from rUGDFormül f 
+                left join rCosing c on f.INCIName = c.INCIName left join rHammadde r on c.ID = r.cID  where f.UrunID = '" + uID + "' order by f.Miktar desc ", bgl.baglanti());
                 da.Fill(dt);
                 gridControl2.DataSource = dt;
                 gridView2.Columns["cosID"].Visible = false;
@@ -385,6 +400,7 @@ namespace mROOT._9.UGDR
                 this.gridView2.Columns[3].Width = 90;
                 this.gridView2.Columns[4].Width = 90;
                 this.gridView2.Columns[5].Width = 50;
+                this.gridView2.Columns[6].Width = 50;
             }
 
 

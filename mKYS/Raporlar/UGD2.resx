@@ -124,7 +124,7 @@
     <value>select "masslab.rUGDListe"."RaporNo", "masslab.rUGDListe"."ID",
        "masslab.rUGDListe"."Tarih", "masslab.rUGDListe"."Versiyon",
        "masslab.rUGDListe"."Urun", "masslab.rUGDListe"."A",
-       "masslab.rUGDFormül"."Miktar", "masslab.rHammadde"."Noael2","masslab.rUGDFormül"."DaP",
+       "masslab.rUGDFormül"."Miktar", "masslab.rHammadde"."Noael2","masslab.rUGDFormül"."DaP", "masslab.rUGDFormül"."Noael",
        "masslab.rCosing"."INCIName", "masslab.rCosing"."Cas",
        "masslab.rCosing"."EC", "masslab.rCosing"."Functions" ,
        "masslab.rCosing"."Regulation" , "masslab.rUGDYonetmelik"."Kategori"
@@ -136,11 +136,10 @@
   left join "masslab"."rHammadde" "masslab.rHammadde"
        on ("masslab.rHammadde"."cID" = "masslab.rCosing"."ID"))
 left join "masslab"."rUGDYonetmelik" "masslab.rUGDYonetmelik"
-       on ("masslab.rCosing"."Regulation" = "masslab.rUGDYonetmelik"."Num")
-</value>
+       on ("masslab.rCosing"."Regulation" = "masslab.rUGDYonetmelik"."Num")</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlVydW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJOb2FlbDIiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkRhUCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklOQ0lOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNhcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFQyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGdW5jdGlvbnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmVndWxhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXRlZ29yaSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlVydW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJOb2FlbDIiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkRhUCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik5vYWVsIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iSU5DSU5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2FzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVDIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZ1bmN0aW9ucyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWd1bGF0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkthdGVnb3JpIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
   <data name="xrLabel3.Text" xml:space="preserve">
     <value>*C: Konsantrasyon. Üst değer üzerinden değerlendirmeye alınmıştır. 
