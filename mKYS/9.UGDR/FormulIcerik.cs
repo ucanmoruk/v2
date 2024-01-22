@@ -34,7 +34,7 @@ namespace mROOT._9.UGDR
                 where l.Durum = 'Aktif' order by RaporNo desc", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
-                gridView1.Columns["ID"].Visible = false;
+                // gridView1.Columns["ID"].Visible = false;
                 // gridView1.Columns["FirmaID"].Visible = false;
             }
             else
