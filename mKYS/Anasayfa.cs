@@ -1034,6 +1034,11 @@ namespace mKYS
             }
         }
 
+        private void barButtonItem106_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //yeni nu
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();

@@ -38,21 +38,45 @@ namespace mKYS
         public static string ID;
         private void detaybul()
         {
-            SqlCommand komut2 = new SqlCommand(@"Select Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak , EkBilgi from rHammadde 
-            where cID = N'" + ID + "' ", bgl.baglanti());
-            SqlDataReader dr2 = komut2.ExecuteReader();
-            while (dr2.Read())
-            {
-                combo_tur.Text = dr2["Mix"].ToString();
-                txtad.Text = dr2["GenelAd"].ToString();         
-                txtnoel.Text = dr2["Noael2"].ToString();
-                memo_fiziko.Text = dr2["Fizikokimya"].ToString();
-                memo_toksi.Text = dr2["Toksikoloji"].ToString();
-                memoek.Text = dr2["EkBilgi"].ToString();
-                txtkaynak.Text = dr2["Kaynak"].ToString();
 
+            if (Anasayfa.birimID == 1005)
+            {
+                SqlCommand komut2 = new SqlCommand(@"Select Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak , EkBilgi from rHammadde 
+                where cID = N'" + ID + "' ", bgl.baglanti());
+                SqlDataReader dr2 = komut2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    combo_tur.Text = dr2["Mix"].ToString();
+                    txtad.Text = dr2["GenelAd"].ToString();
+                    txtnoel.Text = dr2["Noael2"].ToString();
+                    memo_fiziko.Text = dr2["Fizikokimya"].ToString();
+                    memo_toksi.Text = dr2["Toksikoloji"].ToString();
+                    memoek.Text = dr2["EkBilgi"].ToString();
+                    txtkaynak.Text = dr2["Kaynak"].ToString();
+
+                }
+                bgl.baglanti().Close();
             }
-            bgl.baglanti().Close();
+            else
+            {
+                SqlCommand komut2 = new SqlCommand(@"Select Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak , EkBilgi from rkHammadde 
+                where cID = N'" + ID + "' ", bgl.baglanti());
+                SqlDataReader dr2 = komut2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    combo_tur.Text = dr2["Mix"].ToString();
+                    txtad.Text = dr2["GenelAd"].ToString();
+                    txtnoel.Text = dr2["Noael2"].ToString();
+                    memo_fiziko.Text = dr2["Fizikokimya"].ToString();
+                    memo_toksi.Text = dr2["Toksikoloji"].ToString();
+                    memoek.Text = dr2["EkBilgi"].ToString();
+                    txtkaynak.Text = dr2["Kaynak"].ToString();
+
+                }
+                bgl.baglanti().Close();
+            }
+
+            
             SqlCommand komut12 = new SqlCommand(@"Select INCIName, Cas, EC, Functions, Regulation 
             from rCosing 
             where ID = N'" + ID + "' ", bgl.baglanti());
@@ -73,28 +97,56 @@ namespace mKYS
         {
             try
             {
-                SqlCommand add = new SqlCommand(@"insert into rHammadde 
-                (Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak, EkBilgi, Durum, cID) 
-                values (@a1,@a2,@a8,@a9,@a10,@a11,@a12,@a13,@a14)", bgl.baglanti());
-                add.Parameters.AddWithValue("@a1", combo_tur.Text);
-                add.Parameters.AddWithValue("@a2", txtad.Text);
-                //add.Parameters.AddWithValue("@a3", txt_inci.Text);
-                //add.Parameters.AddWithValue("@a4", txtcas.Text);
-                //add.Parameters.AddWithValue("@a5", txten.Text);
-                //add.Parameters.AddWithValue("@a6", memofonk.Text);
-                //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
-                if (txtnoel.Text == "" || txtnoel.Text == null)
-                    add.Parameters.AddWithValue("@a8", DBNull.Value);
+                if (Anasayfa.birimID == 1005)
+                {
+                    SqlCommand add = new SqlCommand(@"insert into rHammadde 
+                     (Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak, EkBilgi, Durum, cID) 
+                     values (@a1,@a2,@a8,@a9,@a10,@a11,@a12,@a13,@a14)", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                    add.Parameters.AddWithValue("@a2", txtad.Text);
+                    //add.Parameters.AddWithValue("@a3", txt_inci.Text);
+                    //add.Parameters.AddWithValue("@a4", txtcas.Text);
+                    //add.Parameters.AddWithValue("@a5", txten.Text);
+                    //add.Parameters.AddWithValue("@a6", memofonk.Text);
+                    //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
+                    if (txtnoel.Text == "" || txtnoel.Text == null)
+                        add.Parameters.AddWithValue("@a8", DBNull.Value);
+                    else
+                        add.Parameters.AddWithValue("@a8", txtnoel.Text);
+                    add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
+                    add.Parameters.AddWithValue("@a10", memo_toksi.Text);
+                    add.Parameters.AddWithValue("@a11", txtkaynak.Text);
+                    add.Parameters.AddWithValue("@a12", memoek.Text);
+                    add.Parameters.AddWithValue("@a13", "Aktif");
+                    add.Parameters.AddWithValue("@a14", ID);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
                 else
-                    add.Parameters.AddWithValue("@a8", txtnoel.Text);
-                add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
-                add.Parameters.AddWithValue("@a10", memo_toksi.Text);
-                add.Parameters.AddWithValue("@a11", txtkaynak.Text);
-                add.Parameters.AddWithValue("@a12", memoek.Text);
-                add.Parameters.AddWithValue("@a13", "Aktif");
-                add.Parameters.AddWithValue("@a14", ID);
-                add.ExecuteNonQuery();
-                bgl.baglanti().Close();
+                {
+                    SqlCommand add = new SqlCommand(@"insert into rkHammadde 
+                      (Mix, GenelAd, Noael2, Fizikokimya, Toksikoloji, Kaynak, EkBilgi, Durum, cID) 
+                      values (@a1,@a2,@a8,@a9,@a10,@a11,@a12,@a13,@a14)", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                    add.Parameters.AddWithValue("@a2", txtad.Text);
+                    //add.Parameters.AddWithValue("@a3", txt_inci.Text);
+                    //add.Parameters.AddWithValue("@a4", txtcas.Text);
+                    //add.Parameters.AddWithValue("@a5", txten.Text);
+                    //add.Parameters.AddWithValue("@a6", memofonk.Text);
+                    //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
+                    if (txtnoel.Text == "" || txtnoel.Text == null)
+                        add.Parameters.AddWithValue("@a8", DBNull.Value);
+                    else
+                        add.Parameters.AddWithValue("@a8", txtnoel.Text);
+                    add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
+                    add.Parameters.AddWithValue("@a10", memo_toksi.Text);
+                    add.Parameters.AddWithValue("@a11", txtkaynak.Text);
+                    add.Parameters.AddWithValue("@a12", memoek.Text);
+                    add.Parameters.AddWithValue("@a13", "Aktif");
+                    add.Parameters.AddWithValue("@a14", ID);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
 
             }
             catch (Exception ex)
@@ -105,27 +157,61 @@ namespace mKYS
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand(@"update rHammadde 
-            set Mix=@a1, GenelAd=@a2,
-            Noael2=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 , EkBilgi = @a12
-            where cID = '"+ID+"' ", bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", combo_tur.Text);
-            add.Parameters.AddWithValue("@a2", txtad.Text);
-            //add.Parameters.AddWithValue("@a3", txt_inci.Text);
-            //add.Parameters.AddWithValue("@a4", txtcas.Text);
-            //add.Parameters.AddWithValue("@a5", txten.Text);
-            //add.Parameters.AddWithValue("@a6", memofonk.Text);
-            //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
-            if(txtnoel.Text ==""|| txtnoel.Text == null)
-                 add.Parameters.AddWithValue("@a8", DBNull.Value);
-            else
-                add.Parameters.AddWithValue("@a8", txtnoel.Text);
-            add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
-            add.Parameters.AddWithValue("@a10", memo_toksi.Text);
-            add.Parameters.AddWithValue("@a11", txtkaynak.Text);
-            add.Parameters.AddWithValue("@a12", memoek.Text);
-            add.ExecuteNonQuery();
-            bgl.baglanti().Close();
+            try
+            {
+                if (Anasayfa.birimID == 1005)
+                {
+                    SqlCommand add = new SqlCommand(@"update rHammadde 
+                    set Mix=@a1, GenelAd=@a2,
+                    Noael2=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 , EkBilgi = @a12
+                    where cID = '" + ID + "' ", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                    add.Parameters.AddWithValue("@a2", txtad.Text);
+                    //add.Parameters.AddWithValue("@a3", txt_inci.Text);
+                    //add.Parameters.AddWithValue("@a4", txtcas.Text);
+                    //add.Parameters.AddWithValue("@a5", txten.Text);
+                    //add.Parameters.AddWithValue("@a6", memofonk.Text);
+                    //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
+                    if (txtnoel.Text == "" || txtnoel.Text == null)
+                        add.Parameters.AddWithValue("@a8", DBNull.Value);
+                    else
+                        add.Parameters.AddWithValue("@a8", txtnoel.Text);
+                    add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
+                    add.Parameters.AddWithValue("@a10", memo_toksi.Text);
+                    add.Parameters.AddWithValue("@a11", txtkaynak.Text);
+                    add.Parameters.AddWithValue("@a12", memoek.Text);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+                else
+                {
+                    SqlCommand add = new SqlCommand(@"update rkHammadde 
+                    set Mix=@a1, GenelAd=@a2,
+                    Noael2=@a8, Fizikokimya=@a9, Toksikoloji=@a10, Kaynak=@a11 , EkBilgi = @a12
+                    where cID = '" + ID + "' ", bgl.baglanti());
+                    add.Parameters.AddWithValue("@a1", combo_tur.Text);
+                    add.Parameters.AddWithValue("@a2", txtad.Text);
+                    //add.Parameters.AddWithValue("@a3", txt_inci.Text);
+                    //add.Parameters.AddWithValue("@a4", txtcas.Text);
+                    //add.Parameters.AddWithValue("@a5", txten.Text);
+                    //add.Parameters.AddWithValue("@a6", memofonk.Text);
+                    //add.Parameters.AddWithValue("@a7", txtyonetmeli.Text);
+                    if (txtnoel.Text == "" || txtnoel.Text == null)
+                        add.Parameters.AddWithValue("@a8", DBNull.Value);
+                    else
+                        add.Parameters.AddWithValue("@a8", txtnoel.Text);
+                    add.Parameters.AddWithValue("@a9", memo_fiziko.Text);
+                    add.Parameters.AddWithValue("@a10", memo_toksi.Text);
+                    add.Parameters.AddWithValue("@a11", txtkaynak.Text);
+                    add.Parameters.AddWithValue("@a12", memoek.Text);
+                    add.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata güncelle!: "+ ex);
+            }
         }
 
         public static string gelis;

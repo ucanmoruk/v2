@@ -49,6 +49,8 @@
             this.tproje = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tnot2 = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtev.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_kat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtis.Properties)).BeginInit();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tproje.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tnot2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -108,11 +111,11 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(131, 222);
+            this.labelControl7.Location = new System.Drawing.Point(107, 224);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(21, 13);
+            this.labelControl7.Size = new System.Drawing.Size(47, 13);
             this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "Not:";
+            this.labelControl7.Text = "Root Not:";
             // 
             // txtev
             // 
@@ -201,10 +204,10 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(372, 278);
+            this.btnadd.Location = new System.Drawing.Point(372, 350);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(100, 40);
-            this.btnadd.TabIndex = 12;
+            this.btnadd.TabIndex = 13;
             this.btnadd.Text = "Save";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
@@ -248,11 +251,28 @@
             this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
+            // tnot2
+            // 
+            this.tnot2.Location = new System.Drawing.Point(159, 281);
+            this.tnot2.Name = "tnot2";
+            this.tnot2.Size = new System.Drawing.Size(313, 44);
+            this.tnot2.TabIndex = 12;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(97, 283);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(54, 13);
+            this.labelControl8.TabIndex = 14;
+            this.labelControl8.Text = "Ozeco Not:";
+            // 
             // WorkNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 341);
+            this.ClientSize = new System.Drawing.Size(498, 427);
+            this.Controls.Add(this.labelControl8);
+            this.Controls.Add(this.tnot2);
             this.Controls.Add(this.gridLookUpEdit2);
             this.Controls.Add(this.txt_not);
             this.Controls.Add(this.btnadd);
@@ -292,6 +312,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tproje.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tnot2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +341,7 @@
         private DevExpress.XtraEditors.TextEdit tproje;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private DevExpress.XtraEditors.MemoEdit tnot2;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

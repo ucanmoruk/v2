@@ -493,7 +493,7 @@ namespace mROOT._9.UGDR
 
             SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
             update rUGDDetay2 set Kullanim=@a1, Ozellikler=@a2, Uyarilar=@a3, Kutu=@a4,
-            UyarilarEn=@o6, KullanimEn=@o7, OzelliklerEn=@o8, Kutu=@o10 where UrunID = '" + uID + "' ; COMMIT TRANSACTION", bgl.baglanti());
+            UyarilarEn=@o6, KullanimEn=@o7, OzelliklerEn=@o8, Kutu2=@o10 where UrunID = '" + uID + "' ; COMMIT TRANSACTION", bgl.baglanti());
             add2.Parameters.AddWithValue("@a1", memoEdit2.Text);
             add2.Parameters.AddWithValue("@a2", memoEdit3.Text);
             add2.Parameters.AddWithValue("@a3", memoEdit4.Text);

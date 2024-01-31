@@ -301,15 +301,15 @@ namespace mROOT._9.UGDR
             else
             {
 
-                mKYS.Raporlar.Ozeco.En.UGD1.tID = lID;
-                mKYS.Raporlar.Ozeco.En.UGD2.tID = lID;
-                mKYS.Raporlar.Ozeco.En.UGD3.tID = lID;
-                mKYS.Raporlar.Ozeco.En.UGD4.tID = lID;
-                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
-                {
-                    frm.OzecoEn();
-                    frm.ShowDialog();
-                }
+                //mKYS.Raporlar.Ozeco.En.UGD1.tID = lID;
+                //mKYS.Raporlar.Ozeco.En.UGD2.tID = lID;
+                //mKYS.Raporlar.Ozeco.En.UGD3.tID = lID;
+                //mKYS.Raporlar.Ozeco.En.UGD4.tID = lID;
+                //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                //{
+                //    frm.OzecoEn();
+                //    frm.ShowDialog();
+                //}
 
 
                 //mKYS.Raporlar.UGD1.tID = lID;

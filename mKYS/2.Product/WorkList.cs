@@ -36,7 +36,7 @@ namespace mROOT._2.Product
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
-                w.Hizmet, w.Proje, w.Notlar, w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
+                w.Hizmet, w.Proje, w.Notlar, w.Notlar2 as 'Proje Not', w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
                 left join RootFatura o on w.FaturaID = o.ID
                 left join RootTedarikci f on w.FirmaID = f.ID
                 left join RootKullanici k on w.PlasiyerID = k.ID
@@ -55,16 +55,17 @@ namespace mROOT._2.Product
                 this.gridView3.Columns[7].Width = 110;
                 this.gridView3.Columns[8].Width = 70;
                 this.gridView3.Columns[9].Width = 90;
-                this.gridView3.Columns[10].Width = 75;
-                this.gridView3.Columns[11].Width = 70;
+                this.gridView3.Columns[10].Width = 90;
+                this.gridView3.Columns[11].Width = 75;
                 this.gridView3.Columns[12].Width = 70;
                 this.gridView3.Columns[13].Width = 70;
+                this.gridView3.Columns[14].Width = 70;
             }
             else if(gelis == "Ozeco")
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
-                w.Hizmet, w.Proje, w.Notlar, w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
+                w.Hizmet, w.Proje, w.Notlar ,w.Notlar2 as 'Ozeco Not', w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
                 left join RootFatura o on w.FaturaID = o.ID
                 left join RootTedarikci f on w.FirmaID = f.ID
                 left join RootKullanici k on w.PlasiyerID = k.ID
@@ -83,16 +84,17 @@ namespace mROOT._2.Product
                 this.gridView3.Columns[7].Width = 110;
                 this.gridView3.Columns[8].Width = 70;
                 this.gridView3.Columns[9].Width = 90;
-                this.gridView3.Columns[10].Width = 75;
-                this.gridView3.Columns[11].Width = 70;
+                this.gridView3.Columns[10].Width = 90;
+                this.gridView3.Columns[11].Width = 75;
                 this.gridView3.Columns[12].Width = 70;
+                this.gridView3.Columns[13].Width = 70;
                 this.gridView3.Columns[13].Width = 70;
             }
             else
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
-                w.Hizmet, w.Proje, w.Notlar, w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
+                w.Hizmet, w.Proje, w.Notlar, w.Notlar2 as 'Kommass Not', w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
                 left join RootFatura o on w.FaturaID = o.ID
                 left join RootTedarikci f on w.FirmaID = f.ID
                 left join RootKullanici k on w.PlasiyerID = k.ID
@@ -111,9 +113,10 @@ namespace mROOT._2.Product
                 this.gridView3.Columns[7].Width = 110;
                 this.gridView3.Columns[8].Width = 70;
                 this.gridView3.Columns[9].Width = 90;
-                this.gridView3.Columns[10].Width = 75;
-                this.gridView3.Columns[11].Width = 70;
+                this.gridView3.Columns[10].Width = 90;
+                this.gridView3.Columns[11].Width = 75;
                 this.gridView3.Columns[12].Width = 70;
+                this.gridView3.Columns[13].Width = 70;
                 this.gridView3.Columns[13].Width = 70;
             }
 
@@ -325,7 +328,7 @@ namespace mROOT._2.Product
                 e.Appearance.BackColor = Color.LightGreen;
             else if (e.RowHandle > -1 && e.Column.FieldName == "IsDurum" && hadi == "Gönderildi")
                 e.Appearance.BackColor = Color.Green;
-            else if (e.RowHandle > -1 && e.Column.FieldName == "IsDurum" && hadi == "Dış Lab")
+            else if (e.RowHandle > -1 && e.Column.FieldName == "IsDurum" && hadi == "Laboratuvarda")
                 e.Appearance.BackColor = Color.LightSalmon;
             else if (e.RowHandle > -1 && e.Column.FieldName == "Odeme" && adam == "Ödendi")
                 e.Appearance.BackColor = Color.Green;
@@ -359,15 +362,10 @@ namespace mROOT._2.Product
         {
             if (e.HitInfo.InRow)
             {
-                if (gelis == "" ||gelis == null)
-                {
+                
                     var p2 = MousePosition;
                     popupMenu1.ShowPopup(p2);
-                }
-                else
-                {
-                    
-                }                              
+                                           
 
             }
         }
@@ -383,7 +381,7 @@ namespace mROOT._2.Product
                 try
                 {
                     SqlCommand komut = new SqlCommand("update rWorkList set IsDurum = @r1 where ID=@r2", bgl.baglanti());
-                    komut.Parameters.AddWithValue("@r1", "Dış Lab");
+                    komut.Parameters.AddWithValue("@r1", "Laboratuvarda");
                     komut.Parameters.AddWithValue("@r2", nID);
                     komut.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -426,7 +424,7 @@ namespace mROOT._2.Product
             komut.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
-
+        
         string no;
         private void gridView3_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {

@@ -273,6 +273,7 @@ namespace mROOT._9.UGDR
                 uFormul nf = new uFormul();
                 nf.Show();
 
+                this.Close();
             }
             else
             {
@@ -308,7 +309,7 @@ namespace mROOT._9.UGDR
                     if (dr["ADegeri"].ToString() == null || dr["ADegeri"].ToString() == "")
                     {
                         tAdegeri.Text = "";
-                        tUygulama.Text = "";
+                        //tUygulama.Text = "";
                     }
                     else
                     {
