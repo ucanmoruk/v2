@@ -138,6 +138,8 @@
             this.barButtonItem101 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem102 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem103 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem104 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem105 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -155,6 +157,7 @@
             this.ribbonPageGroup39 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup30 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup41 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup36 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup37 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -196,9 +199,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.ribbonPageGroup41 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem104 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem105 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -1280,6 +1280,24 @@
             this.barButtonItem103.Name = "barButtonItem103";
             this.barButtonItem103.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem103_ItemClick);
             // 
+            // barButtonItem104
+            // 
+            this.barButtonItem104.Caption = "Numune Takip";
+            this.barButtonItem104.Id = 108;
+            this.barButtonItem104.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem104.ImageOptions.Image")));
+            this.barButtonItem104.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem104.ImageOptions.LargeImage")));
+            this.barButtonItem104.Name = "barButtonItem104";
+            this.barButtonItem104.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem104_ItemClick);
+            // 
+            // barButtonItem105
+            // 
+            this.barButtonItem105.Caption = "Formül İçerik Listesi";
+            this.barButtonItem105.Id = 109;
+            this.barButtonItem105.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem105.ImageOptions.Image")));
+            this.barButtonItem105.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem105.ImageOptions.LargeImage")));
+            this.barButtonItem105.Name = "barButtonItem105";
+            this.barButtonItem105.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem105_ItemClick);
+            // 
             // ribbonPage8
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1417,6 +1435,12 @@
             this.ribbonPageGroup21.ItemLinks.Add(this.barButtonItem100);
             this.ribbonPageGroup21.Name = "ribbonPageGroup21";
             this.ribbonPageGroup21.Text = "ribbonPageGroup21";
+            // 
+            // ribbonPageGroup41
+            // 
+            this.ribbonPageGroup41.ItemLinks.Add(this.barButtonItem104);
+            this.ribbonPageGroup41.Name = "ribbonPageGroup41";
+            this.ribbonPageGroup41.Text = "ribbonPageGroup41";
             // 
             // ribbonPage10
             // 
@@ -1720,30 +1744,6 @@
             this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
             this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
             this.barButtonItem26.Name = "barButtonItem26";
-            // 
-            // ribbonPageGroup41
-            // 
-            this.ribbonPageGroup41.ItemLinks.Add(this.barButtonItem104);
-            this.ribbonPageGroup41.Name = "ribbonPageGroup41";
-            this.ribbonPageGroup41.Text = "ribbonPageGroup41";
-            // 
-            // barButtonItem104
-            // 
-            this.barButtonItem104.Caption = "Numune Takip";
-            this.barButtonItem104.Id = 108;
-            this.barButtonItem104.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem104.ImageOptions.Image")));
-            this.barButtonItem104.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem104.ImageOptions.LargeImage")));
-            this.barButtonItem104.Name = "barButtonItem104";
-            this.barButtonItem104.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem104_ItemClick);
-            // 
-            // barButtonItem105
-            // 
-            this.barButtonItem105.Caption = "Formül İçerik Listesi";
-            this.barButtonItem105.Id = 109;
-            this.barButtonItem105.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem105.ImageOptions.Image")));
-            this.barButtonItem105.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem105.ImageOptions.LargeImage")));
-            this.barButtonItem105.Name = "barButtonItem105";
-            this.barButtonItem105.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem105_ItemClick);
             // 
             // Anasayfa
             // 

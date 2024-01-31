@@ -245,6 +245,17 @@ namespace mKYS
                 ribbonPage9.Visible = false;
                 ribbonPage11.Visible = true;
             }
+            else if (kullanici == "2008")
+            {
+                ribbonPage7.Visible = false;
+                ribbonPage1.Visible = false;
+                ribbonPage2.Visible = false;
+                ribbonPage3.Visible = false;
+                ribbonPage5.Visible = false;
+                ribbonPage10.Visible = false;
+                ribbonPage9.Visible = false;
+                ribbonPage11.Visible = true;
+            }
 
             ribbonPageGroup25.AllowTextClipping = false;
             ribbonPageGroup26.AllowTextClipping = false;
@@ -906,14 +917,36 @@ namespace mKYS
 
         private void barButtonItem100_ItemClick(object sender, ItemClickEventArgs e)
         {
-            TedarikciEkle.kimin = "Ozeco";
+            if (Anasayfa.birimID == 1005)
+            {
+                TedarikciEkle.kimin = "Ozeco";
+            }
+            else
+            {
+                TedarikciEkle.kimin = "Kommass";
+            }
+
+
             TedarikciEkle te = new TedarikciEkle();
             te.Show();
         }
 
         private void barButtonItem99_ItemClick(object sender, ItemClickEventArgs e)
         {
-            mROOT._8.Spektrotek.SFirmaListesi.oz = "Ozeco";
+            
+
+            if (Anasayfa.birimID == 1005)
+            {
+                mROOT._8.Spektrotek.SFirmaListesi.oz = "Ozeco";
+            }          
+            else
+            {
+                mROOT._8.Spektrotek.SFirmaListesi.oz = "Kommass";
+            }
+
+
+
+
             if (sfl == null || sfl.IsDisposed)
             {
                 
@@ -960,7 +993,16 @@ namespace mKYS
             //ozeco numune takip
             if (wne == null || wne.IsDisposed)
             {
-                mROOT._2.Product.WorkList.gelis = "Ozeco";
+                if (Anasayfa.birimID == 1005)
+                {
+                    mROOT._2.Product.WorkList.gelis = "Ozeco";
+                }
+                else if (Anasayfa.birimID == 1006)
+                {
+                    mROOT._2.Product.WorkList.gelis = "Kommass";
+                }
+
+                
                 wne = new mROOT._2.Product.WorkList();
                 wne.MdiParent = this;
                 wne.Show();
@@ -975,6 +1017,10 @@ namespace mKYS
                 if (Anasayfa.birimID == 1005)
                 {
                     mROOT._9.UGDR.FormulIcerik.gelis = "1005";
+                }
+                else if (Anasayfa.birimID == 1006)
+                {
+                    mROOT._9.UGDR.FormulIcerik.gelis = "1006";
                 }
                 else
                 {

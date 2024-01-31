@@ -60,7 +60,7 @@ namespace mROOT._2.Product
                 this.gridView3.Columns[12].Width = 70;
                 this.gridView3.Columns[13].Width = 70;
             }
-            else
+            else if(gelis == "Ozeco")
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
@@ -69,6 +69,34 @@ namespace mROOT._2.Product
                 left join RootTedarikci f on w.FirmaID = f.ID
                 left join RootKullanici k on w.PlasiyerID = k.ID
                 where w.Durum = N'Aktif' and Proje like '%Ozeco%' order by w.RaporNo desc", bgl.baglanti());
+                da.Fill(dt);
+                gridControl1.DataSource = dt;
+                gridView3.Columns["ID"].Visible = false;
+
+                this.gridView3.Columns[0].Width = 70;
+                this.gridView3.Columns[1].Width = 70;
+                this.gridView3.Columns[2].Width = 70;
+                this.gridView3.Columns[3].Width = 70;
+                this.gridView3.Columns[4].Width = 150;
+                this.gridView3.Columns[5].Width = 150;
+                this.gridView3.Columns[6].Width = 70;
+                this.gridView3.Columns[7].Width = 110;
+                this.gridView3.Columns[8].Width = 70;
+                this.gridView3.Columns[9].Width = 90;
+                this.gridView3.Columns[10].Width = 75;
+                this.gridView3.Columns[11].Width = 70;
+                this.gridView3.Columns[12].Width = 70;
+                this.gridView3.Columns[13].Width = 70;
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(@"select w.Tarih, w.Termin, w.EvrakNo, w.RaporNo, f.Ad, w.Urun, w.Kategori, 
+                w.Hizmet, w.Proje, w.Notlar, w.FatNo, w.Odeme, k.Ad as 'Takipçi', w.IsDurum, w.ID from rWorkList w
+                left join RootFatura o on w.FaturaID = o.ID
+                left join RootTedarikci f on w.FirmaID = f.ID
+                left join RootKullanici k on w.PlasiyerID = k.ID
+                where w.Durum = N'Aktif' and Proje like '%Kommass%' order by w.RaporNo desc", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
                 gridView3.Columns["ID"].Visible = false;

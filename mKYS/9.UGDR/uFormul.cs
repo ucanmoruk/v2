@@ -67,72 +67,80 @@ namespace mROOT._9.UGDR
         string yenivar;
         private void btn_kontrol_Click(object sender, EventArgs e)
         {
-            if (uID == null || uID == "")
+            try
             {
-                for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                if (uID == null || uID == "")
                 {
-                    SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
-                    komutz.Parameters.AddWithValue("@o1", "0");
-                    komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
-                    komutz.Parameters.AddWithValue("@o4", 100);
-                    komutz.ExecuteNonQuery();
-                    bgl.baglanti().Close();
+                    for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                    {
+                        SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
+                        komutz.Parameters.AddWithValue("@o1", "0");
+                        komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                        komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
+                        komutz.Parameters.AddWithValue("@o4", 100);
+                        komutz.ExecuteNonQuery();
+                        bgl.baglanti().Close();
 
-                    //DataTable dt = new DataTable();
-                    //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
-                    // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
-                    //da.Fill(dt);
-                    //gridControl2.DataSource = dt;
-                    //gridView2.Columns["cosID"].Visible = false;
-                    //gridView2.Columns["ID"].Visible = false;
-                    //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-                    //gridView2.Columns["Functions"].ColumnEdit = memo;
-                    //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
-                    //this.gridView2.Columns[0].Width = 110;
-                    //this.gridView2.Columns[1].Width = 50;
-                    //this.gridView2.Columns[2].Width = 90;
-                    //this.gridView2.Columns[3].Width = 90;
-                    //this.gridView2.Columns[4].Width = 90;
-                    //this.gridView2.Columns[5].Width = 50;
+                        //DataTable dt = new DataTable();
+                        //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
+                        // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
+                        //da.Fill(dt);
+                        //gridControl2.DataSource = dt;
+                        //gridView2.Columns["cosID"].Visible = false;
+                        //gridView2.Columns["ID"].Visible = false;
+                        //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                        //gridView2.Columns["Functions"].ColumnEdit = memo;
+                        //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+                        //this.gridView2.Columns[0].Width = 110;
+                        //this.gridView2.Columns[1].Width = 50;
+                        //this.gridView2.Columns[2].Width = 90;
+                        //this.gridView2.Columns[3].Width = 90;
+                        //this.gridView2.Columns[4].Width = 90;
+                        //this.gridView2.Columns[5].Width = 50;
+                    }
                 }
+                else
+                {
+                    for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                    {
+
+
+                        SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
+                        komutz.Parameters.AddWithValue("@o1", uID);
+                        komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                        komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
+                        komutz.Parameters.AddWithValue("@o4", 100);
+                        komutz.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+
+                        //DataTable dt = new DataTable();
+                        //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
+                        // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '"+uID+"' order by f.Miktar desc ", bgl.baglanti());
+                        //da.Fill(dt);
+                        //gridControl2.DataSource = dt;
+                        //gridView2.Columns["cosID"].Visible = false;
+                        //gridView2.Columns["ID"].Visible = false;
+                        //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                        //gridView2.Columns["Functions"].ColumnEdit = memo;
+                        //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+                        //this.gridView2.Columns[0].Width = 110;
+                        //this.gridView2.Columns[1].Width = 50;
+                        //this.gridView2.Columns[2].Width = 90;
+                        //this.gridView2.Columns[3].Width = 90;
+                        //this.gridView2.Columns[4].Width = 90;
+                        //this.gridView2.Columns[5].Width = 50;
+
+                    }
+                }
+
+                detaybul();
+                yenivar = "evet";
             }
-            else
+            catch (Exception ex)
             {
-                for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
-                {
-                    
 
-                    SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
-                    komutz.Parameters.AddWithValue("@o1", uID);
-                    komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
-                    komutz.Parameters.AddWithValue("@o4", 100);
-                    komutz.ExecuteNonQuery();
-                    bgl.baglanti().Close();
-
-                    //DataTable dt = new DataTable();
-                    //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
-                    // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '"+uID+"' order by f.Miktar desc ", bgl.baglanti());
-                    //da.Fill(dt);
-                    //gridControl2.DataSource = dt;
-                    //gridView2.Columns["cosID"].Visible = false;
-                    //gridView2.Columns["ID"].Visible = false;
-                    //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-                    //gridView2.Columns["Functions"].ColumnEdit = memo;
-                    //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
-                    //this.gridView2.Columns[0].Width = 110;
-                    //this.gridView2.Columns[1].Width = 50;
-                    //this.gridView2.Columns[2].Width = 90;
-                    //this.gridView2.Columns[3].Width = 90;
-                    //this.gridView2.Columns[4].Width = 90;
-                    //this.gridView2.Columns[5].Width = 50;
-
-                }
+                MessageBox.Show("Hata55: " + ex);
             }
-
-            detaybul();
-            yenivar = "evet";
         
             
 

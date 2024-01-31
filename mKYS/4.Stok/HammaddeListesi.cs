@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.XtraReports.UI;
+using System.Diagnostics;
 
 namespace mKYS
 {
@@ -240,6 +241,14 @@ namespace mKYS
             //Stok.HammaddeUGDMix hm = new Stok.HammaddeUGDMix();
             //hm.Show();
 
+        }
+
+        private void barButtonItem6_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //excel
+            string path = "Hammadde.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
         }
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
