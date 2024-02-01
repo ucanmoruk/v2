@@ -129,13 +129,30 @@ namespace mKYS
 
                 if (Secim == DialogResult.Yes)
                 {
-                    // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                    SqlCommand komutSil = new SqlCommand("update rHammadde set Durum=@a1 where cID = N'"+id+"'", bgl.baglanti());
-                    komutSil.Parameters.AddWithValue("@a1", "Pasif");
-                    komutSil.ExecuteNonQuery();
-                    bgl.baglanti().Close();
-                    MessageBox.Show("Silme işlemi gerçekleşmiştir.");
-                    listele();
+                    if (Anasayfa.birimID == 1005)
+                    {
+                        // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                        SqlCommand komutSil = new SqlCommand("update rHammadde set Durum=@a1 where cID = N'"+id+"'", bgl.baglanti());
+                        komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                        komutSil.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                        MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                        listele();
+                    }
+                    else
+                    {
+                        // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                        SqlCommand komutSil = new SqlCommand("update rkHammadde set Durum=@a1 where cID = N'" + id + "'", bgl.baglanti());
+                        komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                        komutSil.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                        MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                        listele();
+                    }
+
+
+
+                    
                 }
             }
             catch (Exception ex)

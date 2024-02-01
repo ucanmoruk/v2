@@ -342,6 +342,17 @@ namespace mROOT._9.UGDR
             }
         }
 
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //sil   
+            SqlCommand komutSil = new SqlCommand("update rUGDListe set Durum=@a1 where ID = @p1", bgl.baglanti());
+            komutSil.Parameters.AddWithValue("@p1", lID);
+            komutSil.Parameters.AddWithValue("@a1", "Pasif");
+            komutSil.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            listele();
+        }
+
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //hazırlanıypr

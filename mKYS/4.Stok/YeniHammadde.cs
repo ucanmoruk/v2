@@ -224,7 +224,7 @@ namespace mKYS
             }
             else
             {
-                
+               
                 btnadd.Text = "Güncelle";
             }
         }
