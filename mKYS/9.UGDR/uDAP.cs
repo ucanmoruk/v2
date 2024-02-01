@@ -329,7 +329,6 @@ namespace mROOT._9.UGDR
             CAST(ROUND((f.Noael / (f.Miktar*l.A*f.Dap/100*1/100)),2) AS numeric(36,2)) as 'MOS',
             c.ID as 'cosID', f.ID from rUGDFormül f 
             left join rCosing c on f.INCIName = c.INCIName 
-			left join rHammadde h on c.ID = h.cID 
 			left join rUGDListe l on f.UrunID = l.ID
 			where f.UrunID = '" + uID+"' order by f.Miktar desc", bgl.baglanti());
             da.Fill(dt);
@@ -354,20 +353,41 @@ namespace mROOT._9.UGDR
             this.gridView2.Columns[5].OptionsColumn.AllowEdit = false;
             this.gridView2.Columns[5].AppearanceCell.BackColor = Color.LemonChiffon;
 
-            DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID as 'cosID' from rHammadde r
-            left join rCosing c on r.cID = c.ID 
-            except select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID from rUGDFormül f 
-            left join rCosing c on f.HammaddeID = c.ID 
-            left join rHammadde r on c.ID = r. cID
-            where f.UrunID = '" + uID + "' order by c.INCIName asc ", bgl.baglanti());
-            da2.Fill(dt2);
-            gridControl1.DataSource = dt2;
-            gridView1.Columns["cosID"].Visible = false;
-            this.gridView1.Columns[0].Width = 120;
-            this.gridView1.Columns[1].Width = 70;
-            this.gridView1.Columns[2].Width = 50;
-            this.gridView1.Columns[3].Width = 50;
+            if (Anasayfa.birimID == 1005)
+            {
+                DataTable dt2 = new DataTable();
+                SqlDataAdapter da2 = new SqlDataAdapter(@"select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID as 'cosID' from rHammadde r
+                left join rCosing c on r.cID = c.ID 
+                except select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID from rUGDFormül f 
+                left join rCosing c on f.HammaddeID = c.ID 
+                left join rHammadde r on c.ID = r. cID
+                where f.UrunID = '" + uID + "' order by c.INCIName asc ", bgl.baglanti());
+                da2.Fill(dt2);
+                gridControl1.DataSource = dt2;
+                gridView1.Columns["cosID"].Visible = false;
+                this.gridView1.Columns[0].Width = 120;
+                this.gridView1.Columns[1].Width = 70;
+                this.gridView1.Columns[2].Width = 50;
+                this.gridView1.Columns[3].Width = 50;
+            }
+            else
+            {
+                DataTable dt2 = new DataTable();
+                SqlDataAdapter da2 = new SqlDataAdapter(@"select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID as 'cosID' from rkHammadde r
+                left join rCosing c on r.cID = c.ID 
+                except select c.INCIName, r.Noael2 as 'NOAEL', c.Cas, c.Regulation, c.ID from rUGDFormül f 
+                left join rCosing c on f.HammaddeID = c.ID 
+                left join rkHammadde r on c.ID = r. cID
+                where f.UrunID = '" + uID + "' order by c.INCIName asc ", bgl.baglanti());
+                da2.Fill(dt2);
+                gridControl1.DataSource = dt2;
+                gridView1.Columns["cosID"].Visible = false;
+                this.gridView1.Columns[0].Width = 120;
+                this.gridView1.Columns[1].Width = 70;
+                this.gridView1.Columns[2].Width = 50;
+                this.gridView1.Columns[3].Width = 50;
+            }
+            
 
             
 
