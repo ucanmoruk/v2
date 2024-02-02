@@ -110,7 +110,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "root_yeni";
+            this.sqlDataSource1.ConnectionName = "rootv2";
             this.sqlDataSource1.Name = "sqlDataSource1";
             customSqlQuery1.Name = "masslab_rUGDListe";
             customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");

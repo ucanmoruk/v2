@@ -211,6 +211,7 @@
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel69 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable7 = new DevExpress.XtraReports.UI.XRTable();
@@ -382,7 +383,6 @@
             this.pChallenge = new DevExpress.XtraReports.Parameters.Parameter();
             this.pKutu = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader8 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLabel69 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -401,7 +401,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "root_yeni";
+            this.sqlDataSource1.ConnectionName = "rootv2";
             this.sqlDataSource1.Name = "sqlDataSource1";
             customSqlQuery1.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"135\" Height=\"309\" />";
             customSqlQuery1.Name = "masslab_rUGDListe";
@@ -1899,6 +1899,20 @@
             this.GroupHeader2.HeightF = 381.2916F;
             this.GroupHeader2.Level = 5;
             this.GroupHeader2.Name = "GroupHeader2";
+            // 
+            // xrLabel69
+            // 
+            this.xrLabel69.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", resources.GetString("xrLabel69.ExpressionBindings"))});
+            this.xrLabel69.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel69.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(44.78963F, 348.2916F);
+            this.xrLabel69.Multiline = true;
+            this.xrLabel69.Name = "xrLabel69";
+            this.xrLabel69.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel69.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel69.StylePriority.UseFont = false;
+            this.xrLabel69.StylePriority.UseForeColor = false;
             // 
             // xrLabel26
             // 
@@ -3881,20 +3895,6 @@
             this.GroupHeader8.HeightF = 293.2919F;
             this.GroupHeader8.Level = 2;
             this.GroupHeader8.Name = "GroupHeader8";
-            // 
-            // xrLabel69
-            // 
-            this.xrLabel69.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", resources.GetString("xrLabel69.ExpressionBindings"))});
-            this.xrLabel69.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel69.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(44.78963F, 348.2916F);
-            this.xrLabel69.Multiline = true;
-            this.xrLabel69.Name = "xrLabel69";
-            this.xrLabel69.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel69.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel69.StylePriority.UseFont = false;
-            this.xrLabel69.StylePriority.UseForeColor = false;
             // 
             // UGD1
             // 
