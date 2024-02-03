@@ -85,6 +85,10 @@
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField3 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField4 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField5 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField6 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField7 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField8 = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -94,7 +98,7 @@
             // 
             this.sqlDataSource1.ConnectionName = "rootv2";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            customSqlQuery1.Name = "masslab_rUGDListe";
+            customSqlQuery1.Name = "rUGDListe";
             customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             customSqlQuery1});
@@ -166,7 +170,7 @@
             // xrTableCell2
             // 
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField1]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField5]")});
             this.xrTableCell2.Font = new System.Drawing.Font("Futura Bk BT", 9F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
@@ -418,7 +422,7 @@
             this.xrTableCell25.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell25.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField2]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField6]")});
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.StylePriority.UseBorderColor = false;
@@ -445,7 +449,7 @@
             this.xrTableCell27.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell27.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField3]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField7]")});
             this.xrTableCell27.Multiline = true;
             this.xrTableCell27.Name = "xrTableCell27";
             this.xrTableCell27.StylePriority.UseBorderColor = false;
@@ -459,8 +463,8 @@
             this.xrTableCell28.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField4]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField4]=\'FAIL\',\'Red\' ,\'Transparent\' )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField8]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField8]=\'FAIL\',\'Red\' ,\'Transparent\' )")});
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorderColor = false;
@@ -753,6 +757,31 @@
     "calculatedField3]>100,\'SUITABLE\' , \'FAIL\')\n)\n\n)";
             this.calculatedField4.Name = "calculatedField4";
             // 
+            // calculatedField5
+            // 
+            this.calculatedField5.DataMember = "rUGDListe";
+            this.calculatedField5.Expression = "GetYear(Today())+\'\'+[RaporNo]+\' / \'+[Versiyon]";
+            this.calculatedField5.Name = "calculatedField5";
+            // 
+            // calculatedField6
+            // 
+            this.calculatedField6.DataMember = "rUGDListe";
+            this.calculatedField6.Expression = "[Miktar]*[A]*[DaP]/100*1/100";
+            this.calculatedField6.Name = "calculatedField6";
+            // 
+            // calculatedField7
+            // 
+            this.calculatedField7.DataMember = "rUGDListe";
+            this.calculatedField7.Expression = "Iif(IsNullOrEmpty([Noael]),\'N/A\',([Noael]/([Miktar]*[A]*[DaP]/100*1/100)))";
+            this.calculatedField7.Name = "calculatedField7";
+            // 
+            // calculatedField8
+            // 
+            this.calculatedField8.DataMember = "rUGDListe";
+            this.calculatedField8.Expression = "\nIif(\n[Kategori]=\'Yasaklı\',\'FAIL\', Iif([calculatedField7]=\'N/A\',\'SUITABLE\' , Iif(" +
+    "[calculatedField7]>100,\'SUITABLE\' , \'FAIL\')\n)\n\n)";
+            this.calculatedField8.Name = "calculatedField8";
+            // 
             // UGD2
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -766,10 +795,14 @@
             this.calculatedField1,
             this.calculatedField2,
             this.calculatedField3,
-            this.calculatedField4});
+            this.calculatedField4,
+            this.calculatedField5,
+            this.calculatedField6,
+            this.calculatedField7,
+            this.calculatedField8});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
-            this.DataMember = "masslab_rUGDListe";
+            this.DataMember = "rUGDListe";
             this.DataSource = this.sqlDataSource1;
             this.FilterString = "[ID] = ?pID";
             this.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
@@ -843,5 +876,9 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField4;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox6;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox5;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField5;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField6;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField7;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField8;
     }
 }

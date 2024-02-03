@@ -120,7 +120,21 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "rUGDListe"."ID", "rCosing"."Cas",
+       "rCosing"."EC", "rCosing"."Functions",
+       "rCosing"."Regulation", "rCosing"."SCCS",
+       "rCosing"."Tur", "rCosing"."INCIName"
+  from (("rUGDListe" "rUGDListe"
+  left
+  join "rUGDFormül" "rUGDFormül"
+       on ("rUGDFormül"."UrunID" = "rUGDListe"."ID"))
+  left
+  join "rCosing" "rCosing"
+       on ("rCosing"."INCIName" = "rUGDFormül"."INCIName"))
+</value>
+  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJDYXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRUMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRnVuY3Rpb25zIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlZ3VsYXRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU0NDUyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUdXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSU5DSU5hbWUiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQ2FzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVDIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZ1bmN0aW9ucyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWd1bGF0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNDQ1MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklOQ0lOYW1lIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
 </root>

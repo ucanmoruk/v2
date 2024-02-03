@@ -121,22 +121,24 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "masslab.rUGDListe"."RaporNo", "masslab.rUGDListe"."Tarih","masslab.rUGDListe"."ID",
-       "masslab.rUGDListe"."Versiyon", "masslab.rCosing"."INCIName",
-       "masslab.rHammadde"."Fizikokimya",
-       "masslab.rHammadde"."Toksikoloji", "masslab.rHammadde"."Kaynak"
-  from ((("masslab"."rUGDListe" "masslab.rUGDListe"
+    <value>select "rUGDListe"."RaporNo", "rUGDListe"."Tarih","rUGDListe"."ID",
+       "rUGDListe"."Versiyon", "rCosing"."INCIName",
+       "rHammadde"."Fizikokimya",
+       "rHammadde"."Toksikoloji", "rHammadde"."Kaynak"
+  from ((("rUGDListe" "rUGDListe"
   left
-  join "masslab"."rUGDFormül" "masslab.rUGDFormül"
-       on ("masslab.rUGDFormül"."UrunID" = "masslab.rUGDListe"."ID"))
+  join "rUGDFormül" "rUGDFormül"
+       on ("rUGDFormül"."UrunID" = "rUGDListe"."ID"))
   left
-  join "masslab"."rCosing" "masslab.rCosing"
-       on ("masslab.rCosing"."ID" = "masslab.rUGDFormül"."HammaddeID"))
+  join "rCosing" "rCosing"
+       on ("rCosing"."ID" = "rUGDFormül"."HammaddeID"))
   left
-  join "masslab"."rHammadde" "masslab.rHammadde"
-       on ("masslab.rHammadde"."cID" = "masslab.rCosing"."ID"))</value>
+  join "rHammadde" "rHammadde"
+       on ("rHammadde"."cID" = "rCosing"."ID"))
+
+</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Im1hc3NsYWJfclVHRExpc3RlIj48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklOQ0lOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpemlrb2tpbXlhIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRva3Npa29sb2ppIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IktheW5hayIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGaXppa29raW15YSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUb2tzaWtvbG9qaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXluYWsiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>
