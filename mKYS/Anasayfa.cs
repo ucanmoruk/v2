@@ -1039,6 +1039,17 @@ namespace mKYS
             //yeni nu
         }
 
+        mROOT._2.Product.SatisListesi sal;
+        private void barButtonItem107_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (sal == null || sal.IsDisposed)
+            {
+                sal = new mROOT._2.Product.SatisListesi();
+                sal.MdiParent = this;
+                sal.Show();
+            }
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FirmaDetay fd = new FirmaDetay();
