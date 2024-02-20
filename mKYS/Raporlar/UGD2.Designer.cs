@@ -240,12 +240,12 @@
             this.xrLabel67.SizeF = new System.Drawing.SizeF(553.4126F, 23.00001F);
             this.xrLabel67.StylePriority.UseFont = false;
             this.xrLabel67.StylePriority.UseTextAlignment = false;
-            this.xrLabel67.Text = "www.cosmoliz.com / info@cosmoliz.com";
+            this.xrLabel67.Text = "info@kommass.com";
             this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrPictureBox3
             // 
-            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz, true);
+            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Kommass, true);
             this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 3.178914E-05F);
             this.xrPictureBox3.Name = "xrPictureBox3";
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(92.34594F, 40.99998F);
@@ -472,7 +472,7 @@
             // 
             // xrLabel11
             // 
-            this.xrLabel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.xrLabel11.BackColor = System.Drawing.Color.Salmon;
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel11.Font = new System.Drawing.Font("Futura Bk BT", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel11.ForeColor = System.Drawing.Color.Black;

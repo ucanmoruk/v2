@@ -1,4 +1,4 @@
-﻿namespace mKYS.Raporlar
+﻿namespace mKYS.Raporlar.Eng
 {
     partial class UGD4
     {
@@ -48,10 +48,6 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.pID = new DevExpress.XtraReports.Parameters.Parameter();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
@@ -104,6 +100,10 @@
             this.xrTableCell133 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable14)).BeginInit();
@@ -195,7 +195,7 @@
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(753F, 25F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(753.0001F, 25F);
             this.xrTable1.StylePriority.UseFont = false;
             // 
             // xrTableRow1
@@ -210,12 +210,12 @@
             // 
             // xrTableCell1
             // 
-            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
-            this.xrTableCell1.Text = "Form / Versiyon No:";
+            this.xrTableCell1.Text = "Form / Version Nr:";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell1.Weight = 1.3151261011201729D;
             // 
@@ -223,37 +223,43 @@
             // 
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField2]")});
+            this.xrTableCell2.Font = new System.Drawing.Font("Futura Bk BT", 9F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
+            this.xrTableCell2.StylePriority.UseFont = false;
             this.xrTableCell2.StylePriority.UsePadding = false;
             this.xrTableCell2.Text = "xrTableCell2";
-            this.xrTableCell2.Weight = 3.7731089421768882D;
+            this.xrTableCell2.Weight = 3.5126926929654112D;
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
             this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.StylePriority.UsePadding = false;
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
-            this.xrTableCell3.Text = "Yayın Tarihi:";
+            this.xrTableCell3.Text = "Release Date:";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell3.Weight = 1.3151257196504615D;
+            this.xrTableCell3.Weight = 1.5442922753042072D;
             // 
             // xrTableCell4
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
+            this.xrTableCell4.Font = new System.Drawing.Font("Futura Bk BT", 9F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
+            this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.StylePriority.UsePadding = false;
+            this.xrTableCell4.StylePriority.UseTextAlignment = false;
             this.xrTableCell4.Text = "xrTableCell4";
+            this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell4.TextFormatString = "{0:d.MM.yyyy}";
-            this.xrTableCell4.Weight = 1.1266389318766965D;
+            this.xrTableCell4.Weight = 1.1578898461375036D;
             // 
             // xrLabel2
             // 
@@ -265,8 +271,8 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(418.5468F, 23F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "(EC) No 1223/2009 Kozmetik Regülasyonu ve 23 Mayıs 2005 tarihli, 25823 sayılı Koz" +
-    "metik Yönetmeliği uyarınca hazırlanmıştır.";
+            this.xrLabel2.Text = "It has been prepared in accordance with the Cosmetics Regulation (EC) No 1223/200" +
+    "9 and the Cosmetics Regulation No. 25823, 23 May 2005.";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -279,63 +285,18 @@
             this.xrLabel1.SizeF = new System.Drawing.SizeF(753F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
+            this.xrLabel1.Text = "COSMETIC PRODUCT SAFETY ASSESSMENT";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel6,
-            this.xrPictureBox3,
+            this.xrPageInfo2,
             this.xrLabel4,
-            this.xrPageInfo1});
-            this.BottomMargin.HeightF = 41F;
+            this.xrPictureBox3,
+            this.xrLabel6});
+            this.BottomMargin.HeightF = 40.99998F;
             this.BottomMargin.Name = "BottomMargin";
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.Font = new System.Drawing.Font("Futura Bk BT", 8F);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(92.34604F, 9.999974F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(553.4126F, 23.00001F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "info@kommass.com";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrPictureBox3
-            // 
-            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Kommass, true);
-            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 0F);
-            this.xrPictureBox3.Name = "xrPictureBox3";
-            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(92.34594F, 40.99998F);
-            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(666.4742F, 9.999989F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(45.79688F, 22.99999F);
-            this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "Sayfa:";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // xrPageInfo1
-            // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(712.2711F, 9.999989F);
-            this.xrPageInfo1.Name = "xrPageInfo1";
-            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
-            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.Number;
-            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(30.72888F, 23F);
-            this.xrPageInfo1.StylePriority.UseFont = false;
-            this.xrPageInfo1.StylePriority.UsePadding = false;
             // 
             // calculatedField1
             // 
@@ -353,13 +314,14 @@
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel5});
-            this.PageHeader.HeightF = 42.125F;
+            this.PageHeader.HeightF = 42.58334F;
             this.PageHeader.Name = "PageHeader";
             this.PageHeader.PrintOn = DevExpress.XtraReports.UI.PrintOnPages.NotWithReportFooter;
             // 
             // xrLabel5
             // 
             this.xrLabel5.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel5.Font = new System.Drawing.Font("Futura Bk BT", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel5.ForeColor = System.Drawing.Color.Black;
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -368,10 +330,11 @@
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(753F, 32.99998F);
             this.xrLabel5.StylePriority.UseBackColor = false;
+            this.xrLabel5.StylePriority.UseBorders = false;
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseForeColor = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "EK-3 BİLEŞENLERİN FİZİKOKİMYASAL VE TOKSİKOLOJİK ÖZELLİKLERİ";
+            this.xrLabel5.Text = "ANNEX-3 PHYSICOCHEMICAL AND TOXICOLOGICAL PROPERTIES OF THE COMPONENTS";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Detail
@@ -379,7 +342,7 @@
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel3,
             this.xrTable2});
-            this.Detail.HeightF = 118.75F;
+            this.Detail.HeightF = 116.6667F;
             this.Detail.Name = "Detail";
             // 
             // xrLabel3
@@ -428,12 +391,12 @@
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBackColor = false;
             this.xrTableCell5.StylePriority.UseFont = false;
-            this.xrTableCell5.Text = "Fizikokimyasal Özellikler:";
-            this.xrTableCell5.Weight = 1.460415496826172D;
+            this.xrTableCell5.Text = "Physicochemical Properties:";
+            this.xrTableCell5.Weight = 1.5749989318847657D;
             // 
             // xrTableCell6
             // 
-            this.xrTableCell6.BorderColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell6.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.xrTableCell6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Fizikokimya]),\'N/A\' ,[Fizikokimya] )")});
@@ -442,7 +405,7 @@
             this.xrTableCell6.StylePriority.UseBorderColor = false;
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.Text = "xrTableCell6";
-            this.xrTableCell6.Weight = 6.0695832824707034D;
+            this.xrTableCell6.Weight = 5.9549998474121093D;
             // 
             // xrTableRow3
             // 
@@ -460,12 +423,12 @@
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBackColor = false;
             this.xrTableCell7.StylePriority.UseFont = false;
-            this.xrTableCell7.Text = "Toksikolojik Özellikler:";
-            this.xrTableCell7.Weight = 1.4604154968261718D;
+            this.xrTableCell7.Text = "Toxicological Properties:";
+            this.xrTableCell7.Weight = 1.5749989318847655D;
             // 
             // xrTableCell8
             // 
-            this.xrTableCell8.BorderColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell8.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.xrTableCell8.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Toksikoloji]),\'N/A\' ,[Toksikoloji] )")});
@@ -474,7 +437,7 @@
             this.xrTableCell8.StylePriority.UseBorderColor = false;
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.Text = "xrTableCell8";
-            this.xrTableCell8.Weight = 6.0695832824707026D;
+            this.xrTableCell8.Weight = 5.9549998474121084D;
             // 
             // xrTableRow4
             // 
@@ -492,12 +455,12 @@
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBackColor = false;
             this.xrTableCell9.StylePriority.UseFont = false;
-            this.xrTableCell9.Text = "Kaynak:";
-            this.xrTableCell9.Weight = 1.460415496826172D;
+            this.xrTableCell9.Text = "Reference:";
+            this.xrTableCell9.Weight = 1.5749989318847657D;
             // 
             // xrTableCell10
             // 
-            this.xrTableCell10.BorderColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell10.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.xrTableCell10.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Kaynak]),\'-\' , [Kaynak])")});
@@ -506,13 +469,13 @@
             this.xrTableCell10.StylePriority.UseBorderColor = false;
             this.xrTableCell10.StylePriority.UseBorders = false;
             this.xrTableCell10.Text = "xrTableCell10";
-            this.xrTableCell10.Weight = 6.0695832824707034D;
+            this.xrTableCell10.Weight = 5.9549998474121093D;
             // 
             // groupHeaderBand1
             // 
             this.groupHeaderBand1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("InciAd", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.groupHeaderBand1.HeightF = 48.95833F;
+            this.groupHeaderBand1.HeightF = 40.625F;
             this.groupHeaderBand1.Name = "groupHeaderBand1";
             // 
             // ReportFooter
@@ -537,7 +500,7 @@
             this.xrLabel67.StylePriority.UseBackColor = false;
             this.xrLabel67.StylePriority.UseFont = false;
             this.xrLabel67.StylePriority.UseForeColor = false;
-            this.xrLabel67.Text = "KAYNAKLAR";
+            this.xrLabel67.Text = "REFERENCES";
             // 
             // xrTable14
             // 
@@ -624,7 +587,7 @@
             // 
             this.xrTableCell119.Multiline = true;
             this.xrTableCell119.Name = "xrTableCell119";
-            this.xrTableCell119.Text = "5324 sayılı Kozmetik Kanunu";
+            this.xrTableCell119.Text = "Cosmetics Law No. 5324";
             this.xrTableCell119.Weight = 6.6747645568847656D;
             // 
             // xrTableRow60
@@ -646,7 +609,7 @@
             // 
             this.xrTableCell121.Multiline = true;
             this.xrTableCell121.Name = "xrTableCell121";
-            this.xrTableCell121.Text = "Kozmetik Ürünlerde Güvenlik Değerlendirmesine İlişkin Kılavuz";
+            this.xrTableCell121.Text = "Guidelines for Safety Assessment in Cosmetic Products";
             this.xrTableCell121.Weight = 6.6747645568847656D;
             // 
             // xrTableRow61
@@ -668,8 +631,8 @@
             // 
             this.xrTableCell123.Multiline = true;
             this.xrTableCell123.Name = "xrTableCell123";
-            this.xrTableCell123.Text = "15/07/2015 tarihli ve 29417 sayılı Resmî Gazete’de yayımlanan Kozmetik Yönetmeliğ" +
-    "inde Değişiklik Yapılmasına Dair Yönetmelik ve Ekleri";
+            this.xrTableCell123.Text = "Regulation on Amendments to the Cosmetics Regulation published in the Official Ga" +
+    "zette No. 29417 dated 15/07/2015 and attachments";
             this.xrTableCell123.Weight = 6.6747645568847656D;
             // 
             // xrTableRow62
@@ -691,8 +654,8 @@
             // 
             this.xrTableCell125.Multiline = true;
             this.xrTableCell125.Name = "xrTableCell125";
-            this.xrTableCell125.Text = "Kozmetik Ürünlerin Stabilitesine Ve Açıldıktan Sonra Kullanım Süresine İlişkin Kı" +
-    "lavuz";
+            this.xrTableCell125.Text = "Guidelines on the Stability of Cosmetic Products and Duration of Use After Openin" +
+    "g";
             this.xrTableCell125.Weight = 6.6747645568847656D;
             // 
             // xrTableRow63
@@ -714,7 +677,7 @@
             // 
             this.xrTableCell127.Multiline = true;
             this.xrTableCell127.Name = "xrTableCell127";
-            this.xrTableCell127.Text = "Kozmetik Ürünlerin Mikrobiyolojik Kontrolüne İlişkin Kılavuz";
+            this.xrTableCell127.Text = "Guide on Microbiological Control of Cosmetic Products";
             this.xrTableCell127.Weight = 6.6747645568847656D;
             // 
             // xrTableRow64
@@ -736,8 +699,7 @@
             // 
             this.xrTableCell129.Multiline = true;
             this.xrTableCell129.Name = "xrTableCell129";
-            this.xrTableCell129.Text = "Kozmetik Ürünlerde Güvenlilik Değerlendirmesi Ve Güvenlilik Değerlendiricisi Hakk" +
-    "ında Kılavuz";
+            this.xrTableCell129.Text = "Guideline on Safety Assessment and Safety Assessor in Cosmetic Products";
             this.xrTableCell129.Weight = 6.6747645568847656D;
             // 
             // xrTableRow65
@@ -759,8 +721,8 @@
             // 
             this.xrTableCell131.Multiline = true;
             this.xrTableCell131.Name = "xrTableCell131";
-            this.xrTableCell131.Text = "Üretici Tarafından Ciddi İstenmeyen Etkinin (Cie) Kuruma Bildirilmesine İlişkin K" +
-    "ılavuz";
+            this.xrTableCell131.Text = "Guideline on Notification of Serious Undesirable Effects (Cie) by the Manufacture" +
+    "r to the Authority";
             this.xrTableCell131.Weight = 6.6747645568847656D;
             // 
             // xrTableRow66
@@ -782,7 +744,7 @@
             // 
             this.xrTableCell133.Multiline = true;
             this.xrTableCell133.Name = "xrTableCell133";
-            this.xrTableCell133.Text = "Kozmetik Ürünlerin Etiketlenmesinde Dikkat Edilmesi Gerekenler Hakkında Kılavuz";
+            this.xrTableCell133.Text = "Guide on Things to Consider in Labeling Cosmetic Products";
             this.xrTableCell133.Weight = 6.6747645568847656D;
             // 
             // GroupHeader1
@@ -796,6 +758,51 @@
             this.calculatedField2.DataMember = "rUGDListe";
             this.calculatedField2.Expression = "GetYear(Today())+\'\'+[RaporNo]+\' / \'+[Versiyon]";
             this.calculatedField2.Name = "calculatedField2";
+            // 
+            // xrPageInfo2
+            // 
+            this.xrPageInfo2.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(712.2711F, 9.999989F);
+            this.xrPageInfo2.Name = "xrPageInfo2";
+            this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
+            this.xrPageInfo2.PageInfo = DevExpress.XtraPrinting.PageInfo.Number;
+            this.xrPageInfo2.SizeF = new System.Drawing.SizeF(30.72888F, 23F);
+            this.xrPageInfo2.StylePriority.UseFont = false;
+            this.xrPageInfo2.StylePriority.UsePadding = false;
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(666.4742F, 9.999989F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(45.79688F, 22.99999F);
+            this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.StylePriority.UseTextAlignment = false;
+            this.xrLabel4.Text = "Page:";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // xrPictureBox3
+            // 
+            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Kommass, true);
+            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 0F);
+            this.xrPictureBox3.Name = "xrPictureBox3";
+            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(92.34594F, 40.99998F);
+            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            // 
+            // xrLabel6
+            // 
+            this.xrLabel6.Font = new System.Drawing.Font("Futura Bk BT", 8F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(92.34604F, 9.999974F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(553.4126F, 23.00001F);
+            this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "info@kommass.com";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // UGD4
             // 
@@ -852,8 +859,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
-        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
         private DevExpress.XtraReports.UI.XRLine xrLine1;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.Parameters.Parameter pID;
@@ -906,8 +911,10 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell132;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell133;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
     }
 }

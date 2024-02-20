@@ -349,6 +349,30 @@
     <Compile Include="Raporlar\CosIng.Designer.cs">
       <DependentUpon>CosIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Eng\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Eng\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Ozeco\En\UGD1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1072,6 +1096,18 @@
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Eng\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Eng\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Eng\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Eng\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Ozeco\En\UGD1.resx">
       <DependentUpon>UGD1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1461,6 +1497,7 @@
     <None Include="Resources\stand arka plan yüksek çözünürlük_pages-to-jpg-0001.jpg" />
     <None Include="Resources\ozecologox3.jpg" />
     <None Include="Resources\ozecologox4.jpg" />
+    <None Include="Resources\Kommass.jpg" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

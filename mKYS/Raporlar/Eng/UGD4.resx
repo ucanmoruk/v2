@@ -117,65 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ozeco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozeco.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "rUGDListe"."RaporNo", "rUGDListe"."Tarih","rUGDListe"."ID",
+       "rUGDListe"."Versiyon", "rCosing"."INCIName",
+       "rHammadde"."Fizikokimya",
+       "rHammadde"."Toksikoloji", "rHammadde"."Kaynak"
+  from ((("rUGDListe" "rUGDListe"
+  left
+  join "rUGDFormül" "rUGDFormül"
+       on ("rUGDFormül"."UrunID" = "rUGDListe"."ID"))
+  left
+  join "rCosing" "rCosing"
+       on ("rCosing"."ID" = "rUGDFormül"."HammaddeID"))
+  left
+  join "rHammadde" "rHammadde"
+       on ("rHammadde"."cID" = "rCosing"."ID"))
+
+</value>
   </data>
-  <data name="ozecologo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecologo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Spektrotek Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Spektrotek Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ozecomuhur1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecomuhur1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OzecoLogox2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OzecoLogox2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gradient.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\31216_information_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ozecologox3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecologox3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cosmoliz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cosmoliz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ozecomuhur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecomuhur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ozecologo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecologo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BegumPazarli" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BegumPazarli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ozecologox4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecologox4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imza-dsk-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imza-dsk-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stand arka plan yüksek çözünürlük_pages-to-jpg-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stand arka plan yüksek çözünürlük_pages-to-jpg-0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Root Intern" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Root Intern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kommass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kommass.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGaXppa29raW15YSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUb2tzaWtvbG9qaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXluYWsiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>

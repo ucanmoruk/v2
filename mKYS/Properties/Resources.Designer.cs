@@ -143,6 +143,16 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap Kommass {
+            get {
+                object obj = ResourceManager.GetObject("Kommass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap ozeco {
             get {
                 object obj = ResourceManager.GetObject("ozeco", resourceCulture);
