@@ -746,7 +746,6 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 958.7001F;
             this.GroupHeader1.Level = 7;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -1148,7 +1147,8 @@
             // xrLabel22
             // 
             this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[StabiliteNotEn]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[StabiliteNotEn]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Stabilite]=\'False\',false,true)")});
             this.xrLabel22.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrLabel22.ForeColor = System.Drawing.Color.Black;
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(44.79227F, 925.075F);
@@ -1696,7 +1696,6 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
-            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 373.8749F;
             this.GroupHeader2.Level = 5;
             this.GroupHeader2.Name = "GroupHeader2";
@@ -1704,7 +1703,8 @@
             // xrLabel69
             // 
             this.xrLabel69.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[MikroNotEn]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[MikroNotEn]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false,true)")});
             this.xrLabel69.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrLabel69.ForeColor = System.Drawing.Color.Black;
             this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(44.79227F, 344.0417F);
@@ -2021,6 +2021,7 @@
             this.xrLabel32,
             this.xrLabel30,
             this.xrLabel31});
+            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 1393.317F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -3448,7 +3449,6 @@
             // 
             this.GroupHeader5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox3});
-            this.GroupHeader5.Expanded = false;
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),false" +
                     " ,true ))")});
@@ -3465,7 +3465,7 @@
             this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(44.79097F, 0F);
             this.xrPictureBox3.Name = "xrPictureBox3";
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(698.2072F, 272.3751F);
-            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // GroupHeader6
             // 
@@ -3473,7 +3473,8 @@
             this.xrLabel29,
             this.xrLabel27,
             this.xrLabel28});
-            this.GroupHeader6.Expanded = false;
+            this.GroupHeader6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\',false,true)")});
             this.GroupHeader6.HeightF = 99.83355F;
             this.GroupHeader6.Level = 3;
             this.GroupHeader6.Name = "GroupHeader6";
@@ -3486,13 +3487,12 @@
             this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(44.79208F, 0F);
             this.xrPictureBox2.Name = "xrPictureBox2";
             this.xrPictureBox2.SizeF = new System.Drawing.SizeF(698.2072F, 293.2919F);
-            this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.xrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // GroupHeader7
             // 
             this.GroupHeader7.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox4});
-            this.GroupHeader7.Expanded = false;
             this.GroupHeader7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([rUGDListerUGDDetay].[SResim]),\nfalse,true )")});
             this.GroupHeader7.HeightF = 276.6833F;
@@ -3506,7 +3506,7 @@
             this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(44.79097F, 0F);
             this.xrPictureBox4.Name = "xrPictureBox4";
             this.xrPictureBox4.SizeF = new System.Drawing.SizeF(698.2072F, 276.6833F);
-            this.xrPictureBox4.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.xrPictureBox4.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             // 
             // pStabilite
             // 
@@ -3532,7 +3532,6 @@
             // 
             this.GroupHeader8.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox2});
-            this.GroupHeader8.Expanded = false;
             this.GroupHeader8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\', false, Iif(IsNullOrEmpty(?pChalleng" +
                     "e),false ,true ))")});

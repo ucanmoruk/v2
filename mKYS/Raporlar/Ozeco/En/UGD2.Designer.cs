@@ -778,8 +778,9 @@
             // calculatedField8
             // 
             this.calculatedField8.DataMember = "rUGDListe";
-            this.calculatedField8.Expression = "\nIif(\n[Kategori]=\'Yasaklı\',\'FAIL\', Iif([calculatedField7]=\'N/A\',\'SUITABLE\' , Iif(" +
-    "[calculatedField7]>100,\'SUITABLE\' , \'FAIL\')\n)\n\n)";
+            this.calculatedField8.Expression = "\nIif(IsNullOrEmpty([A]),\'N.E.\' , \nIif([Kategori]=\'Yasaklı\',\'FAIL\', Iif([calculate" +
+    "dField7]=\'N/A\',\'SUITABLE\' , Iif([calculatedField7]>100,\'SUITABLE\' , \'FAIL\')\n)\n\n)" +
+    ")";
             this.calculatedField8.Name = "calculatedField8";
             // 
             // UGD2

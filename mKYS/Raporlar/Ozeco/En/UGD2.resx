@@ -152,6 +152,7 @@ left join "rUGDYonetmelik" "rUGDYonetmelik"
   <data name="xrLabel3.Text" xml:space="preserve">
     <value>*C: Concentration. Evaluated over the upper value. 
 *N/A: MoS calculation could not be made because the NOAEL of the raw material could not be reached. The raw material is not on the banned products list and was used within the limit. Therefore, it was evaluated as appropriate.
-*SUITABLE: Since MoS &gt; 100, it is safe to use this raw material at this concentration in this product.</value>
+*SUITABLE: Since MoS &gt; 100, it is safe to use this raw material at this concentration in this product. 
+*N.E. Not Evaluated because of there is no A value.</value>
   </data>
 </root>

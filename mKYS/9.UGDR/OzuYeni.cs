@@ -357,8 +357,8 @@ namespace mROOT._9.UGDR
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rchal;
-                    rcyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rchal;
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Foto" + "/" + rchal;
+                    rcyol = "https://" + "www.cosmoliz.com/mRoot/Foto" + "/" + rchal;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, rchallenge);
                 }
@@ -393,8 +393,8 @@ namespace mROOT._9.UGDR
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rsta;
-                    rsyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rsta;
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Foto" + "/" + rsta;
+                    rsyol = "https://" + "www.cosmoliz.com/mRoot/Foto" + "/" + rsta;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, rstabilite);
                 }
@@ -429,8 +429,8 @@ namespace mROOT._9.UGDR
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rkut;
-                    rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rkut;
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Foto" + "/" + rkut;
+                    rkyol = "https://" + "www.cosmoliz.com/mRoot/Foto" + "/" + rkut;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, rkutu);
                 }
@@ -496,8 +496,8 @@ namespace mROOT._9.UGDR
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + ruyar;
-                    rkyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + ruyar;
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Foto" + "/" + ruyar;
+                    rkyol = "https://" + "www.cosmoliz.com/mRoot/Foto" + "/" + ruyar;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, ruyari);
                 }
@@ -605,8 +605,8 @@ namespace mROOT._9.UGDR
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Foto" + "/" + rmik;
-                    rmyol = "https://" + "www.massgrup.com/mRoot/Foto" + "/" + rmik;
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Foto" + "/" + rmik;
+                    rmyol = "https://" + "www.cosmoliz.com/mRoot/Foto" + "/" + rmik;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, rmikro);
                 }
