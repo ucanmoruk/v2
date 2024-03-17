@@ -349,6 +349,30 @@
     <Compile Include="Raporlar\CosIng.Designer.cs">
       <DependentUpon>CosIng.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Cosmoliz\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Eng\UGD1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1094,6 +1118,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Cosmoliz\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Cosmoliz\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Cosmoliz\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Cosmoliz\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Eng\UGD1.resx">
       <DependentUpon>UGD1.cs</DependentUpon>

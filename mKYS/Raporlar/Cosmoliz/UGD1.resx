@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "rUGDListe"."ID", "rUGDListe"."RaporNo",
+       "rUGDListe"."Tarih", "rUGDListe"."FirmaID",
+       "rUGDListe"."Versiyon", "rUGDListe"."Urun",
+       "rUGDListe"."Barkod", "rUGDListe"."Miktar",
+       "rUGDListe"."Tip1", "rUGDListe"."Tip2",
+       "rUGDListe"."Uygulama", "rUGDListe"."Hedef",
+       "RootTedarikci"."Ad", "RootTedarikci"."Adres",
+       "RootTedarikci"."Email",
+       "RootTedarikci"."Telefon"
+  from ("rUGDListe" "rUGDListe"
+  left join "RootTedarikci" "RootTedarikci"
+       on ("RootTedarikci"."ID" = "rUGDListe"."FirmaID"))
+</value>
+  </data>
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>select "rUGDDetay"."Gorunum", "rUGDDetay"."Renk",
+       "rUGDDetay"."Koku", "rUGDDetay"."pH",
+       "rUGDDetay"."Kaynama", "rUGDDetay"."Erime",
+       "rUGDDetay"."Yogunluk", "rUGDDetay"."Suda",
+       "rUGDDetay"."Viskozite", "rUGDDetay2"."Mikro",
+       "rUGDDetay2"."MResim",
+       "rUGDDetay2"."Challenge",
+       "rUGDDetay2"."CResim",
+       "rUGDDetay2"."Stabilite",
+       "rUGDDetay2"."SResim", "rUGDDetay"."UrunID",
+       "rUGDDetay2"."StabiliteNot",
+       "rUGDDetay2"."UrunID" as "rUGDDetay2_UrunID",
+       "rUGDDetay2"."Kullanim",
+       "rUGDDetay2"."Uyarilar",
+       "rUGDDetay2"."Ozellikler", "rUGDDetay2"."Kutu",
+       "rUGDDetay"."Diger", "rUGDDetay2"."MikroNot",
+       "rUGDDetay2"."ChallengeNot"
+  from ("rUGDDetay" "rUGDDetay"
+  left
+  join "rUGDDetay2" "rUGDDetay2"
+       on ("rUGDDetay2"."UrunID" = "rUGDDetay"."UrunID"))
+</value>
+  </data>
+  <data name="customSqlQuery3.Sql" xml:space="preserve">
+    <value>select "rUGDTip"."Kategori", "rUGDTip"."UrunTipi",
+       "rUGDTip"."YuzeyAlani",
+       "rUGDTip"."UygulamaBolgesi",
+       "rUGDTip"."Siklik", "rUGDTip"."GunlukMiktar",
+       "rUGDTip"."ADegeri", "rUGDTip"."ID"
+  from "rUGDTip" "rUGDTip"
+</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iRmlybWFJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlZlcnNpeW9uIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVXJ1biIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJCYXJrb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRpcDEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGlwMiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVeWd1bGFtYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJIZWRlZiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFbWFpbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZWxlZm9uIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9InJVR0REZXRheSI+PEZpZWxkIE5hbWU9IkdvcnVudW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmVuayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLb2t1IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InBIIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IktheW5hbWEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRXJpbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWW9ndW5sdWsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3VkYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJWaXNrb3ppdGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrcm8iIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9Ik1SZXNpbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDaGFsbGVuZ2UiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IkNSZXNpbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTdGFiaWxpdGUiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IlNSZXNpbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcnVuSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJTdGFiaWxpdGVOb3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iclVHRERldGF5Ml9VcnVuSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLdWxsYW5pbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVeWFyaWxhciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPemVsbGlrbGVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikt1dHUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGlnZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrcm9Ob3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2hhbGxlbmdlTm90IiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9InJVR0RUaXAiPjxGaWVsZCBOYW1lPSJLYXRlZ29yaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcnVuVGlwaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJZdXpleUFsYW5pIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVXlndWxhbWFCb2xnZXNpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNpa2xpayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHdW5sdWtNaWt0YXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQURlZ2VyaSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjwvVmlldz48UmVsYXRpb24gTWFzdGVyPSJyVUdETGlzdGUiIERldGFpbD0iclVHRERldGF5Ij48S2V5Q29sdW1uIE1hc3Rlcj0iSUQiIERldGFpbD0iVXJ1bklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0iclVHRExpc3RlIiBEZXRhaWw9InJVR0RUaXAiPjxLZXlDb2x1bW4gTWFzdGVyPSJUaXAyIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <data name="xrLabel23.Text" xml:space="preserve">
+    <value>Stabilite çalışmaları bitmiş ürün üzerinden gerçekleştirilmiştir. Ürünün görünüş, renk, koku, pH ve ağırlık değerleri, farklı sıcaklık koşullarında belli aralıklarla kontrol edilmektedir. Stabilite test sonuçları ürün güvenlik dosyasında bulunmaktadır.</value>
+  </data>
+  <data name="xrLabel26.Text" xml:space="preserve">
+    <value>Son ürün için yapılan mikrobiyolojik analiz sonuçları ürün güvenlik dosyasında sunulmuştur. Sonuçlar mikrobiyolojik kalite kontrol limitlerine uygundur. Mikrobiyolojik kontaminasyon riski taşımamaktadır.</value>
+  </data>
+  <data name="xrLabel24.Text" xml:space="preserve">
+    <value>Kozmetik ürünlerde kesinlikle bulunmaması gereken mikroorganizmalar Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans ve Escherichia coli’dir.
+Farklı cilt bölgeleri, farklı hassasiyete sahip olabileceğinden kozmetik ürünler için iki ayrı kategori tanımlanmıştır.</value>
+  </data>
+  <data name="xrLabel28.Text" xml:space="preserve">
+    <value>Test, uygun mikroorganizmaların belirli inokulum seviyelerinde hazırlanması ve belirli zaman aralıklarında mikroorganizma içeren numuneden ekim yapılarak numunedeki mikroorganizmaların sayılmasını kapsar. Test koşulları içinde 7., 14 ve 28 günlerdeki mikroorganizmaların uygun bir şekilde belirgin bir düşüş veya artışın gözlenip gözlenmediğine bakılarak ürünün koruyucu özelliğinin yeterliliğine karar verilir.</value>
+  </data>
+  <data name="xrTableCell66.Text" xml:space="preserve">
+    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
+  </data>
+  <data name="xrLabel43.Text" xml:space="preserve">
+    <value>Bütün belirgin emilim yolları dikkate alınarak ve deneyler sonucu gözlemlenen toksikolojik veriler ışığında belirlenen NO(A)EL değerine dayanarak, sistemik etkiler ve güvenlilik sınırı (MoS) hesaplanır. Bu değerlendirme yapılamıyor ise nedeni uygun bir şekilde gerekçelendirilmelidir.</value>
+  </data>
+  <data name="xrLabel54.Text" xml:space="preserve">
+    <value>Kozmetik ürün ile ilgili rapor içerisinde yer alan bilgiler için Ürün Güvenlik Dosyasında da yer alan Hammadde Güvenlik Bilgi Formları, ürün formülasyonu, ürün etiket bilgisi ve ilgili test raporlarından faydalanılmıştır.</value>
+  </data>
+  <data name="xrLabel51.Text" xml:space="preserve">
+    <value>Ürünün piyasaya arzı sonrası kullanımında üründen kaynaklanan istenmeyen etkileri toplayacak, belgelendirecek, nedensellik kuracak ve yönetecek bir sistem kurulmalı ve ciddi istenmeyen etkiler olduğunda, “Türkiye İlaç Ve Tıbbi Cihaz Kurumu Üretici Tarafından Ciddi İstenmeyen Etkinin (CİE) Kuruma Bildirilmesine İlişkin Kılavuz” gereğince Kurum bilgilendirilmelidir.
+
+Kozmetik ürün/ürünler ile ilgili istenmeyen etkiler ve ciddi istenmeyen etkiler hakkındaki tüm veriler erişilebilir olmalıdır. İstatistiki veriler de dahil olmak üzere tüm istenmeyen ve ciddi istenmeyen etkilere dair bilgilerin ürün bilgi dosyasında bulunması zorunludur.
+
+İstenmeyen etki ve ciddi istenmeyen etki bildirilmemiştir.</value>
+  </data>
+  <data name="xrLabel47.Text" xml:space="preserve">
+    <value>Formülde yer alan hammadde ve karışımlar ticari isimlerine göre gruplandırılarak toksikolojik değerlendirmeleri yapılmıştır. Hammadde ve karışımları ait fiziksel özellikler ve toksikolojik profiller Ek-3'de belirtilmiştir.</value>
+  </data>
+  <data name="xrLabel66.Text" xml:space="preserve">
+    <value>NO(A)EL değeri olmayan bileşenlerde minimum güvenlik sınırı hesaplanamamıştır. NO(A)EL değeri olmayan bileşenler diğer toksikolojik veriler dahilinde kozmetik ürünlerde kullanımı güvenlidir.
+Hammaddeler için belirlenen güvenlik sınırları, tavsiye edilen minimum sınır değer olan 100’ün üzerinde olduğu için ‘güvenli’ düzeydedir. Bu yüzden ürün içerisindeki hiçbir bileşen son kullanıcı için risk taşımamaktadır.
+Ürün formülünde, kozmetik ürünlerinde sıklıkla kullanılan ve kabul edilebilir özellikte hammaddeler yer almaktadır. Raporun A kısmında yer alan bütün sonuçlar ürünün güvenli olduğunu kanıtlar nitelik taşımaktadır.</value>
+  </data>
+  <data name="xrLabel63.Text" xml:space="preserve">
+    <value>Bu rapor; EC No 1223/2009 Kozmetik Regülasyonu 23 Mayıs 2005 tarihli, 25823 Resmi Gazete sayılı Kozmetik Yönetmeliği ve ekleri, The SCCS's Notes Of Guidance For The Testing Of Cosmetic Ingredients And Their Safety Evaluation 12th Revision, Türkiye İlaç ve Tıbbi Cihaz Kurumu Kozmetik Ürünlerde Güvenlilik Değerlendirmesine İlişkin Kılavuz Sürüm 3 uyarınca hazırlanmıştır.
+Değerlendirme; üreticinin sunduğu mevcut bilgi ve belgeler doğrultusunda yapılmıştır. Raporun sonunda referanslar ve ekli belgeler yer almaktadır. Ürün özelliği, fiziksel/kimyasal ve stabilite verileri kabul edilebilir düzeydedir.</value>
+  </data>
+  <data name="xrLabel60.Text" xml:space="preserve">
+    <value>Ürünün piyasaya sürülmesini takiben ortaya çıkan ilgili ilave bilgiler ışığında; ürünün formülünde, hammadde temin edilen kaynaklarda veya önerilen kullanım şeklinde yapılacak herhangi bir değişiklikte güvenlilik değerlendirme raporunun güncel tutulması gerekmektedir.</value>
+  </data>
+  <data name="xrLabel59.Text" xml:space="preserve">
+    <value>Ürün; Kozmetik Yönetmeliğinde Değişiklik Yapılmasına Dair Yönetmelik / EK II ‐Kozmetik Ürünlerde Yasaklı Maddeler Listesi yer alan yasaklı maddeler listesindeki maddeleri içermemektedir.
+Ürünün, kullanım yeri, kullanım amacı ve miktarına göre normal ve makul olarak öngörülebilir kullanımı uygundur.
+Bu rapor mevcut veriler doğrultusunda hazırlanmıştır.
+Normal şartlar altında ürünün, kullanım yeri, kullanım amacı ve miktarına göre normal ve makul olarak öngörülebilir kullanımı uygundur.
+Üründe veya mevzuatta değişiklikler gerçekleştiğinde (örneğin; üreticinin yaptığı değişiklikler, mevzuatta formülasyonda yer alan maddelerden birine getirilen kısıtlama, formülasyon veya ambalaj gereklilikleri gibi hususlarda) mevzuata uygunluğu kontrol edilmeli, güvenlilik değerlendirmesi yeniden gözden geçirilmeli ve gerekliyse güncellenmelidir.
+Aşağıdaki şartlardan bir veya daha fazlası söz konusu ise, güvenlilik değerlendirmesi yeniden gözden geçirilmeli ve gerekliyse güncellenmelidir:</value>
+  </data>
+  <data name="xrLabel58.Text" xml:space="preserve">
+    <value>Normal koşullar altında depolanan kozmetik ürünün belirtilen minimum dayanma süresinin ve bitmiş ürünün açıldıktan sonra kullanım süresinin doğrulanması güvenlilik açısından önemlidir.
+Ürün formülasyonu ve stabilite test sonuçlarına göre; ambalaj materyali ürünün saflığı ve stabilitesi üzerine olumsuz etki yapmamaktadır.
+Ürün, yasaklı madde kalıntısı içermemektedir. Safsızlıklar ve kalıntılar hakkında bilgi bulunmamaktadır.
+Bitmiş ürün iç ve dış ambalajı değerlendirilmiştir. İç ve dış ambalajda üreticinin, adı veya unvanı ve adresi, ürünün fonksiyonu, ağırlık veya hacim olarak ambalajlama anındaki nominal miktar, açıldıktan sonraki kullanım süresi, kullanma talimatı ve tedbirler, üretim kodu veya üretim şarj numarası, ürün bileşenleri, vb. bilgiler yer almaktadır. Ürün bileşenleri listesinde yer alan bütün hammaddeler INCI isimleri ile ve % konsantrasyona göre büyükten küçüğe olacak şekilde sıra ile yazılmıştır. Etiketin mevzuata uygun olduğu görülmüştür.
+Dermal, oral ve inhaler maruziyet yolu insanların kozmetik ürünlere ilişkin potansiyel maruziyet yollarıdır. Değerlendirilen kozmetik ürün için dermal maruziyet söz konusudur.
+Kozmetik üründeki maddelerin her birine maruziyet, bitmiş ürüne maruziyetten ve bitmiş üründeki maddelerin tek tek konsantrasyonlarından hesaplanmıştır.
+Hammaddelerin üst limitteki kullanım oranı alınarak ve % 100 absorbe olduğu kabul edilerek olası en kötü durumdaki güvenlik aralığı hesaplanmıştır. </value>
+  </data>
+  <data name="xrLabel56.Text" xml:space="preserve">
+    <value>Kozmetik Yönetmeliğinin 6’ncı maddesi gereğince piyasaya arz edilen bir kozmetik ürün, normal ve üretici tarafından öngörülebilen şartlar altında uygulandığında veya ürünün sunumu, etiketlenmesi, kullanımına dair açıklamalara veya üretici tarafından sağlanan bilgiler dikkate alınarak önerilen kullanım şartlarına göre uygulandığında, insan sağlığı açısından güvenli olmalıdır.
+İşbu rapor; ürün bileşenlerinin toksikolojik karakteri, kimyasal yapısı ve maruz kalma seviyeleri, ürünün kullanımına sunulduğu hedef kitlenin veya ürünün uygulanacağı bölgenin belirgin maruziyet özellikleri göz önünde bulundurularak Kozmetik Yönetmeliği’nin 12 nci maddesi gereğince kozmetik bitmiş ürüne hazırlanmıştır.
+Bütün kaynaklardan elde edilen mevcut veriler değerlendirilerek kozmetik ürün güvenlilik raporu hazırlanmıştır. Formülasyonda yer alan her bir maddenin, karışımın ve bitmiş ürünün öngörülen kullanım koşulları altında güvenlilik değerlendirilmesi yapılmıştır.
+Değerlendirilen kozmetik ürün düzenli kullanım için uygun olup, harici kullanım içindir.
+Hammaddeden başlayarak bitmiş kozmetik ürünün eksiksiz olarak kalitatif ve kantitatif bileşimi açıklanmış, her bir hammaddenin ismi kimliği (kalitatif) ve miktarını belirten ağırlık yüzdelerinin yer aldığı tüm ürün bileşimi değerlendirilmiştir.
+Bitmiş ürüne ait fizikokimyasal spesifikasyonları değerlendirilmiştir.
+Hızlandırılmış ve uzun süreli stabilite testleri kozmetik ürünün bileşimi, formülasyonu, ambalaj şekli, kullanım şekli gibi ürüne özel kriterler göz önüne alınarak belirlenen farklı sıcaklıklarda, depolama ve dağıtım için önerilen son ambalaj ve kap/kapak sistemindeki ambalajlı kozmetik ürün üzerinden fiziksel, kimyasal ve ambalaj uyumu testleri gerçekleştirilmiştir.</value>
+  </data>
+  <data name="xrTableCell12.Text" xml:space="preserve">
+    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
+  </data>
+  <data name="xrLabel30.Text" xml:space="preserve">
+    <value>Safsızlıklar, hammaddelerde istenmeyen maddelerdir.  
+
+Kalıntı, bitmiş üründeki küçük miktarda istenmeyen maddedir. 
+
+Kalıntılar, hammaddeler/maddelerdeki safsızlıklar; üretim işlemi; normal saklama koşulları altında ve veya ambalaj materyali ile temas yoluyla üründe açığa çıkabilecek potansiyel kimyasal değişiklik etkileşim ve veya madde geçişi vb. kaynaklardan meydana gelebilir. 
+
+Kozmetik ürünün üretildiği firmaya ait GMP deklarasyonu, kozmetik ürünün İyi İmalat Uygulamalarına uygun olarak üretildiğini belgelemektedir. 
+
+Kozmetik ürün formülasyonunda yer alan her bir hammaddeye ait fiziksel ve kimyasal özellikleri hakkında bilgiler mevcut olup saflık kriterleri mevzuata uygundur. 
+
+Kozmetik ürün, genetik olarak modifiye edilmiş organizmalar (GMO), nanomateryaller, hayvansal orjinli bileşenler, 1272/2008 sayılı CLP tüzüğüne göre 1A, 1B ve 2 kategorilerinde sınıflandırılan CMR maddeleri içermemektedir.</value>
+  </data>
+  <data name="xrLabel33.Text" xml:space="preserve">
+    <value>Ambalajdan formülasyona madde geçişi olabileceğinden, ambalaj malzemesinin ilgili özellikleri dikkate alınmalıdır. Ambalaj materyali ve nominal miktar hakkında bilgi "Ürün Hakkında Bilgiler" tablosunda paylaşılmıştır.</value>
+  </data>
+  <data name="xrLabel35.Text" xml:space="preserve">
+    <value>A değeri için (toplam günlük maruziyet) (yetişkin vücut ağırlığı: 60 kg) (‘The SCCS's Notes Of Guidance For The Testing Of Cosmetic Ingredients And Their Safety Evaluation 12th Revision SCCS/1602/18)’ baz alınmıştır.)</value>
+  </data>
+</root>

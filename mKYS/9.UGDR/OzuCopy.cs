@@ -108,15 +108,20 @@ namespace mROOT._9.UGDR
                 {
                     string HammaddeID = dr2["HammaddeID"].ToString();
                     string INCIName = dr2["INCIName"].ToString();
+                    string NOEL = dr2["Noael"].ToString();
                     decimal miktar = Convert.ToDecimal(dr2["Miktar"].ToString());
                     int DaP = Convert.ToInt32(dr2["DaP"].ToString());
-                    SqlCommand add12 = new SqlCommand(@"BEGIN TRANSACTION insert into rUGDformül (UrunID, HammaddeID, INCIName, Miktar, DaP)
-                    values (@o2,@o3,@o4, @o5, @o6) ; COMMIT TRANSACTION", bgl.baglanti());
+                    SqlCommand add12 = new SqlCommand(@"BEGIN TRANSACTION insert into rUGDformül (UrunID, HammaddeID, INCIName, Miktar, DaP, Noael)
+                    values (@o2,@o3,@o4, @o5, @o6, @o7) ; COMMIT TRANSACTION", bgl.baglanti());
                     add12.Parameters.AddWithValue("@o2", yeniID);
                     add12.Parameters.AddWithValue("@o3", HammaddeID);
                     add12.Parameters.AddWithValue("@o4", INCIName);
                     add12.Parameters.AddWithValue("@o5", miktar);
                     add12.Parameters.AddWithValue("@o6", DaP);
+                    if(NOEL == null || NOEL == "")
+                        add12.Parameters.AddWithValue("@o7", DBNull.Value);
+                    else
+                        add12.Parameters.AddWithValue("@o7", Convert.ToInt32(NOEL));
                     add12.ExecuteNonQuery();
                     bgl.baglanti().Close();
                 }

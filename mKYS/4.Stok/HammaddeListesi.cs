@@ -35,13 +35,24 @@ namespace mKYS
                 da2.Fill(dt2);
                 gridControl1.DataSource = dt2;
             }
-            else
+            else if(Anasayfa.birimID == 1006)
             {
                 DataTable dt2 = new DataTable();
                 //SqlDataAdapter da2 = new SqlDataAdapter(@"select Mix, GenelAd, InciAd, CasNo, 
                 //EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
                 //where Durum = N'Aktif' order by InciAd", bgl.baglanti());
                 SqlDataAdapter da2 = new SqlDataAdapter(@"select h.GenelAd, c.INCIName, SUBSTRING(Link,60,69) as 'CosIng ID', c.Cas, h.Noael2, h.Fizikokimya, h.Toksikoloji, h.Kaynak, h.EkBilgi, c.ID from rkHammadde h 
+			    left join rCosing c on h.CID = c.ID  where h.Durum = 'Aktif'", bgl.baglanti());
+                da2.Fill(dt2);
+                gridControl1.DataSource = dt2;
+            }
+            else
+            {
+                DataTable dt2 = new DataTable();
+                //SqlDataAdapter da2 = new SqlDataAdapter(@"select Mix, GenelAd, InciAd, CasNo, 
+                //EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
+                //where Durum = N'Aktif' order by InciAd", bgl.baglanti());
+                SqlDataAdapter da2 = new SqlDataAdapter(@"select h.GenelAd, c.INCIName, SUBSTRING(Link,60,69) as 'CosIng ID', c.Cas, h.Noael2, h.Fizikokimya, h.Toksikoloji, h.Kaynak, h.EkBilgi, c.ID from rHammadde h 
 			    left join rCosing c on h.CID = c.ID  where h.Durum = 'Aktif'", bgl.baglanti());
                 da2.Fill(dt2);
                 gridControl1.DataSource = dt2;
@@ -139,10 +150,20 @@ namespace mKYS
                         MessageBox.Show("Silme işlemi gerçekleşmiştir.");
                         listele();
                     }
-                    else
+                    else if(Anasayfa.birimID == 1006)
                     {
                         // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
                         SqlCommand komutSil = new SqlCommand("update rkHammadde set Durum=@a1 where cID = N'" + id + "'", bgl.baglanti());
+                        komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                        komutSil.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                        MessageBox.Show("Silme işlemi gerçekleşmiştir.");
+                        listele();
+                    }
+                    else
+                    {
+                        // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                        SqlCommand komutSil = new SqlCommand("update rHammadde set Durum=@a1 where cID = N'" + id + "'", bgl.baglanti());
                         komutSil.Parameters.AddWithValue("@a1", "Pasif");
                         komutSil.ExecuteNonQuery();
                         bgl.baglanti().Close();

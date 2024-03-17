@@ -85,6 +85,18 @@ namespace mROOT._9.UGDR
                     frm.ShowDialog();
                 }
             }
+            else if (Giris.birimID == "1006")
+            {
+                mKYS.Raporlar.UGD1.tID = lID;
+                mKYS.Raporlar.UGD2.tID = lID;
+                mKYS.Raporlar.UGD3.tID = lID;
+                mKYS.Raporlar.UGD4.tID = lID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.UGDR();
+                    frm.ShowDialog();
+                }
+            }
             else
             {
 
@@ -99,13 +111,13 @@ namespace mROOT._9.UGDR
                 //}
 
 
-                mKYS.Raporlar.UGD1.tID = lID;
-                mKYS.Raporlar.UGD2.tID = lID;
-                mKYS.Raporlar.UGD3.tID = lID;
-                mKYS.Raporlar.UGD4.tID = lID;
+                mKYS.Raporlar.Cosmoliz.UGD1.tID = lID;
+                mKYS.Raporlar.Cosmoliz.UGD2.tID = lID;
+                mKYS.Raporlar.Cosmoliz.UGD3.tID = lID;
+                mKYS.Raporlar.Cosmoliz.UGD4.tID = lID;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 {
-                    frm.UGDR();
+                    frm.CosmolizTR();
                     frm.ShowDialog();
                 }
             }
