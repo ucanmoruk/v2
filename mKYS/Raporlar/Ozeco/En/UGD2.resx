@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "rUGDListe"."RaporNo", "rUGDListe"."ID",
+    <value>select distinct "rUGDListe"."RaporNo", "rUGDListe"."ID",
        "rUGDListe"."Tarih", "rUGDListe"."Versiyon",
        "rUGDListe"."Urun", "rUGDListe"."A",
        "rUGDFormül"."Miktar", "rHammadde"."Noael2","rUGDFormül"."DaP","rUGDFormül"."Noael",
