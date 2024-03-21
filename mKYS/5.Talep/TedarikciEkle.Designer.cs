@@ -51,6 +51,8 @@
             this.txt_vno = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_adres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tel.Properties)).BeginInit();
@@ -62,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_vd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_vno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -157,7 +160,7 @@
             this.btn_ok.Location = new System.Drawing.Point(90, 311);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(339, 39);
-            this.btn_ok.TabIndex = 12;
+            this.btn_ok.TabIndex = 13;
             this.btn_ok.Text = "Firma Ekle";
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
@@ -238,14 +241,36 @@
             // 
             this.memoEdit1.Location = new System.Drawing.Point(90, 228);
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(339, 66);
+            this.memoEdit1.Size = new System.Drawing.Size(154, 66);
             this.memoEdit1.TabIndex = 11;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton1.Location = new System.Drawing.Point(364, 229);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(65, 64);
+            this.simpleButton1.TabIndex = 12;
+            this.simpleButton1.Text = "Logo Seç";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(250, 230);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(108, 63);
+            this.pictureEdit1.TabIndex = 14;
             // 
             // TedarikciEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 372);
+            this.ClientSize = new System.Drawing.Size(475, 385);
+            this.Controls.Add(this.pictureEdit1);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.memoEdit1);
             this.Controls.Add(this.c_tur);
             this.Controls.Add(this.btn_ok);
@@ -285,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_vd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_vno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +340,7 @@
         private DevExpress.XtraEditors.TextEdit txt_vno;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

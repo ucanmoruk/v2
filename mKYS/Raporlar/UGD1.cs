@@ -17,7 +17,7 @@ namespace mKYS.Raporlar
 
         sqlbaglanti bgl = new sqlbaglanti();
 
-        string m, c, s, k;
+        string m, c, s, k, fm;
 
         public void bilgi()
         {
@@ -33,6 +33,15 @@ namespace mKYS.Raporlar
                 k = dr12["Kutu"].ToString();
             }
             bgl.baglanti().Close();
+
+            SqlCommand komut2 = new SqlCommand(@"select * from RootTedarikci where ID in (select FirmaID from rUGDListe where ID = '" + tID + "' )", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                fm = dr2["Logo"].ToString();
+            }
+            bgl.baglanti().Close();
+
 
             if (m == null || m == "")
                 pMikro.Value = null;
@@ -53,6 +62,11 @@ namespace mKYS.Raporlar
                 pKutu.Value = null;
             else
                 pKutu.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + k;
+
+            if (fm == null || fm == "")
+                pFirmaLogo.Value = null;
+            else
+                pFirmaLogo.Value = @"http://" + "www.cosmoliz.com/mRoot/Logo" + "/" + fm;
 
         }
 

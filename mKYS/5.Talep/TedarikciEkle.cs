@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using mKYS.Talep;
 using System.Globalization;
 using mROOT._8.Spektrotek;
+using System.IO;
+using System.Net;
 
 namespace mKYS.Talep
 {
@@ -42,16 +44,29 @@ namespace mKYS.Talep
                 txt_vd.Text = dr2["VergiDairesi"].ToString();
                 txt_vno.Text = dr2["VergiNo"].ToString();
                 memoEdit1.Text = dr2["Notlar"].ToString();
+                fotoname = dr2["Logo"].ToString();
+                string yol = @"http://www.cosmoliz.com/mRoot/Logo/" + fotoname;
+                pictureEdit1.LoadAsync(yol);
+
             }
             bgl.baglanti().Close();
+            if (fotoname == "" || fotoname == null)
+            {
 
-            
+            }
+            else
+            {
+                simpleButton1.Text = "Logo Güncelle";
+            }
+
         }
+
+        string fotoname;
 
         public static string firma, fID, kimin;
         private void TedarikciEkle_Load(object sender, EventArgs e)
         {
-
+            
             if (firma == "" || firma == null)
             {
                 
@@ -68,7 +83,7 @@ namespace mKYS.Talep
 
         SFirmaListesi f = (SFirmaListesi)System.Windows.Forms.Application.OpenForms["SFirmaListesi"];
 
-        string kontrol;
+        string kontrol, yenisim, ftpfullpath, yeniyol;
         void ekleme()
         {
             //SqlCommand komut2 = new SqlCommand("Select count(ID) from RootTedarikci where Ad = '" + txt_ad.Text + "' ", bgl.baglanti());
@@ -78,10 +93,27 @@ namespace mKYS.Talep
             //    kontrol = dr2[0].ToString();
             //}
             //bgl.baglanti().Close();
+            if (fotoname == "" || fotoname == null)
+            {
 
+            }
+            else
+            {
+                string isim = Path.GetFileName(name);
+                yenisim = fID + " - " + isim;
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Logo" + "/" + yenisim;
+                    yeniyol = "http://" + "www.cosmoliz.com/mRoot/Logo" + "/" + yenisim;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, name);
+                }
+            }
             //if (kontrol == "0" || kontrol == null)
             //{
-                SqlCommand add = new SqlCommand("insert into RootTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Durum, Durumu, Web, Tur2,VergiDairesi,VergiNo,Kimin,Notlar) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9,@a10,@a11,@a12,@a13,@a14,@a15)", bgl.baglanti());
+            SqlCommand add = new SqlCommand("insert into RootTedarikci(Ad,Adres,Tur,Yetkili,Telefon,Email,Durum, Durumu, Web, Tur2,VergiDairesi,VergiNo,Kimin,Notlar, Logo) values (@a1,@a2,@a3,@a4,@a5,@a6,@a8,@a9,@a10,@a11,@a12,@a13,@a14,@a15,@a16)", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_ad.Text));
                 add.Parameters.AddWithValue("@a2", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_adres.Text));
                 add.Parameters.AddWithValue("@a3", txt_tur.Text);
@@ -101,6 +133,7 @@ namespace mKYS.Talep
                 else
                     add.Parameters.AddWithValue("@a14", "Ozeco");
                 add.Parameters.AddWithValue("@a15", memoEdit1.Text);
+                add.Parameters.AddWithValue("@a16", yenisim);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
@@ -137,20 +170,57 @@ namespace mKYS.Talep
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand("update RootTedarikci set Ad=@a1 ,Adres=@a2,Tur=@a3,Yetkili=@a4,Telefon=@a5,Email=@a6, Web=@a7, Tur2=@a8, VergiDairesi=@a12, VergiNo = @a13, Notlar=@a14 where ID=N'" + fID+"'", bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_ad.Text));
-            add.Parameters.AddWithValue("@a2", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_adres.Text));
-            add.Parameters.AddWithValue("@a3", txt_tur.Text);
-            add.Parameters.AddWithValue("@a4", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_yetkili.Text));
-            add.Parameters.AddWithValue("@a5", txt_tel.Text);
-            add.Parameters.AddWithValue("@a6", txt_email.Text);
-            add.Parameters.AddWithValue("@a7", txt_web.Text);
-            add.Parameters.AddWithValue("@a8", c_tur.Text);
-            add.Parameters.AddWithValue("@a12", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_vd.Text));
-            add.Parameters.AddWithValue("@a13", txt_vno.Text);
-            add.Parameters.AddWithValue("@a14", memoEdit1.Text);
-            add.ExecuteNonQuery();
-            bgl.baglanti().Close();
+            string isim = Path.GetFileName(name);
+            if (isim == null ||isim == "")
+            {
+               
+                SqlCommand add = new SqlCommand("update RootTedarikci set Ad=@a1 ,Adres=@a2,Tur=@a3,Yetkili=@a4,Telefon=@a5,Email=@a6, Web=@a7, Tur2=@a8, VergiDairesi=@a12, VergiNo = @a13, Notlar=@a14 where ID=N'" + fID + "'", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_ad.Text));
+                add.Parameters.AddWithValue("@a2", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_adres.Text));
+                add.Parameters.AddWithValue("@a3", txt_tur.Text);
+                add.Parameters.AddWithValue("@a4", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_yetkili.Text));
+                add.Parameters.AddWithValue("@a5", txt_tel.Text);
+                add.Parameters.AddWithValue("@a6", txt_email.Text);
+                add.Parameters.AddWithValue("@a7", txt_web.Text);
+                add.Parameters.AddWithValue("@a8", c_tur.Text);
+                add.Parameters.AddWithValue("@a12", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_vd.Text));
+                add.Parameters.AddWithValue("@a13", txt_vno.Text);
+                add.Parameters.AddWithValue("@a14", memoEdit1.Text);
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+            else
+            {
+                yenisim = fID + " - " + isim;
+                using (var client = new WebClient())
+                {
+                    string ftpUsername = "massgrup";
+                    string ftpPassword = "!88n2ee5Q";
+                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Logo" + "/" + yenisim;
+                    yeniyol = "http://" + "www.cosmoliz.com/mRoot/Logo" + "/" + yenisim;
+                    client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+                    client.UploadFile(ftpfullpath, name);
+                }
+                SqlCommand add = new SqlCommand("update RootTedarikci set Ad=@a1 ,Adres=@a2,Tur=@a3,Yetkili=@a4,Telefon=@a5,Email=@a6, Web=@a7, Tur2=@a8, VergiDairesi=@a12, VergiNo = @a13, Notlar=@a14, Logo=@a15 where ID=N'" + fID + "'", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_ad.Text));
+                add.Parameters.AddWithValue("@a2", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_adres.Text));
+                add.Parameters.AddWithValue("@a3", txt_tur.Text);
+                add.Parameters.AddWithValue("@a4", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_yetkili.Text));
+                add.Parameters.AddWithValue("@a5", txt_tel.Text);
+                add.Parameters.AddWithValue("@a6", txt_email.Text);
+                add.Parameters.AddWithValue("@a7", txt_web.Text);
+                add.Parameters.AddWithValue("@a8", c_tur.Text);
+                add.Parameters.AddWithValue("@a12", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_vd.Text));
+                add.Parameters.AddWithValue("@a13", txt_vno.Text);
+                add.Parameters.AddWithValue("@a14", memoEdit1.Text);
+                add.Parameters.AddWithValue("@a15", yenisim);
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+
+            
+
+
 
             MessageBox.Show("Güncelleme işlemi başarılı.", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
@@ -186,7 +256,23 @@ namespace mKYS.Talep
             txt_vd.Text = "";
             memoEdit1.Text = "";
         }
+        string name;
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
 
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            // open.InitialDirectory = "C:\\";
+            open.InitialDirectory = path;
+            open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                name = open.FileName;
+                pictureEdit1.Image = new Bitmap(open.FileName);
+
+            }
+        }
 
         private void TedarikciEkle_FormClosing(object sender, FormClosingEventArgs e)
         {
