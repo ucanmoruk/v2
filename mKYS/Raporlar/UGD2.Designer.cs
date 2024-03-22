@@ -258,6 +258,8 @@
             this.xrTable3});
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
+            this.Detail.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+            new DevExpress.XtraReports.UI.GroupField("Miktar", DevExpress.XtraReports.UI.XRColumnSortOrder.Descending)});
             // 
             // xrTable3
             // 

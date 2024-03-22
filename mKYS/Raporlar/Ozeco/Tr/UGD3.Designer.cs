@@ -252,8 +252,7 @@
             this.xrLabel67.SizeF = new System.Drawing.SizeF(835.5898F, 23F);
             this.xrLabel67.StylePriority.UseFont = false;
             this.xrLabel67.StylePriority.UseTextAlignment = false;
-            this.xrLabel67.Text = "Şehit Osman Avcı, Malazgirt 1071. Cd.No:49 A İç Kapı No:13 06820 Eryaman/Ankara \r" +
-    "\n0 850 308 33 51 / 0533 450 69 05   www.ozecogroup.com  info@ozecogroup.com";
+            this.xrLabel67.Text = "www.ozecogroup.com / info@ozecogroup.com";
             this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrPictureBox5

@@ -234,7 +234,7 @@ namespace mKYS
                 dprice.Visibility = BarItemVisibility.Never;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }
-            else if (kullanici == "2006")
+            else if (kullanici == "2006" || kullanici == "2007")
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;

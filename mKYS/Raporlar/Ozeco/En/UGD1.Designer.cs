@@ -597,7 +597,6 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrLabel5});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 782.3651F;
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
@@ -1696,6 +1695,7 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
+            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 373.8749F;
             this.GroupHeader2.Level = 5;
             this.GroupHeader2.Name = "GroupHeader2";
@@ -3092,6 +3092,7 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
+            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 670.5305F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -3449,6 +3450,7 @@
             // 
             this.GroupHeader5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox3});
+            this.GroupHeader5.Expanded = false;
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),false" +
                     " ,true ))")});
@@ -3473,6 +3475,7 @@
             this.xrLabel29,
             this.xrLabel27,
             this.xrLabel28});
+            this.GroupHeader6.Expanded = false;
             this.GroupHeader6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\',false,true)")});
             this.GroupHeader6.HeightF = 99.83355F;
@@ -3493,6 +3496,7 @@
             // 
             this.GroupHeader7.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox4});
+            this.GroupHeader7.Expanded = false;
             this.GroupHeader7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([rUGDListerUGDDetay].[SResim]),\nfalse,true )")});
             this.GroupHeader7.HeightF = 276.6833F;
@@ -3532,6 +3536,7 @@
             // 
             this.GroupHeader8.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox2});
+            this.GroupHeader8.Expanded = false;
             this.GroupHeader8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\', false, Iif(IsNullOrEmpty(?pChalleng" +
                     "e),false ,true ))")});

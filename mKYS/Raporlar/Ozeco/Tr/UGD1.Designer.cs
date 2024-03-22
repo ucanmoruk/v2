@@ -317,6 +317,7 @@
             this.pKutu = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader8 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrPictureBox8 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -420,6 +421,7 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox8,
             this.xrPageInfo1,
             this.xrLine1,
             this.xrTable1,
@@ -539,11 +541,11 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 20.41667F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(194.8509F, 20.41667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(753F, 23F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(348.7741F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
@@ -576,8 +578,7 @@
             this.xrLabel67.SizeF = new System.Drawing.SizeF(568.6624F, 23.00001F);
             this.xrLabel67.StylePriority.UseFont = false;
             this.xrLabel67.StylePriority.UseTextAlignment = false;
-            this.xrLabel67.Text = "Şehit Osman Avcı, Malazgirt 1071. Cd.No:49 A İç Kapı No:13 06820 Eryaman/Ankara \r" +
-    "\n0 850 308 33 51 / 0533 450 69 05   www.ozecogroup.com  info@ozecogroup.com";
+            this.xrLabel67.Text = "www.ozecogroup.com / info@ozecogroup.com";
             this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrPictureBox5
@@ -598,7 +599,6 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrLabel5});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 782.3651F;
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
@@ -606,7 +606,7 @@
             // 
             // xrPictureBox7
             // 
-            this.xrPictureBox7.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.ozecologo1, true);
+            this.xrPictureBox7.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.stand_arka_plan_yüksek_çözünürlük_pages_to_jpg_0001, true);
             this.xrPictureBox7.LocationFloat = new DevExpress.Utils.PointFloat(9.999989F, 10F);
             this.xrPictureBox7.Name = "xrPictureBox7";
             this.xrPictureBox7.SizeF = new System.Drawing.SizeF(736F, 274.2838F);
@@ -2016,6 +2016,7 @@
             this.xrLabel32,
             this.xrLabel30,
             this.xrLabel31});
+            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 1405.917F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -3086,6 +3087,7 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
+            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 819.7731F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -3697,6 +3699,15 @@
             this.calculatedField2.Expression = "GetYear(Today())+\'\'+[RaporNo]+\' / \'+[Versiyon]";
             this.calculatedField2.Name = "calculatedField2";
             // 
+            // xrPictureBox8
+            // 
+            this.xrPictureBox8.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
+            this.xrPictureBox8.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.ozecologox4, true);
+            this.xrPictureBox8.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 4.640865F);
+            this.xrPictureBox8.Name = "xrPictureBox8";
+            this.xrPictureBox8.SizeF = new System.Drawing.SizeF(107.4092F, 81.36755F);
+            this.xrPictureBox8.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            // 
             // UGD1
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -4036,5 +4047,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.XRLabel xrLabel69;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox8;
     }
 }
