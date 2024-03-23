@@ -923,7 +923,7 @@ namespace mKYS
             }
             else
             {
-                TedarikciEkle.kimin = "Kommass";
+                TedarikciEkle.kimin = "";
             }
 
 
@@ -941,7 +941,7 @@ namespace mKYS
             }          
             else
             {
-                mROOT._8.Spektrotek.SFirmaListesi.oz = "Kommass";
+                mROOT._8.Spektrotek.SFirmaListesi.oz = "";
             }
 
 

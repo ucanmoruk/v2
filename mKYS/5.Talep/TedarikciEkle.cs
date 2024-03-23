@@ -133,7 +133,7 @@ namespace mKYS.Talep
                 else
                     add.Parameters.AddWithValue("@a14", "Ozeco");
                 add.Parameters.AddWithValue("@a15", memoEdit1.Text);
-                add.Parameters.AddWithValue("@a16", yenisim);
+                add.Parameters.AddWithValue("@a16", string.IsNullOrEmpty(yenisim) ? (object)DBNull.Value : yenisim);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
@@ -213,7 +213,7 @@ namespace mKYS.Talep
                 add.Parameters.AddWithValue("@a12", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_vd.Text));
                 add.Parameters.AddWithValue("@a13", txt_vno.Text);
                 add.Parameters.AddWithValue("@a14", memoEdit1.Text);
-                add.Parameters.AddWithValue("@a15", yenisim);
+                add.Parameters.AddWithValue("@a15", string.IsNullOrEmpty(yenisim) ? (object)DBNull.Value : yenisim);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
             }
