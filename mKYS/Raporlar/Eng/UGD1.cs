@@ -53,22 +53,22 @@ namespace mKYS.Raporlar.Eng
             if (m == null || m == "")
                 pMikro.Value = null;
             else
-                pMikro.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + m;
+                pMikro.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + m;
 
             if (c == null || c == "")
                 pChallenge.Value = null;
             else
-                pChallenge.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + c;
+                pChallenge.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + c;
 
             if (s == null || s == "")
                 pStabilite.Value = null;
             else
-                pStabilite.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + s;
+                pStabilite.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + s;
 
             if (k == null || k == "")
                 pKutu.Value = null;
             else
-                pKutu.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + k;
+                pKutu.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + k;
 
 
         }

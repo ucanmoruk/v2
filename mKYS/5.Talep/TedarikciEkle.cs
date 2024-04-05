@@ -45,7 +45,7 @@ namespace mKYS.Talep
                 txt_vno.Text = dr2["VergiNo"].ToString();
                 memoEdit1.Text = dr2["Notlar"].ToString();
                 fotoname = dr2["Logo"].ToString();
-                string yol = @"http://www.cosmoliz.com/mRoot/Logo/" + fotoname;
+                string yol = @"http://www.rootarge.com/mRoot/Logo/" + fotoname;
                 pictureEdit1.LoadAsync(yol);
 
             }
@@ -105,8 +105,8 @@ namespace mKYS.Talep
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Logo" + "/" + yenisim;
-                    yeniyol = "http://" + "www.cosmoliz.com/mRoot/Logo" + "/" + yenisim;
+                    ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Logo" + "/" + yenisim;
+                    yeniyol = "http://" + "www.rootarge.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }
@@ -196,8 +196,8 @@ namespace mKYS.Talep
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "!88n2ee5Q";
-                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Logo" + "/" + yenisim;
-                    yeniyol = "http://" + "www.cosmoliz.com/mRoot/Logo" + "/" + yenisim;
+                    ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Logo" + "/" + yenisim;
+                    yeniyol = "http://" + "www.rootarge.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }

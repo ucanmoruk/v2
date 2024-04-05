@@ -102,7 +102,7 @@ namespace mKYS
                 fotoname = dre["Logo"].ToString();
             }
 
-            string yol = @"http://www.cosmoliz.com/mRoot/Logo/" + fotoname;
+            string yol = @"http://www.rootarge.com/mRoot/Logo/" + fotoname;
             pictureEdit1.LoadAsync(yol);
 
         }
@@ -192,8 +192,8 @@ namespace mKYS
                 {
                     string ftpUsername = "massgrup";
                     string ftpPassword = "Bg1$4xo2";
-                    ftpfullpath = "ftp://" + "www.cosmoliz.com/httpdocs/mRoot/Logo" + "/" + yenisim;
-                    yeniyol = "http://" + "www.cosmoliz.com/mRoot/Logo" + "/" + yenisim;
+                    ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Logo" + "/" + yenisim;
+                    yeniyol = "http://" + "www.rootarge.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }

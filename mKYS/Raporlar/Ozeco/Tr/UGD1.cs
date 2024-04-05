@@ -33,10 +33,10 @@ namespace mKYS.Raporlar.Ozeco.Tr
             }
             bgl.baglanti().Close();
 
-            pMikro.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + m;
-            pChallenge.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + c;
-            pStabilite.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + s;
-            pKutu.Value = @"http://" + "www.cosmoliz.com/mRoot/Foto" + "/" + k;
+            pMikro.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + m;
+            pChallenge.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + c;
+            pStabilite.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + s;
+            pKutu.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + k;
 
         }
 
