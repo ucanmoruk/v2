@@ -726,6 +726,7 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
+            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 964.3825F;
             this.GroupHeader1.Level = 8;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -2031,7 +2032,6 @@
             this.xrLabel50,
             this.xrLabel47,
             this.xrLabel46});
-            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 891.4587F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -2451,7 +2451,7 @@
             this.xrTableCell100.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell100.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell100.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[ADegeri]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[A]")});
             this.xrTableCell100.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrTableCell100.Multiline = true;
             this.xrTableCell100.Name = "xrTableCell100";
@@ -2634,7 +2634,6 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
-            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 819.7731F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -2825,6 +2824,8 @@
             // 
             this.xrTableCell112.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell112.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell112.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
             this.xrTableCell112.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrTableCell112.Multiline = true;
             this.xrTableCell112.Name = "xrTableCell112";
@@ -2832,6 +2833,7 @@
             this.xrTableCell112.StylePriority.UseBorders = false;
             this.xrTableCell112.StylePriority.UseFont = false;
             this.xrTableCell112.Text = "Tarih";
+            this.xrTableCell112.TextFormatString = "{0:d.MM.yyyy}";
             this.xrTableCell112.Weight = 4.8705132195541765D;
             // 
             // xrLabel68
@@ -3191,6 +3193,7 @@
             // 
             this.GroupHeader5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox4});
+            this.GroupHeader5.Expanded = false;
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[SResim]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),fals" +
                     "e ,true ))")});
@@ -3222,6 +3225,7 @@
             // 
             this.GroupHeader7.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox5});
+            this.GroupHeader7.Expanded = false;
             this.GroupHeader7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),false" +
                     " ,true ))")});
@@ -3252,7 +3256,6 @@
             this.xrLabel34,
             this.xrTable9,
             this.xrLabel35});
-            this.GroupHeader9.Expanded = false;
             this.GroupHeader9.HeightF = 524.8751F;
             this.GroupHeader9.Level = 2;
             this.GroupHeader9.Name = "GroupHeader9";
@@ -3747,7 +3750,7 @@
             this.xrTableCell82.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell82.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell82.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[ADegeri]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[A]")});
             this.xrTableCell82.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrTableCell82.Multiline = true;
             this.xrTableCell82.Name = "xrTableCell82";
