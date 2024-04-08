@@ -524,12 +524,14 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.ForeColor = System.Drawing.Color.Black;
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 20.41667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(756F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseForeColor = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -608,7 +610,7 @@
             // 
             // xrLabel9
             // 
-            this.xrLabel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.xrLabel9.BorderColor = System.Drawing.Color.Navy;
             this.xrLabel9.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -629,7 +631,7 @@
             // 
             // xrLabel8
             // 
-            this.xrLabel8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.xrLabel8.BorderColor = System.Drawing.Color.Navy;
             this.xrLabel8.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -650,7 +652,7 @@
             // 
             // xrLabel7
             // 
-            this.xrLabel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.xrLabel7.BorderColor = System.Drawing.Color.Navy;
             this.xrLabel7.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -671,11 +673,11 @@
             // 
             // xrLabel6
             // 
-            this.xrLabel6.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel6.BackColor = System.Drawing.Color.Navy;
             this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Urun]")});
             this.xrLabel6.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel6.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel6.ForeColor = System.Drawing.Color.White;
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 287.6746F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
@@ -1208,9 +1210,9 @@
             // 
             // xrLabel16
             // 
-            this.xrLabel16.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel16.BackColor = System.Drawing.Color.Navy;
             this.xrLabel16.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel16.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel16.ForeColor = System.Drawing.Color.White;
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(20.83375F, 483.9082F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
@@ -1235,9 +1237,9 @@
             // 
             // xrLabel14
             // 
-            this.xrLabel14.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel14.BackColor = System.Drawing.Color.Navy;
             this.xrLabel14.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel14.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel14.ForeColor = System.Drawing.Color.White;
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(20.83375F, 409.325F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
@@ -1250,9 +1252,9 @@
             // 
             // xrLabel13
             // 
-            this.xrLabel13.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel13.BackColor = System.Drawing.Color.Navy;
             this.xrLabel13.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel13.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel13.ForeColor = System.Drawing.Color.White;
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(20.83273F, 248.2834F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
@@ -1651,9 +1653,9 @@
             // 
             // xrLabel12
             // 
-            this.xrLabel12.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel12.BackColor = System.Drawing.Color.Navy;
             this.xrLabel12.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel12.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel12.ForeColor = System.Drawing.Color.White;
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(20.83343F, 48.69992F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
@@ -1688,7 +1690,6 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
-            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 340F;
             this.GroupHeader2.Level = 6;
             this.GroupHeader2.Name = "GroupHeader2";
@@ -1943,10 +1944,10 @@
             // 
             // xrLabel20
             // 
-            this.xrLabel20.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel20.BackColor = System.Drawing.Color.Navy;
             this.xrLabel20.BorderColor = System.Drawing.Color.Black;
             this.xrLabel20.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel20.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel20.ForeColor = System.Drawing.Color.White;
             this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(20.8333F, 0F);
             this.xrLabel20.Multiline = true;
             this.xrLabel20.Name = "xrLabel20";
@@ -2039,9 +2040,9 @@
             // 
             // xrLabel36
             // 
-            this.xrLabel36.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel36.BackColor = System.Drawing.Color.Navy;
             this.xrLabel36.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel36.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel36.ForeColor = System.Drawing.Color.White;
             this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(20.83F, 10.00001F);
             this.xrLabel36.Multiline = true;
             this.xrLabel36.Name = "xrLabel36";
@@ -2223,9 +2224,9 @@
             // 
             // xrLabel41
             // 
-            this.xrLabel41.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel41.BackColor = System.Drawing.Color.Navy;
             this.xrLabel41.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel41.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel41.ForeColor = System.Drawing.Color.White;
             this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(20.83375F, 357.0833F);
             this.xrLabel41.Multiline = true;
             this.xrLabel41.Name = "xrLabel41";
@@ -2508,9 +2509,9 @@
             // 
             // xrLabel53
             // 
-            this.xrLabel53.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel53.BackColor = System.Drawing.Color.Navy;
             this.xrLabel53.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel53.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel53.ForeColor = System.Drawing.Color.White;
             this.xrLabel53.LocationFloat = new DevExpress.Utils.PointFloat(20.83F, 828.449F);
             this.xrLabel53.Multiline = true;
             this.xrLabel53.Name = "xrLabel53";
@@ -2545,9 +2546,9 @@
             // 
             // xrLabel52
             // 
-            this.xrLabel52.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel52.BackColor = System.Drawing.Color.Navy;
             this.xrLabel52.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel52.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel52.ForeColor = System.Drawing.Color.White;
             this.xrLabel52.LocationFloat = new DevExpress.Utils.PointFloat(20.83F, 758.2641F);
             this.xrLabel52.Multiline = true;
             this.xrLabel52.Name = "xrLabel52";
@@ -2560,9 +2561,9 @@
             // 
             // xrLabel49
             // 
-            this.xrLabel49.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel49.BackColor = System.Drawing.Color.Navy;
             this.xrLabel49.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel49.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel49.ForeColor = System.Drawing.Color.White;
             this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(20.83F, 689.236F);
             this.xrLabel49.Multiline = true;
             this.xrLabel49.Name = "xrLabel49";
@@ -2599,9 +2600,9 @@
             // 
             // xrLabel46
             // 
-            this.xrLabel46.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel46.BackColor = System.Drawing.Color.Navy;
             this.xrLabel46.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel46.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel46.ForeColor = System.Drawing.Color.White;
             this.xrLabel46.LocationFloat = new DevExpress.Utils.PointFloat(20.83F, 620.2081F);
             this.xrLabel46.Multiline = true;
             this.xrLabel46.Name = "xrLabel46";
@@ -2838,9 +2839,9 @@
             // 
             // xrLabel68
             // 
-            this.xrLabel68.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel68.BackColor = System.Drawing.Color.Navy;
             this.xrLabel68.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel68.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel68.ForeColor = System.Drawing.Color.White;
             this.xrLabel68.LocationFloat = new DevExpress.Utils.PointFloat(20.83376F, 597.1574F);
             this.xrLabel68.Multiline = true;
             this.xrLabel68.Name = "xrLabel68";
@@ -2864,9 +2865,9 @@
             // 
             // xrLabel65
             // 
-            this.xrLabel65.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel65.BackColor = System.Drawing.Color.Navy;
             this.xrLabel65.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel65.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel65.ForeColor = System.Drawing.Color.White;
             this.xrLabel65.LocationFloat = new DevExpress.Utils.PointFloat(20.83295F, 484.1481F);
             this.xrLabel65.Multiline = true;
             this.xrLabel65.Name = "xrLabel65";
@@ -2879,9 +2880,9 @@
             // 
             // xrLabel64
             // 
-            this.xrLabel64.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel64.BackColor = System.Drawing.Color.Navy;
             this.xrLabel64.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel64.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel64.ForeColor = System.Drawing.Color.White;
             this.xrLabel64.LocationFloat = new DevExpress.Utils.PointFloat(20.83372F, 413.9352F);
             this.xrLabel64.Multiline = true;
             this.xrLabel64.Name = "xrLabel64";
@@ -3131,9 +3132,9 @@
             // 
             // xrLabel55
             // 
-            this.xrLabel55.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel55.BackColor = System.Drawing.Color.Navy;
             this.xrLabel55.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel55.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel55.ForeColor = System.Drawing.Color.White;
             this.xrLabel55.LocationFloat = new DevExpress.Utils.PointFloat(20.83295F, 45.13889F);
             this.xrLabel55.Multiline = true;
             this.xrLabel55.Name = "xrLabel55";
@@ -3381,9 +3382,9 @@
             // 
             // xrLabel69
             // 
-            this.xrLabel69.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel69.BackColor = System.Drawing.Color.Navy;
             this.xrLabel69.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel69.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel69.ForeColor = System.Drawing.Color.White;
             this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(20.83F, 115.21F);
             this.xrLabel69.Multiline = true;
             this.xrLabel69.Name = "xrLabel69";
@@ -3396,9 +3397,9 @@
             // 
             // xrLabel31
             // 
-            this.xrLabel31.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel31.BackColor = System.Drawing.Color.Navy;
             this.xrLabel31.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel31.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel31.ForeColor = System.Drawing.Color.White;
             this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(20.8333F, 0F);
             this.xrLabel31.Multiline = true;
             this.xrLabel31.Name = "xrLabel31";
@@ -3444,9 +3445,9 @@
             // 
             // xrLabel34
             // 
-            this.xrLabel34.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel34.BackColor = System.Drawing.Color.Navy;
             this.xrLabel34.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel34.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel34.ForeColor = System.Drawing.Color.White;
             this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(20.83152F, 240.2083F);
             this.xrLabel34.Multiline = true;
             this.xrLabel34.Name = "xrLabel34";

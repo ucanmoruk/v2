@@ -449,10 +449,10 @@
             // 
             // xrLabel11
             // 
-            this.xrLabel11.BackColor = System.Drawing.Color.Salmon;
+            this.xrLabel11.BackColor = System.Drawing.Color.Navy;
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel11.Font = new System.Drawing.Font("Futura Bk BT", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel11.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel11.ForeColor = System.Drawing.Color.White;
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(0F, 5F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
