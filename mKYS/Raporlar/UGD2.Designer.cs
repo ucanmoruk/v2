@@ -88,6 +88,7 @@
             this.calculatedField6 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField7 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField8 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -221,6 +222,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel26,
             this.xrPageInfo1,
             this.xrLabel4});
             this.BottomMargin.HeightF = 41.00001F;
@@ -433,7 +435,7 @@
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField8]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField4]=\'UYGUN DEĞİL\',\'Red\' ,\'Transparent\' )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "BackColor", "Iif([calculatedField8]=\'UYGUN DEĞİL\',\'Red\' ,\'Transparent\' )")});
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorders = false;
@@ -756,6 +758,19 @@
     "if([calculatedField7]>100,\'UYGUN\' , \'UYGUN DEĞİL\')\n)\n\n)";
             this.calculatedField8.Name = "calculatedField8";
             // 
+            // xrLabel26
+            // 
+            this.xrLabel26.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
+            this.xrLabel26.Multiline = true;
+            this.xrLabel26.Name = "xrLabel26";
+            this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel26.SizeF = new System.Drawing.SizeF(286.4219F, 22.99999F);
+            this.xrLabel26.StylePriority.UseFont = false;
+            this.xrLabel26.StylePriority.UseTextAlignment = false;
+            this.xrLabel26.Text = "www.cosmoliz.com | destek@cosmoliz.com";
+            this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // UGD2
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -853,5 +868,6 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField6;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField7;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField8;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel26;
     }
 }

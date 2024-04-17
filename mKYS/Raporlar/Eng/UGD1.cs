@@ -17,14 +17,11 @@ namespace mKYS.Raporlar.Eng
 
         sqlbaglanti bgl = new sqlbaglanti();
 
-        string m, c, s, k;
+        string m, c, s, k, fm;
 
         private void xrPictureBox8_PrintOnPage(object sender, PrintOnPageEventArgs e)
         {
-            if (e.PageIndex == 0)
-                e.Cancel = false;
-            else
-                e.Cancel = true;
+
         }
 
         private void xrLabel67_PrintOnPage(object sender, PrintOnPageEventArgs e)
@@ -69,6 +66,19 @@ namespace mKYS.Raporlar.Eng
                 pKutu.Value = null;
             else
                 pKutu.Value = @"http://" + "www.rootarge.com/mRoot/Foto" + "/" + k;
+
+            SqlCommand komut2 = new SqlCommand(@"select * from RootTedarikci where ID in (select FirmaID from rUGDListe where ID = '" + tID + "' )", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                fm = dr2["Logo"].ToString();
+            }
+            bgl.baglanti().Close();
+
+            if (fm == null || fm == "")
+                pFirmaLogo.Value = null;
+            else
+                pFirmaLogo.Value = @"http://" + "www.rootarge.com/mRoot/Logo" + "/" + fm;
 
 
         }

@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>5.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1534,6 +1534,8 @@
     <None Include="Resources\ozecologox3.jpg" />
     <None Include="Resources\ozecologox4.jpg" />
     <None Include="Resources\Kommass.jpg" />
+    <None Include="Resources\Cosmoliz-Logo-v2_sloganli.png" />
+    <None Include="Resources\Cosmoliz-Logo-v2_slogansız.png" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

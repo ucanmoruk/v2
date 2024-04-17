@@ -323,6 +323,9 @@
             this.pFirmaLogo = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.GroupHeader10 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -426,6 +429,7 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox6,
             this.xrLine1,
             this.xrTable1,
             this.xrLabel2,
@@ -525,11 +529,11 @@
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 20.41667F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(155.6251F, 20.41667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(756F, 23F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(418.5468F, 23F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseForeColor = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
@@ -539,6 +543,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel23,
             this.xrLabel4,
             this.xrPageInfo1});
             this.BottomMargin.HeightF = 41F;
@@ -1690,6 +1695,7 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
+            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 340F;
             this.GroupHeader2.Level = 6;
             this.GroupHeader2.Name = "GroupHeader2";
@@ -2033,6 +2039,7 @@
             this.xrLabel50,
             this.xrLabel47,
             this.xrLabel46});
+            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 891.4587F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -2635,6 +2642,7 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
+            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 819.7731F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -3198,7 +3206,7 @@
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[SResim]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),fals" +
                     "e ,true ))")});
-            this.GroupHeader5.HeightF = 284.1045F;
+            this.GroupHeader5.HeightF = 289.972F;
             this.GroupHeader5.Level = 7;
             this.GroupHeader5.Name = "GroupHeader5";
             // 
@@ -3248,6 +3256,7 @@
             // GroupHeader9
             // 
             this.GroupHeader9.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel70,
             this.xrTable14,
             this.xrLabel69,
             this.xrLabel31,
@@ -3257,20 +3266,21 @@
             this.xrLabel34,
             this.xrTable9,
             this.xrLabel35});
-            this.GroupHeader9.HeightF = 524.8751F;
+            this.GroupHeader9.HeightF = 488.9208F;
             this.GroupHeader9.Level = 2;
             this.GroupHeader9.Name = "GroupHeader9";
             // 
             // xrTable14
             // 
-            this.xrTable14.LocationFloat = new DevExpress.Utils.PointFloat(44.7903F, 150.8666F);
+            this.xrTable14.LocationFloat = new DevExpress.Utils.PointFloat(44.79227F, 173.52F);
             this.xrTable14.Name = "xrTable14";
             this.xrTable14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable14.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow4,
             this.xrTableRow5,
             this.xrTableRow10});
-            this.xrTable14.SizeF = new System.Drawing.SizeF(698.2079F, 75F);
+            this.xrTable14.SizeF = new System.Drawing.SizeF(60.70786F, 22.91667F);
+            this.xrTable14.Visible = false;
             // 
             // xrTableRow4
             // 
@@ -3448,7 +3458,7 @@
             this.xrLabel34.BackColor = System.Drawing.Color.Navy;
             this.xrLabel34.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel34.ForeColor = System.Drawing.Color.White;
-            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(20.83152F, 240.2083F);
+            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(17.83305F, 198.7978F);
             this.xrLabel34.Multiline = true;
             this.xrLabel34.Name = "xrLabel34";
             this.xrLabel34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -3460,7 +3470,7 @@
             // 
             // xrTable9
             // 
-            this.xrTable9.LocationFloat = new DevExpress.Utils.PointFloat(41.7896F, 282.1166F);
+            this.xrTable9.LocationFloat = new DevExpress.Utils.PointFloat(38.79112F, 240.706F);
             this.xrTable9.Name = "xrTable9";
             this.xrTable9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable9.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -3764,7 +3774,7 @@
             // xrLabel35
             // 
             this.xrLabel35.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(41.7896F, 501.4167F);
+            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(38.79112F, 460.0062F);
             this.xrLabel35.Multiline = true;
             this.xrLabel35.Name = "xrLabel35";
             this.xrLabel35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -3796,13 +3806,45 @@
             // 
             this.GroupHeader10.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox3});
-            this.GroupHeader10.Expanded = false;
             this.GroupHeader10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\',false, \nIif(IsNullOrEmpty(?pChalleng" +
                     "e),false ,true ))")});
-            this.GroupHeader10.HeightF = 283.2919F;
+            this.GroupHeader10.HeightF = 296.7043F;
             this.GroupHeader10.Level = 3;
             this.GroupHeader10.Name = "GroupHeader10";
+            // 
+            // xrPictureBox6
+            // 
+            this.xrPictureBox6.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
+            this.xrPictureBox6.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz_Logo_v2_slogansız, true);
+            this.xrPictureBox6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 12F);
+            this.xrPictureBox6.Name = "xrPictureBox6";
+            this.xrPictureBox6.SizeF = new System.Drawing.SizeF(134.7946F, 66.41664F);
+            this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
+            // 
+            // xrLabel23
+            // 
+            this.xrLabel23.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
+            this.xrLabel23.Multiline = true;
+            this.xrLabel23.Name = "xrLabel23";
+            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel23.SizeF = new System.Drawing.SizeF(286.4219F, 22.99999F);
+            this.xrLabel23.StylePriority.UseFont = false;
+            this.xrLabel23.StylePriority.UseTextAlignment = false;
+            this.xrLabel23.Text = "www.cosmoliz.com | destek@cosmoliz.com";
+            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel70
+            // 
+            this.xrLabel70.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(44.79F, 150.52F);
+            this.xrLabel70.Multiline = true;
+            this.xrLabel70.Name = "xrLabel70";
+            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel70.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel70.StylePriority.UseFont = false;
+            this.xrLabel70.Text = resources.GetString("xrLabel70.Text");
             // 
             // UGD1
             // 
@@ -4151,5 +4193,8 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel67;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader10;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox6;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel23;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel70;
     }
 }

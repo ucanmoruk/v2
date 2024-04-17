@@ -2021,7 +2021,6 @@
             this.xrLabel32,
             this.xrLabel30,
             this.xrLabel31});
-            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 1393.317F;
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -3092,7 +3091,6 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
-            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 670.5305F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -3257,6 +3255,8 @@
             // 
             this.xrTableCell112.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell112.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell112.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
             this.xrTableCell112.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrTableCell112.Multiline = true;
             this.xrTableCell112.Name = "xrTableCell112";
@@ -3264,6 +3264,7 @@
             this.xrTableCell112.StylePriority.UseBorders = false;
             this.xrTableCell112.StylePriority.UseFont = false;
             this.xrTableCell112.Text = "Tarih";
+            this.xrTableCell112.TextFormatString = "{0:d.MM.yyyy}";
             this.xrTableCell112.Weight = 4.8705132195541765D;
             // 
             // xrLabel68
