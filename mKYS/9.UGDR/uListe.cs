@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraGrid;
 using mKYS;
+using mKYS.Raporlar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,11 @@ namespace mROOT._9.UGDR
             DataTable dt = new DataTable();
 
             SqlDataAdapter da = new SqlDataAdapter(@"select l.Tarih, l.RaporNo as 'Rapor No' , l.Versiyon, t.Ad as 'Firma' , 
-            l.Barkod, l.Urun, l.Miktar, l.RaporDurum as 'Durum', l.ID  from rUGDListe l 
+            l.Barkod, l.Urun, l.Miktar, l.Tip1 +' - '+g.UrunTipi as 'Ürün Tipi', l.A as 'A Değeri',
+            l.RaporDurum as 'Durum', l.ID  from rUGDListe l 
             left join RootTedarikci t on l.FirmaID = t.ID
-            where l.Durum = 'Aktif' and l.BirimID = '"+Giris.birimID+"' order by l.ID desc", bgl.baglanti());
+            left join rUGDTip g on l.Tip2 =g.ID 
+            where l.Durum = 'Aktif' and l.BirimID = '" + Giris.birimID+"' order by l.ID desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView1.Columns["ID"].Visible = false;
@@ -38,14 +41,16 @@ namespace mROOT._9.UGDR
 
         void gridduzen()
         {
-            this.gridView1.Columns[0].Width = 70;
-            this.gridView1.Columns[1].Width = 50;
-            this.gridView1.Columns[2].Width = 50;
-            this.gridView1.Columns[3].Width = 170;
-            this.gridView1.Columns[4].Width = 90;
+            this.gridView1.Columns[0].Width = 60;
+            this.gridView1.Columns[1].Width = 40;
+            this.gridView1.Columns[2].Width = 30;
+            this.gridView1.Columns[3].Width = 200;
+            this.gridView1.Columns[4].Width = 80;
             this.gridView1.Columns[5].Width = 170;
-            this.gridView1.Columns[6].Width = 70;
-            this.gridView1.Columns[7].Width = 90;
+            this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[7].Width = 110;
+            this.gridView1.Columns[8].Width = 50;
+            this.gridView1.Columns[9].Width = 90;
 
         }
 
@@ -72,6 +77,7 @@ namespace mROOT._9.UGDR
         {
             //Teklif Yazdır
             // mKYS.Raporlar.TeklifMS.tID = lID;
+                                 
 
             if (Giris.birimID == "1005")
             {
@@ -79,6 +85,7 @@ namespace mROOT._9.UGDR
                 mKYS.Raporlar.Ozeco.Tr.UGD2.tID = lID;
                 mKYS.Raporlar.Ozeco.Tr.UGD3.tID = lID;
                 mKYS.Raporlar.Ozeco.Tr.UGD4.tID = lID;
+                frmPrint.name = "UGDR - " + dosyadi;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 {
                     frm.OzecoTr();
@@ -91,6 +98,7 @@ namespace mROOT._9.UGDR
                 mKYS.Raporlar.UGD2.tID = lID;
                 mKYS.Raporlar.UGD3.tID = lID;
                 mKYS.Raporlar.UGD4.tID = lID;
+                frmPrint.name = "UGDR - " + dosyadi;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 {
                     frm.UGDR();
@@ -99,16 +107,27 @@ namespace mROOT._9.UGDR
             }
             else
             {
-
-                mKYS.Raporlar.UGD1.tID = lID;
-                mKYS.Raporlar.UGD2.tID = lID;
-                mKYS.Raporlar.UGD3.tID = lID;
-                mKYS.Raporlar.UGD4.tID = lID;
-                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
                 {
-                    frm.UGDR();
-                    frm.ShowDialog();
+                    id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    listeID = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                    mKYS.Raporlar.UGD1.tID = listeID;
+                    mKYS.Raporlar.UGD2.tID = listeID;
+                    mKYS.Raporlar.UGD3.tID = listeID;
+                    mKYS.Raporlar.UGD4.tID = listeID;
+                    frmPrint.name = "UGDR - " + dosyadi;
+                    using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                    {
+                        frm.UGDR();
+                        frm.ShowDialog();
+                    }
+
+
                 }
+
+              
 
 
                 //mKYS.Raporlar.Cosmoliz.UGD1.tID = lID;
@@ -182,7 +201,7 @@ namespace mROOT._9.UGDR
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "Rapor No" || e.Column.FieldName == "Versiyon" || e.Column.FieldName == "Tarih" || e.Column.FieldName == "Miktar" || e.Column.FieldName == "Durum")
+            if (e.Column.FieldName == "Rapor No" || e.Column.FieldName == "A Değeri" || e.Column.FieldName == "Versiyon" || e.Column.FieldName == "Tarih" || e.Column.FieldName == "Miktar" || e.Column.FieldName == "Durum")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 
@@ -190,7 +209,6 @@ namespace mROOT._9.UGDR
         {
             if (e.KeyData == Keys.F5)
             {
-
                 listele();
             }
         }
@@ -211,8 +229,12 @@ namespace mROOT._9.UGDR
                 komutSil.Parameters.AddWithValue("@a1", "İptal");
                 komutSil.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                listele();
+                listele();              
+
+
             }
+
+
 
         }
 
@@ -249,28 +271,51 @@ namespace mROOT._9.UGDR
 
         }
 
+        string id, listeID;
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //gönderildi
-            SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
-            komutSil.Parameters.AddWithValue("@p1", lID);
-            komutSil.Parameters.AddWithValue("@a1", "Gönderildi");
-            komutSil.ExecuteNonQuery();
-            bgl.baglanti().Close();
+            //SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
+            //komutSil.Parameters.AddWithValue("@p1", lID);
+            //komutSil.Parameters.AddWithValue("@a1", "Gönderildi");
+            //komutSil.ExecuteNonQuery();
+            //bgl.baglanti().Close();
+            //listele();
+            ////DialogResult Secim = new DialogResult();
+
+            ////Secim = MessageBox.Show(fNo + " numaralı faturada kısmi ödeme mevcut ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            ////if (Secim == DialogResult.Yes)
+            ////{
+            ////    SqlCommand komutSil = new SqlCommand("update MSListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
+            ////    komutSil.Parameters.AddWithValue("@p1", lID);
+            ////    komutSil.Parameters.AddWithValue("@a1", "Kısmı Ödeme");
+            ////    komutSil.ExecuteNonQuery();
+            ////    bgl.baglanti().Close();
+            ////    listele();
+            ////}
+
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            {
+                id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                listeID = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                try
+                {
+                    SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
+                    komutSil.Parameters.AddWithValue("@p1", listeID);
+                    komutSil.Parameters.AddWithValue("@a1", "Gönderildi");
+                    komutSil.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hata 11:" + ex);
+                }
+            }
             listele();
-            //DialogResult Secim = new DialogResult();
-
-            //Secim = MessageBox.Show(fNo + " numaralı faturada kısmi ödeme mevcut ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            //if (Secim == DialogResult.Yes)
-            //{
-            //    SqlCommand komutSil = new SqlCommand("update MSListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-            //    komutSil.Parameters.AddWithValue("@p1", lID);
-            //    komutSil.Parameters.AddWithValue("@a1", "Kısmı Ödeme");
-            //    komutSil.ExecuteNonQuery();
-            //    bgl.baglanti().Close();
-            //    listele();
-            //}
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -304,35 +349,49 @@ namespace mROOT._9.UGDR
                 mKYS.Raporlar.Ozeco.En.UGD2.tID = lID;
                 mKYS.Raporlar.Ozeco.En.UGD3.tID = lID;
                 mKYS.Raporlar.Ozeco.En.UGD4.tID = lID;
+                frmPrint.name = "UGDR - " + dosyadi;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 {
                     frm.OzecoEn();
                     frm.ShowDialog();
                 }
             }
-            else
+            else if (Giris.birimID == "1006")
             {
-
                 mKYS.Raporlar.Eng.UGD1.tID = lID;
                 mKYS.Raporlar.Eng.UGD2.tID = lID;
                 mKYS.Raporlar.Eng.UGD3.tID = lID;
                 mKYS.Raporlar.Eng.UGD4.tID = lID;
+                frmPrint.name = "UGDR - " + dosyadi;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
-                { 
-                   frm.UGDEn();
-                   frm.ShowDialog();
+                {
+                    frm.UGDEn();
+                    frm.ShowDialog();
                 }
 
+            }
+            else
+            {                                
 
-                //mKYS.Raporlar.UGD1.tID = lID;
-                //mKYS.Raporlar.UGD2.tID = lID;
-                //mKYS.Raporlar.UGD3.tID = lID;
-                //mKYS.Raporlar.UGD4.tID = lID;
-                //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
-                //{
-                //    frm.UGDR();
-                //    frm.ShowDialog();
-                //}
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
+                    id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    listeID = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                    mKYS.Raporlar.Eng.UGD1.tID = listeID;
+                    mKYS.Raporlar.Eng.UGD2.tID = listeID;
+                    mKYS.Raporlar.Eng.UGD3.tID = listeID;
+                    mKYS.Raporlar.Eng.UGD4.tID = listeID;
+                    frmPrint.name = "UGDR - " + dosyadi;
+                    using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                    {
+                        frm.UGDR();
+                        frm.ShowDialog();
+                    }
+
+
+                }
             }
         }
 
@@ -367,28 +426,51 @@ namespace mROOT._9.UGDR
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //hazırlanıypr
-            SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
-            komutSil.Parameters.AddWithValue("@p1", lID);
-            komutSil.Parameters.AddWithValue("@a1", "Hazırlanıyor");
-            komutSil.ExecuteNonQuery();
-            bgl.baglanti().Close();
+            ////hazırlanıypr
+            //SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
+            //komutSil.Parameters.AddWithValue("@p1", lID);
+            //komutSil.Parameters.AddWithValue("@a1", "Hazırlanıyor");
+            //komutSil.ExecuteNonQuery();
+            //bgl.baglanti().Close();
+            //listele();
+            ////DialogResult Secim = new DialogResult();
+
+            ////Secim = MessageBox.Show(fNo + " numaralı teklif onaylandı mı ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            ////if (Secim == DialogResult.Yes)
+            ////{
+            ////    SqlCommand komutSil = new SqlCommand("update STeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
+            ////    komutSil.Parameters.AddWithValue("@p1", lID);
+            ////    komutSil.Parameters.AddWithValue("@a1", "Onaylandı");
+            ////    komutSil.ExecuteNonQuery();
+            ////    bgl.baglanti().Close();
+            ////    listele();
+            ////}
+
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            {
+                id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                listeID = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                try
+                {
+                    SqlCommand komutSil = new SqlCommand("update rUGDListe set RaporDurum=@a1 where ID = @p1", bgl.baglanti());
+                    komutSil.Parameters.AddWithValue("@p1", listeID);
+                    komutSil.Parameters.AddWithValue("@a1", "Hazırlanıyor");
+                    komutSil.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hata 11:" + ex);
+                }
+            }
+
             listele();
-            //DialogResult Secim = new DialogResult();
-
-            //Secim = MessageBox.Show(fNo + " numaralı teklif onaylandı mı ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            //if (Secim == DialogResult.Yes)
-            //{
-            //    SqlCommand komutSil = new SqlCommand("update STeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-            //    komutSil.Parameters.AddWithValue("@p1", lID);
-            //    komutSil.Parameters.AddWithValue("@a1", "Onaylandı");
-            //    komutSil.ExecuteNonQuery();
-            //    bgl.baglanti().Close();
-            //    listele();
-            //}
         }
-        string rno;
+        string rno, dosyadi;
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
@@ -396,6 +478,7 @@ namespace mROOT._9.UGDR
             rno = dr["Rapor No"].ToString();
             //firID = dr["FirmaID"].ToString();
             //tutar = dr["Toplam Tutar"].ToString();
+            dosyadi = dr["Urun"].ToString();
         }
     }
 }

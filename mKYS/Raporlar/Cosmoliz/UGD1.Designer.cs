@@ -1624,7 +1624,7 @@
             this.xrTableCell16.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell16.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[UrunTipi]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[UygulamaBolgesi]")});
             this.xrTableCell16.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";

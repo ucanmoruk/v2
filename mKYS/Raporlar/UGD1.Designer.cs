@@ -44,6 +44,7 @@
             this.DetailData3_Odd = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -54,6 +55,7 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -277,6 +279,7 @@
             this.GroupHeader7 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPictureBox5 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.GroupHeader9 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable14 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -323,9 +326,6 @@
             this.pFirmaLogo = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.GroupHeader10 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -436,6 +436,15 @@
             this.xrLabel1});
             this.TopMargin.HeightF = 136F;
             this.TopMargin.Name = "TopMargin";
+            // 
+            // xrPictureBox6
+            // 
+            this.xrPictureBox6.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
+            this.xrPictureBox6.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz_Logo_v2_slogansız, true);
+            this.xrPictureBox6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 12F);
+            this.xrPictureBox6.Name = "xrPictureBox6";
+            this.xrPictureBox6.SizeF = new System.Drawing.SizeF(134.7946F, 66.41664F);
+            this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
             // xrLine1
             // 
@@ -548,6 +557,19 @@
             this.xrPageInfo1});
             this.BottomMargin.HeightF = 41F;
             this.BottomMargin.Name = "BottomMargin";
+            // 
+            // xrLabel23
+            // 
+            this.xrLabel23.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
+            this.xrLabel23.Multiline = true;
+            this.xrLabel23.Name = "xrLabel23";
+            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel23.SizeF = new System.Drawing.SizeF(286.4219F, 22.99999F);
+            this.xrLabel23.StylePriority.UseFont = false;
+            this.xrLabel23.StylePriority.UseTextAlignment = false;
+            this.xrLabel23.Text = "www.cosmoliz.com | destek@cosmoliz.com";
+            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4
             // 
@@ -733,7 +755,6 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 964.3825F;
             this.GroupHeader1.Level = 8;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -1610,7 +1631,7 @@
             this.xrTableCell16.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell16.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[UrunTipi]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[UygulamaBolgesi]")});
             this.xrTableCell16.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
@@ -3270,6 +3291,17 @@
             this.GroupHeader9.Level = 2;
             this.GroupHeader9.Name = "GroupHeader9";
             // 
+            // xrLabel70
+            // 
+            this.xrLabel70.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(44.79F, 150.52F);
+            this.xrLabel70.Multiline = true;
+            this.xrLabel70.Name = "xrLabel70";
+            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel70.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel70.StylePriority.UseFont = false;
+            this.xrLabel70.Text = resources.GetString("xrLabel70.Text");
+            // 
             // xrTable14
             // 
             this.xrTable14.LocationFloat = new DevExpress.Utils.PointFloat(44.79227F, 173.52F);
@@ -3812,39 +3844,6 @@
             this.GroupHeader10.HeightF = 296.7043F;
             this.GroupHeader10.Level = 3;
             this.GroupHeader10.Name = "GroupHeader10";
-            // 
-            // xrPictureBox6
-            // 
-            this.xrPictureBox6.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
-            this.xrPictureBox6.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz_Logo_v2_slogansız, true);
-            this.xrPictureBox6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 12F);
-            this.xrPictureBox6.Name = "xrPictureBox6";
-            this.xrPictureBox6.SizeF = new System.Drawing.SizeF(134.7946F, 66.41664F);
-            this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
-            // 
-            // xrLabel23
-            // 
-            this.xrLabel23.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
-            this.xrLabel23.Multiline = true;
-            this.xrLabel23.Name = "xrLabel23";
-            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel23.SizeF = new System.Drawing.SizeF(286.4219F, 22.99999F);
-            this.xrLabel23.StylePriority.UseFont = false;
-            this.xrLabel23.StylePriority.UseTextAlignment = false;
-            this.xrLabel23.Text = "www.cosmoliz.com | destek@cosmoliz.com";
-            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel70
-            // 
-            this.xrLabel70.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(44.79F, 150.52F);
-            this.xrLabel70.Multiline = true;
-            this.xrLabel70.Name = "xrLabel70";
-            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel70.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel70.StylePriority.UseFont = false;
-            this.xrLabel70.Text = resources.GetString("xrLabel70.Text");
             // 
             // UGD1
             // 

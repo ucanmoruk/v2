@@ -939,11 +939,14 @@ namespace mKYS
             {
                 mROOT._8.Spektrotek.SFirmaListesi.oz = "Ozeco";
             }          
-            else
+            else if(Anasayfa.birimID == 1003)
+            {
+                mROOT._8.Spektrotek.SFirmaListesi.oz = "Spektrotek";
+            }
+            else 
             {
                 mROOT._8.Spektrotek.SFirmaListesi.oz = "";
             }
-
 
 
 

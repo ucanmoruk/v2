@@ -56,12 +56,12 @@ namespace mROOT._8.Spektrotek
                 gridView1.Columns["VergiNo"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
                 //  gridView1.Columns["Durum"].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             }
-            else if (oz == "Kommass")
+            else if (oz == "Spektrotek")
             {
                 DataTable dt = new DataTable();
                 //select Row_number() over(order by t.Tur) as 'No',
                 SqlDataAdapter da = new SqlDataAdapter(@"select Tur2 as 'Kategori', Ad as 'Firma Adı', Adres, Tur, Yetkili, Telefon, Email, Web, VergiDairesi, VergiNo , Notlar, ID from RootTedarikci
-            where Durum = 'Aktif' and Kimin = 'Root' order by Ad", bgl.baglanti());
+            where Durum = 'Aktif' and Kimin = 'Spektrotek' order by Ad", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
                 //  gridView1.Columns["ID"].Visible = false;
@@ -89,7 +89,7 @@ namespace mROOT._8.Spektrotek
                 DataTable dt = new DataTable();
                 //select Row_number() over(order by t.Tur) as 'No',
                 SqlDataAdapter da = new SqlDataAdapter(@"select Tur2 as 'Kategori', Ad as 'Firma Adı', Adres, Tur, Yetkili, Telefon, Email, Web, VergiDairesi, VergiNo , Notlar, ID from RootTedarikci
-            where Durum = 'Aktif' and Kimin = 'Spektrotek' order by Ad", bgl.baglanti());
+                 where Durum = 'Aktif' order by Ad", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
                 //  gridView1.Columns["ID"].Visible = false;

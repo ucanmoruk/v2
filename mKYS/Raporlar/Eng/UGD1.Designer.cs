@@ -175,6 +175,7 @@
             this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader3 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable14 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -304,7 +305,6 @@
             this.GroupHeader8 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
             this.pFirmaLogo = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -736,7 +736,6 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 958.7001F;
             this.GroupHeader1.Level = 7;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -2014,6 +2013,17 @@
             this.GroupHeader3.Level = 1;
             this.GroupHeader3.Name = "GroupHeader3";
             this.GroupHeader3.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            // 
+            // xrLabel70
+            // 
+            this.xrLabel70.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(44.79F, 150.52F);
+            this.xrLabel70.Multiline = true;
+            this.xrLabel70.Name = "xrLabel70";
+            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel70.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel70.StylePriority.UseFont = false;
+            this.xrLabel70.Text = resources.GetString("xrLabel70.Text");
             // 
             // xrLabel4
             // 
@@ -3530,17 +3540,6 @@
             // 
             this.pFirmaLogo.Description = "pFirmaLogo";
             this.pFirmaLogo.Name = "pFirmaLogo";
-            // 
-            // xrLabel70
-            // 
-            this.xrLabel70.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(44.79F, 150.52F);
-            this.xrLabel70.Multiline = true;
-            this.xrLabel70.Name = "xrLabel70";
-            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel70.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel70.StylePriority.UseFont = false;
-            this.xrLabel70.Text = resources.GetString("xrLabel70.Text");
             // 
             // UGD1
             // 

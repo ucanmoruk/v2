@@ -119,6 +119,7 @@ namespace mKYS.Raporlar
 
         }
 
+        public static string name;
         public void UGDR()
         {
             UGD1 rapor = new UGD1();
@@ -128,7 +129,7 @@ namespace mKYS.Raporlar
             {
                 p.Visible = false;
                 rapor.bilgi();
-             //   rapor.Name = name;
+                rapor.Name = name;
                 rapor.CreateDocument();
 
                 UGD2 rapor2 = new UGD2();
@@ -170,7 +171,7 @@ namespace mKYS.Raporlar
             {
                 p.Visible = false;
                 rapor.bilgi();
-                //   rapor.Name = name;
+                rapor.Name = name;
                 rapor.CreateDocument();
 
                 Ozeco.Tr.UGD2 rapor2 = new Ozeco.Tr.UGD2();
@@ -211,7 +212,7 @@ namespace mKYS.Raporlar
             {
                 p.Visible = false;
                 rapor.bilgi();
-                //   rapor.Name = name;
+                rapor.Name = name;
                 rapor.CreateDocument();
 
                 Cosmoliz.UGD2 rapor2 = new Cosmoliz.UGD2();
@@ -253,7 +254,7 @@ namespace mKYS.Raporlar
             {
                 p.Visible = false;
                 rapor.bilgi();
-                //   rapor.Name = name;
+                rapor.Name = name;
                 rapor.CreateDocument();
 
                 Ozeco.En.UGD2 rapor2 = new Ozeco.En.UGD2();
@@ -294,7 +295,7 @@ namespace mKYS.Raporlar
             {
                 p.Visible = false;
                 rapor.bilgi();
-                //   rapor.Name = name;
+                rapor.Name = name;
                 rapor.CreateDocument();
 
                 Eng.UGD2 rapor2 = new Eng.UGD2();
