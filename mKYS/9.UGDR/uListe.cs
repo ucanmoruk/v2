@@ -386,7 +386,7 @@ namespace mROOT._9.UGDR
                     frmPrint.name = "UGDR - " + dosyadi;
                     using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                     {
-                        frm.UGDR();
+                        frm.UGDEn();
                         frm.ShowDialog();
                     }
 
