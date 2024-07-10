@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>5.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -57,10 +57,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F79627A02C480CFBEADAAE2ABF92A156C145098F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CFC71F53121C0D260925A6CE5D0635366A7C5AA8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>mKYS_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>mKYS_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -1467,6 +1467,7 @@
       <DependentUpon>massgrup_massDataSet.xsd</DependentUpon>
     </None>
     <None Include="mKYS_1_TemporaryKey.pfx" />
+    <None Include="mKYS_2_TemporaryKey.pfx" />
     <None Include="mKYS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

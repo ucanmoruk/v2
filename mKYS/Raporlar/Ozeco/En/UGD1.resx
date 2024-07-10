@@ -199,8 +199,8 @@ Other documents in the Information File of the product are listed below:
 
 a- Label information
 b- Formulation-production method
-c- GMP and Contract Contract
-d- Result of Stability Test</value>
+c- GMP Certificate
+d- Result of Stability Test, Challenge Test and Microbiological Test</value>
   </data>
   <data name="xrLabel51.Text" xml:space="preserve">
     <value>A system should be established to collect, document, establish causality and manage the undesirable effects resulting from the use of the product after it is placed on the market, and when serious undesirable effects occur, the Agency should be informed in accordance with the "Turkish Medicines and Medical Devices Agency Guideline on Notification of Serious Undesirable Effects (CIE) by the Manufacturer to the Agency".
@@ -263,8 +263,6 @@ Iif([rUGDListerUGDDetay].[Mikro]='True', 'Microbiological test is available in t
   </data>
   <data name="xrLabel56.Text" xml:space="preserve">
     <value>While preparing the cosmetic product safety report, the toxicological profile of the product components and ingredients, chemical structure, expected interactions (MSDS, allergen list, IFRA certificate, etc.), legal requirements and compliance with the legislation for the product and raw materials, durability data of the product, antimicrobial test data and packaging material. compatibility was evaluated.
-Finished product specifications and raw material specifications received from the manufacturer for each raw material were evaluated. The stability of the cosmetic product at different temperatures and its sensitivity to moisture should be evaluated under the tested storage conditions. Storage conditions and duration of the selected study should be sufficient to include storage, transportation and subsequent use. An accelerated stability study was carried out for this product, the durability of the product was tested under two different conditions. The stability test evaluation report is given in the annex of the Product Information File. 
-While preparing the cosmetic product safety report, the toxicological profile of the product components and ingredients, chemical structure, expected interactions (MSDS, allergen list, IFRA certificate, etc.), legal requirements and compliance with the legislation for the product and raw materials, durability data of the product, antimicrobial test data and packaging material. compatibility was evaluated.
 Finished product specifications and raw material specifications received from the manufacturer for each raw material were evaluated. The stability of the cosmetic product at different temperatures and its sensitivity to moisture should be evaluated under the tested storage conditions. Storage conditions and duration of the selected study should be sufficient to include storage, transportation and subsequent use. An accelerated stability study was carried out for this product, the durability of the product was tested under two different conditions. The stability test evaluation report is given in the annex of the Product Information File. </value>
   </data>
 </root>

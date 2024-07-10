@@ -388,7 +388,6 @@
             this.xrTableCell22.StylePriority.UseBorderColor = false;
             this.xrTableCell22.StylePriority.UseBorders = false;
             this.xrTableCell22.Text = "C (%)";
-            this.xrTableCell22.TextFormatString = "{0:0.000}";
             this.xrTableCell22.Weight = 0.654627661908192D;
             // 
             // xrTableCell23
@@ -428,7 +427,6 @@
             this.xrTableCell25.StylePriority.UseBorderColor = false;
             this.xrTableCell25.StylePriority.UseBorders = false;
             this.xrTableCell25.Text = "SED";
-            this.xrTableCell25.TextFormatString = "{0:0.00}";
             this.xrTableCell25.Weight = 0.8459306275111288D;
             // 
             // xrTableCell26
@@ -455,7 +453,7 @@
             this.xrTableCell27.StylePriority.UseBorderColor = false;
             this.xrTableCell27.StylePriority.UseBorders = false;
             this.xrTableCell27.Text = "MOS";
-            this.xrTableCell27.TextFormatString = "{0:#.00}";
+            this.xrTableCell27.TextFormatString = "{0:0.00}";
             this.xrTableCell27.Weight = 0.83052407769245384D;
             // 
             // xrTableCell28
