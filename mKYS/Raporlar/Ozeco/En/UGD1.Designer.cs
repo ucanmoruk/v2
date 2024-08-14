@@ -2203,7 +2203,7 @@
             this.xrLabel50.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
             this.xrLabel50.StylePriority.UseFont = false;
             this.xrLabel50.Text = "Data on the conformity control of the raw materials in the product formulation wi" +
-    "th the annexes of the Cosmetics Regulation are presented in Annex-3.";
+    "th the annexes of the Cosmetics Regulation are presented in Annex-2.";
             // 
             // xrLabel47
             // 

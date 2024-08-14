@@ -610,7 +610,8 @@ namespace mROOT._9.UGDR
 
                 // open.InitialDirectory = "C:\\";
                 open.InitialDirectory = path;
-                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*";
+                open.Filter = "Fotoğraf (*.jpg)|*.jpg|Tüm Dosyalar(*.*)|*.*" +
+                    "|Image Files|*.jpg;*.png";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
                     rstabilite = open.FileName;

@@ -383,7 +383,6 @@
             this.xrTableCell27.StylePriority.UseBorderColor = false;
             this.xrTableCell27.StylePriority.UseBorders = false;
             this.xrTableCell27.Text = "MOS";
-            this.xrTableCell27.TextFormatString = "{0:n2}";
             this.xrTableCell27.Weight = 1.2056572544499296D;
             // 
             // xrTableCell28
