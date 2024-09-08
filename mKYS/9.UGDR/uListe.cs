@@ -413,6 +413,73 @@ namespace mROOT._9.UGDR
             }
         }
 
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //cpnp
+
+          
+            if (Giris.birimID == "1005")
+            {
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
+                    id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    listeID = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD1.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD2.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD3.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD4.tID = lID;
+                    frmPrint.name = "PIF - " + dosyadi;
+                    using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                    {
+                        frm.CPNP();
+                        frm.ShowDialog();
+                    }
+
+
+                }
+            }
+            else if (Giris.birimID == "1006")
+            {
+                mKYS.Raporlar.Eng.UGD1.tID = lID;
+                mKYS.Raporlar.Eng.UGD2.tID = lID;
+                mKYS.Raporlar.Eng.UGD3.tID = lID;
+                mKYS.Raporlar.Eng.UGD4.tID = lID;
+                frmPrint.name = "UGDR - " + dosyadi;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.UGDEn();
+                    frm.ShowDialog();
+                }
+
+            }
+            else
+            {
+
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
+                    id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    listeID = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD1.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD2.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD3.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD4.tID = lID;
+                    frmPrint.name = "PIF - " + dosyadi;
+                    using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                    {
+                        frm.CPNP();
+                        frm.ShowDialog();
+                    }
+
+
+                }
+            }
+
+        }
+
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //sil   

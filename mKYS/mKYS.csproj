@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>5.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -395,6 +395,30 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Raporlar\Eng\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\Cpnp\UGD4.Designer.cs">
       <DependentUpon>UGD4.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Ozeco\En\UGD1.cs">
@@ -1142,6 +1166,18 @@
       <DependentUpon>UGD3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Eng\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Cpnp\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Cpnp\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Cpnp\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\Cpnp\UGD4.resx">
       <DependentUpon>UGD4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Ozeco\En\UGD1.resx">
