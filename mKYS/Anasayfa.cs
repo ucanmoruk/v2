@@ -74,7 +74,7 @@ namespace mKYS
             }
         }
 
-        public static string ad, soyad, path, kpath, gorev, tamad;
+        public static string ad, soyad, path, kpath, gorev, tamad, kullanicifirmaID;
         public static int firmaID, birimID;
         void kullanicibul()
         {
@@ -156,29 +156,29 @@ namespace mKYS
 
             if (talep == 0 || talep.ToString() == null)
             {
-                ribbonPageGroup5.Visible = false;
-                ribbonPageGroup8.Visible = false;
+               // ribbonPageGroup5.Visible = false;
+                //ribbonPageGroup8.Visible = false;
             }
             else if (talep == 1)
             {
-                ribbonPageGroup8.Visible = false;
-                ribbonPageGroup5.Visible = true;
+                // ribbonPageGroup8.Visible = false;
+                // ribbonPageGroup5.Visible = true;
             }
             else if (talep == 2)
             {
-                ribbonPageGroup5.Visible = true;
-                ribbonPageGroup8.Visible = true;
-                ribbonPageGroup17.Visible = true;
+                // ribbonPageGroup5.Visible = true;
+                // ribbonPageGroup8.Visible = true;
+                // ribbonPageGroup17.Visible = true;
             }
             else if (talep == 3 )
             {
-                ribbonPageGroup10.Visible = true;
-                ribbonPageGroup27.Visible = true;
-                ribbonPageGroup5.Visible = true;
-                ribbonPageGroup8.Visible = true;
-                ribbonPageGroup17.Visible = true;
+                //  ribbonPageGroup10.Visible = true;
+                // ribbonPageGroup27.Visible = true;
+                // ribbonPageGroup5.Visible = true;
+                //  ribbonPageGroup8.Visible = true;
+                // ribbonPageGroup17.Visible = true;
             }
-                
+
 
             if (egitim == 0 || egitim.ToString() == null)
                 ribbonPageGroup23.Visible = false;
@@ -202,11 +202,11 @@ namespace mKYS
             //   yetkibul();
 
             //    DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("The Bezier");
-            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.Dragonfly);
+             UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.OfficeColorful);
 
             if (kullanici == "2" || kullanici == "1002")
             {
-                muhasebe.Visible = true;
+                // muhasebe.Visible = true;
                 barButtonItem75.Visibility = BarItemVisibility.Always;
                 barButtonItem76.Visibility = BarItemVisibility.Always;
             }
@@ -214,7 +214,7 @@ namespace mKYS
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
-                ribbonPage2.Visible = false;
+                //  ribbonPage2.Visible = false;
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
@@ -226,7 +226,7 @@ namespace mKYS
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
-                ribbonPage2.Visible = false;
+                //  ribbonPage2.Visible = false;
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
@@ -238,7 +238,7 @@ namespace mKYS
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
-                ribbonPage2.Visible = false;
+                // ribbonPage2.Visible = false;
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
@@ -249,12 +249,14 @@ namespace mKYS
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
-                ribbonPage2.Visible = false;
+                //  ribbonPage2.Visible = false;
                 ribbonPage3.Visible = false;
                 ribbonPage5.Visible = false;
                 ribbonPage10.Visible = false;
                 ribbonPage9.Visible = false;
                 ribbonPage11.Visible = true;
+                barButtonItem90.Visibility = BarItemVisibility.Never;
+                btnhammadderp.Visibility = BarItemVisibility.Always;
             }
 
             ribbonPageGroup25.AllowTextClipping = false;
@@ -409,11 +411,11 @@ namespace mKYS
             }
         }
 
-        private Dokuman.DokumanMaster master; 
+        private Dokuman.DokumanMaster master;
         public Anasayfa(Dokuman.DokumanMaster master)
         {
-            InitializeComponent();
-            this.master = master;
+            //InitializeComponent();
+            //this.master = master;
         }
 
         private void barButtonItem50_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -693,14 +695,14 @@ namespace mKYS
             }
         }
 
-        Analiz.AnalizListesi anal;
+        Musteri.AnalizListesi anal;
         private void barButtonItem69_ItemClick(object sender, ItemClickEventArgs e)
         {
 
             
             if (anal == null || anal.IsDisposed)
             {
-                anal = new Analiz.AnalizListesi();
+                anal = new Musteri.AnalizListesi();
                 anal.MdiParent = this;
                 anal.Show();
             }
@@ -1051,6 +1053,144 @@ namespace mKYS
                 sal.MdiParent = this;
                 sal.Show();
             }
+        }
+
+        mROOT._8.Spektrotek.TeklifIcerik tel;
+        private void btn_teklifdetay_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tel == null || tel.IsDisposed)
+            {
+                tel = new mROOT._8.Spektrotek.TeklifIcerik();
+                tel.MdiParent = this;
+                tel.Show();
+            }
+        }
+
+        NKR2 n2;
+        private void barButtonItem108_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (n2 == null || n2.IsDisposed)
+            {
+                n2 = new NKR2();
+                n2.MdiParent = this;
+                n2.Show();
+            }
+        }
+
+        private void barButtonItem109_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            NumuneKabul nk = new NumuneKabul();
+            nk.Show();
+        }
+
+        Numune.HizmetTermin ht;
+        private void barButtonItem111_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ht == null || ht.IsDisposed)
+            {
+                ht = new Numune.HizmetTermin();
+                ht.MdiParent = this;
+                ht.Show();
+            }
+        }
+
+        Analiz.Analiz.AnalizListesi kanal;
+        private void barButtonItem117_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (kanal == null || kanal.IsDisposed)
+            {
+                kanal = new Analiz.Analiz.AnalizListesi();
+                kanal.MdiParent = this;
+                kanal.Show();
+            }
+        }
+
+        TalepListe tels;
+        private void barButtonItem112_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tels == null || tels.IsDisposed)
+            {
+                tels = new TalepListe();
+                tels.MdiParent = this;
+                tels.Show();
+            }
+        }
+        Numune.RaporMaster rmas;
+        private void barButtonItem113_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (rmas == null || rmas.IsDisposed)
+            {
+                rmas = new Numune.RaporMaster();
+                rmas.MdiParent = this;
+                rmas.Show();
+            }
+        }
+
+        HammaddeListesi_rp rep;
+        private void btnhammadderp_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (rep == null || rep.IsDisposed)
+            {
+                rep = new HammaddeListesi_rp();
+                rep.MdiParent = this;
+                rep.Show();
+            }
+        }
+
+        Musteri.GorusmeList gol;
+        private void barButtonItem121_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (gol == null || gol.IsDisposed)
+            {
+                gol = new Musteri.GorusmeList();
+                gol.MdiParent = this;
+                gol.Show();
+            }
+        }
+        Musteri.Teklif te;
+        private void barButtonItem119_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (te == null || te.IsDisposed)
+            {
+                te = new Musteri.Teklif();
+                te.MdiParent = this;
+                te.Show();
+            }
+        }
+
+        Musteri.ProformaListesi pol;
+        private void barButtonItem118_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (pol == null || pol.IsDisposed)
+            {
+                pol = new Musteri.ProformaListesi();
+                pol.MdiParent = this;
+                pol.Show();
+            }
+        }
+
+        Musteri.Faturax fx;
+        private void barButtonItem120_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (fx == null || fx.IsDisposed)
+            {
+                fx = new Musteri.Faturax();
+                fx.MdiParent = this;
+                fx.Show();
+            }
+        }
+
+        private void barButtonItem122_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._9.UGDR.cosIng cos = new mROOT._9.UGDR.cosIng();
+            cos.Show();
+
+        }
+
+        private void barButtonItem114_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Numune.RaporYukle ry = new Numune.RaporYukle();
+            ry.Show();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

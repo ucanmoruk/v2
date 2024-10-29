@@ -94,14 +94,15 @@ namespace mROOT._9.UGDR
             }
             else if (Giris.birimID == "1006")
             {
-                mKYS.Raporlar.UGD1.tID = lID;
-                mKYS.Raporlar.UGD2.tID = lID;
-                mKYS.Raporlar.UGD3.tID = lID;
-                mKYS.Raporlar.UGD4.tID = lID;
+                mKYS.Raporlar.Kompass.UGD1.tID = lID;
+                mKYS.Raporlar.Kompass.UGD2.tID = lID;
+                mKYS.Raporlar.Kompass.UGD3.tID = lID;
+                mKYS.Raporlar.Kompass.UGD4.tID = lID;
+                mKYS.Raporlar.Kompass.UGD5.tID = lID;
                 frmPrint.name = "UGDR - " + dosyadi;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 {
-                    frm.UGDR();
+                    frm.UGDRKompass();
                     frm.ShowDialog();
                 }
             }
@@ -195,6 +196,16 @@ namespace mROOT._9.UGDR
             {
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
+
+
+                if (Giris.birimID == "1006")
+                {
+                    barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+                else
+                {
+                    barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
 
             }
         }
@@ -442,14 +453,14 @@ namespace mROOT._9.UGDR
             }
             else if (Giris.birimID == "1006")
             {
-                mKYS.Raporlar.Eng.UGD1.tID = lID;
-                mKYS.Raporlar.Eng.UGD2.tID = lID;
-                mKYS.Raporlar.Eng.UGD3.tID = lID;
-                mKYS.Raporlar.Eng.UGD4.tID = lID;
+                mKYS.Raporlar.Kompass.Cpnp.UGD1.tID = lID;
+                mKYS.Raporlar.Kompass.Cpnp.UGD2.tID = lID;
+                mKYS.Raporlar.Kompass.Cpnp.UGD3.tID = lID;
+                mKYS.Raporlar.Kompass.Cpnp.UGD4.tID = lID;
                 frmPrint.name = "UGDR - " + dosyadi;
                 using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                 {
-                    frm.UGDEn();
+                    frm.UGDRKompassEn();
                     frm.ShowDialog();
                 }
 

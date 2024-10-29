@@ -43,8 +43,6 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrLabel67 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -123,7 +121,7 @@
             // 
             // xrTable1
             // 
-            this.xrTable1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 75.59173F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -144,7 +142,7 @@
             // 
             // xrTableCell1
             // 
-            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
@@ -168,7 +166,7 @@
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
@@ -195,7 +193,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(296.4018F, 33F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -209,7 +207,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.00001F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -223,37 +221,14 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel67,
-            this.xrPictureBox3,
             this.xrPageInfo1,
             this.xrLabel4});
             this.BottomMargin.HeightF = 41.00001F;
             this.BottomMargin.Name = "BottomMargin";
             // 
-            // xrLabel67
-            // 
-            this.xrLabel67.Font = new System.Drawing.Font("Futura Bk BT", 8F);
-            this.xrLabel67.LocationFloat = new DevExpress.Utils.PointFloat(92.34594F, 10.00001F);
-            this.xrLabel67.Multiline = true;
-            this.xrLabel67.Name = "xrLabel67";
-            this.xrLabel67.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel67.SizeF = new System.Drawing.SizeF(553.4126F, 23.00001F);
-            this.xrLabel67.StylePriority.UseFont = false;
-            this.xrLabel67.StylePriority.UseTextAlignment = false;
-            this.xrLabel67.Text = "info@cosmoliz.com";
-            this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrPictureBox3
-            // 
-            this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz, true);
-            this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 3.178914E-05F);
-            this.xrPictureBox3.Name = "xrPictureBox3";
-            this.xrPictureBox3.SizeF = new System.Drawing.SizeF(92.34594F, 40.99998F);
-            this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
-            // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrPageInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(972.938F, 9.999988F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
@@ -266,7 +241,7 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(927.1411F, 9.999988F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -287,7 +262,7 @@
             // xrTable3
             // 
             this.xrTable3.BorderColor = System.Drawing.Color.Gainsboro;
-            this.xrTable3.Font = new System.Drawing.Font("Futura Bk BT", 8F);
+            this.xrTable3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -472,9 +447,9 @@
             // 
             // xrLabel11
             // 
-            this.xrLabel11.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.xrLabel11.BackColor = System.Drawing.Color.Silver;
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel11.Font = new System.Drawing.Font("Futura Bk BT", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel11.ForeColor = System.Drawing.Color.Black;
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(0F, 5F);
             this.xrLabel11.Multiline = true;
@@ -500,7 +475,7 @@
             // xrTable2
             // 
             this.xrTable2.BorderColor = System.Drawing.Color.Gray;
-            this.xrTable2.Font = new System.Drawing.Font("Futura Bk BT", 8F, System.Drawing.FontStyle.Bold);
+            this.xrTable2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.xrTable2.ForeColor = System.Drawing.Color.Black;
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
@@ -718,7 +693,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Futura Bk BT", 8F);
+            this.xrLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 15F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -802,7 +777,7 @@
             this.DataMember = "rUGDListe";
             this.DataSource = this.sqlDataSource1;
             this.FilterString = "[ID] = ?pID";
-            this.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(41, 35, 122, 41);
             this.PageHeight = 850;
@@ -872,8 +847,6 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField3;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField4;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel67;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField5;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField6;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField7;

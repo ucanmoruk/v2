@@ -212,7 +212,7 @@ namespace mKYS.Analiz
             }
             else
             {
-                m.listele();
+               // m.listele();
             }
             
 

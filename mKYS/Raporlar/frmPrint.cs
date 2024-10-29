@@ -35,6 +35,18 @@ namespace mKYS.Raporlar
                    
         }
 
+        public void Teklif()
+        {
+            TeklifUni teklif = new TeklifUni();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in teklif.Parameters)
+            {
+                p.Visible = false;
+                teklif.bilgi();
+                documentViewer1.DocumentSource = teklif;
+                teklif.CreateDocument();
+            }
+        }
+
         public void KimyasalEtiket()
         {
 
@@ -47,6 +59,42 @@ namespace mKYS.Raporlar
                 etiket.CreateDocument();
             }
 
+        }
+
+        public void ProformaGrup()
+        {
+            ProformaGrup hamveri = new ProformaGrup();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in hamveri.Parameters)
+            {
+                p.Visible = false;
+                hamveri.bilgi2();
+                documentViewer1.DocumentSource = hamveri;
+                hamveri.CreateDocument();
+            }
+        }
+
+        public void ProformaManuel()
+        {
+            ProformaManuel ham = new ProformaManuel();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in ham.Parameters)
+            {
+                p.Visible = false;
+                ham.bilgi2();
+                documentViewer1.DocumentSource = ham;
+                ham.CreateDocument();
+            }
+        }
+
+        public void ProformaYazdir()
+        {
+            Raporlar.ProformaFatura rapor = new Raporlar.ProformaFatura();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi2();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
         }
 
         public void CihazEtiket()
@@ -159,6 +207,150 @@ namespace mKYS.Raporlar
 
             }
     
+            documentViewer1.DocumentSource = rapor;
+        }
+
+        public void UGDRCosmo()
+        {
+            Cosmoliz.UGD1 rapor = new Cosmoliz.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            //  rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Cosmoliz.UGD2 rapor2 = new Cosmoliz.UGD2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                Cosmoliz.UGD3 rapor3 = new Cosmoliz.UGD3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
+                {
+                    p3.Visible = false;
+                    rapor3.bilgi();
+                    rapor3.CreateDocument();
+                }
+                Cosmoliz.UGD4 rapor4 = new Cosmoliz.UGD4();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p4 in rapor4.Parameters)
+                {
+                    p4.Visible = false;
+                    rapor4.bilgi();
+                    rapor4.CreateDocument();
+                }
+                Cosmoliz.UGD5 rapor5 = new Cosmoliz.UGD5();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p5 in rapor5.Parameters)
+                {
+                    p5.Visible = false;
+                    rapor5.bilgi();
+                    rapor5.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.Pages.AddRange(rapor3.Pages);
+                rapor.Pages.AddRange(rapor4.Pages);
+                rapor.Pages.AddRange(rapor5.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+        public void UGDRKompass()
+        {
+            Kompass.UGD1 rapor = new Kompass.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            //  rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Kompass.UGD2 rapor2 = new Kompass.UGD2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                Kompass.UGD3 rapor3 = new Kompass.UGD3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
+                {
+                    p3.Visible = false;
+                    rapor3.bilgi();
+                    rapor3.CreateDocument();
+                }
+                Kompass.UGD4 rapor4 = new Kompass.UGD4();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p4 in rapor4.Parameters)
+                {
+                    p4.Visible = false;
+                    rapor4.bilgi();
+                    rapor4.CreateDocument();
+                }
+                Kompass.UGD5 rapor5 = new Kompass.UGD5();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p5 in rapor5.Parameters)
+                {
+                    p5.Visible = false;
+                    rapor5.bilgi();
+                    rapor5.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.Pages.AddRange(rapor3.Pages);
+                rapor.Pages.AddRange(rapor4.Pages);
+                rapor.Pages.AddRange(rapor5.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+
+        public void UGDRKompassEn()
+        {
+            Kompass.Cpnp.UGD1 rapor = new Kompass.Cpnp.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            //  rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Kompass.Cpnp.UGD2 rapor2 = new Kompass.Cpnp.UGD2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                Kompass.Cpnp.UGD3 rapor3 = new Kompass.Cpnp.UGD3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
+                {
+                    p3.Visible = false;
+                    rapor3.bilgi();
+                    rapor3.CreateDocument();
+                }
+                Kompass.Cpnp.UGD4 rapor4 = new Kompass.Cpnp.UGD4();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p4 in rapor4.Parameters)
+                {
+                    p4.Visible = false;
+                    rapor4.bilgi();
+                    rapor4.CreateDocument();
+                }
+             
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.Pages.AddRange(rapor3.Pages);
+                rapor.Pages.AddRange(rapor4.Pages);
+
+            }
+
             documentViewer1.DocumentSource = rapor;
         }
 
@@ -371,6 +563,51 @@ namespace mKYS.Raporlar
 
             documentViewer1.DocumentSource = rapor;
         }
+
+
+        public void UGDEnCosmo()
+        {
+            Cosmoliz.Cpnp.UGD1 rapor = new Cosmoliz.Cpnp.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            // rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Cosmoliz.Cpnp.UGD2 rapor2 = new Cosmoliz.Cpnp.UGD2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                Cosmoliz.Cpnp.UGD3 rapor3 = new Cosmoliz.Cpnp.UGD3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
+                {
+                    p3.Visible = false;
+                    rapor3.bilgi();
+                    rapor3.CreateDocument();
+                }
+                Cosmoliz.Cpnp.UGD4 rapor4 = new Cosmoliz.Cpnp.UGD4();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p4 in rapor4.Parameters)
+                {
+                    p4.Visible = false;
+                    rapor4.bilgi();
+                    rapor4.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.Pages.AddRange(rapor3.Pages);
+                rapor.Pages.AddRange(rapor4.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+
         public void CosIng()
         {
 

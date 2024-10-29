@@ -322,7 +322,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rchal;
                     rcyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rchal;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -358,7 +358,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rsta;
                     rsyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rsta;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -394,7 +394,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rkut;
                     rkyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rkut;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -448,7 +448,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rmik;
                     rmyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rmik;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);

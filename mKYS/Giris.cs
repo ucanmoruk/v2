@@ -74,6 +74,7 @@ namespace mKYS
                 }
                 bgl.baglanti().Close();
                 Anasayfa.kullanici = kullaniciID.ToString();
+                Anasayfa.kullanicifirmaID = birimID.ToString();
                 f2 = new Anasayfa();
                 f2.FormClosing += F2_FormClosing;
                 f2.ShowDialog();

@@ -120,7 +120,7 @@ namespace mROOT._9.UGDR
             {
                 SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
                  update rUGDListe set Versiyon=@a1, Tarih=@a2, FirmaID=@a3, Urun=@a4, Barkod=@a5, Miktar=@a6, 
-                 Tip1=@a7, Tip2=@a8, Uygulama=@a9, Hedef=@a10, A=@a11, UrunEn=@a12 where ID = '" + yeniID + "' COMMIT TRANSACTION", bgl.baglanti());
+                 Tip1=@a7, Tip2=@a8, Uygulama=@a9, Hedef=@a10, A=@a11, UrunEn=@a12, Parfum=@a13, Alerjen=@a14 where ID = '" + yeniID + "' COMMIT TRANSACTION", bgl.baglanti());
                 add2.Parameters.AddWithValue("@a1", tverno.Text);
                 add2.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
                 add2.Parameters.AddWithValue("@a3", gridLookUpEdit1.EditValue);
@@ -136,6 +136,14 @@ namespace mROOT._9.UGDR
                 else
                     add2.Parameters.AddWithValue("@a11", Convert.ToDecimal(tAdegeri.Text));
                 add2.Parameters.AddWithValue("@a12", turunen.Text);
+                if (comboparfum.Text == "İçermez")
+                    add2.Parameters.AddWithValue("@a13",0);
+                else
+                    add2.Parameters.AddWithValue("@a13", 1);
+                if (comboalerjen.Text == "İçermez")
+                    add2.Parameters.AddWithValue("@a14", 0);
+                else
+                    add2.Parameters.AddWithValue("@a14", 1);
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 xtraTabControl1.SelectedTabPage = xtraTabPage2;
@@ -356,7 +364,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rchal;
                     rcyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rchal;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -392,7 +400,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rsta;
                     rsyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rsta;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -428,7 +436,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rkut;
                     rkyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rkut;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -495,7 +503,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + ruyar;
                     rkyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + ruyar;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -604,7 +612,7 @@ namespace mROOT._9.UGDR
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Foto" + "/" + rmik;
                     rmyol = "https://" + "www.rootarge.com/mRoot/Foto" + "/" + rmik;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);

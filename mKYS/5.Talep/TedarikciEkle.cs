@@ -104,7 +104,7 @@ namespace mKYS.Talep
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Logo" + "/" + yenisim;
                     yeniyol = "http://" + "www.rootarge.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -195,7 +195,7 @@ namespace mKYS.Talep
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "!88n2ee5Q";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/mRoot/Logo" + "/" + yenisim;
                     yeniyol = "http://" + "www.rootarge.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);

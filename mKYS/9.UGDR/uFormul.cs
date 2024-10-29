@@ -44,6 +44,7 @@ namespace mROOT._9.UGDR
         public static string uID, rNo, gelis;
         private void uFormul_Load(object sender, EventArgs e)
         {
+
             if (gelis == "Anasayfa" || uID == null || uID == "")
             {
                 gridLookUpEdit1.Visible = true;
@@ -395,9 +396,9 @@ namespace mROOT._9.UGDR
                 else if(Anasayfa.birimID == 1006)
                 {
                     DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael2 as 'Noael', c.ID as 'cosID', f.ID from rUGDFormül f 
+                    SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael, c.ID as 'cosID', f.ID from rUGDFormül f 
                     left join rCosing c on f.INCIName = c.INCIName 
-                    left join rkHammadde r on c.ID = r.cID 
+                    left join rpHammadde r on c.ID = r.cID 
                     where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
                     da.Fill(dt);
                     gridControl2.DataSource = dt;
@@ -463,8 +464,8 @@ namespace mROOT._9.UGDR
                 else if(Anasayfa.birimID == 1006)
                 {
                     DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael2 as 'Noael', c.ID as 'cosID', f.ID from rUGDFormül f 
-                     left join rCosing c on f.INCIName = c.INCIName left join rkHammadde r on c.ID = r.cID  where f.UrunID = '" + uID + "' order by f.Miktar desc ", bgl.baglanti());
+                    SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael, c.ID as 'cosID', f.ID from rUGDFormül f 
+                     left join rCosing c on f.INCIName = c.INCIName left join rpHammadde r on c.ID = r.cID  where f.UrunID = '" + uID + "' order by f.Miktar desc ", bgl.baglanti());
                     da.Fill(dt);
                     gridControl2.DataSource = dt;
                     gridView2.Columns["cosID"].Visible = false;

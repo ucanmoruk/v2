@@ -123,9 +123,29 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap diploma {
+            get {
+                object obj = ResourceManager.GetObject("diploma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap gradient {
             get {
                 object obj = ResourceManager.GetObject("gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap imza {
+            get {
+                object obj = ResourceManager.GetObject("imza", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,16 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap imza_dsk_1 {
             get {
                 object obj = ResourceManager.GetObject("imza-dsk-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap imza1 {
+            get {
+                object obj = ResourceManager.GetObject("imza1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +303,16 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap sertifika {
+            get {
+                object obj = ResourceManager.GetObject("sertifika", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap Spektrotek_Logo {
             get {
                 object obj = ResourceManager.GetObject("Spektrotek Logo", resourceCulture);
@@ -286,6 +326,26 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap stand_arka_plan_yüksek_çözünürlük_pages_to_jpg_0001 {
             get {
                 object obj = ResourceManager.GetObject("stand arka plan yüksek çözünürlük_pages-to-jpg-0001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap WhatsApp_Image_2024_09_11_at_21_45_20 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-09-11 at 21.45.20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap WhatsApp_Image_2024_09_11_at_21_45_20__1_ {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-09-11 at 21.45.20 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
