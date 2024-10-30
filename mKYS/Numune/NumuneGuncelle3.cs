@@ -56,7 +56,7 @@ namespace mKYS
 
         public void Firma()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -234,7 +234,7 @@ namespace mKYS
         void IDbul()
         {
 
-            SqlCommand komut3 = new SqlCommand("Select ID from Firma where Firma_Adi = N'" + comboFirma.Text + "'", bgl.baglanti());
+            SqlCommand komut3 = new SqlCommand("Select ID from RootTedarikci where Ad = N'" + comboFirma.Text + "'", bgl.baglanti());
             SqlDataReader dr3 = komut3.ExecuteReader();
             while (dr3.Read())
             {
@@ -269,7 +269,7 @@ namespace mKYS
             }
             bgl.baglanti().Close();
 
-            SqlCommand detayd = new SqlCommand("Select Firma_Adi from Firma where ID = N'" + projeid + "'", bgl.baglanti());
+            SqlCommand detayd = new SqlCommand("Select Ad from RootTedarikci where ID = N'" + projeid + "'", bgl.baglanti());
             SqlDataReader drde = detayd.ExecuteReader();
             while (drde.Read())
             {
@@ -505,7 +505,7 @@ namespace mKYS
             combo_yetkili.Properties.Items.Clear();
             combo_yetkili.Text = "";
 
-            SqlCommand komut2 = new SqlCommand("Select ID From Firma where Firma_Adi = N'" + comboFirma.Text + "'", bgl.baglanti());
+            SqlCommand komut2 = new SqlCommand("Select ID From RootTedarikci where Ad = N'" + comboFirma.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut2.ExecuteReader();
             while (dr.Read())
             {

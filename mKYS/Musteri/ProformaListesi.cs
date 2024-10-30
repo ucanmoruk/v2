@@ -29,10 +29,10 @@ namespace mKYS.Musteri
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct p.ID as No, k.Ad as 'Olusturan', p.OlusturmaTarih as 'Oluşturma', o.Ad as 'Onaylayan', 
             p.Tarih as 'Onaylama', p.Durum, p.ProformaNo as 'Proforma No', 
-              z.Firma_Adi as 'Firma Adı', p.Dipnot, p.Total from ProformaDurum p
-            left join StokKullanici k on k.ID = p.OlusturanID 
-            left join StokKullanici o on p.OnaylayanID = o.ID
-            left join firma z on z.ID = p.FirmaID 
+              z.Ad as 'Firma Adı', p.Dipnot, p.Total from ProformaDurum p
+            left join RootKullanici k on k.ID = p.OlusturanID 
+            left join RootKullanici o on p.OnaylayanID = o.ID
+            left join RootTedarikci z on z.ID = p.FirmaID 
             order by p.ID desc 
              ", bgl.baglanti());
 

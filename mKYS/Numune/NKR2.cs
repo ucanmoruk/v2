@@ -59,16 +59,17 @@ namespace mKYS
 
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, 
             t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
-            f.Firma_Adi as 'Firma Adı', k.Firma_Adi as 'Proje', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur,
+            f.Ad as 'Firma Adı', k.Ad as 'Proje', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur,
             n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu', 
             o.Odeme_Durumu as 'Fatura Durumu',
             n.ID as 'aID' from NKR n 
-            join Firma f on f.ID = n.Firma_ID 
-            join NumuneDetay d on n.ID = d.RaporID
-			join Firma k on d.ProjeID = k.ID
-            join Odeme o on o.Evrak_No = n.Evrak_No 
+            left join RootTedarikci f on f.ID = n.Firma_ID 
+            left join NumuneDetay d on n.ID = d.RaporID
+			left join RootTedarikci k on d.ProjeID = k.ID
+            left join Odeme o on o.Evrak_No = n.Evrak_No 
             left join Termin t on t.RaporID = n.ID 
-            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.RaporNo desc", bgl.baglanti());
+            where 
+			n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.RaporNo desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["aID"].Visible = false;
@@ -83,11 +84,11 @@ namespace mKYS
             date_baslangic.Properties.Mask.UseMaskAsDisplayFormat = true;
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
-            f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', 
+            f.Ad as 'Firma Adı', n.Numune_Adi as 'Numune Adı', 
             n.Grup, n.Tur, n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  
             o.Odeme_Durumu as 'Fatura Durumu' , n.ID as 'aID' 
             from NKR n 
-            join Firma f on f.ID = n.Firma_ID 
+            join RootTedarikci f on f.ID = n.Firma_ID 
             join Odeme o on o.Evrak_No = n.Evrak_No 
             left join Termin t on t.RaporID = n.ID
             where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' and not(n.Rapor_Durumu = 'Raporlandı' and o.Odeme_Durumu = 'Ödendi') order by RaporNo desc", bgl.baglanti());
@@ -605,10 +606,10 @@ namespace mKYS
             DataTable dt = new DataTable();
 
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
-            f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, 
+            f.Ad as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, 
             n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu', n.ID as 'aID' from NKR n 
-            join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID 
-            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' and(n.RaporNo like '%"+txt_arama.Text+ "%' or f.Firma_Adi like  '%" + txt_arama.Text + "%'or n.Numune_Adi like  '%" + txt_arama.Text + "%'or n.Aciklama like  '%" + txt_arama.Text + "%') order by n.RaporNo desc ", bgl.baglanti());
+            left join RootTedarikci f on f.ID = n.Firma_ID left join Odeme o on o.Evrak_No = n.Evrak_No left join Termin t on t.RaporID = n.ID 
+            where n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' and(n.RaporNo like '%"+txt_arama.Text+ "%' or f.Ad like  '%" + txt_arama.Text + "%' or n.Numune_Adi like  '%" + txt_arama.Text + "%'or n.Aciklama like  '%" + txt_arama.Text + "%') order by n.RaporNo desc ", bgl.baglanti());
             da.Fill(dt);
             if (dt == null)
             {
@@ -1139,7 +1140,7 @@ namespace mKYS
                     }
                     bgl.baglanti().Close();
 
-                    SqlCommand komut3 = new SqlCommand("Select Adres from Firma where Firma_Adi = N'" + ffirma + "'", bgl.baglanti());
+                    SqlCommand komut3 = new SqlCommand("Select Adres from RootTedarikci where Ad = N'" + ffirma + "'", bgl.baglanti());
                     SqlDataReader dr3 = komut3.ExecuteReader();
                     while (dr3.Read())
                     {

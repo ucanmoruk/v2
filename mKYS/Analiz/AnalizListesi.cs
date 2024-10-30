@@ -19,7 +19,7 @@ namespace mKYS.Analiz.Analiz
         {
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
-                "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
+                "left join RootFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -66,7 +66,7 @@ namespace mKYS.Analiz.Analiz
         private void AnalizListesi_Load(object sender, EventArgs e)
         {
             listele();
-            yetkibul();
+          //  yetkibul();
 
 
             this.gridView1.Columns[2].Width = 40;

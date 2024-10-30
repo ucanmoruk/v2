@@ -24,7 +24,7 @@ namespace mKYS.Musteri
         void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Firma_Adi as 'Firma' From Firma where Durum= N'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("Select ID, Ad as 'Firma' From RootTedarikci where Durum= N'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "Firma";

@@ -395,7 +395,7 @@
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.skinDropDownButtonItem3);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.skinPaletteDropDownButtonItem3);
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Center;
-            this.ribbonControl1.Size = new System.Drawing.Size(768, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(768, 125);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // barButtonItem1
@@ -1399,6 +1399,7 @@
             // 
             // skinPaletteDropDownButtonItem1
             // 
+            this.skinPaletteDropDownButtonItem1.Enabled = false;
             this.skinPaletteDropDownButtonItem1.Id = 118;
             this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
             // 
@@ -1421,6 +1422,7 @@
             // 
             // skinPaletteDropDownButtonItem2
             // 
+            this.skinPaletteDropDownButtonItem2.Enabled = false;
             this.skinPaletteDropDownButtonItem2.Id = 122;
             this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
             // 
@@ -1551,6 +1553,7 @@
             // 
             // skinPaletteDropDownButtonItem3
             // 
+            this.skinPaletteDropDownButtonItem3.Enabled = false;
             this.skinPaletteDropDownButtonItem3.Id = 139;
             this.skinPaletteDropDownButtonItem3.Name = "skinPaletteDropDownButtonItem3";
             // 

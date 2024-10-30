@@ -19,9 +19,9 @@ namespace mKYS.Musteri
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select t.Tarih, t.TeklifNo as [Teklif No],  k.Ad as [Plasiyer], t.TeklifTuru as [Teklif Türü],
-            f.Firma_Adi as [Firma adı],  t.Aciklama, t.TeklifDurum, t.ID from TeklifX1 t 
-             inner join Firma f on t.FirmaID = f.ID 
-            inner join StokKullanici k on k.ID = t.PlasiyerID 
+            f.Ad as [Firma adı],  t.Aciklama, t.TeklifDurum, t.ID from TeklifX1 t 
+             left join RootTedarikci f on t.FirmaID = f.ID 
+            left join RootKullanici k on k.ID = t.PlasiyerID 
             where t.Durum = 'Aktif' order by t.TeklifNo desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;

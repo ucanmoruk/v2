@@ -45,16 +45,16 @@ namespace mKYS.Numune
 
             DataTable dt = new DataTable();
 
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT n.Evrak_No AS [Evrak No], n.RaporNo AS [Rapor No], f.Firma_Adi AS Firma, p.Firma_Adi AS Proje, n.Numune_Adi AS Numune, l.Ad AS Hizmet, l.Method, n.Tarih AS Kabul, x.Termin, x.HizmetDurum AS Durum, n.Rapor_Durumu AS Rapor, k.Ad AS Yetkili, x.ID, n.ID AS nID
-        FROM  dbo.NumuneX1 AS x LEFT OUTER JOIN
-         dbo.NKR AS n ON x.RaporID = n.ID LEFT OUTER JOIN
-         dbo.NumuneDetay AS d ON n.ID = d.RaporID LEFT OUTER JOIN
-         dbo.Kullanici AS k ON x.Yetkili = k.ID LEFT OUTER JOIN
-         dbo.Firma AS f ON n.Firma_ID = f.ID LEFT OUTER JOIN
-         dbo.Firma AS p ON d.ProjeID = p.ID LEFT OUTER JOIN
-         dbo.StokAnalizListesi AS l ON x.AnalizID = l.ID
-         WHERE (n.Durum = 'Aktif')
-         ORDER BY x.Termin DESC, nID DESC", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT n.Evrak_No AS [Evrak No], n.RaporNo AS [Rapor No], f.Ad AS Firma, p.Ad AS Proje, n.Numune_Adi AS Numune, l.Ad AS Hizmet, l.Method, n.Tarih AS Kabul, x.Termin, x.HizmetDurum AS Durum, n.Rapor_Durumu AS Rapor, k.Ad AS Yetkili, x.ID, n.ID AS nID
+            FROM dbo.NumuneX1 AS x LEFT OUTER JOIN
+             dbo.NKR AS n ON x.RaporID = n.ID LEFT OUTER JOIN
+             dbo.NumuneDetay AS d ON n.ID = d.RaporID LEFT OUTER JOIN
+             dbo.RootKullanici AS k ON x.Yetkili = k.ID LEFT OUTER JOIN
+             dbo.RootTedarikci AS f ON n.Firma_ID = f.ID LEFT OUTER JOIN
+             dbo.RootTedarikci AS p ON d.ProjeID = p.ID LEFT OUTER JOIN
+             dbo.StokAnalizListesi AS l ON x.AnalizID = l.ID
+             WHERE (n.Durum = 'Aktif')
+             ORDER BY x.Termin DESC, nID DESC", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["ID"].Visible = false;

@@ -172,7 +172,7 @@ namespace mKYS.Numune
                     add.Parameters.AddWithValue("@a8", date_now.EditValue);
                     add.Parameters.AddWithValue("@a9", path);
                     add.Parameters.AddWithValue("@a10", "Aktif");
-                    add.Parameters.AddWithValue("@a11", Anasayfa.kullanicifirmaID);
+                    add.Parameters.AddWithValue("@a11", 24356);
                     add.ExecuteNonQuery(); 
                     bgl.baglanti().Close();
 

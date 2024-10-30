@@ -29,7 +29,7 @@ namespace mKYS
 
         public void Firma()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -308,7 +308,7 @@ namespace mKYS
             combo_yetkili.Properties.Items.Clear();
             combo_yetkili.Text = "";
 
-            SqlCommand komut2 = new SqlCommand("Select ID From Firma where Firma_Adi = N'" + comboFirma.Text + "'", bgl.baglanti());
+            SqlCommand komut2 = new SqlCommand("Select ID From RootTedarikci where Firma_Adi = N'" + comboFirma.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut2.ExecuteReader();
             while (dr.Read())
             {
@@ -468,7 +468,7 @@ namespace mKYS
 
         public void proje()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Tur= N'Proje' and Durum = N'Aktif' order by Firma_Adi", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = N'Aktif' order by Ad", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -487,7 +487,7 @@ namespace mKYS
         int projeID;
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand komut = new SqlCommand("Select ID from Firma where Firma_Adi = N'" + comboBoxEdit1.Text + "'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select ID from RootTedarikci where Ad = N'" + comboBoxEdit1.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
