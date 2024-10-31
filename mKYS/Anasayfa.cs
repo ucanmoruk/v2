@@ -202,7 +202,7 @@ namespace mKYS
             //   yetkibul();
 
             //    DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("The Bezier");
-             UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.OfficeColorful);
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.OfficeColorful);
 
             if (kullanici == "2" || kullanici == "1002")
             {
