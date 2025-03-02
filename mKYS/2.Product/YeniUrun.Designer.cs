@@ -1,6 +1,6 @@
 ﻿namespace mKYS.Analiz
 {
-    partial class AnalizYeni
+    partial class YeniUrun
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizYeni));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YeniUrun));
             this.txt_kod = new DevExpress.XtraEditors.TextEdit();
             this.txt_ad = new DevExpress.XtraEditors.TextEdit();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();

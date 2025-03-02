@@ -64,6 +64,7 @@ namespace mROOT._9.UGDR
                 gridLookUpEdit1.Properties.DataSource = dt2;
                 gridLookUpEdit1.Properties.DisplayMember = "Ad";
                 gridLookUpEdit1.Properties.ValueMember = "ID";
+
             }
             else
             {
@@ -96,10 +97,9 @@ namespace mROOT._9.UGDR
             }
             bgl.baglanti().Close();
 
-            SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-            "insert into rUGDListe (RaporNo, BirimID, Durum, RaporDurum) " +
-            "values (@o2,@o3,@o4, @o5) SET @ID = SCOPE_IDENTITY() ;" +
-            "COMMIT TRANSACTION", bgl.baglanti());
+            SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION 
+            insert into rUGDListe (RaporNo, BirimID, Durum, RaporDurum) values (@o2,@o3,@o4, @o5) SET @ID = SCOPE_IDENTITY() ; 
+            COMMIT TRANSACTION", bgl.baglanti());
             add2.Parameters.AddWithValue("@o2", traporno.Text);
             add2.Parameters.AddWithValue("@o3", Giris.birimID);
             add2.Parameters.AddWithValue("@o4", "Pasif");
@@ -247,7 +247,8 @@ namespace mROOT._9.UGDR
             SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
             update rUGDDetay2 set Kullanim=@a1, Ozellikler=@a2, Uyarilar=@a3, Kutu=@a4, Durum=@a5, 
             UyarilarEn=@o6, KullanimEn=@o7, OzelliklerEn=@o8, Kutu2=@o10 where UrunID = '" + yeniID + "' ;" +
-            "update rUGDListe set Durum=@a6 where ID = '"+yeniID+"' ;" +
+            "update rUGDListe set Durum=@a6 where ID = '"+yeniID+"' ; " +
+            "insert into rRPList (UrunID) values (@z1) ;" +
             "update rUGDDetay set Durum=@a7 where UrunID = '" + yeniID + "' COMMIT TRANSACTION", bgl.baglanti());
             add2.Parameters.AddWithValue("@a1", memoEdit2.Text);
             add2.Parameters.AddWithValue("@a2", memoEdit3.Text);
@@ -260,6 +261,7 @@ namespace mROOT._9.UGDR
             add2.Parameters.AddWithValue("@o7", memoEdit9.Text);
             add2.Parameters.AddWithValue("@o8", memoEdit8.Text);
             add2.Parameters.AddWithValue("@o10", string.IsNullOrEmpty(ruyar) ? (object)DBNull.Value : ruyar);
+            add2.Parameters.AddWithValue("@z1", yeniID);
             add2.ExecuteNonQuery();
             bgl.baglanti().Close();
             kayit = "evet";

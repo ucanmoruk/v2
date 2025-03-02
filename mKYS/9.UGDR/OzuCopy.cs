@@ -292,7 +292,7 @@ namespace mROOT._9.UGDR
                 {
                     SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
                  update rUGDListe set Versiyon=@a1, Tarih=@a2, FirmaID=@a3, Urun=@a4, Barkod=@a5, Miktar=@a6, 
-                 Tip1=@a7, Tip2=@a8, Uygulama=@a9, Hedef=@a10, A=@a11, UrunEn=@a12, Parfum=@a13, Alerjen=@a14 where ID = '" + uID + "' COMMIT TRANSACTION", bgl.baglanti());
+                 Tip1=@a7, Tip2=@a8, Uygulama=@a9, Hedef=@a10, A=@a11, UrunEn=@a12, Parfum=@a13, Alerjen=@a14  where ID = '" + uID + "' COMMIT TRANSACTION", bgl.baglanti());
                     add2.Parameters.AddWithValue("@a1", tverno.Text);
                     add2.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
                     add2.Parameters.AddWithValue("@a3", gridLookUpEdit1.EditValue);

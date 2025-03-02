@@ -32,11 +32,11 @@ namespace mKYS.Musteri
             combo_raporfirma.Text = NKR2.ffirma;
 
 
-            SqlCommand detayd = new SqlCommand("Select Firma_Adi from Firma where ID in (select FaturaFirmaID from FaturaDetay where ProformaNo = '"+ txtRaporNo.Text + "')", bgl.baglanti());
+            SqlCommand detayd = new SqlCommand("Select Ad from RootTedarikci where ID in (select FaturaFirmaID from FaturaDetay where ProformaNo = '"+ txtRaporNo.Text + "')", bgl.baglanti());
             SqlDataReader drde = detayd.ExecuteReader();
             while (drde.Read())
             {
-               combo_faturafirma.Text = drde["Firma_Adi"].ToString();
+               combo_faturafirma.Text = drde["Ad"].ToString();
 
             }
             bgl.baglanti().Close();
@@ -89,7 +89,7 @@ namespace mKYS.Musteri
 
         void firma()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -101,7 +101,7 @@ namespace mKYS.Musteri
 
         public void proje()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Tur=N'Proje' and Durum=N'Aktif' order by Firma_Adi asc", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where  Durum=N'Aktif' order by Ad asc", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -124,17 +124,21 @@ namespace mKYS.Musteri
         public void projebul()
         {
 
-            SqlCommand detay = new SqlCommand("select Firma_Adi from Firma where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR2.raporNo + "'))", bgl.baglanti());
+            SqlCommand detay = new SqlCommand("select Ad from RootTedarikci where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR2.raporNo + "'))", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();
             while (drd.Read())
             {
-                projeadi = drd["Firma_Adi"].ToString();
+                projeadi = drd["Ad"].ToString();
             }
             bgl.baglanti().Close();
 
             if (projeadi == "" || projeadi == null)
             {
-                combo_proje.Text = "Diğer";
+                combo_proje.Text = "DİĞER";
+            }
+            else
+            {
+                combo_proje.Text = projeadi;
             }
             //SqlCommand detayd = new SqlCommand("Select Proje from Proje where ID = N'" + projeid + "'", bgl.baglanti());
             //SqlDataReader drde = detayd.ExecuteReader();
@@ -143,7 +147,7 @@ namespace mKYS.Musteri
             //    projeadi = drde["Proje"].ToString();
             //}
             //bgl.baglanti().Close();
-            //combo_proje.Text = projeadi;
+            
         }
 
         private void ProformatoFatura_Load(object sender, EventArgs e)
@@ -209,7 +213,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir3 = new SqlCommand("Select ID from Firma where Firma_Adi =N'" + combo_raporfirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
+                SqlCommand getir3 = new SqlCommand("Select ID from RootTedarikci where Ad =N'" + combo_raporfirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
                 SqlDataReader dr4 = getir3.ExecuteReader();
                 while (dr4.Read())
                 {
@@ -217,7 +221,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir4 = new SqlCommand("Select ID from Firma where Firma_Adi =N'" + combo_faturafirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
+                SqlCommand getir4 = new SqlCommand("Select ID from RootTedarikci where Ad =N'" + combo_faturafirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
                 SqlDataReader dr5 = getir4.ExecuteReader();
                 while (dr5.Read())
                 {
@@ -225,7 +229,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir5 = new SqlCommand("Select ID from Firma where Firma_Adi =N'" + combo_proje.Text + "' and Durum = 'Aktif'", bgl.baglanti());
+                SqlCommand getir5 = new SqlCommand("Select ID from RootTedarikci where Ad =N'" + combo_proje.Text + "' and Durum = 'Aktif'", bgl.baglanti());
                 SqlDataReader dr6 = getir5.ExecuteReader();
                 while (dr6.Read())
                 {
@@ -233,7 +237,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir11 = new SqlCommand("Select count(Fatura_no) from Fatura where Fatura_No =N'" + txtFaturaNo.Text + "'", bgl.baglanti());
+                SqlCommand getir11 = new SqlCommand("Select count(FaturaNo) from ProformaDurum where FaturaNo =N'" + txtFaturaNo.Text + "'", bgl.baglanti());
                 SqlDataReader dr11 = getir11.ExecuteReader();
                 while (dr11.Read())
                 {
@@ -249,30 +253,48 @@ namespace mKYS.Musteri
                     }
                     else
                     {
-                        SqlCommand komut = new SqlCommand("insert into Fatura (Fatura_No,Tutar,KDV,Toplam,Proje_Id,RaporFirmaID,FaturaFirmaID,Tarih,Durum,Odenen_Tutar,ProformaNo,FaturaKesenID) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12); update Odeme set Odeme_Durumu=@o1 , Evrak_No = @o2, Fatura_ID =IDENT_CURRENT('Fatura') where ID = @o3 ; update ProformaDurum set Durum = @k1 where ProformaNo = @k2 and Durum = @k3", bgl.baglanti());
-                        komut.Parameters.AddWithValue("@a1", txtFaturaNo.Text);
-                        komut.Parameters.AddWithValue("@a2", Convert.ToDecimal(txtTutar.Text));
-                        komut.Parameters.AddWithValue("@a3", Convert.ToDecimal(txtKDV.Text));
-                        komut.Parameters.AddWithValue("@a4", Convert.ToDecimal(txtToplam.Text));
-                        komut.Parameters.AddWithValue("@a5", projeID);
-                        komut.Parameters.AddWithValue("@a6", raporfirma);
-                        komut.Parameters.AddWithValue("@a7", faturafirma);
-                        komut.Parameters.AddWithValue("@a8", dateEdit1.EditValue);
+
+                        SqlCommand komut = new SqlCommand(@"
+                        update Odeme set Odeme_Durumu=@o1  where ID = @o3 ; 
+                        update ProformaDurum set Durum = @k1, FaturaNo = @k4, FaturaTarih=@a1, Odeme=@k5 where ProformaNo = @k2 and Durum = @k3", bgl.baglanti());                      
                         komut.Parameters.AddWithValue("@o1", "Ödeme Bekliyor");
-                        komut.Parameters.AddWithValue("@o2", txtRaporNo.Text);
                         komut.Parameters.AddWithValue("@o3", odemeID);
-                        komut.Parameters.AddWithValue("@a9", "Aktif");
-                        komut.Parameters.AddWithValue("@a10", 0);
-                        komut.Parameters.AddWithValue("@a11", txtRaporNo.Text);
-                        komut.Parameters.AddWithValue("@a12", Anasayfa.kullanicifirmaID);
                         komut.Parameters.AddWithValue("@k1", "Faturalandırıldı");
                         komut.Parameters.AddWithValue("@k2", txtRaporNo.Text);
                         komut.Parameters.AddWithValue("@k3", "Onaylandı");
+                        komut.Parameters.AddWithValue("@k4", txtFaturaNo.Text);
+                        komut.Parameters.AddWithValue("@k5", "Ödeme Bekliyor");
+                        komut.Parameters.AddWithValue("@a1", dateEdit1.EditValue);
                         komut.ExecuteNonQuery();
                         bgl.baglanti().Close();
                         MessageBox.Show("Kayıt İşlemi Başarılı.");
                         this.Close();
                         temizle();
+
+                        //SqlCommand komut = new SqlCommand("insert into Fatura (Fatura_No,Tutar,KDV,Toplam,Proje_Id,RaporFirmaID,FaturaFirmaID,Tarih,Durum,Odenen_Tutar,ProformaNo,FaturaKesenID) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12); update Odeme set Odeme_Durumu=@o1 , Evrak_No = @o2, Fatura_ID =IDENT_CURRENT('Fatura') where ID = @o3 ; update ProformaDurum set Durum = @k1 where ProformaNo = @k2 and Durum = @k3", bgl.baglanti());
+                        //komut.Parameters.AddWithValue("@a1", txtFaturaNo.Text);
+                        //komut.Parameters.AddWithValue("@a2", Convert.ToDecimal(txtTutar.Text));
+                        //komut.Parameters.AddWithValue("@a3", Convert.ToDecimal(txtKDV.Text));
+                        //komut.Parameters.AddWithValue("@a4", Convert.ToDecimal(txtToplam.Text));
+                        //komut.Parameters.AddWithValue("@a5", projeID);
+                        //komut.Parameters.AddWithValue("@a6", raporfirma);
+                        //komut.Parameters.AddWithValue("@a7", faturafirma);
+                        //komut.Parameters.AddWithValue("@a8", dateEdit1.EditValue);
+                        //komut.Parameters.AddWithValue("@o1", "Ödeme Bekliyor");
+                        //komut.Parameters.AddWithValue("@o2", txtRaporNo.Text);
+                        //komut.Parameters.AddWithValue("@o3", odemeID);
+                        //komut.Parameters.AddWithValue("@a9", "Aktif");
+                        //komut.Parameters.AddWithValue("@a10", 0);
+                        //komut.Parameters.AddWithValue("@a11", txtRaporNo.Text);
+                        //komut.Parameters.AddWithValue("@a12", Anasayfa.kullanicifirmaID);
+                        //komut.Parameters.AddWithValue("@k1", "Faturalandırıldı");
+                        //komut.Parameters.AddWithValue("@k2", txtRaporNo.Text);
+                        //komut.Parameters.AddWithValue("@k3", "Onaylandı");
+                        //komut.ExecuteNonQuery();
+                        //bgl.baglanti().Close();
+                        //MessageBox.Show("Kayıt İşlemi Başarılı.");
+                        //this.Close();
+                        //temizle();
                         // f.listele();
                         //  n.listele();
                     }

@@ -123,6 +123,16 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap Cosmoliz_Logo_v2_slogansız1 {
+            get {
+                object obj = ResourceManager.GetObject("Cosmoliz-Logo-v2_slogansız1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap diploma {
             get {
                 object obj = ResourceManager.GetObject("diploma", resourceCulture);
@@ -133,9 +143,29 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap Favicon {
+            get {
+                object obj = ResourceManager.GetObject("Favicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap gradient {
             get {
                 object obj = ResourceManager.GetObject("gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap image002 {
+            get {
+                object obj = ResourceManager.GetObject("image002", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +236,16 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap Kommass {
             get {
                 object obj = ResourceManager.GetObject("Kommass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap NAC_035_TL {
+            get {
+                object obj = ResourceManager.GetObject("NAC-035-TL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +333,79 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap Resim1 {
+            get {
+                object obj = ResourceManager.GetObject("Resim1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Resim2 {
+            get {
+                object obj = ResourceManager.GetObject("Resim2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap rNews2 {
+            get {
+                object obj = ResourceManager.GetObject("rNews2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap rNews2_2 {
+            get {
+                object obj = ResourceManager.GetObject("rNews2-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap rNews21 {
+            get {
+                object obj = ResourceManager.GetObject("rNews21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap Root_Intern {
             get {
                 object obj = ResourceManager.GetObject("Root Intern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap RootB {
+            get {
+                object obj = ResourceManager.GetObject("RootB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap RootB_ {
+            get {
+                object obj = ResourceManager.GetObject("RootB.", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

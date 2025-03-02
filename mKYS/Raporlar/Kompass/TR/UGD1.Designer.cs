@@ -355,6 +355,12 @@
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell117 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell121 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow59 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell124 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell125 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow60 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell126 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell127 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -630,7 +636,7 @@
             this.xrLabel10,
             this.xrLabel6,
             this.xrLabel5});
-            this.ReportHeader.HeightF = 702.7609F;
+            this.ReportHeader.HeightF = 749.6777F;
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
             this.ReportHeader.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -902,8 +908,10 @@
             this.xrTableRow11,
             this.xrTableRow12,
             this.xrTableRow13,
-            this.xrTableRow14});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(722.1666F, 100F);
+            this.xrTableRow14,
+            this.xrTableRow59,
+            this.xrTableRow60});
+            this.xrTable3.SizeF = new System.Drawing.SizeF(722.1666F, 150F);
             // 
             // xrTableRow11
             // 
@@ -1069,7 +1077,7 @@
             this.xrLabel14.BackColor = System.Drawing.Color.WhiteSmoke;
             this.xrLabel14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel14.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(23.83372F, 635.5527F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(23.83264F, 682.4695F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1082,7 +1090,7 @@
             // xrLabel15
             // 
             this.xrLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(47.79205F, 669.7609F);
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(47.79097F, 716.6777F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -4076,6 +4084,78 @@
             this.xrTableCell121.Text = "YÖNETMELİK";
             this.xrTableCell121.Weight = 1.1073761109984597D;
             // 
+            // xrTableRow59
+            // 
+            this.xrTableRow59.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell124,
+            this.xrTableCell125});
+            this.xrTableRow59.Name = "xrTableRow59";
+            this.xrTableRow59.Weight = 1D;
+            // 
+            // xrTableCell124
+            // 
+            this.xrTableCell124.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.xrTableCell124.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrTableCell124.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell124.Multiline = true;
+            this.xrTableCell124.Name = "xrTableCell124";
+            this.xrTableCell124.StylePriority.UseBackColor = false;
+            this.xrTableCell124.StylePriority.UseFont = false;
+            this.xrTableCell124.StylePriority.UseForeColor = false;
+            this.xrTableCell124.Text = "EU-Responsible Person";
+            this.xrTableCell124.Weight = 1.5520834350585937D;
+            // 
+            // xrTableCell125
+            // 
+            this.xrTableCell125.BorderColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell125.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell125.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([EURP]),\'-\' ,[EURP] )")});
+            this.xrTableCell125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrTableCell125.Multiline = true;
+            this.xrTableCell125.Name = "xrTableCell125";
+            this.xrTableCell125.StylePriority.UseBorderColor = false;
+            this.xrTableCell125.StylePriority.UseBorders = false;
+            this.xrTableCell125.StylePriority.UseFont = false;
+            this.xrTableCell125.Text = "xrTableCell125";
+            this.xrTableCell125.Weight = 5.66958251953125D;
+            // 
+            // xrTableRow60
+            // 
+            this.xrTableRow60.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell126,
+            this.xrTableCell127});
+            this.xrTableRow60.Name = "xrTableRow60";
+            this.xrTableRow60.Weight = 1D;
+            // 
+            // xrTableCell126
+            // 
+            this.xrTableCell126.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.xrTableCell126.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrTableCell126.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell126.Multiline = true;
+            this.xrTableCell126.Name = "xrTableCell126";
+            this.xrTableCell126.StylePriority.UseBackColor = false;
+            this.xrTableCell126.StylePriority.UseFont = false;
+            this.xrTableCell126.StylePriority.UseForeColor = false;
+            this.xrTableCell126.Text = "UK-Responsible Person";
+            this.xrTableCell126.Weight = 1.5520834350585937D;
+            // 
+            // xrTableCell127
+            // 
+            this.xrTableCell127.BorderColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell127.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell127.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([UKRP]),\'-\' ,[UKRP] )")});
+            this.xrTableCell127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrTableCell127.Multiline = true;
+            this.xrTableCell127.Name = "xrTableCell127";
+            this.xrTableCell127.StylePriority.UseBorderColor = false;
+            this.xrTableCell127.StylePriority.UseBorders = false;
+            this.xrTableCell127.StylePriority.UseFont = false;
+            this.xrTableCell127.Text = "xrTableCell127";
+            this.xrTableCell127.Weight = 5.66958251953125D;
+            // 
             // UGD1
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -4436,5 +4516,11 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell117;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell121;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow59;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell124;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell125;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow60;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell126;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell127;
     }
 }

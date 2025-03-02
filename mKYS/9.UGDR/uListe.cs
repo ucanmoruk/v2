@@ -75,7 +75,7 @@ namespace mROOT._9.UGDR
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Teklif Yazdır
+            //Türkçe Rapor Yazdır
             // mKYS.Raporlar.TeklifMS.tID = lID;
                                  
 
@@ -105,7 +105,7 @@ namespace mROOT._9.UGDR
                     frm.UGDRKompass();
                     frm.ShowDialog();
                 }
-            }
+            } 
             else
             {
                 for (int i = 0; i < gridView1.SelectedRowsCount; i++)
@@ -201,10 +201,12 @@ namespace mROOT._9.UGDR
                 if (Giris.birimID == "1006")
                 {
                     barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    barButtonItem19.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                 }
                 else
                 {
                     barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    barButtonItem19.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 }
 
             }
@@ -474,10 +476,10 @@ namespace mROOT._9.UGDR
                     int y = Convert.ToInt32(id);
                     listeID = gridView1.GetRowCellValue(y, "ID").ToString();
 
-                    mKYS.Raporlar.Ozeco.Cpnp.UGD1.tID = lID;
-                    mKYS.Raporlar.Ozeco.Cpnp.UGD2.tID = lID;
-                    mKYS.Raporlar.Ozeco.Cpnp.UGD3.tID = lID;
-                    mKYS.Raporlar.Ozeco.Cpnp.UGD4.tID = lID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD1.tID = listeID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD2.tID = listeID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD3.tID = listeID;
+                    mKYS.Raporlar.Ozeco.Cpnp.UGD4.tID = listeID;
                     frmPrint.name = "PIF - " + dosyadi;
                     using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                     {
@@ -489,6 +491,15 @@ namespace mROOT._9.UGDR
                 }
             }
 
+        }
+
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //RP
+            RPList.uID = lID;
+            RPList.rNo = rno;
+            RPList rp = new RPList();
+            rp.Show();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

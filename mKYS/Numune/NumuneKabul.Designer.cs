@@ -44,6 +44,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_kaydet = new DevExpress.XtraEditors.SimpleButton();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.txt_yetkili = new DevExpress.XtraEditors.TextEdit();
             this.combo_dil = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
@@ -52,7 +53,6 @@
             this.txt_model = new System.Windows.Forms.RichTextBox();
             this.combo_denetci = new DevExpress.XtraEditors.ComboBoxEdit();
             this.combo_bakanlik = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.combo_yetkili = new DevExpress.XtraEditors.ComboBoxEdit();
             this.combo_birim = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_alicifirma = new DevExpress.XtraEditors.TextEdit();
@@ -118,12 +118,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_yetkili.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_dil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_denetci.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_bakanlik.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_yetkili.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_alicifirma.Properties)).BeginInit();
@@ -164,7 +164,7 @@
             this.tabNavigationPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabNavigationPage2.Controls.Add(this.panelControl1);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1114, 477);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1114, 475);
             // 
             // tableLayoutPanel1
             // 
@@ -178,7 +178,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1114, 396);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1114, 394);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -192,8 +192,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 332F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(426, 390);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 361F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(426, 388);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // gridLookUpEdit1
@@ -220,10 +220,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 61);
+            this.gridControl2.Location = new System.Drawing.Point(3, 30);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(420, 326);
+            this.gridControl2.Size = new System.Drawing.Size(420, 355);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2,
@@ -255,7 +255,7 @@
             this.gridControl1.Location = new System.Drawing.Point(435, 3);
             this.gridControl1.MainView = this.gridView3;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(676, 390);
+            this.gridControl1.Size = new System.Drawing.Size(676, 388);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -274,7 +274,7 @@
             this.panelControl1.Controls.Add(this.simpleButton2);
             this.panelControl1.Controls.Add(this.btn_kaydet);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 396);
+            this.panelControl1.Location = new System.Drawing.Point(0, 394);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1114, 81);
             this.panelControl1.TabIndex = 1;
@@ -310,6 +310,7 @@
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Firma ve Numune Bilgileri";
+            this.tabNavigationPage1.Controls.Add(this.txt_yetkili);
             this.tabNavigationPage1.Controls.Add(this.combo_dil);
             this.tabNavigationPage1.Controls.Add(this.labelControl15);
             this.tabNavigationPage1.Controls.Add(this.separatorControl1);
@@ -318,7 +319,6 @@
             this.tabNavigationPage1.Controls.Add(this.txt_model);
             this.tabNavigationPage1.Controls.Add(this.combo_denetci);
             this.tabNavigationPage1.Controls.Add(this.combo_bakanlik);
-            this.tabNavigationPage1.Controls.Add(this.combo_yetkili);
             this.tabNavigationPage1.Controls.Add(this.combo_birim);
             this.tabNavigationPage1.Controls.Add(this.comboBoxEdit1);
             this.tabNavigationPage1.Controls.Add(this.txt_alicifirma);
@@ -362,7 +362,15 @@
             this.tabNavigationPage1.Controls.Add(this.separatorControl2);
             this.tabNavigationPage1.Controls.Add(this.separatorControl3);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1114, 477);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1114, 475);
+            // 
+            // txt_yetkili
+            // 
+            this.txt_yetkili.Location = new System.Drawing.Point(203, 234);
+            this.txt_yetkili.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_yetkili.Name = "txt_yetkili";
+            this.txt_yetkili.Size = new System.Drawing.Size(282, 20);
+            this.txt_yetkili.TabIndex = 12;
             // 
             // combo_dil
             // 
@@ -456,16 +464,6 @@
             this.combo_bakanlik.TabIndex = 12;
             this.combo_bakanlik.Visible = false;
             this.combo_bakanlik.SelectedIndexChanged += new System.EventHandler(this.combo_bakanlik_SelectedIndexChanged);
-            // 
-            // combo_yetkili
-            // 
-            this.combo_yetkili.Location = new System.Drawing.Point(203, 235);
-            this.combo_yetkili.Name = "combo_yetkili";
-            this.combo_yetkili.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.combo_yetkili.Size = new System.Drawing.Size(282, 20);
-            this.combo_yetkili.TabIndex = 12;
-            this.combo_yetkili.SelectedIndexChanged += new System.EventHandler(this.combo_yetkili_SelectedIndexChanged);
             // 
             // combo_birim
             // 
@@ -575,7 +573,7 @@
             this.checkEdit1.Margin = new System.Windows.Forms.Padding(2);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "Akredite";
-            this.checkEdit1.Size = new System.Drawing.Size(73, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(73, 20);
             this.checkEdit1.TabIndex = 3;
             // 
             // btn_firmaekle
@@ -625,6 +623,8 @@
             // 
             // combo_grup
             // 
+            this.combo_grup.EditValue = "Özel";
+            this.combo_grup.Enabled = false;
             this.combo_grup.Location = new System.Drawing.Point(204, 88);
             this.combo_grup.Margin = new System.Windows.Forms.Padding(2);
             this.combo_grup.Name = "combo_grup";
@@ -966,6 +966,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1114, 504);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.barDockControlLeft);
@@ -975,7 +976,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NumuneKabul";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NumuneKabul";
+            this.Text = "Yeni İş ";
             this.Load += new System.EventHandler(this.NumuneKabul_Load);
             this.tabNavigationPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -991,12 +992,12 @@
             this.panelControl1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_yetkili.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_dil.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_denetci.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_bakanlik.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.combo_yetkili.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_alicifirma.Properties)).EndInit();
@@ -1050,7 +1051,6 @@
         private System.Windows.Forms.RichTextBox txt_model;
         private DevExpress.XtraEditors.ComboBoxEdit combo_denetci;
         private DevExpress.XtraEditors.ComboBoxEdit combo_bakanlik;
-        private DevExpress.XtraEditors.ComboBoxEdit combo_yetkili;
         private DevExpress.XtraEditors.ComboBoxEdit combo_birim;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit txt_alicifirma;
@@ -1111,5 +1111,6 @@
         private DevExpress.XtraEditors.SeparatorControl separatorControl3;
         private DevExpress.XtraEditors.ComboBoxEdit combo_dil;
         private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.TextEdit txt_yetkili;
     }
 }

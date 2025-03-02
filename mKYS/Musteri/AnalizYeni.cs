@@ -20,7 +20,7 @@ namespace mKYS.Musteri.Analiz
         void glistele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Birim from StokFirmaBirim where Durum= 'Aktif'", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Birim from RootFirmaBirim where Durum= 'Aktif'", bgl.baglanti());
             da2.Fill(dt2);
 
             gridLookUpEdit1.Properties.DataSource = dt2;

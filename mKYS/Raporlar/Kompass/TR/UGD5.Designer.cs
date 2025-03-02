@@ -245,17 +245,19 @@
             // 
             // xrPictureBox4
             // 
+            this.xrPictureBox4.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
             this.xrPictureBox4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pStabilite")});
             this.xrPictureBox4.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
             this.xrPictureBox4.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.diploma, true);
-            this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(17.00002F, 11.8125F);
+            this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(155.6251F, 67.02083F);
             this.xrPictureBox4.Name = "xrPictureBox4";
-            this.xrPictureBox4.SizeF = new System.Drawing.SizeF(736F, 776.6875F);
+            this.xrPictureBox4.SizeF = new System.Drawing.SizeF(361F, 463.1458F);
             this.xrPictureBox4.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
             // Detail
             // 
+            this.Detail.Expanded = false;
             this.Detail.HeightF = 0F;
             this.Detail.Name = "Detail";
             // 
@@ -280,7 +282,6 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox4});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 798.5F;
             this.ReportHeader.Name = "ReportHeader";
             // 
@@ -288,7 +289,6 @@
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox1});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 790.625F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;

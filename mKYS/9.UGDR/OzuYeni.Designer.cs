@@ -51,7 +51,6 @@
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.tverno = new DevExpress.XtraEditors.TextEdit();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.traporno = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -60,6 +59,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.Next = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.traporno = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.tdigeren = new DevExpress.XtraEditors.TextEdit();
             this.tsudaen = new DevExpress.XtraEditors.TextEdit();
@@ -194,7 +194,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(522, 465);
+            this.xtraTabControl1.Size = new System.Drawing.Size(522, 509);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -222,7 +222,6 @@
             this.xtraTabPage1.Controls.Add(this.dateEdit1);
             this.xtraTabPage1.Controls.Add(this.tverno);
             this.xtraTabPage1.Controls.Add(this.labelControl23);
-            this.xtraTabPage1.Controls.Add(this.traporno);
             this.xtraTabPage1.Controls.Add(this.labelControl7);
             this.xtraTabPage1.Controls.Add(this.labelControl6);
             this.xtraTabPage1.Controls.Add(this.labelControl5);
@@ -231,15 +230,16 @@
             this.xtraTabPage1.Controls.Add(this.labelControl2);
             this.xtraTabPage1.Controls.Add(this.Next);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
+            this.xtraTabPage1.Controls.Add(this.traporno);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(520, 436);
+            this.xtraTabPage1.Size = new System.Drawing.Size(520, 480);
             this.xtraTabPage1.Text = "Genel Bilgiler";
             this.xtraTabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage1_Paint);
             // 
             // comboalerjen
             // 
             this.comboalerjen.EditValue = "İçermez";
-            this.comboalerjen.Location = new System.Drawing.Point(327, 323);
+            this.comboalerjen.Location = new System.Drawing.Point(327, 324);
             this.comboalerjen.Margin = new System.Windows.Forms.Padding(2);
             this.comboalerjen.Name = "comboalerjen";
             this.comboalerjen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -248,20 +248,20 @@
             "İçerir",
             "İçermez"});
             this.comboalerjen.Size = new System.Drawing.Size(147, 20);
-            this.comboalerjen.TabIndex = 14;
+            this.comboalerjen.TabIndex = 15;
             // 
             // labelControl26
             // 
-            this.labelControl26.Location = new System.Drawing.Point(281, 327);
+            this.labelControl26.Location = new System.Drawing.Point(281, 328);
             this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(35, 13);
+            this.labelControl26.Size = new System.Drawing.Size(38, 13);
             this.labelControl26.TabIndex = 22;
             this.labelControl26.Text = "Alerjen:";
             // 
             // comboparfum
             // 
             this.comboparfum.EditValue = "İçermez";
-            this.comboparfum.Location = new System.Drawing.Point(151, 323);
+            this.comboparfum.Location = new System.Drawing.Point(151, 324);
             this.comboparfum.Margin = new System.Windows.Forms.Padding(2);
             this.comboparfum.Name = "comboparfum";
             this.comboparfum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -274,22 +274,22 @@
             // 
             // labelControl25
             // 
-            this.labelControl25.Location = new System.Drawing.Point(105, 327);
+            this.labelControl25.Location = new System.Drawing.Point(105, 328);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(36, 13);
+            this.labelControl25.Size = new System.Drawing.Size(38, 13);
             this.labelControl25.TabIndex = 20;
             this.labelControl25.Text = "Parfüm:";
             // 
             // turunen
             // 
-            this.turunen.Location = new System.Drawing.Point(151, 127);
+            this.turunen.Location = new System.Drawing.Point(151, 128);
             this.turunen.Name = "turunen";
             this.turunen.Size = new System.Drawing.Size(323, 20);
             this.turunen.TabIndex = 6;
             // 
             // labelControl24
             // 
-            this.labelControl24.Location = new System.Drawing.Point(79, 130);
+            this.labelControl24.Location = new System.Drawing.Point(79, 131);
             this.labelControl24.Name = "labelControl24";
             this.labelControl24.Size = new System.Drawing.Size(66, 13);
             this.labelControl24.TabIndex = 19;
@@ -297,14 +297,14 @@
             // 
             // tUygulama
             // 
-            this.tUygulama.Location = new System.Drawing.Point(151, 222);
+            this.tUygulama.Location = new System.Drawing.Point(151, 223);
             this.tUygulama.Name = "tUygulama";
             this.tUygulama.Size = new System.Drawing.Size(323, 20);
             this.tUygulama.TabIndex = 11;
             // 
             // gridLookUpEdit2
             // 
-            this.gridLookUpEdit2.Location = new System.Drawing.Point(268, 189);
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(268, 190);
             this.gridLookUpEdit2.Name = "gridLookUpEdit2";
             this.gridLookUpEdit2.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -325,7 +325,7 @@
             // 
             // tAdegeri
             // 
-            this.tAdegeri.Location = new System.Drawing.Point(151, 290);
+            this.tAdegeri.Location = new System.Drawing.Point(151, 291);
             this.tAdegeri.Name = "tAdegeri";
             this.tAdegeri.Size = new System.Drawing.Size(323, 20);
             this.tAdegeri.TabIndex = 13;
@@ -333,21 +333,21 @@
             // thedef
             // 
             this.thedef.EditValue = "Yetişkinler";
-            this.thedef.Location = new System.Drawing.Point(151, 254);
+            this.thedef.Location = new System.Drawing.Point(151, 255);
             this.thedef.Name = "thedef";
             this.thedef.Size = new System.Drawing.Size(323, 20);
             this.thedef.TabIndex = 12;
             // 
             // tmiktar
             // 
-            this.tmiktar.Location = new System.Drawing.Point(327, 159);
+            this.tmiktar.Location = new System.Drawing.Point(327, 160);
             this.tmiktar.Name = "tmiktar";
             this.tmiktar.Size = new System.Drawing.Size(147, 20);
             this.tmiktar.TabIndex = 8;
             // 
             // ctip
             // 
-            this.ctip.Location = new System.Drawing.Point(151, 189);
+            this.ctip.Location = new System.Drawing.Point(151, 190);
             this.ctip.Name = "ctip";
             this.ctip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -359,14 +359,14 @@
             // 
             // tbarkod
             // 
-            this.tbarkod.Location = new System.Drawing.Point(151, 159);
+            this.tbarkod.Location = new System.Drawing.Point(151, 160);
             this.tbarkod.Name = "tbarkod";
             this.tbarkod.Size = new System.Drawing.Size(170, 20);
             this.tbarkod.TabIndex = 7;
             // 
             // turun
             // 
-            this.turun.Location = new System.Drawing.Point(151, 94);
+            this.turun.Location = new System.Drawing.Point(151, 95);
             this.turun.Name = "turun";
             this.turun.Size = new System.Drawing.Size(323, 20);
             this.turun.TabIndex = 5;
@@ -413,38 +413,31 @@
             // 
             // labelControl23
             // 
-            this.labelControl23.Location = new System.Drawing.Point(99, 293);
+            this.labelControl23.Location = new System.Drawing.Point(99, 294);
             this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(44, 13);
+            this.labelControl23.Size = new System.Drawing.Size(45, 13);
             this.labelControl23.TabIndex = 17;
             this.labelControl23.Text = "A Değeri:";
             // 
-            // traporno
-            // 
-            this.traporno.Location = new System.Drawing.Point(151, 34);
-            this.traporno.Name = "traporno";
-            this.traporno.Size = new System.Drawing.Size(111, 20);
-            this.traporno.TabIndex = 1;
-            // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(85, 257);
+            this.labelControl7.Location = new System.Drawing.Point(85, 258);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(58, 13);
+            this.labelControl7.Size = new System.Drawing.Size(59, 13);
             this.labelControl7.TabIndex = 17;
             this.labelControl7.Text = "Hedef Grup:";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(67, 225);
+            this.labelControl6.Location = new System.Drawing.Point(67, 226);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(76, 13);
+            this.labelControl6.Size = new System.Drawing.Size(77, 13);
             this.labelControl6.TabIndex = 16;
             this.labelControl6.Text = "Uygulama Alanı:";
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(98, 192);
+            this.labelControl5.Location = new System.Drawing.Point(98, 193);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(46, 13);
             this.labelControl5.TabIndex = 15;
@@ -452,17 +445,17 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(68, 162);
+            this.labelControl4.Location = new System.Drawing.Point(68, 163);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(77, 13);
+            this.labelControl4.Size = new System.Drawing.Size(76, 13);
             this.labelControl4.TabIndex = 14;
             this.labelControl4.Text = "Barkod / Miktar:";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(99, 97);
+            this.labelControl3.Location = new System.Drawing.Point(99, 98);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(44, 13);
+            this.labelControl3.Size = new System.Drawing.Size(45, 13);
             this.labelControl3.TabIndex = 13;
             this.labelControl3.Text = "Ürün Adı:";
             // 
@@ -470,7 +463,7 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(96, 67);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(46, 13);
+            this.labelControl2.Size = new System.Drawing.Size(48, 13);
             this.labelControl2.TabIndex = 12;
             this.labelControl2.Text = "Firma Adı:";
             // 
@@ -478,19 +471,26 @@
             // 
             this.Next.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Next.ImageOptions.Image")));
             this.Next.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.Next.Location = new System.Drawing.Point(420, 369);
+            this.Next.Location = new System.Drawing.Point(420, 368);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(54, 55);
-            this.Next.TabIndex = 15;
+            this.Next.TabIndex = 16;
             this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(37, 37);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(106, 13);
+            this.labelControl1.Size = new System.Drawing.Size(107, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Rapor / Vr. No - Tarih:";
+            // 
+            // traporno
+            // 
+            this.traporno.Location = new System.Drawing.Point(151, 34);
+            this.traporno.Name = "traporno";
+            this.traporno.Size = new System.Drawing.Size(111, 20);
+            this.traporno.TabIndex = 1;
             // 
             // xtraTabPage2
             // 
@@ -519,7 +519,7 @@
             this.xtraTabPage2.Controls.Add(this.labelControl9);
             this.xtraTabPage2.Controls.Add(this.labelControl8);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(520, 436);
+            this.xtraTabPage2.Size = new System.Drawing.Size(520, 480);
             this.xtraTabPage2.Text = "Ürün Bilgileri";
             // 
             // tdigeren
@@ -566,7 +566,7 @@
             // 
             this.next2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("next2.ImageOptions.Image")));
             this.next2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.next2.Location = new System.Drawing.Point(430, 329);
+            this.next2.Location = new System.Drawing.Point(430, 360);
             this.next2.Name = "next2";
             this.next2.Size = new System.Drawing.Size(54, 55);
             this.next2.TabIndex = 30;
@@ -656,7 +656,7 @@
             // 
             this.labelControl16.Location = new System.Drawing.Point(23, 221);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(137, 13);
+            this.labelControl16.Size = new System.Drawing.Size(135, 13);
             this.labelControl16.TabIndex = 8;
             this.labelControl16.Text = "Suda Çözünülebilirlik Tr / En:";
             // 
@@ -664,7 +664,7 @@
             // 
             this.labelControl15.Location = new System.Drawing.Point(20, 251);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(137, 13);
+            this.labelControl15.Size = new System.Drawing.Size(136, 13);
             this.labelControl15.TabIndex = 7;
             this.labelControl15.Text = "Diğer Çözünülebilirlik Tr / En:";
             // 
@@ -672,7 +672,7 @@
             // 
             this.labelControl14.Location = new System.Drawing.Point(90, 99);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(68, 13);
+            this.labelControl14.Size = new System.Drawing.Size(67, 13);
             this.labelControl14.TabIndex = 6;
             this.labelControl14.Text = "Koku / Odour:";
             // 
@@ -688,7 +688,7 @@
             // 
             this.labelControl12.Location = new System.Drawing.Point(35, 191);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(123, 13);
+            this.labelControl12.Size = new System.Drawing.Size(122, 13);
             this.labelControl12.TabIndex = 4;
             this.labelControl12.Text = "Kaynama / Erime Noktası:";
             // 
@@ -696,7 +696,7 @@
             // 
             this.labelControl10.Location = new System.Drawing.Point(58, 161);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(101, 13);
+            this.labelControl10.Size = new System.Drawing.Size(98, 13);
             this.labelControl10.TabIndex = 2;
             this.labelControl10.Text = "Yoğunluk / Viskozite:";
             // 
@@ -704,7 +704,7 @@
             // 
             this.labelControl9.Location = new System.Drawing.Point(93, 69);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(64, 13);
+            this.labelControl9.Size = new System.Drawing.Size(63, 13);
             this.labelControl9.TabIndex = 1;
             this.labelControl9.Text = "Renk / Color:";
             // 
@@ -740,7 +740,7 @@
             this.xtraTabPage3.Controls.Add(this.checkEdit2);
             this.xtraTabPage3.Controls.Add(this.checkEdit1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(520, 436);
+            this.xtraTabPage3.Size = new System.Drawing.Size(520, 480);
             this.xtraTabPage3.Text = "Testler";
             // 
             // mstaen
@@ -993,7 +993,7 @@
             this.xtraTabPage4.Controls.Add(this.memoEdit3);
             this.xtraTabPage4.Controls.Add(this.memoEdit2);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(520, 436);
+            this.xtraTabPage4.Size = new System.Drawing.Size(520, 480);
             this.xtraTabPage4.Text = "Kutu / Etiket";
             // 
             // btn_uyari
@@ -1009,7 +1009,7 @@
             // 
             this.labelControl18.Location = new System.Drawing.Point(73, 361);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(70, 13);
+            this.labelControl18.Size = new System.Drawing.Size(73, 13);
             this.labelControl18.TabIndex = 56;
             this.labelControl18.Text = "Etiket Uyarıları:";
             // 
@@ -1089,7 +1089,7 @@
             // 
             this.labelControl21.Location = new System.Drawing.Point(32, 227);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(38, 13);
+            this.labelControl21.Size = new System.Drawing.Size(41, 13);
             this.labelControl21.TabIndex = 1;
             this.labelControl21.Text = "Uyarılar:";
             // 
@@ -1097,7 +1097,7 @@
             // 
             this.labelControl20.Location = new System.Drawing.Point(28, 134);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(45, 13);
+            this.labelControl20.Size = new System.Drawing.Size(46, 13);
             this.labelControl20.TabIndex = 1;
             this.labelControl20.Text = "Özellikler:";
             // 
@@ -1134,7 +1134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 465);
+            this.ClientSize = new System.Drawing.Size(522, 509);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "OzuYeni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -310,8 +310,8 @@ namespace mKYS
 
         private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Analiz.AnalizYeni any = new Analiz.AnalizYeni();
-            any.Show();
+            //Analiz.AnalizYeni any = new Analiz.AnalizYeni();
+            //any.Show();
         }
 
       //  Stok.ReceteListesi rel;

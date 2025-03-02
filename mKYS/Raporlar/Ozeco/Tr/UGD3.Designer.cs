@@ -241,6 +241,7 @@
             this.xrPictureBox6.Name = "xrPictureBox6";
             this.xrPictureBox6.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox6.Visible = false;
             // 
             // xrLabel67
             // 
@@ -254,6 +255,7 @@
             this.xrLabel67.StylePriority.UseTextAlignment = false;
             this.xrLabel67.Text = "www.ozecogroup.com / info@ozecogroup.com";
             this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel67.Visible = false;
             // 
             // xrPictureBox5
             // 
@@ -262,6 +264,7 @@
             this.xrPictureBox5.Name = "xrPictureBox5";
             this.xrPictureBox5.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox5.Visible = false;
             // 
             // Detail
             // 

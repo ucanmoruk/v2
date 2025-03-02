@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "rUGDListe"."ID", "rUGDListe"."RaporNo",
+       "rUGDListe"."Tarih", "rUGDListe"."FirmaID",
+       "rUGDListe"."Versiyon", "rUGDListe"."UrunEn",
+       "rUGDListe"."Barkod", "rUGDListe"."Miktar",
+       "rUGDListe"."Tip1", "rUGDListe"."Tip2",
+       "rUGDListe"."Uygulama", "rUGDListe"."Hedef",
+       "RootTedarikci"."Ad", "RootTedarikci"."Adres",
+       "RootTedarikci"."Email",
+       "RootTedarikci"."Telefon"
+  from ("rUGDListe" "rUGDListe"
+  left join "RootTedarikci" "RootTedarikci"
+       on ("RootTedarikci"."ID" = "rUGDListe"."FirmaID"))
+</value>
+  </data>
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>select "rUGDDetay"."GorunumEn", "rUGDDetay"."RenkEn",
+       "rUGDDetay"."KokuEn", "rUGDDetay"."pH",
+       "rUGDDetay"."Kaynama", "rUGDDetay"."Erime",
+       "rUGDDetay"."Yogunluk", "rUGDDetay"."SudaEn",
+       "rUGDDetay"."Viskozite", "rUGDDetay2"."Mikro",
+       "rUGDDetay2"."MResim",
+       "rUGDDetay2"."Challenge",
+       "rUGDDetay2"."CResim",
+       "rUGDDetay2"."Stabilite",
+       "rUGDDetay2"."SResim", "rUGDDetay"."UrunID",
+       "rUGDDetay2"."StabiliteNotEn","rUGDDetay2"."MikroNotEn","rUGDDetay2"."ChallengeNotEn",
+       "rUGDDetay2"."UrunID" as "rUGDDetay2_UrunID",
+       "rUGDDetay2"."KullanimEn",
+       "rUGDDetay2"."UyarilarEn",
+       "rUGDDetay2"."Ozellikler", "rUGDDetay2"."Kutu",
+       "rUGDDetay"."DigerEn"
+  from ("rUGDDetay" "rUGDDetay"
+  left
+  join "rUGDDetay2" "rUGDDetay2"
+       on ("rUGDDetay2"."UrunID" = "rUGDDetay"."UrunID"))
+
+</value>
+  </data>
+  <data name="customSqlQuery3.Sql" xml:space="preserve">
+    <value>select "rUGDTip"."KategoriEn", "rUGDTip"."UrunTipiEn",
+       "rUGDTip"."YuzeyAlani",
+       "rUGDTip"."UygulamaBolgesiEn",
+       "rUGDTip"."SiklikEn", "rUGDTip"."GunlukMiktar",
+       "rUGDTip"."ADegeri", "rUGDTip"."ID"
+  from "rUGDTip" "rUGDTip"
+</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iRmlybWFJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlZlcnNpeW9uIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVXJ1bkVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhcmtvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNaWt0YXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGlwMSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaXAyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlV5Z3VsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkhlZGVmIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkcmVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVtYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbGVmb24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iclVHRERldGF5Ij48RmllbGQgTmFtZT0iR29ydW51bUVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlbmtFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLb2t1RW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icEgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS2F5bmFtYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFcmltZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJZb2d1bmx1ayIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTdWRhRW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmlza296aXRlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1pa3JvIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJNUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2hhbGxlbmdlIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJDUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3RhYmlsaXRlIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJTUmVzaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXJ1bklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU3RhYmlsaXRlTm90RW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrcm9Ob3RFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDaGFsbGVuZ2VOb3RFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJyVUdERGV0YXkyX1VydW5JRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ikt1bGxhbmltRW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVXlhcmlsYXJFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPemVsbGlrbGVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikt1dHUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGlnZXJFbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJyVUdEVGlwIj48RmllbGQgTmFtZT0iS2F0ZWdvcmlFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJVcnVuVGlwaUVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ill1emV5QWxhbmkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVeWd1bGFtYUJvbGdlc2lFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTaWtsaWtFbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHdW5sdWtNaWt0YXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQURlZ2VyaSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjwvVmlldz48UmVsYXRpb24gTWFzdGVyPSJyVUdETGlzdGUiIERldGFpbD0iclVHRERldGF5Ij48S2V5Q29sdW1uIE1hc3Rlcj0iSUQiIERldGFpbD0iVXJ1bklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0iclVHRExpc3RlIiBEZXRhaWw9InJVR0RUaXAiPjxLZXlDb2x1bW4gTWFzdGVyPSJUaXAyIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <data name="xrPictureBox6.ImageSource" xml:space="preserve">
+    <value>iVBORw0KGgoAAAANSUhEUgAAAEEAAABBCAYAAACO98lFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAACOxJREFUeF7tmulX4kgXxt///8ucOT29zEyvYy/TamuruKEt4o6oCIKI7FsgIQuEBMLm81ZVoFt6ZpywhOkP/M7hnFDJgdSTe2/de1P/wxRMRSBMRSBMRSBMRSBMRSBMVIRGs41cUUOq0MDdXXfwHrxsIJE3wEt1NFrdwQlgqwh6rYF8qYEOmbCu17B1qkCp6JjbiGA30D/LdF7GH84qZLUJrz+FeL7BxgVRBSe22bFd2CZCjteQyUs48uVRJ/O5icTxak1h57y+W7za0NhxD4crgk+HHXbcaDSZ1VAWXVlsn+u4TSkgmtrCWEVokfumZm4YBt5tFKHWuicIPM/j59ksyINFJJrEnEvunjHZ3g+RydbQbrex6Jag1e9QrVbxcq2MLKfg+UoRGaF78ZgZmwhKWcXeBQ9Vb7OJPJpNwRMxHT+ZrzJBzgIpeEMybuI8RMVg53rouo7rGI9QVMDKgYgO8aHNIw7LBwpW3Fm4L6toU78i5EpNZPjxBY2xiHB4wWE/UEO5okKpmjfn8cXxwiEiyxvwhQUigjkBKtDd30XFLnXDtHl63dZRCmmujBlHEskiGyZCi3jjrCGeI+5WUJn1jcpIIvQmcxvP4uliAW5fBUW5jWia3twduIKAoqiza0bBc5lCVmiTIFnGk6UyCZ7m/87vFCCU2eFIDC0CFWBpTyJ+agYz93GIPaGi1IDLW2TBcNzEk3l4riR2fHhZwsuNxliW0qFE0PU6zoN5vHOQpc7fZv5L+bQVQyB2LxqOmU6nw4LlSYDHW6dMlk5TgTyvwuXTv8aMQRlKBFFScBWV4QtE8e6LhmCEw0mo2j1rP5KiMkEo/qhGLELDnp+OsaGBGSkmqKqKJ584OD0iuJJ9FvBP+G94kmCpEBTTIuh3sTx4pBxIBJrEeIIyvvjaKJp5Dzb3o8iLQz6CETnwxnBxU2XuKMpVJDMlKGr/0msFyyLQJatYKiMS57DwJYlHCwoK8nA+OC6azSbLObiSjuYIa6VlEer1OrY8AupN8/vpxQ3xx8nFASvQOBHN1uGP1bsj1hjIHRw7Ifzu0HAR7SBb1KHpg5ueHRRLGtykIPvo0vH5QIMvopKVonvSAgMHxqOzW2wc5EiBNJjadhIIp7F6KOLqVkCK07DvpwmVdRUGFuFHpNUyVwfqDrPOBBzH+kDp9MREoGv4AyVDH4OY8jiwXYR8ycBJUEM0U2GFlCdssDL5e+jq4481cHajknhTw7FfIFlgDTnR/hXIVhHOQiU8WTGQ5MxCotFo4OPaNV5t3ZFCiw0x1KqOWVcV711t1AzTjmlp/W45iJebYygO/gXbRKCJy1NHC3MH/U/yNhrD42UDMzt36DaPsOAq4td1IJTq94N0Oo2Z9cJYyuWHGEgETe8mCRb4vJtnE9u57J+BLMt4tsixc2kB4AURvyzp7HuGlMv3oclQOiexHuWgPNSz+B5LIlRUHXO7Kl5sNOHyd1ia+hA0Sr9aybGJnYT7J1ar1fB82RTh9KaDM3+UHdOPWBk9InKkopzbM/BxrwNOsiaEJRFOLhJfb5R+el2if4L6/vPPGXbtCZnofWjm+dLBs3P7wQ6Oz8Jff1fsNkvoU2y2vv1Hs2VdnLkt83/pZ+N8jCKkMhypFs0fX/WYLfR/44/VNLv+INhvCTTg/b5kukoo3UEoHMXT1Tb7XpDMyVJLOvXF8WFHxexeCzcp692p1d0I+y368UasBVXLMSGdyZJipcT81ArOvWt2I6un/YrxvIDHn8t4tnaHKrEoajXPFkyBI7lv12qahl/mTJei11mFutvxRQqBWNVyXBgoMA4C7QC9WLwlk+18Lboo3kCWTezi9lvafeG/xc/zIhzfCfbromkx91v3dmCbCJRyuYwlVwrbXhl5Xkcip2LRxSGY+GvdcRmMYYa4UIBUpoUSqQTDBbxe5bHpraHRtG4Jw2CrCD1KogKOZEccr7AXMw9RINewj1BmLjEJJiLCj85AIoQSVaycGKjo9prnpLEsAo3i64ccfDcSKXA0hJJ1XCV+jKYKpUai7xWJNVGuOzAAlkWgNXuC1ANHoSY+fFHx57aMy2jNcnlsJy1Se2c4Be6zPJ5+ymL5hGS1A9zXQO5wcUUi/akEXpp8e/0hsnmBWSaF5gbzmxFSpVqvPkcKjIpaZ+2s+ynuf0GlUsGz+RhLk+m7ySwnQa/bKEKL1LVSpYmiqKFSNXAdSWL/0nw/OGloen14pbFSO5cv4KMzDceRwu5vEAYWoVrVsOfNsnYZxemRsX46efeoGy2cB+J4NJtFttQdHJKh3IE+AdoCm3drWDqqfU2Le8JMgutIFrtnRSxsRXAY6iBXVIgrDHcDQ8cE50EM7stv1d3uZR1fznXIZbpi2BcjZEXFlrcCpVIj2WeTVJsRvN9W4bnMICcM5gY9hhbh/kSdxxxmtlskGLURSxUQzdnzTiIQLSOS4PF2JQxXwPx/Wp+8Xk5ALA+/IWJoEXpQMd6vJaB00/wPTgGBBKkc63Vck2Vr1P4g9f1qV1PvVZ4E5Br2T4J4PJ9HrJsY0W1CozAWEaJJnriBji2PiDdbZoygzZPfVhTkSPXoDevQDWsuct+TbtMqSdAEfNyI4eTGPCHJZVJlajg8DWPBrQzVf/yekUXokUgXcRqUSPpqrs+xtIy36xyOfDm2SdMg5bA/WiFZpoFsofKXbTb0rXJe0BGOiyz9pRkqfa1GCYVj+GlOhkQeOBXpPCSwsry3yWtUxibCfWhD5flqGddxGe/WUiCJJuP9ehxpvg2PL4HNs/4g5j7j2C5XOvnHs3FEcv2R/vliEsTgGCWp0mcxo2KLCLRncEws4PKaw5vNb0+dugjl4CyJ185+ET4QgbZ95szer8XhvjKPg/EquJKBi1DBtv3OtojQI5kpIhQT2bEkV3AVU9Fu3+HPjTTrNN/n5DyCGaeMmtHB8k4MyaJ5/iYuIF2wdx+ErSLcx2g0EU+LSOclBCLi3+40C1ynSSwpQ5Amu/ljYiL8yExFIExFIExFIExFIExFIExFIExFIExFIExFIExFIExFAPB/0MLeUdfDhpQAAAAASUVORK5CYII=</value>
+  </data>
+  <data name="xrPictureBox5.ImageSource" xml:space="preserve">
+    <value>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</value>
+  </data>
+  <data name="xrLabel23.Text" xml:space="preserve">
+    <value>A commercially available cosmetic product must be safe for human health when used under normal or foreseeable conditions of use. Stability studies were carried out on the finished product. The appearance, color, odor, pH and weight values of the product are checked at regular intervals under different temperature conditions. Stability test results are included in the product security file.</value>
+  </data>
+  <data name="xrLabel26.Text" xml:space="preserve">
+    <value>Particular attention should be paid to raw materials most sensitive to microbial reproduction, water-based mixtures, protein-rich substances. The product contains raw materials that are sensitive to microbial growth. Microbiological study: test results are available in the appendix.</value>
+  </data>
+  <data name="xrLabel24.Text" xml:space="preserve">
+    <value>Microorganisms that should never be present in cosmetic products are Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans and Escherichia coli.
+Since different skin areas may have different sensitivities, two separate categories have been defined for cosmetic products.</value>
+  </data>
+  <data name="xrLabel28.Text" xml:space="preserve">
+    <value>The test involves the preparation of appropriate microorganisms at specific inoculum levels and the enumeration of microorganisms in the sample by inoculating the sample containing microorganisms at specific time intervals. The adequacy of the preservative properties of the product is determined by determining whether a significant decrease or increase in microorganisms is observed at 7, 14 and 28 days under the test conditions.</value>
+  </data>
+  <data name="xrTableCell12.Text" xml:space="preserve">
+    <value>Sıçan, fare, tavşan veya köpeklerde yapılan 28 gün, 90 gün gibi uzun süreli tekrarlanan doz kronik toksisite, karsinojenisite, teratojenisite test çalışmalarının sonuçlarıdır. İstenmeyen etkinin gözlenmediği maddenin en yüksek uygulama miktarıdır. Tedavi veya uygulamaya bağlı olarak hiç istenmeyen etki görülmeyen en yüksek doz veya maruz kalınan madde miktarı birimi mg/kg vücut ağırlığı/gün cinsinden ifade edilir.</value>
+  </data>
+  <data name="xrLabel54.Text" xml:space="preserve">
+    <value>According to the safety assessment report and the toxicological profile calculations, there is no obstacle in the sale of the product.
+Other documents in the Information File of the product are listed below:
+
+a- Label information
+b- Formulation-production method
+c- GMP Certificate
+d- Result of Stability Test, Challenge Test and Microbiological Test
+e- SDS’es of raw materials
+f- Packaging informations</value>
+  </data>
+  <data name="xrLabel51.Text" xml:space="preserve">
+    <value>A system should be established to collect, document, establish causality and manage the undesirable effects resulting from the use of the product after it is placed on the market, and when serious undesirable effects occur, the Agency should be informed in accordance with the "Turkish Medicines and Medical Devices Agency Guideline on Notification of Serious Undesirable Effects (CIE) by the Manufacturer to the Agency".
+All data on undesirable effects and serious undesirable effects related to the cosmetic product(s) should be accessible. Information on all undesirable and serious undesirable effects, including statistical data, must be included in the product information file.
+No undesirable effects or serious undesirable effects have been reported.</value>
+  </data>
+  <data name="xrLabel47.Text" xml:space="preserve">
+    <value>The raw materials and mixtures in the formula were grouped according to their trade names and toxicological evaluations were made. Physical properties and toxicological profiles of raw materials and mixtures are given in Annex-3.</value>
+  </data>
+  <data name="xrLabel43.Text" xml:space="preserve">
+    <value>The systemic effects and the limit of safety (MoS) are calculated on the basis of the NO(A)EL value determined on the basis of the toxicological data observed in the experiments, taking into account all significant absorption pathways. If this assessment cannot be made, the reason should be adequately justified.</value>
+  </data>
+  <data name="xrTableCell66.Text" xml:space="preserve">
+    <value>Results of long-term repeated dose chronic toxicity, carcinogenicity, teratogenicity test studies in rats, mice, rabbits or dogs for 28 days, 90 days. The highest application amount of the substance at which no undesirable effect is observed. The highest dose or amount of exposure to which no undesirable effects are observed due to treatment or application, expressed in mg/kg body weight/day.</value>
+  </data>
+  <data name="xrLabel33.Text" xml:space="preserve">
+    <value>The relevant properties of the packaging material should be taken into account, as substance migration from the packaging to the formulation may occur. Information on packaging material and nominal quantity is provided in the "Product Information" table.</value>
+  </data>
+  <data name="xrLabel30.Text" xml:space="preserve">
+    <value>Impurities are unwanted substances in raw materials.  
+
+Residue is a small amount of an undesirable substance in the finished product. 
+
+Residues may arise from sources such as impurities in raw materials/substances; the manufacturing process; potential chemical changes that may occur in the product under normal storage conditions and or through contact with the packaging material; interaction and or substance migration. 
+
+The GMP declaration of the company where the cosmetic product is manufactured certifies that the cosmetic product is manufactured in accordance with Good Manufacturing Practices. 
+
+Information on the physical and chemical properties of each raw material in the cosmetic product formulation is available and the purity criteria comply with the legislation. 
+
+The cosmetic product does not contain genetically modified organisms (GMO), nanomaterials, ingredients of animal origin, CMR substances classified in categories 1A, 1B and 2 according to CLP regulation 1272/2008.</value>
+  </data>
+  <data name="xrLabel66.Text" xml:space="preserve">
+    <value>a) Name and address of the person who prepared the security assessment report Chemist/ Begüm PAZARLI
+b) The diploma and CV of the person who made the security assessment is attached.
+c) Security evaluator's signature and date.</value>
+  </data>
+  <data name="xrLabel63.Text" xml:space="preserve">
+    <value>Safety assessment report, cosmetics law no. 5324, regulation on amendments to the cosmetics regulation and regulation annexes, guide on safety assessment in cosmetic products, SCCS guidance notes 13th Revision (THE SCCS NOTES OF GUIDANCE FOR THE TESTING OF COSMETIC INGREDIENTS AND THEIR SAFETY EVALUATION 13TH REVISION) and Europe Prepared in reference to cosmetic product directive 1223/2009.
+Details are in Annex I/B of Article 13(4) of the Cosmetic Products Regulation published in the Official Gazette No. 32184 dated 08.05.2023."Cosmetic product safety assessment" is a theoretical and practical assessment given in pharmacy, toxicology, medicine or a similar discipline.
+A diploma showing that you have completed your university education or another educational program whose equivalence is accepted by the Institution. This security assessment report has been prepared in accordance with the article "This security assessment report is carried out by a person with evidence of other official qualifications."
+In preparing this report and evaluating the product (analysis certificates of raw materials, MSDSs, product specifications, stability data, microbiological test, Challenge test, IFRA certificate, production method, product formula and GMP certificate, law and relevant regulations etc.) were used.</value>
+  </data>
+  <data name="xrLabel61.Text" xml:space="preserve">
+    <value>Since the product has passed the laboratory tests and the MoS values of the raw materials are safe, the product is suitable for normal and reasonably foreseeable use under normal conditions, according to the place of use, purpose and amount of use.</value>
+  </data>
+  <data name="xrLabel59.Text" xml:space="preserve">
+    <value>It has been seen that the information of the manufacturer and the responsible company on the finished product label, all the raw materials in the list of product components on the label, are written with the names of INCI and in order from largest to smallest according to the % concentration. Necessary symbols are included. The label has been observed to comply with the legislation.
+The components in the product are the raw materials that are allowed to be used in cosmetics and are suitable for use. All raw materials are non-toxic at these concentrations when used under normal and predictable conditions. The product does not include the substances in the list of prohibited substances in the Cosmetic Law No. 5324, the Regulation on the Amendment of the Cosmetic Regulation and the Annexes of the Regulation. The product composition complies with the cosmetic legislation. No undesirable effects or serious undesirable effects were reported.</value>
+  </data>
+  <data name="xrLabel58.Text" xml:space="preserve">
+    <value>There is no data on impurities and residues.
+In the safety assessment for adults, the MoS (safety interval) has been evaluated according to the MoS &gt; 100 in the SCCS directives.
+Confidence intervals were calculated for raw materials that could reach NO(A)EL values. The safety of raw materials whose.
+NO(A)ELvalues are not reached has been evaluated as safe by examining CIR, COSING and literature. The confidence inte rval for all the calculated raw materials was found to be greater than 100. It is safe to use raw materials at this concentration for this product as well. By taking the upper limit usage rate of the raw materials and assuming 100% absorbtion, the worst-possible safety interval was calculated.</value>
+  </data>
+  <data name="xrLabel57.ExpressionBindings" xml:space="preserve">
+    <value>Iif([rUGDListerUGDDetay].[Challenge]='True',
+'Challenge test was performed to test the protective potential of the preservative used in the finished product. In this context, Escherichia coli DSMZ 1576, Pseudomonas aeruginosa DSMZ 1117, Staphylococcus aureus DSMZ 799, Candida albicans ATCC 10231 and Aspergillus niger ATCC 16404 were used. Microbiological test is available in the appendices.' ,
+Iif([rUGDListerUGDDetay].[Mikro]='True', 'Microbiological test is available in the appendices.','The test reports of the product are attached to the file.' ) )</value>
+  </data>
+  <data name="xrLabel56.Text" xml:space="preserve">
+    <value>While preparing the cosmetic product safety report, the toxicological profile of the product components and ingredients, chemical structure, expected interactions (MSDS, allergen list, IFRA certificate, etc.), legal requirements and compliance with the legislation for the product and raw materials, durability data of the product, antimicrobial test data and packaging material. compatibility was evaluated.
+Finished product specifications and raw material specifications received from the manufacturer for each raw material were evaluated. The stability of the cosmetic product at different temperatures and its sensitivity to moisture should be evaluated under the tested storage conditions. Storage conditions and duration of the selected study should be sufficient to include storage, transportation and subsequent use. An accelerated stability study was carried out for this product, the durability of the product was tested under two different conditions. The stability test evaluation report is given in the annex of the Product Information File. </value>
+  </data>
+</root>

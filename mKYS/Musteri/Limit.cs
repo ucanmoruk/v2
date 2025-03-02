@@ -27,7 +27,7 @@ namespace mKYS.Musteri
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select  x.ID as 'No', x.Tarih, k.Ad as 'Plasiyer' , x.Aciklama as 'Açıklama' from NumuneX3 x
-            left join StokKullanici k on x.KID = k.ID where x.Durum = 'Aktif' order by x.ID desc", bgl.baglanti());
+            left join RootKullanici k on x.KID = k.ID where x.Durum = 'Aktif' order by x.ID desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
         }

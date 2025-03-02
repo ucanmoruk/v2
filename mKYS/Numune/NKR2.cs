@@ -45,21 +45,9 @@ namespace mKYS
 
             DataTable dt = new DataTable();
 
-            //SqlDataAdapter da = new SqlDataAdapter("select distinct n.Tarih, t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', " +
-            //  "f.Firma_Adi as 'Firma Adı', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur," +
-            //  " n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu',  o.Odeme_Durumu as 'Fatura Durumu', n.ID as 'aID' from NKR n " +
-            //  " join Firma f on f.ID = n.Firma_ID join Odeme o on o.Evrak_No = n.Evrak_No inner join Termin t on t.RaporID = n.ID " +
-            //  " where n.Tarih >= N'" + date_baslangic.Text + "' " +
-            //  " and n.Durum = 'Aktif' order by RaporNo desc ", bgl.baglanti());
-            //da.Fill(dt);
-            //gridControl1.DataSource = dt;
-            //gridView3.Columns["aID"].Visible = false;
-
-            //denetimiçin
-
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct n.Tarih, 
-            t.Termin, n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
-            f.Ad as 'Firma Adı', k.Ad as 'Proje', n.Numune_Adi as 'Numune Adı', n.Grup, n.Tur,
+            n.Evrak_No as 'Evrak No', n.RaporNo as 'Rapor No', 
+            f.Ad as 'Firma Adı', k.Ad as 'Proje', n.Numune_Adi as 'Numune Adı', n.Tur,
             n.Aciklama as 'Açıklama', n.Rapor_Durumu as 'Rapor Durumu', 
             o.Odeme_Durumu as 'Fatura Durumu',
             n.ID as 'aID' from NKR n 
@@ -67,9 +55,8 @@ namespace mKYS
             left join NumuneDetay d on n.ID = d.RaporID
 			left join RootTedarikci k on d.ProjeID = k.ID
             left join Odeme o on o.Evrak_No = n.Evrak_No 
-            left join Termin t on t.RaporID = n.ID 
             where 
-			n.Tarih >= N'" + date_baslangic.Text + "' and n.Durum = 'Aktif' order by n.RaporNo desc", bgl.baglanti());
+			n.Durum = 'Aktif' order by n.RaporNo desc", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["aID"].Visible = false;
@@ -104,24 +91,23 @@ namespace mKYS
         void gridduzen()
         {
             this.gridView3.Columns[0].Width = 60;
-            this.gridView3.Columns[1].Width = 60;
+          //  this.gridView3.Columns[1].Width = 60;
+            this.gridView3.Columns[1].Width = 45;
             this.gridView3.Columns[2].Width = 45;
-            this.gridView3.Columns[3].Width = 45;
            // this.gridView3.Columns[4].Width = 25; 
-            this.gridView3.Columns[4].Width = 180; 
-            this.gridView3.Columns[5].Width = 130;
-            this.gridView3.Columns[6].Width = 150;
+            this.gridView3.Columns[3].Width = 200; 
+            this.gridView3.Columns[4].Width = 120;
+            this.gridView3.Columns[5].Width = 150;
           //  this.gridView3.Columns[7].Width = 50;
-            this.gridView3.Columns[7].Width = 45;
+            this.gridView3.Columns[6].Width = 60;
           //  this.gridView3.Columns[9].Width = 50;
-            this.gridView3.Columns[8].Width = 60;
-            this.gridView3.Columns[9].Width = 75;
-            this.gridView3.Columns[10].Width = 70;
-            this.gridView3.Columns[11].Width = 70;
+            this.gridView3.Columns[7].Width = 75;
+            this.gridView3.Columns[8].Width = 70;
+            this.gridView3.Columns[9].Width = 70;
         }
         private void NKR2_Load(object sender, EventArgs e)
         {
-            splitContainer2.Panel2Collapsed = true;
+            splitContainer1.Panel2Collapsed = true;
             listele();
             gridduzen();
 
@@ -284,31 +270,26 @@ namespace mKYS
                 int y = Convert.ToInt32(id);
                 nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
 
-                try
-                {
-                    DialogResult Secim = new DialogResult();
+                DialogResult Secim = new DialogResult();
 
-                    Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                Secim = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-                    if (Secim == DialogResult.Yes)
-                    {
-                        // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
-                        SqlCommand komutSil = new SqlCommand("update NKR set Durum=@a1, RaporNo=@a2 where ID = @p1", bgl.baglanti());
-                        komutSil.Parameters.AddWithValue("@p1", nkrno);
-                        komutSil.Parameters.AddWithValue("@a2", "20000");
-                        komutSil.Parameters.AddWithValue("@a1", "Pasif");
-                        komutSil.ExecuteNonQuery();
-                        bgl.baglanti().Close();
-                        listele();
-                        MessageBox.Show("Silme işlemi gerçekleşmiştir.");
-                    }
-                }
-                catch (Exception ex)
+                if (Secim == DialogResult.Yes)
                 {
-                    MessageBox.Show("Hata2 : " + ex.Message);
+                    // SqlCommand komutSil = new SqlCommand("delete from Firma where ID = @p1", bgl.baglanti());
+                    SqlCommand komutSil = new SqlCommand("update NKR set Durum=@a1, RaporNo=@a2 where ID = @p1", bgl.baglanti());
+                    komutSil.Parameters.AddWithValue("@p1", nkrno);
+                    komutSil.Parameters.AddWithValue("@a2", "20000");
+                    komutSil.Parameters.AddWithValue("@a1", "Pasif");
+                    komutSil.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
                 }
+
+          
             }
-           
+            listele();
+            MessageBox.Show("Silme işlemi gerçekleşmiştir.");
         }
 
         private void NKR2_KeyDown(object sender, KeyEventArgs e)
@@ -361,7 +342,7 @@ namespace mKYS
         {
             try
             {
-                splitContainer2.Panel2Collapsed = false;
+                splitContainer1.Panel2Collapsed = false;
 
                 DataTable dt12 = new DataTable();
                 SqlDataAdapter da12 = new SqlDataAdapter(@"select l.Kod, l.Ad, l.Method, l.ID as 'aID' from NumuneX1 x
@@ -417,7 +398,7 @@ namespace mKYS
 
         private void groupControl1_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
-            splitContainer2.Panel2Collapsed = true;
+            splitContainer1.Panel2Collapsed = true;
         }
 
         private void btn_analizekle_Click(object sender, EventArgs e)
@@ -482,7 +463,7 @@ namespace mKYS
                     komut.Parameters.AddWithValue("@r2", nkrno);
                     komut.ExecuteNonQuery();
                     bgl.baglanti().Close();
-                    //   listele();
+                    //   
                 }
                 catch (Exception ex)
                 {
@@ -490,8 +471,8 @@ namespace mKYS
                 }
             }
 
- 
-     
+            listele();
+
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -509,13 +490,14 @@ namespace mKYS
                     komut.Parameters.AddWithValue("@r2", nkrno);
                     komut.ExecuteNonQuery();
                     bgl.baglanti().Close();
-                    //   listele();
+                    //   
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Hata 2:" + ex);
                 }
             }
+            listele();
 
         }
 
@@ -534,13 +516,15 @@ namespace mKYS
                     komut.Parameters.AddWithValue("@r2", nkrno);
                     komut.ExecuteNonQuery();
                     bgl.baglanti().Close();
-                    //   listele();
+                    //   
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Hata 2:" + ex);
                 }
             }
+
+            listele();
 
         }
 
@@ -626,7 +610,7 @@ namespace mKYS
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string path = "numunelistesi.xlsx";
+            string path = "iştakiplistesi.xlsx";
             gridControl1.ExportToXlsx(path);
             Process.Start(path);
 
@@ -765,24 +749,24 @@ namespace mKYS
             //ingilizce challenge
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
-                //id = gridView3.GetSelectedRows()[i].ToString();
-                //int y = Convert.ToInt32(id);
-                //// nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                //string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                //nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
-                //name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                //frmPrint.name = raporno + " - " + name;
-                //Raporlar.English.Cosmetic.ReportCosmetic.kod = "Annex-2.PR.20";
-                //Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
-                //Raporlar.English.Cosmetic.ReportCosmetic.tNu = "-1";
-                //Raporlar.English.Cosmetic.ReportCosmetic3.raporID = nkrno;
-                //using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
-                //{
-                //    frm.EChallengeRapor();
-                //    frm.ShowDialog();
-                //}
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = raporno + " - " + name;
+                Raporlar.Test.ReportCosmetic.kod = "Annex-2.PR.20";
+                Raporlar.Test.ReportCosmetic.raporID = nkrno;
+                Raporlar.Test.ReportCosmetic.tNu = "-1";
+                Raporlar.Test.ReportCosmetic3.raporID = nkrno;
+                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                {
+                    frm.Challenge();
+                    frm.ShowDialog();
+                }
 
-              
+
             }
 
            
@@ -907,33 +891,109 @@ namespace mKYS
             //closing
         }
 
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //dermatology
+       
+
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = "DMT - " + name;
+                Raporlar.Test.Dermatological.raporno = raporno;
+                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                {
+                    frm.Dermo();
+                    frm.ShowDialog();
+                }
+
+
+            }
+
+        }
+
+        private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Türkçe ÜGDR
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string nID = gridView3.GetRowCellValue(y, "aID").ToString();                
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = "ÜGDR - " + name;
+
+                mKYS.Raporlar.Newest.Tr.UGD1.tID = nID;
+                mKYS.Raporlar.Newest.Tr.UGD2.tID = nID;
+                mKYS.Raporlar.Newest.Tr.UGD3.tID = nID;
+                mKYS.Raporlar.Newest.Tr.UGD4.tID = nID;
+                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                {
+                    frm.NewestTR();
+                    frm.ShowDialog();
+                }
+
+
+            }
+
+
+        }
+
         private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             durumekle();
             //ingilizce stabiliy
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
-              //  id = gridView3.GetSelectedRows()[i].ToString();
-              //  int y = Convert.ToInt32(id);
-              ////  nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-              //  nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
-              //  name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-              //  string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-              //  frmPrint.name = raporno + " - " + name;
-              //  //mKYS.Raporlar.Kozmetik.RaporKozmetik.raporID = nkrno;
-              //  //mKYS.Raporlar.Kozmetik.RaporKozmetik.tNu = "-2";
-              //  //mKYS.Raporlar.Kozmetik.Stabilitev2.raporID = nkrno;
-              //  Raporlar.English.Cosmetic.ReportCosmetic.kod = "Annex-4.PR.20";
-              //  Raporlar.English.Cosmetic.ReportCosmetic.raporID = nkrno;
-              //  Raporlar.English.Cosmetic.ReportCosmetic.tNu = "-2";
-              //  Raporlar.English.Cosmetic.Stabilityv2.raporID = nkrno;
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = raporno + " - " + name;
+                Raporlar.Test.ReportCosmetic.raporID = nkrno;
+                Raporlar.Test.ReportCosmetic.tNu = "-2";
+                Raporlar.Test.Stabilityv2.raporID = nkrno;
+                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                {
+                    frm.Stabilite();
+                    frm.ShowDialog();
+                }
 
-              //  using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
-              //  {
-              //      frm.Stability();
-              //      frm.ShowDialog();
-              //  }
 
+            }
+        }
+
+        private void barButtonItem32_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Dap Güncelle
+            nuDAP.rNo = raporNo;
+            nuDAP.uID = Convert.ToString(aID);
+            nuDAP dap = new nuDAP();
+            dap.Show();
+
+        }
+
+        private void barButtonItem33_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Etiket Yazdır
+
+            mROOT.Raporlar.Newest.UTSEtiket.tID = Convert.ToString(aID);
+            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            {
+                frm.UTSEtiket2();
+                frm.ShowDialog();
             }
         }
 
@@ -1122,7 +1182,7 @@ namespace mKYS
                     fnumune = dr["Numune Adı"].ToString();
                         aID = Convert.ToInt32(dr["aID"].ToString());
                 //     ftur = dr["Tür"].ToString();
-                fgrup = dr["Grup"].ToString();
+                // fgrup = dr["Grup"].ToString();
                     //    fanaliz = dr["Analiz"].ToString();
                     faciklama = dr["Açıklama"].ToString();
                 //    akreditasyon = dr["Akreditasyon"].ToString();
@@ -1162,13 +1222,23 @@ namespace mKYS
             }
         }
 
+        MalKabulGuncelle fr6;
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Numunedet();
-            termint();
-            NumuneGuncelle3.nID = aID;
-            NumuneGuncelle3 f3 = new NumuneGuncelle3();
-            f3.Show();
+            // Numunedet();
+            //termint();
+            //NumuneGuncelle3.nID = aID;
+            //NumuneGuncelle3 f3 = new NumuneGuncelle3();
+            //f3.Show();
+            MalKabulGuncelle.raporno = raporNo;
+            MalKabulGuncelle.raporID = Convert.ToString(aID);
+            if (fr6 == null || fr6.IsDisposed)
+            {
+                fr6 = new MalKabulGuncelle();
+                fr6.MdiParent = Application.OpenForms.OfType<Anasayfa>().FirstOrDefault();
+                fr6.Show();
+            }
+            
         }
 
         public string yenirDurumu = "Raporlandı";

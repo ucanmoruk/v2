@@ -184,7 +184,7 @@
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Futura Bk BT", 9F);
+            this.xrPageInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(725.9167F, 86.00842F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
@@ -223,7 +223,7 @@
             // 
             // xrTableCell1
             // 
-            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 9F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
@@ -236,7 +236,7 @@
             // 
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField2]")});
-            this.xrTableCell2.Font = new System.Drawing.Font("Futura Bk BT", 9F);
+            this.xrTableCell2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
@@ -247,7 +247,7 @@
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 9F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
@@ -262,7 +262,7 @@
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
-            this.xrTableCell4.Font = new System.Drawing.Font("Futura Bk BT", 9F);
+            this.xrTableCell4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
@@ -276,7 +276,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(155.6251F, 43.41666F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -290,7 +290,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 20.41667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -317,6 +317,7 @@
             this.xrPictureBox5.Name = "xrPictureBox5";
             this.xrPictureBox5.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox5.Visible = false;
             // 
             // xrLabel4
             // 
@@ -330,6 +331,7 @@
             this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "www.ozecogroup.com / info@ozecogroup.com";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel4.Visible = false;
             // 
             // xrPictureBox6
             // 
@@ -338,6 +340,7 @@
             this.xrPictureBox6.Name = "xrPictureBox6";
             this.xrPictureBox6.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox6.Visible = false;
             // 
             // calculatedField1
             // 
@@ -363,7 +366,7 @@
             // 
             this.xrLabel5.BackColor = System.Drawing.Color.MidnightBlue;
             this.xrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel5.Font = new System.Drawing.Font("Futura Bk BT", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel5.ForeColor = System.Drawing.Color.White;
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel5.Multiline = true;
@@ -391,7 +394,7 @@
             this.xrLabel3.BackColor = System.Drawing.Color.Gainsboro;
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[INCIName]")});
-            this.xrLabel3.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.ForeColor = System.Drawing.Color.Black;
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 0F);
             this.xrLabel3.Multiline = true;
@@ -427,7 +430,7 @@
             // xrTableCell5
             // 
             this.xrTableCell5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell5.Font = new System.Drawing.Font("Futura Bk BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBackColor = false;
@@ -441,10 +444,12 @@
             this.xrTableCell6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Fizikokimya]),\'N/A\' ,[Fizikokimya] )")});
+            this.xrTableCell6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorderColor = false;
             this.xrTableCell6.StylePriority.UseBorders = false;
+            this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.Text = "xrTableCell6";
             this.xrTableCell6.Weight = 6.0695832824707034D;
             // 
@@ -459,7 +464,7 @@
             // xrTableCell7
             // 
             this.xrTableCell7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell7.Font = new System.Drawing.Font("Futura Bk BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBackColor = false;
@@ -473,10 +478,12 @@
             this.xrTableCell8.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Toksikoloji]),\'N/A\' ,[Toksikoloji] )")});
+            this.xrTableCell8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorderColor = false;
             this.xrTableCell8.StylePriority.UseBorders = false;
+            this.xrTableCell8.StylePriority.UseFont = false;
             this.xrTableCell8.Text = "xrTableCell8";
             this.xrTableCell8.Weight = 6.0695832824707026D;
             // 
@@ -491,7 +498,7 @@
             // xrTableCell9
             // 
             this.xrTableCell9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell9.Font = new System.Drawing.Font("Futura Bk BT", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBackColor = false;
@@ -505,10 +512,12 @@
             this.xrTableCell10.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Kaynak]),\'-\' , [Kaynak])")});
+            this.xrTableCell10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBorderColor = false;
             this.xrTableCell10.StylePriority.UseBorders = false;
+            this.xrTableCell10.StylePriority.UseFont = false;
             this.xrTableCell10.Text = "xrTableCell10";
             this.xrTableCell10.Weight = 6.0695832824707034D;
             // 
@@ -573,15 +582,19 @@
             // 
             // xrTableCell114
             // 
+            this.xrTableCell114.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell114.Multiline = true;
             this.xrTableCell114.Name = "xrTableCell114";
+            this.xrTableCell114.StylePriority.UseFont = false;
             this.xrTableCell114.Text = "1.";
             this.xrTableCell114.Weight = 0.30730880737304694D;
             // 
             // xrTableCell115
             // 
+            this.xrTableCell115.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell115.Multiline = true;
             this.xrTableCell115.Name = "xrTableCell115";
+            this.xrTableCell115.StylePriority.UseFont = false;
             this.xrTableCell115.Text = "Regulation (EC) No 1223/2009 Of The European Parliament And Of The Council of 30 " +
     "November 2009 on cosmetic products";
             this.xrTableCell115.Weight = 6.6747645568847656D;
@@ -596,15 +609,19 @@
             // 
             // xrTableCell116
             // 
+            this.xrTableCell116.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell116.Multiline = true;
             this.xrTableCell116.Name = "xrTableCell116";
+            this.xrTableCell116.StylePriority.UseFont = false;
             this.xrTableCell116.Text = "2.";
             this.xrTableCell116.Weight = 0.30730880737304694D;
             // 
             // xrTableCell117
             // 
+            this.xrTableCell117.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell117.Multiline = true;
             this.xrTableCell117.Name = "xrTableCell117";
+            this.xrTableCell117.StylePriority.UseFont = false;
             this.xrTableCell117.Text = "The SCCS\'s Notes Of Guidance For The Testing Of Cosmetic Ingredients And Their Sa" +
     "fety Evaluation 12th Revision";
             this.xrTableCell117.Weight = 6.6747645568847656D;
@@ -619,15 +636,19 @@
             // 
             // xrTableCell118
             // 
+            this.xrTableCell118.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell118.Multiline = true;
             this.xrTableCell118.Name = "xrTableCell118";
+            this.xrTableCell118.StylePriority.UseFont = false;
             this.xrTableCell118.Text = "3.";
             this.xrTableCell118.Weight = 0.30730880737304694D;
             // 
             // xrTableCell119
             // 
+            this.xrTableCell119.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell119.Multiline = true;
             this.xrTableCell119.Name = "xrTableCell119";
+            this.xrTableCell119.StylePriority.UseFont = false;
             this.xrTableCell119.Text = "5324 sayılı Kozmetik Kanunu";
             this.xrTableCell119.Weight = 6.6747645568847656D;
             // 
@@ -641,15 +662,19 @@
             // 
             // xrTableCell120
             // 
+            this.xrTableCell120.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell120.Multiline = true;
             this.xrTableCell120.Name = "xrTableCell120";
+            this.xrTableCell120.StylePriority.UseFont = false;
             this.xrTableCell120.Text = "4.";
             this.xrTableCell120.Weight = 0.30730880737304694D;
             // 
             // xrTableCell121
             // 
+            this.xrTableCell121.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell121.Multiline = true;
             this.xrTableCell121.Name = "xrTableCell121";
+            this.xrTableCell121.StylePriority.UseFont = false;
             this.xrTableCell121.Text = "Kozmetik Ürünlerde Güvenlik Değerlendirmesine İlişkin Kılavuz";
             this.xrTableCell121.Weight = 6.6747645568847656D;
             // 
@@ -663,15 +688,19 @@
             // 
             // xrTableCell122
             // 
+            this.xrTableCell122.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell122.Multiline = true;
             this.xrTableCell122.Name = "xrTableCell122";
+            this.xrTableCell122.StylePriority.UseFont = false;
             this.xrTableCell122.Text = "5.";
             this.xrTableCell122.Weight = 0.30730880737304694D;
             // 
             // xrTableCell123
             // 
+            this.xrTableCell123.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell123.Multiline = true;
             this.xrTableCell123.Name = "xrTableCell123";
+            this.xrTableCell123.StylePriority.UseFont = false;
             this.xrTableCell123.Text = "15/07/2015 tarihli ve 29417 sayılı Resmî Gazete’de yayımlanan Kozmetik Yönetmeliğ" +
     "inde Değişiklik Yapılmasına Dair Yönetmelik ve Ekleri";
             this.xrTableCell123.Weight = 6.6747645568847656D;
@@ -686,15 +715,19 @@
             // 
             // xrTableCell124
             // 
+            this.xrTableCell124.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell124.Multiline = true;
             this.xrTableCell124.Name = "xrTableCell124";
+            this.xrTableCell124.StylePriority.UseFont = false;
             this.xrTableCell124.Text = "6.";
             this.xrTableCell124.Weight = 0.30730880737304694D;
             // 
             // xrTableCell125
             // 
+            this.xrTableCell125.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell125.Multiline = true;
             this.xrTableCell125.Name = "xrTableCell125";
+            this.xrTableCell125.StylePriority.UseFont = false;
             this.xrTableCell125.Text = "Kozmetik Ürünlerin Stabilitesine Ve Açıldıktan Sonra Kullanım Süresine İlişkin Kı" +
     "lavuz";
             this.xrTableCell125.Weight = 6.6747645568847656D;
@@ -709,15 +742,19 @@
             // 
             // xrTableCell126
             // 
+            this.xrTableCell126.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell126.Multiline = true;
             this.xrTableCell126.Name = "xrTableCell126";
+            this.xrTableCell126.StylePriority.UseFont = false;
             this.xrTableCell126.Text = "7.";
             this.xrTableCell126.Weight = 0.30730880737304694D;
             // 
             // xrTableCell127
             // 
+            this.xrTableCell127.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell127.Multiline = true;
             this.xrTableCell127.Name = "xrTableCell127";
+            this.xrTableCell127.StylePriority.UseFont = false;
             this.xrTableCell127.Text = "Kozmetik Ürünlerin Mikrobiyolojik Kontrolüne İlişkin Kılavuz";
             this.xrTableCell127.Weight = 6.6747645568847656D;
             // 
@@ -731,15 +768,19 @@
             // 
             // xrTableCell128
             // 
+            this.xrTableCell128.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell128.Multiline = true;
             this.xrTableCell128.Name = "xrTableCell128";
+            this.xrTableCell128.StylePriority.UseFont = false;
             this.xrTableCell128.Text = "8.";
             this.xrTableCell128.Weight = 0.30730880737304694D;
             // 
             // xrTableCell129
             // 
+            this.xrTableCell129.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell129.Multiline = true;
             this.xrTableCell129.Name = "xrTableCell129";
+            this.xrTableCell129.StylePriority.UseFont = false;
             this.xrTableCell129.Text = "Kozmetik Ürünlerde Güvenlilik Değerlendirmesi Ve Güvenlilik Değerlendiricisi Hakk" +
     "ında Kılavuz";
             this.xrTableCell129.Weight = 6.6747645568847656D;
@@ -754,15 +795,19 @@
             // 
             // xrTableCell130
             // 
+            this.xrTableCell130.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell130.Multiline = true;
             this.xrTableCell130.Name = "xrTableCell130";
+            this.xrTableCell130.StylePriority.UseFont = false;
             this.xrTableCell130.Text = "9.";
             this.xrTableCell130.Weight = 0.30730880737304694D;
             // 
             // xrTableCell131
             // 
+            this.xrTableCell131.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell131.Multiline = true;
             this.xrTableCell131.Name = "xrTableCell131";
+            this.xrTableCell131.StylePriority.UseFont = false;
             this.xrTableCell131.Text = "Üretici Tarafından Ciddi İstenmeyen Etkinin (Cie) Kuruma Bildirilmesine İlişkin K" +
     "ılavuz";
             this.xrTableCell131.Weight = 6.6747645568847656D;
@@ -777,15 +822,19 @@
             // 
             // xrTableCell132
             // 
+            this.xrTableCell132.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell132.Multiline = true;
             this.xrTableCell132.Name = "xrTableCell132";
+            this.xrTableCell132.StylePriority.UseFont = false;
             this.xrTableCell132.Text = "10.";
             this.xrTableCell132.Weight = 0.30730880737304694D;
             // 
             // xrTableCell133
             // 
+            this.xrTableCell133.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.xrTableCell133.Multiline = true;
             this.xrTableCell133.Name = "xrTableCell133";
+            this.xrTableCell133.StylePriority.UseFont = false;
             this.xrTableCell133.Text = "Kozmetik Ürünlerin Etiketlenmesinde Dikkat Edilmesi Gerekenler Hakkında Kılavuz";
             this.xrTableCell133.Weight = 6.6747645568847656D;
             // 

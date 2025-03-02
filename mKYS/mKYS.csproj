@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>5.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -75,6 +75,9 @@
   <PropertyGroup>
     <StartupObject>mKYS.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.1" />
     <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -82,6 +85,7 @@
     <Reference Include="DevExpress.Data.v19.1" />
     <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v19.1.Drawing, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -299,6 +303,12 @@
     <Compile Include="9.UGDR\OzuCopy.Designer.cs">
       <DependentUpon>OzuCopy.cs</DependentUpon>
     </Compile>
+    <Compile Include="9.UGDR\RPList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="9.UGDR\RPList.Designer.cs">
+      <DependentUpon>RPList.cs</DependentUpon>
+    </Compile>
     <Compile Include="9.UGDR\uDAP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,11 +381,11 @@
     <Compile Include="Analiz\AnalizAlt.designer.cs">
       <DependentUpon>AnalizAlt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Analiz\AnalizListesi.cs">
+    <Compile Include="Analiz\HizmetListesi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Analiz\AnalizListesi.Designer.cs">
-      <DependentUpon>AnalizListesi.cs</DependentUpon>
+    <Compile Include="Analiz\HizmetListesi.Designer.cs">
+      <DependentUpon>HizmetListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Musteri\AnalizAlt.cs">
       <SubType>Form</SubType>
@@ -527,6 +537,12 @@
     <Compile Include="Numune\Aciklama.Designer.cs">
       <DependentUpon>Aciklama.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numune\Atama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\Atama.Designer.cs">
+      <DependentUpon>Atama.cs</DependentUpon>
+    </Compile>
     <Compile Include="Numune\English.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +560,12 @@
     </Compile>
     <Compile Include="Numune\LabTermin.Designer.cs">
       <DependentUpon>LabTermin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\MalKabulGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\MalKabulGuncelle.Designer.cs">
+      <DependentUpon>MalKabulGuncelle.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\Mix2.cs">
       <SubType>Form</SubType>
@@ -580,6 +602,12 @@
     </Compile>
     <Compile Include="Numune\NumuneGuncelle3.Designer.cs">
       <DependentUpon>NumuneGuncelle3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\MalKabul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\MalKabul.Designer.cs">
+      <DependentUpon>MalKabul.cs</DependentUpon>
     </Compile>
     <Compile Include="Numune\NumuneKabul.cs">
       <SubType>Form</SubType>
@@ -634,6 +662,18 @@
     </Compile>
     <Compile Include="Numune\TanimlamaListesi.Designer.cs">
       <DependentUpon>TanimlamaListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\TopluEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\TopluEkleme.Designer.cs">
+      <DependentUpon>TopluEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Numune\nuDAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Numune\nuDAP.Designer.cs">
+      <DependentUpon>nuDAP.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\CosIng.cs">
       <SubType>Component</SubType>
@@ -719,6 +759,12 @@
     <Compile Include="Raporlar\Eng\UGD4.Designer.cs">
       <DependentUpon>UGD4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\HizmetTakip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\HizmetTakip.Designer.cs">
+      <DependentUpon>HizmetTakip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Kompass\EN\UGD1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -773,6 +819,72 @@
     <Compile Include="Raporlar\Kompass\TR\UGD5.Designer.cs">
       <DependentUpon>UGD5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Newest\Allergens.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Allergens.Designer.cs">
+      <DependentUpon>Allergens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Preservatives.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Preservatives.Designer.cs">
+      <DependentUpon>Preservatives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\UTSEtiket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\UTSEtiket.Designer.cs">
+      <DependentUpon>UTSEtiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD1.Designer.cs">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD2.Designer.cs">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD3.Designer.cs">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Ozeco\En\UGD4.Designer.cs">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Ozeco\Preservatives.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -809,28 +921,28 @@
     <Compile Include="Raporlar\Ozeco\Cpnp\UGD4.Designer.cs">
       <DependentUpon>UGD4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD1.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD1.Designer.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD1.Designer.cs">
       <DependentUpon>UGD1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD2.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD2.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD2.Designer.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD2.Designer.cs">
       <DependentUpon>UGD2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD3.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD3.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD3.Designer.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD3.Designer.cs">
       <DependentUpon>UGD3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD4.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD4.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Raporlar\Ozeco\En\UGD4.Designer.cs">
+    <Compile Include="Raporlar\Ozeco\En\Ex\UGD4.Designer.cs">
       <DependentUpon>UGD4.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Ozeco\Tr\UGD1.cs">
@@ -892,6 +1004,36 @@
     </Compile>
     <Compile Include="Raporlar\TeklifUni.designer.cs">
       <DependentUpon>TeklifUni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Test\Dermatological.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Test\Dermatological.designer.cs">
+      <DependentUpon>Dermatological.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Test\ReportCosmetic.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Test\ReportCosmetic.designer.cs">
+      <DependentUpon>ReportCosmetic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Test\ReportCosmetic2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Test\ReportCosmetic2.designer.cs">
+      <DependentUpon>ReportCosmetic2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Test\ReportCosmetic3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Test\ReportCosmetic3.designer.cs">
+      <DependentUpon>ReportCosmetic3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Test\Stabilityv2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Test\Stabilityv2.designer.cs">
+      <DependentUpon>Stabilityv2.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\UGD4.cs">
       <SubType>Component</SubType>
@@ -971,11 +1113,11 @@
     <Compile Include="2.Product\AnalizListesi.Designer.cs">
       <DependentUpon>AnalizListesi.cs</DependentUpon>
     </Compile>
-    <Compile Include="2.Product\AnalizYeni.cs">
+    <Compile Include="2.Product\YeniUrun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="2.Product\AnalizYeni.Designer.cs">
-      <DependentUpon>AnalizYeni.cs</DependentUpon>
+    <Compile Include="2.Product\YeniUrun.Designer.cs">
+      <DependentUpon>YeniUrun.cs</DependentUpon>
     </Compile>
     <Compile Include="2.Product\ValidasyonEkle.cs">
       <SubType>Form</SubType>
@@ -1528,6 +1670,9 @@
     <EmbeddedResource Include="9.UGDR\OzuCopy.resx">
       <DependentUpon>OzuCopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="9.UGDR\RPList.resx">
+      <DependentUpon>RPList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="9.UGDR\uDAP.resx">
       <DependentUpon>uDAP.cs</DependentUpon>
     </EmbeddedResource>
@@ -1564,8 +1709,8 @@
     <EmbeddedResource Include="Analiz\AnalizAlt.resx">
       <DependentUpon>AnalizAlt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Analiz\AnalizListesi.resx">
-      <DependentUpon>AnalizListesi.cs</DependentUpon>
+    <EmbeddedResource Include="Analiz\HizmetListesi.resx">
+      <DependentUpon>HizmetListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Musteri\AnalizAlt.resx">
       <DependentUpon>AnalizAlt.cs</DependentUpon>
@@ -1642,6 +1787,9 @@
     <EmbeddedResource Include="Numune\Aciklama.resx">
       <DependentUpon>Aciklama.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Numune\Atama.resx">
+      <DependentUpon>Atama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Numune\English.resx">
       <DependentUpon>English.cs</DependentUpon>
     </EmbeddedResource>
@@ -1650,6 +1798,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\LabTermin.resx">
       <DependentUpon>LabTermin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\MalKabulGuncelle.resx">
+      <DependentUpon>MalKabulGuncelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\Mix2.resx">
       <DependentUpon>Mix2.cs</DependentUpon>
@@ -1668,6 +1819,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\NumuneGuncelle3.resx">
       <DependentUpon>NumuneGuncelle3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\MalKabul.resx">
+      <DependentUpon>MalKabul.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Numune\NumuneKabul.resx">
       <DependentUpon>NumuneKabul.cs</DependentUpon>
@@ -1696,8 +1850,15 @@
     <EmbeddedResource Include="Numune\TanimlamaListesi.resx">
       <DependentUpon>TanimlamaListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="mKYS_4_TemporaryKey.pfx" />
     <None Include="mKYS_5_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Numune\TopluEkleme.resx">
+      <DependentUpon>TopluEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Numune\nuDAP.resx">
+      <DependentUpon>nuDAP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Raporlar\CosIng.resx">
       <DependentUpon>CosIng.cs</DependentUpon>
@@ -1741,6 +1902,9 @@
     <EmbeddedResource Include="Raporlar\Eng\UGD4.resx">
       <DependentUpon>UGD4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\HizmetTakip.resx">
+      <DependentUpon>HizmetTakip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Kompass\EN\UGD1.resx">
       <DependentUpon>UGD1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1768,6 +1932,39 @@
     <EmbeddedResource Include="Raporlar\Kompass\TR\UGD5.resx">
       <DependentUpon>UGD5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Allergens.resx">
+      <DependentUpon>Allergens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Preservatives.resx">
+      <DependentUpon>Preservatives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Tr\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Tr\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Tr\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Tr\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\UTSEtiket.resx">
+      <DependentUpon>UTSEtiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD1.resx">
+      <DependentUpon>UGD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD2.resx">
+      <DependentUpon>UGD2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD3.resx">
+      <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD4.resx">
+      <DependentUpon>UGD4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Ozeco\Preservatives.resx">
       <DependentUpon>Preservatives.cs</DependentUpon>
     </EmbeddedResource>
@@ -1786,16 +1983,16 @@
     <EmbeddedResource Include="Raporlar\Ozeco\Cpnp\UGD4.resx">
       <DependentUpon>UGD4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD1.resx">
+    <EmbeddedResource Include="Raporlar\Ozeco\En\Ex\UGD1.resx">
       <DependentUpon>UGD1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD2.resx">
+    <EmbeddedResource Include="Raporlar\Ozeco\En\Ex\UGD2.resx">
       <DependentUpon>UGD2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD3.resx">
+    <EmbeddedResource Include="Raporlar\Ozeco\En\Ex\UGD3.resx">
       <DependentUpon>UGD3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\Ozeco\En\UGD4.resx">
+    <EmbeddedResource Include="Raporlar\Ozeco\En\Ex\UGD4.resx">
       <DependentUpon>UGD4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Ozeco\Tr\UGD1.resx">
@@ -1827,6 +2024,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\TeklifUni.resx">
       <DependentUpon>TeklifUni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Test\Dermatological.resx">
+      <DependentUpon>Dermatological.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Test\ReportCosmetic.resx">
+      <DependentUpon>ReportCosmetic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Test\ReportCosmetic2.resx">
+      <DependentUpon>ReportCosmetic2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Test\ReportCosmetic3.resx">
+      <DependentUpon>ReportCosmetic3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Test\Stabilityv2.resx">
+      <DependentUpon>Stabilityv2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\UGD4.resx">
       <DependentUpon>UGD4.cs</DependentUpon>
@@ -1864,8 +2076,8 @@
     <EmbeddedResource Include="2.Product\AnalizListesi.resx">
       <DependentUpon>AnalizListesi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="2.Product\AnalizYeni.resx">
-      <DependentUpon>AnalizYeni.cs</DependentUpon>
+    <EmbeddedResource Include="2.Product\YeniUrun.resx">
+      <DependentUpon>YeniUrun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="2.Product\ValidasyonEkle.resx">
       <DependentUpon>ValidasyonEkle.cs</DependentUpon>
@@ -2199,6 +2411,17 @@
     <None Include="Resources\imza1.png" />
     <None Include="Resources\diploma.jpg" />
     <None Include="Resources\sertifika.jpg" />
+    <None Include="Resources\rNews2.png" />
+    <None Include="Resources\rNews21.png" />
+    <None Include="Resources\rNews2-2.png" />
+    <None Include="Resources\Cosmoliz-Logo-v2_slogansız1.png" />
+    <None Include="Resources\Favicon.png" />
+    <None Include="Resources\image002.png" />
+    <None Include="Resources\NAC-035-TL.jpeg" />
+    <None Include="Resources\Resim1.png" />
+    <None Include="Resources\Resim2.png" />
+    <None Include="Resources\RootB.png" />
+    <None Include="Resources\RootB..jpg" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

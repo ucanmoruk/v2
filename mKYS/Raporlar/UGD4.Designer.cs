@@ -48,7 +48,6 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
@@ -103,7 +102,6 @@
             this.xrTableCell133 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
-            this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable14)).BeginInit();
@@ -174,7 +172,6 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPictureBox6,
             this.xrLine1,
             this.xrTable1,
             this.xrLabel2,
@@ -286,24 +283,10 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel26,
             this.xrLabel4,
             this.xrPageInfo1});
             this.BottomMargin.HeightF = 41F;
             this.BottomMargin.Name = "BottomMargin";
-            // 
-            // xrLabel26
-            // 
-            this.xrLabel26.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
-            this.xrLabel26.Multiline = true;
-            this.xrLabel26.Name = "xrLabel26";
-            this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel26.SizeF = new System.Drawing.SizeF(286.4219F, 22.99999F);
-            this.xrLabel26.StylePriority.UseFont = false;
-            this.xrLabel26.StylePriority.UseTextAlignment = false;
-            this.xrLabel26.Text = "www.cosmoliz.com | destek@cosmoliz.com";
-            this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4
             // 
@@ -789,15 +772,6 @@
             this.calculatedField2.Expression = "GetYear(Today())+\'\'+[RaporNo]+\' / \'+[Versiyon]";
             this.calculatedField2.Name = "calculatedField2";
             // 
-            // xrPictureBox6
-            // 
-            this.xrPictureBox6.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
-            this.xrPictureBox6.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz_Logo_v2_slogansız, true);
-            this.xrPictureBox6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 12F);
-            this.xrPictureBox6.Name = "xrPictureBox6";
-            this.xrPictureBox6.SizeF = new System.Drawing.SizeF(134.7946F, 66.41664F);
-            this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
-            // 
             // UGD4
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -908,7 +882,5 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell133;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel26;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox6;
     }
 }

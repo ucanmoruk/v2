@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ozecomuhur1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ozecomuhur1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,32 +133,50 @@
   <data name="ozecologo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ozecologo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ozecologox3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ozecologox3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OzecoLogox2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OzecoLogox2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Root Intern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Root Intern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ozecologo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ozecologo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cosmoliz-Logo-v2_slogansız" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cosmoliz-Logo-v2_slogansız.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sertifika" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sertifika.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WhatsApp Image 2024-09-11 at 21.45.20 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WhatsApp Image 2024-09-11 at 21.45.20 (1).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Resim2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Resim2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OzecoLogox2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OzecoLogox2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imza1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imza1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cosmoliz-Logo-v2_slogansız" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cosmoliz-Logo-v2_slogansız.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rNews2-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rNews2-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rNews2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rNews2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="diploma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diploma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rNews21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rNews21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Favicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Favicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ozecomuhur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ozecomuhur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ozecologox3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ozecologox3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ozecologox4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ozecologox4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -165,6 +186,15 @@
   </data>
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\31216_information_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RootB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RootB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cosmoliz-Logo-v2_slogansız1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cosmoliz-Logo-v2_slogansız1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Resim1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Resim1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Kommass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kommass.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +211,11 @@
   <data name="stand arka plan yüksek çözünürlük_pages-to-jpg-0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stand arka plan yüksek çözünürlük_pages-to-jpg-0001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Root Intern" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Root Intern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WhatsApp Image 2024-09-11 at 21.45.20 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhatsApp Image 2024-09-11 at 21.45.20 (1).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,13 +226,16 @@
   <data name="BegumPazarli" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BegumPazarli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NAC-035-TL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NAC-035-TL.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ozeco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ozeco.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sertifika" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sertifika.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RootB." type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RootB..jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

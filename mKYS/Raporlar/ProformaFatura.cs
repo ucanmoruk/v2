@@ -120,7 +120,7 @@ namespace mKYS.Raporlar
             //bgl.baglanti().Close();
             //pPlasiyer.Value = pl;
 
-            SqlCommand komut = new SqlCommand("select Ad from Kullanici where ID in (select PlasiyerID from TeklifListe where TeklifNo = '" + ProformaUpdate.teklifno + "')", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("select Ad from RootKullanici where ID in (select PlasiyerID from TeklifX1 where TeklifNo = '" + ProformaUpdate.teklifno + "')", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {

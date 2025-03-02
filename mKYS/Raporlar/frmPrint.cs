@@ -437,6 +437,50 @@ namespace mKYS.Raporlar
             documentViewer1.DocumentSource = rapor;
         }
 
+
+        public void NewestTR()
+        {
+            Newest.Tr.UGD1 rapor = new Newest.Tr.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            // rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Newest.Tr.UGD2 rapor2 = new Newest.Tr.UGD2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                Newest.Tr.UGD3 rapor3 = new Newest.Tr.UGD3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p3 in rapor3.Parameters)
+                {
+                    p3.Visible = false;
+                    rapor3.bilgi();
+                    rapor3.CreateDocument();
+                }
+                Newest.Tr.UGD4 rapor4 = new Newest.Tr.UGD4();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p4 in rapor4.Parameters)
+                {
+                    p4.Visible = false;
+                    rapor4.bilgi();
+                    rapor4.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.Pages.AddRange(rapor3.Pages);
+                rapor.Pages.AddRange(rapor4.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+
         public void OzecoEn()
         {
             Ozeco.En.UGD1 rapor = new Ozeco.En.UGD1();
@@ -635,6 +679,20 @@ namespace mKYS.Raporlar
 
         }
 
+        public void UTSEtiket2()
+        {
+
+            mROOT.Raporlar.Newest.UTSEtiket rapor = new mROOT.Raporlar.Newest.UTSEtiket();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
+        }
+
         public void Dermatolojik()
         {
 
@@ -648,6 +706,22 @@ namespace mKYS.Raporlar
             }
 
         }
+
+
+        public void Dermo()
+        {
+
+            Raporlar.Test.Dermatological rapor = new Raporlar.Test.Dermatological();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
+        }
+
         public void TeklifMS()
         {
 
@@ -661,5 +735,69 @@ namespace mKYS.Raporlar
             }
 
         }
+
+        public void Challenge()
+        {
+
+            Test.ReportCosmetic rapor = new Test.ReportCosmetic();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Test.ReportCosmetic3 rapor2 = new Test.ReportCosmetic3();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+        public void Stabilite()
+        {
+            Test.ReportCosmetic rapor = new Test.ReportCosmetic();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                Test.Stabilityv2 rapor2 = new Test.Stabilityv2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                rapor.Pages.AddRange(rapor2.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+        public void HizmetTakip()
+        {
+            HizmetTakip rapor = new HizmetTakip();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+               // p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+        }
+
     }
 }

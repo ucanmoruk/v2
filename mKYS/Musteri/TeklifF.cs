@@ -46,8 +46,8 @@ namespace mKYS.Musteri
         void kozmetiklistele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select ROW_NUMBER() OVER(ORDER BY a.ID) as 'No', a.Ad as 'Test Adı', n.Tur +' - Ürün Test Bedeli' as 'Açıklama' ,  
-            Count(d.Miktar) as 'Miktar' , Birim='Adet', ISNULL(t.BirimFiyat,0) as 'Teklif Birim Fiyat', 
+            SqlDataAdapter da = new SqlDataAdapter(@"select ROW_NUMBER() OVER(ORDER BY a.ID) as 'No', a.Ad as 'Hizmet',   
+            Count(m.AnalizID) as 'Miktar' , Birim='Adet', ISNULL(t.BirimFiyat,0) as 'Teklif Birim Fiyat', 
             t.FiyatBirim as 'Para Birimi', 
             CAST(t.BirimFiyat*@a1 as decimal(18, 2)) as 'Birim Fiyat Tl', CAST(t.BirimFiyat*@a1*Count(d.Miktar) as decimal(18, 2)) as 'Total', 
             Iskonto=@a2 , CAST(ISNULL(((t.BirimFiyat*@a1*Count(d.Miktar))-(t.BirimFiyat*@a1*Count(d.Miktar)*@a2/100)),0) as decimal(18, 2)) as 'Genel Toplam' 
@@ -57,7 +57,7 @@ namespace mKYS.Musteri
             inner join NumuneDetay d on d.RaporID = n.ID 
             inner join TeklifX2 t on t.AnalizID = a.ID 
             where n.Evrak_No = @w1  and t.TeklifNo = @w2 
-            group by a.ID, a.Ad , n.Tur +' - Ürün Test Bedeli' , d.Miktar, t.BirimFiyat, t.FiyatBirim 
+            group by a.ID, a.Ad , m.AnalizID, t.BirimFiyat, t.FiyatBirim 
             order by 'No' asc", bgl.baglanti());
             da.SelectCommand.Parameters.AddWithValue("@a1", Convert.ToDecimal(txt_kur.Text));
             da.SelectCommand.Parameters.AddWithValue("@w1", txt_evrak.Text);
@@ -154,7 +154,7 @@ namespace mKYS.Musteri
             }
             else
             {
-                SqlCommand komut = new SqlCommand("select COUNT(Kod) from NumuneX2 where RaporID in (select ID from NKR where Evrak_No = '" + txt_evrak.Text + "')", bgl.baglanti());
+                SqlCommand komut = new SqlCommand("select COUNT(AnalizID) from NumuneX1 where RaporID in (select ID from NKR where Evrak_No = '" + txt_evrak.Text + "')", bgl.baglanti());
                 SqlDataReader dr = komut.ExecuteReader();
                 while (dr.Read())
                 {
@@ -201,42 +201,20 @@ namespace mKYS.Musteri
                 txt_teklifno.Text = TeklifNoSec.teklifno.ToString();
                 teklifdetay();
 
-                if (txt_tekliftur.Text == "Paket")
-                {
-                    listele();
-                    topla();
-                   
-                }
-                else
-                {
-                    if (gurup == "Bakanlık")
-                    {
-                        bakanliklistele();
-                    }
-                    else if (turko == "Kozmetik")
-                    {
-                        kozmetiklistele();
-                    }
-                    else
-                    {
-                        mixlistele();
-                    }                    
-                    topla();
-                    kontrol();
-
-                    GridGroupSummaryItem item = new GridGroupSummaryItem();
-                    item.FieldName = "Genel Toplam";
-                    //  item.ShowInGroupColumnFooter = gridView1.Columns["Tutar"];
-                    item.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-                    item.DisplayFormat = "/ Toplam = {0:c2}";
-                    gridView1.GroupSummary.Add(item);
-
-                }
+                kozmetiklistele();
+                topla();
+                kontrol();
+                GridGroupSummaryItem item = new GridGroupSummaryItem();
+                item.FieldName = "Genel Toplam";
+                //  item.ShowInGroupColumnFooter = gridView1.Columns["Tutar"];
+                item.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                item.DisplayFormat = "/ Toplam = {0:c2}";
+                gridView1.GroupSummary.Add(item);
 
 
                 this.gridView1.Columns[0].Width = 20;
-                // this.gridView1.Columns[1].Width = 20;
-                // this.gridView1.Columns[2].Width = 70;
+                this.gridView1.Columns[1].Width = 90;
+                this.gridView1.Columns[2].Width = 30;
                 this.gridView1.Columns[3].Width = 35;
                 this.gridView1.Columns[4].Width = 35;
                 this.gridView1.Columns[5].Width = 35;
@@ -244,7 +222,7 @@ namespace mKYS.Musteri
                 this.gridView1.Columns[7].Width = 35;
                 this.gridView1.Columns[8].Width = 35;
                 this.gridView1.Columns[9].Width = 35;
-                this.gridView1.Columns[10].Width = 35;
+                
 
              }
             catch (Exception ex)
@@ -272,7 +250,7 @@ namespace mKYS.Musteri
 
         public void Firma()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -283,14 +261,14 @@ namespace mKYS.Musteri
 
         public void firmadetay()
         {
-            SqlCommand komut = new SqlCommand("Select Adres, Vergi_Dairesi,Vergi_No,Mail from Firma where Firma_Adi = '" + combo_firma.Text + "'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Adres, VergiDairesi,VergiNo, Email from RootTedarikci where Ad = '" + combo_firma.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
                 txt_adres.Text = dr["Adres"].ToString();
-                txt_vdaire.Text = dr["Vergi_Dairesi"].ToString();
-                txt_vergino.Text = dr["Vergi_No"].ToString();
-                txt_mail.Text = dr["Mail"].ToString();
+                txt_vdaire.Text = dr["VergiDairesi"].ToString();
+                txt_vergino.Text = dr["VergiNo"].ToString();
+                txt_mail.Text = dr["Email"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -501,14 +479,17 @@ namespace mKYS.Musteri
             }
             else
             {
-                if (turko == "Kozmetik")
-                {
-                    kozmetikkayit();
-                }
-                else
-                {
-                    mixkayit();
-                }
+
+                kozmetikkayit();
+
+                //if (turko == "Kozmetik")
+                //{
+                //    kozmetikkayit();
+                //}
+                //else
+                //{
+                //    mixkayit();
+                //}
               
             }
   
@@ -571,8 +552,8 @@ namespace mKYS.Musteri
                     "(ProformaNo,FaturaFirmaID,Aciklama,UrunGrubu, Miktar, Birim, BirimFiyat, ParaBirimi, KurTl, BirimFiyatTl, ToplamFiyat, Iskonto, GenelFiyat, TeklifNo, Tarih) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12,@a13,@a14,@a15)", bgl.baglanti());
                 komut.Parameters.AddWithValue("@a1", txt_evrak.Text);
                 komut.Parameters.AddWithValue("@a2", faturafirmaID);
-                komut.Parameters.AddWithValue("@a3", gridView1.GetRowCellValue(i, "Açıklama").ToString());
-                komut.Parameters.AddWithValue("@a4", gridView1.GetRowCellValue(i, "Test Adı").ToString());
+                komut.Parameters.AddWithValue("@a3", "Analiz Hizmeti");
+                komut.Parameters.AddWithValue("@a4", gridView1.GetRowCellValue(i, "Hizmet").ToString());
                 komut.Parameters.AddWithValue("@a5", Convert.ToInt32(gridView1.GetRowCellValue(i, "Miktar").ToString()));
                 komut.Parameters.AddWithValue("@a6", "Adet");
                 komut.Parameters.AddWithValue("@a7", Convert.ToDecimal(gridView1.GetRowCellValue(i, "Teklif Birim Fiyat").ToString()));
@@ -642,22 +623,24 @@ namespace mKYS.Musteri
 
         private void btn_fatura_Click(object sender, EventArgs e)
         {
-            if (txt_tekliftur.Text == "Paket")
-            {
+            //if (txt_tekliftur.Text == "Paket")
+            //{
                 
-            }
-            else
-            {
-                if (turko == "Kozmetik")
-                {
-                    gridView1.Columns["Test Adı"].UnGroup();
-                }
-                else
-                {
-                    gridView1.Columns["Numune Adı"].UnGroup();
-                }
+            //}
+            //else
+            //{
+            //    if (turko == "Kozmetik")
+            //    {
+            //        gridView1.Columns["Test Adı"].UnGroup();
+            //    }
+            //    else
+            //    {
+            //        gridView1.Columns["Numune Adı"].UnGroup();
+            //    }
               
-            }
+            //}
+
+            gridView1.Columns["Hizmet"].UnGroup();
 
 
             try
@@ -675,7 +658,7 @@ namespace mKYS.Musteri
 
                 if (kontrolet == "Ok")
                 {
-                    SqlCommand komut4 = new SqlCommand("Select ID from Firma where Firma_Adi = N'" + faturafirma + "' and Durum = N'Aktif'", bgl.baglanti());
+                    SqlCommand komut4 = new SqlCommand("Select ID from RootTedarikci where Ad = N'" + faturafirma + "' and Durum = N'Aktif'", bgl.baglanti());
                     SqlDataReader dr4 = komut4.ExecuteReader();
                     while (dr4.Read())
                     {
@@ -719,7 +702,7 @@ namespace mKYS.Musteri
                     }
                     else
                     {
-                        SqlCommand komut4 = new SqlCommand("Select ID from Firma where Firma_Adi = N'" + faturafirma + "' and Durum = N'Aktif'", bgl.baglanti());
+                        SqlCommand komut4 = new SqlCommand("Select ID from RootTedarikci where Ad = N'" + faturafirma + "' and Durum = N'Aktif'", bgl.baglanti());
                         SqlDataReader dr4 = komut4.ExecuteReader();
                         while (dr4.Read())
                         {

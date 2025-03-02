@@ -109,6 +109,7 @@
             this.txtToplam.Properties.ReadOnly = true;
             this.txtToplam.Size = new System.Drawing.Size(64, 20);
             this.txtToplam.TabIndex = 29;
+            this.txtToplam.Visible = false;
             // 
             // txtKDV
             // 
@@ -118,6 +119,7 @@
             this.txtKDV.Properties.ReadOnly = true;
             this.txtKDV.Size = new System.Drawing.Size(69, 20);
             this.txtKDV.TabIndex = 28;
+            this.txtKDV.Visible = false;
             // 
             // txtTutar
             // 
@@ -126,6 +128,7 @@
             this.txtTutar.Name = "txtTutar";
             this.txtTutar.Size = new System.Drawing.Size(92, 20);
             this.txtTutar.TabIndex = 27;
+            this.txtTutar.Visible = false;
             this.txtTutar.TextChanged += new System.EventHandler(this.txtTutar_TextChanged);
             this.txtTutar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTutar_KeyPress);
             // 
@@ -169,6 +172,7 @@
             this.labelControl4.Size = new System.Drawing.Size(38, 13);
             this.labelControl4.TabIndex = 19;
             this.labelControl4.Text = "Toplam:";
+            this.labelControl4.Visible = false;
             // 
             // labelControl3
             // 
@@ -179,6 +183,7 @@
             this.labelControl3.Size = new System.Drawing.Size(23, 13);
             this.labelControl3.TabIndex = 18;
             this.labelControl3.Text = "KDV:";
+            this.labelControl3.Visible = false;
             // 
             // labelControl2
             // 
@@ -188,6 +193,7 @@
             this.labelControl2.Size = new System.Drawing.Size(30, 13);
             this.labelControl2.TabIndex = 17;
             this.labelControl2.Text = "Tutar:";
+            this.labelControl2.Visible = false;
             // 
             // labelControl7
             // 

@@ -79,8 +79,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(966, 540);
-            this.splitContainer1.SplitterDistance = 300;
+            this.splitContainer1.Size = new System.Drawing.Size(964, 540);
+            this.splitContainer1.SplitterDistance = 299;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -98,7 +98,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.btn_kontrol);
             this.splitContainer2.Panel2.Controls.Add(this.btn_ac);
-            this.splitContainer2.Size = new System.Drawing.Size(300, 540);
+            this.splitContainer2.Size = new System.Drawing.Size(299, 540);
             this.splitContainer2.SplitterDistance = 459;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -108,7 +108,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(300, 459);
+            this.gridControl1.Size = new System.Drawing.Size(299, 459);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -165,7 +165,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.simpleButton1);
             this.splitContainer3.Panel2.Controls.Add(this.labelControl1);
             this.splitContainer3.Panel2.Controls.Add(this.traporno);
-            this.splitContainer3.Size = new System.Drawing.Size(662, 540);
+            this.splitContainer3.Size = new System.Drawing.Size(661, 540);
             this.splitContainer3.SplitterDistance = 459;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -175,7 +175,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(662, 459);
+            this.gridControl2.Size = new System.Drawing.Size(661, 459);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -272,9 +272,9 @@
             // 
             // uFormul
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(966, 540);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(964, 540);
             this.Controls.Add(this.splitContainer1);
             this.Name = "uFormul";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

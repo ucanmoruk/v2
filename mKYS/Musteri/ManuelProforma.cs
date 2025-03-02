@@ -27,7 +27,7 @@ namespace mKYS.Musteri
         public void listelegrid()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select d.Aciklama as 'Açıklama', d.UrunGrubu as 'Ürün', d.Miktar as 'Adet', d.ParaBirimi, d.BirimFiyat, 
+            SqlDataAdapter da = new SqlDataAdapter(@"select d.UrunGrubu as 'Açıklama', d.Miktar as 'Adet', d.ParaBirimi, d.BirimFiyat, 
             d.ToplamFiyat as 'Fiyat', d.KDV, d.GenelFiyat as 'Toplam' 
             from FaturaDetay d 
             left join ProformaDurum p on d.ProformaNo = p.ProformaNo
@@ -40,19 +40,19 @@ namespace mKYS.Musteri
 
         private void listele()
         {
-            SqlCommand komut4 = new SqlCommand("select Firma_Adi from Firma where ID in (select Firma_ID from NKR where Evrak_No = N'" + txt_evrak.Text + "')", bgl.baglanti());
+            SqlCommand komut4 = new SqlCommand("select Ad from RootTedarikci where ID in (select Firma_ID from NKR where Evrak_No = N'" + txt_evrak.Text + "')", bgl.baglanti());
             SqlDataReader dr4 = komut4.ExecuteReader();
             while (dr4.Read())
             {
-                txt_firma.Text = dr4["Firma_Adi"].ToString();
-                combo_firma.Text = dr4["Firma_Adi"].ToString();
+                txt_firma.Text = dr4["Ad"].ToString();
+                combo_firma.Text = dr4["Ad"].ToString();
             }
             bgl.baglanti().Close();
         }
 
         public void Firma()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -64,15 +64,15 @@ namespace mKYS.Musteri
         int faturafirmaID;
         public void firmadetay()
         {
-            SqlCommand komut = new SqlCommand("Select ID, Adres, Vergi_Dairesi,Vergi_No,Mail from Firma where Firma_Adi = '" + combo_firma.Text + "'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select ID, Adres, VergiDairesi,VergiNo,Email from RootTedarikci where Ad = '" + combo_firma.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
                 faturafirmaID = Convert.ToInt32(dr["ID"].ToString());
                 txt_adres.Text = dr["Adres"].ToString();
-                txt_vdaire.Text = dr["Vergi_Dairesi"].ToString();
-                txt_vergino.Text = dr["Vergi_No"].ToString();
-                txt_mail.Text = dr["Mail"].ToString();
+                txt_vdaire.Text = dr["VergiDairesi"].ToString();
+                txt_vergino.Text = dr["VergiNo"].ToString();
+                txt_mail.Text = dr["Email"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -134,21 +134,20 @@ namespace mKYS.Musteri
             //unbColumn.AppearanceCell.BackColor = Color.LemonChiffon;
 
 
-            this.gridView1.Columns[0].Width = 75;
-            this.gridView1.Columns[1].Width = 75;
+            this.gridView1.Columns[0].Width = 135;
+            this.gridView1.Columns[1].Width = 35;
             this.gridView1.Columns[2].Width = 35;
             this.gridView1.Columns[3].Width = 35;
             this.gridView1.Columns[4].Width = 35;
             this.gridView1.Columns[5].Width = 35;
             this.gridView1.Columns[6].Width = 35;
-            this.gridView1.Columns[7].Width = 35;
 
+            this.gridView1.Columns[4].OptionsColumn.AllowEdit = false;
             this.gridView1.Columns[5].OptionsColumn.AllowEdit = false;
             this.gridView1.Columns[6].OptionsColumn.AllowEdit = false;
-            this.gridView1.Columns[7].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[4].AppearanceCell.BackColor = Color.LemonChiffon;
             this.gridView1.Columns[5].AppearanceCell.BackColor = Color.LemonChiffon;
             this.gridView1.Columns[6].AppearanceCell.BackColor = Color.LemonChiffon;
-            this.gridView1.Columns[7].AppearanceCell.BackColor = Color.LemonChiffon;
 
 
 
@@ -268,8 +267,8 @@ namespace mKYS.Musteri
                     "(ProformaNo,FaturaFirmaID,Aciklama,UrunGrubu, Miktar, Birim, ParaBirimi, BirimFiyatTl, ToplamFiyat, KDV, GenelFiyat, Tarih, TeklifNo, Iskonto) values (@a1,@a2,@a3,@a4,@a5,@a6,@a9,@a10,@a11,@a12,@a13,@a15,@a16,@a17)", bgl.baglanti());
                     komut.Parameters.AddWithValue("@a1", Convert.ToInt32(txt_evrak.Text));
                     komut.Parameters.AddWithValue("@a2", faturafirmaID);
-                    komut.Parameters.AddWithValue("@a3", gridView1.GetRowCellValue(i, "Açıklama").ToString());
-                    komut.Parameters.AddWithValue("@a4", gridView1.GetRowCellValue(i, "Ürün").ToString());
+                    komut.Parameters.AddWithValue("@a3", "Analiz Hizmeti");
+                    komut.Parameters.AddWithValue("@a4", gridView1.GetRowCellValue(i, "Açıklama").ToString());
                     komut.Parameters.AddWithValue("@a5", Convert.ToInt32(gridView1.GetRowCellValue(i, "Adet").ToString()));
                     komut.Parameters.AddWithValue("@a6", "Adet");
                     komut.Parameters.AddWithValue("@a9", "₺");

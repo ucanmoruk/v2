@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NKR2));
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.gridSplitContainer1Grid = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridSplitContainer1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_arama = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -71,36 +68,43 @@
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.date_baslangic = new DevExpress.XtraEditors.DateEdit();
-            this.label1 = new DevExpress.XtraEditors.LabelControl();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.date_bit = new DevExpress.XtraEditors.DateEdit();
-            this.date_basla = new DevExpress.XtraEditors.DateEdit();
-            this.tire = new DevExpress.XtraEditors.LabelControl();
-            this.filtreler = new DevExpress.XtraEditors.LabelControl();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.date_basla = new DevExpress.XtraEditors.DateEdit();
+            this.filtreler = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txt_akr = new DevExpress.XtraEditors.TextEdit();
             this.txt_rev = new DevExpress.XtraEditors.TextEdit();
             this.txt_tur = new DevExpress.XtraEditors.TextEdit();
+            this.txt_arama = new DevExpress.XtraEditors.TextEdit();
             this.txt_proje = new DevExpress.XtraEditors.TextEdit();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txt_model = new DevExpress.XtraEditors.TextEdit();
             this.txt_marka = new DevExpress.XtraEditors.TextEdit();
             this.txt_basvuru = new DevExpress.XtraEditors.TextEdit();
+            this.date_baslangic = new DevExpress.XtraEditors.DateEdit();
+            this.label1 = new DevExpress.XtraEditors.LabelControl();
             this.combo_birim = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtAdet = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -110,47 +114,43 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_arama.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_akr.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_rev.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tur.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_arama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_proje.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_model.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_marka.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_basvuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdet.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView2
@@ -186,55 +186,6 @@
             // 
             this.gridSplitContainer1View.GridControl = this.gridSplitContainer1Grid;
             this.gridSplitContainer1View.Name = "gridSplitContainer1View";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.labelControl8);
-            this.splitContainer1.Panel1.Controls.Add(this.txt_arama);
-            this.splitContainer1.Panel1.Controls.Add(this.simpleButton3);
-            this.splitContainer1.Panel1.Controls.Add(this.simpleButton2);
-            this.splitContainer1.Panel1.Controls.Add(this.date_baslangic);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.date_bit);
-            this.splitContainer1.Panel1.Controls.Add(this.date_basla);
-            this.splitContainer1.Panel1.Controls.Add(this.tire);
-            this.splitContainer1.Panel1.Controls.Add(this.filtreler);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1058, 574);
-            this.splitContainer1.SplitterWidth = 3;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(731, 18);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(35, 13);
-            this.labelControl8.TabIndex = 13;
-            this.labelControl8.Text = "Arama:";
-            this.labelControl8.Visible = false;
-            // 
-            // txt_arama
-            // 
-            this.txt_arama.EditValue = "";
-            this.txt_arama.Location = new System.Drawing.Point(772, 15);
-            this.txt_arama.MenuManager = this.barManager1;
-            this.txt_arama.Name = "txt_arama";
-            this.txt_arama.Size = new System.Drawing.Size(37, 20);
-            this.txt_arama.TabIndex = 12;
-            this.txt_arama.Visible = false;
-            this.txt_arama.TextChanged += new System.EventHandler(this.txt_arama_TextChanged);
             // 
             // barManager1
             // 
@@ -280,8 +231,12 @@
             this.barButtonItem26,
             this.barButtonItem27,
             this.barButtonItem28,
-            this.barButtonItem29});
-            this.barManager1.MaxItemId = 43;
+            this.barButtonItem29,
+            this.barButtonItem30,
+            this.barButtonItem31,
+            this.barButtonItem32,
+            this.barButtonItem33});
+            this.barManager1.MaxItemId = 47;
             // 
             // barDockControlTop
             // 
@@ -501,7 +456,10 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem18),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem22),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem28),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem13),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem31),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem32),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem33)});
             this.barSubItem4.Name = "barSubItem4";
             // 
             // barButtonItem19
@@ -552,6 +510,13 @@
             this.barButtonItem28.Name = "barButtonItem28";
             this.barButtonItem28.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem28_ItemClick);
             // 
+            // barButtonItem31
+            // 
+            this.barButtonItem31.Caption = "ÜGDR";
+            this.barButtonItem31.Id = 44;
+            this.barButtonItem31.Name = "barButtonItem31";
+            this.barButtonItem31.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem31_ItemClick);
+            // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Excel\'e Aktar";
@@ -584,6 +549,7 @@
             this.barSubItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem5.ImageOptions.LargeImage")));
             this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem26),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem30),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem24),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem25),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem29)});
@@ -598,6 +564,15 @@
             this.barButtonItem26.Name = "barButtonItem26";
             this.barButtonItem26.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem26.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem26_ItemClick);
+            // 
+            // barButtonItem30
+            // 
+            this.barButtonItem30.Caption = "Dermatology";
+            this.barButtonItem30.Id = 43;
+            this.barButtonItem30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.Image")));
+            this.barButtonItem30.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem30.ImageOptions.LargeImage")));
+            this.barButtonItem30.Name = "barButtonItem30";
+            this.barButtonItem30.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem30_ItemClick);
             // 
             // barButtonItem24
             // 
@@ -635,61 +610,66 @@
             this.barButtonItem27.Name = "barButtonItem27";
             this.barButtonItem27.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem27_ItemClick);
             // 
-            // simpleButton3
+            // bar1
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.ImageOptions.ImageToTextIndent = 0;
-            this.simpleButton3.Location = new System.Drawing.Point(430, 15);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(76, 26);
-            this.simpleButton3.TabIndex = 11;
-            this.simpleButton3.Text = "Filtresiz";
-            this.simpleButton3.Visible = false;
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.bar1.BarName = "Custom 2";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Custom 2";
             // 
-            // simpleButton2
+            // bar2
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.ImageOptions.ImageToTextIndent = 0;
-            this.simpleButton2.Location = new System.Drawing.Point(348, 15);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(76, 26);
-            this.simpleButton2.TabIndex = 11;
-            this.simpleButton2.Text = "Filtreli";
-            this.simpleButton2.Visible = false;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.bar2.BarName = "Custom 3";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 1;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.Text = "Custom 3";
             // 
-            // date_baslangic
+            // popupMenu1
             // 
-            this.date_baslangic.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
-            this.date_baslangic.Location = new System.Drawing.Point(815, 18);
-            this.date_baslangic.MenuManager = this.barManager1;
-            this.date_baslangic.Name = "date_baslangic";
-            this.date_baslangic.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_baslangic.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_baslangic.Size = new System.Drawing.Size(100, 20);
-            this.date_baslangic.TabIndex = 9;
-            this.date_baslangic.Visible = false;
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buton_kargola),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem27),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem17),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
             // 
-            // label1
+            // splitContainer1
             // 
-            this.label1.Location = new System.Drawing.Point(640, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "labelControl3";
-            this.label1.Visible = false;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.date_bit);
+            this.splitContainer1.Panel1.Controls.Add(this.gridControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.date_basla);
+            this.splitContainer1.Panel1.Controls.Add(this.filtreler);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupControl1);
+            this.splitContainer1.Size = new System.Drawing.Size(1058, 574);
+            this.splitContainer1.SplitterDistance = 846;
+            this.splitContainer1.TabIndex = 1;
             // 
             // date_bit
             // 
             this.date_bit.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
-            this.date_bit.Location = new System.Drawing.Point(247, 19);
+            this.date_bit.Location = new System.Drawing.Point(278, 490);
             this.date_bit.Name = "date_bit";
             this.date_bit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -697,58 +677,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_bit.Properties.ReadOnly = true;
             this.date_bit.Size = new System.Drawing.Size(86, 20);
-            this.date_bit.TabIndex = 7;
-            this.date_bit.EditValueChanged += new System.EventHandler(this.date_bit_EditValueChanged);
-            // 
-            // date_basla
-            // 
-            this.date_basla.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
-            this.date_basla.Location = new System.Drawing.Point(145, 19);
-            this.date_basla.MenuManager = this.barManager1;
-            this.date_basla.Name = "date_basla";
-            this.date_basla.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_basla.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_basla.Size = new System.Drawing.Size(86, 20);
-            this.date_basla.TabIndex = 7;
-            this.date_basla.EditValueChanged += new System.EventHandler(this.date_filtre_EditValueChanged);
-            // 
-            // tire
-            // 
-            this.tire.Location = new System.Drawing.Point(590, 26);
-            this.tire.Margin = new System.Windows.Forms.Padding(2);
-            this.tire.Name = "tire";
-            this.tire.Size = new System.Drawing.Size(4, 13);
-            this.tire.TabIndex = 5;
-            this.tire.Text = "-";
-            this.tire.Visible = false;
-            // 
-            // filtreler
-            // 
-            this.filtreler.Location = new System.Drawing.Point(16, 22);
-            this.filtreler.Margin = new System.Windows.Forms.Padding(2);
-            this.filtreler.Name = "filtreler";
-            this.filtreler.Size = new System.Drawing.Size(124, 13);
-            this.filtreler.TabIndex = 5;
-            this.filtreler.Text = "Şu Tarih Aralığını Filtrele : ";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.gridControl1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(1058, 521);
-            this.splitContainer2.SplitterDistance = 846;
-            this.splitContainer2.TabIndex = 1;
+            this.date_bit.TabIndex = 11;
+            this.date_bit.Visible = false;
             // 
             // gridControl1
             // 
@@ -758,19 +688,19 @@
             this.gridControl1.MainView = this.gridView3;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(846, 521);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(846, 574);
+            this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridView3,
+            this.gridView5});
             this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView3
             // 
             this.gridView3.DetailHeight = 284;
-            gridFormatRule1.Name = "Format0";
-            gridFormatRule1.Rule = null;
-            this.gridView3.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.Name = "Format0";
+            gridFormatRule2.Rule = null;
+            this.gridView3.FormatRules.Add(gridFormatRule2);
             this.gridView3.GridControl = this.gridControl1;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsBehavior.ImmediateUpdateRowPosition = false;
@@ -790,17 +720,53 @@
             this.gridView3.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView3_RowStyle);
             this.gridView3.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView3_PopupMenuShowing);
             this.gridView3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView3_FocusedRowChanged);
+            this.gridView3.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
+            // 
+            // gridView5
+            // 
+            this.gridView5.GridControl = this.gridControl1;
+            this.gridView5.Name = "gridView5";
+            // 
+            // date_basla
+            // 
+            this.date_basla.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
+            this.date_basla.Location = new System.Drawing.Point(225, 491);
+            this.date_basla.MenuManager = this.barManager1;
+            this.date_basla.Name = "date_basla";
+            this.date_basla.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_basla.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_basla.Size = new System.Drawing.Size(86, 20);
+            this.date_basla.TabIndex = 12;
+            this.date_basla.Visible = false;
+            // 
+            // filtreler
+            // 
+            this.filtreler.Location = new System.Drawing.Point(187, 494);
+            this.filtreler.Margin = new System.Windows.Forms.Padding(2);
+            this.filtreler.Name = "filtreler";
+            this.filtreler.Size = new System.Drawing.Size(124, 13);
+            this.filtreler.TabIndex = 10;
+            this.filtreler.Text = "Şu Tarih Aralığını Filtrele : ";
+            this.filtreler.Visible = false;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.simpleButton3);
+            this.groupControl1.Controls.Add(this.simpleButton2);
+            this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.txt_akr);
             this.groupControl1.Controls.Add(this.txt_rev);
             this.groupControl1.Controls.Add(this.txt_tur);
+            this.groupControl1.Controls.Add(this.txt_arama);
             this.groupControl1.Controls.Add(this.txt_proje);
             this.groupControl1.Controls.Add(this.gridControl2);
             this.groupControl1.Controls.Add(this.txt_model);
             this.groupControl1.Controls.Add(this.txt_marka);
             this.groupControl1.Controls.Add(this.txt_basvuru);
+            this.groupControl1.Controls.Add(this.date_baslangic);
+            this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.combo_birim);
             this.groupControl1.Controls.Add(this.txtAdet);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -810,17 +776,53 @@
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
-            buttonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions1.Image")));
+            buttonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("buttonImageOptions2.Image")));
             this.groupControl1.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1)});
             this.groupControl1.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(208, 521);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Size = new System.Drawing.Size(208, 574);
+            this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "Numune Detayı";
             this.groupControl1.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupControl1_CustomButtonClick);
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton3.ImageOptions.ImageToTextIndent = 0;
+            this.simpleButton3.Location = new System.Drawing.Point(87, 503);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(67, 26);
+            this.simpleButton3.TabIndex = 11;
+            this.simpleButton3.Text = "Filtresiz";
+            this.simpleButton3.Visible = false;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton2.ImageOptions.ImageToTextIndent = 0;
+            this.simpleButton2.Location = new System.Drawing.Point(66, 501);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(67, 26);
+            this.simpleButton2.TabIndex = 11;
+            this.simpleButton2.Text = "Filtreli";
+            this.simpleButton2.Visible = false;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(83, 507);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(35, 13);
+            this.labelControl8.TabIndex = 13;
+            this.labelControl8.Text = "Arama:";
+            this.labelControl8.Visible = false;
             // 
             // txt_akr
             // 
@@ -848,6 +850,16 @@
             this.txt_tur.TabIndex = 102;
             this.txt_tur.Visible = false;
             // 
+            // txt_arama
+            // 
+            this.txt_arama.EditValue = "";
+            this.txt_arama.Location = new System.Drawing.Point(66, 505);
+            this.txt_arama.MenuManager = this.barManager1;
+            this.txt_arama.Name = "txt_arama";
+            this.txt_arama.Size = new System.Drawing.Size(37, 20);
+            this.txt_arama.TabIndex = 12;
+            this.txt_arama.Visible = false;
+            // 
             // txt_proje
             // 
             this.txt_proje.Location = new System.Drawing.Point(83, 59);
@@ -860,10 +872,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 29);
+            this.gridControl2.Location = new System.Drawing.Point(2, 27);
             this.gridControl2.MainView = this.gridView4;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(204, 490);
+            this.gridControl2.Size = new System.Drawing.Size(204, 545);
             this.gridControl2.TabIndex = 98;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -897,6 +909,29 @@
             this.txt_basvuru.Size = new System.Drawing.Size(153, 20);
             this.txt_basvuru.TabIndex = 91;
             this.txt_basvuru.Visible = false;
+            // 
+            // date_baslangic
+            // 
+            this.date_baslangic.EditValue = new System.DateTime(2022, 11, 5, 0, 0, 0, 0);
+            this.date_baslangic.Location = new System.Drawing.Point(54, 504);
+            this.date_baslangic.MenuManager = this.barManager1;
+            this.date_baslangic.Name = "date_baslangic";
+            this.date_baslangic.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_baslangic.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_baslangic.Size = new System.Drawing.Size(100, 20);
+            this.date_baslangic.TabIndex = 9;
+            this.date_baslangic.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(66, 508);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "labelControl3";
+            this.label1.Visible = false;
             // 
             // combo_birim
             // 
@@ -992,41 +1027,19 @@
             this.labelControl4.Text = "Adet:";
             this.labelControl4.Visible = false;
             // 
-            // bar1
+            // barButtonItem32
             // 
-            this.bar1.BarName = "Custom 2";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Custom 2";
+            this.barButtonItem32.Caption = "DAP Güncelle";
+            this.barButtonItem32.Id = 45;
+            this.barButtonItem32.Name = "barButtonItem32";
+            this.barButtonItem32.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem32_ItemClick);
             // 
-            // bar2
+            // barButtonItem33
             // 
-            this.bar2.BarName = "Custom 3";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 1;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.Text = "Custom 3";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buton_kargola),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem27),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem17),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
+            this.barButtonItem33.Caption = "Etiket Yazdır";
+            this.barButtonItem33.Id = 46;
+            this.barButtonItem33.Name = "barButtonItem33";
+            this.barButtonItem33.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem33_ItemClick);
             // 
             // NKR2
             // 
@@ -1042,7 +1055,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NKR2";
-            this.Text = "Numune Takip Listesi";
+            this.Text = "İş Takip Listesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NKR2_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NKR2_FormClosed);
@@ -1054,40 +1067,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_arama.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_bit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_basla.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_akr.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_rev.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tur.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_arama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_proje.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_model.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_marka.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_basvuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_baslangic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_birim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdet.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1099,9 +1109,6 @@
         private DevExpress.XtraGrid.GridControl gridSplitContainer1Grid;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridSplitContainer1View;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -1113,39 +1120,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem buton_kargola;
-        private DevExpress.XtraEditors.DateEdit date_basla;
-        private DevExpress.XtraEditors.LabelControl filtreler;
-        private DevExpress.XtraEditors.DateEdit date_bit;
-        private DevExpress.XtraEditors.LabelControl tire;
-        private DevExpress.XtraEditors.LabelControl label1;
-        private DevExpress.XtraEditors.DateEdit date_baslangic;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit combo_birim;
-        private DevExpress.XtraEditors.TextEdit txtAdet;
-        private DevExpress.XtraEditors.TextEdit txt_basvuru;
-        private DevExpress.XtraEditors.TextEdit txt_marka;
-        private DevExpress.XtraEditors.TextEdit txt_model;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_proje;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
     //    private DevExpress.XtraRichEdit.Design.RepositoryItemLineSpacing repositoryItemLineSpacing1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.TextEdit txt_akr;
-        private DevExpress.XtraEditors.TextEdit txt_rev;
-        private DevExpress.XtraEditors.TextEdit txt_tur;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
@@ -1159,8 +1138,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txt_arama;
         private DevExpress.XtraBars.BarSubItem barSubItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
@@ -1176,5 +1153,41 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem27;
         private DevExpress.XtraBars.BarButtonItem barButtonItem28;
         private DevExpress.XtraBars.BarButtonItem barButtonItem29;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private DevExpress.XtraEditors.DateEdit date_bit;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraEditors.DateEdit date_basla;
+        private DevExpress.XtraEditors.LabelControl filtreler;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txt_akr;
+        private DevExpress.XtraEditors.TextEdit txt_rev;
+        private DevExpress.XtraEditors.TextEdit txt_tur;
+        private DevExpress.XtraEditors.TextEdit txt_arama;
+        private DevExpress.XtraEditors.TextEdit txt_proje;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.TextEdit txt_model;
+        private DevExpress.XtraEditors.TextEdit txt_marka;
+        private DevExpress.XtraEditors.TextEdit txt_basvuru;
+        private DevExpress.XtraEditors.DateEdit date_baslangic;
+        private DevExpress.XtraEditors.LabelControl label1;
+        private DevExpress.XtraEditors.ComboBoxEdit combo_birim;
+        private DevExpress.XtraEditors.TextEdit txtAdet;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem30;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem31;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem32;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem33;
     }
 }

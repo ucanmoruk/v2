@@ -104,7 +104,7 @@ namespace mKYS
             //  combo_tur.Text = NKR.ftur;
             string tur = NKR2.ntur;
             combo_tur.Text = tur;
-            combo_grup.Text = NKR2.fgrup;
+            combo_grup.Text = "Özel";
             txt_aciklama.Text = NKR2.faciklama;
             combo_karar.Text = NKR2.karar;
             combo_dil.Text = NKR2.dil;
@@ -123,18 +123,18 @@ namespace mKYS
 
             if (combo_grup.Text == "Bakanlık")
             {
-                txt_alicifirma.Visible = false;
-                combo_bakanlik.Visible = true;
-                combo_denetci.Visible = true;
-                combo_bakanlik.Text = NKR2.alicifirma;
+                //txt_alicifirma.Visible = false;
+                //combo_bakanlik.Visible = true;
+                //combo_denetci.Visible = true;
+                //combo_bakanlik.Text = NKR2.alicifirma;
 
-                SqlCommand komut = new SqlCommand("select Yetkili from Yetkili where ID in (select DenetciID from NumuneDetay2 where RaporID = N'" + nID + "')", bgl.baglanti());
-                SqlDataReader dr = komut.ExecuteReader();
-                while (dr.Read())
-                {
-                    combo_denetci.Text = dr[0].ToString();
-                }
-                bgl.baglanti().Close();
+                //SqlCommand komut = new SqlCommand("select Yetkili from Yetkili where ID in (select DenetciID from NumuneDetay2 where RaporID = N'" + nID + "')", bgl.baglanti());
+                //SqlDataReader dr = komut.ExecuteReader();
+                //while (dr.Read())
+                //{
+                //    combo_denetci.Text = dr[0].ToString();
+                //}
+                //bgl.baglanti().Close();
             }
             else
             {
@@ -154,11 +154,11 @@ namespace mKYS
             txt_marka.Text = NKR2.marka;
             combo_birim.Text = NKR2.fbirim;
 
-            SqlCommand komut2 = new SqlCommand("select Yetkili from Yetkili where ID in (select YetkiliID from NumuneDetay2 where RaporID = N'" + nID + "')", bgl.baglanti());
+            SqlCommand komut2 = new SqlCommand("select Yetkili from NumuneDetay2 where RaporID = N'" + nID + "' ", bgl.baglanti());
             SqlDataReader dr2 = komut2.ExecuteReader();
             while (dr2.Read())
             {
-                combo_yetkili.Text = dr2[0].ToString();
+                txt_yetkili.Text = dr2[0].ToString();
             }
             bgl.baglanti().Close();
 
@@ -206,8 +206,8 @@ namespace mKYS
             try
             {
                 if (fotoname == null)
-                {
-                    string logo = @"http://www.rootarge.com/cosmo/Numune/Logo.jpg";
+                {                   
+                    string logo = @"http://www.rootarge.com/cosmo/Numune/rNews.png";
                   //  pictureEdit1.Image = new Bitmap(logo);
                     pictureEdit1.LoadAsync(logo);
                 }
@@ -273,7 +273,7 @@ namespace mKYS
             SqlDataReader drde = detayd.ExecuteReader();
             while (drde.Read())
             {
-                projeadi = drde["Firma_Adi"].ToString();
+                projeadi = drde["Ad"].ToString();
                 comboBoxEdit1.Text = projeadi;
             }
             bgl.baglanti().Close();
@@ -321,7 +321,7 @@ namespace mKYS
                  "update NKR set Evrak_No=@n3, Revno=@n7, RaporNo = @n1,Numune_Adi=@n2,Tarih=@n4,Tur=@n5,Grup=@n6,Aciklama=@n8,Firma_ID=@n9, Akreditasyon=@n10, Karar = @n11, Dil = @n12 where ID = N'" + nID + "'" +
                  "update Termin set Termin=@t1 where RaporID = N'" + nID + "'" +
                  "update Odeme set Evrak_No=@k1 where ID = N'" + odemeid + "'" +
-                 "update NumuneDetay2 set YetkiliID =@x1, DenetciID=@x2 where RaporID = N'" + nID + "'" +
+                 "update NumuneDetay2 set Yetkili =@x1, DenetciID=@x2 where RaporID = N'" + nID + "'" +
                  "update NumuneDetay set AliciFirma=@o1, Marka=@o2, BasvuruNo=@o3, SeriNo=@o4,Model=@o5, Miktar=@o6, UretimTarihi=@o7, SKT=@o8, ProjeID=@o9, Birim=@o10 where  RaporID = N'" + nID + "'" +
                  "COMMIT TRANSACTION", bgl.baglanti());
                 komut.Parameters.AddWithValue("@k1", txtEvrak.Text);
@@ -348,7 +348,7 @@ namespace mKYS
                 komut.Parameters.AddWithValue("@o8", txt_skt.Text);
                 komut.Parameters.AddWithValue("@o9", projeID);
                 komut.Parameters.AddWithValue("@o10", combo_birim.Text);
-                komut.Parameters.AddWithValue("@x1", yetkiliID);
+                komut.Parameters.AddWithValue("@x1", txt_yetkili.Text);
                 komut.Parameters.AddWithValue("@x2", denetciID);
                 komut.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -382,7 +382,7 @@ namespace mKYS
 
         public void proje()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Tur = N'Proje' and Durum = N'Aktif' order by Firma_Adi", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = N'Aktif' order by Ad", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -445,7 +445,7 @@ namespace mKYS
                     using (var client = new WebClient())
                     {
                         string ftpUsername = "massgrup";
-                        string ftpPassword = "3Y3s!52qw";
+                        string ftpPassword = "FfU_Gw48@aseltk5";
                         ftpfullpath = "ftp://" + "www.rootarge.com/httpdocs/cosmo/Numune" + "/" + yenisim;
                         yeniyol = "http://" + "www.rootarge.com/cosmo/Numune" + "/" + yenisim;
                         client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -526,7 +526,7 @@ namespace mKYS
         {
             if (combo_bakanlik.Text == "Avrupa")
             {
-                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı Avrupa%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı Avrupa%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -536,7 +536,7 @@ namespace mKYS
             }
             else if (combo_bakanlik.Text == "Anadolu")
             {
-                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı Anadolu%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı Anadolu%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -546,7 +546,7 @@ namespace mKYS
             }
             else if (combo_bakanlik.Text == "Gürbulak")
             {
-                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı Gürbulak%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı Gürbulak%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -556,7 +556,7 @@ namespace mKYS
             }
             else
             {
-                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı İzmir%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select Yetkili from yetkili where Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı İzmir%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -581,7 +581,7 @@ namespace mKYS
 
             if (combo_bakanlik.Text == "Avrupa")
             {
-                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı Avrupa%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı Avrupa%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -591,7 +591,7 @@ namespace mKYS
             }
             else if (combo_bakanlik.Text == "Anadolu")
             {
-                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı Anadolu%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı Anadolu%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -601,7 +601,7 @@ namespace mKYS
             }
             else if (combo_bakanlik.Text == "Gürbulak")
             {
-                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı Gürbulak%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı Gürbulak%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -611,7 +611,7 @@ namespace mKYS
             }
             else
             {
-                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from Firma where Firma_Adi like '%Ticaret Bakanlığı İzmir%')", bgl.baglanti());
+                SqlCommand komut2 = new SqlCommand("select ID from yetkili where Yetkili = N'" + combo_denetci.Text + "' and Firma_ID in (select ID from RootTedarikci where Ad like '%Ticaret Bakanlığı İzmir%')", bgl.baglanti());
                 SqlDataReader dr2 = komut2.ExecuteReader();
                 while (dr2.Read())
                 {
@@ -634,7 +634,7 @@ namespace mKYS
 
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlCommand komut = new SqlCommand("Select ID from Firma where Firma_Adi = N'" + comboBoxEdit1.Text + "'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select ID from RootTedarikci where Ad = N'" + comboBoxEdit1.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {

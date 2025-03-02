@@ -64,7 +64,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir3 = new SqlCommand("Select ID from Firma where Firma_Adi =N'" + combo_raporfirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
+                SqlCommand getir3 = new SqlCommand("Select ID from RootTedarikci where Ad =N'" + combo_raporfirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
                 SqlDataReader dr4= getir3.ExecuteReader();
                 while (dr4.Read())
                 {
@@ -72,7 +72,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir4 = new SqlCommand("Select ID from Firma where Firma_Adi =N'" + combo_faturafirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
+                SqlCommand getir4 = new SqlCommand("Select ID from RootTedarikci where Ad =N'" + combo_faturafirma.Text + "' and Durum = 'Aktif'", bgl.baglanti());
                 SqlDataReader dr5 = getir4.ExecuteReader();
                 while (dr5.Read())
                 {
@@ -80,7 +80,7 @@ namespace mKYS.Musteri
                 }
                 bgl.baglanti().Close();
 
-                SqlCommand getir5 = new SqlCommand("Select ID from Firma where Firma_Adi =N'" + combo_proje.Text + "'", bgl.baglanti());
+                SqlCommand getir5 = new SqlCommand("Select ID from RootTedarikci where Ad =N'" + combo_proje.Text + "'", bgl.baglanti());
                 SqlDataReader dr6 = getir5.ExecuteReader();
                 while (dr6.Read())
                 {
@@ -150,7 +150,7 @@ namespace mKYS.Musteri
 
         void firma ()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -162,7 +162,7 @@ namespace mKYS.Musteri
 
         public void proje ()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Tur=N'Proje' and Durum=N'Aktif' order by Firma_Adi asc", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum=N'Aktif' order by Ad asc", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -176,11 +176,11 @@ namespace mKYS.Musteri
         public void projebul()
         {
 
-            SqlCommand detay = new SqlCommand("select Firma_Adi from Firma where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR2.raporNo + "'))", bgl.baglanti());
+            SqlCommand detay = new SqlCommand("select Ad from RootTedarikci where ID in (select ProjeID from NumuneDetay where RaporID = (Select ID from NKR where RaporNo = '" + NKR2.raporNo + "'))", bgl.baglanti());
             SqlDataReader drd = detay.ExecuteReader();
             while (drd.Read())
             {
-                projeadi = drd["Firma_Adi"].ToString();
+                projeadi = drd["Ad"].ToString();
             }
             bgl.baglanti().Close();
 

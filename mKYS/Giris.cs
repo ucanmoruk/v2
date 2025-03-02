@@ -48,7 +48,39 @@ namespace mKYS
 
         private void txt_parola_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if (e.KeyData == Keys.Enter)
+            {
+                SqlCommand detay = new SqlCommand("Select * from RootKullanici where Kadi = N'" + txt_ad.Text + "' and Parola =  N'" + txt_parola.Text + "' ", bgl.baglanti());
+                SqlDataReader drd = detay.ExecuteReader();
+                if (drd.Read())
+                {
+                    this.Hide();
+
+                    kullaniciadi = txt_ad.Text;
+                    SqlCommand komutID = new SqlCommand("Select * from RootKullanici where Kadi = N'" + kullaniciadi + "'", bgl.baglanti());
+                    SqlDataReader drI = komutID.ExecuteReader();
+                    while (drI.Read())
+                    {
+                        kullaniciID = Convert.ToInt32(drI["ID"]);
+                        ad = drI["Ad"].ToString();
+                        soyad = drI["Soyad"].ToString();
+                        gorev = drI["Gorev"].ToString();
+                        birimID = drI["BirimID"].ToString();
+                    }
+                    bgl.baglanti().Close();
+                    Anasayfa.kullanici = kullaniciID.ToString();
+                    Anasayfa.kullanicifirmaID = birimID.ToString();
+                    f2 = new Anasayfa();
+                    f2.FormClosing += F2_FormClosing;
+                    f2.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("Kullanıcı adı veya parolayı yanlış girdiniz!", "Oppss!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                bgl.baglanti().Close();
+            }
         }
         public static string birimID;
         Anasayfa f2;

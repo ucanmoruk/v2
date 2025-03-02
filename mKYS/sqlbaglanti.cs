@@ -27,7 +27,7 @@ namespace mKYS
         public SqlConnection baglanti()
         {
             // SqlConnection baglan = new SqlConnection(@"Data Source=mssql04.trwww.com,1433; Initial Catalog = massgrup_root; persist Security Info = True; User ID = masslab; Password = 123qweASD_*");
-            SqlConnection baglan = new SqlConnection(@"Data Source=mssql04.trwww.com,1433; Initial Catalog = massgrup_root; persist Security Info = True; User ID = cosmoroot; Password = 3Y3s!52qw");
+            SqlConnection baglan = new SqlConnection(@"Data Source=mssql04.trwww.com,1433; Initial Catalog = massgrup_cosmo; persist Security Info = True; User ID = cosmoroot; Password = 3Y3s!52qw");
             baglan.Open();
             return baglan;
 

@@ -77,9 +77,6 @@
             this.xrTableRow58 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell116 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell117 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow59 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell118 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell119 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow60 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell120 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell121 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -285,8 +282,7 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(418.5468F, 23F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "It has been prepared in accordance with the Cosmetics Regulation (EC) No 1223/200" +
-    "9 and the Cosmetics Regulation No. 25823, 23 May 2005.";
+            this.xrLabel2.Text = "According to Cosmetics Regulation No. 25823, 23 May 2005";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel1
@@ -317,6 +313,7 @@
             this.xrPictureBox5.Name = "xrPictureBox5";
             this.xrPictureBox5.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox5.Visible = false;
             // 
             // xrPictureBox6
             // 
@@ -325,6 +322,7 @@
             this.xrPictureBox6.Name = "xrPictureBox6";
             this.xrPictureBox6.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox6.Visible = false;
             // 
             // calculatedField1
             // 
@@ -539,7 +537,6 @@
             this.xrTable14.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow57,
             this.xrTableRow58,
-            this.xrTableRow59,
             this.xrTableRow60,
             this.xrTableRow61,
             this.xrTableRow62,
@@ -547,7 +544,7 @@
             this.xrTableRow64,
             this.xrTableRow65,
             this.xrTableRow66});
-            this.xrTable14.SizeF = new System.Drawing.SizeF(698.2073F, 250F);
+            this.xrTable14.SizeF = new System.Drawing.SizeF(698.2073F, 225F);
             this.xrTable14.StylePriority.UseFont = false;
             // 
             // xrTableRow57
@@ -569,8 +566,7 @@
             // 
             this.xrTableCell115.Multiline = true;
             this.xrTableCell115.Name = "xrTableCell115";
-            this.xrTableCell115.Text = "Regulation (EC) No 1223/2009 Of The European Parliament And Of The Council of 30 " +
-    "November 2009 on cosmetic products";
+            this.xrTableCell115.Text = "Cosmetics Regulation No. 25823, 23 May 2025";
             this.xrTableCell115.Weight = 6.6747645568847656D;
             // 
             // xrTableRow58
@@ -593,30 +589,8 @@
             this.xrTableCell117.Multiline = true;
             this.xrTableCell117.Name = "xrTableCell117";
             this.xrTableCell117.Text = "The SCCS\'s Notes Of Guidance For The Testing Of Cosmetic Ingredients And Their Sa" +
-    "fety Evaluation 12th Revision";
+    "fety Evaluation 13th Revision";
             this.xrTableCell117.Weight = 6.6747645568847656D;
-            // 
-            // xrTableRow59
-            // 
-            this.xrTableRow59.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell118,
-            this.xrTableCell119});
-            this.xrTableRow59.Name = "xrTableRow59";
-            this.xrTableRow59.Weight = 1D;
-            // 
-            // xrTableCell118
-            // 
-            this.xrTableCell118.Multiline = true;
-            this.xrTableCell118.Name = "xrTableCell118";
-            this.xrTableCell118.Text = "3.";
-            this.xrTableCell118.Weight = 0.30730880737304694D;
-            // 
-            // xrTableCell119
-            // 
-            this.xrTableCell119.Multiline = true;
-            this.xrTableCell119.Name = "xrTableCell119";
-            this.xrTableCell119.Text = "Cosmetics Law No. 5324";
-            this.xrTableCell119.Weight = 6.6747645568847656D;
             // 
             // xrTableRow60
             // 
@@ -630,14 +604,15 @@
             // 
             this.xrTableCell120.Multiline = true;
             this.xrTableCell120.Name = "xrTableCell120";
-            this.xrTableCell120.Text = "4.";
+            this.xrTableCell120.Text = "3.";
             this.xrTableCell120.Weight = 0.30730880737304694D;
             // 
             // xrTableCell121
             // 
             this.xrTableCell121.Multiline = true;
             this.xrTableCell121.Name = "xrTableCell121";
-            this.xrTableCell121.Text = "Guidelines for Safety Assessment in Cosmetic Products";
+            this.xrTableCell121.Text = "Guidelines on Annex I to Regulation (EC) No 1223/2009 of the European Parliament " +
+    "and of the Council on cosmetic products";
             this.xrTableCell121.Weight = 6.6747645568847656D;
             // 
             // xrTableRow61
@@ -652,15 +627,14 @@
             // 
             this.xrTableCell122.Multiline = true;
             this.xrTableCell122.Name = "xrTableCell122";
-            this.xrTableCell122.Text = "5.";
+            this.xrTableCell122.Text = "4.";
             this.xrTableCell122.Weight = 0.30730880737304694D;
             // 
             // xrTableCell123
             // 
             this.xrTableCell123.Multiline = true;
             this.xrTableCell123.Name = "xrTableCell123";
-            this.xrTableCell123.Text = "Regulation on Amendments to the Cosmetics Regulation published in the Official Ga" +
-    "zette No. 29417 dated 15/07/2015 and attachments";
+            this.xrTableCell123.Text = "Guide on Things to Consider in Labeling Cosmetic Products";
             this.xrTableCell123.Weight = 6.6747645568847656D;
             // 
             // xrTableRow62
@@ -675,15 +649,14 @@
             // 
             this.xrTableCell124.Multiline = true;
             this.xrTableCell124.Name = "xrTableCell124";
-            this.xrTableCell124.Text = "6.";
+            this.xrTableCell124.Text = "5.";
             this.xrTableCell124.Weight = 0.30730880737304694D;
             // 
             // xrTableCell125
             // 
             this.xrTableCell125.Multiline = true;
             this.xrTableCell125.Name = "xrTableCell125";
-            this.xrTableCell125.Text = "Guidelines on the Stability of Cosmetic Products and Duration of Use After Openin" +
-    "g";
+            this.xrTableCell125.Text = "Guidelines for Safety Assessment in Cosmetic Products";
             this.xrTableCell125.Weight = 6.6747645568847656D;
             // 
             // xrTableRow63
@@ -698,14 +671,15 @@
             // 
             this.xrTableCell126.Multiline = true;
             this.xrTableCell126.Name = "xrTableCell126";
-            this.xrTableCell126.Text = "7.";
+            this.xrTableCell126.Text = "6.";
             this.xrTableCell126.Weight = 0.30730880737304694D;
             // 
             // xrTableCell127
             // 
             this.xrTableCell127.Multiline = true;
             this.xrTableCell127.Name = "xrTableCell127";
-            this.xrTableCell127.Text = "Guide on Microbiological Control of Cosmetic Products";
+            this.xrTableCell127.Text = "Guideline on Notification of Serious Undesirable Effects (Cie) by the Manufacture" +
+    "r to the Authority";
             this.xrTableCell127.Weight = 6.6747645568847656D;
             // 
             // xrTableRow64
@@ -720,14 +694,15 @@
             // 
             this.xrTableCell128.Multiline = true;
             this.xrTableCell128.Name = "xrTableCell128";
-            this.xrTableCell128.Text = "8.";
+            this.xrTableCell128.Text = "7.";
             this.xrTableCell128.Weight = 0.30730880737304694D;
             // 
             // xrTableCell129
             // 
             this.xrTableCell129.Multiline = true;
             this.xrTableCell129.Name = "xrTableCell129";
-            this.xrTableCell129.Text = "Guideline on Safety Assessment and Safety Assessor in Cosmetic Products";
+            this.xrTableCell129.Text = "Guidelines on the Stability of Cosmetic Products and Duration of Use After Openin" +
+    "g";
             this.xrTableCell129.Weight = 6.6747645568847656D;
             // 
             // xrTableRow65
@@ -742,15 +717,14 @@
             // 
             this.xrTableCell130.Multiline = true;
             this.xrTableCell130.Name = "xrTableCell130";
-            this.xrTableCell130.Text = "9.";
+            this.xrTableCell130.Text = "8.";
             this.xrTableCell130.Weight = 0.30730880737304694D;
             // 
             // xrTableCell131
             // 
             this.xrTableCell131.Multiline = true;
             this.xrTableCell131.Name = "xrTableCell131";
-            this.xrTableCell131.Text = "Guideline on Notification of Serious Undesirable Effects (Cie) by the Manufacture" +
-    "r to the Authority";
+            this.xrTableCell131.Text = "Guide on Microbiological Control of Cosmetic Products";
             this.xrTableCell131.Weight = 6.6747645568847656D;
             // 
             // xrTableRow66
@@ -765,14 +739,14 @@
             // 
             this.xrTableCell132.Multiline = true;
             this.xrTableCell132.Name = "xrTableCell132";
-            this.xrTableCell132.Text = "10.";
+            this.xrTableCell132.Text = "9.";
             this.xrTableCell132.Weight = 0.30730880737304694D;
             // 
             // xrTableCell133
             // 
             this.xrTableCell133.Multiline = true;
             this.xrTableCell133.Name = "xrTableCell133";
-            this.xrTableCell133.Text = "Guide on Things to Consider in Labeling Cosmetic Products";
+            this.xrTableCell133.Text = "Guideline on Safety Assessment and Safety Assessor in Cosmetic Products";
             this.xrTableCell133.Weight = 6.6747645568847656D;
             // 
             // GroupHeader1
@@ -869,9 +843,6 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow58;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell116;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell117;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow59;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell118;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell119;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow60;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell120;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell121;

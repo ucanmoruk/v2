@@ -207,7 +207,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "Unique_Cosmoroot";
+            this.sqlDataSource1.ConnectionName = "rootv2";
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "ID";
             table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"381\" />";
@@ -585,30 +585,32 @@
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
-            this.xrTableCell1.Weight = 1.5947669174997214D;
+            this.xrTableCell1.Weight = 2.920932302492421D;
             // 
             // xrPictureBox1
             // 
             this.xrPictureBox1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-         //   this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mUnique.Properties.Resources.UNİQUE_LOGO, true);
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.rNews2_2, true);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(1.049042E-05F, 0F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(131.083F, 98.54167F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(247.2758F, 98.54167F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
             this.xrPictureBox1.StylePriority.UseBorders = false;
             // 
             // xrTableCell2
             // 
             this.xrTableCell2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBorders = false;
             this.xrTableCell2.StylePriority.UseFont = false;
+            this.xrTableCell2.StylePriority.UseForeColor = false;
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "PROFORMA FATURA";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell2.Weight = 5.6845649282077888D;
+            this.xrTableCell2.Weight = 4.3583995432150893D;
             // 
             // xrTableCell3
             // 
@@ -629,12 +631,14 @@
             // xrPageInfo1
             // 
             this.xrPageInfo1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrPageInfo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 28.45832F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
             this.xrPageInfo1.SizeF = new System.Drawing.SizeF(186.3088F, 23F);
             this.xrPageInfo1.StylePriority.UseFont = false;
+            this.xrPageInfo1.StylePriority.UseForeColor = false;
             this.xrPageInfo1.TextFormatString = "{0:d MMMM yyyy}";
             // 
             // ReportFooter
@@ -708,12 +712,12 @@
             // 
             // xrLabel16
             // 
-            this.xrLabel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel16.BackColor = System.Drawing.Color.White;
             this.xrLabel16.BorderColor = System.Drawing.Color.Black;
             this.xrLabel16.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel16.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(577.0837F, 68.75089F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
@@ -731,12 +735,12 @@
             // 
             // xrLabel15
             // 
-            this.xrLabel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel15.BackColor = System.Drawing.Color.White;
             this.xrLabel15.BorderColor = System.Drawing.Color.Black;
             this.xrLabel15.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel15.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel15.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(577.0834F, 45.75087F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
@@ -754,13 +758,13 @@
             // 
             // xrLabel14
             // 
-            this.xrLabel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel14.BackColor = System.Drawing.Color.White;
             this.xrLabel14.BorderColor = System.Drawing.Color.Black;
             this.xrLabel14.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel14.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel14.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(577.0834F, 22.75085F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
@@ -922,11 +926,11 @@
             // 
             // xrLabel6
             // 
-            this.xrLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel6.BackColor = System.Drawing.Color.White;
             this.xrLabel6.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel6.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(415.6252F, 22.20825F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
@@ -961,12 +965,12 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel1.BackColor = System.Drawing.Color.White;
             this.xrLabel1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel1.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1.000182F, 22.20825F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -983,12 +987,12 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel2.BackColor = System.Drawing.Color.White;
             this.xrLabel2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel2.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 72.87453F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -1110,11 +1114,11 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel3.BackColor = System.Drawing.Color.White;
             this.xrLabel3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel3.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 102.8745F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -1131,11 +1135,11 @@
             // 
             // xrLabel4
             // 
-            this.xrLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel4.BackColor = System.Drawing.Color.White;
             this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel4.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 132.8744F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -1152,11 +1156,11 @@
             // 
             // xrLabel5
             // 
-            this.xrLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel5.BackColor = System.Drawing.Color.White;
             this.xrLabel5.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel5.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(0F, 162.8746F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
@@ -1173,10 +1177,10 @@
             // 
             // xrLabel8
             // 
-            this.xrLabel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel8.BackColor = System.Drawing.Color.White;
             this.xrLabel8.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel8.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(304.1668F, 162.8746F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
@@ -1193,10 +1197,10 @@
             // 
             // xrLabel9
             // 
-            this.xrLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrLabel9.BackColor = System.Drawing.Color.White;
             this.xrLabel9.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrLabel9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel9.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(551.0417F, 162.8746F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -1251,12 +1255,12 @@
             // 
             // xrTableCell4
             // 
-            this.xrTableCell4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrTableCell4.BackColor = System.Drawing.Color.White;
             this.xrTableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrTableCell4.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBackColor = false;
@@ -1268,73 +1272,97 @@
             // 
             // xrTableCell5
             // 
+            this.xrTableCell5.BackColor = System.Drawing.Color.White;
             this.xrTableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
+            this.xrTableCell5.StylePriority.UseBackColor = false;
             this.xrTableCell5.StylePriority.UseBorders = false;
             this.xrTableCell5.StylePriority.UseFont = false;
+            this.xrTableCell5.StylePriority.UseForeColor = false;
             this.xrTableCell5.Text = "Açıklama";
             this.xrTableCell5.Weight = 3.2187499561006154D;
             // 
             // xrTableCell7
             // 
+            this.xrTableCell7.BackColor = System.Drawing.Color.White;
             this.xrTableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.StylePriority.UseBackColor = false;
             this.xrTableCell7.StylePriority.UseBorders = false;
             this.xrTableCell7.StylePriority.UseFont = false;
+            this.xrTableCell7.StylePriority.UseForeColor = false;
             this.xrTableCell7.Text = "Miktar";
             this.xrTableCell7.Weight = 0.997717671659009D;
             // 
             // xrTableCell8
             // 
+            this.xrTableCell8.BackColor = System.Drawing.Color.White;
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
+            this.xrTableCell8.StylePriority.UseBackColor = false;
             this.xrTableCell8.StylePriority.UseBorders = false;
             this.xrTableCell8.StylePriority.UseFont = false;
+            this.xrTableCell8.StylePriority.UseForeColor = false;
             this.xrTableCell8.Text = "Birim Fiyat";
             this.xrTableCell8.Weight = 0.79395050203473161D;
             // 
             // xrTableCell9
             // 
+            this.xrTableCell9.BackColor = System.Drawing.Color.White;
             this.xrTableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
+            this.xrTableCell9.StylePriority.UseBackColor = false;
             this.xrTableCell9.StylePriority.UseBorders = false;
             this.xrTableCell9.StylePriority.UseFont = false;
+            this.xrTableCell9.StylePriority.UseForeColor = false;
             this.xrTableCell9.Text = "Fiyat";
             this.xrTableCell9.Weight = 0.84149414612851126D;
             // 
             // xrTableCell10
             // 
+            this.xrTableCell10.BackColor = System.Drawing.Color.White;
             this.xrTableCell10.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
+            this.xrTableCell10.StylePriority.UseBackColor = false;
             this.xrTableCell10.StylePriority.UseBorders = false;
             this.xrTableCell10.StylePriority.UseFont = false;
+            this.xrTableCell10.StylePriority.UseForeColor = false;
             this.xrTableCell10.Text = "KDV";
             this.xrTableCell10.Weight = 0.7830853290894314D;
             // 
             // xrTableCell11
             // 
+            this.xrTableCell11.BackColor = System.Drawing.Color.White;
             this.xrTableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrTableCell11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
+            this.xrTableCell11.StylePriority.UseBackColor = false;
             this.xrTableCell11.StylePriority.UseBorders = false;
             this.xrTableCell11.StylePriority.UseFont = false;
+            this.xrTableCell11.StylePriority.UseForeColor = false;
             this.xrTableCell11.Text = "Toplam";
             this.xrTableCell11.Weight = 1.0900033757806003D;
             // 
@@ -1366,12 +1394,12 @@
             // 
             // xrTableCell22
             // 
-            this.xrTableCell22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrTableCell22.BackColor = System.Drawing.Color.White;
             this.xrTableCell22.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell22.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrTableCell22.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBackColor = false;
@@ -1385,11 +1413,11 @@
             // 
             // xrTableCell23
             // 
-            this.xrTableCell23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(224)))), ((int)(((byte)(255)))));
+            this.xrTableCell23.BackColor = System.Drawing.Color.White;
             this.xrTableCell23.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell23.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrTableCell23.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(71)))), ((int)(((byte)(83)))));
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseBackColor = false;
@@ -1419,7 +1447,7 @@
             this.xrTableCell24.StylePriority.UseBorders = false;
             this.xrTableCell24.StylePriority.UseFont = false;
             this.xrTableCell24.StylePriority.UseTextAlignment = false;
-            this.xrTableCell24.Text = "GARANTİ BANKASI";
+            this.xrTableCell24.Text = "ENPARA";
             this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell24.Weight = 3.7708322143554689D;
             // 
@@ -1432,7 +1460,7 @@
             this.xrTableCell25.StylePriority.UseBorders = false;
             this.xrTableCell25.StylePriority.UseFont = false;
             this.xrTableCell25.StylePriority.UseTextAlignment = false;
-            this.xrTableCell25.Text = "TR12 0006 2000 0680 0006 2915 85";
+            this.xrTableCell25.Text = "TR91 0011 1000 0000 0104 4219 89";
             this.xrTableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell25.Weight = 4.3591668701171873D;
             // 
@@ -1446,9 +1474,8 @@
             this.xrLabel17.SizeF = new System.Drawing.SizeF(808.9999F, 52.50896F);
             this.xrLabel17.StylePriority.UseFont = false;
             this.xrLabel17.StylePriority.UseTextAlignment = false;
-            this.xrLabel17.Text = "UNIQUE ANALİZ BELGELENDİRME ve GÖZETİM HİZMETLERİ LTD. ŞTİ.\r\nAtatürk Mah. Hadımkö" +
-    "y Yolu Cad. No:10/7 Esenyurt / İstanbul\r\nwww.uniquelab.com.tr | info@uniquelab.c" +
-    "om.tr";
+            this.xrLabel17.Text = "ROOT KOZMETİK ANONİM ŞİRKETİ\r\nYakuplu Mah. Hürriyet Bulvarı Yakuplu Eval Plaza No" +
+    ":131/40 Beylikdüzü İSTANBUL\r\nwww.rootkozmetik.com | info@rootarge.com";
             this.xrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // ProformaManuel

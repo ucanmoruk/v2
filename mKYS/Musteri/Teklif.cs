@@ -201,7 +201,7 @@ namespace mKYS.Musteri
         {
             //onaylandı
 
-            SqlCommand komutz = new SqlCommand("update TeklifX1 set TekilfDurum = @o1, OnayTarih = @o3 where ID = @o2 ", bgl.baglanti());
+            SqlCommand komutz = new SqlCommand("update TeklifX1 set TeklifDurum = @o1, OnayTarih = @o3 where ID = @o2 ", bgl.baglanti());
             komutz.Parameters.AddWithValue("@o1", "Onaylandı");
             komutz.Parameters.AddWithValue("@o3", DateTime.Now);
             komutz.Parameters.AddWithValue("@o2", teklifID);
@@ -215,7 +215,7 @@ namespace mKYS.Musteri
         {
             //Onay bekliyor
 
-            SqlCommand komutz = new SqlCommand("update TeklifX1 set TekilfDurum = @o1, OnayTarih = @o3 where ID = @o2 ", bgl.baglanti());
+            SqlCommand komutz = new SqlCommand("update TeklifX1 set TeklifDurum = @o1, OnayTarih = @o3 where ID = @o2 ", bgl.baglanti());
             komutz.Parameters.AddWithValue("@o1", "Onay Bekliyor");
             komutz.Parameters.AddWithValue("@o3", DateTime.Now);
             komutz.Parameters.AddWithValue("@o2", teklifID);

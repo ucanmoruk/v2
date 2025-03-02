@@ -145,6 +145,11 @@
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel72 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel71 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel79 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel69 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
@@ -173,9 +178,12 @@
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader3 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel85 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel33 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable14 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -184,10 +192,6 @@
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel53 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel54 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel51 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel52 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel49 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel50 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel47 = new DevExpress.XtraReports.UI.XRLabel();
@@ -258,26 +262,11 @@
             this.xrTableCell81 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell82 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel34 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel33 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader4 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrTable13 = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow56 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell113 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTable12 = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow52 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell105 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell106 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow53 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell107 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell108 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow55 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell111 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell112 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel68 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel54 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel53 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel52 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel51 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel66 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel65 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel64 = new DevExpress.XtraReports.UI.XRLabel();
@@ -308,7 +297,6 @@
             this.pID = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader5 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.GroupHeader6 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPictureBox2 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.GroupHeader7 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPictureBox4 = new DevExpress.XtraReports.UI.XRPictureBox();
@@ -318,6 +306,38 @@
             this.pKutu = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader8 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.GroupHeader9 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel70 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrRichText1 = new DevExpress.XtraReports.UI.XRRichText();
+            this.GroupHeader10 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel74 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel73 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel75 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel76 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeader6 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel83 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel84 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel82 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel81 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel80 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel78 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel77 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeader11 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel91 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel90 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel89 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel88 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel87 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel86 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel68 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrTable12 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow55 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell111 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell112 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTable13 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow56 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell113 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -329,9 +349,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // sqlDataSource1
@@ -438,10 +459,11 @@
             this.xrPictureBox8.Name = "xrPictureBox8";
             this.xrPictureBox8.SizeF = new System.Drawing.SizeF(107.4092F, 81.36755F);
             this.xrPictureBox8.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.xrPictureBox8.Visible = false;
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Futura Bk BT", 9F);
+            this.xrPageInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(726.0001F, 86.00841F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
@@ -482,7 +504,7 @@
             // 
             // xrTableCell1
             // 
-            this.xrTableCell1.Font = new System.Drawing.Font("Futura Bk BT", 9F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
@@ -495,7 +517,7 @@
             // 
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField2]")});
-            this.xrTableCell2.Font = new System.Drawing.Font("Futura Bk BT", 9F);
+            this.xrTableCell2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
@@ -506,7 +528,7 @@
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.Font = new System.Drawing.Font("Futura Bk BT", 9F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 10, 0, 0, 100F);
@@ -521,7 +543,7 @@
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
-            this.xrTableCell4.Font = new System.Drawing.Font("Futura Bk BT", 9F);
+            this.xrTableCell4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 2, 0, 0, 100F);
@@ -535,7 +557,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(155.6251F, 43.41666F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -549,7 +571,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(194.8509F, 20.41667F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -566,7 +588,7 @@
             this.xrPictureBox6,
             this.xrLabel67,
             this.xrPictureBox5});
-            this.BottomMargin.HeightF = 68.47128F;
+            this.BottomMargin.HeightF = 68.47124F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // xrPictureBox6
@@ -576,6 +598,7 @@
             this.xrPictureBox6.Name = "xrPictureBox6";
             this.xrPictureBox6.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox6.Visible = false;
             // 
             // xrLabel67
             // 
@@ -589,6 +612,7 @@
             this.xrLabel67.StylePriority.UseTextAlignment = false;
             this.xrLabel67.Text = "www.ozecogroup.com / info@ozecogroup.com";
             this.xrLabel67.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel67.Visible = false;
             // 
             // xrPictureBox5
             // 
@@ -597,6 +621,7 @@
             this.xrPictureBox5.Name = "xrPictureBox5";
             this.xrPictureBox5.SizeF = new System.Drawing.SizeF(67.71778F, 67.71778F);
             this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.xrPictureBox5.Visible = false;
             // 
             // ReportHeader
             // 
@@ -608,6 +633,7 @@
             this.xrLabel7,
             this.xrLabel6,
             this.xrLabel5});
+            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 782.3651F;
             this.ReportHeader.KeepTogether = true;
             this.ReportHeader.Name = "ReportHeader";
@@ -620,12 +646,13 @@
             this.xrPictureBox7.Name = "xrPictureBox7";
             this.xrPictureBox7.SizeF = new System.Drawing.SizeF(736F, 274.2838F);
             this.xrPictureBox7.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.xrPictureBox7.Visible = false;
             // 
             // xrLabel10
             // 
             this.xrLabel10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ad]")});
-            this.xrLabel10.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(6.357829E-05F, 386.5473F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
@@ -642,7 +669,7 @@
             this.xrLabel9.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel9.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(144.7917F, 567.1644F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -663,7 +690,7 @@
             this.xrLabel8.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel8.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(144.7917F, 527.1644F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
@@ -684,7 +711,7 @@
             this.xrLabel7.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel7.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(144.7917F, 487.1644F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
@@ -704,7 +731,7 @@
             this.xrLabel6.BackColor = System.Drawing.Color.Gainsboro;
             this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Urun]")});
-            this.xrLabel6.Font = new System.Drawing.Font("Futura Bk BT", 11F, System.Drawing.FontStyle.Bold);
+            this.xrLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel6.ForeColor = System.Drawing.Color.Black;
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(6.357829E-05F, 363.5473F);
             this.xrLabel6.Multiline = true;
@@ -720,7 +747,7 @@
             // 
             // xrLabel5
             // 
-            this.xrLabel5.Font = new System.Drawing.Font("Futura Bk BT", 18F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(144.7917F, 299.9223F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
@@ -755,13 +782,13 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 950.0334F;
-            this.GroupHeader1.Level = 7;
+            this.GroupHeader1.Level = 9;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
             // xrTable4
             // 
+            this.xrTable4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 603.9827F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -777,6 +804,7 @@
             this.xrTableRow23,
             this.xrTableRow24});
             this.xrTable4.SizeF = new System.Drawing.SizeF(698.2081F, 250F);
+            this.xrTable4.StylePriority.UseFont = false;
             // 
             // xrTableRow15
             // 
@@ -789,7 +817,7 @@
             // xrTableCell31
             // 
             this.xrTableCell31.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell31.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell31.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell31.Multiline = true;
             this.xrTableCell31.Name = "xrTableCell31";
@@ -805,7 +833,7 @@
             this.xrTableCell32.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell32.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Gorunum]")});
-            this.xrTableCell32.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell32.Multiline = true;
             this.xrTableCell32.Name = "xrTableCell32";
             this.xrTableCell32.StylePriority.UseBorderColor = false;
@@ -825,7 +853,7 @@
             // xrTableCell33
             // 
             this.xrTableCell33.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell33.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell33.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell33.Multiline = true;
             this.xrTableCell33.Name = "xrTableCell33";
@@ -841,7 +869,7 @@
             this.xrTableCell34.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell34.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Renk]")});
-            this.xrTableCell34.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell34.Multiline = true;
             this.xrTableCell34.Name = "xrTableCell34";
             this.xrTableCell34.StylePriority.UseBorderColor = false;
@@ -861,7 +889,7 @@
             // xrTableCell35
             // 
             this.xrTableCell35.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell35.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell35.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell35.Multiline = true;
             this.xrTableCell35.Name = "xrTableCell35";
@@ -877,7 +905,7 @@
             this.xrTableCell36.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell36.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Koku]")});
-            this.xrTableCell36.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell36.Multiline = true;
             this.xrTableCell36.Name = "xrTableCell36";
             this.xrTableCell36.StylePriority.UseBorderColor = false;
@@ -897,7 +925,7 @@
             // xrTableCell37
             // 
             this.xrTableCell37.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell37.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell37.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell37.Multiline = true;
             this.xrTableCell37.Name = "xrTableCell37";
@@ -913,7 +941,7 @@
             this.xrTableCell38.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell38.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[pH]")});
-            this.xrTableCell38.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell38.Multiline = true;
             this.xrTableCell38.Name = "xrTableCell38";
             this.xrTableCell38.StylePriority.UseBorderColor = false;
@@ -933,7 +961,7 @@
             // xrTableCell39
             // 
             this.xrTableCell39.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell39.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell39.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell39.Multiline = true;
             this.xrTableCell39.Name = "xrTableCell39";
@@ -949,7 +977,7 @@
             this.xrTableCell40.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell40.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Kaynama]")});
-            this.xrTableCell40.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell40.Multiline = true;
             this.xrTableCell40.Name = "xrTableCell40";
             this.xrTableCell40.StylePriority.UseBorderColor = false;
@@ -969,7 +997,7 @@
             // xrTableCell41
             // 
             this.xrTableCell41.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell41.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell41.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell41.Multiline = true;
             this.xrTableCell41.Name = "xrTableCell41";
@@ -985,7 +1013,7 @@
             this.xrTableCell42.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell42.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Erime]")});
-            this.xrTableCell42.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell42.Multiline = true;
             this.xrTableCell42.Name = "xrTableCell42";
             this.xrTableCell42.StylePriority.UseBorderColor = false;
@@ -1005,7 +1033,7 @@
             // xrTableCell43
             // 
             this.xrTableCell43.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell43.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell43.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell43.Multiline = true;
             this.xrTableCell43.Name = "xrTableCell43";
@@ -1021,7 +1049,7 @@
             this.xrTableCell44.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell44.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Yogunluk]")});
-            this.xrTableCell44.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell44.Multiline = true;
             this.xrTableCell44.Name = "xrTableCell44";
             this.xrTableCell44.StylePriority.UseBorderColor = false;
@@ -1041,7 +1069,7 @@
             // xrTableCell45
             // 
             this.xrTableCell45.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell45.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell45.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell45.Multiline = true;
             this.xrTableCell45.Name = "xrTableCell45";
@@ -1057,7 +1085,7 @@
             this.xrTableCell46.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell46.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Viskozite]")});
-            this.xrTableCell46.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell46.Multiline = true;
             this.xrTableCell46.Name = "xrTableCell46";
             this.xrTableCell46.StylePriority.UseBorderColor = false;
@@ -1077,7 +1105,7 @@
             // xrTableCell47
             // 
             this.xrTableCell47.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell47.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell47.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell47.Multiline = true;
             this.xrTableCell47.Name = "xrTableCell47";
@@ -1093,7 +1121,7 @@
             this.xrTableCell48.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell48.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Suda]")});
-            this.xrTableCell48.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell48.Multiline = true;
             this.xrTableCell48.Name = "xrTableCell48";
             this.xrTableCell48.StylePriority.UseBorderColor = false;
@@ -1113,7 +1141,7 @@
             // xrTableCell49
             // 
             this.xrTableCell49.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell49.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell49.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell49.Multiline = true;
             this.xrTableCell49.Name = "xrTableCell49";
@@ -1129,7 +1157,7 @@
             this.xrTableCell50.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell50.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Diger]")});
-            this.xrTableCell50.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell50.Multiline = true;
             this.xrTableCell50.Name = "xrTableCell50";
             this.xrTableCell50.StylePriority.UseBorderColor = false;
@@ -1140,22 +1168,22 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(20.83343F, 867.5332F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
             this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.Text = "2.3 Kozmetik Ürünün Stabilitesi";
+            this.xrLabel3.Text = "c. Kozmetik Ürünün Stabilitesi";
             // 
             // xrLabel22
             // 
             this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[StabiliteNot]")});
-            this.xrLabel22.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel22.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 890.5333F);
+            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(44.79224F, 913.5333F);
             this.xrLabel22.Multiline = true;
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1167,8 +1195,8 @@
             // 
             // xrLabel23
             // 
-            this.xrLabel23.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 913.5333F);
+            this.xrLabel23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 890.5333F);
             this.xrLabel23.Multiline = true;
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1178,18 +1206,18 @@
             // 
             // xrLabel19
             // 
-            this.xrLabel19.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(20.83343F, 571.0749F);
             this.xrLabel19.Multiline = true;
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel19.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
             this.xrLabel19.StylePriority.UseFont = false;
-            this.xrLabel19.Text = "2.2 Bitmiş kozmetik ürününün fiziksel ve kimyasal özellikleri";
+            this.xrLabel19.Text = "b. Bitmiş kozmetik ürününün fiziksel ve kimyasal özellikleri";
             // 
             // xrLabel18
             // 
-            this.xrLabel18.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(44.79205F, 529.9082F);
             this.xrLabel18.Multiline = true;
             this.xrLabel18.Name = "xrLabel18";
@@ -1201,19 +1229,19 @@
             // 
             // xrLabel17
             // 
-            this.xrLabel17.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(20.83372F, 506.9082F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel17.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
             this.xrLabel17.StylePriority.UseFont = false;
-            this.xrLabel17.Text = "2.1 Madde veya karışımların fiziksel ve kimyasal özellikleri";
+            this.xrLabel17.Text = "a. Madde veya karışımların fiziksel/kimyasal özellikleri";
             // 
             // xrLabel16
             // 
             this.xrLabel16.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel16.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel16.ForeColor = System.Drawing.Color.White;
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(20.83375F, 483.9082F);
             this.xrLabel16.Multiline = true;
@@ -1223,11 +1251,11 @@
             this.xrLabel16.StylePriority.UseBackColor = false;
             this.xrLabel16.StylePriority.UseFont = false;
             this.xrLabel16.StylePriority.UseForeColor = false;
-            this.xrLabel16.Text = "2. Kozmetik Ürünün Fiziksel / Kimyasal Özellikleri ve Stabilitesi";
+            this.xrLabel16.Text = "A.2. Kozmetik Ürünün Fiziksel / Kimyasal Özellikleri ve Stabilitesi";
             // 
             // xrLabel15
             // 
-            this.xrLabel15.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(44.79208F, 443.5332F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
@@ -1240,7 +1268,7 @@
             // xrLabel14
             // 
             this.xrLabel14.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel14.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel14.ForeColor = System.Drawing.Color.White;
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(20.83375F, 409.325F);
             this.xrLabel14.Multiline = true;
@@ -1250,12 +1278,12 @@
             this.xrLabel14.StylePriority.UseBackColor = false;
             this.xrLabel14.StylePriority.UseFont = false;
             this.xrLabel14.StylePriority.UseForeColor = false;
-            this.xrLabel14.Text = "1. Kozmetik Ürünün Kalitatif ve Kantitatif Özellikleri";
+            this.xrLabel14.Text = "A.1. Kozmetik Ürünün Kalitatif ve Kantitatif Bileşimi";
             // 
             // xrLabel13
             // 
             this.xrLabel13.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel13.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel13.ForeColor = System.Drawing.Color.White;
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(20.83273F, 248.2834F);
             this.xrLabel13.Multiline = true;
@@ -1290,7 +1318,7 @@
             // xrTableCell23
             // 
             this.xrTableCell23.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell23.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell23.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
@@ -1306,7 +1334,7 @@
             this.xrTableCell24.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Ad]")});
-            this.xrTableCell24.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseBorderColor = false;
@@ -1326,7 +1354,7 @@
             // xrTableCell25
             // 
             this.xrTableCell25.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell25.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell25.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
@@ -1342,7 +1370,7 @@
             this.xrTableCell26.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Adres]")});
-            this.xrTableCell26.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBorderColor = false;
@@ -1362,7 +1390,7 @@
             // xrTableCell27
             // 
             this.xrTableCell27.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell27.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell27.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell27.Multiline = true;
             this.xrTableCell27.Name = "xrTableCell27";
@@ -1378,7 +1406,7 @@
             this.xrTableCell28.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell28.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Telefon]")});
-            this.xrTableCell28.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorderColor = false;
@@ -1398,7 +1426,7 @@
             // xrTableCell29
             // 
             this.xrTableCell29.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell29.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell29.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell29.Multiline = true;
             this.xrTableCell29.Name = "xrTableCell29";
@@ -1414,7 +1442,7 @@
             this.xrTableCell30.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Email]")});
-            this.xrTableCell30.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell30.Multiline = true;
             this.xrTableCell30.Name = "xrTableCell30";
             this.xrTableCell30.StylePriority.UseBorderColor = false;
@@ -1448,7 +1476,7 @@
             // xrTableCell5
             // 
             this.xrTableCell5.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell5.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell5.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
@@ -1467,7 +1495,7 @@
             this.xrTableCell6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Urun]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1491,7 +1519,7 @@
             // xrTableCell7
             // 
             this.xrTableCell7.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell7.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell7.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
@@ -1507,7 +1535,7 @@
             this.xrTableCell8.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Barkod]")});
-            this.xrTableCell8.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorderColor = false;
@@ -1527,7 +1555,7 @@
             // xrTableCell19
             // 
             this.xrTableCell19.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell19.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell19.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
@@ -1543,7 +1571,7 @@
             this.xrTableCell20.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Miktar]")});
-            this.xrTableCell20.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseBorderColor = false;
@@ -1563,7 +1591,7 @@
             // xrTableCell13
             // 
             this.xrTableCell13.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell13.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell13.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
@@ -1579,7 +1607,7 @@
             this.xrTableCell14.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tip1]")});
-            this.xrTableCell14.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseBorderColor = false;
@@ -1599,7 +1627,7 @@
             // xrTableCell15
             // 
             this.xrTableCell15.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell15.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell15.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
@@ -1615,7 +1643,7 @@
             this.xrTableCell16.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[UygulamaBolgesi]")});
-            this.xrTableCell16.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.StylePriority.UseBorderColor = false;
@@ -1635,7 +1663,7 @@
             // xrTableCell17
             // 
             this.xrTableCell17.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell17.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell17.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
@@ -1651,7 +1679,7 @@
             this.xrTableCell18.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Hedef]")});
-            this.xrTableCell18.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseBorderColor = false;
@@ -1663,7 +1691,7 @@
             // xrLabel12
             // 
             this.xrLabel12.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel12.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel12.ForeColor = System.Drawing.Color.White;
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(20.83343F, 48.69992F);
             this.xrLabel12.Multiline = true;
@@ -1677,7 +1705,7 @@
             // 
             // xrLabel11
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Futura Bk BT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.xrLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
@@ -1691,6 +1719,11 @@
             // GroupHeader2
             // 
             this.GroupHeader2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel72,
+            this.xrLabel71,
+            this.xrLabel79,
+            this.xrLabel27,
+            this.xrLabel28,
             this.xrLabel69,
             this.xrLabel26,
             this.xrLabel25,
@@ -1701,17 +1734,73 @@
             this.xrLabel20,
             this.xrLabel24});
             this.GroupHeader2.Expanded = false;
-            this.GroupHeader2.HeightF = 381.2916F;
+            this.GroupHeader2.HeightF = 561.2939F;
             this.GroupHeader2.Level = 5;
             this.GroupHeader2.Name = "GroupHeader2";
+            // 
+            // xrLabel72
+            // 
+            this.xrLabel72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel72.LocationFloat = new DevExpress.Utils.PointFloat(44.78762F, 211.0094F);
+            this.xrLabel72.Multiline = true;
+            this.xrLabel72.Name = "xrLabel72";
+            this.xrLabel72.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel72.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel72.StylePriority.UseFont = false;
+            this.xrLabel72.Text = resources.GetString("xrLabel72.Text");
+            // 
+            // xrLabel71
+            // 
+            this.xrLabel71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel71.LocationFloat = new DevExpress.Utils.PointFloat(20.83129F, 176.1931F);
+            this.xrLabel71.Multiline = true;
+            this.xrLabel71.Name = "xrLabel71";
+            this.xrLabel71.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel71.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel71.StylePriority.UseFont = false;
+            this.xrLabel71.Text = "b. Bitmiş kozmetik ürünün mikrobiyolojik kalitesi";
+            // 
+            // xrLabel79
+            // 
+            this.xrLabel79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel79.LocationFloat = new DevExpress.Utils.PointFloat(20.83343F, 109.4913F);
+            this.xrLabel79.Multiline = true;
+            this.xrLabel79.Name = "xrLabel79";
+            this.xrLabel79.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel79.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel79.StylePriority.UseFont = false;
+            this.xrLabel79.Text = "a. Maddelerin ve karışımların mikrobiyolojik kalitesi";
+            // 
+            // xrLabel27
+            // 
+            this.xrLabel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
+            this.xrLabel27.Multiline = true;
+            this.xrLabel27.Name = "xrLabel27";
+            this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel27.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel27.StylePriority.UseFont = false;
+            this.xrLabel27.Text = "(3) Uygulanabilir olduğunda, açıldıktan sonra kullanım süresi ve gerekçesi";
+            // 
+            // xrLabel28
+            // 
+            this.xrLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(33.95884F, 44.54169F);
+            this.xrLabel28.Multiline = true;
+            this.xrLabel28.Name = "xrLabel28";
+            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel28.StylePriority.UseFont = false;
+            this.xrLabel28.Text = resources.GetString("xrLabel28.Text");
             // 
             // xrLabel69
             // 
             this.xrLabel69.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", resources.GetString("xrLabel69.ExpressionBindings"))});
-            this.xrLabel69.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false,true)"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[MikroNotEn]")});
+            this.xrLabel69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel69.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(44.78963F, 348.2916F);
+            this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(44.78762F, 530.1689F);
             this.xrLabel69.Multiline = true;
             this.xrLabel69.Name = "xrLabel69";
             this.xrLabel69.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1721,9 +1810,9 @@
             // 
             // xrLabel26
             // 
-            this.xrLabel26.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel26.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(44.79179F, 309.0417F);
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(44.7899F, 493.3026F);
             this.xrLabel26.Multiline = true;
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1734,8 +1823,8 @@
             // 
             // xrLabel25
             // 
-            this.xrLabel25.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 217.0418F);
+            this.xrLabel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(44.7898F, 401.3027F);
             this.xrLabel25.Multiline = true;
             this.xrLabel25.Name = "xrLabel25";
             this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1746,7 +1835,7 @@
             // xrTable7
             // 
             this.xrTable7.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTable7.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 240.0417F);
+            this.xrTable7.LocationFloat = new DevExpress.Utils.PointFloat(44.7898F, 424.3026F);
             this.xrTable7.Name = "xrTable7";
             this.xrTable7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable7.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -1765,15 +1854,19 @@
             // 
             // xrTableCell59
             // 
+            this.xrTableCell59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell59.Multiline = true;
             this.xrTableCell59.Name = "xrTableCell59";
+            this.xrTableCell59.StylePriority.UseFont = false;
             this.xrTableCell59.Text = "Kategori 1";
             this.xrTableCell59.Weight = 1D;
             // 
             // xrTableCell60
             // 
+            this.xrTableCell60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell60.Multiline = true;
             this.xrTableCell60.Name = "xrTableCell60";
+            this.xrTableCell60.StylePriority.UseFont = false;
             this.xrTableCell60.Text = "Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans ya da Escherichia" +
     " coli bulunmamalıdır";
             this.xrTableCell60.Weight = 5.9820812988281249D;
@@ -1788,15 +1881,19 @@
             // 
             // xrTableCell61
             // 
+            this.xrTableCell61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell61.Multiline = true;
             this.xrTableCell61.Name = "xrTableCell61";
+            this.xrTableCell61.StylePriority.UseFont = false;
             this.xrTableCell61.Text = "Kategori 2";
             this.xrTableCell61.Weight = 1D;
             // 
             // xrTableCell62
             // 
+            this.xrTableCell62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell62.Multiline = true;
             this.xrTableCell62.Name = "xrTableCell62";
+            this.xrTableCell62.StylePriority.UseFont = false;
             this.xrTableCell62.Text = "Staphylococcus aureus, Pseudomonas aeruginosa, Candida albicans ya da Escherichia" +
     " coli bulunmamalıdır.";
             this.xrTableCell62.Weight = 5.9820812988281249D;
@@ -1804,7 +1901,7 @@
             // xrTable6
             // 
             this.xrTable6.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTable6.LocationFloat = new DevExpress.Utils.PointFloat(44.79179F, 150.2916F);
+            this.xrTable6.LocationFloat = new DevExpress.Utils.PointFloat(44.7899F, 334.5524F);
             this.xrTable6.Name = "xrTable6";
             this.xrTable6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable6.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -1823,15 +1920,19 @@
             // 
             // xrTableCell55
             // 
+            this.xrTableCell55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell55.Multiline = true;
             this.xrTableCell55.Name = "xrTableCell55";
+            this.xrTableCell55.StylePriority.UseFont = false;
             this.xrTableCell55.Text = "Kategori 1";
             this.xrTableCell55.Weight = 1D;
             // 
             // xrTableCell56
             // 
+            this.xrTableCell56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell56.Multiline = true;
             this.xrTableCell56.Name = "xrTableCell56";
+            this.xrTableCell56.StylePriority.UseFont = false;
             this.xrTableCell56.Text = "Toplam canlı aerobik mezofilik mikroorganizma sayısı (bakteri, maya ve küf) 10^2 " +
     "cfu/g ya da 10^2 cfu/ml’den fazla olmamalıdır.";
             this.xrTableCell56.Weight = 5.9820812988281249D;
@@ -1846,23 +1947,27 @@
             // 
             // xrTableCell57
             // 
+            this.xrTableCell57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell57.Multiline = true;
             this.xrTableCell57.Name = "xrTableCell57";
+            this.xrTableCell57.StylePriority.UseFont = false;
             this.xrTableCell57.Text = "Kategori 2";
             this.xrTableCell57.Weight = 1D;
             // 
             // xrTableCell58
             // 
+            this.xrTableCell58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell58.Multiline = true;
             this.xrTableCell58.Name = "xrTableCell58";
+            this.xrTableCell58.StylePriority.UseFont = false;
             this.xrTableCell58.Text = "Toplam canlı aerobik mezofilik mikroorganizma sayısı (bakteri, maya ve küf) \r\n10^" +
     "3 cfu/g ya da 10^3 cfu/ml’den fazla olmamalıdır.";
             this.xrTableCell58.Weight = 5.9820812988281249D;
             // 
             // xrLabel21
             // 
-            this.xrLabel21.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 127.2916F);
+            this.xrLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(44.7898F, 311.5524F);
             this.xrLabel21.Multiline = true;
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1873,7 +1978,7 @@
             // xrTable5
             // 
             this.xrTable5.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(44.79173F, 61.70832F);
+            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(44.7898F, 245.9692F);
             this.xrTable5.Name = "xrTable5";
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable5.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -1892,7 +1997,7 @@
             // 
             // xrTableCell51
             // 
-            this.xrTableCell51.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell51.Multiline = true;
             this.xrTableCell51.Name = "xrTableCell51";
             this.xrTableCell51.StylePriority.UseFont = false;
@@ -1901,8 +2006,10 @@
             // 
             // xrTableCell52
             // 
+            this.xrTableCell52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell52.Multiline = true;
             this.xrTableCell52.Name = "xrTableCell52";
+            this.xrTableCell52.StylePriority.UseFont = false;
             this.xrTableCell52.Text = "3 Yaş altı çocuklara yönelik ürünler, Göz bölgesine uygulanan ürünler, mukoz memb" +
     "ranlara uygulanan ürünler";
             this.xrTableCell52.Weight = 5.9820812988281249D;
@@ -1917,24 +2024,28 @@
             // 
             // xrTableCell53
             // 
+            this.xrTableCell53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell53.Multiline = true;
             this.xrTableCell53.Name = "xrTableCell53";
+            this.xrTableCell53.StylePriority.UseFont = false;
             this.xrTableCell53.Text = "Kategori 2";
             this.xrTableCell53.Weight = 1D;
             // 
             // xrTableCell54
             // 
+            this.xrTableCell54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell54.Multiline = true;
             this.xrTableCell54.Name = "xrTableCell54";
+            this.xrTableCell54.StylePriority.UseFont = false;
             this.xrTableCell54.Text = "Diğer ürünler";
             this.xrTableCell54.Weight = 5.9820812988281249D;
             // 
             // xrLabel20
             // 
             this.xrLabel20.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel20.ForeColor = System.Drawing.Color.White;
-            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(20.8333F, 0F);
+            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(20.83129F, 79.95989F);
             this.xrLabel20.Multiline = true;
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1942,26 +2053,28 @@
             this.xrLabel20.StylePriority.UseBackColor = false;
             this.xrLabel20.StylePriority.UseFont = false;
             this.xrLabel20.StylePriority.UseForeColor = false;
-            this.xrLabel20.Text = "3. Mikrobiyolojik Kalite";
+            this.xrLabel20.Text = "A.3. Mikrobiyolojik Kalite";
             // 
             // xrLabel24
             // 
-            this.xrLabel24.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(44.79176F, 22.99999F);
+            this.xrLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(44.79222F, 142.8647F);
             this.xrLabel24.Multiline = true;
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel24.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel24.StylePriority.UseFont = false;
-            this.xrLabel24.Text = resources.GetString("xrLabel24.Text");
+            this.xrLabel24.Text = "Mikrobiyolojik kalite için ana parametreler orijinal kontaminasyon seviyesi ve mi" +
+    "krobiyal büyüme olasılığıdır. Hammaddeler mikrobiyal büyümeye duyarlılığına göre" +
+    " değerlendirilmiştir.";
             // 
             // xrLabel29
             // 
             this.xrLabel29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", resources.GetString("xrLabel29.ExpressionBindings"))});
-            this.xrLabel29.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel29.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(44.79097F, 68.87499F);
+            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(33.83312F, 145.1103F);
             this.xrLabel29.Multiline = true;
             this.xrLabel29.Name = "xrLabel29";
             this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1969,39 +2082,16 @@
             this.xrLabel29.StylePriority.UseFont = false;
             this.xrLabel29.StylePriority.UseForeColor = false;
             // 
-            // xrLabel28
-            // 
-            this.xrLabel28.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel28.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(44.79103F, 35.12506F);
-            this.xrLabel28.Multiline = true;
-            this.xrLabel28.Name = "xrLabel28";
-            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel28.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel28.StylePriority.UseFont = false;
-            this.xrLabel28.StylePriority.UseForeColor = false;
-            this.xrLabel28.Text = resources.GetString("xrLabel28.Text");
-            // 
-            // xrLabel27
-            // 
-            this.xrLabel27.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(44.79122F, 12.12505F);
-            this.xrLabel27.Multiline = true;
-            this.xrLabel27.Name = "xrLabel27";
-            this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel27.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
-            this.xrLabel27.StylePriority.UseFont = false;
-            this.xrLabel27.Text = "Koruyucu Etkinlik (Challenge) Testi; ISO 11930";
-            // 
             // GroupHeader3
             // 
             this.GroupHeader3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel85,
+            this.xrLabel33,
+            this.xrLabel32,
+            this.xrLabel31,
+            this.xrLabel30,
             this.xrTable14,
             this.xrLabel4,
-            this.xrLabel53,
-            this.xrLabel54,
-            this.xrLabel51,
-            this.xrLabel52,
             this.xrLabel49,
             this.xrLabel50,
             this.xrLabel47,
@@ -2020,19 +2110,71 @@
             this.xrLabel36,
             this.xrLabel35,
             this.xrTable9,
-            this.xrLabel34,
-            this.xrLabel33,
-            this.xrLabel32,
-            this.xrLabel30,
-            this.xrLabel31});
-            this.GroupHeader3.HeightF = 1405.917F;
-            this.GroupHeader3.Level = 1;
+            this.xrLabel34});
+            this.GroupHeader3.HeightF = 1326.167F;
+            this.GroupHeader3.Level = 2;
             this.GroupHeader3.Name = "GroupHeader3";
-            this.GroupHeader3.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            // 
+            // xrLabel85
+            // 
+            this.xrLabel85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel85.LocationFloat = new DevExpress.Utils.PointFloat(44.91775F, 1145.375F);
+            this.xrLabel85.Multiline = true;
+            this.xrLabel85.Name = "xrLabel85";
+            this.xrLabel85.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel85.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
+            this.xrLabel85.StylePriority.UseFont = false;
+            this.xrLabel85.Text = resources.GetString("xrLabel85.Text");
+            // 
+            // xrLabel33
+            // 
+            this.xrLabel33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(27.91748F, 1109.188F);
+            this.xrLabel33.Multiline = true;
+            this.xrLabel33.Name = "xrLabel33";
+            this.xrLabel33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel33.SizeF = new System.Drawing.SizeF(725.2081F, 23F);
+            this.xrLabel33.StylePriority.UseFont = false;
+            this.xrLabel33.Text = "c. Bütün belirgin absorbsiyon yollarının değerlendirilmesi";
+            // 
+            // xrLabel32
+            // 
+            this.xrLabel32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(27.792F, 851.2915F);
+            this.xrLabel32.Multiline = true;
+            this.xrLabel32.Name = "xrLabel32";
+            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel32.SizeF = new System.Drawing.SizeF(725.2081F, 23F);
+            this.xrLabel32.StylePriority.UseFont = false;
+            this.xrLabel32.Text = "b. Tüm ilgili toksikolojik bitiş noktaları için maddelerin toksikolojik profiller" +
+    "i";
+            // 
+            // xrLabel31
+            // 
+            this.xrLabel31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(44.79223F, 817.979F);
+            this.xrLabel31.Multiline = true;
+            this.xrLabel31.Name = "xrLabel31";
+            this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel31.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
+            this.xrLabel31.StylePriority.UseFont = false;
+            this.xrLabel31.Text = resources.GetString("xrLabel31.Text");
+            // 
+            // xrLabel30
+            // 
+            this.xrLabel30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(27.792F, 784.6665F);
+            this.xrLabel30.Multiline = true;
+            this.xrLabel30.Name = "xrLabel30";
+            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel30.SizeF = new System.Drawing.SizeF(725.2081F, 23F);
+            this.xrLabel30.StylePriority.UseFont = false;
+            this.xrLabel30.Text = "a. Güvenlilik değerlendirmesinin bir parçası olarak toksikolojik profili ilgilend" +
+    "iren genel hususlar";
             // 
             // xrTable14
             // 
-            this.xrTable14.LocationFloat = new DevExpress.Utils.PointFloat(44.7903F, 150.8666F);
+            this.xrTable14.LocationFloat = new DevExpress.Utils.PointFloat(44.79052F, 45.03333F);
             this.xrTable14.Name = "xrTable14";
             this.xrTable14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable14.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -2051,7 +2193,7 @@
             // xrTableCell9
             // 
             this.xrTableCell9.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell9.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell9.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
@@ -2067,7 +2209,7 @@
             this.xrTableCell10.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Kullanim]")});
-            this.xrTableCell10.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBorderColor = false;
@@ -2087,7 +2229,7 @@
             // xrTableCell11
             // 
             this.xrTableCell11.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell11.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell11.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
@@ -2103,7 +2245,7 @@
             this.xrTableCell12.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[Uyarilar]")});
-            this.xrTableCell12.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseBorderColor = false;
@@ -2115,76 +2257,24 @@
             // xrLabel4
             // 
             this.xrLabel4.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel4.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel4.ForeColor = System.Drawing.Color.White;
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(23.83334F, 115.8333F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(23.8336F, 9.999969F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(726.1641F, 23F);
             this.xrLabel4.StylePriority.UseBackColor = false;
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseForeColor = false;
-            this.xrLabel4.Text = "5. Normal ve Makul Olarak Öngörülebilir Kullanım";
-            // 
-            // xrLabel53
-            // 
-            this.xrLabel53.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel53.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel53.ForeColor = System.Drawing.Color.White;
-            this.xrLabel53.LocationFloat = new DevExpress.Utils.PointFloat(20.8313F, 1336.782F);
-            this.xrLabel53.Multiline = true;
-            this.xrLabel53.Name = "xrLabel53";
-            this.xrLabel53.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel53.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
-            this.xrLabel53.StylePriority.UseBackColor = false;
-            this.xrLabel53.StylePriority.UseFont = false;
-            this.xrLabel53.StylePriority.UseForeColor = false;
-            this.xrLabel53.Text = "12. Kozmetik Ürün Hakkında Bilgiler";
-            // 
-            // xrLabel54
-            // 
-            this.xrLabel54.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel54.LocationFloat = new DevExpress.Utils.PointFloat(41.78991F, 1371.356F);
-            this.xrLabel54.Multiline = true;
-            this.xrLabel54.Name = "xrLabel54";
-            this.xrLabel54.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel54.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
-            this.xrLabel54.StylePriority.UseFont = false;
-            this.xrLabel54.Text = resources.GetString("xrLabel54.Text");
-            // 
-            // xrLabel51
-            // 
-            this.xrLabel51.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel51.LocationFloat = new DevExpress.Utils.PointFloat(41.78991F, 1301.171F);
-            this.xrLabel51.Multiline = true;
-            this.xrLabel51.Name = "xrLabel51";
-            this.xrLabel51.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel51.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
-            this.xrLabel51.StylePriority.UseFont = false;
-            this.xrLabel51.Text = resources.GetString("xrLabel51.Text");
-            // 
-            // xrLabel52
-            // 
-            this.xrLabel52.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel52.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel52.ForeColor = System.Drawing.Color.White;
-            this.xrLabel52.LocationFloat = new DevExpress.Utils.PointFloat(20.8313F, 1266.597F);
-            this.xrLabel52.Multiline = true;
-            this.xrLabel52.Name = "xrLabel52";
-            this.xrLabel52.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel52.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
-            this.xrLabel52.StylePriority.UseBackColor = false;
-            this.xrLabel52.StylePriority.UseFont = false;
-            this.xrLabel52.StylePriority.UseForeColor = false;
-            this.xrLabel52.Text = "11. İstenmeyen Etkiler ve Ciddi İstenmeyen Etkiler";
+            this.xrLabel4.Text = "A.5. Normal ve Makul Olarak Öngörülebilir Kullanım";
             // 
             // xrLabel49
             // 
             this.xrLabel49.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel49.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel49.ForeColor = System.Drawing.Color.White;
-            this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(20.8313F, 1197.569F);
+            this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(20.82929F, 1254.756F);
             this.xrLabel49.Multiline = true;
             this.xrLabel49.Name = "xrLabel49";
             this.xrLabel49.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2192,25 +2282,23 @@
             this.xrLabel49.StylePriority.UseBackColor = false;
             this.xrLabel49.StylePriority.UseFont = false;
             this.xrLabel49.StylePriority.UseForeColor = false;
-            this.xrLabel49.Text = "10. Kozmetik Ürün Formülasyonunda Yer Alan Hammaddelerin Kozmetik Yönetmeliği Ekl" +
-    "erine Uygunluğunun Kontrolü";
+            this.xrLabel49.Text = "A.10. Kozmetik Ürün Bilgisi";
             // 
             // xrLabel50
             // 
-            this.xrLabel50.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(41.78991F, 1232.143F);
+            this.xrLabel50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(41.7879F, 1289.33F);
             this.xrLabel50.Multiline = true;
             this.xrLabel50.Name = "xrLabel50";
             this.xrLabel50.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel50.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
             this.xrLabel50.StylePriority.UseFont = false;
-            this.xrLabel50.Text = "Ürün formülasyonunda yer alan hammaddelerin kozmetik yönetmeliği eklerine uygunlu" +
-    "k kontrolüne dair veriler Ek-3\'de sunulmuştur.";
+            this.xrLabel50.Text = resources.GetString("xrLabel50.Text");
             // 
             // xrLabel47
             // 
-            this.xrLabel47.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel47.LocationFloat = new DevExpress.Utils.PointFloat(44.79135F, 1160.792F);
+            this.xrLabel47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel47.LocationFloat = new DevExpress.Utils.PointFloat(44.78934F, 1213.292F);
             this.xrLabel47.Multiline = true;
             this.xrLabel47.Name = "xrLabel47";
             this.xrLabel47.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2221,9 +2309,9 @@
             // xrLabel46
             // 
             this.xrLabel46.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel46.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel46.ForeColor = System.Drawing.Color.White;
-            this.xrLabel46.LocationFloat = new DevExpress.Utils.PointFloat(20.8313F, 1127.5F);
+            this.xrLabel46.LocationFloat = new DevExpress.Utils.PointFloat(20.82929F, 1180F);
             this.xrLabel46.Multiline = true;
             this.xrLabel46.Name = "xrLabel46";
             this.xrLabel46.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2231,13 +2319,12 @@
             this.xrLabel46.StylePriority.UseBackColor = false;
             this.xrLabel46.StylePriority.UseFont = false;
             this.xrLabel46.StylePriority.UseForeColor = false;
-            this.xrLabel46.Text = "9. Kozmetik Ürün Formülasyonunda Yer Alan Hammaddelerin Toksikolojik Değerlendirm" +
-    "esi";
+            this.xrLabel46.Text = "A.9. İstenmeyen Etkiler ve Ciddi İstenmeyen Etkiler";
             // 
             // xrLabel45
             // 
-            this.xrLabel45.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(44.79211F, 1090.375F);
+            this.xrLabel45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(44.91772F, 1073.5F);
             this.xrLabel45.Multiline = true;
             this.xrLabel45.Name = "xrLabel45";
             this.xrLabel45.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2247,7 +2334,7 @@
             // 
             // xrTable10
             // 
-            this.xrTable10.LocationFloat = new DevExpress.Utils.PointFloat(44.79106F, 662.6666F);
+            this.xrTable10.LocationFloat = new DevExpress.Utils.PointFloat(44.79106F, 554.8541F);
             this.xrTable10.Name = "xrTable10";
             this.xrTable10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable10.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -2270,7 +2357,7 @@
             // xrTableCell91
             // 
             this.xrTableCell91.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell91.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell91.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell91.Multiline = true;
             this.xrTableCell91.Name = "xrTableCell91";
@@ -2284,7 +2371,7 @@
             // 
             this.xrTableCell92.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell92.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell92.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell92.Multiline = true;
             this.xrTableCell92.Name = "xrTableCell92";
             this.xrTableCell92.StylePriority.UseBorderColor = false;
@@ -2304,7 +2391,7 @@
             // xrTableCell93
             // 
             this.xrTableCell93.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell93.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell93.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell93.Multiline = true;
             this.xrTableCell93.Name = "xrTableCell93";
@@ -2318,7 +2405,7 @@
             // 
             this.xrTableCell94.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell94.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell94.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell94.Multiline = true;
             this.xrTableCell94.Name = "xrTableCell94";
             this.xrTableCell94.StylePriority.UseBorderColor = false;
@@ -2339,7 +2426,7 @@
             // xrTableCell95
             // 
             this.xrTableCell95.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell95.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell95.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell95.Multiline = true;
             this.xrTableCell95.Name = "xrTableCell95";
@@ -2353,7 +2440,7 @@
             // 
             this.xrTableCell96.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell96.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell96.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell96.Multiline = true;
             this.xrTableCell96.Name = "xrTableCell96";
             this.xrTableCell96.StylePriority.UseBorderColor = false;
@@ -2374,7 +2461,7 @@
             // xrTableCell97
             // 
             this.xrTableCell97.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell97.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell97.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell97.Multiline = true;
             this.xrTableCell97.Name = "xrTableCell97";
@@ -2388,7 +2475,7 @@
             // 
             this.xrTableCell98.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell98.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell98.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell98.Multiline = true;
             this.xrTableCell98.Name = "xrTableCell98";
             this.xrTableCell98.StylePriority.UseBorderColor = false;
@@ -2410,7 +2497,7 @@
             // xrTableCell99
             // 
             this.xrTableCell99.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell99.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell99.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell99.Multiline = true;
             this.xrTableCell99.Name = "xrTableCell99";
@@ -2426,7 +2513,7 @@
             this.xrTableCell100.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell100.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[ADegeri]")});
-            this.xrTableCell100.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell100.Multiline = true;
             this.xrTableCell100.Name = "xrTableCell100";
             this.xrTableCell100.StylePriority.UseBorderColor = false;
@@ -2446,7 +2533,7 @@
             // xrTableCell101
             // 
             this.xrTableCell101.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell101.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell101.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell101.Multiline = true;
             this.xrTableCell101.Name = "xrTableCell101";
@@ -2460,7 +2547,7 @@
             // 
             this.xrTableCell102.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell102.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell102.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell102.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell102.Multiline = true;
             this.xrTableCell102.Name = "xrTableCell102";
             this.xrTableCell102.StylePriority.UseBorderColor = false;
@@ -2471,8 +2558,8 @@
             // 
             // xrLabel44
             // 
-            this.xrLabel44.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(44.79211F, 965.3751F);
+            this.xrLabel44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(44.91772F, 948.5001F);
             this.xrLabel44.Multiline = true;
             this.xrLabel44.Name = "xrLabel44";
             this.xrLabel44.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2484,8 +2571,8 @@
             // 
             // xrLabel43
             // 
-            this.xrLabel43.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(44.79214F, 925.5001F);
+            this.xrLabel43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(44.91775F, 908.6251F);
             this.xrLabel43.Multiline = true;
             this.xrLabel43.Name = "xrLabel43";
             this.xrLabel43.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2495,8 +2582,8 @@
             // 
             // xrLabel42
             // 
-            this.xrLabel42.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel42.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 902.4999F);
+            this.xrLabel42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel42.LocationFloat = new DevExpress.Utils.PointFloat(44.9172F, 885.6249F);
             this.xrLabel42.Multiline = true;
             this.xrLabel42.Name = "xrLabel42";
             this.xrLabel42.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2507,22 +2594,22 @@
             // xrLabel41
             // 
             this.xrLabel41.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel41.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel41.ForeColor = System.Drawing.Color.White;
-            this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(23.83356F, 868.5416F);
+            this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(23.8336F, 761.6666F);
             this.xrLabel41.Multiline = true;
             this.xrLabel41.Name = "xrLabel41";
             this.xrLabel41.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel41.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel41.SizeF = new System.Drawing.SizeF(729.1665F, 23F);
             this.xrLabel41.StylePriority.UseBackColor = false;
             this.xrLabel41.StylePriority.UseFont = false;
             this.xrLabel41.StylePriority.UseForeColor = false;
-            this.xrLabel41.Text = "8. Formülde Yer Alan Maddelerin Toksikolojik Profili";
+            this.xrLabel41.Text = "A.8. Formülde Yer Alan Maddelerin Toksikolojik Profili";
             // 
             // xrLabel40
             // 
-            this.xrLabel40.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 831.4166F);
+            this.xrLabel40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 723.604F);
             this.xrLabel40.Multiline = true;
             this.xrLabel40.Name = "xrLabel40";
             this.xrLabel40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2532,7 +2619,7 @@
             // 
             // xrTable8
             // 
-            this.xrTable8.LocationFloat = new DevExpress.Utils.PointFloat(44.79157F, 1000.45F);
+            this.xrTable8.LocationFloat = new DevExpress.Utils.PointFloat(44.91718F, 983.575F);
             this.xrTable8.Name = "xrTable8";
             this.xrTable8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable8.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -2552,7 +2639,7 @@
             // xrTableCell63
             // 
             this.xrTableCell63.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell63.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell63.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell63.Multiline = true;
             this.xrTableCell63.Name = "xrTableCell63";
@@ -2566,7 +2653,7 @@
             // 
             this.xrTableCell64.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell64.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell64.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell64.Multiline = true;
             this.xrTableCell64.Name = "xrTableCell64";
             this.xrTableCell64.StylePriority.UseBorderColor = false;
@@ -2586,7 +2673,7 @@
             // xrTableCell65
             // 
             this.xrTableCell65.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell65.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell65.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell65.Multiline = true;
             this.xrTableCell65.Name = "xrTableCell65";
@@ -2600,7 +2687,7 @@
             // 
             this.xrTableCell66.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell66.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell66.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell66.Multiline = true;
             this.xrTableCell66.Name = "xrTableCell66";
             this.xrTableCell66.StylePriority.UseBorderColor = false;
@@ -2620,7 +2707,7 @@
             // xrTableCell83
             // 
             this.xrTableCell83.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell83.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell83.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell83.Multiline = true;
             this.xrTableCell83.Name = "xrTableCell83";
@@ -2634,7 +2721,7 @@
             // 
             this.xrTableCell84.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell84.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell84.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell84.Multiline = true;
             this.xrTableCell84.Name = "xrTableCell84";
             this.xrTableCell84.StylePriority.UseBorderColor = false;
@@ -2646,8 +2733,8 @@
             // 
             // xrLabel39
             // 
-            this.xrLabel39.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 622.0416F);
+            this.xrLabel39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 514.2291F);
             this.xrLabel39.Multiline = true;
             this.xrLabel39.Name = "xrLabel39";
             this.xrLabel39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2659,8 +2746,8 @@
             // 
             // xrLabel38
             // 
-            this.xrLabel38.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel38.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 585.9999F);
+            this.xrLabel38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel38.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 478.1874F);
             this.xrLabel38.Multiline = true;
             this.xrLabel38.Name = "xrLabel38";
             this.xrLabel38.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2672,8 +2759,8 @@
             // 
             // xrLabel37
             // 
-            this.xrLabel37.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 548.9166F);
+            this.xrLabel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(44.7916F, 441.1042F);
             this.xrLabel37.Multiline = true;
             this.xrLabel37.Name = "xrLabel37";
             this.xrLabel37.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2685,22 +2772,22 @@
             // xrLabel36
             // 
             this.xrLabel36.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel36.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel36.ForeColor = System.Drawing.Color.White;
-            this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(23.83356F, 515.8332F);
+            this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(23.8336F, 408.0206F);
             this.xrLabel36.Multiline = true;
             this.xrLabel36.Name = "xrLabel36";
             this.xrLabel36.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel36.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel36.SizeF = new System.Drawing.SizeF(729.1665F, 23F);
             this.xrLabel36.StylePriority.UseBackColor = false;
             this.xrLabel36.StylePriority.UseFont = false;
             this.xrLabel36.StylePriority.UseForeColor = false;
-            this.xrLabel36.Text = "7. Formülde Yer Alan Maddelere Maruziyet";
+            this.xrLabel36.Text = "A.7. Formülde Yer Alan Maddelere Maruziyet";
             // 
             // xrLabel35
             // 
-            this.xrLabel35.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(44.78992F, 476.4168F);
+            this.xrLabel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(44.79012F, 370.5835F);
             this.xrLabel35.Multiline = true;
             this.xrLabel35.Name = "xrLabel35";
             this.xrLabel35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2710,7 +2797,7 @@
             // 
             // xrTable9
             // 
-            this.xrTable9.LocationFloat = new DevExpress.Utils.PointFloat(41.78956F, 259.1999F);
+            this.xrTable9.LocationFloat = new DevExpress.Utils.PointFloat(41.78976F, 153.3666F);
             this.xrTable9.Name = "xrTable9";
             this.xrTable9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable9.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -2735,7 +2822,7 @@
             // xrTableCell67
             // 
             this.xrTableCell67.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell67.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell67.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell67.Multiline = true;
             this.xrTableCell67.Name = "xrTableCell67";
@@ -2751,7 +2838,7 @@
             this.xrTableCell68.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell68.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tip1]")});
-            this.xrTableCell68.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell68.Multiline = true;
             this.xrTableCell68.Name = "xrTableCell68";
             this.xrTableCell68.StylePriority.UseBorderColor = false;
@@ -2771,7 +2858,7 @@
             // xrTableCell69
             // 
             this.xrTableCell69.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell69.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell69.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell69.Multiline = true;
             this.xrTableCell69.Name = "xrTableCell69";
@@ -2787,7 +2874,7 @@
             this.xrTableCell70.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell70.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[UygulamaBolgesi]")});
-            this.xrTableCell70.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell70.Multiline = true;
             this.xrTableCell70.Name = "xrTableCell70";
             this.xrTableCell70.StylePriority.UseBorderColor = false;
@@ -2807,7 +2894,7 @@
             // xrTableCell71
             // 
             this.xrTableCell71.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell71.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell71.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell71.Multiline = true;
             this.xrTableCell71.Name = "xrTableCell71";
@@ -2823,7 +2910,7 @@
             this.xrTableCell72.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell72.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[YuzeyAlani]")});
-            this.xrTableCell72.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell72.Multiline = true;
             this.xrTableCell72.Name = "xrTableCell72";
             this.xrTableCell72.StylePriority.UseBorderColor = false;
@@ -2844,7 +2931,7 @@
             // xrTableCell73
             // 
             this.xrTableCell73.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell73.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell73.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell73.Multiline = true;
             this.xrTableCell73.Name = "xrTableCell73";
@@ -2860,7 +2947,7 @@
             this.xrTableCell74.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell74.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[ADegeri]")});
-            this.xrTableCell74.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell74.Multiline = true;
             this.xrTableCell74.Name = "xrTableCell74";
             this.xrTableCell74.StylePriority.UseBorderColor = false;
@@ -2880,7 +2967,7 @@
             // xrTableCell75
             // 
             this.xrTableCell75.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell75.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell75.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell75.Multiline = true;
             this.xrTableCell75.Name = "xrTableCell75";
@@ -2896,7 +2983,7 @@
             this.xrTableCell76.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell76.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[Siklik]")});
-            this.xrTableCell76.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell76.Multiline = true;
             this.xrTableCell76.Name = "xrTableCell76";
             this.xrTableCell76.StylePriority.UseBorderColor = false;
@@ -2916,7 +3003,7 @@
             // xrTableCell77
             // 
             this.xrTableCell77.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell77.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell77.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell77.Multiline = true;
             this.xrTableCell77.Name = "xrTableCell77";
@@ -2930,7 +3017,7 @@
             // 
             this.xrTableCell78.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell78.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell78.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell78.Multiline = true;
             this.xrTableCell78.Name = "xrTableCell78";
             this.xrTableCell78.StylePriority.UseBorderColor = false;
@@ -2950,7 +3037,7 @@
             // xrTableCell79
             // 
             this.xrTableCell79.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell79.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell79.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell79.Multiline = true;
             this.xrTableCell79.Name = "xrTableCell79";
@@ -2966,7 +3053,7 @@
             this.xrTableCell80.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell80.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Hedef]")});
-            this.xrTableCell80.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell80.Multiline = true;
             this.xrTableCell80.Name = "xrTableCell80";
             this.xrTableCell80.StylePriority.UseBorderColor = false;
@@ -2986,7 +3073,7 @@
             // xrTableCell81
             // 
             this.xrTableCell81.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell81.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell81.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell81.Multiline = true;
             this.xrTableCell81.Name = "xrTableCell81";
@@ -3002,7 +3089,7 @@
             this.xrTableCell82.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell82.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDTip].[ADegeri]")});
-            this.xrTableCell82.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell82.Multiline = true;
             this.xrTableCell82.Name = "xrTableCell82";
             this.xrTableCell82.StylePriority.UseBorderColor = false;
@@ -3014,73 +3101,25 @@
             // xrLabel34
             // 
             this.xrLabel34.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel34.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel34.ForeColor = System.Drawing.Color.White;
-            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(20.83152F, 217.2916F);
+            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(20.83175F, 111.4583F);
             this.xrLabel34.Multiline = true;
             this.xrLabel34.Name = "xrLabel34";
             this.xrLabel34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel34.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel34.SizeF = new System.Drawing.SizeF(729.1661F, 22.99999F);
             this.xrLabel34.StylePriority.UseBackColor = false;
             this.xrLabel34.StylePriority.UseFont = false;
             this.xrLabel34.StylePriority.UseForeColor = false;
-            this.xrLabel34.Text = "6. Kozmetik Ürüne Maruziyet";
-            // 
-            // xrLabel33
-            // 
-            this.xrLabel33.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(44.79154F, 81.00001F);
-            this.xrLabel33.Multiline = true;
-            this.xrLabel33.Name = "xrLabel33";
-            this.xrLabel33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel33.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel33.StylePriority.UseFont = false;
-            this.xrLabel33.Text = resources.GetString("xrLabel33.Text");
-            // 
-            // xrLabel32
-            // 
-            this.xrLabel32.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(44.79154F, 57.99999F);
-            this.xrLabel32.Multiline = true;
-            this.xrLabel32.Name = "xrLabel32";
-            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel32.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel32.StylePriority.UseFont = false;
-            this.xrLabel32.Text = "Ambalaj materyalinin ilgili özellikleri ";
-            // 
-            // xrLabel30
-            // 
-            this.xrLabel30.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(44.79176F, 22.99999F);
-            this.xrLabel30.Multiline = true;
-            this.xrLabel30.Name = "xrLabel30";
-            this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel30.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel30.StylePriority.UseFont = false;
-            this.xrLabel30.Text = resources.GetString("xrLabel30.Text");
-            // 
-            // xrLabel31
-            // 
-            this.xrLabel31.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel31.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel31.ForeColor = System.Drawing.Color.White;
-            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(20.8333F, 0F);
-            this.xrLabel31.Multiline = true;
-            this.xrLabel31.Name = "xrLabel31";
-            this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel31.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
-            this.xrLabel31.StylePriority.UseBackColor = false;
-            this.xrLabel31.StylePriority.UseFont = false;
-            this.xrLabel31.StylePriority.UseForeColor = false;
-            this.xrLabel31.Text = "4. Safsızlıklar, Kalıntılar, Ambalaj Materyali Bilgisi Hakkında Bilgi";
+            this.xrLabel34.Text = "A.6. Kozmetik Ürüne Maruziyet";
             // 
             // GroupHeader4
             // 
             this.GroupHeader4.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPictureBox1,
-            this.xrTable13,
-            this.xrTable12,
-            this.xrLabel68,
+            this.xrLabel54,
+            this.xrLabel53,
+            this.xrLabel52,
+            this.xrLabel51,
             this.xrLabel66,
             this.xrLabel65,
             this.xrLabel64,
@@ -3096,186 +3135,59 @@
             this.xrLabel55,
             this.xrLabel48});
             this.GroupHeader4.Expanded = false;
-            this.GroupHeader4.HeightF = 819.7731F;
+            this.GroupHeader4.HeightF = 743.7731F;
+            this.GroupHeader4.Level = 1;
             this.GroupHeader4.Name = "GroupHeader4";
-            this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             // 
-            // xrPictureBox1
+            // xrLabel54
             // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.BegumPazarli, true);
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(272.1066F, 717.9269F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(163.5417F, 66.84644F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.xrLabel54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel54.LocationFloat = new DevExpress.Utils.PointFloat(41.78996F, 709.5855F);
+            this.xrLabel54.Multiline = true;
+            this.xrLabel54.Name = "xrLabel54";
+            this.xrLabel54.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel54.SizeF = new System.Drawing.SizeF(708.2079F, 23F);
+            this.xrLabel54.StylePriority.UseFont = false;
+            this.xrLabel54.StylePriority.UseTextAlignment = false;
+            this.xrLabel54.Text = "MoS = NO(A)EL / SED ≥ 100";
+            this.xrLabel54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrTable13
+            // xrLabel53
             // 
-            this.xrTable13.LocationFloat = new DevExpress.Utils.PointFloat(44.79119F, 717.9268F);
-            this.xrTable13.Name = "xrTable13";
-            this.xrTable13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrTable13.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow56});
-            this.xrTable13.SizeF = new System.Drawing.SizeF(227.3154F, 66.84656F);
+            this.xrLabel53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel53.LocationFloat = new DevExpress.Utils.PointFloat(44.7876F, 674.6437F);
+            this.xrLabel53.Multiline = true;
+            this.xrLabel53.Name = "xrLabel53";
+            this.xrLabel53.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel53.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel53.StylePriority.UseFont = false;
+            this.xrLabel53.Text = resources.GetString("xrLabel53.Text");
             // 
-            // xrTableRow56
+            // xrLabel52
             // 
-            this.xrTableRow56.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell113});
-            this.xrTableRow56.Name = "xrTableRow56";
-            this.xrTableRow56.Weight = 1D;
+            this.xrLabel52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel52.LocationFloat = new DevExpress.Utils.PointFloat(44.7876F, 635.5811F);
+            this.xrLabel52.Multiline = true;
+            this.xrLabel52.Name = "xrLabel52";
+            this.xrLabel52.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel52.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel52.StylePriority.UseFont = false;
+            this.xrLabel52.Text = resources.GetString("xrLabel52.Text");
             // 
-            // xrTableCell113
+            // xrLabel51
             // 
-            this.xrTableCell113.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell113.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell113.ForeColor = System.Drawing.Color.Black;
-            this.xrTableCell113.Multiline = true;
-            this.xrTableCell113.Name = "xrTableCell113";
-            this.xrTableCell113.StylePriority.UseBackColor = false;
-            this.xrTableCell113.StylePriority.UseFont = false;
-            this.xrTableCell113.StylePriority.UseForeColor = false;
-            this.xrTableCell113.StylePriority.UseTextAlignment = false;
-            this.xrTableCell113.Text = "İmza:";
-            this.xrTableCell113.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell113.Weight = 2.3511566471842231D;
-            // 
-            // xrTable12
-            // 
-            this.xrTable12.LocationFloat = new DevExpress.Utils.PointFloat(44.79119F, 642.9269F);
-            this.xrTable12.Name = "xrTable12";
-            this.xrTable12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrTable12.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow52,
-            this.xrTableRow53,
-            this.xrTableRow55});
-            this.xrTable12.SizeF = new System.Drawing.SizeF(698.2083F, 75F);
-            // 
-            // xrTableRow52
-            // 
-            this.xrTableRow52.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell105,
-            this.xrTableCell106});
-            this.xrTableRow52.Name = "xrTableRow52";
-            this.xrTableRow52.Weight = 1D;
-            // 
-            // xrTableCell105
-            // 
-            this.xrTableCell105.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell105.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell105.ForeColor = System.Drawing.Color.Black;
-            this.xrTableCell105.Multiline = true;
-            this.xrTableCell105.Name = "xrTableCell105";
-            this.xrTableCell105.StylePriority.UseBackColor = false;
-            this.xrTableCell105.StylePriority.UseFont = false;
-            this.xrTableCell105.StylePriority.UseForeColor = false;
-            this.xrTableCell105.StylePriority.UseTextAlignment = false;
-            this.xrTableCell105.Text = "İsim Soyisim:";
-            this.xrTableCell105.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell105.Weight = 2.3511566471842231D;
-            // 
-            // xrTableCell106
-            // 
-            this.xrTableCell106.BorderColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell106.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell106.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell106.Multiline = true;
-            this.xrTableCell106.Name = "xrTableCell106";
-            this.xrTableCell106.StylePriority.UseBorderColor = false;
-            this.xrTableCell106.StylePriority.UseBorders = false;
-            this.xrTableCell106.StylePriority.UseFont = false;
-            this.xrTableCell106.Text = "Begüm PAZARLI";
-            this.xrTableCell106.Weight = 4.8705130951786826D;
-            // 
-            // xrTableRow53
-            // 
-            this.xrTableRow53.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell107,
-            this.xrTableCell108});
-            this.xrTableRow53.Name = "xrTableRow53";
-            this.xrTableRow53.Weight = 1D;
-            // 
-            // xrTableCell107
-            // 
-            this.xrTableCell107.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell107.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell107.ForeColor = System.Drawing.Color.Black;
-            this.xrTableCell107.Multiline = true;
-            this.xrTableCell107.Name = "xrTableCell107";
-            this.xrTableCell107.StylePriority.UseBackColor = false;
-            this.xrTableCell107.StylePriority.UseFont = false;
-            this.xrTableCell107.StylePriority.UseForeColor = false;
-            this.xrTableCell107.StylePriority.UseTextAlignment = false;
-            this.xrTableCell107.Text = "Bölüm";
-            this.xrTableCell107.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell107.Weight = 2.3511566471842231D;
-            // 
-            // xrTableCell108
-            // 
-            this.xrTableCell108.BorderColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell108.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell108.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell108.Multiline = true;
-            this.xrTableCell108.Name = "xrTableCell108";
-            this.xrTableCell108.StylePriority.UseBorderColor = false;
-            this.xrTableCell108.StylePriority.UseBorders = false;
-            this.xrTableCell108.StylePriority.UseFont = false;
-            this.xrTableCell108.Text = "Kimya";
-            this.xrTableCell108.Weight = 4.8705130951786826D;
-            // 
-            // xrTableRow55
-            // 
-            this.xrTableRow55.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell111,
-            this.xrTableCell112});
-            this.xrTableRow55.Name = "xrTableRow55";
-            this.xrTableRow55.Weight = 1D;
-            // 
-            // xrTableCell111
-            // 
-            this.xrTableCell111.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell111.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell111.ForeColor = System.Drawing.Color.Black;
-            this.xrTableCell111.Multiline = true;
-            this.xrTableCell111.Name = "xrTableCell111";
-            this.xrTableCell111.StylePriority.UseBackColor = false;
-            this.xrTableCell111.StylePriority.UseFont = false;
-            this.xrTableCell111.StylePriority.UseForeColor = false;
-            this.xrTableCell111.StylePriority.UseTextAlignment = false;
-            this.xrTableCell111.Text = "Rapor Tarihi:";
-            this.xrTableCell111.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell111.Weight = 2.3511564846321145D;
-            // 
-            // xrTableCell112
-            // 
-            this.xrTableCell112.BorderColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell112.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell112.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrTableCell112.Multiline = true;
-            this.xrTableCell112.Name = "xrTableCell112";
-            this.xrTableCell112.StylePriority.UseBorderColor = false;
-            this.xrTableCell112.StylePriority.UseBorders = false;
-            this.xrTableCell112.StylePriority.UseFont = false;
-            this.xrTableCell112.Text = "Tarih";
-            this.xrTableCell112.Weight = 4.8705132195541765D;
-            // 
-            // xrLabel68
-            // 
-            this.xrLabel68.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel68.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel68.ForeColor = System.Drawing.Color.White;
-            this.xrLabel68.LocationFloat = new DevExpress.Utils.PointFloat(20.83376F, 597.1574F);
-            this.xrLabel68.Multiline = true;
-            this.xrLabel68.Name = "xrLabel68";
-            this.xrLabel68.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel68.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
-            this.xrLabel68.StylePriority.UseBackColor = false;
-            this.xrLabel68.StylePriority.UseFont = false;
-            this.xrLabel68.StylePriority.UseForeColor = false;
-            this.xrLabel68.Text = "4. Güvenlilik Değerlendirme Sorumlusu ile İlgili Bilgiler ve Kısım B\'nin Onayı";
+            this.xrLabel51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel51.LocationFloat = new DevExpress.Utils.PointFloat(44.91775F, 597.4561F);
+            this.xrLabel51.Multiline = true;
+            this.xrLabel51.Name = "xrLabel51";
+            this.xrLabel51.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel51.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel51.StylePriority.UseFont = false;
+            this.xrLabel51.Text = resources.GetString("xrLabel51.Text");
             // 
             // xrLabel66
             // 
-            this.xrLabel66.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel66.LocationFloat = new DevExpress.Utils.PointFloat(44.79119F, 560.2686F);
             this.xrLabel66.Multiline = true;
             this.xrLabel66.Name = "xrLabel66";
@@ -3287,7 +3199,7 @@
             // xrLabel65
             // 
             this.xrLabel65.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel65.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel65.ForeColor = System.Drawing.Color.White;
             this.xrLabel65.LocationFloat = new DevExpress.Utils.PointFloat(20.83295F, 484.1481F);
             this.xrLabel65.Multiline = true;
@@ -3297,12 +3209,12 @@
             this.xrLabel65.StylePriority.UseBackColor = false;
             this.xrLabel65.StylePriority.UseFont = false;
             this.xrLabel65.StylePriority.UseForeColor = false;
-            this.xrLabel65.Text = "3. Gerekçelendirme";
+            this.xrLabel65.Text = "B.3. Gerekçelendirme";
             // 
             // xrLabel64
             // 
             this.xrLabel64.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel64.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel64.ForeColor = System.Drawing.Color.White;
             this.xrLabel64.LocationFloat = new DevExpress.Utils.PointFloat(20.83372F, 413.9352F);
             this.xrLabel64.Multiline = true;
@@ -3312,11 +3224,11 @@
             this.xrLabel64.StylePriority.UseBackColor = false;
             this.xrLabel64.StylePriority.UseFont = false;
             this.xrLabel64.StylePriority.UseForeColor = false;
-            this.xrLabel64.Text = "2. Etikette Verilen Uyarılar ve Kullanma Talimatları";
+            this.xrLabel64.Text = "B.2. Etikette Verilen Uyarılar ve Kullanma Talimatları";
             // 
             // xrLabel63
             // 
-            this.xrLabel63.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel63.LocationFloat = new DevExpress.Utils.PointFloat(44.79123F, 521.3334F);
             this.xrLabel63.Multiline = true;
             this.xrLabel63.Name = "xrLabel63";
@@ -3327,7 +3239,7 @@
             // 
             // xrLabel62
             // 
-            this.xrLabel62.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel62.LocationFloat = new DevExpress.Utils.PointFloat(44.79123F, 449.5741F);
             this.xrLabel62.Multiline = true;
             this.xrLabel62.Name = "xrLabel62";
@@ -3338,7 +3250,7 @@
             // 
             // xrLabel61
             // 
-            this.xrLabel61.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel61.LocationFloat = new DevExpress.Utils.PointFloat(44.79207F, 374.7593F);
             this.xrLabel61.Multiline = true;
             this.xrLabel61.Name = "xrLabel61";
@@ -3350,7 +3262,7 @@
             // 
             // xrLabel60
             // 
-            this.xrLabel60.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel60.LocationFloat = new DevExpress.Utils.PointFloat(44.79123F, 341.6111F);
             this.xrLabel60.Multiline = true;
             this.xrLabel60.Name = "xrLabel60";
@@ -3382,7 +3294,7 @@
             // xrTableCell85
             // 
             this.xrTableCell85.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell85.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell85.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell85.Multiline = true;
             this.xrTableCell85.Name = "xrTableCell85";
@@ -3398,7 +3310,7 @@
             // 
             this.xrTableCell86.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell86.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell86.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell86.Multiline = true;
             this.xrTableCell86.Name = "xrTableCell86";
             this.xrTableCell86.StylePriority.UseBorderColor = false;
@@ -3419,7 +3331,7 @@
             // xrTableCell87
             // 
             this.xrTableCell87.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell87.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell87.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell87.Multiline = true;
             this.xrTableCell87.Name = "xrTableCell87";
@@ -3435,7 +3347,7 @@
             // 
             this.xrTableCell88.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell88.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell88.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell88.Multiline = true;
             this.xrTableCell88.Name = "xrTableCell88";
             this.xrTableCell88.StylePriority.UseBorderColor = false;
@@ -3455,7 +3367,7 @@
             // xrTableCell89
             // 
             this.xrTableCell89.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell89.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell89.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell89.Multiline = true;
             this.xrTableCell89.Name = "xrTableCell89";
@@ -3471,7 +3383,7 @@
             // 
             this.xrTableCell90.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell90.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell90.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell90.Multiline = true;
             this.xrTableCell90.Name = "xrTableCell90";
             this.xrTableCell90.StylePriority.UseBorderColor = false;
@@ -3491,7 +3403,7 @@
             // xrTableCell103
             // 
             this.xrTableCell103.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell103.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell103.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell103.Multiline = true;
             this.xrTableCell103.Name = "xrTableCell103";
@@ -3507,7 +3419,7 @@
             // 
             this.xrTableCell104.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell104.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTableCell104.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrTableCell104.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrTableCell104.Multiline = true;
             this.xrTableCell104.Name = "xrTableCell104";
             this.xrTableCell104.StylePriority.UseBorderColor = false;
@@ -3520,7 +3432,7 @@
             // 
             // xrLabel59
             // 
-            this.xrLabel59.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel59.LocationFloat = new DevExpress.Utils.PointFloat(44.79207F, 190.4074F);
             this.xrLabel59.Multiline = true;
             this.xrLabel59.Name = "xrLabel59";
@@ -3531,7 +3443,7 @@
             // 
             // xrLabel58
             // 
-            this.xrLabel58.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel58.LocationFloat = new DevExpress.Utils.PointFloat(44.79207F, 151.0556F);
             this.xrLabel58.Multiline = true;
             this.xrLabel58.Name = "xrLabel58";
@@ -3544,7 +3456,7 @@
             // 
             this.xrLabel57.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[StabiliteNot]")});
-            this.xrLabel57.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel57.ForeColor = System.Drawing.Color.Black;
             this.xrLabel57.LocationFloat = new DevExpress.Utils.PointFloat(44.79126F, 114.0185F);
             this.xrLabel57.Multiline = true;
@@ -3558,7 +3470,7 @@
             // 
             // xrLabel56
             // 
-            this.xrLabel56.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
+            this.xrLabel56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel56.LocationFloat = new DevExpress.Utils.PointFloat(44.79126F, 78.55553F);
             this.xrLabel56.Multiline = true;
             this.xrLabel56.Name = "xrLabel56";
@@ -3570,7 +3482,7 @@
             // xrLabel55
             // 
             this.xrLabel55.BackColor = System.Drawing.Color.MidnightBlue;
-            this.xrLabel55.Font = new System.Drawing.Font("Futura Bk BT", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrLabel55.ForeColor = System.Drawing.Color.White;
             this.xrLabel55.LocationFloat = new DevExpress.Utils.PointFloat(20.83295F, 45.13889F);
             this.xrLabel55.Multiline = true;
@@ -3580,11 +3492,11 @@
             this.xrLabel55.StylePriority.UseBackColor = false;
             this.xrLabel55.StylePriority.UseFont = false;
             this.xrLabel55.StylePriority.UseForeColor = false;
-            this.xrLabel55.Text = "1. Değerlendirme Sonucu";
+            this.xrLabel55.Text = "B.1. Değerlendirme Sonucu";
             // 
             // xrLabel48
             // 
-            this.xrLabel48.Font = new System.Drawing.Font("Futura Bk BT", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
             this.xrLabel48.Multiline = true;
             this.xrLabel48.Name = "xrLabel48";
@@ -3592,7 +3504,7 @@
             this.xrLabel48.SizeF = new System.Drawing.SizeF(753F, 23F);
             this.xrLabel48.StylePriority.UseFont = false;
             this.xrLabel48.StylePriority.UseTextAlignment = false;
-            this.xrLabel48.Text = "B. KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
+            this.xrLabel48.Text = "KISIM B. KOZMETİK ÜRÜN GÜVENLİLİK DEĞERLENDİRMESİ";
             this.xrLabel48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // calculatedField1
@@ -3629,17 +3541,6 @@
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(698.2072F, 272.3751F);
             this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
             // 
-            // GroupHeader6
-            // 
-            this.GroupHeader6.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel29,
-            this.xrLabel27,
-            this.xrLabel28});
-            this.GroupHeader6.Expanded = false;
-            this.GroupHeader6.HeightF = 99.83355F;
-            this.GroupHeader6.Level = 3;
-            this.GroupHeader6.Name = "GroupHeader6";
-            // 
             // xrPictureBox2
             // 
             this.xrPictureBox2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
@@ -3658,7 +3559,7 @@
             this.GroupHeader7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([rUGDListerUGDDetay].[SResim]),\nfalse,\ntrue )")});
             this.GroupHeader7.HeightF = 276.6833F;
-            this.GroupHeader7.Level = 6;
+            this.GroupHeader7.Level = 8;
             this.GroupHeader7.Name = "GroupHeader7";
             // 
             // xrPictureBox4
@@ -3694,10 +3595,11 @@
             // 
             this.GroupHeader8.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox2});
+            this.GroupHeader8.Expanded = false;
             this.GroupHeader8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\', false, true)")});
             this.GroupHeader8.HeightF = 293.2919F;
-            this.GroupHeader8.Level = 2;
+            this.GroupHeader8.Level = 6;
             this.GroupHeader8.Name = "GroupHeader8";
             // 
             // calculatedField2
@@ -3705,6 +3607,380 @@
             this.calculatedField2.DataMember = "rUGDListe";
             this.calculatedField2.Expression = "GetYear(Today())+\'\'+[RaporNo]+\' / \'+[Versiyon]";
             this.calculatedField2.Name = "calculatedField2";
+            // 
+            // GroupHeader9
+            // 
+            this.GroupHeader9.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel70,
+            this.xrRichText1});
+            this.GroupHeader9.Expanded = false;
+            this.GroupHeader9.HeightF = 291.5417F;
+            this.GroupHeader9.Level = 10;
+            this.GroupHeader9.Name = "GroupHeader9";
+            this.GroupHeader9.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            // 
+            // xrLabel70
+            // 
+            this.xrLabel70.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.xrLabel70.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
+            this.xrLabel70.Multiline = true;
+            this.xrLabel70.Name = "xrLabel70";
+            this.xrLabel70.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel70.SizeF = new System.Drawing.SizeF(753F, 23F);
+            this.xrLabel70.StylePriority.UseFont = false;
+            this.xrLabel70.StylePriority.UseTextAlignment = false;
+            this.xrLabel70.Text = "İÇİNDEKİLER";
+            this.xrLabel70.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrRichText1
+            // 
+            this.xrRichText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(41.78902F, 41.45834F);
+            this.xrRichText1.Name = "xrRichText1";
+            this.xrRichText1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
+            this.xrRichText1.SizeF = new System.Drawing.SizeF(698.2081F, 232.375F);
+            this.xrRichText1.StylePriority.UseFont = false;
+            // 
+            // GroupHeader10
+            // 
+            this.GroupHeader10.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel29,
+            this.xrLabel74,
+            this.xrLabel73,
+            this.xrLabel75,
+            this.xrLabel76});
+            this.GroupHeader10.Expanded = false;
+            this.GroupHeader10.HeightF = 178.1103F;
+            this.GroupHeader10.Level = 7;
+            this.GroupHeader10.Name = "GroupHeader10";
+            // 
+            // xrLabel74
+            // 
+            this.xrLabel74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel74.LocationFloat = new DevExpress.Utils.PointFloat(33.95884F, 44.54169F);
+            this.xrLabel74.Multiline = true;
+            this.xrLabel74.Name = "xrLabel74";
+            this.xrLabel74.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel74.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel74.StylePriority.UseFont = false;
+            this.xrLabel74.Text = resources.GetString("xrLabel74.Text");
+            // 
+            // xrLabel73
+            // 
+            this.xrLabel73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel73.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
+            this.xrLabel73.Multiline = true;
+            this.xrLabel73.Name = "xrLabel73";
+            this.xrLabel73.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel73.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel73.StylePriority.UseFont = false;
+            this.xrLabel73.Text = "(1) Stabilite testinde kullanılan ürünün bileşiminin piyasada fiilen bulunan ürün" +
+    "le aynı olduğunun kanıtı";
+            // 
+            // xrLabel75
+            // 
+            this.xrLabel75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel75.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 75.00002F);
+            this.xrLabel75.Multiline = true;
+            this.xrLabel75.Name = "xrLabel75";
+            this.xrLabel75.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel75.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel75.StylePriority.UseFont = false;
+            this.xrLabel75.Text = "(2) Koruyucu etkinlik çalışmalarının sonuçları, örneğin; tarama-zorlama testi (ch" +
+    "allenge test)";
+            // 
+            // xrLabel76
+            // 
+            this.xrLabel76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel76.LocationFloat = new DevExpress.Utils.PointFloat(33.95884F, 108.7084F);
+            this.xrLabel76.Multiline = true;
+            this.xrLabel76.Name = "xrLabel76";
+            this.xrLabel76.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel76.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel76.StylePriority.UseFont = false;
+            this.xrLabel76.Text = resources.GetString("xrLabel76.Text");
+            // 
+            // GroupHeader6
+            // 
+            this.GroupHeader6.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel83,
+            this.xrLabel84,
+            this.xrLabel82,
+            this.xrLabel81,
+            this.xrLabel80,
+            this.xrLabel78,
+            this.xrLabel77});
+            this.GroupHeader6.HeightF = 199.1878F;
+            this.GroupHeader6.Level = 3;
+            this.GroupHeader6.Name = "GroupHeader6";
+            // 
+            // xrLabel83
+            // 
+            this.xrLabel83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel83.LocationFloat = new DevExpress.Utils.PointFloat(20.83129F, 144.2501F);
+            this.xrLabel83.Multiline = true;
+            this.xrLabel83.Name = "xrLabel83";
+            this.xrLabel83.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel83.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel83.StylePriority.UseFont = false;
+            this.xrLabel83.Text = "c. Ambalaj materyalinin ilgili özellikleri";
+            // 
+            // xrLabel84
+            // 
+            this.xrLabel84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel84.LocationFloat = new DevExpress.Utils.PointFloat(20.83112F, 167.2501F);
+            this.xrLabel84.Multiline = true;
+            this.xrLabel84.Name = "xrLabel84";
+            this.xrLabel84.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel84.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel84.StylePriority.UseFont = false;
+            this.xrLabel84.Text = resources.GetString("xrLabel84.Text");
+            // 
+            // xrLabel82
+            // 
+            this.xrLabel82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel82.LocationFloat = new DevExpress.Utils.PointFloat(20.83112F, 106.6251F);
+            this.xrLabel82.Multiline = true;
+            this.xrLabel82.Name = "xrLabel82";
+            this.xrLabel82.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel82.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel82.StylePriority.UseFont = false;
+            this.xrLabel82.Text = resources.GetString("xrLabel82.Text");
+            // 
+            // xrLabel81
+            // 
+            this.xrLabel81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel81.LocationFloat = new DevExpress.Utils.PointFloat(20.83129F, 83.62507F);
+            this.xrLabel81.Multiline = true;
+            this.xrLabel81.Name = "xrLabel81";
+            this.xrLabel81.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel81.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel81.StylePriority.UseFont = false;
+            this.xrLabel81.Text = "b. Yasaklı madde kalıntılarının teknik olarak kaçınılmazlığının kanıtı";
+            // 
+            // xrLabel80
+            // 
+            this.xrLabel80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel80.LocationFloat = new DevExpress.Utils.PointFloat(20.83375F, 46.00001F);
+            this.xrLabel80.Multiline = true;
+            this.xrLabel80.Name = "xrLabel80";
+            this.xrLabel80.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel80.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel80.StylePriority.UseFont = false;
+            this.xrLabel80.Text = resources.GetString("xrLabel80.Text");
+            // 
+            // xrLabel78
+            // 
+            this.xrLabel78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel78.LocationFloat = new DevExpress.Utils.PointFloat(20.83344F, 23.00001F);
+            this.xrLabel78.Multiline = true;
+            this.xrLabel78.Name = "xrLabel78";
+            this.xrLabel78.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel78.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
+            this.xrLabel78.StylePriority.UseFont = false;
+            this.xrLabel78.Text = "a. Maddeler ve karışımların saflığı";
+            // 
+            // xrLabel77
+            // 
+            this.xrLabel77.BackColor = System.Drawing.Color.MidnightBlue;
+            this.xrLabel77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel77.ForeColor = System.Drawing.Color.White;
+            this.xrLabel77.LocationFloat = new DevExpress.Utils.PointFloat(20.8333F, 0F);
+            this.xrLabel77.Multiline = true;
+            this.xrLabel77.Name = "xrLabel77";
+            this.xrLabel77.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel77.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel77.StylePriority.UseBackColor = false;
+            this.xrLabel77.StylePriority.UseFont = false;
+            this.xrLabel77.StylePriority.UseForeColor = false;
+            this.xrLabel77.Text = "4. Safsızlıklar, Kalıntılar, Ambalaj Materyali Bilgisi Hakkında Bilgi";
+            // 
+            // GroupHeader11
+            // 
+            this.GroupHeader11.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel91,
+            this.xrLabel90,
+            this.xrLabel89,
+            this.xrLabel88,
+            this.xrLabel87,
+            this.xrLabel86,
+            this.xrLabel68,
+            this.xrTable12,
+            this.xrTable13,
+            this.xrPictureBox1});
+            this.GroupHeader11.HeightF = 352.558F;
+            this.GroupHeader11.Name = "GroupHeader11";
+            // 
+            // xrLabel91
+            // 
+            this.xrLabel91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel91.LocationFloat = new DevExpress.Utils.PointFloat(44.91775F, 208.7502F);
+            this.xrLabel91.Multiline = true;
+            this.xrLabel91.Name = "xrLabel91";
+            this.xrLabel91.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel91.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel91.StylePriority.UseFont = false;
+            this.xrLabel91.Text = "Gazi Üniversitesi Fen Fakültesi // Kimya (Diploma no: 001322-Seri no: 04)\r\nBkz. E" +
+    "k – Güvenlilik Değerlendiricisinin Niteliği";
+            // 
+            // xrLabel90
+            // 
+            this.xrLabel90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel90.LocationFloat = new DevExpress.Utils.PointFloat(20.82929F, 172.0626F);
+            this.xrLabel90.Multiline = true;
+            this.xrLabel90.Name = "xrLabel90";
+            this.xrLabel90.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel90.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel90.StylePriority.UseFont = false;
+            this.xrLabel90.Text = "B. Güvenlilik Değerlendiricisinin Yeterlilik Kanıtı";
+            // 
+            // xrLabel89
+            // 
+            this.xrLabel89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel89.LocationFloat = new DevExpress.Utils.PointFloat(44.91775F, 135.9376F);
+            this.xrLabel89.Multiline = true;
+            this.xrLabel89.Name = "xrLabel89";
+            this.xrLabel89.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel89.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel89.StylePriority.UseFont = false;
+            this.xrLabel89.Text = "Begüm PAZARLI\r\nOZECO GROUP ULUSLARARASI DANIŞMANLIK TİCARET LİMİTED ŞİRKETİ\r\nŞehi" +
+    "t Osman Avcı, Malazgirt 1071. Cad. No:49 A İç Kapı No:13, 06820 Eryaman/Ankara\r\n" +
+    "+90 (850) 308 33 51 / +90 533 450 69 05";
+            // 
+            // xrLabel88
+            // 
+            this.xrLabel88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel88.LocationFloat = new DevExpress.Utils.PointFloat(20.83372F, 100.9417F);
+            this.xrLabel88.Multiline = true;
+            this.xrLabel88.Name = "xrLabel88";
+            this.xrLabel88.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel88.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel88.StylePriority.UseFont = false;
+            this.xrLabel88.Text = "A. Güvenlilik Değerlendiricisinin Adı ve Adresi";
+            // 
+            // xrLabel87
+            // 
+            this.xrLabel87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel87.LocationFloat = new DevExpress.Utils.PointFloat(44.91775F, 43.43751F);
+            this.xrLabel87.Multiline = true;
+            this.xrLabel87.Name = "xrLabel87";
+            this.xrLabel87.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel87.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel87.StylePriority.UseFont = false;
+            this.xrLabel87.Text = resources.GetString("xrLabel87.Text");
+            // 
+            // xrLabel86
+            // 
+            this.xrLabel86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel86.LocationFloat = new DevExpress.Utils.PointFloat(44.7876F, 10F);
+            this.xrLabel86.Multiline = true;
+            this.xrLabel86.Name = "xrLabel86";
+            this.xrLabel86.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel86.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel86.StylePriority.UseFont = false;
+            this.xrLabel86.Text = resources.GetString("xrLabel86.Text");
+            // 
+            // xrLabel68
+            // 
+            this.xrLabel68.BackColor = System.Drawing.Color.MidnightBlue;
+            this.xrLabel68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel68.ForeColor = System.Drawing.Color.White;
+            this.xrLabel68.LocationFloat = new DevExpress.Utils.PointFloat(17.83108F, 77.9417F);
+            this.xrLabel68.Multiline = true;
+            this.xrLabel68.Name = "xrLabel68";
+            this.xrLabel68.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel68.SizeF = new System.Drawing.SizeF(722.1666F, 23F);
+            this.xrLabel68.StylePriority.UseBackColor = false;
+            this.xrLabel68.StylePriority.UseFont = false;
+            this.xrLabel68.StylePriority.UseForeColor = false;
+            this.xrLabel68.Text = "B.4. Güvenlilik Değerlendirme Sorumlusu ile İlgili Bilgiler ve Kısım B\'nin Onayı";
+            // 
+            // xrTable12
+            // 
+            this.xrTable12.LocationFloat = new DevExpress.Utils.PointFloat(44.79119F, 249.524F);
+            this.xrTable12.Name = "xrTable12";
+            this.xrTable12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrTable12.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow55});
+            this.xrTable12.SizeF = new System.Drawing.SizeF(698.2083F, 25F);
+            // 
+            // xrTableRow55
+            // 
+            this.xrTableRow55.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell111,
+            this.xrTableCell112});
+            this.xrTableRow55.Name = "xrTableRow55";
+            this.xrTableRow55.Weight = 1D;
+            // 
+            // xrTableCell111
+            // 
+            this.xrTableCell111.BackColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell111.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrTableCell111.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell111.Multiline = true;
+            this.xrTableCell111.Name = "xrTableCell111";
+            this.xrTableCell111.StylePriority.UseBackColor = false;
+            this.xrTableCell111.StylePriority.UseFont = false;
+            this.xrTableCell111.StylePriority.UseForeColor = false;
+            this.xrTableCell111.StylePriority.UseTextAlignment = false;
+            this.xrTableCell111.Text = "Rapor Tarihi:";
+            this.xrTableCell111.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell111.Weight = 2.3511564846321145D;
+            // 
+            // xrTableCell112
+            // 
+            this.xrTableCell112.BorderColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell112.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrTableCell112.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
+            this.xrTableCell112.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrTableCell112.Multiline = true;
+            this.xrTableCell112.Name = "xrTableCell112";
+            this.xrTableCell112.StylePriority.UseBorderColor = false;
+            this.xrTableCell112.StylePriority.UseBorders = false;
+            this.xrTableCell112.StylePriority.UseFont = false;
+            this.xrTableCell112.TextFormatString = "{0:d.MM.yyyy}";
+            this.xrTableCell112.Weight = 4.8705132195541765D;
+            // 
+            // xrTable13
+            // 
+            this.xrTable13.LocationFloat = new DevExpress.Utils.PointFloat(44.79119F, 274.524F);
+            this.xrTable13.Name = "xrTable13";
+            this.xrTable13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrTable13.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow56});
+            this.xrTable13.SizeF = new System.Drawing.SizeF(227.3154F, 66.84656F);
+            // 
+            // xrTableRow56
+            // 
+            this.xrTableRow56.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell113});
+            this.xrTableRow56.Name = "xrTableRow56";
+            this.xrTableRow56.Weight = 1D;
+            // 
+            // xrTableCell113
+            // 
+            this.xrTableCell113.BackColor = System.Drawing.Color.Gainsboro;
+            this.xrTableCell113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrTableCell113.ForeColor = System.Drawing.Color.Black;
+            this.xrTableCell113.Multiline = true;
+            this.xrTableCell113.Name = "xrTableCell113";
+            this.xrTableCell113.StylePriority.UseBackColor = false;
+            this.xrTableCell113.StylePriority.UseFont = false;
+            this.xrTableCell113.StylePriority.UseForeColor = false;
+            this.xrTableCell113.StylePriority.UseTextAlignment = false;
+            this.xrTableCell113.Text = "İmza:";
+            this.xrTableCell113.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell113.Weight = 2.3511566471842231D;
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.BegumPazarli, true);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(272.1066F, 274.5241F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(163.5417F, 66.84644F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // UGD1
             // 
@@ -3718,9 +3994,12 @@
             this.GroupHeader3,
             this.GroupHeader4,
             this.GroupHeader5,
-            this.GroupHeader6,
             this.GroupHeader7,
-            this.GroupHeader8});
+            this.GroupHeader8,
+            this.GroupHeader9,
+            this.GroupHeader10,
+            this.GroupHeader6,
+            this.GroupHeader11});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.calculatedField1,
             this.calculatedField2});
@@ -3756,9 +4035,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrRichText1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -3869,8 +4149,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel29;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel28;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel27;
         private DevExpress.XtraReports.UI.XRLabel xrLabel26;
         private DevExpress.XtraReports.UI.XRLabel xrLabel25;
         private DevExpress.XtraReports.UI.XRTable xrTable7;
@@ -3924,16 +4202,8 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell81;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell82;
         private DevExpress.XtraReports.UI.XRLabel xrLabel34;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel33;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel32;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel30;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel31;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader4;
         private DevExpress.XtraReports.UI.XRLabel xrLabel35;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel53;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel54;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel51;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel52;
         private DevExpress.XtraReports.UI.XRLabel xrLabel49;
         private DevExpress.XtraReports.UI.XRLabel xrLabel50;
         private DevExpress.XtraReports.UI.XRLabel xrLabel47;
@@ -3977,7 +4247,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel38;
         private DevExpress.XtraReports.UI.XRLabel xrLabel37;
         private DevExpress.XtraReports.UI.XRLabel xrLabel36;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel68;
         private DevExpress.XtraReports.UI.XRLabel xrLabel66;
         private DevExpress.XtraReports.UI.XRLabel xrLabel65;
         private DevExpress.XtraReports.UI.XRLabel xrLabel64;
@@ -4004,24 +4273,9 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel56;
         private DevExpress.XtraReports.UI.XRLabel xrLabel55;
         private DevExpress.XtraReports.UI.XRLabel xrLabel48;
-        private DevExpress.XtraReports.UI.XRTable xrTable13;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow56;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell113;
-        private DevExpress.XtraReports.UI.XRTable xrTable12;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow52;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell105;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell106;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow53;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell107;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell108;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow55;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell111;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell112;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.Parameters.Parameter pID;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader5;
-        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader6;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox2;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader7;
@@ -4046,5 +4300,51 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel69;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox8;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader9;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel70;
+        private DevExpress.XtraReports.UI.XRRichText xrRichText1;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader10;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel74;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel73;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel75;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel76;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel27;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel28;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel79;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel72;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel71;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader6;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel78;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel77;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel80;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel85;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel33;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel32;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel31;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel30;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel83;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel84;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel82;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel81;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel54;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel53;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel52;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel51;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader11;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel91;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel90;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel89;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel88;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel87;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel86;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel68;
+        private DevExpress.XtraReports.UI.XRTable xrTable12;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow55;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell111;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell112;
+        private DevExpress.XtraReports.UI.XRTable xrTable13;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow56;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell113;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
     }
 }

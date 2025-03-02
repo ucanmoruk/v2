@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace mKYS.Analiz.Analiz
 {
-    public partial class AnalizListesi : Form
+    public partial class HizmetListesi : Form
     {
-        public AnalizListesi()
+        public HizmetListesi()
         {
             InitializeComponent();
         }
@@ -18,8 +18,10 @@ namespace mKYS.Analiz.Analiz
         public void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
-                "left join RootFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', l.Method, 
+            l.Matriks, l.Akreditasyon, l.Sure, l.NumGereklilik, l.Laboratuvar, l.Fiyat, l.Dip, l.ParaBirimi from StokAnalizListesi l 
+            left join RootFirmaBirim f on l.Birim = f.ID 
+            where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
 
@@ -71,7 +73,15 @@ namespace mKYS.Analiz.Analiz
 
             this.gridView1.Columns[2].Width = 40;
             this.gridView1.Columns[3].Width = 150;
-            this.gridView1.Columns[4].Width = 180;
+            this.gridView1.Columns[4].Width = 150;  
+            this.gridView1.Columns[5].Width = 80;
+            this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[7].Width = 50;
+            this.gridView1.Columns[8].Width = 80;  
+            this.gridView1.Columns[9].Width = 80;  
+            this.gridView1.Columns[10].Width = 40;  
+            this.gridView1.Columns[11].Width = 40;  
+            this.gridView1.Columns[12].Width = 40;  
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -219,6 +229,14 @@ namespace mKYS.Analiz.Analiz
             AnalizAlt.AnalizID = aID;
             AnalizAlt aa = new AnalizAlt();
             aa.Show();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //yeni hizmet
+
+            mKYS.Musteri.Analiz.AnalizYeni yeni = new Musteri.Analiz.AnalizYeni();
+            yeni.Show();
         }
 
         int redurum;

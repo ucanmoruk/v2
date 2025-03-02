@@ -108,8 +108,8 @@ where Durum = 'Aktif' order by Kod
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Musteri.Analiz.AnalizYeni.kod = aID;
-            Musteri.Analiz.AnalizYeni any = new Musteri.Analiz.AnalizYeni();
+            YeniUrun.kod = aID;
+            YeniUrun any = new YeniUrun();
             any.Show();
         }
 

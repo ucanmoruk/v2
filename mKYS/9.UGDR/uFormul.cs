@@ -42,8 +42,10 @@ namespace mROOT._9.UGDR
 
         }
         public static string uID, rNo, gelis;
+
         private void uFormul_Load(object sender, EventArgs e)
         {
+            this.AutoScaleMode = AutoScaleMode.Dpi;
 
             if (gelis == "Anasayfa" || uID == null || uID == "")
             {

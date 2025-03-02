@@ -29,7 +29,8 @@ namespace mKYS.Musteri
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(@"select distinct p.ID as No, k.Ad as 'Olusturan', p.OlusturmaTarih as 'Oluşturma', o.Ad as 'Onaylayan', 
             p.Tarih as 'Onaylama', p.Durum, p.ProformaNo as 'Proforma No', 
-              z.Ad as 'Firma Adı', p.Dipnot, p.Total from ProformaDurum p
+              z.Ad as 'Firma Adı', p.Dipnot, p.Total, p.FaturaNo, p.Odeme
+            from ProformaDurum p
             left join RootKullanici k on k.ID = p.OlusturanID 
             left join RootKullanici o on p.OnaylayanID = o.ID
             left join RootTedarikci z on z.ID = p.FirmaID 
@@ -55,6 +56,8 @@ namespace mKYS.Musteri
             this.gridView1.Columns[7].Width = 200;
             this.gridView1.Columns[8].Width = 150;
             this.gridView1.Columns[9].Width = 55;
+            this.gridView1.Columns[10].Width = 55;
+            this.gridView1.Columns[11].Width = 55;
 
         }
 
@@ -128,6 +131,22 @@ namespace mKYS.Musteri
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             listele();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Ödendi
+
+            //  SqlCommand komut = new SqlCommand("update Odeme set Odeme_Durumu = @d1 where Fatura_ID = @d2; insert into Bakiye (Firma_Id, Bakiye) values (@a1,@a2) ", bgl.baglanti());
+            SqlCommand komut = new SqlCommand(@"update Odeme set Odeme_Durumu = @d1 where Evrak_No=@d2; 
+            update ProformaDurum set Odeme = @d1 where ID = @a1 ", bgl.baglanti());
+            komut.Parameters.AddWithValue("@d1", "Ödendi");
+            komut.Parameters.AddWithValue("@d2", profno);
+            komut.Parameters.AddWithValue("@a1", profid);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Gelsin paralar. İyisin, iyi!");
+
         }
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)

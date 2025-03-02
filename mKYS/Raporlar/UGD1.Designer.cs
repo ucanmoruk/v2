@@ -44,7 +44,6 @@
             this.DetailData3_Odd = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.xrPictureBox6 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -55,7 +54,6 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -429,22 +427,12 @@
             // TopMargin
             // 
             this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPictureBox6,
             this.xrLine1,
             this.xrTable1,
             this.xrLabel2,
             this.xrLabel1});
             this.TopMargin.HeightF = 136F;
             this.TopMargin.Name = "TopMargin";
-            // 
-            // xrPictureBox6
-            // 
-            this.xrPictureBox6.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter;
-            this.xrPictureBox6.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.Cosmoliz_Logo_v2_slogansız, true);
-            this.xrPictureBox6.LocationFloat = new DevExpress.Utils.PointFloat(0F, 12F);
-            this.xrPictureBox6.Name = "xrPictureBox6";
-            this.xrPictureBox6.SizeF = new System.Drawing.SizeF(134.7946F, 66.41664F);
-            this.xrPictureBox6.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
             // xrLine1
             // 
@@ -552,24 +540,10 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel23,
             this.xrLabel4,
             this.xrPageInfo1});
             this.BottomMargin.HeightF = 41F;
             this.BottomMargin.Name = "BottomMargin";
-            // 
-            // xrLabel23
-            // 
-            this.xrLabel23.Font = new System.Drawing.Font("Futura Bk BT", 9.75F);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(0F, 9.999974F);
-            this.xrLabel23.Multiline = true;
-            this.xrLabel23.Name = "xrLabel23";
-            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel23.SizeF = new System.Drawing.SizeF(286.4219F, 22.99999F);
-            this.xrLabel23.StylePriority.UseFont = false;
-            this.xrLabel23.StylePriority.UseTextAlignment = false;
-            this.xrLabel23.Text = "www.cosmoliz.com | destek@cosmoliz.com";
-            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4
             // 
@@ -1716,7 +1690,6 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
-            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 340F;
             this.GroupHeader2.Level = 6;
             this.GroupHeader2.Name = "GroupHeader2";
@@ -2663,7 +2636,6 @@
             this.xrLabel56,
             this.xrLabel55,
             this.xrLabel48});
-            this.GroupHeader4.Expanded = false;
             this.GroupHeader4.HeightF = 819.7731F;
             this.GroupHeader4.Name = "GroupHeader4";
             this.GroupHeader4.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
@@ -3223,10 +3195,9 @@
             // 
             this.GroupHeader5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox4});
-            this.GroupHeader5.Expanded = false;
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[SResim]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),fals" +
-                    "e ,true ))")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[SResim]=\'False\',false, \nIif(IsNullOrEmpty(?pStabilite)," +
+                    "false ,true ))")});
             this.GroupHeader5.HeightF = 289.972F;
             this.GroupHeader5.Level = 7;
             this.GroupHeader5.Name = "GroupHeader5";
@@ -3234,7 +3205,8 @@
             // xrPictureBox4
             // 
             this.xrPictureBox4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pStabilite")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pStabilite"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([rUGDListerUGDDetay].[SResim]),false ,true )")});
             this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(44.79097F, 0F);
             this.xrPictureBox4.Name = "xrPictureBox4";
             this.xrPictureBox4.SizeF = new System.Drawing.SizeF(698.2072F, 276.6833F);
@@ -3246,7 +3218,6 @@
             this.xrLabel29,
             this.xrLabel28,
             this.xrLabel27});
-            this.GroupHeader6.Expanded = false;
             this.GroupHeader6.HeightF = 102.5432F;
             this.GroupHeader6.Level = 4;
             this.GroupHeader6.Name = "GroupHeader6";
@@ -3255,7 +3226,6 @@
             // 
             this.GroupHeader7.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox5});
-            this.GroupHeader7.Expanded = false;
             this.GroupHeader7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),false" +
                     " ,true ))")});
@@ -4192,8 +4162,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel67;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader10;
-        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox6;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel23;
         private DevExpress.XtraReports.UI.XRLabel xrLabel70;
     }
 }

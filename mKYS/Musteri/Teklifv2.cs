@@ -28,14 +28,14 @@ namespace mKYS.Musteri
         void listele()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Firma_Adi as 'Firma' from Firma where Durum = 'Aktif' order by Firma_Adi", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Ad as 'Firma' from RootTedarikci where Durum = 'Aktif' order by Ad", bgl.baglanti());
             da2.Fill(dt2);
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "Firma";
             gridLookUpEdit1.Properties.ValueMember = "ID";
 
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select ID, Firma_Adi as 'Firma' from Firma where Durum = 'Aktif' and (Tur = 'Proje' or Tur = 'Admin') order by Firma_Adi", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select ID, Ad as 'Firma' from RootTedarikci where Durum = 'Aktif' order by Ad", bgl.baglanti());
             da.Fill(dt);
             gridLookUpEdit2.Properties.DataSource = dt;
             gridLookUpEdit2.Properties.DisplayMember = "Firma";
@@ -155,7 +155,7 @@ namespace mKYS.Musteri
         void paketler()
         {
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select Grup as 'Grup', Tur as [Paket Adı], ID from Numune_Grup  where Grup = 'Özel' or Grup = 'Tareks'
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select Grup as 'Grup', Tur as [Paket Adı], ID from Numune_Grup where Grup = 'Özel' or Grup = 'Tareks'
             order by Grup", bgl.baglanti());
             da2.Fill(dt2);
             gridControl2.DataSource = dt2;

@@ -379,7 +379,7 @@ namespace mKYS
 
         private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Analiz.AnalizYeni any = new Analiz.AnalizYeni();
+            Analiz.YeniUrun any = new Analiz.YeniUrun();
             any.Show();
         }
 
@@ -695,14 +695,14 @@ namespace mKYS
             }
         }
 
-        Musteri.AnalizListesi anal;
+        mKYS.Analiz.AnalizListesi anal;
         private void barButtonItem69_ItemClick(object sender, ItemClickEventArgs e)
         {
 
             
             if (anal == null || anal.IsDisposed)
             {
-                anal = new Musteri.AnalizListesi();
+                anal = new mKYS.Analiz.AnalizListesi();
                 anal.MdiParent = this;
                 anal.Show();
             }
@@ -1077,10 +1077,19 @@ namespace mKYS
             }
         }
 
+        MalKabul mal;
         private void barButtonItem109_ItemClick(object sender, ItemClickEventArgs e)
         {
-            NumuneKabul nk = new NumuneKabul();
-            nk.Show();
+            //NumuneKabul nk = new NumuneKabul();
+            //nk.Show();
+
+            if (mal == null || mal.IsDisposed)
+            {
+                mal = new MalKabul();
+                mal.MdiParent = this;
+                mal.Show();
+            }
+
         }
 
         Numune.HizmetTermin ht;
@@ -1094,12 +1103,12 @@ namespace mKYS
             }
         }
 
-        Analiz.Analiz.AnalizListesi kanal;
+        Analiz.Analiz.HizmetListesi kanal;
         private void barButtonItem117_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (kanal == null || kanal.IsDisposed)
             {
-                kanal = new Analiz.Analiz.AnalizListesi();
+                kanal = new Analiz.Analiz.HizmetListesi();
                 kanal.MdiParent = this;
                 kanal.Show();
             }
@@ -1185,6 +1194,29 @@ namespace mKYS
             mROOT._9.UGDR.cosIng cos = new mROOT._9.UGDR.cosIng();
             cos.Show();
 
+        }
+
+        Musteri.Limit lim;
+        private void barButtonItem123_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //hizmet listesi
+            if (lim == null || lim.IsDisposed)
+            {
+                lim = new Musteri.Limit();
+                lim.MdiParent = this;
+                lim.Show();
+            }
+        }
+
+        mROOT.Numune.TopluEkleme top;
+        private void barButtonItem124_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (top == null || top.IsDisposed)
+            {
+                top = new mROOT.Numune.TopluEkleme();
+                top.MdiParent = this;
+                top.Show();
+            }
         }
 
         private void barButtonItem114_ItemClick(object sender, ItemClickEventArgs e)

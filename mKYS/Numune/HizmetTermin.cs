@@ -18,6 +18,7 @@ using DevExpress.XtraGrid.Menu;
 using mKYS.Musteri;
 using mKYS.Numune;
 using mKYS.Raporlar;
+using System.Diagnostics;
 
 namespace mKYS.Numune
 {
@@ -45,7 +46,10 @@ namespace mKYS.Numune
 
             DataTable dt = new DataTable();
 
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT n.Evrak_No AS [Evrak No], n.RaporNo AS [Rapor No], f.Ad AS Firma, p.Ad AS Proje, n.Numune_Adi AS Numune, l.Ad AS Hizmet, l.Method, n.Tarih AS Kabul, x.Termin, x.HizmetDurum AS Durum, n.Rapor_Durumu AS Rapor, k.Ad AS Yetkili, x.ID, n.ID AS nID
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT n.Evrak_No AS [Evrak No], n.RaporNo AS [Rapor No], 
+            f.Ad AS Firma, p.Ad AS Proje, n.Numune_Adi AS Numune, l.Kod,
+            l.Ad AS Hizmet, l.Method, n.Tarih AS Kabul, x.Termin, 
+            x.HizmetDurum AS Durum, n.Rapor_Durumu AS Rapor, k.Ad AS Yetkili, x.ID, n.ID AS nID
             FROM dbo.NumuneX1 AS x LEFT OUTER JOIN
              dbo.NKR AS n ON x.RaporID = n.ID LEFT OUTER JOIN
              dbo.NumuneDetay AS d ON n.ID = d.RaporID LEFT OUTER JOIN
@@ -54,11 +58,11 @@ namespace mKYS.Numune
              dbo.RootTedarikci AS p ON d.ProjeID = p.ID LEFT OUTER JOIN
              dbo.StokAnalizListesi AS l ON x.AnalizID = l.ID
              WHERE (n.Durum = 'Aktif')
-             ORDER BY x.Termin DESC, nID DESC", bgl.baglanti());
+             ORDER BY x.Termin ASC, nID DESC", bgl.baglanti());
             da.Fill(dt);
             gridControl1.DataSource = dt;
             gridView3.Columns["ID"].Visible = false;
-            gridView3.Columns["Firma"].Visible = false;
+            // gridView3.Columns["Firma"].Visible = false;
             gridView3.Columns["Proje"].Visible = false;
             gridView3.Columns["nID"].Visible = false;
             gridView3.Columns["Rapor"].Visible = false;
@@ -72,16 +76,17 @@ namespace mKYS.Numune
         {
             this.gridView3.Columns[0].Width = 50;
             this.gridView3.Columns[1].Width = 55;
-            this.gridView3.Columns[2].Width = 200;
-            this.gridView3.Columns[3].Width = 150;
-            this.gridView3.Columns[4].Width = 200; 
-            this.gridView3.Columns[5].Width = 100;
-            this.gridView3.Columns[6].Width = 60;
-            this.gridView3.Columns[7].Width = 60;
+            this.gridView3.Columns[2].Width = 100;
+            //this.gridView3.Columns[3].Width = 180;
+            this.gridView3.Columns[4].Width = 150; 
+            this.gridView3.Columns[5].Width = 60;
+            this.gridView3.Columns[6].Width = 150;
+            this.gridView3.Columns[7].Width = 100;
             this.gridView3.Columns[8].Width = 60;
             this.gridView3.Columns[9].Width = 60;
             this.gridView3.Columns[10].Width = 60;
             this.gridView3.Columns[11].Width = 60;
+            this.gridView3.Columns[12].Width = 60;
 
         }
         private void NKR_Load(object sender, EventArgs e)
@@ -118,16 +123,20 @@ namespace mKYS.Numune
                 }
                 else if (ODurum == "İşleme Alındı")
                 {
-                    e.Appearance.BackColor = Color.Salmon;
-                    e.Appearance.BackColor2 = Color.LightSalmon;
+                    e.Appearance.BackColor = Color.LightSalmon;
+                    e.Appearance.BackColor2 = Color.Salmon;
                     e.HighPriority = true;
                 }
+              
             }
         }
 
         private void gridView3_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-           
+            string adam = gridView3.GetRowCellValue(e.RowHandle, "Durum").ToString();
+            if (e.RowHandle > -1 && e.Column.FieldName == "Durum" && adam == "Atama Yapıldı!")
+                e.Appearance.BackColor = Color.PaleVioletRed;
+
         }
 
         private void NKR_KeyDown(object sender, KeyEventArgs e)
@@ -152,12 +161,12 @@ namespace mKYS.Numune
         {
             try
             {
-                DataRow dr = gridView3.GetDataRow(gridView1.FocusedRowHandle);
-                raporno = dr["Rapor No"].ToString();
-                raporID = dr["nID"].ToString();
-                Numune.TanimDetay.raporID = raporID;
-                Numune.TanimDetay td = new Numune.TanimDetay();
-                td.Show();
+                //DataRow dr = gridView3.GetDataRow(gridView1.FocusedRowHandle);
+                //raporno = dr["Rapor No"].ToString();
+                //raporID = dr["nID"].ToString();
+                //Numune.TanimDetay.raporID = raporID;
+                //Numune.TanimDetay td = new Numune.TanimDetay();
+                //td.Show();
 
             }
             catch (Exception ex)
@@ -219,8 +228,13 @@ namespace mKYS.Numune
 
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
+
+                string id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);           
                 string o2;
-                o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                o2 = gridView3.GetRowCellValue(y, "ID").ToString();
+
+         //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
                 SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
                     "update NumuneX1 set HizmetDurum=@o1, Yetkili=@o2 where ID = @o3; " +
                     "COMMIT TRANSACTION", bgl.baglanti());
@@ -233,6 +247,107 @@ namespace mKYS.Numune
 
             listele();
 
+        }
+
+        public List<object> seciliDegerler = new List<object>();
+
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //atama yap
+            seciliDegerler.Clear();
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+
+                string id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView3.GetRowCellValue(y, "ID").ToString();
+
+
+                var deger = gridView3.GetRowCellValue(y, "ID").ToString();
+                seciliDegerler.Add(deger);
+
+
+                ////string o2;
+                ////o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                //SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                //    "update NumuneX1 set HizmetDurum=@o1 where ID = @o3; " +
+                //    "COMMIT TRANSACTION", bgl.baglanti());
+                //add2.Parameters.AddWithValue("@o1", "Tamamlandı");
+                //add2.Parameters.AddWithValue("@o3", o2);
+                //add2.ExecuteNonQuery();
+                //bgl.baglanti().Close();
+            }
+
+           
+            mROOT.Numune.Atama at = new mROOT.Numune.Atama();
+            mROOT.Numune.Atama.seciliDegerler = seciliDegerler;
+            at.Show();
+
+
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //red
+
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+
+                string id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView3.GetRowCellValue(y, "ID").ToString();
+                //string o2;
+                //o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                    "update NumuneX1 set HizmetDurum=@o1 where ID = @o3; " +
+                    "COMMIT TRANSACTION", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", "Reddedildi");
+                add2.Parameters.AddWithValue("@o3", o2);
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+
+
+
+            listele();
+        }
+
+        public List<object> seciliyazdir = new List<object>();
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //yazdir
+
+            seciliyazdir.Clear();
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+
+                string id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView3.GetRowCellValue(y, "nID").ToString();
+
+
+                var deger = gridView3.GetRowCellValue(y, "nID").ToString();
+                seciliyazdir.Add(deger);
+
+            }
+
+            mROOT.Raporlar.HizmetTakip.seciliyazdir = seciliyazdir;
+            using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            {
+                frm.HizmetTakip();
+                frm.ShowDialog();
+            }
+    
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string path = "iştakiplistesi.xlsx";
+            gridControl1.ExportToXlsx(path);
+            Process.Start(path);
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -248,8 +363,13 @@ namespace mKYS.Numune
 
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
+
+                string id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
                 string o2;
-                o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                o2 = gridView3.GetRowCellValue(y, "ID").ToString();
+                //string o2;
+                //o2 = gridView3.GetRowCellValue(i, "ID").ToString();
                 SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
                     "update NumuneX1 set HizmetDurum=@o1 where ID = @o3; " +
                     "COMMIT TRANSACTION", bgl.baglanti());

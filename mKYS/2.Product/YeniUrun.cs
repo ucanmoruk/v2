@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace mKYS.Analiz
 {
-    public partial class AnalizYeni : Form
+    public partial class YeniUrun : Form
     {
-        public AnalizYeni()
+        public YeniUrun()
         {
             InitializeComponent();
         }

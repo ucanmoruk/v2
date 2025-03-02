@@ -28,11 +28,11 @@ namespace mKYS.Musteri
         {
             txt_evrak.Text = ProformaListesi.profno.ToString();
 
-            SqlCommand komut4 = new SqlCommand("select Firma_Adi from Firma where ID in (select Firma_ID from NKR where Evrak_No = N'" + txt_evrak.Text + "')", bgl.baglanti());
+            SqlCommand komut4 = new SqlCommand("select Ad from RootTedarikci where ID in (select Firma_ID from NKR where Evrak_No = N'" + txt_evrak.Text + "')", bgl.baglanti());
             SqlDataReader dr4 = komut4.ExecuteReader();
             while (dr4.Read())
             {
-                txt_firma.Text = dr4["Firma_Adi"].ToString();
+                txt_firma.Text = dr4["Ad"].ToString();
             }
             bgl.baglanti().Close();
 
@@ -86,11 +86,11 @@ namespace mKYS.Musteri
             bgl.baglanti().Close();
 
             
-            SqlCommand komut34 = new SqlCommand("select Firma_Adi from Firma where ID in (select FaturaFirmaID from FaturaDetay where ProformaNo = N'" + txt_evrak.Text + "')", bgl.baglanti());
+            SqlCommand komut34 = new SqlCommand("select Ad from RootTedarikci where ID in (select FaturaFirmaID from FaturaDetay where ProformaNo = N'" + txt_evrak.Text + "')", bgl.baglanti());
             SqlDataReader dr34 = komut34.ExecuteReader();
             while (dr34.Read())
             {
-                combo_firma.Text = dr34["Firma_Adi"].ToString();
+                combo_firma.Text = dr34["Ad"].ToString();
             }
             bgl.baglanti().Close();
             
@@ -103,7 +103,7 @@ namespace mKYS.Musteri
             if (txt_teklifno.Text == "2101000")
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter("select ROW_NUMBER() OVER(ORDER BY ID) as No, Aciklama as 'Açıklama', UrunGrubu as 'Ürün Grubu', Miktar, " +
+                SqlDataAdapter da = new SqlDataAdapter("select ROW_NUMBER() OVER(ORDER BY ID) as No, UrunGrubu as 'Açıklama', Miktar, " +
                     " Birim,  ParaBirimi, BirimFiyatTl as 'Birim Fiyat', ToplamFiyat as 'Fiyat', KDV, Iskonto, GenelFiyat as 'Toplam' from FaturaDetay where ProformaNo = N'" + txt_evrak.Text + "'", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
@@ -112,7 +112,7 @@ namespace mKYS.Musteri
             else
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter("select ROW_NUMBER() OVER(ORDER BY ID) as No, Aciklama as 'Açıklama', UrunGrubu as 'Ürün Grubu', Miktar, Birim, BirimFiyat, ParaBirimi, KurTl as 'Kur', " +
+                SqlDataAdapter da = new SqlDataAdapter("select ROW_NUMBER() OVER(ORDER BY ID) as No, UrunGrubu as 'Açıklama', Miktar, Birim, BirimFiyat, ParaBirimi, KurTl as 'Kur', " +
                     "BirimFiyatTl, ToplamFiyat as 'Total', Iskonto, GenelFiyat from FaturaDetay where ProformaNo = N'" + txt_evrak.Text + "'", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
@@ -124,7 +124,7 @@ namespace mKYS.Musteri
 
         public void Firma()
         {
-            SqlCommand komut = new SqlCommand("Select Firma_Adi from Firma where Durum = 'Aktif'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Ad from RootTedarikci where Durum = 'Aktif'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -135,14 +135,14 @@ namespace mKYS.Musteri
 
         public void firmadetay()
         {
-            SqlCommand komut = new SqlCommand("Select Adres, Vergi_Dairesi,Vergi_No,Mail from Firma where Firma_Adi = '" + combo_firma.Text + "'", bgl.baglanti());
+            SqlCommand komut = new SqlCommand("Select Adres, VergiDairesi, VergiNo, Email from RootTedarikci where Ad = '" + combo_firma.Text + "'", bgl.baglanti());
             SqlDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
                 txt_adres.Text = dr["Adres"].ToString();
-                txt_vdaire.Text = dr["Vergi_Dairesi"].ToString();
-                txt_vergino.Text = dr["Vergi_No"].ToString();
-                txt_mail.Text = dr["Mail"].ToString();
+                txt_vdaire.Text = dr["VergiDairesi"].ToString();
+                txt_vergino.Text = dr["VergiNo"].ToString();
+                txt_mail.Text = dr["Email"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -191,6 +191,21 @@ namespace mKYS.Musteri
 
         public void gridduzen()
         {
+            this.gridView1.Columns[0].Width = 35;
+            this.gridView1.Columns[1].Width = 135;
+            this.gridView1.Columns[2].Width = 35;
+            this.gridView1.Columns[3].Width = 35;
+            this.gridView1.Columns[4].Width = 35;
+            this.gridView1.Columns[5].Width = 35;
+            this.gridView1.Columns[6].Width = 35;
+            this.gridView1.Columns[7].Width = 35;
+            this.gridView1.Columns[8].Width = 35;
+            this.gridView1.Columns[9].Width = 35;
+            this.gridView1.Columns[10].Width = 35;
+
+
+
+
             GridGroupSummaryItem item = new GridGroupSummaryItem();
             item.FieldName = "GenelFiyat";
             //  item.ShowInGroupColumnFooter = gridView1.Columns["Tutar"];
