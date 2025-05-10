@@ -29,6 +29,13 @@ namespace mKYS.Musteri
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "Firma";
             gridLookUpEdit1.Properties.ValueMember = "Firma";
+
+            DataTable dt12 = new DataTable();
+            SqlDataAdapter da12 = new SqlDataAdapter("Select ID, Ad From RootKullanici where Durum= N'Aktif'", bgl.baglanti());
+            da12.Fill(dt12);
+            gridLookUpEdit2.Properties.DataSource = dt12;
+            gridLookUpEdit2.Properties.DisplayMember = "Ad";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
         }
 
         void detaybul()
@@ -47,7 +54,10 @@ namespace mKYS.Musteri
                 txt_firmad.Text = dr2["FirmaAd"].ToString();
                 combo_firma.Text = dr2["Firma"].ToString();
                 combo_durum.Text = dr2["Durumu"].ToString();
-
+                txt_adres.Text = dr2["Adres"].ToString(); ;
+                c_kategori.Text = dr2["Kategori"].ToString(); 
+                txt_bolge.Text = dr2["Bolge"].ToString();
+                gridLookUpEdit2.EditValue = dr2["PlasiyerID"].ToString();
             }
             bgl.baglanti().Close();
         }
@@ -55,6 +65,7 @@ namespace mKYS.Musteri
         void temizle()
         {
             gridLookUpEdit1.EditValue = null;
+            gridLookUpEdit2.EditValue = null;
             txt_iletisim.Text = null;
             txt_konu.Text = null;
             txt_msj.Text = null;
@@ -63,6 +74,9 @@ namespace mKYS.Musteri
             combo_durum.Text = null;
             combo_firma.Text = null;
             txt_firmad.Text = null;
+            txt_adres.Text = null;
+            txt_bolge.Text = null;
+            c_kategori.Text = null;
         }
 
         GorusmeList m = (GorusmeList)System.Windows.Forms.Application.OpenForms["GorusmeList"];
@@ -94,7 +108,7 @@ namespace mKYS.Musteri
         void guncelle()
         {
 
-            SqlCommand add = new SqlCommand("update CrmMusteri set Durumu=@a2, Yetkili=@a3, Iletisim=@a4, Tarih=@a5, Tur=@a6, Konu=@a7, Mesaj=@a8 where ID = '" + gID+"'", bgl.baglanti());
+            SqlCommand add = new SqlCommand("update CrmMusteri set Durumu=@a2, Yetkili=@a3, Iletisim=@a4, Tarih=@a5, Tur=@a6, Konu=@a7, Mesaj=@a8, Adres=@a9, Kategori=@a10, Bolge=@a11 where ID = '" + gID+"'", bgl.baglanti());
             add.Parameters.AddWithValue("@a2", combo_durum.Text);
             add.Parameters.AddWithValue("@a3", txt_yetkili.Text);
             add.Parameters.AddWithValue("@a4", txt_iletisim.Text);
@@ -102,14 +116,17 @@ namespace mKYS.Musteri
             add.Parameters.AddWithValue("@a6", combo_tur.Text);
             add.Parameters.AddWithValue("@a7", txt_konu.Text);
             add.Parameters.AddWithValue("@a8", txt_msj.Text);
+            add.Parameters.AddWithValue("@a9", txt_adres.Text);
+            add.Parameters.AddWithValue("@a10", c_kategori.Text);
+            add.Parameters.AddWithValue("@a11", txt_bolge.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
 
         void kaydet()
         {
-            SqlCommand add = new SqlCommand("insert into CrmMusteri (PlasiyerID, FirmaAd, Yetkili, Iletisim, Tarih, Tur, Konu, Mesaj, Durum, Durumu, Firma) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11)", bgl.baglanti());
-            add.Parameters.AddWithValue("@a1", Anasayfa.kullanici);
+            SqlCommand add = new SqlCommand("insert into CrmMusteri (PlasiyerID, FirmaAd, Yetkili, Iletisim, Tarih, Tur, Konu, Mesaj, Durum, Durumu, Firma, Adres, Kategori, Bolge) values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12,@a13,@a14)", bgl.baglanti());
+            add.Parameters.AddWithValue("@a1", gridLookUpEdit2.EditValue);
             add.Parameters.AddWithValue("@a2", firmad);
             add.Parameters.AddWithValue("@a3", txt_yetkili.Text);
             add.Parameters.AddWithValue("@a4", txt_iletisim.Text);
@@ -120,6 +137,9 @@ namespace mKYS.Musteri
             add.Parameters.AddWithValue("@a9", "Aktif");
             add.Parameters.AddWithValue("@a10", combo_durum.Text);
             add.Parameters.AddWithValue("@a11", combo_firma.Text);
+            add.Parameters.AddWithValue("@a12", txt_adres.Text);
+            add.Parameters.AddWithValue("@a13", c_kategori.Text);
+            add.Parameters.AddWithValue("@a14", txt_bolge.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
@@ -200,6 +220,12 @@ namespace mKYS.Musteri
                 txt_firmad.Visible = false;
                 gridLookUpEdit1.Visible = true;
             }
+        }
+
+        private void gridLookUpEdit2_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
         }
     }
 }

@@ -47,20 +47,35 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenu2 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Notlar = new DevExpress.XtraEditors.GroupControl();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            this.lbl_gpt = new DevExpress.XtraEditors.LabelControl();
+            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.combo_para = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_iskonto = new DevExpress.XtraEditors.TextEdit();
+            this.lbl_euro = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_dolar = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.t_genel = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.t_iskonto = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.t_kdv = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.t_total = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -69,8 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notlar)).BeginInit();
@@ -80,6 +93,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_para.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_iskonto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
@@ -88,6 +104,16 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_genel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_iskonto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_kdv.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_total.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_kaydet
@@ -97,10 +123,10 @@
             this.btn_kaydet.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btn_kaydet.ImageOptions.ImageToTextIndent = 10;
             this.btn_kaydet.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_kaydet.ImageOptions.SvgImage")));
-            this.btn_kaydet.Location = new System.Drawing.Point(505, 19);
+            this.btn_kaydet.Location = new System.Drawing.Point(1380, 12);
             this.btn_kaydet.Name = "btn_kaydet";
             this.btn_kaydet.Size = new System.Drawing.Size(93, 95);
-            this.btn_kaydet.TabIndex = 7;
+            this.btn_kaydet.TabIndex = 8;
             this.btn_kaydet.Text = "Kaydet";
             this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
             // 
@@ -111,9 +137,9 @@
             this.btn_iptal.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btn_iptal.ImageOptions.ImageToTextIndent = 10;
             this.btn_iptal.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_iptal.ImageOptions.SvgImage")));
-            this.btn_iptal.Location = new System.Drawing.Point(1009, 21);
+            this.btn_iptal.Location = new System.Drawing.Point(1318, 19);
             this.btn_iptal.Name = "btn_iptal";
-            this.btn_iptal.Size = new System.Drawing.Size(69, 95);
+            this.btn_iptal.Size = new System.Drawing.Size(56, 80);
             this.btn_iptal.TabIndex = 6;
             this.btn_iptal.Text = "İptal";
             this.btn_iptal.Visible = false;
@@ -121,6 +147,7 @@
             // 
             // gridLookUpEdit1
             // 
+            this.gridLookUpEdit1.Enabled = false;
             this.gridLookUpEdit1.Location = new System.Drawing.Point(105, 88);
             this.gridLookUpEdit1.Name = "gridLookUpEdit1";
             this.gridLookUpEdit1.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
@@ -129,7 +156,7 @@
             this.gridLookUpEdit1.Properties.NullText = "Faturalandırılacak Firma..";
             this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEdit1.Size = new System.Drawing.Size(394, 20);
-            this.gridLookUpEdit1.TabIndex = 6;
+            this.gridLookUpEdit1.TabIndex = 7;
             this.gridLookUpEdit1.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit1_QueryPopUp);
             // 
             // gridLookUpEdit1View
@@ -149,13 +176,14 @@
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Size = new System.Drawing.Size(126, 20);
-            this.dateEdit1.TabIndex = 3;
+            this.dateEdit1.TabIndex = 4;
             // 
             // txt_no
             // 
+            this.txt_no.Enabled = false;
             this.txt_no.Location = new System.Drawing.Point(105, 25);
             this.txt_no.Name = "txt_no";
-            this.txt_no.Size = new System.Drawing.Size(258, 20);
+            this.txt_no.Size = new System.Drawing.Size(126, 20);
             this.txt_no.TabIndex = 1;
             // 
             // labelControl2
@@ -168,11 +196,11 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(52, 28);
+            this.labelControl1.Location = new System.Drawing.Point(16, 28);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(45, 13);
+            this.labelControl1.Size = new System.Drawing.Size(81, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Teklif No:";
+            this.labelControl1.Text = "Teklif / Talep No:";
             // 
             // barManager1
             // 
@@ -192,15 +220,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1090, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1458, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 533);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 632);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1090, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1458, 0);
             // 
             // barDockControlLeft
             // 
@@ -208,15 +236,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 533);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 632);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1090, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1458, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 533);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 632);
             // 
             // barButtonItem1
             // 
@@ -248,35 +276,13 @@
             this.popupMenu2.Manager = this.barManager1;
             this.popupMenu2.Name = "popupMenu2";
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(723, 394);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
-            this.gridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView1_PopupMenuShowing);
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
-            // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(363, 394);
+            this.gridControl2.Size = new System.Drawing.Size(454, 524);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -300,9 +306,9 @@
             // Notlar
             // 
             this.Notlar.Controls.Add(this.memoEdit1);
-            this.Notlar.Location = new System.Drawing.Point(604, 20);
+            this.Notlar.Location = new System.Drawing.Point(16, 15);
             this.Notlar.Name = "Notlar";
-            this.Notlar.Size = new System.Drawing.Size(398, 97);
+            this.Notlar.Size = new System.Drawing.Size(669, 97);
             this.Notlar.TabIndex = 0;
             this.Notlar.Text = "Notlar";
             // 
@@ -313,7 +319,7 @@
             this.memoEdit1.Location = new System.Drawing.Point(2, 27);
             this.memoEdit1.MenuManager = this.barManager1;
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(394, 68);
+            this.memoEdit1.Size = new System.Drawing.Size(665, 68);
             this.memoEdit1.TabIndex = 8;
             this.memoEdit1.TextChanged += new System.EventHandler(this.memoEdit1_TextChanged);
             // 
@@ -326,14 +332,18 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.separatorControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_gpt);
+            this.splitContainer1.Panel1.Controls.Add(this.gridLookUpEdit2);
             this.splitContainer1.Panel1.Controls.Add(this.combo_para);
-            this.splitContainer1.Panel1.Controls.Add(this.Notlar);
             this.splitContainer1.Panel1.Controls.Add(this.btn_iptal);
             this.splitContainer1.Panel1.Controls.Add(this.btn_kaydet);
             this.splitContainer1.Panel1.Controls.Add(this.txt_iskonto);
             this.splitContainer1.Panel1.Controls.Add(this.txt_no);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel1.Controls.Add(this.gridLookUpEdit1);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_euro);
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_dolar);
             this.splitContainer1.Panel1.Controls.Add(this.dateEdit2);
             this.splitContainer1.Panel1.Controls.Add(this.dateEdit1);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl3);
@@ -344,9 +354,47 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1090, 533);
-            this.splitContainer1.SplitterDistance = 135;
+            this.splitContainer1.Size = new System.Drawing.Size(1458, 632);
+            this.splitContainer1.SplitterDistance = 104;
             this.splitContainer1.TabIndex = 6;
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.separatorControl1.Location = new System.Drawing.Point(505, 12);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Size = new System.Drawing.Size(26, 82);
+            this.separatorControl1.TabIndex = 9;
+            // 
+            // lbl_gpt
+            // 
+            this.lbl_gpt.Location = new System.Drawing.Point(537, 66);
+            this.lbl_gpt.Name = "lbl_gpt";
+            this.lbl_gpt.Size = new System.Drawing.Size(19, 13);
+            this.lbl_gpt.TabIndex = 2;
+            this.lbl_gpt.Text = "Gün";
+            // 
+            // gridLookUpEdit2
+            // 
+            this.gridLookUpEdit2.EditValue = "";
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(237, 25);
+            this.gridLookUpEdit2.MenuManager = this.barManager1;
+            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
+            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit2.Properties.NullText = "";
+            this.gridLookUpEdit2.Properties.PopupView = this.gridLookUpEdit2View;
+            this.gridLookUpEdit2.Size = new System.Drawing.Size(126, 20);
+            this.gridLookUpEdit2.TabIndex = 2;
+            this.gridLookUpEdit2.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.gridLookUpEdit2_QueryPopUp);
+            this.gridLookUpEdit2.EditValueChanged += new System.EventHandler(this.gridLookUpEdit2_EditValueChanged);
+            // 
+            // gridLookUpEdit2View
+            // 
+            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
+            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
             // combo_para
             // 
@@ -360,7 +408,7 @@
             "$",
             "€"});
             this.combo_para.Size = new System.Drawing.Size(53, 20);
-            this.combo_para.TabIndex = 2;
+            this.combo_para.TabIndex = 3;
             // 
             // txt_iskonto
             // 
@@ -368,7 +416,24 @@
             this.txt_iskonto.Location = new System.Drawing.Point(446, 56);
             this.txt_iskonto.Name = "txt_iskonto";
             this.txt_iskonto.Size = new System.Drawing.Size(53, 20);
-            this.txt_iskonto.TabIndex = 5;
+            this.txt_iskonto.TabIndex = 6;
+            this.txt_iskonto.TextChanged += new System.EventHandler(this.txt_iskonto_TextChanged);
+            // 
+            // lbl_euro
+            // 
+            this.lbl_euro.Location = new System.Drawing.Point(537, 47);
+            this.lbl_euro.Name = "lbl_euro";
+            this.lbl_euro.Size = new System.Drawing.Size(19, 13);
+            this.lbl_euro.TabIndex = 0;
+            this.lbl_euro.Text = "Gün";
+            // 
+            // lbl_dolar
+            // 
+            this.lbl_dolar.Location = new System.Drawing.Point(537, 28);
+            this.lbl_dolar.Name = "lbl_dolar";
+            this.lbl_dolar.Size = new System.Drawing.Size(19, 13);
+            this.lbl_dolar.TabIndex = 0;
+            this.lbl_dolar.Text = "Gün";
             // 
             // dateEdit2
             // 
@@ -380,7 +445,7 @@
             this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit2.Size = new System.Drawing.Size(126, 20);
-            this.dateEdit2.TabIndex = 4;
+            this.dateEdit2.TabIndex = 5;
             // 
             // labelControl3
             // 
@@ -418,16 +483,126 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(1090, 394);
-            this.splitContainer2.SplitterDistance = 363;
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(1458, 524);
+            this.splitContainer2.SplitterDistance = 454;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.gridControl1);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.t_genel);
+            this.splitContainer3.Panel2.Controls.Add(this.labelControl9);
+            this.splitContainer3.Panel2.Controls.Add(this.t_iskonto);
+            this.splitContainer3.Panel2.Controls.Add(this.Notlar);
+            this.splitContainer3.Panel2.Controls.Add(this.labelControl6);
+            this.splitContainer3.Panel2.Controls.Add(this.labelControl8);
+            this.splitContainer3.Panel2.Controls.Add(this.t_kdv);
+            this.splitContainer3.Panel2.Controls.Add(this.labelControl7);
+            this.splitContainer3.Panel2.Controls.Add(this.t_total);
+            this.splitContainer3.Size = new System.Drawing.Size(1000, 524);
+            this.splitContainer3.SplitterDistance = 400;
+            this.splitContainer3.TabIndex = 1;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1000, 400);
+            this.gridControl1.TabIndex = 1;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            // 
+            // t_genel
+            // 
+            this.t_genel.Enabled = false;
+            this.t_genel.Location = new System.Drawing.Point(913, 92);
+            this.t_genel.Name = "t_genel";
+            this.t_genel.Size = new System.Drawing.Size(126, 20);
+            this.t_genel.TabIndex = 1;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(827, 95);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(80, 13);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "Genel Toplam:";
+            // 
+            // t_iskonto
+            // 
+            this.t_iskonto.Location = new System.Drawing.Point(913, 40);
+            this.t_iskonto.Name = "t_iskonto";
+            this.t_iskonto.Size = new System.Drawing.Size(126, 20);
+            this.t_iskonto.TabIndex = 1;
+            this.t_iskonto.TextChanged += new System.EventHandler(this.t_iskonto_TextChanged);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(867, 17);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(38, 13);
+            this.labelControl6.TabIndex = 0;
+            this.labelControl6.Text = "Toplam:";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(867, 43);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(40, 13);
+            this.labelControl8.TabIndex = 0;
+            this.labelControl8.Text = "İskonto:";
+            // 
+            // t_kdv
+            // 
+            this.t_kdv.Enabled = false;
+            this.t_kdv.Location = new System.Drawing.Point(913, 66);
+            this.t_kdv.Name = "t_kdv";
+            this.t_kdv.Size = new System.Drawing.Size(126, 20);
+            this.t_kdv.TabIndex = 1;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(884, 69);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(23, 13);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "KDV:";
+            // 
+            // t_total
+            // 
+            this.t_total.Enabled = false;
+            this.t_total.Location = new System.Drawing.Point(913, 14);
+            this.t_total.Name = "t_total";
+            this.t_total.Size = new System.Drawing.Size(126, 20);
+            this.t_total.TabIndex = 1;
             // 
             // Detay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 533);
+            this.ClientSize = new System.Drawing.Size(1458, 632);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -446,8 +621,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notlar)).EndInit();
@@ -458,6 +631,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.combo_para.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_iskonto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
@@ -466,6 +642,17 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_genel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_iskonto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_kdv.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_total.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,11 +684,26 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.ComboBoxEdit combo_para;
         private DevExpress.XtraEditors.TextEdit txt_iskonto;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit2View;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.TextEdit t_genel;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit t_iskonto;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit t_kdv;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit t_total;
+        private DevExpress.XtraEditors.LabelControl lbl_dolar;
+        private DevExpress.XtraEditors.LabelControl lbl_gpt;
+        private DevExpress.XtraEditors.LabelControl lbl_euro;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.SeparatorControl separatorControl1;
     }
 }

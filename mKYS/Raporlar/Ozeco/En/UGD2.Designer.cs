@@ -1304,7 +1304,7 @@
             this.xrTable9,
             this.xrSubreport2});
             this.GroupFooter1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Alerjen]=1,true,false)")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Sum(Iif([Alerjen] Like \'%Alerjen%\', 1, Null)) > 0")});
             this.GroupFooter1.HeightF = 122.5477F;
             this.GroupFooter1.KeepTogether = true;
             this.GroupFooter1.Level = 1;
@@ -1567,6 +1567,8 @@
             this.xrSubreport3,
             this.xrTable11,
             this.xrTable10});
+            this.GroupFooter3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Sum(Iif([Functions] Like \'%PRESERVAT%\', 1, Null)) > 0")});
             this.GroupFooter3.HeightF = 132.2866F;
             this.GroupFooter3.Name = "GroupFooter3";
             // 

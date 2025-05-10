@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>5.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,6 +79,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v19.1" />
     <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -108,18 +114,49 @@
     <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.57.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.57\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.4.0.0\lib\netstandard2.0\RBush.dll</HintPath>
+    </Reference>
     <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -139,8 +176,21 @@
     <Reference Include="WebDriver.Support, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.4.16.2\lib\netstandard2.0\WebDriver.Support.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2.Product\Detay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.Product\Detay.designer.cs">
+      <DependentUpon>Detay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2.Product\Liste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.Product\Liste.designer.cs">
+      <DependentUpon>Liste.cs</DependentUpon>
+    </Compile>
     <Compile Include="2.Product\SatisListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +262,18 @@
     </Compile>
     <Compile Include="8.Spektrotek\Detay.designer.cs">
       <DependentUpon>Detay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8.Spektrotek\SatinAlma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8.Spektrotek\SatinAlma.Designer.cs">
+      <DependentUpon>SatinAlma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8.Spektrotek\SatinListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="8.Spektrotek\SatinListe.Designer.cs">
+      <DependentUpon>SatinListe.cs</DependentUpon>
     </Compile>
     <Compile Include="8.Spektrotek\TeklifIcerik.cs">
       <SubType>Form</SubType>
@@ -831,6 +893,12 @@
     <Compile Include="Raporlar\Newest\Preservatives.Designer.cs">
       <DependentUpon>Preservatives.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Newest\SDS\En\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\SDS\En\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Newest\Tr\UGD1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -848,6 +916,12 @@
     </Compile>
     <Compile Include="Raporlar\Newest\Tr\UGD3.Designer.cs">
       <DependentUpon>UGD3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Newest\Tr\UGD5.Designer.cs">
+      <DependentUpon>UGD5.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Newest\Tr\UGD4.cs">
       <SubType>Component</SubType>
@@ -1004,6 +1078,12 @@
     </Compile>
     <Compile Include="Raporlar\TeklifUni.designer.cs">
       <DependentUpon>TeklifUni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Test\CDermatoloji.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Test\CDermatoloji.designer.cs">
+      <DependentUpon>CDermatoloji.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Test\Dermatological.cs">
       <SubType>Component</SubType>
@@ -1589,6 +1669,12 @@
     <Compile Include="ÇöpKutusu\TedarikciTur.Designer.cs">
       <DependentUpon>TedarikciTur.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="2.Product\Detay.resx">
+      <DependentUpon>Detay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.Product\Liste.resx">
+      <DependentUpon>Liste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2.Product\SatisListesi.resx">
       <DependentUpon>SatisListesi.cs</DependentUpon>
     </EmbeddedResource>
@@ -1624,6 +1710,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="8.Spektrotek\Detay.resx">
       <DependentUpon>Detay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8.Spektrotek\SatinAlma.resx">
+      <DependentUpon>SatinAlma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8.Spektrotek\SatinListe.resx">
+      <DependentUpon>SatinListe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="8.Spektrotek\TeklifIcerik.resx">
       <DependentUpon>TeklifIcerik.cs</DependentUpon>
@@ -1938,6 +2030,9 @@
     <EmbeddedResource Include="Raporlar\Newest\Preservatives.resx">
       <DependentUpon>Preservatives.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\SDS\En\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Newest\Tr\UGD1.resx">
       <DependentUpon>UGD1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1946,6 +2041,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Newest\Tr\UGD3.resx">
       <DependentUpon>UGD3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Newest\Tr\UGD5.resx">
+      <DependentUpon>UGD5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Newest\Tr\UGD4.resx">
       <DependentUpon>UGD4.cs</DependentUpon>
@@ -2024,6 +2122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\TeklifUni.resx">
       <DependentUpon>TeklifUni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Test\CDermatoloji.resx">
+      <DependentUpon>CDermatoloji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Test\Dermatological.resx">
       <DependentUpon>Dermatological.cs</DependentUpon>
@@ -2422,6 +2523,17 @@
     <None Include="Resources\Resim2.png" />
     <None Include="Resources\RootB.png" />
     <None Include="Resources\RootB..jpg" />
+    <None Include="Resources\Cosmoliz-Logo-v1_slogansız.png" />
+    <None Include="Resources\Cosmoliz-Logo-v1_slogansız1.png" />
+    <None Include="Resources\Ana.png" />
+    <None Include="Resources\Dragan.png" />
+    <None Include="Resources\Emilja.png" />
+    <None Include="Resources\ozeco.png" />
+    <None Include="Resources\Emilja1.png" />
+    <None Include="Resources\diploma1.jpg" />
+    <None Include="Resources\sertifika1.jpg" />
+    <None Include="Resources\spektrotek.png" />
+    <None Include="Resources\Spektrotek-Web-Logo.png" />
     <Content Include="save-nature.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\31216_information_icon.ico" />

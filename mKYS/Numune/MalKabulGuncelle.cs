@@ -16,6 +16,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
+using System.Globalization;
 
 namespace mKYS
 {
@@ -26,7 +28,7 @@ namespace mKYS
 
         public static string raporID, raporno, devrak, fotoname, analizsayisi, id, o2, name, analiz, metod, kod, yenisim, ftpfullpath, yeniyol, rmikro, rmik, yeniID, parola, rmyol;
         public static int EvrakNo, maxevrak, maxrapor, firmaId, TurID, ykrID, mikrod, challenge, stabilite;
-        string rchallenge, rchal, rcyol, rstabilite, rsta, rsyol, mikro1, challenge1, stabilite1;
+        string rchallenge, rchal, rcyol, rstabilite, rsta, rsyol, mikro1, challenge1, stabilite1, analizdurum;
         public static string rDurumu = "Rapor Beklemede";
         public static string fDurumu = "Fatura Kesilmedi";
 
@@ -633,7 +635,7 @@ namespace mKYS
                     n.listele();
                 }
 
-                MessageBox.Show("Güncelleme Başarılı. Diğer sekmelerdeki güncellemeler için direk geçiş yapabilirsiniz. ");
+                MessageBox.Show("Güncelleme Başarılı. Diğer sekmelerdeki güncellemeler için direk geçiş yapabilirsiniz. " , "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
             catch (Exception ex)
@@ -833,7 +835,7 @@ namespace mKYS
                     "insert into NumuneX1 (RaporID, AnalizID, x3ID) " +
                     "values (@o1,@o2, @o3);" +
                     "COMMIT TRANSACTION", bgl.baglanti());
-                add2.Parameters.AddWithValue("@o1", ykrID);
+                add2.Parameters.AddWithValue("@o1", raporID);
                 add2.Parameters.AddWithValue("@o2", o2);
                 add2.Parameters.AddWithValue("@o3", gridLookUpEdit1.EditValue);
                 add2.ExecuteNonQuery();
@@ -855,7 +857,7 @@ namespace mKYS
                 SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
                     "delete from NumuneX1 where AnalizID = @o2 and RaporID = @o1;" +
                     "COMMIT TRANSACTION", bgl.baglanti());
-                add2.Parameters.AddWithValue("@o1", ykrID);
+                add2.Parameters.AddWithValue("@o1", raporID);
                 add2.Parameters.AddWithValue("@o2", o2);
                 add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
@@ -870,20 +872,41 @@ namespace mKYS
             try
             {
                 for (int i = 0; i < gridView3.RowCount; i++)
-                {                   
+                {
                     o2 = gridView3.GetRowCellValue(i, "xID").ToString();
+
+                    SqlCommand komut = new SqlCommand("select HizmetDurum from NumuneX1 where ID = '" + o2 + "'", bgl.baglanti());
+                    SqlDataReader dr = komut.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        analizdurum = dr["HizmetDurum"].ToString();
+
+                        if (analizdurum == "" || analizdurum == null)
+                        {
+                            o2 = gridView3.GetRowCellValue(i, "xID").ToString();
+                            SqlCommand add12 = new SqlCommand("BEGIN TRANSACTION " +
+                                "update NumuneX1 set HizmetDurum = @o3 where ID = @o4;" +
+                                "COMMIT TRANSACTION", bgl.baglanti());
+                            add12.Parameters.AddWithValue("@o3", "Yeni Analiz");
+                            add12.Parameters.AddWithValue("@o4", o2);
+                            add12.ExecuteNonQuery();
+                            bgl.baglanti().Close();
+                        }
+                    }
+                    bgl.baglanti().Close();
+
+                    
                     SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                        "update NumuneX1 set Termin = @o1, Durum = @o2, HizmetDurum = @o3 where ID = @o4;" +
+                        "update NumuneX1 set Termin = @o1, Durum = @o2 where ID = @o4;" +
                         "COMMIT TRANSACTION", bgl.baglanti());
                     add2.Parameters.AddWithValue("@o1", Convert.ToDateTime(gridView3.GetRowCellValue(i, "Termin").ToString()));
                     add2.Parameters.AddWithValue("@o2", "Aktif");
-                    add2.Parameters.AddWithValue("@o3", "Yeni Analiz");
                     add2.Parameters.AddWithValue("@o4", o2);
                     add2.ExecuteNonQuery();
                     bgl.baglanti().Close();
                 }
 
-                MessageBox.Show("Güncelleme Başarılı. Diğer sekmelerdeki güncellemeler için direk geçiş yapabilirsiniz. ");
+                MessageBox.Show("Güncelleme Başarılı. Diğer sekmelerdeki güncellemeler için direk geçiş yapabilirsiniz.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
 
             }
@@ -896,22 +919,77 @@ namespace mKYS
 
         private void btn_ac_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    OpenFileDialog file = new OpenFileDialog();
+            //    file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
+            //    if (file.ShowDialog() == DialogResult.OK)
+            //    {
+            //        ExcelDataSource excel = new ExcelDataSource();
+            //        excel.FileName = file.FileName;
+            //        ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Tablo", "A1:E250");
+            //        //excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
+            //        //excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B250" };
+            //        //excel.SourceOptions.SkipEmptyRows = true;
+            //        //excel.SourceOptions.UseFirstRowAsHeader = true;
+            //        //excel.Fill();
+            //        //gridControl3.DataSource = excel;
+
+            //        excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings)
+            //        {
+            //            SkipEmptyRows = true,
+            //            UseFirstRowAsHeader = true
+            //        };
+
+            //        excel.Fill();
+
+            //        DataTable fullData = (excel as IListSource).GetList() as DataTable;
+
+            //        if (fullData != null)
+            //        {
+            //            // A ve E sütunları: "INCI İsmi" ve "Üst Değer(%)"
+            //            DataTable filteredTable = fullData.DefaultView.ToTable(false, "INCI İsmi", "Üst Değer(%)");
+            //            gridControl3.DataSource = filteredTable;
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Excel verisi alınamadı.");
+            //        }
+
+            //        // Sadece A ve E sütunları: "INCI İsmi" ve "Üst Değer(%)"
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show("ooopppss");
+            //}
+
             OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
+            file.Filter = "Excel Dosyası |*.xlsx";
             if (file.ShowDialog() == DialogResult.OK)
             {
-                ExcelDataSource excel = new ExcelDataSource();
-                excel.FileName = file.FileName;
-                ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B250");
-                excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
-                excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B250" };
-                excel.SourceOptions.SkipEmptyRows = true;
-                excel.SourceOptions.UseFirstRowAsHeader = true;
-                excel.Fill();
-                gridControl3.DataSource = excel;
+                DataTable table = new DataTable();
+                table.Columns.Add("INCI İsmi");
+                table.Columns.Add("Üst Değer(%)");
+
+                using (var workbook = new XLWorkbook(file.FileName))
+                {
+                    var worksheet = workbook.Worksheet("Tablo");
+
+                    // Satırları dolaş (1. satır başlık olduğu için 2. satırdan başla)
+                    foreach (var row in worksheet.RangeUsed().RowsUsed().Skip(1))
+                    {
+                        var a = row.Cell(1).GetString(); // A sütunu (INCI İsmi)
+                        var e2 = row.Cell(5).GetValue<string>(); // E sütunu (Üst Değer(%))
+                        table.Rows.Add(a, e2);
+                    }
+                }
+
+                gridControl3.DataSource = table;
             }
         }
-
         private void btn_kontrol_Click(object sender, EventArgs e)
         {
             try
@@ -921,13 +999,12 @@ namespace mKYS
 
 
                     SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
-                    komutz.Parameters.AddWithValue("@o1", ykrID);
-                    komutz.Parameters.AddWithValue("@o2", gridView5.GetRowCellValue(ik, "INCI Name").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView5.GetRowCellValue(ik, "Miktar").ToString()));
+                    komutz.Parameters.AddWithValue("@o1", raporID);
+                    komutz.Parameters.AddWithValue("@o2", gridView5.GetRowCellValue(ik, "INCI İsmi").ToString());
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView5.GetRowCellValue(ik, "Üst Değer(%)").ToString(), CultureInfo.InvariantCulture));
                     komutz.Parameters.AddWithValue("@o4", 100);
                     komutz.ExecuteNonQuery();
                     bgl.baglanti().Close();
-
                 }
 
                 formullistele();
@@ -987,7 +1064,7 @@ namespace mKYS
                     }
 
 
-                    MessageBox.Show("Güncelleme Başarılı. Diğer sekmelerdeki güncellemeler için direk geçiş yapabilirsiniz. ");
+                    MessageBox.Show("Güncelleme Başarılı. Diğer sekmelerdeki güncellemeler için direk geçiş yapabilirsiniz. " , "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 }
 

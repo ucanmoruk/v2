@@ -121,24 +121,13 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "rUGDListe"."RaporNo", "rUGDListe"."ID",
-       "rUGDListe"."Tarih", "rUGDListe"."Versiyon",
-       "rUGDListe"."Urun", "rUGDListe"."A",
-       "rUGDFormül"."Miktar", "rpHammadde"."Noael" as "Noael_rp","rUGDFormül"."DaP", "rUGDFormül"."Noael",
-       "rCosing"."INCIName", "rCosing"."Cas",
-       "rCosing"."EC", "rCosing"."Functions" ,
-       "rCosing"."Regulation" , "rUGDYonetmelik"."Kategori"
-  from ((("rUGDListe" "rUGDListe"
-  left join "rUGDFormül" "rUGDFormül"
-       on ("rUGDFormül"."UrunID" = "rUGDListe"."ID"))
-  left join "rCosing" "rCosing"
-       on ("rCosing"."ID" = "rUGDFormül"."HammaddeID"))
-  left join "rpHammadde" "rpHammadde"
-       on ("rpHammadde"."cID" = "rCosing"."ID"))
-left join "rUGDYonetmelik" "rUGDYonetmelik"
-       on ("rCosing"."Regulation" = "rUGDYonetmelik"."Num")
-
-</value>
+    <value>select n.ID, n.RaporNo, n.Tarih, n.Versiyon, n.Urun, n.A, 
+	   f.Miktar, f.DaP, f.Noael, c.INCIName, c.Cas, c.EC, c.Functions, c.Regulation, y.Kategori
+	   from rUGDListe n 
+	   left join rUGDFormül f on n.ID = f.UrunID
+	   left join rCosing c on f.HammaddeID = c.ID
+	   left join rkHammadde h on c.ID = h.cID
+	   left join rUGDYonetmelik y on c.Regulation = y.Num</value>
   </data>
   <data name="customSqlQuery2.Sql" xml:space="preserve">
     <value>select "rUGDListe"."RaporNo", "rUGDListe"."ID",
@@ -162,7 +151,7 @@ left join "rUGDYonetmelik" "rUGDYonetmelik"
 </value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVcnVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkEiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTm9hZWxfcnAiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkRhUCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik5vYWVsIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iSU5DSU5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2FzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkVDIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZ1bmN0aW9ucyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWd1bGF0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkthdGVnb3JpIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlVydW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJOb2FlbF9ycCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iRGFQIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTm9hZWwiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRUMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRnVuY3Rpb25zIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlZ3VsYXRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS2F0ZWdvcmkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJVcnVuIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkEiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iRGFQIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTm9hZWwiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRUMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRnVuY3Rpb25zIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlZ3VsYXRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS2F0ZWdvcmkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnkiPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9IlZlcnNpeW9uIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJVcnVuIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJBIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJNaWt0YXIiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9Ik5vYWVsX3JwIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJEYVAiIFR5cGU9IlVua25vd24iIC8+PEZpZWxkIE5hbWU9Ik5vYWVsIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iQ2FzIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJFQyIgVHlwZT0iVW5rbm93biIgLz48RmllbGQgTmFtZT0iRnVuY3Rpb25zIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJSZWd1bGF0aW9uIiBUeXBlPSJVbmtub3duIiAvPjxGaWVsZCBOYW1lPSJLYXRlZ29yaSIgVHlwZT0iVW5rbm93biIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
   <data name="xrLabel3.Text" xml:space="preserve">
     <value>*C: Konsantrasyon. Üst değer üzerinden değerlendirmeye alınmıştır. 

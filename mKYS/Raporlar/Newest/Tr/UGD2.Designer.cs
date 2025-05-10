@@ -121,7 +121,6 @@
             this.xrTableCell53 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell54 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell55 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell57 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell58 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell59 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -414,7 +413,7 @@
             this.xrTableCell22.StylePriority.UseBorderColor = false;
             this.xrTableCell22.StylePriority.UseBorders = false;
             this.xrTableCell22.Text = "C (%)";
-            this.xrTableCell22.TextFormatString = "{0:#.00}";
+            this.xrTableCell22.TextFormatString = "{0:0.00}";
             this.xrTableCell22.Weight = 0.52238610757513593D;
             // 
             // xrTableCell23
@@ -452,7 +451,7 @@
             this.xrTableCell25.StylePriority.UseBorderColor = false;
             this.xrTableCell25.StylePriority.UseBorders = false;
             this.xrTableCell25.Text = "SED";
-            this.xrTableCell25.TextFormatString = "{0:#.00}";
+            this.xrTableCell25.TextFormatString = "{0:0.00}";
             this.xrTableCell25.Weight = 0.8459306275111288D;
             // 
             // xrTableCell26
@@ -460,7 +459,7 @@
             this.xrTableCell26.BorderColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell26.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Noael2]),\'-\' ,[Noael2] )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNullOrEmpty([Noael]),\'-\' ,[Noael] )")});
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBorderColor = false;
@@ -479,7 +478,7 @@
             this.xrTableCell27.StylePriority.UseBorderColor = false;
             this.xrTableCell27.StylePriority.UseBorders = false;
             this.xrTableCell27.Text = "MOS";
-            this.xrTableCell27.TextFormatString = "{0:#.00}";
+            this.xrTableCell27.TextFormatString = "{0:0.00}";
             this.xrTableCell27.Weight = 0.83052407769245384D;
             // 
             // xrTableCell28
@@ -743,7 +742,7 @@
             this.xrTable11,
             this.xrSubreport3});
             this.GroupFooter1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([Functions] like \'%Preservative%\' , true ,false )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Sum(Iif([Functions] Like \'%PRESERVAT%\', 1, Null)) > 0")});
             this.GroupFooter1.HeightF = 132.6506F;
             this.GroupFooter1.KeepTogether = true;
             this.GroupFooter1.Name = "GroupFooter1";
@@ -1164,7 +1163,7 @@
             this.xrTable8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable8.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow8});
-            this.xrTable8.SizeF = new System.Drawing.SizeF(1024F, 25F);
+            this.xrTable8.SizeF = new System.Drawing.SizeF(907.7258F, 25F);
             this.xrTable8.StylePriority.UseFont = false;
             this.xrTable8.StylePriority.UseTextAlignment = false;
             this.xrTable8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1176,7 +1175,6 @@
             this.xrTableCell53,
             this.xrTableCell54,
             this.xrTableCell55,
-            this.xrTableCell56,
             this.xrTableCell57,
             this.xrTableCell58,
             this.xrTableCell59,
@@ -1242,20 +1240,6 @@
             this.xrTableCell55.StylePriority.UseForeColor = false;
             this.xrTableCell55.Text = "Konsantrasyon (%)";
             this.xrTableCell55.Weight = 1.5392431911412619D;
-            // 
-            // xrTableCell56
-            // 
-            this.xrTableCell56.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell56.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell56.ForeColor = System.Drawing.Color.Black;
-            this.xrTableCell56.Multiline = true;
-            this.xrTableCell56.Name = "xrTableCell56";
-            this.xrTableCell56.StylePriority.UseBackColor = false;
-            this.xrTableCell56.StylePriority.UseBorders = false;
-            this.xrTableCell56.StylePriority.UseForeColor = false;
-            this.xrTableCell56.Text = "Bitmiş Üründeki Max Konsantrasyon (%)";
-            this.xrTableCell56.Weight = 1.4761377856511402D;
             // 
             // xrTableCell57
             // 
@@ -1463,7 +1447,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell53;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell54;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell55;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell56;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell57;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell58;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell59;

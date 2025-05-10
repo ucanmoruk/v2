@@ -35,7 +35,7 @@ namespace mROOT._8.Spektrotek
 
 
             DataTable dat2 = new DataTable();
-            SqlDataAdapter daa2 = new SqlDataAdapter("select ID, Ad from RootKullanici where BirimID = 1003 and Durum = N'Aktif'", bgl.baglanti());
+            SqlDataAdapter daa2 = new SqlDataAdapter("select ID, Ad from RootKullanici where (BirimID = 1003 or ID = 2) and Durum = N'Aktif'", bgl.baglanti());
             daa2.Fill(dat2);
 
             gridLookUpEdit2.Properties.DataSource = dat2;
@@ -74,8 +74,8 @@ namespace mROOT._8.Spektrotek
             if (talepID == null || talepID == "")
             {
                 t_talepno.Text = maxtalep.ToString();
+                combo_durum.Text = "Yeni Talep";
                 dateEdit1.EditValue = DateTime.Now;
-                c_durum.Text = "Yeni Talep";
             }
             else
             {
@@ -131,12 +131,12 @@ namespace mROOT._8.Spektrotek
 
         void kaydet()
         {
-            SqlCommand add = new SqlCommand(@"insert into STalepListe (TalepNo, Tarih, Onem, Durum, OlusturanID, GenelDurum, Kaynak, FirmaID, Mail, Kategori, Detay, Tur, AtananID)
-            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11, @a12, @a13) SET @ID = SCOPE_IDENTITY()", bgl.baglanti());
+            SqlCommand add = new SqlCommand(@"insert into STalepListe (TalepNo, Tarih, Onem, Durum, OlusturanID, GenelDurum, Kaynak, FirmaID, Mail, Kategori, Detay, Tur, AtananID, Distributor)
+            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14) SET @ID = SCOPE_IDENTITY()", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", t_talepno.Text);
             add.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
             add.Parameters.AddWithValue("@a3", c_onem.Text);
-            add.Parameters.AddWithValue("@a4", c_durum.Text);
+            add.Parameters.AddWithValue("@a4", "Yeni Talep");
             add.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
             add.Parameters.AddWithValue("@a6", "Aktif");
             add.Parameters.AddWithValue("@a7", t_kaynak.Text);      
@@ -153,6 +153,7 @@ namespace mROOT._8.Spektrotek
             {
                 add.Parameters.AddWithValue("@a13", gridLookUpEdit2.EditValue);
             }
+            add.Parameters.AddWithValue("@a14", c_dist.Text);
             add.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
             add.ExecuteNonQuery();
             talepID = add.Parameters["@ID"].Value.ToString();
@@ -164,12 +165,12 @@ namespace mROOT._8.Spektrotek
         void logkayit()
         {
             SqlCommand add = new SqlCommand(@"insert into STalepListeLog (TalepNo, Tarih, Onem, Durum, OlusturanID, GenelDurum, Kaynak, FirmaID, Mail, 
-            Kategori, Detay, logtur, logKisiID, logTarih, Tur, AtananID)
-            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14, @a15, @a16 )", bgl.baglanti());
+            Kategori, Detay, logtur, logKisiID, logTarih, Tur, AtananID, Distributor)
+            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14, @a15, @a16, @a17 )", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", t_talepno.Text);
             add.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
             add.Parameters.AddWithValue("@a3", c_onem.Text);
-            add.Parameters.AddWithValue("@a4", c_durum.Text);
+            add.Parameters.AddWithValue("@a4", "Yeni Talep");
             add.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
             add.Parameters.AddWithValue("@a6", "Aktif");
             add.Parameters.AddWithValue("@a7", t_kaynak.Text);
@@ -189,15 +190,16 @@ namespace mROOT._8.Spektrotek
             {
                 add.Parameters.AddWithValue("@a16", gridLookUpEdit2.EditValue);
             }
+            add.Parameters.AddWithValue("@a17", c_dist.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
 
         void guncelle()
         {
-            SqlCommand add = new SqlCommand("update STalepListe set Onem=@a1, Durum=@a2, Kaynak=@a3, FirmaID=@a4, Mail=@a5, Kategori=@a6, Detay=@a7, Tarih=@a8, Tur=@a9, AtananID=@a10  where ID = '" + talepID + "' ", bgl.baglanti());
+            SqlCommand add = new SqlCommand("update STalepListe set Onem=@a1, TalepNo=@a2, Kaynak=@a3, FirmaID=@a4, Mail=@a5, Kategori=@a6, Detay=@a7, Tarih=@a8, Tur=@a9, AtananID=@a10, Distributor=@a11  where ID = '" + talepID + "' ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", c_onem.Text);
-            add.Parameters.AddWithValue("@a2", c_durum.Text);
+            add.Parameters.AddWithValue("@a2", t_talepno.Text);
             add.Parameters.AddWithValue("@a3", t_kaynak.Text);
             add.Parameters.AddWithValue("@a4", gridLookUpEdit1.EditValue);
             add.Parameters.AddWithValue("@a5", t_mail.Text);
@@ -213,6 +215,7 @@ namespace mROOT._8.Spektrotek
             {
                 add.Parameters.AddWithValue("@a10", gridLookUpEdit2.EditValue);
             }
+            add.Parameters.AddWithValue("@a11", c_dist.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -222,12 +225,12 @@ namespace mROOT._8.Spektrotek
         void logguncelle()
         {
             SqlCommand add = new SqlCommand(@"insert into STalepListeLog (TalepNo, Tarih, Onem, Durum, OlusturanID, GenelDurum, Kaynak, FirmaID, Mail, 
-            Kategori, Detay, logtur, logKisiID, logTarih, Tur, AtananID)
-            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14, @a15, @a16)", bgl.baglanti());
+            Kategori, Detay, logtur, logKisiID, logTarih, Tur, AtananID, Distributor)
+            values (@a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11, @a12, @a13, @a14, @a15, @a16, @a17)", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", t_talepno.Text);
             add.Parameters.AddWithValue("@a2", dateEdit1.EditValue);
             add.Parameters.AddWithValue("@a3", c_onem.Text);
-            add.Parameters.AddWithValue("@a4", c_durum.Text);
+            add.Parameters.AddWithValue("@a4", "Yeni Talep");
             add.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
             add.Parameters.AddWithValue("@a6", "Aktif");
             add.Parameters.AddWithValue("@a7", t_kaynak.Text);
@@ -247,6 +250,7 @@ namespace mROOT._8.Spektrotek
             {
                 add.Parameters.AddWithValue("@a16", gridLookUpEdit2.EditValue);
             }
+            add.Parameters.AddWithValue("@a17", c_dist.Text);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
         }
@@ -282,7 +286,7 @@ namespace mROOT._8.Spektrotek
                 add.Parameters.AddWithValue("@a4", Anasayfa.kullanici);
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
-
+                talepguncelle();
                 notlistele();
             }
         }
@@ -294,7 +298,7 @@ namespace mROOT._8.Spektrotek
             while (drI.Read())
             {
                 c_onem.Text = drI["Onem"].ToString();
-                c_durum.Text = drI["Durum"].ToString();
+                combo_durum.Text = drI["Durum"].ToString();
                 t_talepno.Text = drI["TalepNo"].ToString();
                 dateEdit1.EditValue = Convert.ToDateTime(drI["Tarih"].ToString());
                 c_kategori.Text = drI["Kategori"].ToString();
@@ -304,6 +308,7 @@ namespace mROOT._8.Spektrotek
                 m_detay.Text = drI["Detay"].ToString();
                 combo_tur.Text = drI["Tur"].ToString();
                 gridLookUpEdit2.EditValue = drI["AtananID"].ToString();
+                c_dist.Text = drI["Distributor"].ToString();
             }
             bgl.baglanti().Close();
             notlistele();
@@ -325,5 +330,33 @@ namespace mROOT._8.Spektrotek
             GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
             gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
         }
+
+        void talepguncelle()
+        {
+            try
+            {
+                SqlCommand add2 = new SqlCommand("update STalepListe set Durum=@a1 where ID = '" + talepID + "' ", bgl.baglanti());
+                add2.Parameters.AddWithValue("@a1", combo_durum.Text);
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                SqlCommand add = new SqlCommand(@"insert into STalepListeLog (TalepNo, Durum, logtur, logKisiID, logTarih)
+                    values (@a1, @a2,  @a4, @a5, @a6)", bgl.baglanti());
+                add.Parameters.AddWithValue("@a1", talepID);
+                add.Parameters.AddWithValue("@a2", combo_durum.Text);
+                add.Parameters.AddWithValue("@a4", "Not Eklendi");
+                add.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
+                add.Parameters.AddWithValue("@a6", DateTime.Now);
+                add.ExecuteNonQuery();
+                bgl.baglanti().Close();
+
+                listele();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata 2:" + ex);
+            }
+        }
+
     }
 }

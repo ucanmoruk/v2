@@ -83,12 +83,22 @@ namespace mROOT._8.Spektrotek
             }
         }
 
+
+        Detay fr6;
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //güncelle
+            //Detay.detay = lID;
+            //Detay d = new Detay();
+            //d.Show();
+
             Detay.detay = lID;
-            Detay d = new Detay();
-            d.Show();
+            if (fr6 == null || fr6.IsDisposed)
+            {
+                fr6 = new Detay();
+                fr6.MdiParent = Application.OpenForms.OfType<Anasayfa>().FirstOrDefault();
+                fr6.Show();
+            }
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

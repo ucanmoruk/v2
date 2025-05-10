@@ -26,10 +26,18 @@ namespace mROOT._8.Spektrotek
         sqlbaglanti bgl = new sqlbaglanti();
         Liste n = (Liste)System.Windows.Forms.Application.OpenForms["Liste"];
 
+        public static double bfiyat = 0.0;
+        private double indirim = 0.0;
+        private double Euro = 0.0;
+        private double Dolar = 0.0;
+        private double GBP = 0.0;
+        private DataSet dsDovizKur;
+
         private void Detay_Load(object sender, EventArgs e)
         {
 
             basla();
+            DovizKur();
 
             if (detay == "" || detay == null)
             {
@@ -38,7 +46,7 @@ namespace mROOT._8.Spektrotek
                 txt_no.Text = Convert.ToString(maxevrak + 1);
                 dateEdit1.EditValue = DateTime.Now;
                 DateTime now = DateTime.Now;
-                dateEdit2.EditValue = now.AddDays(7);
+                dateEdit2.EditValue = now.AddDays(15);
                 btn_kaydet.Text = "Kaydet";
             }
             else
@@ -47,12 +55,30 @@ namespace mROOT._8.Spektrotek
                 tID = detay;
                 btn_iptal.Visible = true;
                 btn_kaydet.Text = "Güncelle";
+
             }
 
            
 
         }
 
+        private void DovizKur()
+        {
+            dsDovizKur = new DataSet();
+            dsDovizKur.ReadXml(@"https://www.tcmb.gov.tr/kurlar/today.xml");
+            DataRow dr = dsDovizKur.Tables[1].Rows[0];
+            Dolar = Convert.ToDouble(dr[6].ToString().Replace('.', ','));
+            lbl_dolar.Text = "$ - Günlük DOLAR Efektif Satış Kuru: " + Dolar.ToString();
+
+            dr = dsDovizKur.Tables[1].Rows[3];
+            Euro = Convert.ToDouble(dr[6].ToString().Replace('.', ','));
+            lbl_euro.Text = "€ - Günlük EURO Efektif Satış Kuru: " + Euro.ToString();
+
+            dr = dsDovizKur.Tables[1].Rows[4];
+            GBP = Convert.ToDouble(dr[6].ToString().Replace('.', ','));
+            lbl_gpt.Text = "£ - Günlük GBP Efektif Satış Kuru: " + GBP.ToString();
+
+        }
 
         void yeniteklif()
         {
@@ -88,6 +114,12 @@ namespace mROOT._8.Spektrotek
             gridLookUpEdit1.Properties.DisplayMember = "Ad";
             gridLookUpEdit1.Properties.ValueMember = "ID";
 
+            DataTable dt1 = new DataTable();
+            SqlDataAdapter da1 = new SqlDataAdapter("select ID, TalepNo, Kategori from STalepListe where GenelDurum = 'Aktif'  order by ID desc", bgl.baglanti());
+            da1.Fill(dt1);
+            gridLookUpEdit2.Properties.DataSource = dt1;
+            gridLookUpEdit2.Properties.DisplayMember = "TalepNo";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
 
         }
 
@@ -251,6 +283,8 @@ namespace mROOT._8.Spektrotek
             gridControl1.RepositoryItems.Add(riComboBox2);
             gridView1.Columns["KDV (%)"].ColumnEdit = riComboBox2;
 
+
+
         }
 
         void hizmetlistele()
@@ -277,14 +311,37 @@ namespace mROOT._8.Spektrotek
 
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
-            if (btn_kaydet.Text == "Kaydet")
+
+            if (gridLookUpEdit2.EditValue == null)
             {
-                kaydet();
+                MessageBox.Show("Lütfen talep numarasını seçiniz!", "Ooppss!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             else
             {
-                guncelle();
+                if (btn_kaydet.Text == "Kaydet")
+                {
+                    kaydet();
+
+                    SqlCommand komutaz = new SqlCommand(@"update STalepListe set Durum=@a1 where ID = '" + gridLookUpEdit2.EditValue + "' ", bgl.baglanti());
+                    komutaz.Parameters.AddWithValue("@a1", "Teklif İletildi");
+                    komutaz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+
+
+                }
+                else
+                {
+                    guncelle();
+
+                    SqlCommand komutaz = new SqlCommand(@"update STalepListe set Durum=@a1 where ID = '" + gridLookUpEdit2.EditValue + "' ", bgl.baglanti());
+                    komutaz.Parameters.AddWithValue("@a1", "Teklif Revize Edildi");
+                    komutaz.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+
             }
+
+         
         }
 
         void iptal()
@@ -292,7 +349,7 @@ namespace mROOT._8.Spektrotek
 
             DialogResult Secim = new DialogResult();
 
-            Secim = MessageBox.Show("Seçili faturayı iptal etmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            Secim = MessageBox.Show("Bu teklifi iptal etmek istediğinizden emin misiniz ?", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (Secim == DialogResult.Yes)
             {
                 SqlCommand komutz = new SqlCommand("update STeklifListe set  Durum=@o6 where ID = '" + tID + "'", bgl.baglanti());
@@ -357,8 +414,6 @@ namespace mROOT._8.Spektrotek
             hizmetlistele();
             tekliflistele();
         }
-
-
 
         void griddegisince()
         {
@@ -585,9 +640,232 @@ namespace mROOT._8.Spektrotek
             gridView1.Columns["Toplam (KDV Hariç)"].Summary.Clear();
             GridColumnSummaryItem item = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Toplam", "{0:N}");
             gridView1.Columns["Toplam (KDV Hariç)"].Summary.Add(item);
+
+            //// Summary değerlerini güncelle
+            //gridView1.UpdateTotalSummary();
+
+            //// İlgili sütunun toplamını al
+            //var summary = gridView1.Columns["Toplam (KDV Hariç)"].SummaryItem;
+            //object totalValue = gridView1.Columns["Toplam (KDV Hariç)"].SummaryItem.SummaryValue;
+            //t_total.Text = totalValue.ToString();
+
+            //var summary2 = gridView1.Columns["KDV (%)"].SummaryItem;
+            //object totalValue2 = gridView1.Columns["KDV (%)"].SummaryItem.SummaryValue;
+            //t_kdv.Text = totalValue.ToString();
+
+
+            ////var summary = gridView1.Columns["Toplam (KDV Hariç)"].SummaryItem;
+            ////object totalValue = summary?.SummaryValue ?? 0;
+            ////t_total.Text = Convert.ToDecimal(totalValue).ToString("N2");
+
+
+            ////var summary2 = gridView1.Columns["KDV (%)"].SummaryItem;
+            ////object totalValue2 = summary2?.SummaryValue ?? 0;
+            ////t_kdv.Text = Convert.ToDecimal(totalValue2).ToString("N2");
+
+            totalhesapla();
+
         }
 
         decimal gtotal, kdv,iskonto, glistetotal;
+
+        private void gridView1_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+         
+
+            
+        }
+
+        private void txt_iskonto_TextChanged(object sender, EventArgs e)
+        {
+            decimal iskontoOrani = 0;
+            if (!decimal.TryParse(txt_iskonto.Text, out iskontoOrani)) iskontoOrani = 0;
+
+            decimal kdvToplam = 0;
+            decimal netToplam = 0;
+
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                // Orijinal tutarı al
+                object orjTutarObj = gridView1.GetRowCellValue(i, "Toplam (KDV Hariç)");
+                object kdvYuzdeObj = gridView1.GetRowCellValue(i, "KDV (%)");
+
+                if (orjTutarObj != null && kdvYuzdeObj != null &&
+                    decimal.TryParse(orjTutarObj.ToString(), out decimal orjTutar) &&
+                    decimal.TryParse(kdvYuzdeObj.ToString(), out decimal kdvYuzde))
+                {
+                    // İskonto uygulanmış tutarı hesapla
+                    decimal iskontoTutari = (orjTutar * iskontoOrani) / 100;
+                    decimal indirimliTutar = orjTutar - iskontoTutari;
+
+                    // KDV hesapla
+                    decimal kdvTutari = (indirimliTutar * kdvYuzde) / 100;
+
+                    // Toplamlara ekle
+                    netToplam += indirimliTutar;
+                    kdvToplam += kdvTutari;
+
+                    // İstersen grid’e de yeni değerleri yazabilirsin (gösterim için)
+                    // Örneğin: gridView1.SetRowCellValue(i, "Yeni Tutar", indirimliTutar);
+                }
+            }
+
+            // Aratoplam ve genel toplam textbox'larına yaz
+            decimal aratoplam = (netToplam * iskontoOrani) / (100 - iskontoOrani); // İsteğe bağlı
+            decimal genelToplam = netToplam + kdvToplam;
+
+            // t_total.Text = netToplam.ToString("N2");
+            t_iskonto.Text = aratoplam.ToString("N2");
+            t_kdv.Text = kdvToplam.ToString("N2");
+            t_genel.Text = genelToplam.ToString("N2");
+       
+
+
+        }
+
+        private void t_iskonto_EditValueChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void gridLookUpEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            //talepno değişince
+
+            SqlCommand komut = new SqlCommand("SELECT TeklifNo FROM STeklifListe WHERE TalepNo = '"+gridLookUpEdit2.EditValue+"' ", bgl.baglanti());
+            SqlDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                string teklifno = dr["TeklifNo"].ToString();
+                if (teklifno =="" || teklifno == null)
+                {
+                    maxteklifno();
+                    txt_no.Text = Convert.ToString(maxevrak + 1);
+                }
+                else
+                {
+                    txt_no.Text = teklifno.ToString();
+                }
+            }
+            bgl.baglanti().Close();
+
+            SqlCommand komut2 = new SqlCommand("SELECT * FROM STalepListe WHERE ID = '" + gridLookUpEdit2.EditValue + "' ", bgl.baglanti());
+            SqlDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                gridLookUpEdit1.EditValue = dr2["FirmaID"].ToString();
+            }
+            bgl.baglanti().Close();
+
+
+
+        }
+
+        private void t_iskonto_TextChanged(object sender, EventArgs e)
+        {
+            decimal netToplam = 0;
+            decimal iskontoTutari = 0;
+            decimal kdvToplam = 0;
+
+            // Net toplamı oku
+            decimal.TryParse(t_total.Text, out netToplam);
+
+            // Girilen iskonto tutarını oku
+            decimal.TryParse(t_iskonto.Text, out iskontoTutari);
+
+            // Yeni net tutar = toplam - iskonto
+            decimal indirimliNet = netToplam - iskontoTutari;
+
+            // Grid'deki her satıra göre KDV hesapla
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                object satirTutarObj = gridView1.GetRowCellValue(i, "Toplam (KDV Hariç)");
+                object kdvYuzdeObj = gridView1.GetRowCellValue(i, "KDV (%)");
+
+                if (satirTutarObj != null && kdvYuzdeObj != null &&
+                    decimal.TryParse(satirTutarObj.ToString(), out decimal satirTutar) &&
+                    decimal.TryParse(kdvYuzdeObj.ToString(), out decimal kdvYuzde))
+                {
+
+                    // İlk önce toplamın sıfır olup olmadığını kontrol et
+                    if (netToplam == 0)
+                    {
+                        // Bölme yapılmamalı, oran 0 kabul edilsin veya işlem atlanabilir
+                        continue; // ya da oran = 0;
+                    }
+
+
+                    // Satırın toplam içindeki oranı
+                    decimal oran = satirTutar / netToplam;
+
+                    // Satıra düşen indirimli tutar
+                    decimal satirIndirimliTutar = satirTutar - (iskontoTutari * oran);
+
+                    // Yeni KDV hesapla
+                    decimal kdv = (satirIndirimliTutar * kdvYuzde) / 100;
+                    kdvToplam += kdv;
+                }
+            }
+
+            // Genel toplam = indirimli net + kdv
+            decimal genelToplam = indirimliNet + kdvToplam;
+
+            // Sonuçları textbox'lara yaz
+            t_kdv.Text = kdvToplam.ToString("N2");
+            t_genel.Text = genelToplam.ToString("N2");
+        }
+
+
+        void totalhesapla()
+        {
+            decimal toplam = 0;
+            decimal iskontoOrani = 0;
+            decimal kdv = 0;
+            decimal iskontoTutari = 0;
+            decimal genelToplam = 0;
+            decimal toplamNet = 0; //
+            decimal toplamKdv = 0; //
+
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                var netObj = gridView1.GetRowCellValue(i, "Toplam (KDV Hariç)");
+                var kdvObj = gridView1.GetRowCellValue(i, "KDV (%)");
+
+                if (decimal.TryParse(Convert.ToString(netObj), out decimal net))
+                    toplamNet += net;
+
+                if (decimal.TryParse(Convert.ToString(kdvObj), out decimal kdv1))
+                    toplamKdv += (net * kdv1) / 100;
+            }
+
+            t_total.Text = toplamNet.ToString("N2");
+            t_kdv.Text = toplamKdv.ToString("N2");
+
+            // Güvenli şekilde değerleri parse et
+            decimal.TryParse(t_total.Text, out toplam);
+            decimal.TryParse(txt_iskonto.Text, out iskontoOrani);
+            decimal.TryParse(t_kdv.Text, out kdv);
+
+            // İskonto tutarını hesapla
+            iskontoTutari = (toplam * iskontoOrani) / 100;
+            t_iskonto.Text = iskontoTutari.ToString("N2");
+
+            // Genel toplam = Toplam - İskonto + KDV
+            genelToplam = (toplam - iskontoTutari) + kdv;
+            t_genel.Text = genelToplam.ToString("N2");
+
+
+
+
+
+        }
+
+        private void gridLookUpEdit2_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
         void kaydet()
         {
 
@@ -650,20 +928,18 @@ namespace mROOT._8.Spektrotek
                     }
                     
                     SqlCommand komutaz = new SqlCommand(@"update STeklifListe set TeklifNo=@a1, FirmaID=@a2, Tarih=@a3, Gecerlilik=@a4,
-                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10 where ID = '" + tID + "' ", bgl.baglanti());
+                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10, TalepNo=@a11 where ID = '" + tID + "' ", bgl.baglanti());
                     komutaz.Parameters.AddWithValue("@a1", txt_no.Text);
                     komutaz.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a3", dateEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a4", dateEdit2.EditValue);
                     komutaz.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
                     komutaz.Parameters.AddWithValue("@a6", glistetotal);
-                    if (notes == "1")
-                        komutaz.Parameters.AddWithValue("@a7", memoEdit1.Text);
-                    else
-                        komutaz.Parameters.AddWithValue("@a7", DBNull.Value);
+                    komutaz.Parameters.AddWithValue("@a7", memoEdit1.Text);
                     komutaz.Parameters.AddWithValue("@a8", "Aktif");
                     komutaz.Parameters.AddWithValue("@a9", Convert.ToDecimal(txt_iskonto.Text));
                     komutaz.Parameters.AddWithValue("@a10", combo_para.Text);
+                    komutaz.Parameters.AddWithValue("@a11", gridLookUpEdit2.EditValue);
                     komutaz.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
@@ -680,7 +956,8 @@ namespace mROOT._8.Spektrotek
                     MessageBox.Show("Kaydetme işlemi başarılı. Teklifinizin yazdırılması için bekleyiniz.");
                     
 
-                    yazdir(); this.Close();
+                    yazdir();
+                    this.Close();
                 }
 
 
@@ -756,8 +1033,50 @@ namespace mROOT._8.Spektrotek
                 memoEdit1.Text = dr["TeklifNot"].ToString();
                 combo_para.Text = dr["ParaBirimi"].ToString();
                 txt_iskonto.Text = dr["Iskonto"].ToString();
+                gridLookUpEdit2.EditValue = dr["TalepNo"].ToString();
             }
             bgl.baglanti().Close();
+
+            decimal kdvToplam = 0;
+            decimal toplamNet = 0;
+            decimal aratoplam = 0;
+
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                object toplamObj = gridView1.GetRowCellValue(i, "Toplam (KDV Hariç)");
+                object kdvYuzdeObj = gridView1.GetRowCellValue(i, "KDV (%)");
+
+                if (toplamObj != null &&
+                    decimal.TryParse(toplamObj.ToString(), out decimal toplam2))
+                {
+                    toplamNet += toplam2;
+                }
+
+                if (toplamObj != null && kdvYuzdeObj != null &&
+                    decimal.TryParse(toplamObj.ToString(), out toplam2) &&
+                    decimal.TryParse(kdvYuzdeObj.ToString(), out decimal kdvYuzde))
+                {
+                    kdvToplam += (toplam2 * kdvYuzde) / 100;
+                }
+            }
+
+            t_total.Text = toplamNet.ToString("N2"); // Net tutarı
+            t_kdv.Text = kdvToplam.ToString("N2");     // KDV toplamı
+
+            if (decimal.TryParse(t_total.Text, out decimal toplam) &&
+             decimal.TryParse(txt_iskonto.Text, out decimal iskonto) &&
+             decimal.TryParse(t_kdv.Text, out decimal kdv))
+            {
+                aratoplam = (toplam * iskonto) / 100;
+                t_iskonto.Text = aratoplam.ToString("N2");
+                decimal geneltoplam = (toplam - aratoplam) + kdv;
+                t_genel.Text = geneltoplam.ToString("N2");
+            }
+            else
+            {
+                MessageBox.Show("Toplam veya İskonto değeri geçersiz!");
+            }
+
 
         }
 
@@ -856,20 +1175,18 @@ namespace mROOT._8.Spektrotek
                     }
 
                     SqlCommand komutaz = new SqlCommand(@"update STeklifListe set TeklifNo=@a1, FirmaID=@a2, Tarih=@a3, Gecerlilik=@a4,
-                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10 where ID = '" + tID + "' ", bgl.baglanti());
+                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10, TalepNo=@a11 where ID = '" + tID + "' ", bgl.baglanti());
                     komutaz.Parameters.AddWithValue("@a1", txt_no.Text);
                     komutaz.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a3", dateEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a4", dateEdit2.EditValue);
                     komutaz.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
                     komutaz.Parameters.AddWithValue("@a6", glistetotal);
-                    if (notes == "1")
-                        komutaz.Parameters.AddWithValue("@a7", memoEdit1.Text);
-                    else
-                        komutaz.Parameters.AddWithValue("@a7", DBNull.Value);
+                    komutaz.Parameters.AddWithValue("@a7", memoEdit1.Text);
                     komutaz.Parameters.AddWithValue("@a8", "Aktif");
                     komutaz.Parameters.AddWithValue("@a9", Convert.ToDecimal(txt_iskonto.Text));
                     komutaz.Parameters.AddWithValue("@a10", combo_para.Text);
+                    komutaz.Parameters.AddWithValue("@a11", gridLookUpEdit2.EditValue);
                     komutaz.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
@@ -884,9 +1201,17 @@ namespace mROOT._8.Spektrotek
                     }
 
                     MessageBox.Show("Güncelleme işlemi başarılı. Teklifinizin yazdırılması için bekleyiniz.");
-                    this.Close();
+                 
 
-                    yazdir();
+                    mKYS.Raporlar.TeklifMS.tID = detay;
+
+                    using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                    {
+                        frm.TeklifMS();
+                        frm.ShowDialog();
+                    }
+
+                    this.Close();
                 }
 
 

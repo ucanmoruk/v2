@@ -41,10 +41,9 @@ namespace mKYS
                 //SqlDataAdapter da2 = new SqlDataAdapter(@"select Mix, GenelAd, InciAd, CasNo, 
                 //EcNo, Fonksiyon, Yonetmelik, Noael2 as 'Noael', Fizikokimya, Toksikoloji, Kaynak, ID from rHammadde
                 //where Durum = N'Aktif' order by InciAd", bgl.baglanti());
-                SqlDataAdapter da2 = new SqlDataAdapter(@"select c.INCIName, SUBSTRING(Link,60,69) as 'CosIng ID', c.Cas, h.Noael, h.Toksikoloji, 
-                h.Referans, h.Other, c.ID from rpHammadde h 
-                left join rCosing c on h.CID = c.ID  
-                where h.Durum = 'Aktif'", bgl.baglanti());
+                SqlDataAdapter da2 = new SqlDataAdapter(@"select c.INCIName, SUBSTRING(Link,60,69) as 'CosIng ID', c.Cas, h.Noael2, 
+                h.Fizikokimya, h.Toksikoloji, h.Kaynak, h.EkBilgi, c.ID from rkHammadde h 
+                left join rCosing c on h.CID = c.ID  where h.Durum = 'Aktif'", bgl.baglanti());
                 da2.Fill(dt2);
                 gridControl1.DataSource = dt2;
             }

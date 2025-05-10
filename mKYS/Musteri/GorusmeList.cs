@@ -24,7 +24,7 @@ namespace mKYS.Musteri
         public void listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select c.Tarih, k.Ad + ' ' + k.Soyad as 'Plasiyer', c.Firma, c.FirmaAd as 'Firma Adı', c.Yetkili, c.Iletisim, c.Tur as 'Görüşme türü',
+            SqlDataAdapter da = new SqlDataAdapter(@"select c.Tarih, k.Ad + ' ' + k.Soyad as 'Plasiyer', c.Kategori, c.Firma, c.FirmaAd as 'Firma Adı', c.Yetkili, c.Iletisim, c.Adres, c.Bolge, c.Tur as 'Görüşme türü',
 	        c.Konu, c.Mesaj,c.Durumu, c.ID from CrmMusteri c 
 	        left join  RootKullanici k on c.PlasiyerID = k.ID where c.Durum = 'Aktif'
 	        order by c.Tarih desc", bgl.baglanti());
@@ -35,14 +35,17 @@ namespace mKYS.Musteri
 
             this.gridView3.Columns[0].Width = 70;
             this.gridView3.Columns[1].Width = 70;
-            this.gridView3.Columns[2].Width = 50;
-            this.gridView3.Columns[3].Width = 200;
-            this.gridView3.Columns[4].Width = 70;
+            this.gridView3.Columns[2].Width = 80;
+            this.gridView3.Columns[3].Width = 50;
+            this.gridView3.Columns[4].Width = 200;
             this.gridView3.Columns[5].Width = 70;
             this.gridView3.Columns[6].Width = 70;
-            this.gridView3.Columns[7].Width = 80;
-            this.gridView3.Columns[8].Width = 200;
-            this.gridView3.Columns[9].Width = 100;
+            this.gridView3.Columns[7].Width = 120;
+            this.gridView3.Columns[8].Width = 90;
+            this.gridView3.Columns[9].Width = 70;
+            this.gridView3.Columns[10].Width = 90;
+            this.gridView3.Columns[11].Width = 200;
+            this.gridView3.Columns[12].Width = 70;
 
             RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
             gridView3.Columns["Mesaj"].ColumnEdit = memo;

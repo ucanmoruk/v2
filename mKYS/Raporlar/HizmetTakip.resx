@@ -123,7 +123,7 @@
   <data name="customSqlQuery1.Sql" xml:space="preserve">
     <value>select "NKR"."ID", "NKR"."Numune_Adi", "NKR"."Tarih" as "Kabul",
        "NKR"."RaporNo", "RootTedarikci"."Ad" as "FirmaAd",
-       "NumuneX1"."Termin", "NumuneX1"."Yetkili",
+       "NumuneX1"."Termin", "NumuneX1"."Yetkili", "NumuneX1"."ID" as "xID", 
        "RootKullanici"."Ad" as "Kad",
        "RootKullanici"."Soyad" as "Ksoyad", "StokAnalizListesi"."Ad",
        "StokAnalizListesi"."Kod", "NKR"."Evrak_No"
@@ -138,6 +138,6 @@
        on ("StokAnalizListesi"."ID" = "NumuneX1"."AnalizID"))</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5LUiI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTnVtdW5lX0FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYWJ1bCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJGaXJtYUFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlcm1pbiIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLYWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS3NveWFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IktvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFdnJha19ObyIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9Ik5LUiI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTnVtdW5lX0FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYWJ1bCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJGaXJtYUFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlcm1pbiIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJ4SUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLYWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS3NveWFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IktvZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFdnJha19ObyIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
 </root>

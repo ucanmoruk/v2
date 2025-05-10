@@ -541,7 +541,6 @@
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2,
             this.xrTable3});
-            this.ReportFooter.Expanded = false;
             this.ReportFooter.HeightF = 183.7875F;
             this.ReportFooter.KeepTogether = true;
             this.ReportFooter.Name = "ReportFooter";
@@ -584,7 +583,7 @@
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseFont = false;
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
-            this.xrTableCell5.Text = "Sample Acceptance and Reporter\r\nAli Özdemir";
+            this.xrTableCell5.Text = "Sample Acceptance and Reporter\r\nAna Markovic";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell5.Weight = 2.0890560502726112D;
             // 
@@ -595,7 +594,7 @@
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
-            this.xrTableCell6.Text = "Laboratory Manager\r\nDr. Emiljia Goltsova";
+            this.xrTableCell6.Text = "Laboratory Manager\r\nDragan Petrovic";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell6.Weight = 2.22834285817457D;
             // 
@@ -736,8 +735,8 @@
             // calculatedField1
             // 
             this.calculatedField1.DataMember = "New";
-            this.calculatedField1.Expression = "FormatString(\'{0:d.MM.yyyy}\', [Tarih]) \n+\' / \'+\nFormatString(\'{0:d.MM.yyyy}\', [Te" +
-    "rmin])";
+            this.calculatedField1.Expression = "FormatString(\'{0:d.MM.yyyy}\', [Tarih]) \n+\' / \'+\nFormatString(\'{0:d.MM.yyyy}\', Tod" +
+    "ay())";
             this.calculatedField1.Name = "calculatedField1";
             // 
             // tNo

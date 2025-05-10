@@ -121,27 +121,18 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "rUGDYonetmelik"."Num", "rUGDYonetmelik"."INCI",
-       "rUGDYonetmelik"."UrunTipi",
-       "rUGDYonetmelik"."Maks",
-       "rUGDYonetmelik"."Diger",
-       "rUGDYonetmelik"."Etiket",
-       "rUGDFormül"."Miktar", "rUGDListe"."ID",
-       "rUGDListe"."RaporNo", "rUGDListe"."Tarih",
-       "rUGDListe"."Versiyon",
-       "rCosing"."Regulation", "rUGDYonetmelik"."Kategori"
-  from ((("rUGDListe" "rUGDListe"
-  left join "rUGDFormül" "rUGDFormül"
-       on ("rUGDFormül"."UrunID" = "rUGDListe"."ID"))
-  left join "rCosing" "rCosing"
-       on ("rCosing"."ID" = "rUGDFormül"."HammaddeID"))
-  left join "rUGDYonetmelik" "rUGDYonetmelik"
-       on ("rUGDYonetmelik"."Num" = "rCosing"."Regulation"))
-
-
-</value>
+    <value>select n.ID, n.RaporNo, n.Tarih, n.Versiyon, c.INCIName, 
+y.Num, y.INCI, c.INCIName, y.UrunTipi, y.Maks, y.Diger, y.Etiket, f.Miktar, c.Regulation, y.Kategori
+from rUGDListe n 
+left join rUGDFormül f on n.ID = f.UrunID
+left join rCosing c on f.HammaddeID = c.ID
+left join rUGDYonetmelik y  
+    on c.Regulation LIKE '% ' + y.Num + ' %'   -- Boşlukla sınırlandır
+    OR c.Regulation LIKE y.Num + ' %'          -- Başlangıçta eşleşme
+    OR c.Regulation LIKE '% ' + y.Num          -- Sonda eşleşme
+    OR c.Regulation = y.Num                    -- Tam eşleşme</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9Ik51bSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJTkNJIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlVydW5UaXBpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1ha3MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGlnZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRXRpa2V0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJSYXBvck5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJWZXJzaXlvbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlJlZ3VsYXRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS2F0ZWdvcmkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmFwb3JObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJOdW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSU5DSSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZV8xIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlVydW5UaXBpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1ha3MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGlnZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRXRpa2V0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1pa3RhciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUmVndWxhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXRlZ29yaSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

@@ -59,7 +59,7 @@ namespace mKYS.Analiz
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "Bg1$4xo2";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Logo" + "/" + yenisim;
                     yeniyol = "http://" + "www.massgrup.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -67,7 +67,7 @@ namespace mKYS.Analiz
                 }
             }
                        
-            SqlCommand add = new SqlCommand(" insert into RootUrunListesi (Kod, Ad, Ozellik, Fotograf, Durum, Marka, Kategori, Fiyat) values (@a1, @a2, @a3, @a4, @a5, @a6, @a7,@a8) ", bgl.baglanti());
+            SqlCommand add = new SqlCommand(" insert into RootUrunListesi (Kod, Ad, Ozellik, Fotograf, Durum, Marka, Kategori, Fiyat, Barkod, Seri, Hacim, TESF) values (@a1, @a2, @a3, @a4, @a5, @a6, @a7,@a8, @a9, @a10, @a11, @a12) ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             add.Parameters.AddWithValue("@a3", txt_ozelik.Text);
@@ -81,8 +81,15 @@ namespace mKYS.Analiz
             }
             add.Parameters.AddWithValue("@a5", "Aktif");          
             add.Parameters.AddWithValue("@a6", txt_marka.Text);          
-            add.Parameters.AddWithValue("@a7", txt_kategori.Text);          
+            add.Parameters.AddWithValue("@a7", c_kategori.Text);          
             add.Parameters.AddWithValue("@a8", Convert.ToDecimal(txt_fiyat.Text)); 
+            add.Parameters.AddWithValue("@a9", t_barkod.Text); 
+            add.Parameters.AddWithValue("@a10", t_seri.Text); 
+            add.Parameters.AddWithValue("@a11", t_hacim.Text); 
+            if(t_tesf.Text=="" || t_tesf.Text == null)
+                add.Parameters.AddWithValue("@a12", DBNull.Value);
+            else
+                add.Parameters.AddWithValue("@a12", Convert.ToDecimal(t_tesf.Text));
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
 
@@ -102,9 +109,13 @@ namespace mKYS.Analiz
                 txt_kod.Text = drI["Kod"].ToString();
                 txt_ozelik.Text = drI["Ozellik"].ToString();
                 txt_marka.Text = drI["Marka"].ToString();
-                txt_kategori.Text = drI["Kategori"].ToString();
+                c_kategori.Text = drI["Kategori"].ToString();
                 fotoname = drI["Fotograf"].ToString();
                 txt_fiyat.Text = drI["Fiyat"].ToString();
+                t_barkod.Text = drI["Barkod"].ToString();
+                t_seri.Text = drI["Seri"].ToString();
+                t_hacim.Text = drI["Hacim"].ToString(); 
+                t_tesf.Text = drI["TESF"].ToString();
 
             }
             bgl.baglanti().Close();
@@ -122,33 +133,47 @@ namespace mKYS.Analiz
                 using (var client = new WebClient())
                 {
                     string ftpUsername = "massgrup";
-                    string ftpPassword = "Bg1$4xo2";
+                    string ftpPassword = "FfU_Gw48@aseltk5";
                     ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Logo" + "/" + yenisim;
                     yeniyol = "http://" + "www.massgrup.com/mRoot/Logo" + "/" + yenisim;
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }
-                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Fotograf=@a4, Marka=@a5, Kategori = @a6, Fiyat=@a7 where ID = '" + kod + "' ", bgl.baglanti());
+                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Fotograf=@a4, Marka=@a5, Kategori = @a6, Fiyat=@a7, Barkod=@a8, Seri=@a9, Miktar=@a10, TESF =@a11 where ID = '" + kod + "' ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", txt_kod.Text);
                 add.Parameters.AddWithValue("@a2", txt_ad.Text);
                 add.Parameters.AddWithValue("@a3", txt_ozelik.Text);
                 add.Parameters.AddWithValue("@a4", yenisim);
                 add.Parameters.AddWithValue("@a5", txt_marka.Text);
-                add.Parameters.AddWithValue("@a6", txt_kategori.Text);
+                add.Parameters.AddWithValue("@a6", c_kategori.Text);
                 add.Parameters.AddWithValue("@a7", Convert.ToDecimal(txt_fiyat.Text));
+                add.Parameters.AddWithValue("@a8", t_barkod.Text);
+                add.Parameters.AddWithValue("@a9", t_seri.Text);
+                add.Parameters.AddWithValue("@a10", t_hacim.Text);
+                if (t_tesf.Text == "" || t_tesf.Text == null)
+                    add.Parameters.AddWithValue("@a11", DBNull.Value);
+                else
+                    add.Parameters.AddWithValue("@a11", Convert.ToDecimal(t_tesf.Text));
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
 
             }
             else
             {
-                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Marka=@a5, Kategori = @a6, Fiyat=@a7 where ID = '" + kod + "' ", bgl.baglanti());
+                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Marka=@a5, Kategori = @a6, Fiyat=@a7, Barkod=@a8, Seri=@a9, Miktar=@a10, TESF =@a11 where ID = '" + kod + "' ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", txt_kod.Text);
                 add.Parameters.AddWithValue("@a2", txt_ad.Text);
                 add.Parameters.AddWithValue("@a3", txt_ozelik.Text);
                 add.Parameters.AddWithValue("@a5", txt_marka.Text);
-                add.Parameters.AddWithValue("@a6", txt_kategori.Text);
+                add.Parameters.AddWithValue("@a6", c_kategori.Text);
                 add.Parameters.AddWithValue("@a7", Convert.ToDecimal(txt_fiyat.Text));
+                add.Parameters.AddWithValue("@a8", t_barkod.Text);
+                add.Parameters.AddWithValue("@a9", t_seri.Text);
+                add.Parameters.AddWithValue("@a10", t_hacim.Text);
+                if (t_tesf.Text == "" || t_tesf.Text == null)
+                    add.Parameters.AddWithValue("@a11", DBNull.Value);
+                else
+                    add.Parameters.AddWithValue("@a11", Convert.ToDecimal(t_tesf.Text));
                 add.ExecuteNonQuery();
                 bgl.baglanti().Close();
             }
@@ -194,13 +219,18 @@ namespace mKYS.Analiz
                     kontrol();
                     ekleme();
 
-                    txt_ad.Text = "";
-                    txt_kod.Text = "";
-                    txt_ozelik.Text = "";
-                    txt_kategori.Text = "";
-                    txt_marka.Text = "";
-                    txt_fiyat.Text = "";
+                    txt_ad.Text = null;
+                    txt_kod.Text = null;
+                    txt_ozelik.Text = null;
+                    t_barkod.Text = null;
+                    txt_marka.Text = null;
+                    t_hacim.Text = null;
+                    t_tesf.Text = null;
+                    txt_fiyat.Text = null;
+                    t_seri.Text = null;
+                    c_kategori.Text = null;
                     btn_logo.Enabled = true;
+                    t_tesf.Text = null;
                 }
             }
 
@@ -212,7 +242,7 @@ namespace mKYS.Analiz
             }
             else
             {
-               // m.listele();
+                m.listele();
             }
             
 
@@ -248,7 +278,7 @@ namespace mKYS.Analiz
             using (var client = new WebClient())
             {
                 string ftpUsername = "massgrup";
-                string ftpPassword = "Bg1$4xo2";
+                string ftpPassword = "FfU_Gw48@aseltk5";
                 ftpfullpath = "ftp://" + "www.massgrup.com/httpdocs/mRoot/Logo" + "/" + yenisim;
                 yeniyol = "https://" + "www.massgrup.com/mRoot/Logo" + "/" + yenisim;
                 client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -259,6 +289,11 @@ namespace mKYS.Analiz
             mKYS.Dokuman.DokumanGoruntule.path = yeniyol;
             mKYS.Dokuman.DokumanGoruntule dg = new mKYS.Dokuman.DokumanGoruntule();
             dg.Show();
+        }
+
+        private void txt_kod_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         string name;

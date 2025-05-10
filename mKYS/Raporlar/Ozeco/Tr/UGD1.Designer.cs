@@ -3821,8 +3821,9 @@
             this.xrLabel91.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel91.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel91.StylePriority.UseFont = false;
-            this.xrLabel91.Text = "Gazi Üniversitesi Fen Fakültesi // Kimya (Diploma no: 001322-Seri no: 04)\r\nBkz. E" +
-    "k – Güvenlilik Değerlendiricisinin Niteliği";
+            this.xrLabel91.Text = "Gazi Üniversitesi Mühendislik ve Mimarlık Fakültesi/Kimya Mühendisi (Diploma no: " +
+    "2267)\r\nEk\'e bakınız\r\n– Güvenlik Değerlendiricisinin Niteliği\r\n– Üniversite Diplo" +
+    "ması\r\n–Üniversite Diploma Eki";
             // 
             // xrLabel90
             // 
@@ -3844,9 +3845,7 @@
             this.xrLabel89.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel89.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel89.StylePriority.UseFont = false;
-            this.xrLabel89.Text = "Begüm PAZARLI\r\nOZECO GROUP ULUSLARARASI DANIŞMANLIK TİCARET LİMİTED ŞİRKETİ\r\nŞehi" +
-    "t Osman Avcı, Malazgirt 1071. Cad. No:49 A İç Kapı No:13, 06820 Eryaman/Ankara\r\n" +
-    "+90 (850) 308 33 51 / +90 533 450 69 05";
+            this.xrLabel89.Text = resources.GetString("xrLabel89.Text");
             // 
             // xrLabel88
             // 
@@ -3976,7 +3975,7 @@
             // 
             // xrPictureBox1
             // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.BegumPazarli, true);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.ozeco1, true);
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(272.1066F, 274.5241F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(163.5417F, 66.84644F);

@@ -121,10 +121,11 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "rUGDListe"."RaporNo", "rUGDListe"."Tarih","rUGDListe"."ID",
+    <value>
+select "rUGDListe"."RaporNo", "rUGDListe"."Tarih","rUGDListe"."ID",
        "rUGDListe"."Versiyon", "rCosing"."INCIName",
-       "rpHammadde"."Other",
-       "rpHammadde"."Toksikoloji", "rpHammadde"."Referans"
+       "rkHammadde"."Fizikokimya",
+       "rkHammadde"."Toksikoloji", "rkHammadde"."Kaynak"
   from ((("rUGDListe" "rUGDListe"
   left
   join "rUGDFormül" "rUGDFormül"
@@ -133,10 +134,11 @@
   join "rCosing" "rCosing"
        on ("rCosing"."ID" = "rUGDFormül"."HammaddeID"))
   left
-  join "rpHammadde" "rpHammadde"
-       on ("rpHammadde"."cID" = "rCosing"."ID"))</value>
+  join "rkHammadde" "rkHammadde"
+       on ("rkHammadde"."cID" = "rCosing"."ID"))
+</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJPdGhlciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUb2tzaWtvbG9qaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWZlcmFucyIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InJVR0RMaXN0ZSI+PEZpZWxkIE5hbWU9IlJhcG9yTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYXJpaCIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVyc2l5b24iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJJTkNJTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGaXppa29raW15YSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUb2tzaWtvbG9qaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJLYXluYWsiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>

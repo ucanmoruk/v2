@@ -296,7 +296,8 @@ namespace mKYS
             }
         }
 
-        HammaddeListesi m = (HammaddeListesi)System.Windows.Forms.Application.OpenForms["HammaddeListesi"];
+       
+        
 
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -325,15 +326,32 @@ namespace mKYS
 
             }
 
-          
-            if (Application.OpenForms["HammaddeListesi"] == null)
+            if (Anasayfa.birimID == 1006)
             {
+                if (Application.OpenForms["HammaddeListesi_rp"] == null)
+                {
 
+                }
+                else
+                {
+                    HammaddeListesi_rp rp = (HammaddeListesi_rp)System.Windows.Forms.Application.OpenForms["HammaddeListesi_rp"];
+                    rp.listele();
+                }
             }
             else
             {
-                m.listele();
+                if (Application.OpenForms["HammaddeListesi"] == null)
+                {
+
+                }
+                else
+                {
+                    HammaddeListesi m = (HammaddeListesi)System.Windows.Forms.Application.OpenForms["HammaddeListesi"];
+                    m.listele();
+                }
             }
+
+           
             this.Close();
         }
 

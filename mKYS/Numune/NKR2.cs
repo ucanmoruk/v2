@@ -997,6 +997,56 @@ namespace mKYS
             }
         }
 
+        private void barButtonItem34_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // C - Dermatologi
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = "DMT - " + name;
+
+                Raporlar.Test.CDermatoloji.raporno = raporno;
+                Raporlar.Test.CDermatoloji.tID = nkrno;
+                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                {
+                    frm.CDermo();
+                    frm.ShowDialog();
+                }
+
+
+            }
+        }
+
+        private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //ÜGDR Eng - Ozeco - CPNP
+
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            {
+                id = gridView3.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string nID = gridView3.GetRowCellValue(y, "aID").ToString();
+                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                frmPrint.name = "ÜGDR - " + name;
+
+                mKYS.Raporlar.Ozeco.Cpnp.UGD1.tID = nID;
+                mKYS.Raporlar.Ozeco.Cpnp.UGD2.tID = nID;
+                mKYS.Raporlar.Ozeco.Cpnp.UGD3.tID = nID;
+                mKYS.Raporlar.Ozeco.Cpnp.UGD4.tID = nID;
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.CPNP();
+                    frm.ShowDialog();
+                }
+
+            }
+        }
+
         private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Rapor eski format

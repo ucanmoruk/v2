@@ -471,9 +471,17 @@ namespace mKYS.Raporlar
                     rapor4.bilgi();
                     rapor4.CreateDocument();
                 }
+                Newest.Tr.UGD5 rapor5 = new Newest.Tr.UGD5();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p5 in rapor5.Parameters)
+                {
+                    p5.Visible = false;
+                    rapor5.bilgi();
+                    rapor5.CreateDocument();
+                }
                 rapor.Pages.AddRange(rapor2.Pages);
                 rapor.Pages.AddRange(rapor3.Pages);
                 rapor.Pages.AddRange(rapor4.Pages);
+                rapor.Pages.AddRange(rapor5.Pages);
 
             }
 
@@ -712,6 +720,20 @@ namespace mKYS.Raporlar
         {
 
             Raporlar.Test.Dermatological rapor = new Raporlar.Test.Dermatological();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
+        }
+
+        public void CDermo()
+        {
+
+            Raporlar.Test.CDermatoloji rapor = new Raporlar.Test.CDermatoloji();
             foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
             {
                 p.Visible = false;

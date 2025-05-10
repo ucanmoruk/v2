@@ -29,9 +29,11 @@ namespace mROOT._8.Spektrotek
         {
 
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select t.TalepNo, k.Ad as 'Not Bırakan', n.Tarih, n.Notlar, t.ID from STalepNot n 
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select t.TalepNo, f.Ad as 'Firma', t.Kategori, t.Kaynak as 'Konu',  k.Ad as 'Not Bırakan', n.Tarih, 
+            n.Notlar, t.Durum, t.ID from STalepNot n 
             left join STalepListe t on n.TalepID = t.ID 
             left join RootKullanici k on n.YetkiliID = k.ID
+			left join RootTedarikci f on t.FirmaID = f.ID
             order by t.TalepNo desc
             ", bgl.baglanti());
             da2.Fill(dt2);
@@ -44,9 +46,12 @@ namespace mROOT._8.Spektrotek
             gridView1.Columns["ID"].Visible = false;
 
             this.gridView1.Columns[0].Width = 50;
-            this.gridView1.Columns[1].Width = 70;
-            this.gridView1.Columns[2].Width = 60;
-            this.gridView1.Columns[3].Width = 250;
+            this.gridView1.Columns[1].Width = 120;
+            this.gridView1.Columns[2].Width = 65;
+            this.gridView1.Columns[3].Width = 65;
+            this.gridView1.Columns[4].Width = 55;
+            this.gridView1.Columns[5].Width = 55;
+            this.gridView1.Columns[6].Width = 300;
 
 
             gridView1.Columns["TalepNo"].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -144,7 +149,7 @@ namespace mROOT._8.Spektrotek
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //talepgüncele
+            //talepgüncele // YENİ NOT EKLE
             STalep.talepID = talepID;
             STalep s = new STalep();
             s.Show();

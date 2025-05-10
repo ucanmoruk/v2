@@ -83,6 +83,16 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap Ana {
+            get {
+                object obj = ResourceManager.GetObject("Ana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap BegumPazarli {
             get {
                 object obj = ResourceManager.GetObject("BegumPazarli", resourceCulture);
@@ -96,6 +106,26 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap Cosmoliz {
             get {
                 object obj = ResourceManager.GetObject("Cosmoliz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Cosmoliz_Logo_v1_slogansız {
+            get {
+                object obj = ResourceManager.GetObject("Cosmoliz-Logo-v1_slogansız", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Cosmoliz_Logo_v1_slogansız1 {
+            get {
+                object obj = ResourceManager.GetObject("Cosmoliz-Logo-v1_slogansız1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,46 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap diploma {
             get {
                 object obj = ResourceManager.GetObject("diploma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap diploma1 {
+            get {
+                object obj = ResourceManager.GetObject("diploma1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Dragan {
+            get {
+                object obj = ResourceManager.GetObject("Dragan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Emilja {
+            get {
+                object obj = ResourceManager.GetObject("Emilja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Emilja1 {
+            get {
+                object obj = ResourceManager.GetObject("Emilja1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +326,16 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap ozeco {
             get {
                 object obj = ResourceManager.GetObject("ozeco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap ozeco1 {
+            get {
+                object obj = ResourceManager.GetObject("ozeco1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +503,39 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap sertifika1 {
+            get {
+                object obj = ResourceManager.GetObject("sertifika1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap spektrotek {
+            get {
+                object obj = ResourceManager.GetObject("spektrotek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap Spektrotek_Logo {
             get {
                 object obj = ResourceManager.GetObject("Spektrotek Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Spektrotek_Web_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Spektrotek-Web-Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

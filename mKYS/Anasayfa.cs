@@ -131,10 +131,10 @@ namespace mKYS
             else
                 ribbonPageGroup18.Visible = true;
 
-            if (analiz == 0 || analiz.ToString() == null)
-                ribbonPageGroup20.Visible = false;
-            else
-                ribbonPageGroup20.Visible = true;
+            //if (analiz == 0 || analiz.ToString() == null)
+            //    ribbonPageGroup20.Visible = false;
+            //else
+            //    ribbonPageGroup20.Visible = true;
 
             if (cihaz == 0 || cihaz.ToString() == null)
                 ribbonPageGroup22.Visible = false;
@@ -222,17 +222,24 @@ namespace mKYS
                 dprice.Visibility = BarItemVisibility.Always;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }
-            else if (kullanici == "2004")
+            else if (kullanici == "3")
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
                 //  ribbonPage2.Visible = false;
                 ribbonPage3.Visible = false;
-                ribbonPage5.Visible = false;
-                ribbonPage10.Visible = false;
+                ribbonPage9.Visible = false;
+             
                 ribbonPage11.Visible = false;
                 dprice.Visibility = BarItemVisibility.Never;
-                Text = "SPEKTROTEK Yönetim Sistemi";
+                Text = "ROOT Hizmet Takip Sistemi";
+
+                ribbonPageGroup49.Visible = false;
+                ribbonPageGroup51.Visible = false;
+
+                barButtonItem108.Visibility = BarItemVisibility.Never;
+                barButtonItem109.Visibility = BarItemVisibility.Never;
+                barButtonItem124.Visibility = BarItemVisibility.Never;
             }
             else if (kullanici == "2006" || kullanici == "2007")
             {
@@ -1216,6 +1223,37 @@ namespace mKYS
                 top = new mROOT.Numune.TopluEkleme();
                 top.MdiParent = this;
                 top.Show();
+            }
+        }
+        
+        mROOT._8.Spektrotek.SatinListe sala;
+        private void barButtonItem125_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (sala == null || sala.IsDisposed)
+            {
+                sala = new mROOT._8.Spektrotek.SatinListe();
+                sala.MdiParent = this;
+                sala.Show();
+            }
+        }
+        mROOT._2.Product.TeklifDetay tede;
+        private void barButtonItem127_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tede == null || tede.IsDisposed)
+            {
+                tede = new mROOT._2.Product.TeklifDetay();
+                tede.MdiParent = this;
+                tede.Show();
+            }
+        }
+        mROOT._2.Product.TeklifListe kede;
+        private void barButtonItem126_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (kede == null || kede.IsDisposed)
+            {
+                kede = new mROOT._2.Product.TeklifListe();
+                kede.MdiParent = this;
+                kede.Show();
             }
         }
 

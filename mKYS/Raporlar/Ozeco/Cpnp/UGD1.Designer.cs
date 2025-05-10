@@ -178,9 +178,6 @@
             this.xrTableCell54 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader3 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrLabel83 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel84 = new DevExpress.XtraReports.UI.XRLabel();
@@ -266,7 +263,6 @@
             this.pID = new DevExpress.XtraReports.Parameters.Parameter();
             this.GroupHeader5 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPictureBox3 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.GroupHeader6 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrPictureBox2 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.GroupHeader7 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrLabel72 = new DevExpress.XtraReports.UI.XRLabel();
@@ -782,7 +778,7 @@
             this.xrLabel11});
             this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 958.7001F;
-            this.GroupHeader1.Level = 10;
+            this.GroupHeader1.Level = 9;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
             // xrPageBreak2
@@ -1736,9 +1732,8 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
-            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 571.3661F;
-            this.GroupHeader2.Level = 6;
+            this.GroupHeader2.Level = 5;
             this.GroupHeader2.Name = "GroupHeader2";
             // 
             // xrLabel78
@@ -2047,44 +2042,6 @@
             this.xrLabel24.StylePriority.UseFont = false;
             this.xrLabel24.Text = resources.GetString("xrLabel24.Text");
             // 
-            // xrLabel29
-            // 
-            this.xrLabel29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[ChallengeNotEn]")});
-            this.xrLabel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.xrLabel29.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(44.79097F, 68.87499F);
-            this.xrLabel29.Multiline = true;
-            this.xrLabel29.Name = "xrLabel29";
-            this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel29.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel29.StylePriority.UseFont = false;
-            this.xrLabel29.StylePriority.UseForeColor = false;
-            // 
-            // xrLabel28
-            // 
-            this.xrLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.xrLabel28.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(44.79103F, 35.12506F);
-            this.xrLabel28.Multiline = true;
-            this.xrLabel28.Name = "xrLabel28";
-            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel28.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel28.StylePriority.UseFont = false;
-            this.xrLabel28.StylePriority.UseForeColor = false;
-            this.xrLabel28.Text = resources.GetString("xrLabel28.Text");
-            // 
-            // xrLabel27
-            // 
-            this.xrLabel27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(44.79122F, 12.12505F);
-            this.xrLabel27.Multiline = true;
-            this.xrLabel27.Name = "xrLabel27";
-            this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel27.SizeF = new System.Drawing.SizeF(698.2081F, 23F);
-            this.xrLabel27.StylePriority.UseFont = false;
-            this.xrLabel27.Text = "Screening (Challenge) Test; ISO 11930";
-            // 
             // GroupHeader3
             // 
             this.GroupHeader3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -2106,7 +2063,6 @@
             this.xrLabel32,
             this.xrLabel30,
             this.xrLabel31});
-            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 932.5254F;
             this.GroupHeader3.Level = 3;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -3098,12 +3054,11 @@
             // 
             this.GroupHeader5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox3});
-            this.GroupHeader5.Expanded = false;
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false, \nIif(IsNullOrEmpty(?pMikro),false" +
                     " ,true ))")});
             this.GroupHeader5.HeightF = 272.3751F;
-            this.GroupHeader5.Level = 5;
+            this.GroupHeader5.Level = 4;
             this.GroupHeader5.Name = "GroupHeader5";
             // 
             // xrPictureBox3
@@ -3116,20 +3071,6 @@
             this.xrPictureBox3.Name = "xrPictureBox3";
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(698.2072F, 272.3751F);
             this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
-            // 
-            // GroupHeader6
-            // 
-            this.GroupHeader6.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel29,
-            this.xrLabel27,
-            this.xrLabel28});
-            this.GroupHeader6.Expanded = false;
-            this.GroupHeader6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\',false,true)")});
-            this.GroupHeader6.HeightF = 99.83355F;
-            this.GroupHeader6.Level = 4;
-            this.GroupHeader6.Name = "GroupHeader6";
-            this.GroupHeader6.Visible = false;
             // 
             // xrPictureBox2
             // 
@@ -3150,7 +3091,7 @@
             this.GroupHeader7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif(IsNullOrEmpty([rUGDListerUGDDetay].[SResim]),\nfalse,true )")});
             this.GroupHeader7.HeightF = 316.4497F;
-            this.GroupHeader7.Level = 9;
+            this.GroupHeader7.Level = 8;
             this.GroupHeader7.Name = "GroupHeader7";
             // 
             // xrLabel72
@@ -3202,7 +3143,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\', false, Iif(IsNullOrEmpty(?pChalleng" +
                     "e),false ,true ))")});
             this.GroupHeader8.HeightF = 293.2919F;
-            this.GroupHeader8.Level = 7;
+            this.GroupHeader8.Level = 6;
             this.GroupHeader8.Name = "GroupHeader8";
             // 
             // calculatedField2
@@ -3218,7 +3159,7 @@
             this.xrLabel70});
             this.GroupHeader9.Expanded = false;
             this.GroupHeader9.HeightF = 273.8333F;
-            this.GroupHeader9.Level = 11;
+            this.GroupHeader9.Level = 10;
             this.GroupHeader9.Name = "GroupHeader9";
             this.GroupHeader9.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             // 
@@ -3254,7 +3195,7 @@
             this.xrLabel74});
             this.GroupHeader10.Expanded = false;
             this.GroupHeader10.HeightF = 140.8085F;
-            this.GroupHeader10.Level = 8;
+            this.GroupHeader10.Level = 7;
             this.GroupHeader10.Name = "GroupHeader10";
             // 
             // xrLabel76
@@ -3320,7 +3261,7 @@
             this.xrLabel88,
             this.xrLabel89,
             this.xrLabel90});
-            this.GroupHeader11.HeightF = 13306F;
+            this.GroupHeader11.HeightF = 464.8397F;
             this.GroupHeader11.Name = "GroupHeader11";
             // 
             // xrLabel91
@@ -3394,7 +3335,7 @@
             // 
             // xrPictureBox1
             // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.BegumPazarli, true);
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::mROOT.Properties.Resources.ozeco1, true);
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(275.1071F, 377.2564F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(163.5417F, 66.84644F);
@@ -3483,8 +3424,9 @@
             this.xrLabel60.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel60.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel60.StylePriority.UseFont = false;
-            this.xrLabel60.Text = "Gazi University Science Faculty // Chemistry (Diploma no: 001322-Serial no: 04)\r\n" +
-    "See Annex – Qualification of Safety Assessor";
+            this.xrLabel60.Text = "Gazi University Faculty Of Engineering And Architecture/ Chemical Engineer (Diplo" +
+    "ma no: 2267)\r\nSee Annex \r\n– Qualification of Safety Assessor\r\n– University Diplo" +
+    "ma\r\n–University Diploma Supplement";
             // 
             // xrLabel88
             // 
@@ -3843,7 +3785,7 @@
             this.xrLabel49.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel49.SizeF = new System.Drawing.SizeF(687.2498F, 23F);
             this.xrLabel49.StylePriority.UseFont = false;
-            this.xrLabel49.Text = "No undesirable effects or serious undesirable effects have been reported.";
+            this.xrLabel49.Text = "No information regarding side effects was received from the supplier.";
             // 
             // UGD1
             // 
@@ -3857,7 +3799,6 @@
             this.GroupHeader3,
             this.GroupHeader4,
             this.GroupHeader5,
-            this.GroupHeader6,
             this.GroupHeader7,
             this.GroupHeader8,
             this.GroupHeader9,
@@ -4015,9 +3956,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel12;
         private DevExpress.XtraReports.UI.XRLabel xrLabel11;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader2;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel29;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel28;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel27;
         private DevExpress.XtraReports.UI.XRLabel xrLabel26;
         private DevExpress.XtraReports.UI.XRLabel xrLabel25;
         private DevExpress.XtraReports.UI.XRTable xrTable7;
@@ -4111,7 +4049,6 @@
         private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.Parameters.Parameter pID;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader5;
-        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader6;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox2;
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox3;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader7;

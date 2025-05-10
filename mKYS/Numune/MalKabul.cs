@@ -1,4 +1,5 @@
-﻿using DevExpress.DataAccess.Excel;
+﻿using ClosedXML.Excel;
+using DevExpress.DataAccess.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using System;
@@ -10,6 +11,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -841,22 +843,63 @@ namespace mKYS
 
         private void btn_ac_Click(object sender, EventArgs e)
         {
+            //OpenFileDialog file = new OpenFileDialog();
+            //file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
+            //if (file.ShowDialog() == DialogResult.OK)
+            //{
+            //    ExcelDataSource excel = new ExcelDataSource();
+            //    excel.FileName = file.FileName;
+            //    ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:E250");
+            //    //excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
+            //    //excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:E250" };
+            //    //excel.SourceOptions.SkipEmptyRows = true;
+            //    //excel.SourceOptions.UseFirstRowAsHeader = true;
+            //    //excel.Fill();
+            //    //gridControl3.DataSource = excel;
+
+            //    excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings)
+            //    {
+            //        SkipEmptyRows = true,
+            //        UseFirstRowAsHeader = true
+            //    };
+
+            //    excel.Fill();
+
+            //    DataTable fullData = (excel as IListSource).GetList() as DataTable;
+
+            //    // Sadece A ve E sütunları: "INCI İsmi" ve "Üst Değer(%)"
+            //    DataTable filteredTable = fullData.DefaultView.ToTable(false, "INCI İsmi", "Üst Değer(%)");
+
+            //    gridControl3.DataSource = filteredTable;
+
+
+            //}
+
             OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
+            file.Filter = "Excel Dosyası |*.xlsx";
             if (file.ShowDialog() == DialogResult.OK)
             {
-                ExcelDataSource excel = new ExcelDataSource();
-                excel.FileName = file.FileName;
-                ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B250");
-                excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
-                excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B250" };
-                excel.SourceOptions.SkipEmptyRows = true;
-                excel.SourceOptions.UseFirstRowAsHeader = true;
-                excel.Fill();
-                gridControl3.DataSource = excel;
+                DataTable table = new DataTable();
+                table.Columns.Add("INCI İsmi");
+                table.Columns.Add("Üst Değer(%)");
+
+                using (var workbook = new XLWorkbook(file.FileName))
+                {
+                    var worksheet = workbook.Worksheet("Tablo");
+
+                    // Satırları dolaş (1. satır başlık olduğu için 2. satırdan başla)
+                    foreach (var row in worksheet.RangeUsed().RowsUsed().Skip(1))
+                    {
+                        var a = row.Cell(1).GetString(); // A sütunu (INCI İsmi)
+                        var e2 = row.Cell(5).GetValue<string>(); // E sütunu (Üst Değer(%))
+                        table.Rows.Add(a, e2);
+                    }
+                }
+
+                gridControl3.DataSource = table;
+
             }
         }
-
         private void btn_kontrol_Click(object sender, EventArgs e)
         {
             try
@@ -867,8 +910,8 @@ namespace mKYS
 
                     SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
                     komutz.Parameters.AddWithValue("@o1", ykrID);
-                    komutz.Parameters.AddWithValue("@o2", gridView5.GetRowCellValue(ik, "INCI Name").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView5.GetRowCellValue(ik, "Miktar").ToString()));
+                    komutz.Parameters.AddWithValue("@o2", gridView5.GetRowCellValue(ik, "INCI İsmi").ToString());
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView5.GetRowCellValue(ik, "Miktar").ToString(), CultureInfo.InvariantCulture));
                     komutz.Parameters.AddWithValue("@o4", 100);
                     komutz.ExecuteNonQuery();
                     bgl.baglanti().Close();
@@ -896,7 +939,7 @@ namespace mKYS
                 SqlCommand komutz = new SqlCommand("delete from rUGDFormül where UrunID = '" + ykrID + "' ", bgl.baglanti());
                 komutz.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                MessageBox.Show("Silme işlemi başarılı, yeni formül ekleyebilirsiniz!", "Başarılı");
+                MessageBox.Show("Silme işlemi başarılı, yeni formül ekleyebilirsiniz!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 formullistele();
             }
         }

@@ -26,11 +26,12 @@ namespace mKYS.Analiz
             DataTable dt2 = new DataTable();
             //SqlDataAdapter da2 = new SqlDataAdapter("select l.ID, f.Birim ,l.Kod, l.Ad as 'Analiz Adı', d.Kod + ' ' + d.Ad as 'Metot Kaynağı', l.Matriks, l.Akreditasyon from StokAnalizListesi l " +
             //    "left join StokFirmaBirim f on l.Birim = f.ID left join StokDKDListe d on l.Metot = d.ID where l.Durumu = 'Aktif' order by l.Kod ", bgl.baglanti());
-            SqlDataAdapter da2 = new SqlDataAdapter(@"select ID, Kategori, Kod as 'Ürün Kodu', Marka, Ad as 'Ürün Adı', Ozellik as 'Ürün Özellikleri', 
-CONVERT(nvarchar,REPLACE(Miktar,',',''))+' Adet' as 'Stok Miktarı', CONVERT(nvarchar,REPLACE(Fiyat,',',''))+' TL' as 'Fiyat' 
-from RootUrunListesi
-where Durum = 'Aktif' order by Kod
-", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter(@"select Kategori, Barkod, Kod as 'Ürün Kodu', Marka, Seri, Ad as 'Ürün Adı', Hacim,  Ozellik as 'Ürün Özellikleri', 
+            CONVERT(nvarchar,REPLACE(Miktar,',',''))+' Adet' as 'Stok Miktarı', CONVERT(nvarchar,REPLACE(Fiyat,',',''))+' TL' as 'Fiyat', 
+			CONVERT(nvarchar,REPLACE(TESF,',',''))+' TL' as 'TESF' , ID
+            from RootUrunListesi
+            where Durum = 'Aktif' order by Kod
+            ", bgl.baglanti());
 
             da2.Fill(dt2);
             gridControl1.DataSource = dt2;
@@ -68,13 +69,17 @@ where Durum = 'Aktif' order by Kod
             listele();
             // yetkibul();
 
+            this.gridView1.Columns[0].Width = 75;
             this.gridView1.Columns[1].Width = 75;
             this.gridView1.Columns[2].Width = 75;
             this.gridView1.Columns[3].Width = 75;
-            this.gridView1.Columns[4].Width = 150;
+            this.gridView1.Columns[4].Width = 75;
             this.gridView1.Columns[5].Width = 150;
-            this.gridView1.Columns[6].Width = 75;
-            this.gridView1.Columns[7].Width = 75;
+            this.gridView1.Columns[6].Width = 50;
+            this.gridView1.Columns[7].Width = 125;
+            this.gridView1.Columns[8].Width = 75;
+            this.gridView1.Columns[9].Width = 75;
+            this.gridView1.Columns[10].Width = 75;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
