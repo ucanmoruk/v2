@@ -24,7 +24,7 @@ namespace mROOT._2.Product
         }
 
         sqlbaglanti bgl = new sqlbaglanti();
-        TeklifListe n = (TeklifListe)System.Windows.Forms.Application.OpenForms["Liste"];
+        TeklifListe n = (TeklifListe)System.Windows.Forms.Application.OpenForms["TeklifListe"];
 
         public static double bfiyat = 0.0;
         private double indirim = 0.0;
@@ -87,7 +87,7 @@ namespace mROOT._2.Product
              "COMMIT TRANSACTION", bgl.baglanti());
             add2.Parameters.AddWithValue("@o2", DateTime.Now);
             add2.Parameters.AddWithValue("@o3", "Pasif");
-            add2.Parameters.AddWithValue("@o4", "Yeni Teklif");
+            add2.Parameters.AddWithValue("@o4", "Yeni Sipariş");
             add2.Parameters.Add("@ID", SqlDbType.Int).Direction = ParameterDirection.Output;
             add2.ExecuteNonQuery();
             tID = add2.Parameters["@ID"].Value.ToString();
@@ -97,7 +97,7 @@ namespace mROOT._2.Product
         void basla()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select Kategori, Kod, Marka, Seri+' '+Ad as 'Ad', Hacim, Fiyat, ID from RootUrunListesi where Durum = N'Aktif' order by Ad asc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select Kategori, Kod, Marka, Seri+' '+Ad as 'Ad', Hacim, Fiyat, ID from RootUrunListesi where Durum = N'Aktif' order by Kategori asc", bgl.baglanti());
             da.Fill(dt);
             gridControl2.DataSource = dt;
             gridView2.Columns["ID"].Visible = false;
@@ -109,11 +109,18 @@ namespace mROOT._2.Product
             this.gridView2.Columns[5].Width = 55;
 
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Ad from RootTedarikci where Durum = 'Aktif' and Kimin = 'Spektrotek' order by Ad", bgl.baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select ID, Ad from RootTedarikci where Durum = 'Aktif' order by Ad", bgl.baglanti());
             da2.Fill(dt2);
             gridLookUpEdit1.Properties.DataSource = dt2;
             gridLookUpEdit1.Properties.DisplayMember = "Ad";
             gridLookUpEdit1.Properties.ValueMember = "ID";
+
+            DataTable dt12 = new DataTable();
+            SqlDataAdapter da12 = new SqlDataAdapter("Select ID, Ad From RootKullanici where Durum= N'Aktif'", bgl.baglanti());
+            da12.Fill(dt12);
+            gridLookUpEdit2.Properties.DataSource = dt12;
+            gridLookUpEdit2.Properties.DisplayMember = "Ad";
+            gridLookUpEdit2.Properties.ValueMember = "ID";
 
 
         }
@@ -210,7 +217,7 @@ namespace mROOT._2.Product
                 bgl.baglanti().Close();
             }
 
-            hizmetlistele();
+           // hizmetlistele();
             tekliflistele();
 
         }
@@ -243,18 +250,20 @@ namespace mROOT._2.Product
             }
 
             tekliflistele();
-            hizmetlistele();
+           // hizmetlistele();
         }
 
         void tekliflistele()
         {
 
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select h.Kod, CONCAT(h.Marka,' ',h.Ad) as 'Açıklama', d.Miktar as 'Adet', 
+            SqlDataAdapter da = new SqlDataAdapter(@"select h.Kod, CONCAT(h.Marka, CASE 
+            WHEN h.Seri IS NOT NULL AND h.Seri <> '' THEN CONCAT(' ', h.Seri)
+            ELSE '' END, ' ',h.Ad, ' - ',h.Hacim) as 'Açıklama', d.Miktar as 'Adet', 
             d.Fiyat as 'BirimFiyat', d.KDV as 'KDV (%)', d.Tutar as 'Toplam (KDV Hariç)', d.ID as 'detayID', h.ID as 'NID'
             from rTeklifDetay d
             left join RootUrunListesi h on d.UrunID = h.ID
-            where d.TeklifID = '" + tID + "'", bgl.baglanti());
+            where d.TeklifID = '" + tID + "' order by h.Kategori", bgl.baglanti());
             // da.SelectCommand.Parameters.AddWithValue("@a1", "0");
             da.Fill(dt);
             gridControl1.DataSource = dt;
@@ -262,7 +271,7 @@ namespace mROOT._2.Product
             gridView1.Columns["NID"].Visible = false;
 
             this.gridView1.Columns[0].Width = 50;
-            this.gridView1.Columns[1].Width = 120;
+            this.gridView1.Columns[1].Width = 220;
             this.gridView1.Columns[2].Width = 50;
             this.gridView1.Columns[3].Width = 50;
             this.gridView1.Columns[4].Width = 50;
@@ -289,7 +298,7 @@ namespace mROOT._2.Product
         void hizmetlistele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(@"select Kategori, Kod, Marka, Seri+' '+Ad as 'Ad', Hacim, Fiyat, ID from RootUrunListesi where Durum = N'Aktif' order by Ad asc", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter(@"select Kategori, Kod, Marka, Seri+' '+Ad as 'Ad', Hacim, Fiyat, ID from RootUrunListesi where Durum = N'Aktif' order by Kategori asc", bgl.baglanti());
             da.Fill(dt);
             gridControl2.DataSource = dt;
             gridView2.Columns["ID"].Visible = false;
@@ -357,22 +366,23 @@ namespace mROOT._2.Product
 
         private void gridView2_DoubleClick(object sender, EventArgs e)
         {
+            ekle();
 
-            DataRow dr = gridView2.GetDataRow(gridView2.FocusedRowHandle);
-            id = dr["ID"].ToString();
+            //DataRow dr = gridView2.GetDataRow(gridView2.FocusedRowHandle);
+            //id = dr["ID"].ToString();
 
-            SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
-                "insert into rTeklifDetay (UrunID, Durum, TeklifID) " +
-                "values (@o1,@o2,@o3);" +
-                "COMMIT TRANSACTION", bgl.baglanti());
-            add2.Parameters.AddWithValue("@o1", id);
-            add2.Parameters.AddWithValue("@o2", "Pasif");
-            add2.Parameters.AddWithValue("@o3", tID);
-            add2.ExecuteNonQuery();
-            bgl.baglanti().Close();
+            //SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+            //    "insert into rTeklifDetay (UrunID, Durum, TeklifID) " +
+            //    "values (@o1,@o2,@o3);" +
+            //    "COMMIT TRANSACTION", bgl.baglanti());
+            //add2.Parameters.AddWithValue("@o1", id);
+            //add2.Parameters.AddWithValue("@o2", "Pasif");
+            //add2.Parameters.AddWithValue("@o3", tID);
+            //add2.ExecuteNonQuery();
+            //bgl.baglanti().Close();
 
-            hizmetlistele();
-            tekliflistele();
+            //hizmetlistele();
+            //tekliflistele();
         }
 
         string notes;
@@ -391,7 +401,7 @@ namespace mROOT._2.Product
             add.Parameters.AddWithValue("@p2", id);
             add.ExecuteNonQuery();
             bgl.baglanti().Close();
-            hizmetlistele();
+           // hizmetlistele();
             tekliflistele();
         }
 
@@ -517,6 +527,7 @@ namespace mROOT._2.Product
 
             // t_total.Text = netToplam.ToString("N2");
             t_iskonto.Text = aratoplam.ToString("N2");
+            t_aratop.Text = netToplam.ToString("N2");
             t_kdv.Text = kdvToplam.ToString("N2");
             t_genel.Text = genelToplam.ToString("N2");
        
@@ -534,11 +545,34 @@ namespace mROOT._2.Product
 
         }
 
+        private void txt_iskonto_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combo_para_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridLookUpEdit2_QueryPopUp_1(object sender, CancelEventArgs e)
+        {
+            //ID
+            GridLookUpEdit gridLookUpEdit = sender as GridLookUpEdit;
+            gridLookUpEdit.Properties.PopupView.Columns["ID"].Visible = false;
+        }
+
+        private void t_kdv_TextChanged(object sender, EventArgs e)
+        {
+            //KDV değişince
+        }
+
         private void t_iskonto_TextChanged(object sender, EventArgs e)
         {
             decimal netToplam = 0;
             decimal iskontoTutari = 0;
             decimal kdvToplam = 0;
+            decimal araToplam = 0;
 
             // Net toplamı oku
             decimal.TryParse(t_total.Text, out netToplam);
@@ -577,6 +611,7 @@ namespace mROOT._2.Product
                     // Yeni KDV hesapla
                     decimal kdv = (satirIndirimliTutar * kdvYuzde) / 100;
                     kdvToplam += kdv;
+                    araToplam += satirIndirimliTutar;
                 }
             }
 
@@ -584,6 +619,7 @@ namespace mROOT._2.Product
             decimal genelToplam = indirimliNet + kdvToplam;
 
             // Sonuçları textbox'lara yaz
+            t_aratop.Text = araToplam.ToString("N2");
             t_kdv.Text = kdvToplam.ToString("N2");
             t_genel.Text = genelToplam.ToString("N2");
         }
@@ -598,6 +634,7 @@ namespace mROOT._2.Product
             decimal genelToplam = 0;
             decimal toplamNet = 0; //
             decimal toplamKdv = 0; //
+            decimal aratoplam = 0;
 
             for (int i = 0; i < gridView1.RowCount; i++)
             {
@@ -624,6 +661,8 @@ namespace mROOT._2.Product
             t_iskonto.Text = iskontoTutari.ToString("N2");
 
             // Genel toplam = Toplam - İskonto + KDV
+            aratoplam = toplam - iskontoTutari;
+            t_aratop.Text = aratoplam.ToString("N2");
             genelToplam = (toplam - iskontoTutari) + kdv;
             t_genel.Text = genelToplam.ToString("N2");
 
@@ -701,20 +740,23 @@ namespace mROOT._2.Product
                     }
                     
                     SqlCommand komutaz = new SqlCommand(@"update rTeklifListe set TeklifNo=@a1, FirmaID=@a2, Tarih=@a3, 
-                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10 where ID = '" + tID + "' ", bgl.baglanti());
-                    komutaz.Parameters.AddWithValue("@a1", txt_no.Text);
+                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10, KDV=@a11, IskontoOran=@a12, Tur=@a13 where ID = '" + tID + "' ", bgl.baglanti());
+                    komutaz.Parameters.AddWithValue("@a1", Convert.ToInt32(txt_no.Text));
                     komutaz.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a3", dateEdit1.EditValue);
-                    komutaz.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
-                    komutaz.Parameters.AddWithValue("@a6", glistetotal);
+                    komutaz.Parameters.AddWithValue("@a5", gridLookUpEdit2.EditValue);
+                    komutaz.Parameters.AddWithValue("@a6", Convert.ToDecimal(t_genel.Text));
                     komutaz.Parameters.AddWithValue("@a7", memoEdit1.Text);
                     komutaz.Parameters.AddWithValue("@a8", "Aktif");
-                    komutaz.Parameters.AddWithValue("@a9", Convert.ToDecimal(txt_iskonto.Text));
+                    komutaz.Parameters.AddWithValue("@a9", Convert.ToDecimal(t_iskonto.Text));
                     komutaz.Parameters.AddWithValue("@a10", combo_para.Text);
+                    komutaz.Parameters.AddWithValue("@a11", Convert.ToDecimal(t_kdv.Text));
+                    komutaz.Parameters.AddWithValue("@a12", Convert.ToDecimal(txt_iskonto.Text));
+                    komutaz.Parameters.AddWithValue("@a13", c_tur.Text);
                     komutaz.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
-                    if (Application.OpenForms["Liste"] == null)
+                    if (Application.OpenForms["TeklifListe"] == null)
                     {
 
                     }
@@ -724,7 +766,7 @@ namespace mROOT._2.Product
                     }
 
 
-                    MessageBox.Show("Kaydetme işlemi başarılı. Teklifinizin yazdırılması için bekleyiniz.");
+                    MessageBox.Show("Kaydetme işlemi başarılı. Sipariş formunuzun yazdırılması için bekleyiniz.");
                     
 
                     yazdir();
@@ -743,16 +785,30 @@ namespace mROOT._2.Product
 
         }
 
-
         void yazdir()
         {
-            mKYS.Raporlar.TeklifMS.tID = tID;
-
-            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            if (c_tur.Text == "Satış")
             {
-                frm.TeklifMS();
-                frm.ShowDialog();
+                mKYS.Raporlar.SiparisFormu.tID = tID;
+
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.SiparisFormu();
+                    frm.ShowDialog();
+                }
             }
+            else
+            {
+                mKYS.Raporlar.UretimFormu.tID = tID;
+                mKYS.Raporlar.FasonFormu.tID = tID;
+
+                using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                {
+                    frm.fasonform();
+                    frm.ShowDialog();
+                }
+            }
+           
 
         }
 
@@ -781,18 +837,20 @@ namespace mROOT._2.Product
 
 
             DataTable dx = new DataTable();
-            SqlDataAdapter dax = new SqlDataAdapter(@"select h.Kod, CONCAT(h.Marka,' ',h.Ad) as 'Açıklama', d.Miktar as 'Adet', 
+            SqlDataAdapter dax = new SqlDataAdapter(@"select h.Kod, CONCAT(h.Marka, CASE 
+            WHEN h.Seri IS NOT NULL AND h.Seri <> '' THEN CONCAT(' ', h.Seri)
+            ELSE '' END, ' ', h.Ad, '-',h.Hacim) as 'Açıklama', d.Miktar as 'Adet', 
             d.Fiyat as 'BirimFiyat', d.KDV as 'KDV (%)', d.Tutar as 'Toplam (KDV Hariç)', d.ID as 'detayID', h.ID as 'NID'
             from rTeklifDetay d
             left join RootUrunListesi h on d.UrunID = h.ID
-            where d.TeklifID = '" + detay + "'", bgl.baglanti());
+            where d.TeklifID = '" + detay + "' order by h.Kategori", bgl.baglanti());
             dax.Fill(dx);
             gridControl1.DataSource = dx;
             gridView1.Columns["detayID"].Visible = false;
             gridView1.Columns["NID"].Visible = false;
 
             this.gridView1.Columns[0].Width = 50;
-            this.gridView1.Columns[1].Width = 120;
+            this.gridView1.Columns[1].Width = 220;
             this.gridView1.Columns[2].Width = 50;
             this.gridView1.Columns[3].Width = 50;
             this.gridView1.Columns[4].Width = 50;
@@ -810,11 +868,15 @@ namespace mROOT._2.Product
             {
                 //combo_tur.Text = dr["TeklifTuru"].ToString();
                 gridLookUpEdit1.EditValue = dr["FirmaID"].ToString();
+                gridLookUpEdit2.EditValue = dr["YetkiliID"].ToString();
                 txt_no.Text = dr["TeklifNo"].ToString();
                 dateEdit1.EditValue = Convert.ToDateTime(dr["Tarih"].ToString());
                 memoEdit1.Text = dr["TeklifNot"].ToString();
                 combo_para.Text = dr["ParaBirimi"].ToString();
-                txt_iskonto.Text = dr["Iskonto"].ToString();
+                txt_iskonto.Text = dr["IskontoOran"].ToString();
+                t_iskonto.Text = dr["Iskonto"].ToString();
+                t_kdv.Text = dr["KDV"].ToString();
+                c_tur.Text = dr["Tur"].ToString();
             }
             bgl.baglanti().Close();
 
@@ -825,7 +887,7 @@ namespace mROOT._2.Product
             for (int i = 0; i < gridView1.RowCount; i++)
             {
                 object toplamObj = gridView1.GetRowCellValue(i, "Toplam (KDV Hariç)");
-                object kdvYuzdeObj = gridView1.GetRowCellValue(i, "KDV (%)");
+               // object kdvYuzdeObj = gridView1.GetRowCellValue(i, "KDV (%)");
 
                 if (toplamObj != null &&
                     decimal.TryParse(toplamObj.ToString(), out decimal toplam2))
@@ -833,25 +895,29 @@ namespace mROOT._2.Product
                     toplamNet += toplam2;
                 }
 
-                if (toplamObj != null && kdvYuzdeObj != null &&
-                    decimal.TryParse(toplamObj.ToString(), out toplam2) &&
-                    decimal.TryParse(kdvYuzdeObj.ToString(), out decimal kdvYuzde))
-                {
-                    kdvToplam += (toplam2 * kdvYuzde) / 100;
-                }
+                //if (toplamObj != null && kdvYuzdeObj != null &&
+                //    decimal.TryParse(toplamObj.ToString(), out toplam2) &&
+                //    decimal.TryParse(kdvYuzdeObj.ToString(), out decimal kdvYuzde))
+                //{
+                //    kdvToplam += (toplam2 * kdvYuzde) / 100;
+                //}
             }
 
             t_total.Text = toplamNet.ToString("N2"); // Net tutarı
-            t_kdv.Text = kdvToplam.ToString("N2");     // KDV toplamı
+            // t_kdv.Text = kdvToplam.ToString("N2");     // KDV toplamı
 
             if (decimal.TryParse(t_total.Text, out decimal toplam) &&
-             decimal.TryParse(txt_iskonto.Text, out decimal iskonto) &&
+            // decimal.TryParse(txt_iskonto.Text, out decimal iskonto) &&
+             decimal.TryParse(t_iskonto.Text, out decimal iskonto) &&
              decimal.TryParse(t_kdv.Text, out decimal kdv))
             {
-                aratoplam = (toplam * iskonto) / 100;
-                t_iskonto.Text = aratoplam.ToString("N2");
-                decimal geneltoplam = (toplam - aratoplam) + kdv;
-                t_genel.Text = geneltoplam.ToString("N2");
+                //aratoplam = (toplam * iskonto) / 100;
+                //t_iskonto.Text = aratoplam.ToString("N2");
+                //decimal geneltoplam = (toplam - aratoplam) + kdv;
+                //t_genel.Text = geneltoplam.ToString("N2");
+
+                aratoplam = (toplam - iskonto);
+                t_aratop.Text = aratoplam.ToString();
             }
             else
             {
@@ -872,7 +938,7 @@ namespace mROOT._2.Product
                     MessageBox.Show("Lütfen firma seçiniz!");
                 }
                 else
-                {                   
+                {
 
                     for (int ik = 0; ik < gridView1.RowCount; ik++)
                     {
@@ -917,21 +983,24 @@ namespace mROOT._2.Product
                     }
 
                     SqlCommand komutaz = new SqlCommand(@"update rTeklifListe set TeklifNo=@a1, FirmaID=@a2, Tarih=@a3,
-                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10 where ID = '" + tID + "' ", bgl.baglanti());
-                    komutaz.Parameters.AddWithValue("@a1", txt_no.Text);
+                    YetkiliID=@a5, Toplam=@a6, TeklifNot=@a7, Durum=@a8, Iskonto=@a9, Parabirimi=@a10, KDV=@a11, IskontoOran=@a12, Tur=@a13 where ID = '" + tID + "' ", bgl.baglanti());
+                    komutaz.Parameters.AddWithValue("@a1", Convert.ToInt32(txt_no.Text));
                     komutaz.Parameters.AddWithValue("@a2", gridLookUpEdit1.EditValue);
                     komutaz.Parameters.AddWithValue("@a3", dateEdit1.EditValue);
-                    komutaz.Parameters.AddWithValue("@a5", Anasayfa.kullanici);
-                    komutaz.Parameters.AddWithValue("@a6", glistetotal);
+                    komutaz.Parameters.AddWithValue("@a5", gridLookUpEdit2.EditValue);
+                    komutaz.Parameters.AddWithValue("@a6", Convert.ToDecimal(t_genel.Text));
                     komutaz.Parameters.AddWithValue("@a7", memoEdit1.Text);
                     komutaz.Parameters.AddWithValue("@a8", "Aktif");
-                    komutaz.Parameters.AddWithValue("@a9", Convert.ToDecimal(txt_iskonto.Text));
+                    komutaz.Parameters.AddWithValue("@a9", Convert.ToDecimal(t_iskonto.Text));
                     komutaz.Parameters.AddWithValue("@a10", combo_para.Text);
+                    komutaz.Parameters.AddWithValue("@a11", Convert.ToDecimal(t_kdv.Text));
+                    komutaz.Parameters.AddWithValue("@a12", Convert.ToDecimal(txt_iskonto.Text));
+                    komutaz.Parameters.AddWithValue("@a13", c_tur.Text);
                     komutaz.ExecuteNonQuery();
                     bgl.baglanti().Close();
 
 
-                    if (Application.OpenForms["Liste"] == null)
+                    if (Application.OpenForms["TeklifListe"] == null)
                     {
 
                     }
@@ -940,16 +1009,17 @@ namespace mROOT._2.Product
                         n.listele();
                     }
 
-                    MessageBox.Show("Güncelleme işlemi başarılı. Teklifinizin yazdırılması için bekleyiniz.");
-                 
+                    MessageBox.Show("Güncelleme işlemi başarılı. Sipariş formunun yazdırılması için bekleyiniz.");
 
-                    mKYS.Raporlar.TeklifMS.tID = detay;
 
-                    using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
-                    {
-                        frm.TeklifMS();
-                        frm.ShowDialog();
-                    }
+                    //mKYS.Raporlar.SiparisFormu.tID = detay;
+
+                    //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                    //{
+                    //    frm.SiparisFormu();
+                    //    frm.ShowDialog();
+                    //}
+                    yazdir();
 
                     this.Close();
                 }
@@ -963,6 +1033,8 @@ namespace mROOT._2.Product
             }
 
           
+
+
         }
 
 

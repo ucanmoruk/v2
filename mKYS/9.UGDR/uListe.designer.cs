@@ -59,6 +59,7 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -106,6 +107,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem14),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem18),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem20),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem19),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16),
@@ -306,8 +308,9 @@
             this.barButtonItem16,
             this.barButtonItem17,
             this.barButtonItem18,
-            this.barButtonItem19});
-            this.barManager1.MaxItemId = 21;
+            this.barButtonItem19,
+            this.barButtonItem20});
+            this.barManager1.MaxItemId = 22;
             // 
             // barDockControlTop
             // 
@@ -358,6 +361,15 @@
             this.barButtonItem5.Caption = "Ödeme Bekliyor";
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "Export";
+            this.barButtonItem20.Id = 21;
+            this.barButtonItem20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.Image")));
+            this.barButtonItem20.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.LargeImage")));
+            this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
             // 
             // uListe
             // 
@@ -415,5 +427,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
     }
 }

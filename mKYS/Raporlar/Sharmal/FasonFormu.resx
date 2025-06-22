@@ -120,7 +120,36 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "cosmoroot.rTeklifListe"."TeklifNo", "cosmoroot.rTeklifListe"."KDV" as 'Genel KDV',
+       "cosmoroot.rTeklifListe"."Tarih",
+       "cosmoroot.rTeklifListe"."TeklifNot",
+       "cosmoroot.rTeklifListe"."Parabirimi",
+       "cosmoroot.rTeklifDetay"."Miktar",
+       "cosmoroot.rTeklifDetay"."Birim",
+       "cosmoroot.rTeklifDetay"."Fiyat",
+       "cosmoroot.rTeklifDetay"."KDV",
+       "cosmoroot.rTeklifDetay"."Tutar",
+       "cosmoroot.rTeklifDetay"."KDVTutar",
+       "cosmoroot.rTeklifDetay"."GTutar", "RootUrunListesi"."Kod",
+       "RootUrunListesi"."Marka", "RootUrunListesi"."Ad",
+       "RootUrunListesi"."Seri", "RootUrunListesi"."Hacim",
+       "RootTedarikci"."Ad" as "RootTedarikci_Ad",
+       "RootTedarikci"."Adres",
+       "RootKullanici"."Ad" as "RootKullanici_Ad",
+       "RootKullanici"."Soyad", "cosmoroot.rTeklifListe"."ID",
+       "cosmoroot.rTeklifListe"."Iskonto"
+  from (((("cosmoroot"."rTeklifListe" "cosmoroot.rTeklifListe"
+  inner join "cosmoroot"."rTeklifDetay" "cosmoroot.rTeklifDetay"
+       on ("cosmoroot.rTeklifDetay"."TeklifID" = "cosmoroot.rTeklifListe"."ID"))
+  inner join "dbo"."RootUrunListesi" "RootUrunListesi"
+       on ("RootUrunListesi"."ID" = "cosmoroot.rTeklifDetay"."UrunID"))
+  inner join "dbo"."RootTedarikci" "RootTedarikci"
+       on ("RootTedarikci"."ID" = "cosmoroot.rTeklifListe"."FirmaID"))
+  inner join "dbo"."RootKullanici" "RootKullanici"
+       on ("RootKullanici"."ID" = "cosmoroot.rTeklifListe"."YetkiliID"))</value>
+  </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlRla2xpZkxpc3Rlc2kiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iVGVrbGlmTm8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJQbGFzaXllciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkZpcm1hSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJEdXJ1bSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBY2lrbGFtYSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJUZWtsaWZEZXRheSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGVrbGlmSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJIaXptZXRJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkFjaWtsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkZpeWF0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJCaXJpbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEdXJ1bSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZGV0IiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVG9wbGFtIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJUZXJtaW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iS0RWIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48VmlldyBOYW1lPSJGaXJtYUxpc3Rlc2kiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkZpcm1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkcmVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllldGtpbGkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGVsZWZvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDZXAiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRW1haWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmVyZ2lEYWlyZXNpIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlZlcmdpTm8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkR1cnVtIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9IlN0b2tLdWxsYW5pY2kiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkZpcm1hSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJCaXJpbUlEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iS2FkaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTb3lhZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJHb3JldiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFbWFpbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZWxlZm9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBhcm9sYSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEdXJ1bSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJIaXptZXRMaXN0ZXNpIj48RmllbGQgTmFtZT0iSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJLb2QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSGl6bWV0IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFjaWtsYW1hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkR1cnVtIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxSZWxhdGlvbiBNYXN0ZXI9IlRla2xpZkxpc3Rlc2kiIERldGFpbD0iU3Rva0t1bGxhbmljaSI+PEtleUNvbHVtbiBNYXN0ZXI9IlBsYXNpeWVyIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0iVGVrbGlmTGlzdGVzaSIgRGV0YWlsPSJGaXJtYUxpc3Rlc2kiPjxLZXlDb2x1bW4gTWFzdGVyPSJGaXJtYUlEIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0iVGVrbGlmRGV0YXkiIERldGFpbD0iVGVrbGlmTGlzdGVzaSI+PEtleUNvbHVtbiBNYXN0ZXI9IlRla2xpZklEIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PFJlbGF0aW9uIE1hc3Rlcj0iVGVrbGlmRGV0YXkiIERldGFpbD0iSGl6bWV0TGlzdGVzaSI+PEtleUNvbHVtbiBNYXN0ZXI9Ikhpem1ldElEIiBEZXRhaWw9IklEIiAvPjwvUmVsYXRpb24+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9ImNvc21vcm9vdF9yVGVrbGlmTGlzdGUiPjxGaWVsZCBOYW1lPSJUZWtsaWZObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkdlbmVsIEtEViIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVGFyaWgiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJUZWtsaWZOb3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGFyYWJpcmltaSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNaWt0YXIiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJCaXJpbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGaXlhdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iS0RWIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJUdXRhciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iS0RWVHV0YXIiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkdUdXRhciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iS29kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1hcmthIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNlcmkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSGFjaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUm9vdFRlZGFyaWtjaV9BZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSb290S3VsbGFuaWNpX0FkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNveWFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iSXNrb250byIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>

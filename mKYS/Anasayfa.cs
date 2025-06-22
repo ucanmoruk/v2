@@ -1257,6 +1257,23 @@ namespace mKYS
             }
         }
 
+        private void barButtonItem128_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            mROOT._1.Mesaj.Wordpress wp = new mROOT._1.Mesaj.Wordpress();
+            wp.Show();
+        }
+
+        mROOT._1.Mesaj.BlogListe blog;
+        private void barButtonItem129_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (blog == null || blog.IsDisposed)
+            {
+                blog = new mROOT._1.Mesaj.BlogListe();
+                blog.MdiParent = this;
+                blog.Show();
+            }
+        }
+
         private void barButtonItem114_ItemClick(object sender, ItemClickEventArgs e)
         {
             Numune.RaporYukle ry = new Numune.RaporYukle();

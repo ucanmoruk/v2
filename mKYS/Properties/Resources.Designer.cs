@@ -313,6 +313,16 @@ namespace mROOT.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        public static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         public static System.Drawing.Bitmap NAC_035_TL {
             get {
                 object obj = ResourceManager.GetObject("NAC-035-TL", resourceCulture);
@@ -466,6 +476,16 @@ namespace mROOT.Properties {
         public static System.Drawing.Bitmap Root_Intern {
             get {
                 object obj = ResourceManager.GetObject("Root Intern", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        public static System.Drawing.Bitmap Root_Logo_Usage_R1ai__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Root-Logo-Usage-R1ai-(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

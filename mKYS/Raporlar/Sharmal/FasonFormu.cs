@@ -9,9 +9,9 @@ using mKYS;
 
 namespace mKYS.Raporlar
 {
-    public partial class TeklifKDV : DevExpress.XtraReports.UI.XtraReport
+    public partial class FasonFormu : DevExpress.XtraReports.UI.XtraReport
     {
-        public TeklifKDV()
+        public FasonFormu()
         {
             InitializeComponent();
         }

@@ -69,6 +69,7 @@
             this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -117,7 +118,6 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
@@ -521,6 +521,13 @@
             this.barButtonItem31.Id = 44;
             this.barButtonItem31.Name = "barButtonItem31";
             this.barButtonItem31.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem31_ItemClick);
+            // 
+            // barButtonItem35
+            // 
+            this.barButtonItem35.Caption = "ÜGDR (Eng)";
+            this.barButtonItem35.Id = 48;
+            this.barButtonItem35.Name = "barButtonItem35";
+            this.barButtonItem35.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem35_ItemClick);
             // 
             // barButtonItem32
             // 
@@ -1055,13 +1062,6 @@
             this.labelControl4.TabIndex = 88;
             this.labelControl4.Text = "Adet:";
             this.labelControl4.Visible = false;
-            // 
-            // barButtonItem35
-            // 
-            this.barButtonItem35.Caption = "ÜGDR (Eng)";
-            this.barButtonItem35.Id = 48;
-            this.barButtonItem35.Name = "barButtonItem35";
-            this.barButtonItem35.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem35_ItemClick);
             // 
             // NKR2
             // 

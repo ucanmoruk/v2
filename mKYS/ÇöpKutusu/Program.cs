@@ -36,7 +36,8 @@ namespace mKYS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Giris());
-           // Application.Run(new mKYS.MalKabul());
+
+            //  Application.Run(new mROOT._1.Mesaj.Wordpress());
             //Application.Run(new mKYS.NumuneKabul());
             //Application.Run(new mROOT._9.UGDR.uFormul());
         }

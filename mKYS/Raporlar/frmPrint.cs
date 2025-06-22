@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using mROOT.Raporlar;
+using System.IO;
+using DevExpress.XtraPrinting;
+
 namespace mKYS.Raporlar
 {
     public partial class frmPrint : DevExpress.XtraEditors.XtraForm
@@ -35,6 +38,45 @@ namespace mKYS.Raporlar
                    
         }
 
+        public void fasonform()
+        {
+            FasonFormu rapor = new FasonFormu();
+           // rapor.PrintingSystem.ContinuousPageNumbering = true;
+            //  rapor.PrintingSystem.PageCount = true;
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+            {
+                p.Visible = false;
+                rapor.bilgi();
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                UretimFormu rapor2 = new UretimFormu();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                {
+                    p2.Visible = false;
+                    rapor2.bilgi();
+                    rapor2.CreateDocument();
+                }
+                
+                rapor.Pages.AddRange(rapor2.Pages);
+
+            }
+
+            documentViewer1.DocumentSource = rapor;
+        }
+
+        public void IsTakip()
+        {
+            IsTakip teklif = new IsTakip();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in teklif.Parameters)
+            {
+                p.Visible = false;
+                teklif.bilgi();
+                documentViewer1.DocumentSource = teklif;
+                teklif.CreateDocument();
+            }
+        }
+
         public void Teklif()
         {
             TeklifUni teklif = new TeklifUni();
@@ -51,6 +93,48 @@ namespace mKYS.Raporlar
         {
 
             Raporlar.KimyasalEtiket etiket = new Raporlar.KimyasalEtiket();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
+        public void SiparisFormu()
+        {
+
+            Raporlar.SiparisFormu etiket = new Raporlar.SiparisFormu();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
+        public void FasonFormu()
+        {
+
+            Raporlar.FasonFormu etiket = new Raporlar.FasonFormu();
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
+            {
+                p.Visible = false;
+                etiket.bilgi();
+                documentViewer1.DocumentSource = etiket;
+                etiket.CreateDocument();
+            }
+
+        }
+
+        public void UretimFormu()
+        {
+
+            Raporlar.UretimFormu etiket = new Raporlar.UretimFormu();
             foreach (DevExpress.XtraReports.Parameters.Parameter p in etiket.Parameters)
             {
                 p.Visible = false;
@@ -488,6 +572,144 @@ namespace mKYS.Raporlar
             documentViewer1.DocumentSource = rapor;
         }
 
+        public string RaporAdi { get; set; }
+        public void yeniTR()
+        {
+            // Ana rapor
+            var rapor = new Newest.Tr.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            rapor.RequestParameters = false;
+            foreach (var p in rapor.Parameters)
+                p.Visible = false;
+
+            rapor.bilgi();
+            // rapor.Name = name;
+            rapor.Name = RaporAdi ?? "Rapor";
+            rapor.CreateDocument();
+
+            // Sayfaları eklenecek raporlar
+            var rapor2 = new Newest.Tr.UGD2();
+            var rapor3 = new Newest.Tr.UGD3();
+            var rapor4 = new Newest.Tr.UGD4();
+            var rapor5 = new Newest.Tr.UGD5();
+
+            // Hepsi için parametreleri kapat
+            foreach (var p in rapor2.Parameters) p.Visible = false;
+            foreach (var p in rapor3.Parameters) p.Visible = false;
+            foreach (var p in rapor4.Parameters) p.Visible = false;
+            foreach (var p in rapor5.Parameters) p.Visible = false;
+
+            rapor2.RequestParameters = false;
+            rapor3.RequestParameters = false;
+            rapor4.RequestParameters = false;
+            rapor5.RequestParameters = false;
+
+            // Bilgi metodlarını çağır
+            rapor2.bilgi();
+            rapor3.bilgi();
+            rapor4.bilgi();
+            rapor5.bilgi();
+
+            // Dokümanları oluştur
+            rapor2.CreateDocument();
+            rapor3.CreateDocument();
+            rapor4.CreateDocument();
+            rapor5.CreateDocument();
+
+            // Sayfaları eklemeden önce kontrol et
+            if (rapor2.Pages.Count > 0) rapor.Pages.AddRange(rapor2.Pages);
+            if (rapor3.Pages.Count > 0) rapor.Pages.AddRange(rapor3.Pages);
+            if (rapor4.Pages.Count > 0) rapor.Pages.AddRange(rapor4.Pages);
+            if (rapor5.Pages.Count > 0) rapor.Pages.AddRange(rapor5.Pages);
+
+            // PDF ve DOCX çıktısı
+            string outputDir = @"C:\Raporlar";
+            if (!Directory.Exists(outputDir))
+                Directory.CreateDirectory(outputDir);
+
+           // string safeName = string.Join("_", (name ?? "rapor").Split(Path.GetInvalidFileNameChars(), StringSplitOptions.RemoveEmptyEntries));
+            string safeName = string.Join("_", (RaporAdi ?? "rapor").Split(Path.GetInvalidFileNameChars()));
+            string pdfPath = Path.Combine(outputDir, $"{safeName}.pdf");
+            string docxPath = Path.Combine(outputDir, $"{safeName}.docx");
+
+            rapor.ExportToPdf(pdfPath, new DevExpress.XtraPrinting.PdfExportOptions { Compressed = true });
+
+
+            var docxOptions = new DevExpress.XtraPrinting.DocxExportOptions
+            {
+                ExportMode = DevExpress.XtraPrinting.DocxExportMode.SingleFilePageByPage,
+                TableLayout = true
+            };
+
+            rapor.ExportToDocx(docxPath, docxOptions);
+
+            // Önizleme
+            documentViewer1.DocumentSource = rapor;
+        }
+
+        public void YeniCPNP()
+        {
+            // Ana rapor
+            var rapor = new Ozeco.Cpnp.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            foreach (var p in rapor.Parameters)
+                p.Visible = false;
+
+            rapor.bilgi();
+            rapor.Name = RaporAdi ?? "Rapor";
+            rapor.CreateDocument();  // ✅ sadece 1 kez çağrılmalı
+
+            // Sayfaları eklenecek raporlar
+            var rapor2 = new Ozeco.Cpnp.UGD2();
+            var rapor3 = new Ozeco.Cpnp.UGD3();
+            var rapor4 = new Ozeco.Cpnp.UGD4();
+
+            // Hepsi için parametreleri kapat
+            foreach (var p in rapor2.Parameters) p.Visible = false;
+            foreach (var p in rapor3.Parameters) p.Visible = false;
+            foreach (var p in rapor4.Parameters) p.Visible = false;
+            rapor2.RequestParameters = false;
+            rapor3.RequestParameters = false;
+            rapor4.RequestParameters = false;
+
+            rapor2.RequestParameters = false;
+            rapor3.RequestParameters = false;
+            rapor4.RequestParameters = false;
+
+            // Dokümanları oluştur
+            rapor2.CreateDocument();
+            rapor3.CreateDocument();
+            rapor4.CreateDocument();
+
+            // Sayfaları eklemeden önce kontrol et
+            if (rapor2.Pages.Count > 0) rapor.Pages.AddRange(rapor2.Pages);
+            if (rapor3.Pages.Count > 0) rapor.Pages.AddRange(rapor3.Pages);
+            if (rapor4.Pages.Count > 0) rapor.Pages.AddRange(rapor4.Pages);
+
+            // PDF ve DOCX çıktısı
+            string outputDir = @"C:\Raporlar";
+            if (!Directory.Exists(outputDir))
+                Directory.CreateDirectory(outputDir);
+
+            // string safeName = string.Join("_", (name ?? "rapor").Split(Path.GetInvalidFileNameChars(), StringSplitOptions.RemoveEmptyEntries));
+            string safeName = string.Join("_", (RaporAdi ?? "rapor").Split(Path.GetInvalidFileNameChars()));
+            string pdfPath = Path.Combine(outputDir, $"{safeName}.pdf");
+            string docxPath = Path.Combine(outputDir, $"{safeName}.docx");
+
+            rapor.ExportToPdf(pdfPath, new DevExpress.XtraPrinting.PdfExportOptions { Compressed = true });
+
+
+            var docxOptions = new DevExpress.XtraPrinting.DocxExportOptions
+            {
+                ExportMode = DevExpress.XtraPrinting.DocxExportMode.SingleFilePageByPage,
+                TableLayout = true
+            };
+
+            rapor.ExportToDocx(docxPath, docxOptions);
+
+            // Önizleme
+            documentViewer1.DocumentSource = rapor;
+        }
 
         public void OzecoEn()
         {
@@ -543,6 +765,7 @@ namespace mKYS.Raporlar
                 rapor.Name = name;
                 rapor.CreateDocument();
 
+
                 Ozeco.Cpnp.UGD2 rapor2 = new Ozeco.Cpnp.UGD2();
                 foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
                 {
@@ -573,7 +796,52 @@ namespace mKYS.Raporlar
             documentViewer1.DocumentSource = rapor;
         }
 
+        public void CPNP2()
+        {
+            // Ana rapor
+            var rapor = new Ozeco.Cpnp.UGD1();
+            rapor.PrintingSystem.ContinuousPageNumbering = true;
+            foreach (var p in rapor.Parameters)
+                p.Visible = false;
 
+            rapor.bilgi();
+            rapor.Name = name;
+            rapor.CreateDocument();  // ✅ sadece 1 kez çağrılmalı
+
+            // Rapor 2
+            var rapor2 = new Ozeco.Cpnp.UGD2();
+            foreach (var p in rapor2.Parameters)
+                p.Visible = false;
+
+            rapor2.bilgi();
+            rapor2.CreateDocument();
+
+            // Rapor 3
+            var rapor3 = new Ozeco.Cpnp.UGD3();
+            foreach (var p in rapor3.Parameters)
+                p.Visible = false;
+
+            rapor3.bilgi();
+            rapor3.CreateDocument();
+
+            // Rapor 4
+            var rapor4 = new Ozeco.Cpnp.UGD4();
+            foreach (var p in rapor4.Parameters)
+                p.Visible = false;
+
+            rapor4.bilgi();
+            rapor4.CreateDocument();
+
+            // Sayfaları birleştir
+            rapor.Pages.AddRange(rapor2.Pages);
+            rapor.Pages.AddRange(rapor3.Pages);
+            rapor.Pages.AddRange(rapor4.Pages);
+
+            // DocumentViewer'a ata
+            documentViewer1.DocumentSource = rapor;
+        }
+
+     
         public void UGDEn()
         {
             Eng.UGD1 rapor = new Eng.UGD1();

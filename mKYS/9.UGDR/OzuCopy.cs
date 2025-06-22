@@ -130,7 +130,7 @@ namespace mROOT._9.UGDR
 
         }
 
-        string mchal, msta; int parfum, alerjen;
+        string mchal, msta, detayID; int parfum, alerjen;
         void detaybul()
         {
             SqlCommand komut = new SqlCommand("select * from rUGDListe where ID = '" + uID + "' ", bgl.baglanti());
@@ -177,6 +177,17 @@ namespace mROOT._9.UGDR
 
             }
             bgl.baglanti().Close();
+
+
+            SqlCommand komut12 = new SqlCommand("select * from rUGDDetay where UrunID = '" + uID + "' ", bgl.baglanti());
+            SqlDataReader dr12 = komut12.ExecuteReader();
+            while (dr12.Read())
+            {
+                detayID = dr12["ID"].ToString();
+            }
+            bgl.baglanti().Close();
+
+
 
             SqlCommand komut2 = new SqlCommand("select * from rUGDDetay where UrunID = '" + uID + "' ", bgl.baglanti());
             SqlDataReader dr2 = komut2.ExecuteReader();
@@ -359,30 +370,60 @@ namespace mROOT._9.UGDR
                 }
                 else
                 {
-                    SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
+                    if (string.IsNullOrEmpty(detayID))
+                    {
+                        SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
+                insert into rUGDDetay (UrunID, Gorunum, Renk, Koku, pH, Kaynama, Erime, Yogunluk, Viskozite, Suda, Diger, Durum, KokuEn, GorunumEn, RenkEn, SudaEn, DigerEn )
+                values (@a1,@a2,@a3,@a4,@a5,@a6,@a7,@a8,@a9,@a10,@a11,@a12,@a13,@a14,@a15,@a16,@a17) COMMIT TRANSACTION", bgl.baglanti());
+                        add2.Parameters.AddWithValue("@a1", uID);
+                        add2.Parameters.AddWithValue("@a2", tgorunum.Text);
+                        add2.Parameters.AddWithValue("@a3", trenk.Text);
+                        add2.Parameters.AddWithValue("@a4", tkoku.Text);
+                        add2.Parameters.AddWithValue("@a5", tph.Text);
+                        add2.Parameters.AddWithValue("@a6", tkaynama.Text);
+                        add2.Parameters.AddWithValue("@a7", terime.Text);
+                        add2.Parameters.AddWithValue("@a8", tyogunluk.Text);
+                        add2.Parameters.AddWithValue("@a9", tviskozite.Text);
+                        add2.Parameters.AddWithValue("@a10", tsuda.Text);
+                        add2.Parameters.AddWithValue("@a11", tdiger.Text);
+                        add2.Parameters.AddWithValue("@a12", "Pasif");
+                        add2.Parameters.AddWithValue("@a13", tkokuen.Text);
+                        add2.Parameters.AddWithValue("@a14", tgorunumen.Text);
+                        add2.Parameters.AddWithValue("@a15", trenken.Text);
+                        add2.Parameters.AddWithValue("@a16", tsudaen.Text);
+                        add2.Parameters.AddWithValue("@a17", tdigeren.Text);
+                        add2.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                    }
+                    else
+                    {
+                        SqlCommand add2 = new SqlCommand(@"BEGIN TRANSACTION
                     update rUGDDetay set Gorunum =@a2, Renk=@a3, Koku=@a4, pH=@a5, Kaynama=@a6, Erime=@a7, 
                     Yogunluk=@a8, Viskozite=@a9, Suda=@a10, Diger=@a11,        
                     KokuEn=@a13, GorunumEn=@a14, RenkEn=@a15, SudaEn=@a16, DigerEn=@a17
                     where UrunID = '" + uID + "' COMMIT TRANSACTION", bgl.baglanti());
-                   // add2.Parameters.AddWithValue("@a1", yeniID);
-                    add2.Parameters.AddWithValue("@a2", tgorunum.Text);
-                    add2.Parameters.AddWithValue("@a3", trenk.Text);
-                    add2.Parameters.AddWithValue("@a4", tkoku.Text);
-                    add2.Parameters.AddWithValue("@a5", tph.Text);
-                    add2.Parameters.AddWithValue("@a6", tkaynama.Text);
-                    add2.Parameters.AddWithValue("@a7", terime.Text);
-                    add2.Parameters.AddWithValue("@a8", tyogunluk.Text);
-                    add2.Parameters.AddWithValue("@a9", tviskozite.Text);
-                    add2.Parameters.AddWithValue("@a10", tsuda.Text);
-                    add2.Parameters.AddWithValue("@a11", tdiger.Text);
-                  //  add2.Parameters.AddWithValue("@a12", "Pasif");
-                    add2.Parameters.AddWithValue("@a13", tkokuen.Text);
-                    add2.Parameters.AddWithValue("@a14", tgorunumen.Text);
-                    add2.Parameters.AddWithValue("@a15", trenken.Text);
-                    add2.Parameters.AddWithValue("@a16", tsudaen.Text);
-                    add2.Parameters.AddWithValue("@a17", tdigeren.Text);
-                    add2.ExecuteNonQuery();
-                    bgl.baglanti().Close();
+                        // add2.Parameters.AddWithValue("@a1", yeniID);
+                        add2.Parameters.AddWithValue("@a2", tgorunum.Text);
+                        add2.Parameters.AddWithValue("@a3", trenk.Text);
+                        add2.Parameters.AddWithValue("@a4", tkoku.Text);
+                        add2.Parameters.AddWithValue("@a5", tph.Text);
+                        add2.Parameters.AddWithValue("@a6", tkaynama.Text);
+                        add2.Parameters.AddWithValue("@a7", terime.Text);
+                        add2.Parameters.AddWithValue("@a8", tyogunluk.Text);
+                        add2.Parameters.AddWithValue("@a9", tviskozite.Text);
+                        add2.Parameters.AddWithValue("@a10", tsuda.Text);
+                        add2.Parameters.AddWithValue("@a11", tdiger.Text);
+                        //  add2.Parameters.AddWithValue("@a12", "Pasif");
+                        add2.Parameters.AddWithValue("@a13", tkokuen.Text);
+                        add2.Parameters.AddWithValue("@a14", tgorunumen.Text);
+                        add2.Parameters.AddWithValue("@a15", trenken.Text);
+                        add2.Parameters.AddWithValue("@a16", tsudaen.Text);
+                        add2.Parameters.AddWithValue("@a17", tdigeren.Text);
+                        add2.ExecuteNonQuery();
+                        bgl.baglanti().Close();
+                    }
+
+                  
                 }
                 xtraTabControl1.SelectedTabPage = xtraTabPage3;
             }

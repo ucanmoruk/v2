@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 using mKYS;
 using System;
 using System.Collections.Generic;
@@ -26,8 +28,8 @@ namespace mROOT._2.Product
         {
             DataTable dt = new DataTable();
 
-            SqlDataAdapter da = new SqlDataAdapter(@"select t.TeklifNo, t.Tarih, f.Ad as 'Firma', 
-            k.Ad as 'Plasiyer', CONCAT(t.Toplam, ' ',t.Parabirimi) as 'Tutar', t.GenelDurum as 'Teklif Durumu', t.ID from rTeklifListe t
+            SqlDataAdapter da = new SqlDataAdapter(@"select t.TeklifNo as 'Sipariş No', t.Tur as 'Tür', t.Tarih, f.Ad as 'Firma', 
+            k.Ad as 'Plasiyer', t.Toplam as 'Tutar', t.Parabirimi, t.GenelDurum as 'Sipariş Durumu', t.TeslimTarihi, t.FaturaNo, t.FaturaDurumu as 'Ödeme', t.ID from rTeklifListe t
             left join RootTedarikci f on t.FirmaID = f.ID
             left join RootKullanici k on t.YetkiliID = k.ID
             where t.Durum='Aktif' 
@@ -38,18 +40,25 @@ namespace mROOT._2.Product
            // gridView1.Columns["FirmaID"].Visible = false;
 
             gridView1.Columns["Tutar"].Summary.Clear();
-            GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Toplam Tutar", "€{0:N}");
+            GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", "{0:N} ₺");
             gridView1.Columns["Tutar"].Summary.Add(item2);
+
+            gridView1.Columns["Tutar"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridView1.Columns["Tutar"].DisplayFormat.FormatString = "n2"; // ya da "N2"
+
         }
 
         void gridduzen()
         {
-            this.gridView1.Columns[0].Width = 70;
-            this.gridView1.Columns[1].Width = 70;
-            this.gridView1.Columns[2].Width = 200;
-            this.gridView1.Columns[3].Width = 75;
-            this.gridView1.Columns[4].Width = 80;
-            this.gridView1.Columns[5].Width = 90;
+            this.gridView1.Columns[0].Width = 50;
+            this.gridView1.Columns[1].Width = 55;
+            this.gridView1.Columns[2].Width = 55;
+            this.gridView1.Columns[3].Width = 220;
+            this.gridView1.Columns[4].Width = 75;
+            this.gridView1.Columns[5].Width = 60;
+            this.gridView1.Columns[6].Width = 30;
+            this.gridView1.Columns[7].Width = 90;
+            this.gridView1.Columns[8].Width = 50;
 
         }
 
@@ -61,23 +70,34 @@ namespace mROOT._2.Product
 
         private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            string adam = gridView1.GetRowCellValue(e.RowHandle, "Teklif Durumu").ToString();
-            if (e.RowHandle > -1 && e.Column.FieldName == "Teklif Durumu" && adam == "Onaylandı")
+            string adam = gridView1.GetRowCellValue(e.RowHandle, "Sipariş Durumu").ToString();
+            string odeme = gridView1.GetRowCellValue(e.RowHandle, "Ödeme").ToString();
+            if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Gönderildi")
                 e.Appearance.BackColor = Color.LightGreen;
-            else if (e.RowHandle > -1 && e.Column.FieldName == "Teklif Durumu" && adam == "Reddedildi")
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "İptal")
                 e.Appearance.BackColor = Color.PaleVioletRed;
-            else if (e.RowHandle > -1 && e.Column.FieldName == "Teklif Durumu" && adam == "Yeni Teklif")
-                e.Appearance.BackColor = Color.WhiteSmoke;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Teslim Edildi")
+                e.Appearance.BackColor = Color.Green;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Hazırlanıyor")
+                e.Appearance.BackColor = Color.Orchid;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Yeni Sipariş")
+                e.Appearance.BackColor = Color.Wheat;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Ödeme" && odeme == "Ödeme Bekliyor")
+                e.Appearance.BackColor = Color.DarkOrange;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Ödeme" && odeme == "Ödendi")
+                e.Appearance.BackColor = Color.Green;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Ödeme" && odeme == "Taksitli Ödeme")
+                e.Appearance.BackColor = Color.HotPink;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Teklif Yazdır
-            mKYS.Raporlar.TeklifMS.tID = lID;
+            mKYS.Raporlar.SiparisFormu.tID = lID;
 
             using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
             {
-                frm.TeklifMS();
+                frm.SiparisFormu();
                 frm.ShowDialog();
             }
         }
@@ -104,28 +124,25 @@ namespace mROOT._2.Product
         {
             //ödendi
 
-            DialogResult Secim = new DialogResult();
-
-            Secim = MessageBox.Show(fNo + " numaralı fatura ödendi mi ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (Secim == DialogResult.Yes)
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
-                SqlCommand komutSil = new SqlCommand("update MSListe set Durum=@a1 where ID = @p1", bgl.baglanti());
-                komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Ödendi");
-                komutSil.ExecuteNonQuery();
+
+                string id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                    "update rTeklifListe set FaturaDurumu=@o1 where ID = @o3; " +
+                    "COMMIT TRANSACTION", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", "Ödendi");
+                add2.Parameters.AddWithValue("@o3", o2);
+                add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                
-
-                //Odeme.mstar = lID;
-                ////Odeme.fNo = fNo;
-                ////Odeme.ftutar = tutar;
-                ////Odeme.fID = firID;
-                //Odeme od = new Odeme();
-                //od.Show();
-
-                //listele();
             }
+
+            listele();
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -146,7 +163,7 @@ namespace mROOT._2.Product
 
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
-            if (e.Column.FieldName == "TeklifNo" || e.Column.FieldName == "Tarih" || e.Column.FieldName == "Plasiyer" || e.Column.FieldName == "Gecerlilik" || e.Column.FieldName == "Tutar" || e.Column.FieldName == "Teklif Durumu")
+            if (e.Column.FieldName == "Sipariş No" || e.Column.FieldName == "Tarih" || e.Column.FieldName == "TeslimTarihi" || e.Column.FieldName == "Plasiyer" || e.Column.FieldName == "FaturaNo" || e.Column.FieldName == "Tutar" || e.Column.FieldName == "Sipariş Durumu")
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
         }
 
@@ -163,78 +180,210 @@ namespace mROOT._2.Product
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // ödeme bekliyor
-            DialogResult Secim = new DialogResult();
+            // teslim edildi
 
-            Secim = MessageBox.Show(fNo + " numaralı teklif red mi edildi ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            Teslim.sID = lID;
+            Teslim.sNo = fNo;
+            Teslim te = new Teslim();
+            te.Show();
 
-            if (Secim == DialogResult.Yes)
-            {
-                SqlCommand komutSil = new SqlCommand("update rTeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-                komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Reddedildi");
-                komutSil.ExecuteNonQuery();
-                bgl.baglanti().Close();
-                listele();
-            }
+            //for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            //{
+
+            //    string id = gridView1.GetSelectedRows()[i].ToString();
+            //    int y = Convert.ToInt32(id);
+            //    string o2;
+            //    o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+            //    //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+            //    SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+            //        "update rTeklifListe set GenelDurum=@o1 where ID = @o3; " +
+            //        "COMMIT TRANSACTION", bgl.baglanti());
+            //    add2.Parameters.AddWithValue("@o1", "Teslim Edildi");
+            //    add2.Parameters.AddWithValue("@o3", o2);
+            //    add2.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
+            //}
+
+            //listele();
 
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //fatura 2 
-            //mMacro.Raporlar.MSStarv2.unique = lID;
+        {    
 
-            //using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
-            //{
-            //    frm.MSStar2();
-            //    frm.ShowDialog();
-            //}
+            mROOT._8.Spektrotek.SFaturaNo.sipID = lID;
+            mROOT._8.Spektrotek.SFaturaNo.sipno = fNo;
+            mROOT._8.Spektrotek.SFaturaNo.siparis = "gm" ;
+
+            _8.Spektrotek.SFaturaNo at = new _8.Spektrotek.SFaturaNo();
+            at.Show();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //iptal
+            DialogResult Secim = new DialogResult();
+
+            Secim = MessageBox.Show("Seçili siparişler iptal mi edildi ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (Secim == DialogResult.Yes)
+            {
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
+
+                    string id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    string o2;
+                    o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                    //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                    SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                        "update rTeklifListe set GenelDurum=@o1 where ID = @o3; " +
+                        "COMMIT TRANSACTION", bgl.baglanti());
+                    add2.Parameters.AddWithValue("@o1", "İptal");
+                    add2.Parameters.AddWithValue("@o3", o2);
+                    add2.ExecuteNonQuery();
+                    bgl.baglanti().Close();
+                }
+
+                listele();
+
+            }
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            //  Tüm satırı renklendirmek istediğin zaman kullan
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+
+                string ODurum = gridView1.GetRowCellValue(e.RowHandle, "Sipariş Durumu").ToString();
+                string odeme = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Ödeme"]);
+                if (ODurum == "Teslim Edildi" && odeme == "Ödendi")
+                {
+                    e.Appearance.BackColor = Color.Green;
+                    e.Appearance.BackColor2 = Color.LightGreen;
+                    e.HighPriority = true;
+
+                }
+                else if (ODurum == "İptal")
+                {
+                    e.Appearance.BackColor = Color.LightSalmon;
+                    e.Appearance.BackColor2 = Color.MediumVioletRed;
+                    e.HighPriority = true;
+                }
+              
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Taksitli Ödeme
+
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            {
+
+                string id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                    "update rTeklifListe set FaturaDurumu=@o1 where ID = @o3; " +
+                    "COMMIT TRANSACTION", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", "Taksitli");
+                add2.Parameters.AddWithValue("@o3", o2);
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+
+            listele();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Üretim Formu
+
+            mKYS.Raporlar.UretimFormu.tID = lID;
+
+            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            {
+                frm.UretimFormu();
+                frm.ShowDialog();
+            }
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Fason Formu
+            mKYS.Raporlar.FasonFormu.tID = lID;
+
+            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            {
+                frm.FasonFormu();
+                frm.ShowDialog();
+            }
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //kısmi
+            //yolda
 
-            DialogResult Secim = new DialogResult();
-
-            Secim = MessageBox.Show(fNo + " numaralı faturada kısmi ödeme mevcut ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (Secim == DialogResult.Yes)
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
-                SqlCommand komutSil = new SqlCommand("update MSListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-                komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Kısmı Ödeme");
-                komutSil.ExecuteNonQuery();
+
+                string id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                    "update rTeklifListe set GenelDurum=@o1 where ID = @o3; " +
+                    "COMMIT TRANSACTION", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", "Gönderildi");
+                add2.Parameters.AddWithValue("@o3", o2);
+                add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                listele();
             }
+
+            listele();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //ödendi
+            //hazırlanıyor
 
-            DialogResult Secim = new DialogResult();
-
-            Secim = MessageBox.Show(fNo + " numaralı teklif onaylandı mı ? ", "Oopppss!", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-
-            if (Secim == DialogResult.Yes)
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
-                SqlCommand komutSil = new SqlCommand("update rTeklifListe set GenelDurum=@a1 where ID = @p1", bgl.baglanti());
-                komutSil.Parameters.AddWithValue("@p1", lID);
-                komutSil.Parameters.AddWithValue("@a1", "Onaylandı");
-                komutSil.ExecuteNonQuery();
+
+                string id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                    "update rTeklifListe set GenelDurum=@o1 where ID = @o3; " +
+                    "COMMIT TRANSACTION", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", "Hazırlanıyor");
+                add2.Parameters.AddWithValue("@o3", o2);
+                add2.ExecuteNonQuery();
                 bgl.baglanti().Close();
-                listele();
             }
+
+            listele();
+
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
             lID = dr["ID"].ToString();
-            fNo = dr["TeklifNo"].ToString();
+            fNo = dr["Sipariş No"].ToString();
             //firID = dr["FirmaID"].ToString();
             //tutar = dr["Toplam Tutar"].ToString();
         }

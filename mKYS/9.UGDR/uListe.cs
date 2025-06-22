@@ -446,7 +446,8 @@ namespace mROOT._9.UGDR
                     frmPrint.name = "PIF - " + dosyadi;
                     using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
                     {
-                        frm.CPNP();
+                        //frm.CPNP();
+                        frm.CPNP2();
                         frm.ShowDialog();
                     }
 
@@ -500,6 +501,50 @@ namespace mROOT._9.UGDR
             RPList.rNo = rno;
             RPList rp = new RPList();
             rp.Show();
+        }
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //export options..
+
+            if (Giris.birimID == "1005")
+            {
+                for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                {
+                    id = gridView1.GetSelectedRows()[i].ToString();
+                    int y = Convert.ToInt32(id);
+                    string listeID = gridView1.GetRowCellValue(y, "ID")?.ToString();
+                    string ad = gridView1.GetRowCellValue(y, "Urun")?.ToString();
+
+                    if (!string.IsNullOrWhiteSpace(listeID) && !string.IsNullOrWhiteSpace(dosyadi))
+                    {
+                        // tID’yi rapor içinde set etmeliyiz çünkü fonksiyon parametre almıyor
+                        mKYS.Raporlar.Ozeco.Cpnp.UGD1.tID = listeID;
+                        mKYS.Raporlar.Ozeco.Cpnp.UGD2.tID = listeID;
+                        mKYS.Raporlar.Ozeco.Cpnp.UGD3.tID = listeID;
+                        mKYS.Raporlar.Ozeco.Cpnp.UGD4.tID = listeID;
+
+                        // frmPrint'te name static değilse, instance üzerinden ver
+                        using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                        {
+                            //frm.Name = fullName; // name alanına dışarıdan değer atıyoruz
+                            frm.RaporAdi = "PIF - " + ad;
+                            frm.YeniCPNP();      // raporu oluştur ve çıktı al
+                                                  // frm.ShowDialog(); // Eğer kullanıcıya göstermek istersen
+                        }
+                    }
+                }
+
+                MessageBox.Show("Tüm raporlar C:\\Raporlar klasörüne kaydedildi.", "İşlem Tamamlandı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+            }
+
+
+
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -19,6 +19,7 @@ using mKYS.Musteri;
 using mKYS.Numune;
 using mKYS.Raporlar;
 using System.Diagnostics;
+using System.IO;
 
 namespace mKYS
 {
@@ -746,30 +747,67 @@ namespace mKYS
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             durumekle();
+
             //ingilizce challenge
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
-                id = gridView3.GetSelectedRows()[i].ToString();
-                int y = Convert.ToInt32(id);
-                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
-                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = raporno + " - " + name;
+                //id = gridView3.GetSelectedRows()[i].ToString();
+                //int y = Convert.ToInt32(id);
+                //// nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                //string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+                //nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+                //name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+                //frmPrint.name = raporno + " - " + name;
+                //Raporlar.Test.ReportCosmetic.kod = "Annex-2.PR.20";
+                //Raporlar.Test.ReportCosmetic.raporID = nkrno;
+                //Raporlar.Test.ReportCosmetic.tNu = "-1";
+                //Raporlar.Test.ReportCosmetic3.raporID = nkrno;
+                //using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                //{
+                //    frm.Challenge();
+                //    frm.ShowDialog();
+                //}
+
+                int rowHandle = gridView3.GetSelectedRows()[i];
+                string raporNo = gridView3.GetRowCellValue(rowHandle, "Rapor No").ToString();
+                string nkrno = gridView3.GetRowCellValue(rowHandle, "aID").ToString();
+                string name = gridView3.GetRowCellValue(rowHandle, "Numune Adı").ToString();
+
+                // Dosya adı ve yolu
+                string dosyaAdi = $"{raporNo}_{name}.pdf";
+                string dosyaYolu = Path.Combine(@"C:\Raporlar\", dosyaAdi);
+
+
+                // Statik değerleri ata
                 Raporlar.Test.ReportCosmetic.kod = "Annex-2.PR.20";
                 Raporlar.Test.ReportCosmetic.raporID = nkrno;
                 Raporlar.Test.ReportCosmetic.tNu = "-1";
-                Raporlar.Test.ReportCosmetic3.raporID = nkrno;
-                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+
+                // Raporu oluştur ve parametreleri ata
+                Raporlar.Test.ReportCosmetic rapor = new Raporlar.Test.ReportCosmetic();
+                // Parametreleri gizle (eğer gerekiyorsa)
+                foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
                 {
-                    frm.Challenge();
-                    frm.ShowDialog();
+                    p.Visible = false;
                 }
 
+                // Raporu oluştur ve dışa aktar
+                rapor.bilgi();
+                rapor.CreateDocument();
+
+                Raporlar.Test.ReportCosmetic3 rapor2 = new Raporlar.Test.ReportCosmetic3();
+                rapor2.bilgi(); // içeriği üret
+                rapor2.CreateDocument();
+                rapor.Pages.AddRange(rapor2.Pages);
+                rapor.ExportToPdf(dosyaYolu);
+
+                
 
             }
 
-           
+            MessageBox.Show("Rapor yazdırma başarılı!");
+
+
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -925,26 +963,56 @@ namespace mKYS
         private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // Türkçe ÜGDR
+            //for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            //{
+            //    id = gridView3.GetSelectedRows()[i].ToString();
+            //    int y = Convert.ToInt32(id);
+            //    string nID = gridView3.GetRowCellValue(y, "aID").ToString();                
+            //    name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+            //    frmPrint.name = "ÜGDR - " + name;
+
+            //    mKYS.Raporlar.Newest.Tr.UGD1.tID = nID;
+            //    mKYS.Raporlar.Newest.Tr.UGD2.tID = nID;
+            //    mKYS.Raporlar.Newest.Tr.UGD3.tID = nID;
+            //    mKYS.Raporlar.Newest.Tr.UGD4.tID = nID;
+            //    using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            //    {
+            //        frm.NewestTR();
+            //        frm.ShowDialog();
+            //    }
+
+
+            //}
+
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
-                id = gridView3.GetSelectedRows()[i].ToString();
-                int y = Convert.ToInt32(id);
-                string nID = gridView3.GetRowCellValue(y, "aID").ToString();                
-                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = "ÜGDR - " + name;
+                int rowHandle = gridView3.GetSelectedRows()[i];
+                string nID = gridView3.GetRowCellValue(rowHandle, "aID")?.ToString();
+                string sampleName = gridView3.GetRowCellValue(rowHandle, "Numune Adı")?.ToString();
+                string fullName = "ÜGDR - " + sampleName;
 
-                mKYS.Raporlar.Newest.Tr.UGD1.tID = nID;
-                mKYS.Raporlar.Newest.Tr.UGD2.tID = nID;
-                mKYS.Raporlar.Newest.Tr.UGD3.tID = nID;
-                mKYS.Raporlar.Newest.Tr.UGD4.tID = nID;
-                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                if (!string.IsNullOrWhiteSpace(nID) && !string.IsNullOrWhiteSpace(sampleName))
                 {
-                    frm.NewestTR();
-                    frm.ShowDialog();
+                    // tID’yi rapor içinde set etmeliyiz çünkü fonksiyon parametre almıyor
+                    mKYS.Raporlar.Newest.Tr.UGD1.tID = nID;
+                    mKYS.Raporlar.Newest.Tr.UGD2.tID = nID;
+                    mKYS.Raporlar.Newest.Tr.UGD3.tID = nID;
+                    mKYS.Raporlar.Newest.Tr.UGD4.tID = nID;
+                    mKYS.Raporlar.Newest.Tr.UGD5.tID = nID;
+
+                    // frmPrint'te name static değilse, instance üzerinden ver
+                    using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+                    {
+                        //frm.Name = fullName; // name alanına dışarıdan değer atıyoruz
+                        frm.RaporAdi = "ÜGDR - " + sampleName;
+                        frm.yeniTR();      // raporu oluştur ve çıktı al
+                                             // frm.ShowDialog(); // Eğer kullanıcıya göstermek istersen
+                    }
                 }
-
-
             }
+
+            MessageBox.Show("Tüm raporlar C:\\Raporlar klasörüne kaydedildi.", "İşlem Tamamlandı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
 
         }
@@ -953,25 +1021,72 @@ namespace mKYS
         {
             durumekle();
             //ingilizce stabiliy
+            //for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            //{
+            //    //id = gridView3.GetSelectedRows()[i].ToString();
+            //    //int y = Convert.ToInt32(id);
+            //    //// nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+            //    //string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
+            //    //nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
+            //    //name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
+            //    //frmPrint.name = raporno + " - " + name;
+            //    //Raporlar.Test.ReportCosmetic.raporID = nkrno;
+            //    //Raporlar.Test.ReportCosmetic.tNu = "-2";
+            //    //Raporlar.Test.Stabilityv2.raporID = nkrno;
+            //    //using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            //    //{
+            //    //    frm.Stabilite();
+            //    //    frm.ShowDialog();
+            //    //}
+
+            //}
+
+
+            string klasorYolu = @"C:\Raporlar\";
+            if (!Directory.Exists(klasorYolu))
+            {
+                Directory.CreateDirectory(klasorYolu);
+            }
+
             for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
-                id = gridView3.GetSelectedRows()[i].ToString();
-                int y = Convert.ToInt32(id);
-                // nkrno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                string raporno = gridView3.GetRowCellValue(y, "Rapor No").ToString();
-                nkrno = gridView3.GetRowCellValue(y, "aID").ToString();
-                name = gridView3.GetRowCellValue(y, "Numune Adı").ToString();
-                frmPrint.name = raporno + " - " + name;
+                int rowHandle = gridView3.GetSelectedRows()[i];
+                string raporNo = gridView3.GetRowCellValue(rowHandle, "Rapor No").ToString();
+                string nkrno = gridView3.GetRowCellValue(rowHandle, "aID").ToString();
+                string name = gridView3.GetRowCellValue(rowHandle, "Numune Adı").ToString();
+
+                string dosyaAdi = $"{raporNo}_{name}.pdf";
+                string dosyaYolu = Path.Combine(klasorYolu, dosyaAdi);
+
+                // Statik değişkenleri ayarla
                 Raporlar.Test.ReportCosmetic.raporID = nkrno;
                 Raporlar.Test.ReportCosmetic.tNu = "-2";
                 Raporlar.Test.Stabilityv2.raporID = nkrno;
-                using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
-                {
-                    frm.Stabilite();
-                    frm.ShowDialog();
-                }
 
+                // 1. rapor
+                Raporlar.Test.ReportCosmetic rapor = new Raporlar.Test.ReportCosmetic();
+                rapor.PrintingSystem.ContinuousPageNumbering = true;
 
+                foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
+                    p.Visible = false;
+
+                rapor.bilgi(); // İçeriği oluştur
+                rapor.Name = name;
+                rapor.CreateDocument();
+
+                // 2. rapor
+                Raporlar.Test.Stabilityv2 rapor2 = new Raporlar.Test.Stabilityv2();
+                foreach (DevExpress.XtraReports.Parameters.Parameter p2 in rapor2.Parameters)
+                    p2.Visible = false;
+
+                rapor2.bilgi(); // İçeriği oluştur
+                rapor2.CreateDocument();
+
+                // Sayfaları birleştir
+                rapor.Pages.AddRange(rapor2.Pages);
+
+                // PDF olarak kaydet
+                rapor.ExportToPdf(dosyaYolu);
             }
         }
 

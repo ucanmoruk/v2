@@ -132,7 +132,6 @@
             this.xrTableCell53 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell54 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell55 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell57 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell58 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell59 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -1304,12 +1303,11 @@
             this.xrTable8,
             this.xrTable9,
             this.xrSubreport2});
-            this.GroupFooter1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Sum(Iif([Alerjen] Like \'%Alerjen%\', 1, Null)) > 0")});
             this.GroupFooter1.HeightF = 122.5477F;
             this.GroupFooter1.KeepTogether = true;
             this.GroupFooter1.Level = 1;
             this.GroupFooter1.Name = "GroupFooter1";
+            this.GroupFooter1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.GroupFooter1_BeforePrint);
             // 
             // xrTable8
             // 
@@ -1319,7 +1317,7 @@
             this.xrTable8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable8.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow8});
-            this.xrTable8.SizeF = new System.Drawing.SizeF(1024F, 25F);
+            this.xrTable8.SizeF = new System.Drawing.SizeF(907.7258F, 25F);
             this.xrTable8.StylePriority.UseFont = false;
             this.xrTable8.StylePriority.UseTextAlignment = false;
             this.xrTable8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1331,7 +1329,6 @@
             this.xrTableCell53,
             this.xrTableCell54,
             this.xrTableCell55,
-            this.xrTableCell56,
             this.xrTableCell57,
             this.xrTableCell58,
             this.xrTableCell59,
@@ -1397,20 +1394,6 @@
             this.xrTableCell55.StylePriority.UseForeColor = false;
             this.xrTableCell55.Text = "Concentration (%)";
             this.xrTableCell55.Weight = 1.5392431911412619D;
-            // 
-            // xrTableCell56
-            // 
-            this.xrTableCell56.BackColor = System.Drawing.Color.Gainsboro;
-            this.xrTableCell56.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell56.ForeColor = System.Drawing.Color.Black;
-            this.xrTableCell56.Multiline = true;
-            this.xrTableCell56.Name = "xrTableCell56";
-            this.xrTableCell56.StylePriority.UseBackColor = false;
-            this.xrTableCell56.StylePriority.UseBorders = false;
-            this.xrTableCell56.StylePriority.UseForeColor = false;
-            this.xrTableCell56.Text = "Max Concentration in Final Product (%)";
-            this.xrTableCell56.Weight = 1.4761377856511402D;
             // 
             // xrTableCell57
             // 
@@ -1568,10 +1551,9 @@
             this.xrSubreport3,
             this.xrTable11,
             this.xrTable10});
-            this.GroupFooter3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Sum(Iif([Functions] Like \'%PRESERVAT%\', 1, Null)) > 0")});
             this.GroupFooter3.HeightF = 132.2866F;
             this.GroupFooter3.Name = "GroupFooter3";
+            this.GroupFooter3.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.GroupFooter3_BeforePrint);
             // 
             // xrSubreport3
             // 
@@ -1894,7 +1876,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell53;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell54;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell55;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell56;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell57;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell58;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell59;

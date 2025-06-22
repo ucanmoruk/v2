@@ -240,7 +240,7 @@ namespace mKYS.Numune
                 e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
           
         }
-
+        string evrakno;
         private void gridView3_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             try
@@ -249,6 +249,7 @@ namespace mKYS.Numune
                 raporno = dr["Rapor No"].ToString();
                 raporID = dr["nID"].ToString();
                 x1ID = dr["ID"].ToString();
+                evrakno = dr["Evrak No"].ToString();
             }
             catch (Exception ex)
             {
@@ -374,28 +375,36 @@ namespace mKYS.Numune
         {
             //yazdir
 
-            seciliyazdir.Clear();
-            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
-            {
+            //seciliyazdir.Clear();
+            //for (int i = 0; i < gridView3.SelectedRowsCount; i++)
+            //{
 
-                string id = gridView3.GetSelectedRows()[i].ToString();
-                int y = Convert.ToInt32(id);
-                string o2;
-                o2 = gridView3.GetRowCellValue(y, "nID").ToString();
+            //    string id = gridView3.GetSelectedRows()[i].ToString();
+            //    int y = Convert.ToInt32(id);
+            //    string o2;
+            //    o2 = gridView3.GetRowCellValue(y, "nID").ToString();
 
 
-                var deger = gridView3.GetRowCellValue(y, "ID").ToString();
-                seciliyazdir.Add(deger);
+            //    var deger = gridView3.GetRowCellValue(y, "ID").ToString();
+            //    seciliyazdir.Add(deger);
 
-            }
+            //}
 
-            mROOT.Raporlar.HizmetTakip.seciliyazdir = seciliyazdir;
+            //mROOT.Raporlar.HizmetTakip.seciliyazdir = seciliyazdir;
+            //using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
+            //{
+            //    frm.HizmetTakip();
+            //    frm.ShowDialog();
+            //}
+
+
+            IsTakip.tID = evrakno;
             using (Raporlar.frmPrint frm = new Raporlar.frmPrint())
             {
-                frm.HizmetTakip();
+                frm.IsTakip();
                 frm.ShowDialog();
             }
-    
+
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

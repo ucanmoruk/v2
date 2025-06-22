@@ -911,10 +911,10 @@ namespace mKYS
                     SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
                     komutz.Parameters.AddWithValue("@o1", ykrID);
                     komutz.Parameters.AddWithValue("@o2", gridView5.GetRowCellValue(ik, "INCI İsmi").ToString());
-                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView5.GetRowCellValue(ik, "Miktar").ToString(), CultureInfo.InvariantCulture));
+                    komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView5.GetRowCellValue(ik, "Üst Değer(%)").ToString(), CultureInfo.InvariantCulture));
                     komutz.Parameters.AddWithValue("@o4", 100);
                     komutz.ExecuteNonQuery();
-                    bgl.baglanti().Close();
+                    bgl.baglanti().Close();              
 
                 }
 
