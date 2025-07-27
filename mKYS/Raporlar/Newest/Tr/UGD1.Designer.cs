@@ -329,7 +329,11 @@
             this.xrTableCell101 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell102 = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader16 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel67 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPictureBox5 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.GroupHeader17 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLabel86 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel87 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel63 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel65 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel66 = new DevExpress.XtraReports.UI.XRLabel();
@@ -337,10 +341,6 @@
             this.xrLabel52 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel53 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel54 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel86 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel87 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox5 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.xrLabel67 = new DevExpress.XtraReports.UI.XRLabel();
             this.pUrun = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
@@ -1131,7 +1131,7 @@
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel18.StylePriority.UseFont = false;
-            this.xrLabel18.Text = "Madde veya karışımlara ait fiziksel ve kimyasal özellikler Ek-2 bölümünde detaylı" +
+            this.xrLabel18.Text = "Madde veya karışımlara ait fiziksel ve kimyasal özellikler Ek-3 bölümünde detaylı" +
     " olarak paylaşılmıştır.";
             // 
             // xrLabel17
@@ -3865,6 +3865,26 @@
             this.GroupHeader16.Level = 2;
             this.GroupHeader16.Name = "GroupHeader16";
             // 
+            // xrLabel67
+            // 
+            this.xrLabel67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel67.LocationFloat = new DevExpress.Utils.PointFloat(41.7879F, 10F);
+            this.xrLabel67.Multiline = true;
+            this.xrLabel67.Name = "xrLabel67";
+            this.xrLabel67.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel67.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel67.StylePriority.UseFont = false;
+            this.xrLabel67.Text = "Ürün görseli aşağıda ayrıca paylaşılmıştır.";
+            // 
+            // xrPictureBox5
+            // 
+            this.xrPictureBox5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pUrun")});
+            this.xrPictureBox5.LocationFloat = new DevExpress.Utils.PointFloat(41.78791F, 54.16667F);
+            this.xrPictureBox5.Name = "xrPictureBox5";
+            this.xrPictureBox5.SizeF = new System.Drawing.SizeF(698.2072F, 408.6577F);
+            this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            // 
             // GroupHeader17
             // 
             this.GroupHeader17.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -3881,6 +3901,28 @@
             this.GroupHeader17.HeightF = 342.4515F;
             this.GroupHeader17.Level = 1;
             this.GroupHeader17.Name = "GroupHeader17";
+            // 
+            // xrLabel86
+            // 
+            this.xrLabel86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel86.LocationFloat = new DevExpress.Utils.PointFloat(44.78763F, 268.8541F);
+            this.xrLabel86.Multiline = true;
+            this.xrLabel86.Name = "xrLabel86";
+            this.xrLabel86.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel86.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel86.StylePriority.UseFont = false;
+            this.xrLabel86.Text = resources.GetString("xrLabel86.Text");
+            // 
+            // xrLabel87
+            // 
+            this.xrLabel87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.xrLabel87.LocationFloat = new DevExpress.Utils.PointFloat(44.91777F, 302.2916F);
+            this.xrLabel87.Multiline = true;
+            this.xrLabel87.Name = "xrLabel87";
+            this.xrLabel87.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel87.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
+            this.xrLabel87.StylePriority.UseFont = false;
+            this.xrLabel87.Text = resources.GetString("xrLabel87.Text");
             // 
             // xrLabel63
             // 
@@ -3964,48 +4006,6 @@
             this.xrLabel54.StylePriority.UseTextAlignment = false;
             this.xrLabel54.Text = "MoS = NO(A)EL / SED ≥ 100";
             this.xrLabel54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel86
-            // 
-            this.xrLabel86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.xrLabel86.LocationFloat = new DevExpress.Utils.PointFloat(44.78763F, 268.8541F);
-            this.xrLabel86.Multiline = true;
-            this.xrLabel86.Name = "xrLabel86";
-            this.xrLabel86.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel86.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel86.StylePriority.UseFont = false;
-            this.xrLabel86.Text = resources.GetString("xrLabel86.Text");
-            // 
-            // xrLabel87
-            // 
-            this.xrLabel87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.xrLabel87.LocationFloat = new DevExpress.Utils.PointFloat(44.91777F, 302.2916F);
-            this.xrLabel87.Multiline = true;
-            this.xrLabel87.Name = "xrLabel87";
-            this.xrLabel87.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel87.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel87.StylePriority.UseFont = false;
-            this.xrLabel87.Text = resources.GetString("xrLabel87.Text");
-            // 
-            // xrPictureBox5
-            // 
-            this.xrPictureBox5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ImageUrl", "?pUrun")});
-            this.xrPictureBox5.LocationFloat = new DevExpress.Utils.PointFloat(41.78791F, 54.16667F);
-            this.xrPictureBox5.Name = "xrPictureBox5";
-            this.xrPictureBox5.SizeF = new System.Drawing.SizeF(698.2072F, 408.6577F);
-            this.xrPictureBox5.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
-            // 
-            // xrLabel67
-            // 
-            this.xrLabel67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.xrLabel67.LocationFloat = new DevExpress.Utils.PointFloat(41.7879F, 10F);
-            this.xrLabel67.Multiline = true;
-            this.xrLabel67.Name = "xrLabel67";
-            this.xrLabel67.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel67.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
-            this.xrLabel67.StylePriority.UseFont = false;
-            this.xrLabel67.Text = "Ürün görseli aşağıda ayrıca paylaşılmıştır.";
             // 
             // pUrun
             // 

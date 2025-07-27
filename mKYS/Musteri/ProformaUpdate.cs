@@ -201,7 +201,7 @@ namespace mKYS.Musteri
             this.gridView1.Columns[7].Width = 35;
             this.gridView1.Columns[8].Width = 35;
             this.gridView1.Columns[9].Width = 35;
-            this.gridView1.Columns[10].Width = 35;
+           // this.gridView1.Columns[10].Width = 35;
 
 
 

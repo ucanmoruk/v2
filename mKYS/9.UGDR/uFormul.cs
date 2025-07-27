@@ -1,4 +1,5 @@
-﻿using DevExpress.DataAccess.Excel;
+﻿using ClosedXML.Excel;
+using DevExpress.DataAccess.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using mKYS;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,20 +26,51 @@ namespace mROOT._9.UGDR
         }
         sqlbaglanti bgl = new sqlbaglanti();
         private void btn_ac_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
-            if (file.ShowDialog() == DialogResult.OK)
-            {             
-                ExcelDataSource excel = new ExcelDataSource();
-                excel.FileName = file.FileName;
-                ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B250");
-                excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
-                excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B250" };
-                excel.SourceOptions.SkipEmptyRows = true;
-                excel.SourceOptions.UseFirstRowAsHeader = true;
-                excel.Fill();
-                gridControl1.DataSource = excel;
+        {           
+
+            if (Anasayfa.birimID == 1)
+            {
+                OpenFileDialog file = new OpenFileDialog();
+                file.Filter = "Excel Dosyası |*.xlsx";
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable table = new DataTable();
+                    table.Columns.Add("INCI İsmi");
+                    table.Columns.Add("Üst Değer(%)");
+
+                    using (var workbook = new XLWorkbook(file.FileName))
+                    {
+                        var worksheet = workbook.Worksheet("Tablo");
+
+                        // Satırları dolaş (1. satır başlık olduğu için 2. satırdan başla)
+                        foreach (var row in worksheet.RangeUsed().RowsUsed().Skip(1))
+                        {
+                            var a = row.Cell(1).GetString(); // A sütunu (INCI İsmi)
+                            var e2 = row.Cell(5).GetValue<string>(); // E sütunu (Üst Değer(%))
+                            table.Rows.Add(a, e2);
+                        }
+                    }
+
+                    gridControl1.DataSource = table;
+
+                }
+            }
+            else
+            {
+                OpenFileDialog file = new OpenFileDialog();
+                file.Filter = "Excel Dosyası |*.xlsx| Excel Dosyası|*.xls ";
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    ExcelDataSource excel = new ExcelDataSource();
+                    excel.FileName = file.FileName;
+                    ExcelWorksheetSettings excelWorksheetSettings = new ExcelWorksheetSettings("Formül", "A1:B250");
+                    excel.SourceOptions = new ExcelSourceOptions(excelWorksheetSettings);
+                    excel.SourceOptions = new CsvSourceOptions() { CellRange = "A1:B250" };
+                    excel.SourceOptions.SkipEmptyRows = true;
+                    excel.SourceOptions.UseFirstRowAsHeader = true;
+                    excel.Fill();
+                    gridControl1.DataSource = excel;
+                }
             }
 
         }
@@ -56,13 +89,34 @@ namespace mROOT._9.UGDR
                 gridLookUpEdit1.Properties.DataSource = dt2;
                 gridLookUpEdit1.Properties.DisplayMember = "RaporNo";
                 gridLookUpEdit1.Properties.ValueMember = "ID";
+
+                if (Anasayfa.birimID == 1)
+                {
+                    labelControl1.Visible = false;
+                    traporno.Visible = false;
+                    gridLookUpEdit1.Visible = false;
+                    simpleButton1.Visible = false;
+                }
+               
+
             }
             else
             {
-                traporno.Visible = true;
-                traporno.Text = rNo;
-                detaybul();
-                simpleButton1.Text = "Güncelle";
+                if (Anasayfa.birimID == 1)
+                {
+                    labelControl1.Visible = false;
+                    traporno.Visible = false;
+                    gridLookUpEdit1.Visible = false;
+                    simpleButton1.Visible = false;
+                }
+                else
+                {
+                    traporno.Visible = true;
+                    traporno.Text = rNo;
+                    detaybul();
+                    simpleButton1.Text = "Güncelle";
+                }
+                
 
             }
 
@@ -72,72 +126,111 @@ namespace mROOT._9.UGDR
         {
             try
             {
-                if (uID == null || uID == "")
+                if (Anasayfa.birimID == 1)
                 {
                     for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
                     {
+
+
                         SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
-                        komutz.Parameters.AddWithValue("@o1", "0");
-                        komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                        komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
+                        komutz.Parameters.AddWithValue("@o1", 0);
+                        komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI İsmi").ToString());
+                        komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Üst Değer(%)").ToString(), CultureInfo.InvariantCulture));
                         komutz.Parameters.AddWithValue("@o4", 100);
                         komutz.ExecuteNonQuery();
                         bgl.baglanti().Close();
 
-                        //DataTable dt = new DataTable();
-                        //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
-                        // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
-                        //da.Fill(dt);
-                        //gridControl2.DataSource = dt;
-                        //gridView2.Columns["cosID"].Visible = false;
-                        //gridView2.Columns["ID"].Visible = false;
-                        //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-                        //gridView2.Columns["Functions"].ColumnEdit = memo;
-                        //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
-                        //this.gridView2.Columns[0].Width = 110;
-                        //this.gridView2.Columns[1].Width = 50;
-                        //this.gridView2.Columns[2].Width = 90;
-                        //this.gridView2.Columns[3].Width = 90;
-                        //this.gridView2.Columns[4].Width = 90;
-                        //this.gridView2.Columns[5].Width = 50;
                     }
+
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, r.Noael2 as 'Noael', c.ID as 'cosID', f.ID from rUGDFormül f 
+                    left join rCosing c on f.INCIName = c.INCIName 
+                    left join rHammadde r on c.ID = r.cID 
+                    where f.UrunID = '" + uID + "' order by f.Miktar desc ", bgl.baglanti());
+                    da.Fill(dt);
+                    gridControl2.DataSource = dt;
+                    gridView2.Columns["cosID"].Visible = false;
+                    gridView2.Columns["ID"].Visible = false;
+                    RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                    gridView2.Columns["Functions"].ColumnEdit = memo;
+                    gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+                    this.gridView2.Columns[0].Width = 110;
+                    this.gridView2.Columns[1].Width = 50;
+                    this.gridView2.Columns[2].Width = 80;
+                    this.gridView2.Columns[3].Width = 90;
+                    this.gridView2.Columns[4].Width = 90;
+                    this.gridView2.Columns[5].Width = 50;
+                    this.gridView2.Columns[6].Width = 50;
                 }
                 else
                 {
-                    for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                    if (uID == null || uID == "")
                     {
+                        for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                        {
+                            SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
+                            komutz.Parameters.AddWithValue("@o1", "0");
+                            komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                            komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
+                            komutz.Parameters.AddWithValue("@o4", 100);
+                            komutz.ExecuteNonQuery();
+                            bgl.baglanti().Close();
 
-
-                        SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
-                        komutz.Parameters.AddWithValue("@o1", uID);
-                        komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
-                        komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
-                        komutz.Parameters.AddWithValue("@o4", 100);
-                        komutz.ExecuteNonQuery();
-                        bgl.baglanti().Close();
-
-                        //DataTable dt = new DataTable();
-                        //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
-                        // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '"+uID+"' order by f.Miktar desc ", bgl.baglanti());
-                        //da.Fill(dt);
-                        //gridControl2.DataSource = dt;
-                        //gridView2.Columns["cosID"].Visible = false;
-                        //gridView2.Columns["ID"].Visible = false;
-                        //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
-                        //gridView2.Columns["Functions"].ColumnEdit = memo;
-                        //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
-                        //this.gridView2.Columns[0].Width = 110;
-                        //this.gridView2.Columns[1].Width = 50;
-                        //this.gridView2.Columns[2].Width = 90;
-                        //this.gridView2.Columns[3].Width = 90;
-                        //this.gridView2.Columns[4].Width = 90;
-                        //this.gridView2.Columns[5].Width = 50;
-
+                            //DataTable dt = new DataTable();
+                            //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
+                            // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '0' order by f.Miktar desc ", bgl.baglanti());
+                            //da.Fill(dt);
+                            //gridControl2.DataSource = dt;
+                            //gridView2.Columns["cosID"].Visible = false;
+                            //gridView2.Columns["ID"].Visible = false;
+                            //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                            //gridView2.Columns["Functions"].ColumnEdit = memo;
+                            //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+                            //this.gridView2.Columns[0].Width = 110;
+                            //this.gridView2.Columns[1].Width = 50;
+                            //this.gridView2.Columns[2].Width = 90;
+                            //this.gridView2.Columns[3].Width = 90;
+                            //this.gridView2.Columns[4].Width = 90;
+                            //this.gridView2.Columns[5].Width = 50;
+                        }
                     }
-                }
+                    else
+                    {
+                        for (int ik = 0; ik <= gridView1.RowCount - 1; ik++)
+                        {
 
-                detaybul();
-                yenivar = "evet";
+
+                            SqlCommand komutz = new SqlCommand("insert into rUGDFormül (UrunID, INCIName, Miktar, DaP) values (@o1,@o2,@o3,@o4) ", bgl.baglanti());
+                            komutz.Parameters.AddWithValue("@o1", uID);
+                            komutz.Parameters.AddWithValue("@o2", gridView1.GetRowCellValue(ik, "INCI Name").ToString());
+                            komutz.Parameters.AddWithValue("@o3", Convert.ToDecimal(gridView1.GetRowCellValue(ik, "Miktar").ToString()));
+                            komutz.Parameters.AddWithValue("@o4", 100);
+                            komutz.ExecuteNonQuery();
+                            bgl.baglanti().Close();
+
+                            //DataTable dt = new DataTable();
+                            //SqlDataAdapter da = new SqlDataAdapter(@"select f.INCIName, f.Miktar, c.Cas, c.EC, c.Functions, c.Regulation, c.ID as 'cosID', f.ID from rUGDFormül f 
+                            // left join rCosing c on f.INCIName = c.INCIName where f.UrunID = '"+uID+"' order by f.Miktar desc ", bgl.baglanti());
+                            //da.Fill(dt);
+                            //gridControl2.DataSource = dt;
+                            //gridView2.Columns["cosID"].Visible = false;
+                            //gridView2.Columns["ID"].Visible = false;
+                            //RepositoryItemMemoEdit memo = new RepositoryItemMemoEdit();
+                            //gridView2.Columns["Functions"].ColumnEdit = memo;
+                            //gridView2.Columns["Functions"].ColumnEdit = new RepositoryItemMemoEdit();
+                            //this.gridView2.Columns[0].Width = 110;
+                            //this.gridView2.Columns[1].Width = 50;
+                            //this.gridView2.Columns[2].Width = 90;
+                            //this.gridView2.Columns[3].Width = 90;
+                            //this.gridView2.Columns[4].Width = 90;
+                            //this.gridView2.Columns[5].Width = 50;
+
+                        }
+                    }
+
+                    detaybul();
+                    yenivar = "evet";
+                }
             }
             catch (Exception ex)
             {
@@ -327,6 +420,11 @@ namespace mROOT._9.UGDR
                     detaybul();
                 }
             }
+        }
+
+        private void traporno_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void uFormul_FormClosing(object sender, FormClosingEventArgs e)

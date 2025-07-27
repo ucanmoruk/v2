@@ -78,6 +78,8 @@ namespace mROOT._2.Product
                 e.Appearance.BackColor = Color.PaleVioletRed;
             else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Teslim Edildi")
                 e.Appearance.BackColor = Color.Green;
+            else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Teklif İletildi")
+                e.Appearance.BackColor = Color.BlueViolet;
             else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Hazırlanıyor")
                 e.Appearance.BackColor = Color.Orchid;
             else if (e.RowHandle > -1 && e.Column.FieldName == "Sipariş Durumu" && adam == "Yeni Sipariş")
@@ -326,6 +328,31 @@ namespace mROOT._2.Product
                 frm.FasonFormu();
                 frm.ShowDialog();
             }
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //teklif iletildi
+
+            for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+            {
+
+                string id = gridView1.GetSelectedRows()[i].ToString();
+                int y = Convert.ToInt32(id);
+                string o2;
+                o2 = gridView1.GetRowCellValue(y, "ID").ToString();
+
+                //       o2 = gridView3.GetRowCellValue(i, "ID").ToString();
+                SqlCommand add2 = new SqlCommand("BEGIN TRANSACTION " +
+                    "update rTeklifListe set GenelDurum=@o1 where ID = @o3; " +
+                    "COMMIT TRANSACTION", bgl.baglanti());
+                add2.Parameters.AddWithValue("@o1", "Teklif İletildi");
+                add2.Parameters.AddWithValue("@o3", o2);
+                add2.ExecuteNonQuery();
+                bgl.baglanti().Close();
+            }
+
+            listele();
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

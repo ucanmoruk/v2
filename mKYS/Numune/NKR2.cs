@@ -20,6 +20,7 @@ using mKYS.Numune;
 using mKYS.Raporlar;
 using System.Diagnostics;
 using System.IO;
+using DevExpress.XtraBars;
 
 namespace mKYS
 {
@@ -157,56 +158,150 @@ namespace mKYS
         {
             if (e.HitInfo.InRow)
             {
+                // 🔥 Odak satırı değiştir — kritik!
+                gridView3.FocusedRowHandle = e.HitInfo.RowHandle;
+
                 var p2 = MousePosition;
                 popupMenu1.ShowPopup(p2);
 
-                if (gridView3.SelectedRowsCount != 0)
+                DataRow dr = gridView3.GetDataRow(e.HitInfo.RowHandle);
+                if (dr == null) return;
+
+                faturaDurumu = dr["Fatura Durumu"].ToString();
+
+                try
                 {
-                    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barSubItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barSubItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    
+                    evrakNo = dr["Evrak No"].ToString();
+                    raporNo = dr["Rapor No"].ToString();
+                    raporDurumu = dr["Rapor Durumu"].ToString();
+                    faturaDurumu = dr["Fatura Durumu"].ToString();
+                    ftarih = dr["Tarih"].ToString();
+                    ffirma = dr["Firma Adı"].ToString();
+                    fnumune = dr["Numune Adı"].ToString();
+                    aID = Convert.ToInt32(dr["aID"].ToString());
+                    faciklama = dr["Açıklama"].ToString();
+
+                    SqlCommand komut2 = new SqlCommand("Select ID, Revno, Karar, Dil from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
+                    SqlDataReader dr2 = komut2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        nkrID = Convert.ToInt32(dr2["ID"]);
+                        revno = Convert.ToInt32(dr2["Revno"]);
+                        karar = dr2["Karar"].ToString();
+                        dil = dr2["Dil"].ToString();
+                        label1.Text = Convert.ToString(nkrID);
+
+                    }
+                    bgl.baglanti().Close();
+
+                    SqlCommand komut3 = new SqlCommand("Select Adres from RootTedarikci where Ad = N'" + ffirma + "'", bgl.baglanti());
+                    SqlDataReader dr3 = komut3.ExecuteReader();
+                    while (dr3.Read())
+                    {
+                        adres = dr3["Adres"].ToString();
+                    }
+                    bgl.baglanti().Close();
+
+
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barSubItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barSubItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    MessageBox.Show("Hata1 : " + ex.Message);
                 }
 
 
-                if (faturaDurumu == "Fatura Kesilmedi" || faturaDurumu == "Proforma Reddedildi")
+                // ✅ Menü görünürlüklerini ayarla
+                bool satirVar = gridView3.SelectedRowsCount > 0;
+
+                barSubItem1.Visibility = satirVar ? BarItemVisibility.Always : BarItemVisibility.Never;
+                barSubItem4.Visibility = satirVar ? BarItemVisibility.Always : BarItemVisibility.Never;
+                barSubItem5.Visibility = satirVar ? BarItemVisibility.Always : BarItemVisibility.Never;
+                barButtonItem14.Visibility = satirVar ? BarItemVisibility.Always : BarItemVisibility.Never;
+                barButtonItem5.Visibility = satirVar ? BarItemVisibility.Always : BarItemVisibility.Never;
+
+
+
+                //if (gridView3.SelectedRowsCount != 0)
+                //{
+                //    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barSubItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barSubItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //}
+                //else
+                //{
+                //    barSubItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barSubItem4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barSubItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //}
+
+                // 💡 Fatura durumu kontrolleri
+                switch (faturaDurumu)
                 {
-                    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                else if (faturaDurumu == "Proforma Oluşturuldu")
-                {
-                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    case "Fatura Kesilmedi":
+                    case "Proforma Reddedildi":
+                        barButtonItem8.Visibility = BarItemVisibility.Never;
+                        barButtonItem16.Visibility = BarItemVisibility.Always;
+                        barButtonItem7.Visibility = BarItemVisibility.Always;
+                        barButtonItem1.Visibility = BarItemVisibility.Always;
+                        break;
+
+                    case "Proforma Oluşturuldu":
+                        barButtonItem1.Visibility = BarItemVisibility.Never;
+                        barButtonItem7.Visibility = BarItemVisibility.Never;
+                        barButtonItem8.Visibility = BarItemVisibility.Never;
+                        barButtonItem16.Visibility = BarItemVisibility.Never;
+                        break;
+
+                    case "Proforma Onaylandı":
+                        barButtonItem1.Visibility = BarItemVisibility.Never;
+                        barButtonItem7.Visibility = BarItemVisibility.Never;
+                        barButtonItem16.Visibility = BarItemVisibility.Never;
+                        barButtonItem8.Visibility = BarItemVisibility.Always;
+                        break;
+
+                    default:
+                        barButtonItem1.Visibility = BarItemVisibility.Never;
+                        barButtonItem7.Visibility = BarItemVisibility.Never;
+                        barButtonItem8.Visibility = BarItemVisibility.Never;
+                        barButtonItem16.Visibility = BarItemVisibility.Never;
+                        break;
                 }
 
-                else if (faturaDurumu == "Proforma Onaylandı")
-                {
-                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                }
-                else
-                {
-                    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                }
+                //if (faturaDurumu == "Fatura Kesilmedi" || faturaDurumu == "Proforma Reddedildi")
+                //{
+                //    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //}
+                //else if (faturaDurumu == "Proforma Oluşturuldu")
+                //{
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //}
+
+                //else if (faturaDurumu == "Proforma Onaylandı")
+                //{
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //}
+                //else
+                //{
+                //    barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem7.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //    barButtonItem16.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                //}
 
                 //if (gridView3.SelectedRowsCount != 0)
                 //{
@@ -1334,57 +1429,57 @@ namespace mKYS
         public static int firmaid, revno, aID;
         private void gridView3_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            try
-            {
-                DataRow dr = gridView3.GetDataRow(gridView3.FocusedRowHandle);
-                    evrakNo = dr["Evrak No"].ToString();
-                    raporNo = dr["Rapor No"].ToString(); 
-                 //   revizyonNo = dr["Revizyon"].ToString(); 
-                    raporDurumu = dr["Rapor Durumu"].ToString();
-                    faturaDurumu = dr["Fatura Durumu"].ToString();
-                    ftarih = dr["Tarih"].ToString();
-                    ffirma = dr["Firma Adı"].ToString();
-                    fnumune = dr["Numune Adı"].ToString();
-                        aID = Convert.ToInt32(dr["aID"].ToString());
-                //     ftur = dr["Tür"].ToString();
-                // fgrup = dr["Grup"].ToString();
-                    //    fanaliz = dr["Analiz"].ToString();
-                    faciklama = dr["Açıklama"].ToString();
-                //    akreditasyon = dr["Akreditasyon"].ToString();
+            //try
+            //{
+            //    DataRow dr = gridView3.GetDataRow(gridView3.FocusedRowHandle);
+            //        evrakNo = dr["Evrak No"].ToString();
+            //        raporNo = dr["Rapor No"].ToString(); 
+            //     //   revizyonNo = dr["Revizyon"].ToString(); 
+            //        raporDurumu = dr["Rapor Durumu"].ToString();
+            //        faturaDurumu = dr["Fatura Durumu"].ToString();
+            //        ftarih = dr["Tarih"].ToString();
+            //        ffirma = dr["Firma Adı"].ToString();
+            //        fnumune = dr["Numune Adı"].ToString();
+            //            aID = Convert.ToInt32(dr["aID"].ToString());
+            //    //     ftur = dr["Tür"].ToString();
+            //    // fgrup = dr["Grup"].ToString();
+            //        //    fanaliz = dr["Analiz"].ToString();
+            //        faciklama = dr["Açıklama"].ToString();
+            //    //    akreditasyon = dr["Akreditasyon"].ToString();
 
-                    SqlCommand komut2 = new SqlCommand("Select ID, Revno, Karar, Dil from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
-                    SqlDataReader dr2 = komut2.ExecuteReader();
-                    while (dr2.Read())
-                    {
-                        nkrID = Convert.ToInt32(dr2["ID"]);
-                        revno = Convert.ToInt32(dr2["Revno"]);
-                        karar = dr2["Karar"].ToString();
-                        dil = dr2["Dil"].ToString();
-                        label1.Text = Convert.ToString(nkrID);
+            //        SqlCommand komut2 = new SqlCommand("Select ID, Revno, Karar, Dil from NKR where RaporNo = N'" + raporNo + "'", bgl.baglanti());
+            //        SqlDataReader dr2 = komut2.ExecuteReader();
+            //        while (dr2.Read())
+            //        {
+            //            nkrID = Convert.ToInt32(dr2["ID"]);
+            //            revno = Convert.ToInt32(dr2["Revno"]);
+            //            karar = dr2["Karar"].ToString();
+            //            dil = dr2["Dil"].ToString();
+            //            label1.Text = Convert.ToString(nkrID);
 
-                    }
-                    bgl.baglanti().Close();
+            //        }
+            //        bgl.baglanti().Close();
 
-                    SqlCommand komut3 = new SqlCommand("Select Adres from RootTedarikci where Ad = N'" + ffirma + "'", bgl.baglanti());
-                    SqlDataReader dr3 = komut3.ExecuteReader();
-                    while (dr3.Read())
-                    {
-                        adres = dr3["Adres"].ToString();
-                    }
-                    bgl.baglanti().Close();
-
-
-                //termint();
-                //Numunedet();
-                //  MessageBox.Show(nkrID + model);
+            //        SqlCommand komut3 = new SqlCommand("Select Adres from RootTedarikci where Ad = N'" + ffirma + "'", bgl.baglanti());
+            //        SqlDataReader dr3 = komut3.ExecuteReader();
+            //        while (dr3.Read())
+            //        {
+            //            adres = dr3["Adres"].ToString();
+            //        }
+            //        bgl.baglanti().Close();
 
 
+            //    //termint();
+            //    //Numunedet();
+            //    //  MessageBox.Show(nkrID + model);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hata1 : " + ex.Message);
-            }
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Hata1 : " + ex.Message);
+            //}
         }
 
         MalKabulGuncelle fr6;

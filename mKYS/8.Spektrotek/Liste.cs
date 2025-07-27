@@ -193,6 +193,17 @@ namespace mROOT._8.Spektrotek
             //}
         }
 
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //purchase form
+            mKYS.Raporlar.SpektroOrder.tID = lID;
+            using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+            {
+                frm.SpektroOrder();
+                frm.ShowDialog();
+            }
+        }
+
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //kısmi

@@ -75,22 +75,38 @@ namespace mROOT._1.Mesaj
         {
             try
             {
-                string jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bloglar.json");
-                if (File.Exists(jsonPath))
+                
+                blogSites = new List<BlogSite>
                 {
-                    string json = File.ReadAllText(jsonPath);
-                    blogSites = JsonSerializer.Deserialize<List<BlogSite>>(json);
-
-                    csite.Properties.Items.Clear();
-                    foreach (var site in blogSites)
+                    new BlogSite
                     {
-                        csite.Properties.Items.Add(site.Name);
+                        Name = "Kozmetik Üretim",
+                        ApiUrl = "https://kozmetikuretim.com/wp-json/wp/v2/posts",
+                        Username = "Laboratuvardan",
+                        AppPassword = "6UPm gTvs DvIm tDK8 v7rA vLSe"
+                    },
+                    new BlogSite
+                    {
+                        Name = "Kimyaca",
+                        ApiUrl = "https://kimyaca.com/wp-json/wp/v2/posts",
+                        Username = "ucanmoruk",
+                        AppPassword = "yWAQ nUoM SiSd oVrW icYo vsL8"
+                    },
+                    new BlogSite
+                    {
+                        Name = "Laboratuvardan",
+                        ApiUrl = "https://laboratuvardan.com/wp-json/wp/v2/posts",
+                        Username = "laboratuvardan",
+                        AppPassword = "CVe8 mahV 7cYI sAwu aRaV RDLk"
                     }
-                }
-                else
-                {
-                    MessageBox.Show("bloglar.json dosyası bulunamadı.");
-                }
+                    // Diğer siteleri burada eklemeye devam edebilirsin
+                };
+
+                 csite.Properties.Items.Clear();
+                 foreach (var site in blogSites)
+                 {
+                    csite.Properties.Items.Add(site.Name);
+                 }
             }
             catch (Exception ex)
             {
@@ -114,58 +130,8 @@ namespace mROOT._1.Mesaj
             }
         }
 
-        //private async Task<int> GetOrCreateTagId(HttpClient client, string baseUrl, string tagName)
-        //{
-        //    //var tagCheck = await client.GetAsync($"{baseUrl}/tags?search={Uri.EscapeDataString(tagName)}");
-        //    //var tagContent = await tagCheck.Content.ReadAsStringAsync();
-        //    //var tagResults = JsonSerializer.Deserialize<List<TermItem>>(tagContent);
 
-        //    //if (tagResults != null && tagResults.Count > 0)
-        //    //    return tagResults[0].id;
-
-        //    //var newTag = new { name = tagName };
-        //    //var tagJson = JsonSerializer.Serialize(newTag);
-        //    //var response = await client.PostAsync($"{baseUrl}/tags", new StringContent(tagJson, Encoding.UTF8, "application/json"));
-        //    //var result = await response.Content.ReadAsStringAsync();
-        //    //var created = JsonSerializer.Deserialize<TermItem>(result);
-        //    //return created.id;
-        //    var tagCheck = await client.GetAsync($"{baseUrl}/tags?search={Uri.EscapeDataString(tagName)}");
-        //    tagCheck.EnsureSuccessStatusCode();
-        //    var tagContent = await tagCheck.Content.ReadAsStringAsync();
-        //    var tagResults = JsonSerializer.Deserialize<List<TermItem>>(tagContent);
-
-        //    if (tagResults != null && tagResults.Any())
-        //        return tagResults[0].id;
-
-        //    var newTag = new { name = tagName };
-        //    var tagJson = JsonSerializer.Serialize(newTag);
-        //    var response = await client.PostAsync($"{baseUrl}/tags", new StringContent(tagJson, Encoding.UTF8, "application/json"));
-        //    response.EnsureSuccessStatusCode();
-        //    var result = await response.Content.ReadAsStringAsync();
-        //    var created = JsonSerializer.Deserialize<TermItem>(result);
-        //    return created.id;
-        //}
-
-        //private async Task<int> GetOrCreateTagId(string baseUrl, string tagName)
-        //{
-        //    // Metot içindeki 'client' kullanımı aynı kalacak, çünkü artık static nesneyi kullanıyor.
-        //    var tagCheck = await client.GetAsync($"{baseUrl}/tags?search={Uri.EscapeDataString(tagName)}");
-        //    tagCheck.EnsureSuccessStatusCode();
-        //    var tagContent = await tagCheck.Content.ReadAsStringAsync();
-        //    var tagResults = JsonSerializer.Deserialize<List<TermItem>>(tagContent);
-
-        //    if (tagResults != null && tagResults.Any())
-        //        return tagResults[0].id;
-
-        //    var newTag = new { name = tagName };
-        //    var tagJson = JsonSerializer.Serialize(newTag);
-        //    var response = await client.PostAsync($"{baseUrl}/tags", new StringContent(tagJson, Encoding.UTF8, "application/json"));
-        //    response.EnsureSuccessStatusCode();
-        //    var result = await response.Content.ReadAsStringAsync();
-        //    var created = JsonSerializer.Deserialize<TermItem>(result);
-        //    return created.id;
-        //}
-
+        string rootUrl;
         private async void simpleButton1_Click(object sender, EventArgs e)
         {
             if (gelis != "Güncelle")
@@ -200,6 +166,7 @@ namespace mROOT._1.Mesaj
             }
 
             btn_send.Enabled = false;
+            btn_save.Text = "Kapat";
 
         }
 
@@ -274,9 +241,10 @@ namespace mROOT._1.Mesaj
 
                 // URL'leri daha güvenli bir şekilde oluştur
                 var baseUri = new Uri(selectedSite.ApiUrl);
-                string rootUrl = baseUri.GetLeftPart(UriPartial.Authority); // "https://orneksite.com"
+                rootUrl = baseUri.GetLeftPart(UriPartial.Authority); // "https://orneksite.com"
                 string apiBaseUrl = $"{rootUrl}/wp-json/wp/v2";
 
+  
                 // --- 6. Görseli WordPress'e Yükle ---
                 if (!string.IsNullOrEmpty(imagePathForUpload))
                 {
@@ -285,25 +253,53 @@ namespace mROOT._1.Mesaj
                 }
 
                 // --- 7. Kategori ve Etiket ID'lerini Al ---
-                int? categoryId = categories.FirstOrDefault(c => c.name.Equals(selectedCategoryName, StringComparison.OrdinalIgnoreCase))?.id;
+                int? categoryId = null;
+                if (!string.IsNullOrEmpty(selectedCategoryName) && categories.Any())
+                {
+                    categoryId = categories.FirstOrDefault(c => c.name.Equals(selectedCategoryName, StringComparison.OrdinalIgnoreCase))?.id;
+                }                
+
+                //List<int> tagIds = new List<int>();
+                //if (!string.IsNullOrWhiteSpace(tags))
+                //{
+                //    foreach (var tag in tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                //    {
+                //        int tagId = await GetOrCreateTagId($"{rootUrl}/wp-json", tag.Trim()); // GetOrCreateTagId'ye root API URL'sini gönder
+                //        if (tagId > 0) tagIds.Add(tagId);
+                //    }
+                //}
+
+
                 List<int> tagIds = new List<int>();
                 if (!string.IsNullOrWhiteSpace(tags))
                 {
-                    foreach (var tag in tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    try
                     {
-                        int tagId = await GetOrCreateTagId($"{rootUrl}/wp-json", tag.Trim()); // GetOrCreateTagId'ye root API URL'sini gönder
-                        if (tagId > 0) tagIds.Add(tagId);
+                        foreach (var tag in tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                        {
+                            string trimmedTag = tag.Trim();
+                            if (!string.IsNullOrEmpty(trimmedTag))
+                            {
+                                int tagId = await GetOrCreateTagId(rootUrl, trimmedTag);
+                                if (tagId > 0) tagIds.Add(tagId);
+                            }
+                        }
+                    }
+                    catch (Exception tagEx)
+                    {
+                        MessageBox.Show($"Etiket işlemi sırasında hata: {tagEx.Message}\\nDevam ediliyor...", "Etiket Uyarısı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
 
+
                 // --- 8. Yazı Verisini Oluştur ---
                 var postData = new Dictionary<string, object>
-        {
-            { "title", title },
-            { "content", content },
-            { "status", publishDate > DateTime.Now ? "future" : "publish" },
-            { "date_gmt", publishDate.ToUniversalTime().ToString("o") },
-        };
+                {
+                    { "title", title },
+                    { "content", content },
+                    { "status", publishDate > DateTime.Now ? "future" : "publish" },
+                    { "date_gmt", publishDate.ToUniversalTime().ToString("o") },
+                };
                 if (categoryId.HasValue) postData.Add("categories", new int[] { categoryId.Value });
                 if (tagIds.Any()) postData.Add("tags", tagIds);
                 if (featuredMediaId > 0) postData.Add("featured_media", featuredMediaId);
@@ -450,25 +446,69 @@ namespace mROOT._1.Mesaj
         // GetOrCreateTagId metodunuza küçük bir ekleme (URL düzeltmesi)
         private async Task<int> GetOrCreateTagId(string rootApiUrl, string tagName) // Bu metot artık `rootApiUrl` almalı
         {
-            var tagsEndpoint = $"{rootApiUrl}/wp/v2/tags";
+           // var tagsEndpoint = $"{rootApiUrl}/wp/v2/tags";
+           //// var tagsEndpoint = $"{rootApiUrl}/tags";  // Eğer rootApiUrl = https://seninsite.com/wp-json/wp/v2
 
-            // Önce etiketi ara
-            var tagCheck = await client.GetAsync($"{tagsEndpoint}?search={Uri.EscapeDataString(tagName)}");
-            tagCheck.EnsureSuccessStatusCode();
-            var tagContent = await tagCheck.Content.ReadAsStringAsync();
-            var tagResults = JsonSerializer.Deserialize<List<TermItem>>(tagContent);
+           // // Önce etiketi ara
+           // var tagCheck = await client.GetAsync($"{tagsEndpoint}?search={Uri.EscapeDataString(tagName)}");
+           // tagCheck.EnsureSuccessStatusCode();
+           // var tagContent = await tagCheck.Content.ReadAsStringAsync();
+           // var tagResults = JsonSerializer.Deserialize<List<TermItem>>(tagContent);
 
-            if (tagResults != null && tagResults.Any(t => t.name.Equals(tagName, StringComparison.OrdinalIgnoreCase)))
-                return tagResults.First(t => t.name.Equals(tagName, StringComparison.OrdinalIgnoreCase)).id;
+           // if (tagResults != null && tagResults.Any(t => t.name.Equals(tagName, StringComparison.OrdinalIgnoreCase)))
+           //     return tagResults.First(t => t.name.Equals(tagName, StringComparison.OrdinalIgnoreCase)).id;
 
-            // Bulunamazsa yeni etiket oluştur
-            var newTag = new { name = tagName };
-            var tagJson = JsonSerializer.Serialize(newTag);
-            var response = await client.PostAsync(tagsEndpoint, new StringContent(tagJson, Encoding.UTF8, "application/json"));
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsStringAsync();
-            var created = JsonSerializer.Deserialize<TermItem>(result);
-            return created.id;
+           // // Bulunamazsa yeni etiket oluştur
+           // var newTag = new { name = tagName };
+           // var tagJson = JsonSerializer.Serialize(newTag);
+           // var response = await client.PostAsync(tagsEndpoint, new StringContent(tagJson, Encoding.UTF8, "application/json"));
+           // response.EnsureSuccessStatusCode();
+           // var result = await response.Content.ReadAsStringAsync();
+           // var created = JsonSerializer.Deserialize<TermItem>(result);
+           // return created.id;
+
+
+            try
+            {
+                var tagsEndpoint = $"{rootUrl}/wp-json/wp/v2/tags";
+
+                // Önce etiketi ara
+                var searchUrl = $"{tagsEndpoint}?search={Uri.EscapeDataString(tagName)}&per_page=100";
+                var tagCheck = await client.GetAsync(searchUrl);
+
+                if (!tagCheck.IsSuccessStatusCode)
+                {
+                    throw new Exception($"Etiket arama hatası: {tagCheck.ReasonPhrase}");
+                }
+
+                var tagContent = await tagCheck.Content.ReadAsStringAsync();
+                var tagResults = JsonSerializer.Deserialize<List<TermItem>>(tagContent);
+
+                // Tam eşleşme ara
+                var exactMatch = tagResults?.FirstOrDefault(t => t.name.Equals(tagName, StringComparison.OrdinalIgnoreCase));
+                if (exactMatch != null)
+                    return exactMatch.id;
+
+                // Bulunamazsa yeni etiket oluştur
+                var newTag = new { name = tagName };
+                var tagJson = JsonSerializer.Serialize(newTag);
+                var response = await client.PostAsync(tagsEndpoint, new StringContent(tagJson, Encoding.UTF8, "application/json"));
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"Etiket oluşturma hatası: {response.ReasonPhrase}\\n{errorContent}");
+                }
+
+                var result = await response.Content.ReadAsStringAsync();
+                var created = JsonSerializer.Deserialize<TermItem>(result);
+                return created.id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Etiket işlemi hatası ({tagName}): {ex.Message}", "Etiket Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0; // Hata durumunda 0 döndür
+            }
         }
 
 
@@ -638,6 +678,10 @@ namespace mROOT._1.Mesaj
             if (btn_save.Text == "Güncelle")
             {
                 guncelle(bID);
+            }
+            else if (btn_save.Text == "Kapat")
+            {
+                this.Close();
             }
             else
             {

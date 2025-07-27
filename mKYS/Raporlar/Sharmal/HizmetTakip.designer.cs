@@ -469,7 +469,7 @@
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
             this.xrTableCell4.Text = "Kabul Tarihi:";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell4.Weight = 1.1102503539359589D;
+            this.xrTableCell4.Weight = 1.6732083442737289D;
             // 
             // xrTableCell10
             // 
@@ -490,7 +490,7 @@
             this.xrTableCell10.Text = "xrTableCell10";
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell10.TextFormatString = "{0:d.MM.yyyy}";
-            this.xrTableCell10.Weight = 1.9843440154030965D;
+            this.xrTableCell10.Weight = 1.4213860250653265D;
             // 
             // xrTableRow2
             // 

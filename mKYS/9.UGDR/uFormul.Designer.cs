@@ -190,7 +190,7 @@
             // gridLookUpEdit1
             // 
             this.gridLookUpEdit1.EditValue = "";
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(22, 39);
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(364, 44);
             this.gridLookUpEdit1.Name = "gridLookUpEdit1";
             this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -217,7 +217,7 @@
             this.btnexcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnexcel.ImageOptions.Image")));
             this.btnexcel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnexcel.ImageOptions.ImageToTextIndent = 10;
-            this.btnexcel.Location = new System.Drawing.Point(256, 15);
+            this.btnexcel.Location = new System.Drawing.Point(130, 15);
             this.btnexcel.Name = "btnexcel";
             this.btnexcel.Size = new System.Drawing.Size(107, 50);
             this.btnexcel.TabIndex = 0;
@@ -231,7 +231,7 @@
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton2.ImageOptions.ImageToTextIndent = 10;
-            this.simpleButton2.Location = new System.Drawing.Point(139, 15);
+            this.simpleButton2.Location = new System.Drawing.Point(10, 15);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(108, 50);
             this.simpleButton2.TabIndex = 0;
@@ -245,7 +245,7 @@
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton1.ImageOptions.ImageToTextIndent = 10;
-            this.simpleButton1.Location = new System.Drawing.Point(380, 15);
+            this.simpleButton1.Location = new System.Drawing.Point(251, 15);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(107, 50);
             this.simpleButton1.TabIndex = 0;
@@ -256,7 +256,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(25, 18);
+            this.labelControl1.Location = new System.Drawing.Point(370, 21);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 16);
             this.labelControl1.TabIndex = 1;
@@ -264,11 +264,12 @@
             // 
             // traporno
             // 
-            this.traporno.Location = new System.Drawing.Point(22, 38);
+            this.traporno.Location = new System.Drawing.Point(364, 44);
             this.traporno.Name = "traporno";
             this.traporno.Size = new System.Drawing.Size(100, 20);
             this.traporno.TabIndex = 0;
             this.traporno.Visible = false;
+            this.traporno.EditValueChanged += new System.EventHandler(this.traporno_EditValueChanged);
             // 
             // uFormul
             // 

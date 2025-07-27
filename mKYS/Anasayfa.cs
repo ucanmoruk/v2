@@ -204,13 +204,13 @@ namespace mKYS
             //    DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("The Bezier");
             UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.OfficeColorful);
 
-            if (kullanici == "2" || kullanici == "1002")
+            if (birimID == 2) //kullanici == "2" || kullanici == "1002"  
             {
                 // muhasebe.Visible = true;
                 barButtonItem75.Visibility = BarItemVisibility.Always;
                 barButtonItem76.Visibility = BarItemVisibility.Always;
             }
-            else if (kullanici == "2003" || kullanici == "2005")
+            else if (birimID == 1003) //kullanici == "2003" || kullanici == "2005"
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
@@ -222,11 +222,11 @@ namespace mKYS
                 dprice.Visibility = BarItemVisibility.Always;
                 Text = "SPEKTROTEK Yönetim Sistemi";
             }
-            else if (kullanici == "3")
+            else if (birimID == 1) //kullanici == "3"
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
-                //  ribbonPage2.Visible = false;
+                ribbonPage2.Visible = true;
                 ribbonPage3.Visible = false;
                 ribbonPage9.Visible = false;
              
@@ -234,14 +234,19 @@ namespace mKYS
                 dprice.Visibility = BarItemVisibility.Never;
                 Text = "ROOT Hizmet Takip Sistemi";
 
-                ribbonPageGroup49.Visible = false;
-                ribbonPageGroup51.Visible = false;
+                ribbonPage8.Visible = false;
+                ribbonPage6.Visible = false;
+                ribbonPage4.Visible = false;
+                ribbonPage5.Visible = false;
+                ribbonPage10.Visible = false;
+                //ribbonPageGroup49.Visible = false;
+                //ribbonPageGroup51.Visible = false;
 
-                barButtonItem108.Visibility = BarItemVisibility.Never;
-                barButtonItem109.Visibility = BarItemVisibility.Never;
-                barButtonItem124.Visibility = BarItemVisibility.Never;
+                //barButtonItem108.Visibility = BarItemVisibility.Never;
+                //barButtonItem109.Visibility = BarItemVisibility.Never;
+                //barButtonItem124.Visibility = BarItemVisibility.Never;
             }
-            else if (kullanici == "2006" || kullanici == "2007")
+            else if (birimID == 1005) // kullanici == "2006" || kullanici == "2007"
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
@@ -252,7 +257,7 @@ namespace mKYS
                 ribbonPage9.Visible = false;
                 ribbonPage11.Visible = true;
             }
-            else if (kullanici == "2008")
+            else if (birimID == 1006) // kullanici == "2008" || birimID == 1006
             {
                 ribbonPage7.Visible = false;
                 ribbonPage1.Visible = false;
@@ -1271,6 +1276,57 @@ namespace mKYS
                 blog = new mROOT._1.Mesaj.BlogListe();
                 blog.MdiParent = this;
                 blog.Show();
+            }
+        }
+
+        private void barButtonItem133_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ucos == null || ucos.IsDisposed)
+            {
+                ucos = new mROOT._9.UGDR.uCosing();
+                ucos.MdiParent = this;
+                ucos.Show();
+            }
+        }
+
+        private void barButtonItem134_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (hel == null || hel.IsDisposed)
+            {
+                hel = new HammaddeListesi();
+                hel.MdiParent = this;
+                hel.Show();
+            }
+        }
+
+        private void barButtonItem132_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (yonet == null || yonet.IsDisposed)
+            {
+                yonet = new mROOT._9.UGDR.uRegulation();
+                yonet.MdiParent = this;
+                yonet.Show();
+            }
+        }
+
+        private void barButtonItem130_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ht == null || ht.IsDisposed)
+            {
+                ht = new Numune.HizmetTermin();
+                ht.MdiParent = this;
+                ht.Show();
+            }
+        }
+
+        private void barButtonItem131_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (ufo == null || ufo.IsDisposed)
+            {
+                mROOT._9.UGDR.uFormul.gelis = "Anasayfa";
+                ufo = new mROOT._9.UGDR.uFormul();
+                ufo.MdiParent = this;
+                ufo.Show();
             }
         }
 

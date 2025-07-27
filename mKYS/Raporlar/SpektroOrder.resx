@@ -117,35 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_add.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select "STeklifListe"."TeklifNo", "STeklifListe"."TeklifNot",
+       "STeklifListe"."Tarih",
+       "STeklifListe"."Gecerlilik",
+       "STeklifListe"."Toplam", "STeklifListe"."TalepNo",
+       "STeklifListe"."Iskonto",
+       "STeklifListe"."ParaBirimi",
+       "STeklifDetay"."Miktar",
+       "STeklifDetay"."Birim", "STeklifDetay"."Fiyat",
+       "STeklifDetay"."KDV", "STeklifDetay"."Tutar",
+       "STeklifDetay"."KDVTutar",
+       "RootTedarikci"."Ad", "RootTedarikci"."Adres",
+       "RootKullanici"."Ad" as "RootKullanici_Ad",
+       "RootKullanici"."Soyad", "STeklifListe"."ID",
+       "SStokListe"."Kod", "SStokListe"."Marka",
+       "SStokListe"."Ad" as "SStokListe_Ad",
+       "SStokListe"."Birim" as "SStokListe_Birim"
+  from (((("STeklifListe" "STeklifListe"
+  inner join "STeklifDetay" "STeklifDetay"
+       on ("STeklifDetay"."TeklifID" = "STeklifListe"."ID"))
+  inner join "RootTedarikci" "RootTedarikci"
+       on ("RootTedarikci"."ID" = "STeklifListe"."FirmaID"))
+  inner join "SStokListe" "SStokListe"
+       on ("SStokListe"."ID" = "STeklifDetay"."StokID"))
+  inner join "RootKullanici" "RootKullanici"
+       on ("RootKullanici"."ID" = "STeklifListe"."YetkiliID"))
+
 </value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNUZWtsaWZMaXN0ZSI+PEZpZWxkIE5hbWU9IlRla2xpZk5vIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGVrbGlmTm90IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRhcmloIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iR2VjZXJsaWxpayIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IlRvcGxhbSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVGFsZXBObyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Iklza29udG8iIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlBhcmFCaXJpbWkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWlrdGFyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQmlyaW0iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRml5YXQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IktEViIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVHV0YXIiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IktEVlR1dGFyIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJBZCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBZHJlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSb290S3VsbGFuaWNpX0FkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNveWFkIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iS29kIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1hcmthIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNTdG9rTGlzdGVfQWQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU1N0b2tMaXN0ZV9CaXJpbSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

@@ -268,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Ürün";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnalizYeni_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YeniUrun_FormClosed);
             this.Load += new System.EventHandler(this.AnalizYeni_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_kod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ad.Properties)).EndInit();

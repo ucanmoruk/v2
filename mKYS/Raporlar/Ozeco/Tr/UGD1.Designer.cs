@@ -1224,7 +1224,7 @@
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel18.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel18.StylePriority.UseFont = false;
-            this.xrLabel18.Text = "Madde veya karışımlara ait fiziksel ve kimyasal özellikler Ek-2 bölümünde detaylı" +
+            this.xrLabel18.Text = "Madde veya karışımlara ait fiziksel ve kimyasal özellikler Ek-3 bölümünde detaylı" +
     " olarak paylaşılmıştır.";
             // 
             // xrLabel17
@@ -1733,7 +1733,6 @@
             this.xrTable5,
             this.xrLabel20,
             this.xrLabel24});
-            this.GroupHeader2.Expanded = false;
             this.GroupHeader2.HeightF = 561.2939F;
             this.GroupHeader2.Level = 5;
             this.GroupHeader2.Name = "GroupHeader2";
@@ -1797,7 +1796,7 @@
             // 
             this.xrLabel69.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false,true)"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[MikroNotEn]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[MikroNot]")});
             this.xrLabel69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel69.ForeColor = System.Drawing.Color.Black;
             this.xrLabel69.LocationFloat = new DevExpress.Utils.PointFloat(44.78762F, 530.1689F);
@@ -2071,7 +2070,7 @@
             // xrLabel29
             // 
             this.xrLabel29.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", resources.GetString("xrLabel29.ExpressionBindings"))});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rUGDListerUGDDetay].[ChallengeNot]")});
             this.xrLabel29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.xrLabel29.ForeColor = System.Drawing.Color.Black;
             this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(33.83312F, 145.1103F);
@@ -2111,6 +2110,7 @@
             this.xrLabel35,
             this.xrTable9,
             this.xrLabel34});
+            this.GroupHeader3.Expanded = false;
             this.GroupHeader3.HeightF = 1326.167F;
             this.GroupHeader3.Level = 2;
             this.GroupHeader3.Name = "GroupHeader3";
@@ -3523,7 +3523,6 @@
             // 
             this.GroupHeader5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox3});
-            this.GroupHeader5.Expanded = false;
             this.GroupHeader5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Mikro]=\'False\',false,true )")});
             this.GroupHeader5.HeightF = 272.3751F;
@@ -3595,7 +3594,6 @@
             // 
             this.GroupHeader8.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox2});
-            this.GroupHeader8.Expanded = false;
             this.GroupHeader8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "Iif([rUGDListerUGDDetay].[Challenge]=\'False\', false, true)")});
             this.GroupHeader8.HeightF = 293.2919F;
@@ -3650,7 +3648,6 @@
             this.xrLabel73,
             this.xrLabel75,
             this.xrLabel76});
-            this.GroupHeader10.Expanded = false;
             this.GroupHeader10.HeightF = 178.1103F;
             this.GroupHeader10.Level = 7;
             this.GroupHeader10.Name = "GroupHeader10";

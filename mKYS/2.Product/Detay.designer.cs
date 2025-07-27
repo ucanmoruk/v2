@@ -52,6 +52,7 @@
             this.Notlar = new DevExpress.XtraEditors.GroupControl();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.c_tur = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
@@ -76,7 +77,6 @@
             this.t_kdv = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.t_total = new DevExpress.XtraEditors.TextEdit();
-            this.c_tur = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -94,6 +94,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.c_tur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -114,7 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.t_iskonto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_kdv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_total.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c_tur.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_kaydet
@@ -301,6 +301,7 @@
             this.gridView2.OptionsSelection.CheckBoxSelectorColumnWidth = 15;
             this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView2_PopupMenuShowing);
             this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
@@ -358,6 +359,20 @@
             this.splitContainer1.Size = new System.Drawing.Size(1509, 632);
             this.splitContainer1.SplitterDistance = 104;
             this.splitContainer1.TabIndex = 6;
+            // 
+            // c_tur
+            // 
+            this.c_tur.EditValue = "Satış";
+            this.c_tur.Location = new System.Drawing.Point(449, 55);
+            this.c_tur.MenuManager = this.barManager1;
+            this.c_tur.Name = "c_tur";
+            this.c_tur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.c_tur.Properties.Items.AddRange(new object[] {
+            "Satış",
+            "Fason"});
+            this.c_tur.Size = new System.Drawing.Size(51, 20);
+            this.c_tur.TabIndex = 5;
             // 
             // gridLookUpEdit2
             // 
@@ -513,6 +528,7 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView1_PopupMenuShowing);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
@@ -602,20 +618,6 @@
             this.t_total.Size = new System.Drawing.Size(126, 20);
             this.t_total.TabIndex = 0;
             // 
-            // c_tur
-            // 
-            this.c_tur.EditValue = "Satış";
-            this.c_tur.Location = new System.Drawing.Point(449, 55);
-            this.c_tur.MenuManager = this.barManager1;
-            this.c_tur.Name = "c_tur";
-            this.c_tur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.c_tur.Properties.Items.AddRange(new object[] {
-            "Satış",
-            "Fason"});
-            this.c_tur.Size = new System.Drawing.Size(51, 20);
-            this.c_tur.TabIndex = 5;
-            // 
             // TeklifDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,6 +651,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.c_tur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
@@ -670,7 +673,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.t_iskonto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_kdv.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_total.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c_tur.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

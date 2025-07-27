@@ -91,6 +91,38 @@ namespace mROOT._9.UGDR
                     frm.OzecoTr();
                     frm.ShowDialog();
                 }
+
+                //for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+                //{
+                //    int rowHandle = gridView1.GetSelectedRows()[i];
+                //    string nID = gridView1.GetRowCellValue(rowHandle, "ID")?.ToString();
+                //    string sampleName = gridView1.GetRowCellValue(rowHandle, "Urun")?.ToString();
+                //    string fullName = "ÜGDR - " + sampleName;
+
+                //    if (!string.IsNullOrWhiteSpace(nID) && !string.IsNullOrWhiteSpace(sampleName))
+                //    {
+                //        // tID’yi rapor içinde set etmeliyiz çünkü fonksiyon parametre almıyor
+                //        mKYS.Raporlar.Ozeco.Tr.UGD1.tID = nID;
+                //        mKYS.Raporlar.Ozeco.Tr.UGD2.tID = nID;
+                //        mKYS.Raporlar.Ozeco.Tr.UGD3.tID = nID;
+                //        mKYS.Raporlar.Ozeco.Tr.UGD4.tID = nID;
+
+                //        // frmPrint'te name static değilse, instance üzerinden ver
+                //        using (mKYS.Raporlar.frmPrint frm = new mKYS.Raporlar.frmPrint())
+                //        {
+                //            //frm.Name = fullName; // name alanına dışarıdan değer atıyoruz
+                //            frm.RaporAdi = "ÜGDR - " + sampleName;
+                //            frm.NewOzecoTR();      // raporu oluştur ve çıktı al
+                //                               // frm.ShowDialog(); // Eğer kullanıcıya göstermek istersen
+                //        }
+
+
+                //    }
+                //}
+
+                // MessageBox.Show("Tüm raporlar C:\\Raporlar klasörüne kaydedildi.", "İşlem Tamamlandı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             }
             else if (Giris.birimID == "1006")
             {

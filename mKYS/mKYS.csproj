@@ -15,6 +15,7 @@
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PlaywrightSkipGnuLinuxNativeDeps>true</PlaywrightSkipGnuLinuxNativeDeps>
     <PublishUrl>ftp://rootarge.com/httpdocs/mRoot/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -31,7 +32,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>37</ApplicationRevision>
+    <ApplicationRevision>47</ApplicationRevision>
     <ApplicationVersion>5.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -58,16 +59,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>897B6991B20F6459A9978B84ADFD94DD7F930CF9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>9A7ECAEB5A89535CAAC30E7F1B812EBDDB51BD6F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>mKYS_5_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>mKYS_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>save-nature.ico</ApplicationIcon>
@@ -77,6 +78,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -132,9 +136,6 @@
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Playwright, Version=1.52.0.0, Culture=neutral, PublicKeyToken=db12f80f85d8ba23, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Playwright.1.52.0\lib\netstandard2.0\Microsoft.Playwright.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -1136,6 +1137,12 @@
     </Compile>
     <Compile Include="Raporlar\Sharmal\SiparisFormu.designer.cs">
       <DependentUpon>SiparisFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\SpektroOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\SpektroOrder.designer.cs">
+      <DependentUpon>SpektroOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\TeklifMS.cs">
       <SubType>Component</SubType>
@@ -2211,6 +2218,9 @@
     <EmbeddedResource Include="Raporlar\Sharmal\SiparisFormu.resx">
       <DependentUpon>SiparisFormu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\SpektroOrder.resx">
+      <DependentUpon>SpektroOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\TeklifMS.resx">
       <DependentUpon>TeklifMS.cs</DependentUpon>
     </EmbeddedResource>
@@ -2530,6 +2540,7 @@
     <None Include="mKYS_1_TemporaryKey.pfx" />
     <None Include="mKYS_2_TemporaryKey.pfx" />
     <None Include="mKYS_3_TemporaryKey.pfx" />
+    <None Include="mKYS_6_TemporaryKey.pfx" />
     <None Include="mKYS_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -2544,6 +2555,7 @@
     <None Include="StokTakip_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="Images\" />
     <Folder Include="ÇöpKutusu\Egitim\" />
   </ItemGroup>
@@ -2642,11 +2654,9 @@
     <PropertyGroup>
       <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Playwright.1.52.0\build\Microsoft.Playwright.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Playwright.1.52.0\build\Microsoft.Playwright.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.33.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.33.0\build\Selenium.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.137.0.7151.11900\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.137.0.7151.11900\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\Microsoft.Playwright.1.52.0\build\Microsoft.Playwright.targets" Condition="Exists('..\packages\Microsoft.Playwright.1.52.0\build\Microsoft.Playwright.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.4.33.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.33.0\build\Selenium.WebDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.137.0.7151.11900\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.137.0.7151.11900\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
@@ -2656,4 +2666,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <None Update=".playwright\package\bin\reinstall_msedge_stable_linux.sh">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Publish>false</Publish>
+    </None>
+  </ItemGroup>
 </Project>

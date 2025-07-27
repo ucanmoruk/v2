@@ -67,7 +67,7 @@ namespace mKYS.Analiz
                 }
             }
                        
-            SqlCommand add = new SqlCommand(" insert into RootUrunListesi (Kod, Ad, Ozellik, Fotograf, Durum, Marka, Kategori, Fiyat, Barkod, Seri, Hacim, TESF) values (@a1, @a2, @a3, @a4, @a5, @a6, @a7,@a8, @a9, @a10, @a11, @a12) ", bgl.baglanti());
+            SqlCommand add = new SqlCommand(@"insert into RootUrunListesi (Kod, Ad, Ozellik, Fotograf, Durum, Marka, Kategori, Fiyat, Barkod, Seri, Hacim, TESF) values (@a1, @a2, @a3, @a4, @a5, @a6, @a7,@a8, @a9, @a10, @a11, @a12) ", bgl.baglanti());
             add.Parameters.AddWithValue("@a1", txt_kod.Text);
             add.Parameters.AddWithValue("@a2", txt_ad.Text);
             add.Parameters.AddWithValue("@a3", txt_ozelik.Text);
@@ -139,7 +139,7 @@ namespace mKYS.Analiz
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
                     client.UploadFile(ftpfullpath, name);
                 }
-                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Fotograf=@a4, Marka=@a5, Kategori = @a6, Fiyat=@a7, Barkod=@a8, Seri=@a9, Miktar=@a10, TESF =@a11 where ID = '" + kod + "' ", bgl.baglanti());
+                SqlCommand add = new SqlCommand(@"update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Fotograf=@a4, Marka=@a5, Kategori = @a6, Fiyat=@a7, Barkod=@a8, Seri=@a9, Hacim=@a10, TESF =@a11 where ID = '" + kod + "' ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", txt_kod.Text);
                 add.Parameters.AddWithValue("@a2", txt_ad.Text);
                 add.Parameters.AddWithValue("@a3", txt_ozelik.Text);
@@ -160,7 +160,7 @@ namespace mKYS.Analiz
             }
             else
             {
-                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Marka=@a5, Kategori = @a6, Fiyat=@a7, Barkod=@a8, Seri=@a9, Miktar=@a10, TESF =@a11 where ID = '" + kod + "' ", bgl.baglanti());
+                SqlCommand add = new SqlCommand(" update RootUrunListesi set Kod=@a1, Ad=@a2, Ozellik=@a3, Marka=@a5, Kategori = @a6, Fiyat=@a7, Barkod=@a8, Seri=@a9, Hacim=@a10, TESF =@a11 where ID = '" + kod + "' ", bgl.baglanti());
                 add.Parameters.AddWithValue("@a1", txt_kod.Text);
                 add.Parameters.AddWithValue("@a2", txt_ad.Text);
                 add.Parameters.AddWithValue("@a3", txt_ozelik.Text);
@@ -190,8 +190,7 @@ namespace mKYS.Analiz
  
             }
             else
-            {
- 
+            { 
                 listele();
                 btn_add.Text = "Güncelle";
                 Text = "Ürün Bilgi Güncelle";
@@ -294,6 +293,11 @@ namespace mKYS.Analiz
         private void txt_kod_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void YeniUrun_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            kod = null;
         }
 
         string name;

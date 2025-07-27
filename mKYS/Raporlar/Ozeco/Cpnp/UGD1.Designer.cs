@@ -776,7 +776,6 @@
             this.xrTable2,
             this.xrLabel12,
             this.xrLabel11});
-            this.GroupHeader1.Expanded = false;
             this.GroupHeader1.HeightF = 958.7001F;
             this.GroupHeader1.Level = 9;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -1224,7 +1223,7 @@
             this.xrLabel18.SizeF = new System.Drawing.SizeF(698.2083F, 23F);
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.Text = "Physical and chemical properties of substances or mixtures are detailed in Annex-" +
-    "2.";
+    "3.";
             // 
             // xrLabel17
             // 

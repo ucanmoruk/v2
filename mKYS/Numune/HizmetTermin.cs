@@ -39,7 +39,7 @@ namespace mKYS.Numune
 
         public void listele()
         {
-            if (Anasayfa.kullanici == "3")
+            if (Anasayfa.birimID == 1)
             {
                 DataTable dt = new DataTable();
 
@@ -54,8 +54,7 @@ namespace mKYS.Numune
                  dbo.RootTedarikci AS f ON n.Firma_ID = f.ID LEFT OUTER JOIN
                  dbo.RootTedarikci AS p ON d.ProjeID = p.ID LEFT OUTER JOIN
                  dbo.StokAnalizListesi AS l ON x.AnalizID = l.ID
-                 WHERE n.Durum = 'Aktif' and (x.HizmetDurum <> 'Tamamlandı' and x.HizmetDurum<> 'Reddedildi') and k.ID =3
-                 ORDER BY x.Termin desc, nID DESC", bgl.baglanti());
+                 WHERE n.Durum = 'Aktif' and (x.HizmetDurum <> 'Tamamlandı' and x.HizmetDurum<> 'Reddedildi') and k.ID = N'"+Anasayfa.kullanici+"' ORDER BY x.Termin desc, nID DESC", bgl.baglanti());
                 da.Fill(dt);
                 gridControl1.DataSource = dt;
                 gridView3.Columns["ID"].Visible = false;
@@ -145,10 +144,9 @@ namespace mKYS.Numune
 
         }
         private void NKR_Load(object sender, EventArgs e)
-        {         
+        {                      
             listele();
-            gridduzen();        
-
+            gridduzen();
         }
 
 
